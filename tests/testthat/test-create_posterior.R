@@ -4,7 +4,7 @@ test_that("returns a posterior", {
 
   if (!is_on_travis()) return()
 
-  posterior <- lumier::create_posterior(
+  posterior <- lumier:::create_posterior(
     n_taxa = 2,
     sequence_length = 4,
     mcmc = beautier::create_mcmc(chain_length = 10000)
@@ -18,7 +18,7 @@ test_that("use", {
   if (!is_on_travis()) return()
 
   testthat::expect_silent(
-    lumier::create_posterior(
+    lumier:::create_posterior(
       n_taxa = 2,
       sequence_length = 4,
       mcmc = beautier::create_mcmc(chain_length = 10000)
@@ -26,7 +26,7 @@ test_that("use", {
   )
 
   testthat::expect_silent(
-    lumier::create_posterior(
+    lumier:::create_posterior(
       n_taxa = 2,
       sequence_length = 4,
       mcmc = beautier::create_mcmc(chain_length = 10000),
@@ -35,7 +35,7 @@ test_that("use", {
   )
 
   testthat::expect_silent(
-    lumier::create_posterior(
+    lumier:::create_posterior(
       n_taxa = 2,
       sequence_length = 4,
       mcmc = beautier::create_mcmc(chain_length = 10000),
@@ -44,7 +44,7 @@ test_that("use", {
   )
 
   testthat::expect_silent(
-    lumier::create_posterior(
+    lumier:::create_posterior(
       n_taxa = 2,
       sequence_length = 4,
       mcmc = beautier::create_mcmc(chain_length = 10000),
@@ -56,7 +56,7 @@ test_that("use", {
 test_that("abuse", {
 
   testthat::expect_error(
-    lumier::create_posterior(
+    lumier:::create_posterior(
       n_taxa = -1, # Must be positive
       sequence_length = 4,
       mcmc = beautier::create_mcmc(chain_length = 10000),
@@ -66,7 +66,7 @@ test_that("abuse", {
   )
 
   testthat::expect_error(
-    lumier::create_posterior(
+    lumier:::create_posterior(
       n_taxa = 2,
       sequence_length = 0, # Must be non-zero positive
       mcmc = beautier::create_mcmc(chain_length = 10000),
@@ -76,7 +76,7 @@ test_that("abuse", {
   )
 
   testthat::expect_error(
-    lumier::create_posterior(
+    lumier:::create_posterior(
       n_taxa = 2,
       sequence_length = 1,
       mcmc = beautier::create_mcmc(chain_length = 10000),
@@ -86,7 +86,7 @@ test_that("abuse", {
   )
 
   testthat::expect_error(
-    lumier::create_posterior(
+    lumier:::create_posterior(
       n_taxa = 2,
       sequence_length = 1,
       mcmc = beautier::create_mcmc(chain_length = 10000),
@@ -96,7 +96,7 @@ test_that("abuse", {
   )
 
   testthat::expect_error(
-    lumier::create_posterior(
+    lumier:::create_posterior(
       n_taxa = 2,
       sequence_length = 1,
       crown_ages = 15,
@@ -106,7 +106,7 @@ test_that("abuse", {
   )
 
   testthat::expect_error(
-    lumier::create_posterior(
+    lumier:::create_posterior(
       n_taxa = 2,
       sequence_length = 4,
       mcmc = beautier::create_mcmc(chain_length = -1234)
@@ -120,7 +120,7 @@ test_that("One fixed crown age must have equal TreeHeights", {
 
   if (!is_on_travis()) return()
 
-  posterior <- lumier::create_posterior(
+  posterior <- lumier:::create_posterior(
     n_taxa = 5,
     sequence_length = 10,
     mcmc = beautier::create_mcmc(chain_length = 10000),
@@ -134,7 +134,7 @@ test_that("Two fixed crown ages must have equal TreeHeights", {
 
   if (!is_on_travis()) return()
 
-  posterior <- lumier::create_posterior(
+  posterior <- lumier:::create_posterior(
     n_taxa = 5,
     sequence_length = 10,
     mcmc = beautier::create_mcmc(chain_length = 10000),
@@ -151,7 +151,7 @@ test_that(paste0("One fixed crown age must result in a posterior ",
   if (!is_on_travis()) return()
 
   crown_age <- 123
-  posterior <- lumier::create_posterior(
+  posterior <- lumier:::create_posterior(
     n_taxa = 5,
     sequence_length = 10,
     mcmc = beautier::create_mcmc(chain_length = 10000),
@@ -172,7 +172,7 @@ test_that(paste0("Two same fixed crown ages must result in a posterior ",
   if (!is_on_travis()) return()
 
   crown_age <- 123
-  posterior <- lumier::create_posterior(
+  posterior <- lumier:::create_posterior(
     n_taxa = 5,
     sequence_length = 10,
     mcmc = beautier::create_mcmc(chain_length = 10000),
@@ -194,7 +194,7 @@ test_that(paste0("Two different fixed crown ages must result in a posterior ",
 
   crown_age_1 <- 123
   crown_age_2 <- 234
-  posterior <- lumier::create_posterior(
+  posterior <- lumier:::create_posterior(
     n_taxa = 5,
     sequence_length = 10,
     mcmc = beautier::create_mcmc(chain_length = 10000),
@@ -216,7 +216,7 @@ test_that(paste0("One fixed crown age, one estimated, ",
   if (!is_on_travis()) return()
 
   crown_age <- 123
-  posterior <- lumier::create_posterior(
+  posterior <- lumier:::create_posterior(
     n_taxa = 5,
     sequence_length = 10,
     mcmc = beautier::create_mcmc(chain_length = 10000),

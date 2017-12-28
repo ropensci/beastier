@@ -12,8 +12,8 @@ LazyData: true
 RoxygenNote: 6.0.1
 Imports:
   ape,
-  beautier,
   beastier,
+  beautier,
   phangorn
 Suggests:
   knitr,
@@ -23,8 +23,8 @@ Suggests:
 Remotes:
   jimhester/covr,
   jimhester/lintr,
-  richelbilderbeek/beautier,
   richelbilderbeek/beastier,
+  richelbilderbeek/beautier,
   MangoTheCat/goodpractice
 VignetteBuilder: knitr
 URL: https://github.com/richelbilderbeek/lumier
