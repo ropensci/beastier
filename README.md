@@ -9,6 +9,10 @@ develop|[![Build Status](https://travis-ci.org/richelbilderbeek/lumier.svg?branc
 
 ![lumier logo](pics/lumier_logo.png)
 
-Use [beautier](https://github.com/richelbilderbeek/beautier) to generate BEAST2 input (`.xml`) files.
+Use [beautier](https://github.com/richelbilderbeek/beautier) to create BEAST2 input (`.xml`) files.
 
 Use [beastier](https://github.com/richelbilderbeek/beastier) to paste BEAST2 output (`.log`, `.trees`, etc) files.
+
+Use [BEASTmasteR](https://github.com/nmatzke/BEASTmasteR) for tip-dating analyses using fossils as dated terminal taxa.
+
+Use [RBeast](https://github.com/beast-dev/RBeast) for other things.

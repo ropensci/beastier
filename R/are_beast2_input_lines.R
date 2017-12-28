@@ -9,6 +9,10 @@
 #' @return TRUE if the text is valid, FALSE if not
 #' @author Richel J.C. Bilderbeek
 #' @seealso Use \code{\link{is_beast2_input_file}} to check a file
+#' @examples
+#'   beast2_filename <- get_path("anthus_2_4.xml")
+#'   text <- readLines(beast2_filename)
+#'   testit::assert(are_beast2_input_lines(text))
 #' @export
 are_beast2_input_lines <- function(
   lines,
@@ -22,12 +26,12 @@ are_beast2_input_lines <- function(
     filename <- tempfile()
     save_lines(filename = filename, lines = lines)
     return(
-      are_beast2_input_lines_deep(lines = lines, verbose = verbose)
+      lumier:::are_beast2_input_lines_deep(lines = lines, verbose = verbose)
     )
   } else {
     testit::assert(method == "fast")
     return(
-      are_beast2_input_lines_fast(lines) # nolint internal function
+      lumier:::are_beast2_input_lines_fast(lines) # nolint internal function
     )
   }
 }
@@ -44,7 +48,7 @@ are_beast2_input_lines <- function(
 #' @examples
 #'   beast2_filename <- get_path("anthus_2_4.xml")
 #'   text <- readLines(beast2_filename)
-#'   testit::assert(beastier:::are_beast2_input_lines_deep(text))
+#'   testit::assert(lumier:::are_beast2_input_lines_deep(text))
 are_beast2_input_lines_deep <- function(
   lines,
   verbose = FALSE
@@ -66,9 +70,9 @@ are_beast2_input_lines_deep <- function(
 #' @examples
 #'   beast2_filename <- get_path("anthus_2_4.xml")
 #'   text <- readLines(beast2_filename)
-#'   testit::assert(beastier:::are_beast2_input_lines_fast(text))
+#'   testit::assert(lumier:::are_beast2_input_lines_fast(text))
 are_beast2_input_lines_fast <- function(
   lines
 ) {
-  beastier:::has_unique_ids(lines) # nolint internal function
+  lumier:::has_unique_ids(lines) # nolint internal function
 }
