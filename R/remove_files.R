@@ -3,7 +3,7 @@
 #' @return nothing, removes those files that are present
 #' @examples
 #'   # Can safely delete absent files
-#'   beastier:::remove_files("abs.ent")
+#'   lumier:::remove_files("abs.ent")
 #'
 #'   # Create a file
 #'   filename <- "pres.ent"
@@ -11,7 +11,7 @@
 #'   testit::assert(file.exists(filename))
 #'
 #'   # Can safely delete a mix of present and absent files
-#'   beastier:::remove_files(c("abs.ent", filename))
+#'   lumier:::remove_files(c("abs.ent", filename))
 #'   testit::assert(!file.exists(filename))
 #' @author Richel J.C. Bilderbeek
 remove_files <- function(filenames) {

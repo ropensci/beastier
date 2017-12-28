@@ -17,7 +17,7 @@ Removes files if and only if present
 }
 \examples{
   # Can safely delete absent files
-  beastier:::remove_files("abs.ent")
+  lumier:::remove_files("abs.ent")
 
   # Create a file
   filename <- "pres.ent"
@@ -25,7 +25,7 @@ Removes files if and only if present
   testit::assert(file.exists(filename))
 
   # Can safely delete a mix of present and absent files
-  beastier:::remove_files(c("abs.ent", filename))
+  lumier:::remove_files(c("abs.ent", filename))
   testit::assert(!file.exists(filename))
 }
 \author{
