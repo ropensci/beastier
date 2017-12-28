@@ -5,6 +5,7 @@
 #' @return TRUE if the file is valid, FALSE if not
 #' @author Richel J.C. Bilderbeek
 #' @seealso Use \code{\link{are_beast2_input_lines}} to check the lines
+#' @export
 is_beast2_input_file <- function(
   filename,
   verbose = FALSE,
