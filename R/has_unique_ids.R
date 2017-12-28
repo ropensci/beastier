@@ -12,5 +12,5 @@
 has_unique_ids <- function(
   text
 ) {
-  length(get_duplicate_ids(text)) == 0 # nolint internal function
+  length(lumier:::get_duplicate_ids(text)) == 0 # nolint internal function
 }
