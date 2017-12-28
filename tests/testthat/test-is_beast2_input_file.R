@@ -8,7 +8,7 @@ test_that("beast2_example_output.log is not a valid BEAST2 input file", {
   is_ok <- NULL
 
   testthat::expect_output(
-    is_ok <- is_beast2_input_file(filename, verbose = TRUE)
+    is_ok <- lumier::is_beast2_input_file(filename, verbose = TRUE)
   )
 
   testthat::expect_false(is_ok)
@@ -25,7 +25,7 @@ test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
   is_ok <- NULL
 
   testthat::expect_output(
-    is_ok <- is_beast2_input_file(filename, verbose = TRUE)
+    is_ok <- lumier::is_beast2_input_file(filename, verbose = TRUE)
   )
 
   testthat::expect_false(is_ok)
@@ -38,7 +38,7 @@ test_that("anthus_2_4.xml is valid", {
 
   filename <- get_path("anthus_2_4.xml")
   testthat::expect_true(file.exists(filename))
-  testthat::expect_true(is_beast2_input_file(filename))
+  testthat::expect_true(lumier::is_beast2_input_file(filename))
 
 })
 
