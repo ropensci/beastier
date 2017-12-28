@@ -12,8 +12,7 @@ create_random_fasta(n_taxa, sequence_length, fasta_filename,
 
 \item{sequence_length}{a DNA sequence length, in base pairs}
 
-\item{fasta_filename}{a FASTA filename.
-Use \code{\link{get_fasta_filename}} to obtain a testing FASTA filename.}
+\item{fasta_filename}{a FASTA filename.}
 
 \item{taxa_name_ext}{the extension of the taxa names}
 }

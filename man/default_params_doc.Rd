@@ -21,11 +21,9 @@ default_params_doc(clock_model, clock_models, crown_age, crown_ages,
 \item{crown_ages}{the crown ages of the phylogenies. Set to NA
 if the crown age needs to be estimated}
 
-\item{fasta_filename}{a FASTA filename.
-Use \code{\link{get_fasta_filename}} to obtain a testing FASTA filename.}
+\item{fasta_filename}{a FASTA filename.}
 
-\item{fasta_filenames}{One or more FASTA filenames.
-Use \code{\link{get_fasta_filename}} to obtain a testing FASTA filename.}
+\item{fasta_filenames}{One or more FASTA filenames.}
 
 \item{fixed_crown_age}{determines if the phylogeny's crown age is
 fixed. If FALSE, crown age is estimated by BEAST2. If TRUE,
@@ -42,8 +40,7 @@ of the initial phylogeny.}
 Each one set to NA will result in BEAST2 using a random phylogeny. Else
 the phylogeny is assumed to be of class ape::phylo.}
 
-\item{input_fasta_filenames}{One or more FASTA filenames.
-Use \code{\link{get_fasta_filename}} to obtain a testing FASTA filename.}
+\item{input_fasta_filenames}{One or more FASTA filenames.}
 
 \item{mcmc}{one \code{beautier} mcmc object}
 

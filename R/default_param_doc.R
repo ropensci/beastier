@@ -6,9 +6,7 @@
 #' @param crown_ages the crown ages of the phylogenies. Set to NA
 #'   if the crown age needs to be estimated
 #' @param fasta_filename a FASTA filename.
-#'   Use \code{\link{get_fasta_filename}} to obtain a testing FASTA filename.
 #' @param fasta_filenames One or more FASTA filenames.
-#'   Use \code{\link{get_fasta_filename}} to obtain a testing FASTA filename.
 #' @param fixed_crown_age determines if the phylogeny's crown age is
 #'   fixed. If FALSE, crown age is estimated by BEAST2. If TRUE,
 #'   the crown age is fixed to the crown age
@@ -22,7 +20,6 @@
 #'   Each one set to NA will result in BEAST2 using a random phylogeny. Else
 #'   the phylogeny is assumed to be of class ape::phylo.
 #' @param input_fasta_filenames One or more FASTA filenames.
-#'   Use \code{\link{get_fasta_filename}} to obtain a testing FASTA filename.
 #' @param mcmc one \code{beautier} mcmc object
 #' @param misc_options one \code{beautier} misc_options object
 #' @param output_xml_filename Name of the XML parameter file created by this
