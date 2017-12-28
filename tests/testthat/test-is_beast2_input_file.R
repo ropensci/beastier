@@ -45,12 +45,12 @@ test_that("anthus_2_4.xml is valid", {
 test_that("abuse", {
 
   testthat::expect_error(
-    is_beast2_input_file("abs.ent"),
+    lumier::is_beast2_input_file("abs.ent"),
     "'filename' must be the name of an existing file. "
   )
 
   testthat::expect_error(
-    is_beast2_input_file(
+    lumier::is_beast2_input_file(
       get_path("anthus_2_4.xml"),
       beast_jar_path = "abs.ent"
     ),

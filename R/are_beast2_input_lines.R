@@ -26,12 +26,12 @@ are_beast2_input_lines <- function(
     filename <- tempfile()
     save_lines(filename = filename, lines = lines)
     return(
-      lumier:::are_beast2_input_lines_deep(lines = lines, verbose = verbose)
+      are_beast2_input_lines_deep(lines = lines, verbose = verbose)
     )
   } else {
     testit::assert(method == "fast")
     return(
-      lumier:::are_beast2_input_lines_fast(lines) # nolint internal function
+      are_beast2_input_lines_fast(lines) # nolint internal function
     )
   }
 }
@@ -74,5 +74,5 @@ are_beast2_input_lines_deep <- function(
 are_beast2_input_lines_fast <- function(
   lines
 ) {
-  lumier:::has_unique_ids(lines) # nolint internal function
+  has_unique_ids(lines) # nolint internal function
 }

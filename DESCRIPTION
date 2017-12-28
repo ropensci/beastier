@@ -14,7 +14,8 @@ Imports:
   ape,
   beastier,
   beautier,
-  phangorn
+  phangorn,
+  stringr
 Suggests:
   knitr,
   rmarkdown,

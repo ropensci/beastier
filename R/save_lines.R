@@ -5,7 +5,7 @@
 #' @author Richel J.C. Bilderbeek
 #' @examples
 #'   text <- c("hello", "world")
-#'   beautier:::save_lines(filename = "test.txt", lines = text)
+#'   lumier:::save_lines(filename = "test.txt", lines = text)
 #'   testit::assert(file.exists("test.txt"))
 save_lines <- function(filename, lines) {
   my_file <- file(filename)

@@ -3,13 +3,13 @@ context("save_lines")
 test_that("save_lines: use", {
   filename <- tempfile()
   lines <- c("Hello", "world")
-  save_lines(
+  lumier:::save_lines(
     filename = filename,
     lines = lines
   )
-  expect_equal(file.exists(filename), TRUE)
+  testthat::expect_equal(file.exists(filename), TRUE)
 
   # Remove temporary file
   has_removed <- file.remove(filename)
-  expect_equal(file.exists(filename), FALSE)
+  testthat::expect_equal(file.exists(filename), FALSE)
 })
