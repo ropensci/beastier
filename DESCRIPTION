@@ -6,7 +6,26 @@ Author: Who wrote it
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
+Imports:
+  ape,
+  beautier,
+  beastier,
+  phangorn
+Suggests:
+  knitr,
+  rmarkdown,
+  testit,
+  testthat
+Remotes:
+  jimhester/covr,
+  jimhester/lintr,
+  richelbilderbeek/beautier,
+  richelbilderbeek/beastier,
+  MangoTheCat/goodpractice
+VignetteBuilder: knitr
+URL: https://github.com/richelbilderbeek/lumier
+BugReports: https://github.com/richelbilderbeek/lumier
