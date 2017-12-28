@@ -61,7 +61,7 @@ create_posterior <- function(
   testit::assert(length(input_fasta_filenames) == length(initial_phylogenies))
   testit::assert(length(input_fasta_filenames) == length(crown_ages))
   fixed_crown_ages <- !is.na(crown_ages)
-  remove_files(c(beast_filename))
+  remove_files(c(beast_filename)) # nolint internal function
 
   # Create BEAST2 input file
   testthat::expect_false(file.exists(beast_filename))
@@ -77,7 +77,7 @@ create_posterior <- function(
     print(paste(
       "Error: file '", beast_filename, "' is not a valid BEAST2 file:")
     )
-    is_beast2_input_file(beast_filename, verbose = verbose)
+    is_beast2_input_file(beast_filename, verbose = verbose) # nolint internal function
   }
 
   # Run BEAST2 to measure posterior
@@ -104,9 +104,12 @@ create_posterior <- function(
     trees_filename = beast_trees_filename,
     log_filename = beast_log_filename)
 
-  remove_files(input_fasta_filenames)
-  remove_files(c(beast_filename, beast_state_filename,
-    beast_log_filename, beast_trees_filename)
+  remove_files(input_fasta_filenames) # nolint internal function
+  remove_files(  # nolint internal function
+    c(
+      beast_filename, beast_state_filename,
+      beast_log_filename, beast_trees_filename
+    )
   )
 
   posterior

@@ -24,7 +24,7 @@ are_beast2_input_lines <- function(
   }
   if (method == "deep") {
     filename <- tempfile()
-    save_lines(filename = filename, lines = lines)
+    save_lines(filename = filename, lines = lines) # nolint internal function
     return(
       are_beast2_input_lines_deep(lines = lines, verbose = verbose)
     )
@@ -54,7 +54,7 @@ are_beast2_input_lines_deep <- function(
   verbose = FALSE
 ) {
   filename <- tempfile()
-  save_lines(filename = filename, lines = lines)
+  save_lines(filename = filename, lines = lines) # nolint internal function
   is_beast2_input_file(
     filename = filename,
     verbose = verbose
