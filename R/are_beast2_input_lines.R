@@ -17,7 +17,7 @@
 are_beast2_input_lines <- function(
   lines,
   verbose = FALSE,
-  method = ifelse(is_on_travis(), "deep", "fast")
+  method = ifelse(lumier:::is_on_travis(), "deep", "fast")
 ) {
   if (!method %in% c("deep", "fast")) {
     stop("'method' must be \"deep\" or \"fast\", value was '", method, "'")

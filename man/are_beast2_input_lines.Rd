@@ -6,7 +6,7 @@
   result in a valid BEAST2 input file?}
 \usage{
 are_beast2_input_lines(lines, verbose = FALSE,
-  method = ifelse(is_on_travis(), "deep", "fast"))
+  method = ifelse(lumier:::is_on_travis(), "deep", "fast"))
 }
 \arguments{
 \item{lines}{lines of text}

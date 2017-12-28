@@ -2,7 +2,7 @@ context("create_posterior")
 
 test_that("returns a posterior", {
 
-  if (!is_on_travis()) return()
+  if (!lumier:::is_on_travis()) return()
 
   posterior <- lumier:::create_posterior(
     n_taxa = 2,
@@ -15,7 +15,7 @@ test_that("returns a posterior", {
 
 test_that("use", {
 
-  if (!is_on_travis()) return()
+  if (!lumier:::is_on_travis()) return()
 
   testthat::expect_silent(
     lumier:::create_posterior(
@@ -118,7 +118,7 @@ test_that("abuse", {
 
 test_that("One fixed crown age must have equal TreeHeights", {
 
-  if (!is_on_travis()) return()
+  if (!lumier:::is_on_travis()) return()
 
   posterior <- lumier:::create_posterior(
     n_taxa = 5,
@@ -132,7 +132,7 @@ test_that("One fixed crown age must have equal TreeHeights", {
 
 test_that("Two fixed crown ages must have equal TreeHeights", {
 
-  if (!is_on_travis()) return()
+  if (!lumier:::is_on_travis()) return()
 
   posterior <- lumier:::create_posterior(
     n_taxa = 5,
@@ -148,7 +148,7 @@ test_that("Two fixed crown ages must have equal TreeHeights", {
 test_that(paste0("One fixed crown age must result in a posterior ",
   "with that TreeHeight"), {
 
-  if (!is_on_travis()) return()
+  if (!lumier:::is_on_travis()) return()
 
   crown_age <- 123
   posterior <- lumier:::create_posterior(
@@ -169,7 +169,7 @@ test_that(paste0("One fixed crown age must result in a posterior ",
 test_that(paste0("Two same fixed crown ages must result in a posterior ",
   "with that TreeHeight"), {
 
-  if (!is_on_travis()) return()
+  if (!lumier:::is_on_travis()) return()
 
   crown_age <- 123
   posterior <- lumier:::create_posterior(
@@ -190,7 +190,7 @@ test_that(paste0("Two same fixed crown ages must result in a posterior ",
 test_that(paste0("Two different fixed crown ages must result in a posterior ",
   "with the first crown age's TreeHeight"), {
 
-  if (!is_on_travis()) return()
+  if (!lumier:::is_on_travis()) return()
 
   crown_age_1 <- 123
   crown_age_2 <- 234
@@ -213,7 +213,7 @@ test_that(paste0("One fixed crown age, one estimated, ",
   "will result in a posterior with the specified TreeHeight"
 ), {
 
-  if (!is_on_travis()) return()
+  if (!lumier:::is_on_travis()) return()
 
   crown_age <- 123
   posterior <- lumier:::create_posterior(

@@ -2,7 +2,7 @@ context("is_beast2_input_file")
 
 test_that("beast2_example_output.log is not a valid BEAST2 input file", {
 
-  if (!is_on_travis()) return()
+  if (!lumier:::is_on_travis()) return()
 
   filename <- get_path("beast2_example_output.log")
   is_ok <- NULL
@@ -18,7 +18,7 @@ test_that("beast2_example_output.log is not a valid BEAST2 input file", {
 test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
 
   # Gives a status error
-  if (!is_on_travis()) return()
+  if (!lumier:::is_on_travis()) return()
 
   filename <- get_path("beast2_example_output.trees")
 
@@ -34,7 +34,7 @@ test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
 
 test_that("anthus_2_4.xml is valid", {
 
-  if (!is_on_travis()) return()
+  if (!lumier:::is_on_travis()) return()
 
   filename <- get_path("anthus_2_4.xml")
   testthat::expect_true(file.exists(filename))
