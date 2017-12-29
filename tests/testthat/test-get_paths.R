@@ -1,6 +1,6 @@
 context("get_paths")
 
-test_that("multiplication works", {
+test_that("use", {
 
   testthat::expect_equal(
     length(
