@@ -22,6 +22,13 @@ an alignment of class DNAbin
 \description{
 Create a random alignment
 }
+\examples{
+ alignment <- create_random_alignment(
+   n_taxa = 5,
+   sequence_length = 10
+ )
+ image(alignment)
+}
 \author{
 Richel J.C. Bilderbeek
 }
