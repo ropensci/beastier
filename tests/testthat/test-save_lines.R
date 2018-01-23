@@ -3,7 +3,7 @@ context("save_lines")
 test_that("save_lines: use", {
   filename <- tempfile()
   lines <- c("Hello", "world")
-  lumier:::save_lines(
+  beastier:::save_lines(
     filename = filename,
     lines = lines
   )

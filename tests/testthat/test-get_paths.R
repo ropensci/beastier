@@ -4,7 +4,7 @@ test_that("use", {
 
   testthat::expect_equal(
     length(
-      lumier::get_paths(
+      beastier::get_paths(
         c(
           "beast2_example_output.log",
           "beast2_example_output.trees",

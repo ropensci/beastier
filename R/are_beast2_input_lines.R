@@ -17,7 +17,7 @@
 are_beast2_input_lines <- function(
   lines,
   verbose = FALSE,
-  method = ifelse(lumier:::is_on_travis(), "deep", "fast")
+  method = ifelse(beastier:::is_on_travis(), "deep", "fast")
 ) {
   if (!method %in% c("deep", "fast")) {
     stop("'method' must be \"deep\" or \"fast\", value was '", method, "'")
@@ -48,7 +48,7 @@ are_beast2_input_lines <- function(
 #' @examples
 #'   beast2_filename <- get_path("anthus_2_4.xml")
 #'   text <- readLines(beast2_filename)
-#'   testit::assert(lumier:::are_beast2_input_lines_deep(text))
+#'   testit::assert(beastier:::are_beast2_input_lines_deep(text))
 are_beast2_input_lines_deep <- function(
   lines,
   verbose = FALSE
@@ -70,7 +70,7 @@ are_beast2_input_lines_deep <- function(
 #' @examples
 #'   beast2_filename <- get_path("anthus_2_4.xml")
 #'   text <- readLines(beast2_filename)
-#'   testit::assert(lumier:::are_beast2_input_lines_fast(text))
+#'   testit::assert(beastier:::are_beast2_input_lines_fast(text))
 are_beast2_input_lines_fast <- function(
   lines
 ) {
