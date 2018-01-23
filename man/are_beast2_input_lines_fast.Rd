@@ -20,7 +20,7 @@ Would these lines of text, when written to a file,
 \examples{
   beast2_filename <- get_path("anthus_2_4.xml")
   text <- readLines(beast2_filename)
-  testit::assert(lumier:::are_beast2_input_lines_fast(text))
+  testit::assert(beastier:::are_beast2_input_lines_fast(text))
 }
 \seealso{
 Use \code{\link{is_beast2_input_file}} to check a file

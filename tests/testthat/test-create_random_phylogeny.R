@@ -3,17 +3,17 @@ context("create_random_phylogeny")
 test_that("use", {
 
   testthat::expect_silent(
-    lumier:::create_random_phylogeny(n_taxa = 4)
+    beastier:::create_random_phylogeny(n_taxa = 4)
   )
 
   testthat::expect_silent(
-    lumier:::create_random_phylogeny(n_taxa = 4, taxa_name_ext = "_aco")
+    beastier:::create_random_phylogeny(n_taxa = 4, taxa_name_ext = "_aco")
   )
 })
 
 test_that("taxon names, no taxon name extension", {
 
-  taxon_names <- lumier:::create_random_phylogeny(n_taxa = 4)$tip.label
+  taxon_names <- beastier:::create_random_phylogeny(n_taxa = 4)$tip.label
   testthat::expect_equal(sort(taxon_names), paste0("t", seq(1, 4)))
 
 })
@@ -21,7 +21,7 @@ test_that("taxon names, no taxon name extension", {
 test_that("taxon names, taxon name extension", {
 
   ext <- "_aco"
-  taxon_names <- lumier:::create_random_phylogeny(
+  taxon_names <- beastier:::create_random_phylogeny(
     n_taxa = 4,
     taxa_name_ext = ext
   )$tip.label

@@ -1,4 +1,4 @@
-Package: lumier
+Package: beastier
 Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
@@ -28,5 +28,5 @@ Remotes:
   richelbilderbeek/beautier,
   MangoTheCat/goodpractice
 VignetteBuilder: knitr
-URL: https://github.com/richelbilderbeek/lumier
-BugReports: https://github.com/richelbilderbeek/lumier
+URL: https://github.com/richelbilderbeek/beastier
+BugReports: https://github.com/richelbilderbeek/beastier

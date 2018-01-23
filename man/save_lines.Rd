@@ -19,7 +19,7 @@ Save text (a container of strings) to a file
 }
 \examples{
   text <- c("hello", "world")
-  lumier:::save_lines(filename = "test.txt", lines = text)
+  beastier:::save_lines(filename = "test.txt", lines = text)
   testit::assert(file.exists("test.txt"))
 }
 \author{

@@ -6,12 +6,12 @@ test_that("use", {
   text_1 <- c(text_0, text_0)
 
   testthat::expect_equal(
-    length(lumier:::get_duplicate_ids(text_0)),
+    length(beastier:::get_duplicate_ids(text_0)),
     0
   )
 
   testthat::expect_equal(
-    length(lumier:::get_duplicate_ids(text_1)),
+    length(beastier:::get_duplicate_ids(text_1)),
     1
   )
 
@@ -20,17 +20,17 @@ test_that("use", {
 test_that("abuse", {
 
   testthat::expect_error(
-    lumier:::get_duplicate_ids(NA),
+    beastier:::get_duplicate_ids(NA),
     "'text' must be text"
   )
 
   testthat::expect_error(
-    lumier:::get_duplicate_ids(NULL),
+    beastier:::get_duplicate_ids(NULL),
     "'text' must be text"
   )
 
   testthat::expect_error(
-    lumier:::get_duplicate_ids(ape::rcoal(3)),
+    beastier:::get_duplicate_ids(ape::rcoal(3)),
     "'text' must be text"
   )
 

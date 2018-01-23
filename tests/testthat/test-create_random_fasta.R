@@ -3,7 +3,7 @@ context("create_random_fasta")
 test_that("create_random_fasta: use", {
   filename <- tempfile()
   testthat::expect_silent(
-    sequences_table <- lumier:::create_random_fasta(
+    sequences_table <- beastier:::create_random_fasta(
       n_taxa = 5,
       sequence_length = 20,
       fasta_filename = filename
@@ -15,7 +15,7 @@ test_that("create_random_fasta: use", {
 test_that("create_random_fasta: abuse", {
 
   testthat::expect_error(
-    lumier:::create_random_fasta(
+    beastier:::create_random_fasta(
       n_taxa = 0, #Error
       sequence_length = 20,
       fasta_filename = "test.fasta"
@@ -24,7 +24,7 @@ test_that("create_random_fasta: abuse", {
   )
 
   testthat::expect_error(
-    lumier:::create_random_fasta(
+    beastier:::create_random_fasta(
       n_taxa = 5,
       sequence_length = 0, # Error
       fasta_filename = "test.fasta"
@@ -33,7 +33,7 @@ test_that("create_random_fasta: abuse", {
   )
 
   testthat::expect_error(
-    lumier:::create_random_fasta(
+    beastier:::create_random_fasta(
       n_taxa = 5,
       sequence_length = 20,
       fasta_filename = ape::rcoal(4)
@@ -42,7 +42,7 @@ test_that("create_random_fasta: abuse", {
   )
 
   testthat::expect_error(
-    lumier:::create_random_fasta(
+    beastier:::create_random_fasta(
       n_taxa = 5,
       sequence_length = 20,
       fasta_filename = "" # Error
@@ -51,7 +51,7 @@ test_that("create_random_fasta: abuse", {
   )
 
   testthat::expect_error(
-    lumier:::create_random_fasta(
+    beastier:::create_random_fasta(
       n_taxa = 5,
       sequence_length = 20,
       fasta_filename = "test.fasta",
