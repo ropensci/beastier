@@ -1,6 +1,6 @@
 Package: beastier
 Type: Package
-Title: What the Package Does (Title Case)
+Title: BEAST2 for R
 Version: 0.1.0
 Author: Richel J.C. Bilderbeek <richel@richelbilderbeek.nl>
 Maintainer: Richel J.C. Bilderbeek <richel@richelbilderbeek.nl>
@@ -12,7 +12,7 @@ LazyData: true
 RoxygenNote: 6.0.1
 Imports:
   ape,
-  beastier,
+  beautier,
   tracerer,
   phangorn,
   stringr
