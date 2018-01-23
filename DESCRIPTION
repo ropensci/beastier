@@ -13,7 +13,7 @@ RoxygenNote: 6.0.1
 Imports:
   ape,
   beastier,
-  beautier,
+  tracerer,
   phangorn,
   stringr
 Suggests:
@@ -24,7 +24,7 @@ Suggests:
 Remotes:
   jimhester/covr,
   jimhester/lintr,
-  richelbilderbeek/beastier,
+  richelbilderbeek/tracerer,
   richelbilderbeek/beautier,
   MangoTheCat/goodpractice
 VignetteBuilder: knitr

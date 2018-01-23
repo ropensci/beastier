@@ -33,16 +33,16 @@ create_posterior <- function(
   # BEAST2 output file, containing the final MCMC state
   beast_state_filename <- paste0(base_filename, ".xml.state")
   # FASTA file needed only temporarily to store simulated DNA alignments
-  input_fasta_filenames <- paste0(
+  input_filenames <- paste0(
     paste0(base_filename, "_", seq_along(crown_ages)), ".fasta"
   )
-  input_fasta_filenames[1] <- paste0(base_filename, ".fasta")
+  input_filenames[1] <- paste0(base_filename, ".fasta")
 
   # Create FASTA file
   create_random_fastas(
     n_taxa = n_taxa,
     sequence_length = sequence_length,
-    fasta_filenames = input_fasta_filenames
+    fasta_filenames = input_filenames
   )
 
   initial_phylogenies <- list()
@@ -54,21 +54,21 @@ create_posterior <- function(
     }
     testit::assert(crown_age > 0.0)
     initial_phylogenies[[i]] <- beautier::fasta_to_phylo(
-      fasta_filename = input_fasta_filenames[i],
+      fasta_filename = input_filenames[i],
       crown_age = crown_age
     )
   }
-  testit::assert(length(input_fasta_filenames) == length(initial_phylogenies))
-  testit::assert(length(input_fasta_filenames) == length(crown_ages))
+  testit::assert(length(input_filenames) == length(initial_phylogenies))
+  testit::assert(length(input_filenames) == length(crown_ages))
   fixed_crown_ages <- !is.na(crown_ages)
   remove_files(c(beast_filename)) # nolint internal function
 
   # Create BEAST2 input file
   testthat::expect_false(file.exists(beast_filename))
   beautier::create_beast2_input_file_1_12(
-    input_fasta_filenames = input_fasta_filenames,
+    input_filenames = input_filenames,
     mcmc = mcmc,
-    output_xml_filename = beast_filename,
+    output_filename = beast_filename,
     fixed_crown_ages = fixed_crown_ages,
     initial_phylogenies = initial_phylogenies
   )
@@ -104,7 +104,7 @@ create_posterior <- function(
     trees_filename = beast_trees_filename,
     log_filename = beast_log_filename)
 
-  remove_files(input_fasta_filenames) # nolint internal function
+  remove_files(input_filenames) # nolint internal function
   remove_files(  # nolint internal function
     c(
       beast_filename, beast_state_filename,

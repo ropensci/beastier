@@ -7,9 +7,8 @@ documentation.}
 \usage{
 default_params_doc(clock_model, clock_models, crown_age, crown_ages,
   fasta_filename, fasta_filenames, fixed_crown_age, fixed_crown_ages,
-  initial_phylogenies, input_fasta_filenames, mcmc, misc_options,
-  output_xml_filename, sequence_length, site_model, site_models, tree_prior,
-  tree_priors, verbose)
+  initial_phylogenies, input_filenames, mcmc, misc_options, output_filename,
+  sequence_length, site_model, site_models, tree_prior, tree_priors, verbose)
 }
 \arguments{
 \item{clock_model}{a \code{beautier} clock model}
@@ -40,13 +39,13 @@ of the initial phylogeny.}
 Each one set to NA will result in BEAST2 using a random phylogeny. Else
 the phylogeny is assumed to be of class ape::phylo.}
 
-\item{input_fasta_filenames}{One or more FASTA filenames.}
+\item{input_filenames}{One or more FASTA filenames.}
 
 \item{mcmc}{one \code{beautier} mcmc object}
 
 \item{misc_options}{one \code{beautier} misc_options object}
 
-\item{output_xml_filename}{Name of the XML parameter file created by this
+\item{output_filename}{Name of the XML parameter file created by this
 function. BEAST2 uses this file as input.}
 
 \item{sequence_length}{a DNA sequence length, in base pairs}

@@ -19,10 +19,10 @@
 #' @param initial_phylogenies one or more MCMC chain's initial phylogenies.
 #'   Each one set to NA will result in BEAST2 using a random phylogeny. Else
 #'   the phylogeny is assumed to be of class ape::phylo.
-#' @param input_fasta_filenames One or more FASTA filenames.
+#' @param input_filenames One or more FASTA filenames.
 #' @param mcmc one \code{beautier} mcmc object
 #' @param misc_options one \code{beautier} misc_options object
-#' @param output_xml_filename Name of the XML parameter file created by this
+#' @param output_filename Name of the XML parameter file created by this
 #'   function. BEAST2 uses this file as input.
 #' @param sequence_length a DNA sequence length, in base pairs
 #' @param site_model a \code{beautier} site model
@@ -39,10 +39,10 @@ default_params_doc <- function(
   fixed_crown_age,
   fixed_crown_ages,
   initial_phylogenies,
-  input_fasta_filenames,
+  input_filenames,
   mcmc,
   misc_options,
-  output_xml_filename,
+  output_filename,
   sequence_length,
   site_model, site_models,
   tree_prior, tree_priors,
