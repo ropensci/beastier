@@ -1,8 +1,31 @@
 #' Run BEAST2
 #' @param input_filename the name of a BEAST2 input XML file
+#' @param output_log_filename name of the .log file to create
+#' @param output_trees_filenames one or more names for .trees file to create.
+#'   There will be one .trees file created per alignment in the input
+#'   file. The number of alignments must equal the number of .trees
+#'   filenames, else an error is thrown. Alignments are sorted alphabetically
+#'   by their IDs
+#' @param output_state_filename name of the .xml.state file to create
 #' @param verbose show more (debug) output
 #' @param beast_jar_path the path of \code{beast.jar}
 #' @export
+#' @examples
+#'   output_log_filename <- "out.log"
+#'   output_trees_filename <- "out.trees"
+#'   output_state_filename <- "out.state"
+#'
+#'   run_beast2(
+#'     input_filename = get_path("2_4.xml"),
+#'     output_log_filename = output_log_filename,
+#'     output_trees_filenames = output_trees_filename,
+#'     output_state_filename = output_state_filename
+#'   )
+#'
+#'   testit::assert(files.exists(output_log_filename))
+#'   testit::assert(files.exists(output_trees_filename))
+#'   testit::assert(files.exists(output_state_filename))
+#'
 #' @author Richel J.C. Bilderbeek
 run_beast2 <- function(
   input_filename,
