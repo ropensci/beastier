@@ -13,3 +13,6 @@ Anthus_nd2.trees
 Anthus_nd2.xml.state
 test_output_0.log
 test_output_0.trees
+out.log
+out.trees
+out.xml.state
