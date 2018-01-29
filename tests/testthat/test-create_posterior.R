@@ -34,6 +34,7 @@ test_that("use", {
     )
   )
 
+  skip("No two alignments")
   testthat::expect_silent(
     beastier:::create_posterior(
       n_taxa = 2,
@@ -134,6 +135,8 @@ test_that("Two fixed crown ages must have equal TreeHeights", {
 
   if (!beastier:::is_on_travis()) return()
 
+  skip("No two alignments")
+
   posterior <- beastier:::create_posterior(
     n_taxa = 5,
     sequence_length = 10,
@@ -171,6 +174,8 @@ test_that(paste0("Two same fixed crown ages must result in a posterior ",
 
   if (!beastier:::is_on_travis()) return()
 
+  skip("No two alignments")
+
   crown_age <- 123
   posterior <- beastier:::create_posterior(
     n_taxa = 5,
@@ -191,6 +196,8 @@ test_that(paste0("Two different fixed crown ages must result in a posterior ",
   "with the first crown age's TreeHeight"), {
 
   if (!beastier:::is_on_travis()) return()
+
+  skip("No two alignments")
 
   crown_age_1 <- 123
   crown_age_2 <- 234
@@ -214,6 +221,8 @@ test_that(paste0("One fixed crown age, one estimated, ",
 ), {
 
   if (!beastier:::is_on_travis()) return()
+
+  skip("No two alignments")
 
   crown_age <- 123
   posterior <- beastier:::create_posterior(
