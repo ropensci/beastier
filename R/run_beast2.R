@@ -58,7 +58,7 @@ run_beast2 <- function(
     )
   }
 
-  alignment_ids <- get_alignment_ids(input_filename)
+  alignment_ids <- get_alignment_ids(input_filename) # nolint internal function
 
   if (length(output_trees_filenames) != length(alignment_ids)) {
     stop(

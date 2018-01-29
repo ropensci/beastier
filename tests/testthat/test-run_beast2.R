@@ -6,7 +6,9 @@ test_that("single alignment creates all files", {
   output_trees_filenames <- "tmp_single.trees"
   output_state_filename <- "tmp_single.state"
 
-  output_files <- c(output_log_filename, output_trees_filenames, output_state_filename)
+  output_files <- c(output_log_filename, output_trees_filenames,
+    output_state_filename
+  )
   beastier:::remove_files(output_files)
   testit::assert(!beastier:::files_exist(output_files))
 
@@ -29,7 +31,9 @@ test_that("two alignments creates all files", {
   output_trees_filenames <- c("tmp_two_a.trees", "tmp_two_b.trees")
   output_state_filename <- "tmp_two.state"
 
-  output_files <- c(output_log_filename, output_trees_filenames, output_state_filename)
+  output_files <- c(output_log_filename, output_trees_filenames,
+    output_state_filename
+  )
   beastier:::remove_files(output_files)
   testit::assert(!beastier:::files_exist(output_files))
 
@@ -72,7 +76,10 @@ test_that("abuse", {
       input_filename = get_path("2_4.xml"),
       output_trees_filenames = c("too", "much")
     ),
-    "'output_trees_filenames' must have as much elements as 'input_filename' has alignments"
+    paste0(
+      "'output_trees_filenames' must have as much elements ",
+      "as 'input_filename' has alignments"
+    )
   )
 
 })
