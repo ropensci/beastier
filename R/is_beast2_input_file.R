@@ -31,12 +31,10 @@ is_beast2_input_file <- function(
   status_code <- system(cmd, ignore.stderr = TRUE, ignore.stdout = TRUE)
 
   # Invalid files are not valid BEAST2 input files
-  if (status_code != 0) {
-    if (verbose) {
-      print(paste("Non-zero status code:", status_code))
-    }
-    return(FALSE)
-  }
+  # Create an if statement here, 
+  # if there is an input file that violates this assert,
+  # and add it to the test
+  testit::assert(status_code == 0)
 
   # Valid BEAST2 input files will result in an output with 'Done!' at the
   # last line
