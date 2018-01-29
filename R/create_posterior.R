@@ -81,19 +81,14 @@ create_posterior <- function(
   }
 
   # Run BEAST2 to measure posterior
-  remove_files(
-    c(beast_state_filename, beast_log_filename, beast_trees_filename))
-  testthat::expect_false(files_exist(
-    c(beast_state_filename, beast_log_filename, beast_trees_filename)))
-  cmd <- paste(
-    "java -jar ~/Programs/beast/lib/beast.jar",
-    " -statefile ", beast_state_filename,
-    " -overwrite", beast_filename
+  run_beast2(
+    input_filename = beast_filename,
+    output_log_filename = beast_log_filename,
+    output_trees_filenames = beast_trees_filename,
+    output_state_filename = beast_state_filename,
+    verbose = verbose
   )
-  if (!verbose) {
-    cmd <- paste(cmd, "1>/dev/null 2>/dev/null")
-  }
-  system(cmd)
+
   # If these are absent, BEAST2 could not parse the input file
   testthat::expect_true(file.exists(beast_state_filename))
   testthat::expect_true(file.exists(beast_log_filename))
