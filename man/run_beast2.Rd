@@ -41,9 +41,9 @@ Run BEAST2
     output_state_filename = output_state_filename
   )
 
-  testit::assert(files.exists(output_log_filename))
-  testit::assert(files.exists(output_trees_filename))
-  testit::assert(files.exists(output_state_filename))
+  testit::assert(file.exists(output_log_filename))
+  testit::assert(file.exists(output_trees_filename))
+  testit::assert(file.exists(output_state_filename))
 
 }
 \author{

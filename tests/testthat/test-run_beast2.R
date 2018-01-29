@@ -20,6 +20,7 @@ test_that("single alignment creates all files", {
   )
 
   testthat::expect_true(beastier:::files_exist(output_files))
+  beastier:::remove_files(output_files)
 })
 
 test_that("two alignments creates all files", {
@@ -42,6 +43,7 @@ test_that("two alignments creates all files", {
   )
 
   testthat::expect_true(beastier:::files_exist(output_files))
+  beastier:::remove_files(output_files)
 })
 
 

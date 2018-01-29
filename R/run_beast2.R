@@ -22,9 +22,9 @@
 #'     output_state_filename = output_state_filename
 #'   )
 #'
-#'   testit::assert(files.exists(output_log_filename))
-#'   testit::assert(files.exists(output_trees_filename))
-#'   testit::assert(files.exists(output_state_filename))
+#'   testit::assert(file.exists(output_log_filename))
+#'   testit::assert(file.exists(output_trees_filename))
+#'   testit::assert(file.exists(output_state_filename))
 #'
 #' @author Richel J.C. Bilderbeek
 run_beast2 <- function(
@@ -90,27 +90,22 @@ run_beast2 <- function(
   }
   exit_code <- system(cmd, intern = FALSE)
 
-  if (verbose) {
-    print(paste("beast exited with error code", exit_code))
-    print(paste("beast_log_filename:", beast_log_filename))
-    print(paste("beast_trees_filenames:", beast_trees_filenames))
-    print(paste("output_state_filename:", output_state_filename))
-    print(paste("file.exists(beast_log_filename):", file.exists(beast_log_filename)))
-    print(paste("file.exists(beast_trees_filenames):", file.exists(beast_trees_filenames)))
-    print(paste("file.exists(output_state_filename):", file.exists(output_state_filename)))
-  }
-  # If these are absent, BEAST2 could not parse the input file
+  testit::assert(exit_code == 0)
   testit::assert(file.exists(output_state_filename))
   testit::assert(file.exists(beast_log_filename))
   testit::assert(file.exists(beast_trees_filenames))
 
-  file.copy(from = beast_log_filename, to = output_log_filename, overwrite = TRUE)
-  for (i in seq_along(output_trees_filenames)) {
+  if (beast_log_filename != output_log_filename) {
+    file.copy(from = beast_log_filename, to = output_log_filename,
+      overwrite = TRUE)
+    file.remove(beast_log_filename)
+  }
+  for (i in seq_along(beast_trees_filenames)) {
     from <- beast_trees_filenames[i]
     to <- output_trees_filenames[i]
-    file.copy(from = from, to = to, overwrite = TRUE)
+    if (from != to) {
+      file.copy(from = from, to = to, overwrite = TRUE)
+      file.remove(from)
+    }
   }
-
-  file.remove(beast_log_filename)
-  file.remove(beast_trees_filenames)
 }
