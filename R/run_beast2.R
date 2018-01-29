@@ -32,8 +32,9 @@ run_beast2 <- function(
     )
   }
 
-  base_filename <- basename(input_filename)
+  alignment_ids <- get_alignment_ids(input_filename)
   # BEAST2 output file, containing the posterior parameter estimates
+
   beast_log_filename <- paste0(base_filename, ".log")
   # BEAST2 output file, containing the posterior phylogenies
   beast_trees_filename <- paste0(base_filename, ".trees")
@@ -53,7 +54,17 @@ run_beast2 <- function(
   if (!verbose) {
     cmd <- paste(cmd, "1>/dev/null 2>/dev/null")
   }
-  system(cmd, intern = FALSE)
+  exit_code <- system(cmd, intern = FALSE)
+
+  if (verbose) {
+    print(paste("beast exited with error code", exit_code))
+    print(paste("beast_log_filename:", beast_log_filename))
+    print(paste("beast_trees_filename:", beast_trees_filename))
+    print(paste("beast_state_filename:", beast_state_filename))
+    print(paste("file.exists(beast_log_filename):", file.exists(beast_log_filename)))
+    print(paste("file.exists(beast_trees_filename):", file.exists(beast_trees_filename)))
+    print(paste("file.exists(beast_state_filename):", file.exists(beast_state_filename)))
+  }
   # If these are absent, BEAST2 could not parse the input file
   testit::assert(file.exists(beast_state_filename))
   testit::assert(file.exists(beast_log_filename))

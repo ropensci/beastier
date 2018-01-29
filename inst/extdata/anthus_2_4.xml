@@ -74,8 +74,8 @@ name="alignment">
 <map name="OneOnX" >beast.math.distributions.OneOnX</map>
 
 
-<run id="mcmc" spec="MCMC" chainLength="10000000">
-    <state id="state" storeEvery="5000">
+<run id="mcmc" spec="MCMC" chainLength="1000">
+    <state id="state" storeEvery="100">
         <tree id="Tree.t:Anthus_nd2" name="stateNode">
             <taxonset id="TaxonSet.Anthus_nd2" spec="TaxonSet">
                 <alignment idref="Anthus_nd2"/>

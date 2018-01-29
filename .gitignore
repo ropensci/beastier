@@ -7,3 +7,9 @@ tests/testthat/tmp_*
 tests/testthat/*.fasta
 tests/testthat/*.xml
 tmp_*
+Anthus_aco.log
+Anthus_aco.trees
+Anthus_nd2.trees
+Anthus_nd2.xml.state
+test_output_0.log
+test_output_0.trees

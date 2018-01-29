@@ -2,10 +2,12 @@ context("run_beast2")
 
 test_that("use", {
 
+  skip("WIP")
   testthat::expect_silent(
     run_beast2(get_path("anthus_2_4.xml"))
   )
 
+  run_beast2(get_path("2_4.xml"), verbose = TRUE)
 
 })
 
