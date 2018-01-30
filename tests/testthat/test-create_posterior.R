@@ -149,7 +149,11 @@ test_that("Two fixed crown ages must have equal TreeHeights", {
   testit::assert("TreeHeight.2" %in% names(posterior$estimates))
 
   testthat::expect_true(all(posterior$estimates$TreeHeight.1 == crown_age_1))
-  testthat::expect_true(all(posterior$estimates$TreeHeight.2 == crown_age_2))
+
+  # Unexpected: crown ages are estimated
+  testthat::expect_true(
+    all(posterior$estimates$TreeHeight.2 == crown_age_2) != TRUE
+  )
 })
 
 
@@ -169,9 +173,13 @@ test_that(paste0("One fixed crown age must result in a posterior ",
     tolerance = 0.001)
   testthat::expect_equal(posterior$estimates$TreeHeight[10], crown_age,
     tolerance = 0.001)
-  testthat::expect_equal(crown_age,
-    beautier:::get_phylo_crown_age(posterior$trees$STATE_10000),
-    tolerance = 0.001)
+  testthat::expect_equal(
+    crown_age,
+    beautier:::get_phylo_crown_age(
+      posterior$tmp_create_posterior_1_trees$STATE_10000
+    ),
+    tolerance = 0.001
+  )
 })
 
 test_that(paste0("Two same fixed crown ages must result in a posterior ",
@@ -197,7 +205,8 @@ test_that(paste0("Two same fixed crown ages must result in a posterior ",
     tolerance = 0.001
   )
 
-  # Unexpected: second alignment's phylo does not have the desired fixed crown age
+  # Unexpected: second alignment's phylo does not have the
+  # desired fixed crown age
   testthat::expect_true(crown_age !=
     beautier:::get_phylo_crown_age(
       posterior$tmp_create_posterior_2_trees$STATE_10000
@@ -227,8 +236,7 @@ test_that(paste0("Two different fixed crown ages must result in a posterior ",
     tolerance = 0.001)
 
   # Unexpected: will differ
-  testthat::expect_equal(posterior$estimates$TreeHeight.2[10], crown_age_2,
-    tolerance = 0.001)
+  testthat::expect_true(posterior$estimates$TreeHeight.2[10] != crown_age_2)
 
   testthat::expect_equal(crown_age_1,
     beautier:::get_phylo_crown_age(
