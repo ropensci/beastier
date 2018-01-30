@@ -124,3 +124,44 @@ test_that("abuse", {
   )
 
 })
+
+test_that("Create data from anthus_15_15_long.xml", {
+
+  return()
+
+  output_log_filename <- "15_15_long.log"
+  output_trees_filenames <- c("15_15_long_a.trees", "15_15_long_b.trees")
+  output_state_filename <- "15_15_long.state"
+
+  output_files <- c(output_log_filename, output_trees_filenames,
+    output_state_filename
+  )
+  beastier:::remove_files(output_files)
+  testit::assert(!beastier:::files_exist(output_files))
+
+  testthat::expect_silent(
+    run_beast2(
+      input_filename = get_path("anthus_15_15_long.xml"),
+      output_log_filename = output_log_filename,
+      output_trees_filenames = output_trees_filenames,
+      output_state_filename = output_state_filename
+    )
+  )
+
+  testthat::expect_true(beastier:::files_exist(output_files))
+
+  out <- tracerer::parse_beast_posterior(
+    output_trees_filenames, output_log_filename
+  )
+  n <- length(out$estimates$TreeHeight.aco)
+  testthat::expect_true(all.equal(out$estimates$TreeHeight.aco, rep(15, n)))
+
+  # Unexpected: this will fail:
+  # Even though the crown ages of both initial phylogenies have been fixed,
+  # the second TreeHeights will deviate from it
+  testthat::expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
+    != TRUE
+  )
+
+  # Copy those file to where needed
+})
