@@ -73,12 +73,7 @@ create_posterior <- function(
     initial_phylogenies = initial_phylogenies
   )
   testit::assert(file.exists(beast_filename))
-  if (!is_beast2_input_file(beast_filename)) {
-    print(paste(
-      "Error: file '", beast_filename, "' is not a valid BEAST2 file:")
-    )
-    is_beast2_input_file(beast_filename, verbose = verbose) # nolint internal function
-  }
+  testit::assert(is_beast2_input_file(beast_filename)) # nolint internal function
 
   # Run BEAST2 to measure posterior
   run_beast2(
