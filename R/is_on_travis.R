@@ -3,5 +3,4 @@
 #' @author Richel J.C. Bilderbeek
 is_on_travis <- function() {
   Sys.getenv("TRAVIS") != ""
-  TRUE
 }
