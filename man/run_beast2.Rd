@@ -5,7 +5,7 @@
 \title{Run BEAST2}
 \usage{
 run_beast2(input_filename, output_log_filename = "out.log",
-  output_trees_filenames = "out.trees",
+  output_trees_filenames = get_trees_filenames(input_filename),
   output_state_filename = "out.xml.state",
   beast_jar_path = "~/Programs/beast/lib/beast.jar", verbose = FALSE)
 }

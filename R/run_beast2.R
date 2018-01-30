@@ -30,7 +30,7 @@
 run_beast2 <- function(
   input_filename,
   output_log_filename = "out.log",
-  output_trees_filenames = "out.trees",
+  output_trees_filenames = get_trees_filenames(input_filename),
   output_state_filename = "out.xml.state",
   beast_jar_path = "~/Programs/beast/lib/beast.jar",
   verbose = FALSE
@@ -75,7 +75,7 @@ run_beast2 <- function(
   # BEAST2 output file, containing the posterior phylogenies
   beast_trees_filenames <- paste0(alignment_ids, ".trees")
 
-  # Run BEAST2 to measure posterior
+  # Run BEAST2
   remove_files(
     c(output_state_filename, beast_log_filename, beast_trees_filenames))
   testthat::expect_false(files_exist(
@@ -100,6 +100,10 @@ run_beast2 <- function(
       overwrite = TRUE)
     file.remove(beast_log_filename)
   }
+
+  testit::assert(length(beast_trees_filenames)
+    == length(output_trees_filenames))
+
   for (i in seq_along(beast_trees_filenames)) {
     from <- beast_trees_filenames[i]
     to <- output_trees_filenames[i]
@@ -108,4 +112,8 @@ run_beast2 <- function(
       file.remove(from)
     }
   }
+
+  testit::assert(file.exists(output_log_filename))
+  testit::assert(files_exist(output_trees_filenames))
+  testit::assert(file.exists(output_state_filename))
 }

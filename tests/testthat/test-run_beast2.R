@@ -51,6 +51,47 @@ test_that("two alignments creates all files", {
 })
 
 
+
+test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
+
+  output_log_filename <- "15_15.log"
+  output_trees_filenames <- c("15_15_a.trees", "15_15_b.trees")
+  output_state_filename <- "15_15.state"
+
+  output_files <- c(output_log_filename, output_trees_filenames,
+    output_state_filename
+  )
+  beastier:::remove_files(output_files)
+  testit::assert(!beastier:::files_exist(output_files))
+
+  testthat::expect_silent(
+    run_beast2(
+      input_filename = get_path("anthus_15_15.xml"),
+      output_log_filename = output_log_filename,
+      output_trees_filenames = output_trees_filenames,
+      output_state_filename = output_state_filename
+    )
+  )
+
+  testthat::expect_true(beastier:::files_exist(output_files))
+
+  out <- tracerer::parse_beast_posterior(
+    output_trees_filenames, output_log_filename
+  )
+  n <- length(out$estimates$TreeHeight.aco)
+  testthat::expect_true(all.equal(out$estimates$TreeHeight.aco, rep(15, n)))
+
+  # Unexpected: this will fail:
+  # Even though the crown ages of both initial phylogenies have been fixed,
+  # the second TreeHeights will deviate from it
+  testthat::expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
+    != TRUE
+  )
+
+  beastier:::remove_files(output_files)
+})
+
+
 test_that("abuse", {
 
   testthat::expect_error(

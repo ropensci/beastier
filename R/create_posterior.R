@@ -29,14 +29,13 @@ create_posterior <- function(
   # BEAST2 output file, containing the posterior parameter estimates
   beast_log_filename <- paste0(base_filename, ".log")
   # BEAST2 output file, containing the posterior phylogenies
-  beast_trees_filename <- paste0(base_filename, ".trees")
+  beast_trees_filenames <- paste0(base_filename, "_", seq_along(crown_ages), ".trees")
   # BEAST2 output file, containing the final MCMC state
   beast_state_filename <- paste0(base_filename, ".xml.state")
   # FASTA file needed only temporarily to store simulated DNA alignments
   input_filenames <- paste0(
     paste0(base_filename, "_", seq_along(crown_ages)), ".fasta"
   )
-  input_filenames[1] <- paste0(base_filename, ".fasta")
 
   # Create FASTA file
   create_random_fastas(
@@ -79,26 +78,26 @@ create_posterior <- function(
   run_beast2(
     input_filename = beast_filename,
     output_log_filename = beast_log_filename,
-    output_trees_filenames = beast_trees_filename,
+    output_trees_filenames = beast_trees_filenames,
     output_state_filename = beast_state_filename,
     verbose = verbose
   )
 
   # If these are absent, BEAST2 could not parse the input file
-  testthat::expect_true(file.exists(beast_state_filename))
   testthat::expect_true(file.exists(beast_log_filename))
-  testthat::expect_true(file.exists(beast_trees_filename))
+  testthat::expect_true(files_exist(beast_trees_filenames))
+  testthat::expect_true(file.exists(beast_state_filename))
 
   # All TreeHeights (crown ages) should be the same
   posterior <- tracerer::parse_beast_posterior(
-    trees_filename = beast_trees_filename,
+    trees_filename = beast_trees_filenames,
     log_filename = beast_log_filename)
 
   remove_files(input_filenames) # nolint internal function
   remove_files(  # nolint internal function
     c(
       beast_filename, beast_state_filename,
-      beast_log_filename, beast_trees_filename
+      beast_log_filename, beast_trees_filenames
     )
   )
 

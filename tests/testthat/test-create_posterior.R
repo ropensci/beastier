@@ -34,7 +34,6 @@ test_that("use", {
     )
   )
 
-  skip("No two alignments")
   testthat::expect_silent(
     beastier:::create_posterior(
       n_taxa = 2,
@@ -135,16 +134,24 @@ test_that("Two fixed crown ages must have equal TreeHeights", {
 
   if (!beastier:::is_on_travis()) return()
 
-  skip("No two alignments")
-
+  crown_age_1 <- 15
+  crown_age_2 <- 15
   posterior <- beastier:::create_posterior(
     n_taxa = 5,
     sequence_length = 10,
     mcmc = beautier::create_mcmc(chain_length = 10000),
-    crown_ages = c(15, 15)
+    crown_ages = c(crown_age_1, crown_age_2)
   )
-  testthat::expect_true(all(posterior$estimates$TreeHeight
-    == posterior$estimates$TreeHeight[1]))
+  testit::assert("estimates" %in% names(posterior))
+  testit::assert("tmp_create_posterior_1_trees" %in% names(posterior))
+  testit::assert("tmp_create_posterior_2_trees" %in% names(posterior))
+  testit::assert("TreeHeight.1" %in% names(posterior$estimates))
+  testit::assert("TreeHeight.2" %in% names(posterior$estimates))
+
+  posterior$estimates$TreeHeight.1
+  posterior$estimates$TreeHeight.2
+  testthat::expect_true(all(posterior$estimates$TreeHeight.1 == crown_age_1))
+  testthat::expect_true(all(posterior$estimates$TreeHeight.2 == crown_age_2))
 })
 
 
