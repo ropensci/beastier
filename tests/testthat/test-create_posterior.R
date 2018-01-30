@@ -149,7 +149,9 @@ test_that("Two fixed crown ages must have equal TreeHeights", {
   testit::assert("TreeHeight.2" %in% names(posterior$estimates))
 
   n <- length(posterior$estimates$TreeHeight.1)
-  testthat::expect_true(all.equal(posterior$estimates$TreeHeight.1, rep(crown_age_1, n)))
+  testthat::expect_true(
+    all.equal(posterior$estimates$TreeHeight.1, rep(crown_age_1, n))
+  )
 
   # Unexpected: should be all of crown age
   testthat::expect_true(
@@ -197,7 +199,9 @@ test_that(paste0("Two same fixed crown ages must result in a posterior ",
   )
   n <- length(posterior$estimates$TreeHeight.1)
 
-  testthat::expect_true(all.equal(posterior$estimates$TreeHeight.1, rep(crown_age, n)))
+  testthat::expect_true(
+    all.equal(posterior$estimates$TreeHeight.1, rep(crown_age, n))
+  )
 
   # Unexpected: should be all of crown age
   testthat::expect_true(
