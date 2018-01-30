@@ -2,7 +2,5 @@
 ^\.Rproj\.user$
 ^\.travis.yml$
 ^.lintr$
-^Codecov\.png$
-^TravisCI\.png$
 ^install_beast2$
 ^pics$
