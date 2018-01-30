@@ -114,6 +114,6 @@ run_beast2 <- function(
   }
 
   testit::assert(file.exists(output_log_filename))
-  testit::assert(files_exist(output_trees_filenames))
+  testit::assert(files_exist(output_trees_filenames)) # nolint internal function
   testit::assert(file.exists(output_state_filename))
 }
