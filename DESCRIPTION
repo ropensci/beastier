@@ -13,6 +13,7 @@ RoxygenNote: 6.0.1
 Imports:
   ape,
   beautier,
+  phangorn,
   tracerer,
   stringr,
   xml2
