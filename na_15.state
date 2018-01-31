@@ -1,0 +1,26 @@
+<itsabeastystatewerein version='2.0' sample='10000'>
+<statenode id='Tree.t:anthus_aco'>(((((((((0:1.842688217352254E-4,16:1.842688217352254E-4)36:2.2351650792846572E-4,2:4.077853296636911E-4)41:2.1700151506708943E-4,4:6.247868447307806E-4)33:2.840041967941408E-4,19:9.087910415249214E-4)22:1.3157673271034596E-5,10:9.21948714795956E-4)32:0.0022829786767924742,8:0.0032049273915884303)25:0.002012284661067326,((3:3.751891148550934E-4,14:3.751891148550934E-4)27:0.003641786178349347,((7:1.806384551759076E-4,12:1.806384551759076E-4)26:0.0015278447649697173,15:0.001708483220145625)35:0.0023084920730588156)29:0.0012002367594513156)23:1.9902359632436358E-4,13:0.00541623564898012)37:0.007097227224335706,(((((1:0.0012283360075620413,18:0.0012283360075620413)39:0.0010852478662505263,6:0.0023135838738125676)24:7.632700924120246E-4,9:0.003076853966224592)34:0.00252169649535895,5:0.005598550461583542)30:0.0011009047085854548,(((11:6.060209340577987E-4,21:6.060209340577987E-4)28:5.817285411719688E-4,17:0.0011877494752297675)40:5.960052362072449E-4,20:0.0017837547114370124)38:0.004915700458731985)31:0.0058140077031468285)42:0.0</statenode>
+<statenode id='Tree.t:anthus_nd2'>((((((0:7.478997640287074E-4,16:7.479001240305135E-4)25:1.5056751640553378E-4,((2:7.279749336528222E-4,(10:5.258749154060774E-4,18:5.258752654069945E-4)22:2.021006182450181E-4)27:2.5738067206155005E-5,4:7.537136408572538E-4)26:1.4475363957698736E-4)31:0.009464559399349459,13:0.010363026589784581)33:0.006463822361688342,((((3:5.03085174997996E-4,20:5.030855349980258E-4)36:0.002645455850977334,((7:5.343218204992246E-4,12:5.34316720500579E-4)29:0.0016319705843392492,15:0.002166292304836689)30:9.822486811386375E-4)37:5.518467157812398E-4,14:0.0037003874017565415)24:0.009332636269640471,19:0.01303302411139705)28:0.0037938250300750005)34:2.2553779541263294E-4,((((1:7.17444862783288E-4,6:7.174400627864435E-4)40:0.003628755179699506,9:0.004346200342484595)38:0.009098061286794305,(5:0.010925166823040894,(11:0.004241672993222298,17:0.00424167289322229)23:0.006683494269818633)32:0.002519094406236197)39:0.001452427382043469,8:0.014896689311322394)35:0.002155697885564087)41:0.028590676220818352,21:0.045643063157703036)42:0.0</statenode>
+<statenode id='clockRate.c:anthus_nd2'>clockRate.c:anthus_nd2[1 1] (0.0,Infinity): 3.3897308038526215 </statenode>
+<statenode id='birthRate.t:anthus_aco'>birthRate.t:anthus_aco[1 1] (-Infinity,Infinity): 325.2252015366239 </statenode>
+<statenode id='birthRate.t:anthus_nd2'>birthRate.t:anthus_nd2[1 1] (-Infinity,Infinity): 109.52723647262482 </statenode>
+</itsabeastystatewerein>
+<!--
+{"operators":[
+{"id":"YuleBirthRateScaler.t:anthus_aco","p":0.75,"accept":164,"reject":49,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelTreeScaler.t:anthus_aco","p":0.5,"accept":67,"reject":164,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelTreeRootScaler.t:anthus_aco","p":0.5,"accept":56,"reject":145,"acceptFC":0,"rejectFC":0,"rejectIv":24,"rejectOp":24},
+{"id":"YuleModelUniformOperator.t:anthus_aco","p":"NaN","accept":1345,"reject":850,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelSubtreeSlide.t:anthus_aco","p":1,"accept":5,"reject":1098,"acceptFC":0,"rejectFC":0,"rejectIv":568,"rejectOp":568},
+{"id":"YuleModelNarrow.t:anthus_aco","p":"NaN","accept":482,"reject":613,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelWide.t:anthus_aco","p":"NaN","accept":10,"reject":196,"acceptFC":0,"rejectFC":0,"rejectIv":111,"rejectOp":111},
+{"id":"YuleModelWilsonBalding.t:anthus_aco","p":"NaN","accept":23,"reject":226,"acceptFC":0,"rejectFC":0,"rejectIv":39,"rejectOp":39},
+{"id":"YuleBirthRateScaler.t:anthus_nd2","p":0.75,"accept":164,"reject":43,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelUniformOperator.t:anthus_nd2","p":"NaN","accept":850,"reject":1480,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelNarrow.t:anthus_nd2","p":"NaN","accept":198,"reject":897,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
+{"id":"YuleModelWide.t:anthus_nd2","p":"NaN","accept":11,"reject":211,"acceptFC":0,"rejectFC":0,"rejectIv":116,"rejectOp":116},
+{"id":"YuleModelWilsonBalding.t:anthus_nd2","p":"NaN","accept":4,"reject":218,"acceptFC":0,"rejectFC":0,"rejectIv":46,"rejectOp":46},
+{"id":"StrictClockRateScaler.c:anthus_nd2","p":0.75,"accept":64,"reject":151,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0},
+{"id":"strictClockUpDownOperator.c:anthus_nd2","p":0.75,"accept":170,"reject":47,"acceptFC":0,"rejectFC":0,"rejectIv":0,"rejectOp":0}
+]}
+-->

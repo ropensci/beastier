@@ -1,0 +1,88 @@
+#
+#model:
+#
+#<?xml version="1.0" encoding="UTF-8" standalone="no"?><input id="posterior" spec="beast.core.util.CompoundDistribution">
+#    <distribution id="prior" spec="beast.core.util.CompoundDistribution">
+#        <distribution id="YuleModel.t:anthus_aco" spec="beast.evolution.speciation.YuleModel">
+#            <parameter id="birthRate.t:anthus_aco" name="birthDiffRate">1.0</parameter>
+#            <tree id="Tree.t:anthus_aco">
+#                <taxonset id="TaxonSet.anthus_aco" spec="beast.evolution.alignment.TaxonSet">
+#                </taxonset>
+#            </tree>
+#        </distribution>
+#        <prior id="YuleBirthRatePrior.t:anthus_aco" name="distribution" x="@birthRate.t:anthus_aco">
+#            <Uniform id="Uniform.100" name="distr" upper="Infinity"/>
+#        </prior>
+#        <distribution id="YuleModel.t:anthus_nd2" spec="beast.evolution.speciation.YuleModel">
+#            <parameter id="birthRate.t:anthus_nd2" name="birthDiffRate">1.0</parameter>
+#            <tree IsLabelledNewick="true" adjustTipHeights="false" id="Tree.t:anthus_nd2" newick="(630116_nd2:15,((KU25127_nd2:0.2289483736,B41613_nd2:0.2289483736):10.97692072,(((FALK1_nd2:0.1670800418,(UWBM54556_nd2:0.15271682,630210_nd2:0.15271682):0.01436322184):0.6698385208,UWBM54394_nd2:0.8369185626):9.242001636,((dabbenei_nd2:2.965690015,(626029_nd2:2.171294009,(B25702_nd2:1.563590674,KU9813_nd2:1.563590674):0.6077033349):0.7943960054):3.433929628,((UWBM54511_nd2:1.619641097,(((((chacoensis_nd2:0.1115527726,KU21673_nd2:0.1115527726):0.1991400433,meridae_nd2:0.3106928159):0.9535561848,(AMNH13589_nd2:0.3436562283,61430_nd2:0.3436562283):0.9205927723):0.04547488349,KU3604_nd2:1.309723884):0.2627179436,bas3_nd2:1.572441828):0.04719926895):2.778153692,((B431_nd2:0.2099125727,B87109_nd2:0.2099125727):3.311002998,B48218_nd2:3.520915571):0.876879218):2.001824854):3.679300556):1.1269489):3.794130902);" spec="beast.util.TreeParser">
+#                <taxonset id="TaxonSet" spec="beast.evolution.alignment.TaxonSet">
+#                    <taxon id="61430_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="626029_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="630116_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="630210_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="AMNH13589_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="B25702_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="B41613_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="B431_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="B48218_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="B87109_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="FALK1_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="KU21673_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="KU25127_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="KU3604_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="KU9813_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="UWBM54394_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="UWBM54511_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="UWBM54556_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="bas3_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="chacoensis_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="dabbenei_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                    <taxon id="meridae_nd2" spec="beast.evolution.alignment.Taxon"/>
+#                </taxonset>
+#            </tree>
+#        </distribution>
+#        <prior id="YuleBirthRatePrior.t:anthus_nd2" name="distribution" x="@birthRate.t:anthus_nd2">
+#            <Uniform id="Uniform.101" name="distr" upper="Infinity"/>
+#        </prior>
+#        <prior id="ClockPrior.c:anthus_nd2" name="distribution">
+#            <parameter id="clockRate.c:anthus_nd2" name="x">1.0</parameter>
+#            <Uniform id="Uniform.1" name="distr" upper="Infinity"/>
+#        </prior>
+#    </distribution>
+#    <distribution id="likelihood" spec="beast.core.util.CompoundDistribution" useThreads="true">
+#        <distribution data="@anthus_aco" id="treeLikelihood.anthus_aco" spec="beast.evolution.likelihood.ThreadedTreeLikelihood" tree="@Tree.t:anthus_aco">
+#            <siteModel id="SiteModel.s:anthus_aco" spec="beast.evolution.sitemodel.SiteModel">
+#                <parameter estimate="false" id="mutationRate.s:anthus_aco" name="mutationRate">1.0</parameter>
+#                <parameter estimate="false" id="gammaShape.s:anthus_aco" name="shape">1.0</parameter>
+#                <parameter estimate="false" id="proportionInvariant.s:anthus_aco" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+#                <substModel id="JC69.s:anthus_aco" spec="beast.evolution.substitutionmodel.JukesCantor"/>
+#            </siteModel>
+#            <branchRateModel id="StrictClock.c:anthus_aco" spec="beast.evolution.branchratemodel.StrictClockModel">
+#                <parameter estimate="false" id="clockRate.c:anthus_aco" name="clock.rate">1.0</parameter>
+#            </branchRateModel>
+#        </distribution>
+#        <distribution data="@anthus_nd2" id="treeLikelihood.anthus_nd2" spec="beast.evolution.likelihood.ThreadedTreeLikelihood" tree="@Tree.t:anthus_nd2">
+#            <siteModel id="SiteModel.s:anthus_nd2" spec="beast.evolution.sitemodel.SiteModel">
+#                <parameter estimate="false" id="mutationRate.s:anthus_nd2" name="mutationRate">1.0</parameter>
+#                <parameter estimate="false" id="gammaShape.s:anthus_nd2" name="shape">1.0</parameter>
+#                <parameter estimate="false" id="proportionInvariant.s:anthus_nd2" lower="0.0" name="proportionInvariant" upper="1.0">0.0</parameter>
+#                <substModel id="JC69.s:anthus_nd2" spec="beast.evolution.substitutionmodel.JukesCantor"/>
+#            </siteModel>
+#            <branchRateModel clock.rate="@clockRate.c:anthus_nd2" id="StrictClock.c:anthus_nd2" spec="beast.evolution.branchratemodel.StrictClockModel"/>
+#        </distribution>
+#    </distribution>
+#</input>
+#
+Sample	posterior	likelihood	prior	treeLikelihood.aco	treeLikelihood.nd2	TreeHeight.aco	TreeHeight.nd2	clockRate	YuleModel.aco	YuleModel.nd2	birthRate.aco	birthRate.nd2
+0	-30938.26645390368	-30850.23506357345	-88.0313903302293	-7067.168366493643	-23783.06669707981	2.1059897340387392	15.000000001	1.0	-7.6001623222292904	-80.431228008	1.0	1.0
+1000	-12173.744686052169	-12191.031976644743	17.28729059257404	-2254.625501590185	-9936.406475054559	0.04629014177421306	8.173952432955558	0.5576008037324387	42.715212182770266	-25.427921590196227	8.262252563641733	0.6452073674372066
+2000	-7184.229184827546	-7258.482734619484	74.25354979193794	-1910.1322721210408	-5348.350462498443	0.013429865810808322	4.135753929761126	0.12210947183313156	85.4537662622199	-11.200216470281957	88.63208579772393	1.5743401541225577
+3000	-6550.59808277442	-6635.39018100155	84.79209822713051	-1899.2054183446405	-4736.18476265691	0.013367062878414993	2.9236859108778357	0.08053216338718759	90.79565801985133	-6.00355979272082	147.9297917112211	2.957198445587556
+4000	-6423.851722437814	-6545.979219367362	122.12749692954779	-1903.2261965369348	-4642.753022830428	0.012104406324187801	0.6243678495484806	0.33979784830351983	96.76086531180682	25.366631617740957	281.146521274234	7.278063477280242
+5000	-6370.255227480426	-6485.393702211919	115.13847473149319	-1865.2477377660389	-4620.14596444588	0.011565323054941547	0.7456714882757736	0.27663486587997765	94.03961266298084	21.098862068512343	240.33583298498135	6.847888377571751
+6000	-6336.754978850091	-6473.090033814397	136.33505496430615	-1858.4296706207479	-4614.66036319365	0.0113985230054199	0.2687402021687545	0.7214071516033479	94.45426009961281	41.88079486469334	183.49029009455933	20.55031657393622
+7000	-6341.329034807806	-6476.5677953883605	135.23876058055455	-1866.914145815391	-4609.65364957297	0.012362580602990477	0.2890621954169378	0.6769081611353567	94.97084292959957	40.26791765095499	257.7236258930558	19.110482792020367
+8000	-6312.907552453379	-6462.6267785399405	149.71922608656132	-1865.8812337306417	-4596.745544809299	0.012583810986538924	0.11987446098254916	1.5345599041199118	92.66720399183798	57.052022094723355	185.52268156680836	36.76913640566385
+9000	-6297.24433463005	-6451.16071830337	153.91638367332018	-1859.791334556548	-4591.369383746823	0.012916510030595386	0.09207255721271797	1.8663164011633726	92.34931126822238	61.56707240509782	229.83309562258796	47.210917384912165
+10000	-6267.477960627395	-6441.4901430214495	174.0121823940549	-1858.4195733230747	-4583.070569698375	0.012513462873315825	0.045643063417704834	3.3897308038526215	98.48520263139187	75.52697976266303	325.2252015366239	109.52723647262482
