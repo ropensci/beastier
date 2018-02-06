@@ -31,16 +31,16 @@ devtools::install_github("richelbilderbeek/beastier")
 
 See [FAQ](Faq.md)
 
-
 ## Missing features/unsupported
 
 `beastier` cannot do everything `BEAST2` can. 
 
 Here are some missing or (yet) unsupported features:
 
- * Setup BEAGLE
- * Continue a BEAST2 run
+ * Set a random number generator seed
  * Validate a BEAST2 input file
+ * Continue a BEAST2 run
+ * Setup BEAGLE
 
 ## There is a feature I miss
 

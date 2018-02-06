@@ -26,7 +26,8 @@ Article is still in preperation.
 
 ## What is the idea behind the logo?
 
-The logo consists of a rough redraw of Beast, a fictional character from Marvel Comics, 
+The logo consists of a rough redraw of Beast, 
+a fictional character from Marvel Comics, 
 and the R logo. 
 
 ## What are the FASTA files?
