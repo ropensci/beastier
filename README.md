@@ -9,7 +9,7 @@ develop|[![Build Status](https://travis-ci.org/richelbilderbeek/beastier.svg?bra
 
 ![beastier logo](pics/beastier_logo.png)
 
-`beastier` is part of the [babette](https://github.com/richelbilderbeek/babette) package suite:
+`beastier` is part of the [rbeast2](https://github.com/richelbilderbeek/rbeast2) package suite:
 
  * [beautier](https://github.com/richelbilderbeek/beautier) creates BEAST2 input (`.xml`) files.
  * [beastier](https://github.com/richelbilderbeek/beastier) runs BEAST2
