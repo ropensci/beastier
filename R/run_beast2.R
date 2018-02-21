@@ -80,10 +80,11 @@ run_beast2 <- function(
     c(output_state_filename, beast_log_filename, beast_trees_filenames))
   testthat::expect_false(files_exist(
     c(output_state_filename, beast_log_filename, beast_trees_filenames)))
-  cmd <- paste(
-    "java -jar", beast_jar_path,
-    " -statefile ", output_state_filename,
-    " -overwrite", input_filename
+  cmd <- create_beast2_cmd(
+    input_filename = input_filename,
+    output_state_filename = output_state_filename,
+    overwrite_state_file = TRUE,
+    beast_jar_path = beast_jar_path
   )
   if (!verbose) {
     cmd <- paste(cmd, "1>/dev/null 2>/dev/null")
