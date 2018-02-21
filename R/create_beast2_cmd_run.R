@@ -9,11 +9,11 @@
 #' @param beast_jar_path name of the BEAST2 jar file
 #'   (usually has a \code{.jar} extension)
 #' @author Richel J.C. Bilderbeek
-create_beast2_cmd <- function(
-  input_filename = input_filename,
-  output_state_filename = output_state_filename,
+create_beast2_cmd_run <- function(
+  input_filename,
+  output_state_filename,
   overwrite_state_file = TRUE,
-  beast_jar_path = beast_jar_path
+  beast_jar_path = "~/Programs/beast/lib/beast.jar"
 ) {
   cmd <- paste(
     "java -jar",

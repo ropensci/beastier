@@ -1,4 +1,4 @@
-context("create_beast2_cmd")
+context("create_beast2_cmd_run")
 
 test_that("use", {
 
@@ -6,7 +6,7 @@ test_that("use", {
   output_state_filename <- "output.xml.state"
   input_filename <- "input.xml"
 
-  created <- beastier:::create_beast2_cmd(
+  created <- beastier:::create_beast2_cmd_run(
     input_filename = input_filename,
     output_state_filename = output_state_filename,
     overwrite_state_file = TRUE,

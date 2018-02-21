@@ -23,8 +23,12 @@ is_beast2_input_file <- function(
       "beast.jar not found at path '", beast_jar_path, "'"
     )
   }
-  # Let BEAST2 run the created XML file
-  cmd <- paste("java -jar", beast_jar_path, "-validate", filename)
+
+  # Create the command to let BEAST2 validate the created XML file
+  cmd <- create_beast2_cmd_validate(
+    input_filename = filename,
+    beast_jar_path = beast_jar_path
+  )
 
   # BEAST2 returns an error code.
   # An error code of 0 denotes that the file was valid
