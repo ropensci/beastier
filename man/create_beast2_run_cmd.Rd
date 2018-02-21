@@ -4,8 +4,8 @@
 \alias{create_beast2_run_cmd}
 \title{Creates the terminal command to run BEAST2}
 \usage{
-create_beast2_run_cmd(input_filename, output_state_filename,
-  overwrite_state_file = TRUE,
+create_beast2_run_cmd(input_filename, output_state_filename, rng_seed = NA,
+  n_threads = NA, use_beagle = FALSE, overwrite_state_file = TRUE,
   beast_jar_path = "~/Programs/beast/lib/beast.jar")
 }
 \arguments{
@@ -15,6 +15,12 @@ create_beast2_run_cmd(input_filename, output_state_filename,
 \item{output_state_filename}{name of the BEAST2 output file that
 stores the state
 (usually has a \code{.xml.state} extension)}
+
+\item{rng_seed}{the RNG seed}
+
+\item{n_threads}{number of threads to use}
+
+\item{use_beagle}{use BEAGLE if present}
 
 \item{overwrite_state_file}{set to TRUE to overwrite the file with name
 \code{output_state_filename} if it already exists}
