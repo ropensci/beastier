@@ -6,8 +6,9 @@
 \usage{
 run_beast2(input_filename, output_log_filename = "out.log",
   output_trees_filenames = get_trees_filenames(input_filename),
-  output_state_filename = "out.xml.state",
-  beast_jar_path = "~/Programs/beast/lib/beast.jar", verbose = FALSE)
+  output_state_filename = "out.xml.state", rng_seed = NA, n_threads = NA,
+  use_beagle = FALSE, beast_jar_path = "~/Programs/beast/lib/beast.jar",
+  verbose = FALSE)
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file}
@@ -21,6 +22,12 @@ filenames, else an error is thrown. Alignments are sorted alphabetically
 by their IDs}
 
 \item{output_state_filename}{name of the .xml.state file to create}
+
+\item{rng_seed}{the RNG seed}
+
+\item{n_threads}{number of threads to use}
+
+\item{use_beagle}{use BEAGLE if present}
 
 \item{beast_jar_path}{the path of \code{beast.jar}}
 

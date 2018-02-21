@@ -174,7 +174,7 @@ test_that(paste0("One fixed crown age must result in a posterior ",
   )
   testthat::expect_equal(posterior$estimates$TreeHeight[1], crown_age,
     tolerance = 0.001)
-  testthat::expect_equal(posterior$estimates$TreeHeight[10], crown_age,
+  testthat::expect_equal(posterior$estimates$TreeHeight[2], crown_age,
     tolerance = 0.001)
   testthat::expect_equal(
     crown_age,
@@ -237,16 +237,16 @@ test_that(paste0("Two different fixed crown ages must result in a posterior ",
     mcmc = beautier::create_mcmc(chain_length = 2000),
     crown_ages = c(crown_age_1, crown_age_2)
   )
-  names(posterior)
+
   testthat::expect_equal(posterior$estimates$TreeHeight.1[1], crown_age_1,
     tolerance = 0.001)
-  testthat::expect_equal(posterior$estimates$TreeHeight.1[10], crown_age_1,
+  testthat::expect_equal(posterior$estimates$TreeHeight.1[2], crown_age_1,
     tolerance = 0.001)
   testthat::expect_equal(posterior$estimates$TreeHeight.2[1], crown_age_2,
     tolerance = 0.001)
 
   # Unexpected: will differ
-  testthat::expect_true(posterior$estimates$TreeHeight.2[10] != crown_age_2)
+  testthat::expect_true(posterior$estimates$TreeHeight.2[2] != crown_age_2)
 
   testthat::expect_equal(crown_age_1,
     beautier:::get_phylo_crown_age(
@@ -277,10 +277,10 @@ test_that(paste0("One fixed crown age, one estimated, ",
     mcmc = beautier::create_mcmc(chain_length = 2000),
     crown_ages = c(crown_age, NA)
   )
-  names(posterior$estimates)
+
   testthat::expect_equal(posterior$estimates$TreeHeight.1[1], crown_age,
     tolerance = 0.001)
-  testthat::expect_equal(posterior$estimates$TreeHeight.1[10], crown_age,
+  testthat::expect_equal(posterior$estimates$TreeHeight.1[2], crown_age,
     tolerance = 0.001)
   testthat::expect_equal(crown_age,
     beautier:::get_phylo_crown_age(

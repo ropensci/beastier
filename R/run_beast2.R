@@ -7,6 +7,9 @@
 #'   filenames, else an error is thrown. Alignments are sorted alphabetically
 #'   by their IDs
 #' @param output_state_filename name of the .xml.state file to create
+#' @param rng_seed the RNG seed
+#' @param n_threads number of threads to use
+#' @param use_beagle use BEAGLE if present
 #' @param verbose show more (debug) output
 #' @param beast_jar_path the path of \code{beast.jar}
 #' @export
@@ -32,6 +35,9 @@ run_beast2 <- function(
   output_log_filename = "out.log",
   output_trees_filenames = get_trees_filenames(input_filename),
   output_state_filename = "out.xml.state",
+  rng_seed = NA,
+  n_threads = NA,
+  use_beagle = FALSE,
   beast_jar_path = "~/Programs/beast/lib/beast.jar",
   verbose = FALSE
 ) {
@@ -83,6 +89,9 @@ run_beast2 <- function(
   cmd <- beastier::create_beast2_run_cmd(
     input_filename = input_filename,
     output_state_filename = output_state_filename,
+    rng_seed = rng_seed,
+    n_threads = n_threads,
+    use_beagle = use_beagle,
     overwrite_state_file = TRUE,
     beast_jar_path = beast_jar_path
   )

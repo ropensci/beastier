@@ -25,6 +25,34 @@ test_that("single alignment creates all files", {
   beastier:::remove_files(output_files)
 })
 
+test_that("single alignment, WIRITTES setting", {
+
+  output_log_filename <- "tmp_single.log"
+  output_trees_filenames <- "tmp_single.trees"
+  output_state_filename <- "tmp_single.state"
+
+  output_files <- c(output_log_filename, output_trees_filenames,
+    output_state_filename
+  )
+  beastier:::remove_files(output_files)
+  testit::assert(!beastier:::files_exist(output_files))
+
+  testthat::expect_silent(
+    run_beast2(
+      input_filename = get_path("2_4.xml"),
+      output_log_filename = output_log_filename,
+      output_trees_filenames = output_trees_filenames,
+      output_state_filename = output_state_filename,
+      rng_seed = 42,
+      n_threads = 8,
+      use_beagle = TRUE
+    )
+  )
+
+  testthat::expect_true(beastier:::files_exist(output_files))
+  beastier:::remove_files(output_files)
+})
+
 test_that("two alignments creates all files", {
 
   output_log_filename <- "tmp_two.log"
