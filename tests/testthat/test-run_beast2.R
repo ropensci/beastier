@@ -45,7 +45,8 @@ test_that("single alignment, WIRITTES setting", {
       output_state_filename = output_state_filename,
       rng_seed = 42,
       n_threads = 8,
-      use_beagle = TRUE
+      use_beagle = TRUE,
+      overwrite_state_file = TRUE
     )
   )
 

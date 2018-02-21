@@ -10,6 +10,8 @@
 #' @param rng_seed the RNG seed
 #' @param n_threads number of threads to use
 #' @param use_beagle use BEAGLE if present
+#' @param overwrite_state_file set to TRUE to overwrite the file with name
+#'   \code{output_state_filename} if it already exists
 #' @param verbose show more (debug) output
 #' @param beast_jar_path the path of \code{beast.jar}
 #' @export
@@ -38,6 +40,7 @@ run_beast2 <- function(
   rng_seed = NA,
   n_threads = NA,
   use_beagle = FALSE,
+  overwrite_state_file = TRUE,
   beast_jar_path = "~/Programs/beast/lib/beast.jar",
   verbose = FALSE
 ) {
