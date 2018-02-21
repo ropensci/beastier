@@ -4,7 +4,8 @@
 #' @param beast_jar_path name of the BEAST2 jar file
 #'   (usually has a \code{.jar} extension)
 #' @author Richel J.C. Bilderbeek
-create_beast2_cmd_validate <- function(
+#' @export
+create_beast2_validate_cmd <- function(
   input_filename,
   beast_jar_path = "~/Programs/beast/lib/beast.jar"
 ) {

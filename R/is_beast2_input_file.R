@@ -25,7 +25,7 @@ is_beast2_input_file <- function(
   }
 
   # Create the command to let BEAST2 validate the created XML file
-  cmd <- create_beast2_cmd_validate(
+  cmd <- beastier::create_beast2_validate_cmd(
     input_filename = filename,
     beast_jar_path = beast_jar_path
   )

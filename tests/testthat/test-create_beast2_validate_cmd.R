@@ -1,11 +1,11 @@
-context("create_beast2_cmd_validate")
+context("create_beast2_validate_cmd")
 
 test_that("use", {
 
   beast_jar_path <- "beast.jar"
   input_filename <- "input.xml"
 
-  created <- beastier:::create_beast2_cmd_validate(
+  created <- create_beast2_validate_cmd(
     input_filename = input_filename,
     beast_jar_path = beast_jar_path
   )

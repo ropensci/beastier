@@ -80,7 +80,7 @@ run_beast2 <- function(
     c(output_state_filename, beast_log_filename, beast_trees_filenames))
   testthat::expect_false(files_exist(
     c(output_state_filename, beast_log_filename, beast_trees_filenames)))
-  cmd <- create_beast2_cmd_run(
+  cmd <- beastier::create_beast2_run_cmd(
     input_filename = input_filename,
     output_state_filename = output_state_filename,
     overwrite_state_file = TRUE,

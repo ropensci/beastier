@@ -9,7 +9,8 @@
 #' @param beast_jar_path name of the BEAST2 jar file
 #'   (usually has a \code{.jar} extension)
 #' @author Richel J.C. Bilderbeek
-create_beast2_cmd_run <- function(
+#' @export
+create_beast2_run_cmd <- function(
   input_filename,
   output_state_filename,
   overwrite_state_file = TRUE,
