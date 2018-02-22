@@ -6,7 +6,7 @@
 \usage{
 create_beast2_run_cmd(input_filename, output_state_filename, rng_seed = NA,
   n_threads = NA, use_beagle = FALSE, overwrite_state_file = TRUE,
-  beast_jar_path = "~/Programs/beast/lib/beast.jar")
+  beast2_jar_path = get_default_beast2_jar_path())
 }
 \arguments{
 \item{input_filename}{name of the BEAST2 input file
@@ -25,8 +25,10 @@ stores the state
 \item{overwrite_state_file}{set to TRUE to overwrite the file with name
 \code{output_state_filename} if it already exists}
 
-\item{beast_jar_path}{name of the BEAST2 jar file
-(usually has a \code{.jar} extension)}
+\item{beast2_jar_path}{name of the BEAST2 jar file
+(usually has a \code{.jar} extension).
+Use \link{get_default_beast2_jar_path} to get
+the default BEAST jar file's path}
 }
 \description{
 Creates the terminal command to run BEAST2

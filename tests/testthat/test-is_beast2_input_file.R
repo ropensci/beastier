@@ -52,9 +52,9 @@ test_that("abuse", {
   testthat::expect_error(
     beastier::is_beast2_input_file(
       get_path("anthus_2_4.xml"),
-      beast_jar_path = "abs.ent"
+      beast2_jar_path = "abs.ent"
     ),
-    "'beast_jar_path' must be the fullpath of the BEAST2 file 'beast2.jar'."
+    "'beast2_jar_path' must be the fullpath of the BEAST2 file 'beast2.jar'."
   )
 
 })

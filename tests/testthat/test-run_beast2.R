@@ -179,9 +179,9 @@ test_that("abuse", {
   testthat::expect_error(
     run_beast2(
       get_path("anthus_2_4.xml"),
-      beast_jar_path = "abs.ent"
+      beast2_jar_path = "abs.ent"
     ),
-    "'beast_jar_path' must be the name of an existing file"
+    "'beast2_jar_path' must be the name of an existing file"
   )
 
   testthat::expect_error(

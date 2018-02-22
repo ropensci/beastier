@@ -1,7 +1,9 @@
 #' Is a file a valid BEAST2 input file?
 #' @inheritParams default_params_doc
 #' @param filename name of the BEAST2 XML input file
-#' @param beast_jar_path the path of \code{beast.jar}
+#' @param beast2_jar_path the path of \code{beast.jar}.
+#'   Use \link{get_default_beast2_jar_path} to get
+#'   the default BEAST jar file's path
 #' @return TRUE if the file is valid, FALSE if not
 #' @author Richel J.C. Bilderbeek
 #' @seealso Use \code{\link{are_beast2_input_lines}} to check the lines
@@ -9,7 +11,7 @@
 is_beast2_input_file <- function(
   filename,
   verbose = FALSE,
-  beast_jar_path = "~/Programs/beast/lib/beast.jar"
+  beast2_jar_path = get_default_beast2_jar_path()
 ) {
   if (!file.exists(filename)) {
     stop(
@@ -17,17 +19,17 @@ is_beast2_input_file <- function(
       "Filename '", filename, "' not found"
     )
   }
-  if (!file.exists(beast_jar_path)) {
+  if (!file.exists(beast2_jar_path)) {
     stop(
-      "'beast_jar_path' must be the fullpath of the BEAST2 file 'beast2.jar'. ",
-      "beast.jar not found at path '", beast_jar_path, "'"
+      "'beast2_jar_path' must be the fullpath of the BEAST2 file 'beast.jar'. ",
+      "beast.jar not found at path '", beast2_jar_path, "'"
     )
   }
 
   # Create the command to let BEAST2 validate the created XML file
   cmd <- beastier::create_beast2_validate_cmd(
     input_filename = filename,
-    beast_jar_path = beast_jar_path
+    beast2_jar_path = beast2_jar_path
   )
 
   # BEAST2 returns an error code.

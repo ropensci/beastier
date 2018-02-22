@@ -13,7 +13,9 @@
 #' @param overwrite_state_file set to TRUE to overwrite the file with name
 #'   \code{output_state_filename} if it already exists
 #' @param verbose show more (debug) output
-#' @param beast_jar_path the path of \code{beast.jar}
+#' @param beast2_jar_path the path of \code{beast.jar}.
+#'   Use \link{get_default_beast2_jar_path} to get
+#'   the default BEAST jar file's path
 #' @export
 #' @examples
 #'   output_log_filename <- "out.log"
@@ -41,7 +43,7 @@ run_beast2 <- function(
   n_threads = NA,
   use_beagle = FALSE,
   overwrite_state_file = TRUE,
-  beast_jar_path = "~/Programs/beast/lib/beast.jar",
+  beast2_jar_path = get_default_beast2_jar_path(),
   verbose = FALSE
 ) {
   if (!file.exists(input_filename)) {
@@ -50,20 +52,20 @@ run_beast2 <- function(
       "File '", input_filename, "' not found"
     )
   }
-  if (!file.exists(beast_jar_path)) {
+  if (!file.exists(beast2_jar_path)) {
     stop(
-      "'beast_jar_path' must be the name of an existing file. ",
-      "File '", beast_jar_path, "' not found"
+      "'beast2_jar_path' must be the name of an existing file. ",
+      "File '", beast2_jar_path, "' not found"
     )
   }
-  if (!is_beast2_input_file(input_filename, beast_jar_path = beast_jar_path)) {
+  if (!is_beast2_input_file(input_filename, beast2_jar_path = beast2_jar_path)) {
     stop(
       "'input_filename' must be a valid BEAST2 XML file",
       "File '", input_filename, "' is not a valid BEAST2 file",
       is_beast2_input_file( # nolint internal function
         input_filename,
         verbose = verbose,
-        beast_jar_path = beast_jar_path)
+        beast2_jar_path = beast2_jar_path)
     )
   }
 
@@ -96,7 +98,7 @@ run_beast2 <- function(
     n_threads = n_threads,
     use_beagle = use_beagle,
     overwrite_state_file = TRUE,
-    beast_jar_path = beast_jar_path
+    beast2_jar_path = beast2_jar_path
   )
   if (!verbose) {
     cmd <- paste(cmd, "1>/dev/null 2>/dev/null")
