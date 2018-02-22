@@ -1,7 +1,11 @@
 #' Get the default BEAST2 jar file's path
-#' @export
+#' @seealso Use \link{get_default_beast2_folder} to get the default
+#'   folder in which BEAST2 is installed
 #' @examples
-#'   testit::assert(file.exists(get_default_beast2_jar_path()))
+#'   testit::assert(get_default_beast2_jar_path()
+#'     == "~/Programs/beast/lib/beast.jar")
+#' @author Richel J.C. Bilderbeek
+#' @export
 get_default_beast2_jar_path <- function() {
-  "~/Programs/beast/lib/beast.jar"
+  paste0(get_default_beast2_folder(), "/lib/beast.jar")
 }

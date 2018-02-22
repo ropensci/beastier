@@ -21,7 +21,8 @@ is_beast2_input_file <- function(
   }
   if (!file.exists(beast2_jar_path)) {
     stop(
-      "'beast2_jar_path' must be the fullpath of the BEAST2 file 'beast.jar'. ",
+      "'beast2_jar_path' must be the full path ",
+      "of the BEAST2 file 'beast.jar'. ",
       "beast.jar not found at path '", beast2_jar_path, "'"
     )
   }

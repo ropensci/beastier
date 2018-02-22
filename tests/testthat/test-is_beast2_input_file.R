@@ -54,7 +54,7 @@ test_that("abuse", {
       get_path("anthus_2_4.xml"),
       beast2_jar_path = "abs.ent"
     ),
-    "'beast2_jar_path' must be the fullpath of the BEAST2 file 'beast2.jar'."
+    "'beast2_jar_path' must be the full path of the BEAST2 file 'beast.jar'."
   )
 
 })

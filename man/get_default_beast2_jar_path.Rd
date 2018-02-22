@@ -10,5 +10,13 @@ get_default_beast2_jar_path()
 Get the default BEAST2 jar file's path
 }
 \examples{
-  testit::assert(file.exists(get_default_beast2_jar_path()))
+  testit::assert(get_default_beast2_jar_path()
+    == "~/Programs/beast/lib/beast.jar")
+}
+\seealso{
+Use \link{get_default_beast2_folder} to get the default
+  folder in which BEAST2 is installed
+}
+\author{
+Richel J.C. Bilderbeek
 }
