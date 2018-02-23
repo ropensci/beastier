@@ -4,7 +4,7 @@
 #'   \code{[folder_name]/beast/lib/beast.jar}
 #' @examples
 #'   folder_name <- "~/my_folder/beast2"
-#'   install_beast2(folder_name
+#'   install_beast2(folder_name)
 #'   beast2_jar_path <- paste0(folder_name,"/beast/lib/beast.jar")
 #'   testit::assert(file.exists(beast2_jar_path))
 #' @author Richel J.C. Bilderbeek
