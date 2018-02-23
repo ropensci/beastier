@@ -20,7 +20,7 @@ This function only tested to work under GNU/Linux
 \examples{
   folder_name <- "~/my_folder/beast2"
   install_beast2(folder_name)
-  beast2_jar_path <- paste0(folder_name,"/beast/lib/beast.jar")
+  beast2_jar_path <- paste0(folder_name, "/beast/lib/beast.jar")
   testit::assert(file.exists(beast2_jar_path))
 }
 \author{
