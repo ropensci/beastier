@@ -58,7 +58,9 @@ run_beast2 <- function(
       "File '", beast2_jar_path, "' not found"
     )
   }
-  if (!is_beast2_input_file(input_filename, beast2_jar_path = beast2_jar_path)) {
+  if (
+    !is_beast2_input_file(input_filename, beast2_jar_path = beast2_jar_path)
+  ) {
     stop(
       "'input_filename' must be a valid BEAST2 XML file",
       "File '", input_filename, "' is not a valid BEAST2 file",
