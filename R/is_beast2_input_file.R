@@ -37,18 +37,23 @@ is_beast2_input_file <- function(
   # An error code of 0 denotes that the file was valid
   status_code <- system(cmd, ignore.stderr = TRUE, ignore.stdout = TRUE)
 
+  # Valid BEAST2 input files will result in an output with 'Done!' at the
+  # last line
+  output <- system(cmd, intern = TRUE, ignore.stderr = TRUE)
+
+  if (verbose) {
+    print(output)
+  }
+
   # Invalid files are not valid BEAST2 input files
   # Create an if statement here,
   # if there is an input file that violates this assert,
   # and add it to the test
+  if (status_code != 0) {
+    return(FALSE)
+  }
   testit::assert(status_code == 0)
 
-  # Valid BEAST2 input files will result in an output with 'Done!' at the
-  # last line
-  output <- system(cmd, intern = TRUE, ignore.stderr = TRUE)
-  if (verbose) {
-    print(output)
-  }
   is_valid <- utils::tail(output, n = 1) == "Done!"
   is_valid
 }
