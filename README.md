@@ -27,9 +27,12 @@ If you use the `devtools` R package, this is easy:
 devtools::install_github("richelbilderbeek/beastier")
 ```
 
+`beastier` assumes that BEAST2 is installed. See [install BEAST2](install_beast2.md)
+for how to [install BEAST2](install_beast2.md).
+
 ## FAQ
 
-See [FAQ](Faq.md)
+See [FAQ](faq.md)
 
 ## Missing features/unsupported
 
