@@ -54,6 +54,58 @@ test_that("single alignment, WIRITTES setting", {
   beastier:::remove_files(output_files)
 })
 
+
+test_that("single alignment, equal RNG seed equal results", {
+
+  output_log_filename_1 <- "tmp_single_rng_1.log"
+  output_log_filename_2 <- "tmp_single_rng_2.log"
+  output_trees_filenames_1 <- "tmp_single_rng_1.trees"
+  output_trees_filenames_2 <- "tmp_single_rng_2.trees"
+  output_state_filename_1 <- "tmp_single_rng_1.state"
+  output_state_filename_2 <- "tmp_single_rng_2.state"
+
+  output_files <- c(
+    output_log_filename_1,
+    output_log_filename_2,
+    output_trees_filenames_1,
+    output_trees_filenames_2,
+    output_state_filename_1,
+    output_state_filename_2
+  )
+  beastier:::remove_files(output_files)
+  testit::assert(!beastier:::files_exist(output_files))
+
+  rng_seed <- 42
+  run_beast2(
+    input_filename = get_path("2_4.xml"),
+    output_log_filename = output_log_filename_1,
+    output_trees_filenames = output_trees_filenames_1,
+    output_state_filename = output_state_filename_1,
+    rng_seed = rng_seed,
+    overwrite_state_file = TRUE
+  )
+  run_beast2(
+    input_filename = get_path("2_4.xml"),
+    output_log_filename = output_log_filename_2,
+    output_trees_filenames = output_trees_filenames_2,
+    output_state_filename = output_state_filename_2,
+    rng_seed = rng_seed,
+    overwrite_state_file = TRUE
+  )
+  lines_1 <- readLines(output_log_filename_1)
+  lines_2 <- readLines(output_log_filename_2)
+  testthat::expect_identical(lines_1, lines_2)
+  lines_1 <- readLines(output_trees_filenames_1, warn = FALSE)
+  lines_2 <- readLines(output_trees_filenames_2, warn = FALSE)
+  testthat::expect_identical(lines_1, lines_2)
+  lines_1 <- readLines(output_state_filename_1)
+  lines_2 <- readLines(output_state_filename_2)
+  testthat::expect_identical(lines_1, lines_2)
+  beastier:::remove_files(output_files)
+})
+
+
+
 test_that("two alignments creates all files", {
 
   output_log_filename <- "tmp_two.log"
@@ -237,3 +289,5 @@ test_that("Create data from anthus_15_15_long.xml", {
 
   # Copy those file to where needed
 })
+
+
