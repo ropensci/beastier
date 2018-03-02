@@ -289,5 +289,3 @@ test_that("Create data from anthus_15_15_long.xml", {
 
   # Copy those file to where needed
 })
-
-
