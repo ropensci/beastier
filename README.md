@@ -40,7 +40,6 @@ See [FAQ](faq.md)
 
 Here are some missing or (yet) unsupported features:
 
- * Set a random number generator seed
  * Validate a BEAST2 input file
  * Continue a BEAST2 run
  * Setup BEAGLE
