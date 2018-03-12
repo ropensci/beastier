@@ -4,10 +4,18 @@
 #' @author Richel J.C. Bilderbeek
 #' @seealso for more files, use \code{\link{get_beastier_paths}}
 #' @examples
-#'   testit::assert(is.character(get_beastier_path("beast2_example_output.log")))
-#'   testit::assert(is.character(get_beastier_path("beast2_example_output.trees")))
-#'   testit::assert(is.character(get_beastier_path("beast2_example_output.xml")))
-#'   testit::assert(is.character(get_beastier_path("beast2_example_output.xml.state")))
+#'   testit::assert(
+#'     is.character(get_beastier_path("beast2_example_output.log"))
+#'   )
+#'   testit::assert(
+#'     is.character(get_beastier_path("beast2_example_output.trees"))
+#'   )
+#'   testit::assert(
+#'     is.character(get_beastier_path("beast2_example_output.xml"))
+#'   )
+#'   testit::assert(
+#'     is.character(get_beastier_path("beast2_example_output.xml.state"))
+#'   )
 #' @export
 get_beastier_path <- function(filename) {
 

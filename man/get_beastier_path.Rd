@@ -16,10 +16,18 @@ the filename's full path
 Get the full path of a file in the 'inst/extdata' folder
 }
 \examples{
-  testit::assert(is.character(get_beastier_path("beast2_example_output.log")))
-  testit::assert(is.character(get_beastier_path("beast2_example_output.trees")))
-  testit::assert(is.character(get_beastier_path("beast2_example_output.xml")))
-  testit::assert(is.character(get_beastier_path("beast2_example_output.xml.state")))
+  testit::assert(
+    is.character(get_beastier_path("beast2_example_output.log"))
+  )
+  testit::assert(
+    is.character(get_beastier_path("beast2_example_output.trees"))
+  )
+  testit::assert(
+    is.character(get_beastier_path("beast2_example_output.xml"))
+  )
+  testit::assert(
+    is.character(get_beastier_path("beast2_example_output.xml.state"))
+  )
 }
 \seealso{
 for more files, use \code{\link{get_beastier_paths}}

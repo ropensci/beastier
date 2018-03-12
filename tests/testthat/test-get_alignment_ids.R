@@ -7,7 +7,7 @@ test_that("use", {
     c("test_output_0")
   )
   testthat::expect_equal(
-    beastier:::get_alignment_ids(xml_filename = get_beastier_path("anthus_2_4.xml")),
+    beastier:::get_alignment_ids(get_beastier_path("anthus_2_4.xml")),
     c("Anthus_nd2", "Anthus_aco")
   )
 
