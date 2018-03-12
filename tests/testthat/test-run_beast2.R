@@ -14,7 +14,7 @@ test_that("single alignment creates all files", {
 
   testthat::expect_silent(
     run_beast2(
-      input_filename = get_path("2_4.xml"),
+      input_filename = get_beastier_path("2_4.xml"),
       output_log_filename = output_log_filename,
       output_trees_filenames = output_trees_filenames,
       output_state_filename = output_state_filename
@@ -39,7 +39,7 @@ test_that("single alignment, WIRITTES setting", {
 
   testthat::expect_silent(
     run_beast2(
-      input_filename = get_path("2_4.xml"),
+      input_filename = get_beastier_path("2_4.xml"),
       output_log_filename = output_log_filename,
       output_trees_filenames = output_trees_filenames,
       output_state_filename = output_state_filename,
@@ -77,7 +77,7 @@ test_that("single alignment, equal RNG seed equal results", {
 
   rng_seed <- 42
   run_beast2(
-    input_filename = get_path("2_4.xml"),
+    input_filename = get_beastier_path("2_4.xml"),
     output_log_filename = output_log_filename_1,
     output_trees_filenames = output_trees_filenames_1,
     output_state_filename = output_state_filename_1,
@@ -85,7 +85,7 @@ test_that("single alignment, equal RNG seed equal results", {
     overwrite_state_file = TRUE
   )
   run_beast2(
-    input_filename = get_path("2_4.xml"),
+    input_filename = get_beastier_path("2_4.xml"),
     output_log_filename = output_log_filename_2,
     output_trees_filenames = output_trees_filenames_2,
     output_state_filename = output_state_filename_2,
@@ -120,7 +120,7 @@ test_that("two alignments creates all files", {
 
   testthat::expect_silent(
     run_beast2(
-      input_filename = get_path("anthus_2_4.xml"),
+      input_filename = get_beastier_path("anthus_2_4.xml"),
       output_log_filename = output_log_filename,
       output_trees_filenames = output_trees_filenames,
       output_state_filename = output_state_filename
@@ -147,7 +147,7 @@ test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
 
   testthat::expect_silent(
     run_beast2(
-      input_filename = get_path("anthus_15_15.xml"),
+      input_filename = get_beastier_path("anthus_15_15.xml"),
       output_log_filename = output_log_filename,
       output_trees_filenames = output_trees_filenames,
       output_state_filename = output_state_filename
@@ -187,7 +187,7 @@ test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
 
   testthat::expect_silent(
     run_beast2(
-      input_filename = get_path("anthus_na_15.xml"),
+      input_filename = get_beastier_path("anthus_na_15.xml"),
       output_log_filename = output_log_filename,
       output_trees_filenames = output_trees_filenames,
       output_state_filename = output_state_filename
@@ -224,13 +224,13 @@ test_that("abuse", {
   )
 
   testthat::expect_error(
-    run_beast2(get_path("anthus_aco.fas")),
+    run_beast2(get_beastier_path("anthus_aco.fas")),
     "'input_filename' must be a valid BEAST2 XML file"
   )
 
   testthat::expect_error(
     run_beast2(
-      get_path("anthus_2_4.xml"),
+      get_beastier_path("anthus_2_4.xml"),
       beast2_jar_path = "abs.ent"
     ),
     "'beast2_jar_path' must be the name of an existing file"
@@ -238,7 +238,7 @@ test_that("abuse", {
 
   testthat::expect_error(
     run_beast2(
-      input_filename = get_path("2_4.xml"),
+      input_filename = get_beastier_path("2_4.xml"),
       output_trees_filenames = c("too", "much")
     ),
     paste0(
@@ -265,7 +265,7 @@ test_that("Create data from anthus_15_15_long.xml", {
 
   testthat::expect_silent(
     run_beast2(
-      input_filename = get_path("anthus_15_15_long.xml"),
+      input_filename = get_beastier_path("anthus_15_15_long.xml"),
       output_log_filename = output_log_filename,
       output_trees_filenames = output_trees_filenames,
       output_state_filename = output_state_filename

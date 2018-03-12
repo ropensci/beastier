@@ -10,7 +10,7 @@
 #' @author Richel J.C. Bilderbeek
 #' @seealso Use \code{\link{is_beast2_input_file}} to check a file
 #' @examples
-#'   beast2_filename <- get_path("anthus_2_4.xml")
+#'   beast2_filename <- get_beastier_path("anthus_2_4.xml")
 #'   text <- readLines(beast2_filename)
 #'   testit::assert(are_beast2_input_lines(text))
 #' @export
@@ -46,7 +46,7 @@ are_beast2_input_lines <- function(
 #' @author Richel J.C. Bilderbeek
 #' @seealso Use \code{\link{is_beast2_input_file}} to check a file
 #' @examples
-#'   beast2_filename <- get_path("anthus_2_4.xml")
+#'   beast2_filename <- get_beastier_path("anthus_2_4.xml")
 #'   text <- readLines(beast2_filename)
 #'   testit::assert(beastier:::are_beast2_input_lines_deep(text))
 are_beast2_input_lines_deep <- function(
@@ -68,7 +68,7 @@ are_beast2_input_lines_deep <- function(
 #' @author Richel J.C. Bilderbeek
 #' @seealso Use \code{\link{is_beast2_input_file}} to check a file
 #' @examples
-#'   beast2_filename <- get_path("anthus_2_4.xml")
+#'   beast2_filename <- get_beastier_path("anthus_2_4.xml")
 #'   text <- readLines(beast2_filename)
 #'   testit::assert(beastier:::are_beast2_input_lines_fast(text))
 are_beast2_input_lines_fast <- function(

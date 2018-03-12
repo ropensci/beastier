@@ -21,7 +21,7 @@ Removes files if and only if present
 
   # Create a file
   filename <- "pres.ent"
-  file.copy(from = get_path("anthus_2_4.xml"), to = filename)
+  file.copy(from = get_beastier_path("anthus_2_4.xml"), to = filename)
   testit::assert(file.exists(filename))
 
   # Can safely delete a mix of present and absent files

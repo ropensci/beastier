@@ -47,7 +47,7 @@ Run BEAST2
   output_state_filename <- "out.state"
 
   run_beast2(
-    input_filename = get_path("2_4.xml"),
+    input_filename = get_beastier_path("2_4.xml"),
     output_log_filename = output_log_filename,
     output_trees_filenames = output_trees_filename,
     output_state_filename = output_state_filename

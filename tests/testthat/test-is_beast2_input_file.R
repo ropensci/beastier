@@ -4,7 +4,7 @@ test_that("beast2_example_output.log is not a valid BEAST2 input file", {
 
   if (!beastier:::is_on_travis()) return()
 
-  filename <- get_path("beast2_example_output.log")
+  filename <- get_beastier_path("beast2_example_output.log")
   is_ok <- NULL
 
   testthat::expect_output(
@@ -20,7 +20,7 @@ test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
   # Gives a status error
   if (!beastier:::is_on_travis()) return()
 
-  filename <- get_path("beast2_example_output.trees")
+  filename <- get_beastier_path("beast2_example_output.trees")
 
   is_ok <- NULL
 
@@ -36,7 +36,7 @@ test_that("anthus_2_4.xml is valid", {
 
   if (!beastier:::is_on_travis()) return()
 
-  filename <- get_path("anthus_2_4.xml")
+  filename <- get_beastier_path("anthus_2_4.xml")
   testthat::expect_true(file.exists(filename))
   testthat::expect_true(beastier::is_beast2_input_file(filename))
 
@@ -51,7 +51,7 @@ test_that("abuse", {
 
   testthat::expect_error(
     beastier::is_beast2_input_file(
-      get_path("anthus_2_4.xml"),
+      get_beastier_path("anthus_2_4.xml"),
       beast2_jar_path = "abs.ent"
     ),
     "'beast2_jar_path' must be the full path of the BEAST2 file 'beast.jar'."

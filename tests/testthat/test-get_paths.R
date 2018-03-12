@@ -1,10 +1,10 @@
-context("get_paths")
+context("get_beastier_paths")
 
 test_that("use", {
 
   testthat::expect_equal(
     length(
-      beastier::get_paths(
+      beastier::get_beastier_paths(
         c(
           "beast2_example_output.log",
           "beast2_example_output.trees",
