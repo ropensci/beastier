@@ -58,3 +58,25 @@ test_that("abuse", {
   )
 
 })
+
+test_that("detect warnings", {
+
+  testthat::expect_warning(
+    is_beast2_input_file(
+      filename = beastier:::get_beastier_path("beast2_warning.xml"),
+      show_warnings = TRUE
+    )
+  )
+  testthat::expect_silent(
+    is_beast2_input_file(
+      filename = beastier:::get_beastier_path("beast2_warning.xml"),
+      show_warnings = FALSE
+    )
+  )
+  testthat::expect_silent(
+    is_beast2_input_file(
+      beautier:::get_beautier_paths("2_4.xml"),
+      show_warnings = TRUE
+    )
+  )
+})

@@ -4,11 +4,13 @@
 \alias{is_beast2_input_file}
 \title{Is a file a valid BEAST2 input file?}
 \usage{
-is_beast2_input_file(filename, verbose = FALSE,
+is_beast2_input_file(filename, show_warnings = FALSE, verbose = FALSE,
   beast2_jar_path = get_default_beast2_jar_path())
 }
 \arguments{
 \item{filename}{name of the BEAST2 XML input file}
+
+\item{show_warnings}{if TRUE, warnings will shown}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}

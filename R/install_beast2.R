@@ -11,7 +11,7 @@
 #' @note This function only tested to work under GNU/Linux
 #' @export
 install_beast2 <- function(folder_name) {
-  dir.create(path = folder_name, recursive = TRUE)
+  dir.create(path = folder_name,  showWarnings = FALSE, recursive = TRUE)
   tgz_filename <- "BEAST.v2.4.7.Linux.tgz"
   url <- paste0(
     "https://github.com/CompEvol/beast2/releases/download/v2.4.7/",
