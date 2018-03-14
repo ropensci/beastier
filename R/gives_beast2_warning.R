@@ -9,7 +9,7 @@
 #' @author Richel J.C. Bilderbeek
 #' @seealso Use \code{\link{are_beast2_input_lines}} to check the lines
 #' @export
-give_beast2_warning <- function(
+gives_beast2_warning <- function(
   filename,
   verbose = FALSE,
   beast2_jar_path = get_default_beast2_jar_path()
