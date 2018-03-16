@@ -7,6 +7,12 @@ test_that("use", {
       filename = beastier:::get_beastier_path("beast2_warning.xml")
     )
   )
+  testthat::expect_output(
+    gives_beast2_warning(
+      filename = beastier:::get_beastier_path("beast2_warning.xml"),
+      verbose = TRUE
+    )
+  )
   testthat::expect_false(
     gives_beast2_warning(
       beautier:::get_beautier_paths("2_4.xml")

@@ -54,20 +54,10 @@ is_beast2_input_file <- function(
       sum(grepl(x = output, pattern = "WARNING: "))) {
     warning(output[grepl(x = output, pattern = "WARNING: ")])
   }
-
-  if (1 == 2) {
-    # Valid BEAST2 input files will result in an output with 'Done!' at the
-    # last line
-    output <- system(cmd, intern = TRUE, ignore.stderr = TRUE)
-  }
-
   # Invalid files are not valid BEAST2 input files
   # Create an if statement here,
   # if there is an input file that violates this assert,
   # and add it to the test
-  if (status_code != 0) {
-    return(FALSE)
-  }
   testit::assert(status_code == 0)
 
   is_valid <- utils::tail(output, n = 1) == "Done!"
