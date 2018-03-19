@@ -70,6 +70,9 @@ run_beast2 <- function(
         beast2_jar_path = beast2_jar_path)
     )
   }
+  if (!is.na(rng_seed) && !(rng_seed > 0)) {
+    stop("'rng_seed' should be NA or non-zero positive")
+  }
 
   alignment_ids <- get_alignment_ids(input_filename) # nolint internal function
 

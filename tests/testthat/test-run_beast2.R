@@ -247,6 +247,28 @@ test_that("abuse", {
     )
   )
 
+  testthat::expect_silent(
+    run_beast2(
+      get_beastier_path("anthus_2_4.xml"),
+      rng_seed = 1
+    )
+  )
+  testthat::expect_silent(
+    run_beast2(
+      get_beastier_path("anthus_2_4.xml"),
+      rng_seed = NA
+    )
+  )
+  testthat::expect_error(
+    run_beast2(
+      get_beastier_path("anthus_2_4.xml"),
+      rng_seed = 0
+    ),
+    "'rng_seed' should be NA or non-zero positive"
+  )
+
+
+
 })
 
 test_that("Create data from anthus_15_15_long.xml", {
