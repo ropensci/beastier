@@ -36,7 +36,7 @@
 #' @author Richel J.C. Bilderbeek
 run_beast2 <- function(
   input_filename,
-  output_log_filename = tempfile(pattern = "beastier_", filext = ".log"),
+  output_log_filename = tempfile(pattern = "beastier_", fileext = ".log"),
   output_trees_filenames = get_trees_filenames(input_filename),
   output_state_filename = tempfile(
     pattern = "beastier_", fileext = ".xml.state"
