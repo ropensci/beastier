@@ -4,10 +4,12 @@
 \alias{run_beast2}
 \title{Run BEAST2}
 \usage{
-run_beast2(input_filename, output_log_filename = "out.log",
+run_beast2(input_filename, output_log_filename = tempfile(pattern =
+  "beastier_", filext = ".log"),
   output_trees_filenames = get_trees_filenames(input_filename),
-  output_state_filename = "out.xml.state", rng_seed = NA, n_threads = NA,
-  use_beagle = FALSE, overwrite_state_file = TRUE,
+  output_state_filename = tempfile(pattern = "beastier_", fileext =
+  ".xml.state"), rng_seed = NA, n_threads = NA, use_beagle = FALSE,
+  overwrite_state_file = TRUE,
   beast2_jar_path = get_default_beast2_jar_path(), verbose = FALSE)
 }
 \arguments{
