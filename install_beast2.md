@@ -2,7 +2,7 @@
 
 ## GNU/Linux:
 
-BEAST2 (version 2.4.7) can be installed from R:
+BEAST2 (version 2.4.8) can be installed from R:
 
 ```
 library(beastier)
@@ -14,8 +14,8 @@ This will download and extract BEAST2 to the folder `~/Programs/beast`.
 
 ## Windows
 
- * Download a Windows release with version 2.4.7 
-   from [https://github.com/CompEvol/beast2/releases/tag/v2.4.7](https://github.com/CompEvol/beast2/releases/tag/v2.4.7).
+ * Download a Windows release with version 2.4.8 
+   from [https://github.com/CompEvol/beast2/releases/tag/v2.4.8](https://github.com/CompEvol/beast2/releases/tag/v2.4.8).
  * Unzip the file somewhere
  * Specify the path to `beast.jar` when calling `run_beast2`:
 

@@ -12,9 +12,9 @@
 #' @export
 install_beast2 <- function(folder_name) {
   dir.create(path = folder_name,  showWarnings = FALSE, recursive = TRUE)
-  tgz_filename <- "BEAST.v2.4.7.Linux.tgz"
+  tgz_filename <- "BEAST.v2.4.8.Linux.tgz"
   url <- paste0(
-    "https://github.com/CompEvol/beast2/releases/download/v2.4.7/",
+    "https://github.com/CompEvol/beast2/releases/download/v2.4.8/",
     tgz_filename
   )
   local_path <- path.expand(paste0(folder_name, "/", tgz_filename))
