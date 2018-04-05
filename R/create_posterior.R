@@ -2,6 +2,7 @@
 #' @inheritParams default_params_doc
 #' @param n_taxa number of taxa in the simulated phylogeny
 #' @author Richel J.C. Bilderbeek
+#' @noRd
 create_posterior <- function(
   n_taxa,
   sequence_length,

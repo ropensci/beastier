@@ -14,6 +14,7 @@
 #'   beastier:::remove_files(c("abs.ent", filename))
 #'   testit::assert(!file.exists(filename))
 #' @author Richel J.C. Bilderbeek
+#' @noRd
 remove_files <- function(filenames) {
   for (filename in filenames) {
     if (file.exists(filename)) file.remove(filename)

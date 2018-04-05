@@ -32,6 +32,9 @@
 #' @param verbose if TRUE, additional information is displayed, that
 #'   is potentially useful in debugging
 #' @author Richel J.C. Bilderbeek
+#' @note This is an internal function, so it should be marked with
+#'   \code{@noRd}. This is not done, as this will disallow all
+#'   functions to find the documentation parameters
 default_params_doc <- function(
   clock_model, clock_models,
   crown_age, crown_ages,

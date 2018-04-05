@@ -3,6 +3,7 @@
 #' @param n_taxa The number of taxa
 #' @return Nothing, creates one or more random FASTA files
 #' @author Richel J.C. Bilderbeek
+#' @noRd
 create_random_fastas <- function(
   n_taxa,
   sequence_length,

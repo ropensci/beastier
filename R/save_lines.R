@@ -7,6 +7,7 @@
 #'   text <- c("hello", "world")
 #'   beastier:::save_lines(filename = "test.txt", lines = text)
 #'   testit::assert(file.exists("test.txt"))
+#' @noRd
 save_lines <- function(filename, lines) {
   my_file <- file(filename)
   writeLines(lines, my_file)

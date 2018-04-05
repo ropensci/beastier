@@ -12,6 +12,7 @@
 #'     beastier:::get_duplicate_ids(c(line_1, line_1)) == c("RealParameter.1"))
 #'   testit::assert(
 #'     beastier:::get_duplicate_ids(c(line_2, line_2)) == c("RealParameter.2"))
+#' @noRd
 get_duplicate_ids <- function(
   text
 ) {
