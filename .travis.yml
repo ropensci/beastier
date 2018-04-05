@@ -14,16 +14,17 @@ before_script:
   - ./install_beast2
   # proselint
   - sudo pip install proselint
-  # markdown-link-check
-  - sudo apt-get install npm
-  - sudo npm install -g markdown-link-check
+  # markdown-link-check, temporarily disabled due to CERT_UNTRUSTED
+  #- sudo apt-get install npm
+  #- sudo npm install -g markdown-link-check
 
 after_success:
   - Rscript -e 'lintr::lint_package()'
   - Rscript -e 'covr::codecov()'
   - Rscript -e 'goodpractice::gp()'
   - proselint *.md | egrep -v "typography\.symbols\.curly_quotes"
-  - ./check_dead_links
+  # temporarily disabled due to CERT_UNTRUSTED
+  #- ./check_dead_links
 
 after_failure:
   - cat /home/travis/build/richelbilderbeek/beastier/..Rcheck/00install.out
