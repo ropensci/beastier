@@ -23,7 +23,7 @@ environment:
 
 build_script:
   - travis-tool.sh install_deps
-  - ./install_beast2
+  - install_beast2
   - travis-tool.sh install_github richelbilderbeek/tracerer
 
 test_script:
