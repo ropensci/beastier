@@ -15,6 +15,12 @@ cache:
 
 # Adapt as necessary starting from here
 
+# Inspired on https://github.com/juliasilge/tidytext
+environment:
+  global:
+    WARNINGS_ARE_ERRORS: 1
+    USE_RTOOLS: true
+
 build_script:
   - travis-tool.sh install_deps
   - ./install_beast2
