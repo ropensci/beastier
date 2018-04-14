@@ -24,7 +24,11 @@ environment:
 build_script:
   - travis-tool.sh install_deps
   - install_beast2
+  - travis-tool.sh install_github richelbilderbeek/beautier
   - travis-tool.sh install_github richelbilderbeek/tracerer
+  - travis-tool.sh install_github jimhester/covr
+  - travis-tool.sh install_github jimhester/lintr
+  - travis-tool.sh install_github MangoTheCat/goodpractice
 
 test_script:
   - travis-tool.sh run_tests
