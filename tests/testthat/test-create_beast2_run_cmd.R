@@ -2,11 +2,11 @@ context("create_beast2_run_cmd")
 
 test_that("use", {
 
-  beast2_jar_path <- "some/path/to/beast.jar"
+  beast2_jar_path <- file.path("some", "path", "to", "beast.jar")
   output_state_filename <- "output.xml.state"
   input_filename <- "input.xml"
 
-  created <- create_beast2_run_cmd(
+  created <- beastier:::create_beast2_run_cmd(
     input_filename = input_filename,
     output_state_filename = output_state_filename,
     overwrite_state_file = TRUE,
