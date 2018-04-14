@@ -13,5 +13,5 @@
 #' @author Richel J.C. Bilderbeek
 #' @export
 get_default_beast2_jar_path <- function() {
-  paste0(get_default_beast2_folder(), "/lib/beast.jar") # nolint internal function
+  file.path(get_default_beast2_folder(), "lib", "beast.jar") # nolint internal function
 }
