@@ -12,7 +12,14 @@ Get the path to the folder where this package installs
 BEAST2 by default
 }
 \examples{
-  testit::assert(get_default_beast2_folder() == "~/Programs/beast")
+  if (rappdirs::app_dir()$os == "unix") {
+    testit::assert(
+      grepl(
+        "/home/[A-Za-z0-9_]*/.local/share/beast",
+        get_default_beast2_folder()
+      )
+    )
+  }
 }
 \seealso{
 Use \link{get_default_beast2_jar_path} to get the path

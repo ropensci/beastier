@@ -5,7 +5,14 @@
 #'   to the BEAST2 jar file, when installed by this package
 #' @export
 #' @examples
-#'   testit::assert(get_default_beast2_folder() == "~/Programs/beast")
+#'   if (rappdirs::app_dir()$os == "unix") {
+#'     testit::assert(
+#'       grepl(
+#'         "/home/[A-Za-z0-9_]*/.local/share/beast",
+#'         get_default_beast2_folder()
+#'       )
+#'     )
+#'   }
 get_default_beast2_folder <- function() {
-  "~/Programs/beast"
+  rappdirs::user_data_dir("beast")
 }

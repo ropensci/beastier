@@ -4,7 +4,7 @@
 \alias{install_beast2}
 \title{Install BEAST2}
 \usage{
-install_beast2(folder_name)
+install_beast2(folder_name = rappdirs::user_data_dir())
 }
 \arguments{
 \item{folder_name}{name of the folder where the BEAST2 files will
@@ -18,8 +18,7 @@ Install BEAST2
 This function only tested to work under GNU/Linux
 }
 \examples{
-  folder_name <- "~/my_folder/beast2"
-  install_beast2(folder_name)
+  install_beast2(folder_name = get_default_beast2_folder())
   beast2_jar_path <- paste0(folder_name, "/beast/lib/beast.jar")
   testit::assert(file.exists(beast2_jar_path))
 }

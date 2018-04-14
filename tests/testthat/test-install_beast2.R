@@ -8,3 +8,12 @@ test_that("use", {
   install_beast2(folder_name)
   testthat::expect_true(file.exists(beast_jar_path))
 })
+
+test_that("default", {
+
+  beast_jar_path <- get_default_beast2_jar_path()
+  if (!file.exists(beast_jar_path)) {
+    install_beast2()
+  }
+  testthat::expect_true(file.exists(beast_jar_path))
+})

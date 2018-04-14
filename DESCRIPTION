@@ -19,6 +19,7 @@ Imports:
   ape,
   beautier,
   phangorn,
+  rappdirs,
   tracerer,
   stringr,
   xml2
