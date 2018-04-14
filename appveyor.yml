@@ -28,10 +28,10 @@ build_script:
   - travis-tool.sh install_github jimhester/covr
   - travis-tool.sh install_github jimhester/lintr
   - travis-tool.sh install_github MangoTheCat/goodpractice
-  #- install_beast2
-  - R -e "library(beastier); beastier::install_beast2()"
 
 test_script:
+  #- install_beast2
+  - R -e "library(beastier); beastier::install_beast2()"
   - travis-tool.sh run_tests
 
 on_failure:
