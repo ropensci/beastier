@@ -11,7 +11,8 @@ r_github_packages:
 before_script:
   - sudo apt-get install -qq oracle-java8-installer # Java 8
   - sudo apt-get install oracle-java8-set-default
-  - ./install_beast2
+  - Rscript -e "source(\"R/install_beast2.R\"); install_beast2()"
+  #- ./install_beast2
   # proselint
   - sudo pip install proselint
   # markdown-link-check, temporarily disabled due to CERT_UNTRUSTED
