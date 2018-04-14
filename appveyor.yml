@@ -30,7 +30,7 @@ build_script:
   - travis-tool.sh install_github MangoTheCat/goodpractice
   - Rscript -e "source(\"R/install_beast2.R\"); install_beast2()"
   - Rscript -e "source(\"R/get_default_beast2_folder.R\"); print(get_default_beast2_folder())"
-  - Rscript -e "source(\"R/get_default_beast2_jar_path.R\"); print(get_default_beast2_jar_path())"
+  - Rscript -e "source(\"R/get_default_beast2_folder.R\"); source(\"R/get_default_beast2_jar_path.R\"); print(get_default_beast2_jar_path())"
   #- R -e "library(beastier); beastier::install_beast2()"
   #- install_beast2
 
