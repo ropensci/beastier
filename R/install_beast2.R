@@ -2,13 +2,17 @@
 #' @param folder_name name of the folder where the BEAST2 files will
 #'   be put. The name of the BEAST2 jar file will be at
 #'   \code{[folder_name]/beast/lib/beast.jar}
+#' @param verbose show debug info
 #' @examples
 #'   install_beast2()
 #'   testit::assert(file.exists(get_default_beast2_jar_path()))
 #' @author Richel J.C. Bilderbeek
 #' @note This function only tested to work under GNU/Linux
 #' @export
-install_beast2 <- function(folder_name = get_default_beast2_folder()) {
+install_beast2 <- function(
+  folder_name = rappdirs::user_data_dir(),
+  verbose = TRUE
+) {
   dir.create(path = folder_name,  showWarnings = FALSE, recursive = TRUE)
   tgz_filename <- "BEAST.v2.4.8.Linux.tgz"
   url <- paste0(
@@ -23,11 +27,13 @@ install_beast2 <- function(folder_name = get_default_beast2_folder()) {
   testit::assert(file.exists(local_path))
   utils::untar(
     tarfile = local_path,
-    exdir = path.expand(paste0(folder_name)),
+    exdir = path.expand(folder_name),
     verbose = TRUE
   )
 
-  testit::assert(
-    file.exists(file.path(folder_name, "beast", "lib", "beast.jar"))
-  )
+  jar_file_path <- file.path(folder_name, "beast", "lib", "beast.jar")
+  if (verbose == TRUE) {
+    print(paste("BEAST installed at", jar_file_path))
+  }
+  testit::assert(file.exists(jar_file_path))
 }

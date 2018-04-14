@@ -4,12 +4,14 @@
 \alias{install_beast2}
 \title{Install BEAST2}
 \usage{
-install_beast2(folder_name = rappdirs::user_data_dir())
+install_beast2(folder_name = rappdirs::user_data_dir(), verbose = TRUE)
 }
 \arguments{
 \item{folder_name}{name of the folder where the BEAST2 files will
 be put. The name of the BEAST2 jar file will be at
 \code{[folder_name]/beast/lib/beast.jar}}
+
+\item{verbose}{show debug info}
 }
 \description{
 Install BEAST2
