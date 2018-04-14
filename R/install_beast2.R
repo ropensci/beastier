@@ -15,7 +15,7 @@ install_beast2 <- function(folder_name = rappdirs::user_data_dir()) {
     "https://github.com/CompEvol/beast2/releases/download/v2.4.8/",
     tgz_filename
   )
-  local_path <- path.expand(paste0(folder_name, "/", tgz_filename))
+  local_path <- file.path(folder_name, tgz_filename)
   utils::download.file(
     url = url,
     destfile = local_path
@@ -27,5 +27,7 @@ install_beast2 <- function(folder_name = rappdirs::user_data_dir()) {
     verbose = TRUE
   )
 
-  testit::assert(file.exists(paste0(folder_name, "/beast/lib/beast.jar")))
+  testit::assert(
+    file.exists(file.path(folder_name, "beast", "lib", "beast.jar"))
+  )
 }
