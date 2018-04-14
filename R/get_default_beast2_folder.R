@@ -8,7 +8,7 @@
 #'   if (rappdirs::app_dir()$os == "unix") {
 #'     testit::assert(
 #'       grepl(
-#'         "/home/[A-Za-z0-9_]*/.local/share/beast",
+#'         "/home/[A-Za-z0-9_]*/.local/share",
 #'         get_default_beast2_folder()
 #'       )
 #'     )
