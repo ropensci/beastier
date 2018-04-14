@@ -3,9 +3,8 @@
 #'   be put. The name of the BEAST2 jar file will be at
 #'   \code{[folder_name]/beast/lib/beast.jar}
 #' @examples
-#'   install_beast2(folder_name = get_default_beast2_folder())
-#'   beast2_jar_path <- paste0(folder_name, "/beast/lib/beast.jar")
-#'   testit::assert(file.exists(beast2_jar_path))
+#'   install_beast2()
+#'   testit::assert(file.exists(get_default_beast2_jar_path()))
 #' @author Richel J.C. Bilderbeek
 #' @note This function only tested to work under GNU/Linux
 #' @export
@@ -27,5 +26,6 @@ install_beast2 <- function(folder_name = rappdirs::user_data_dir()) {
     exdir = path.expand(paste0(folder_name)),
     verbose = TRUE
   )
+
   testit::assert(file.exists(paste0(folder_name, "/beast/lib/beast.jar")))
 }

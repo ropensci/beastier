@@ -18,9 +18,8 @@ Install BEAST2
 This function only tested to work under GNU/Linux
 }
 \examples{
-  install_beast2(folder_name = get_default_beast2_folder())
-  beast2_jar_path <- paste0(folder_name, "/beast/lib/beast.jar")
-  testit::assert(file.exists(beast2_jar_path))
+  install_beast2()
+  testit::assert(file.exists(get_default_beast2_jar_path()))
 }
 \author{
 Richel J.C. Bilderbeek
