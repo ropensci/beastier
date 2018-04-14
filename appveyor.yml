@@ -38,10 +38,8 @@ test_script:
 on_failure:
   - 7z a failure.zip *.Rcheck\*
   - appveyor PushArtifact failure.zip
-  - cd C:\Users\appveyor\AppData\Local
+  - cd C:\Users\appveyor\AppData\Local\beast
   - dir /s
-  - dir /x
-  - dir /s /x
 
 artifacts:
   - path: '*.Rcheck\**\*.log'
