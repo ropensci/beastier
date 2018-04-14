@@ -8,7 +8,7 @@
 #' @author Richel J.C. Bilderbeek
 #' @note This function only tested to work under GNU/Linux
 #' @export
-install_beast2 <- function(folder_name = rappdirs::user_data_dir()) {
+install_beast2 <- function(folder_name = get_default_beast2_folder()) {
   dir.create(path = folder_name,  showWarnings = FALSE, recursive = TRUE)
   tgz_filename <- "BEAST.v2.4.8.Linux.tgz"
   url <- paste0(

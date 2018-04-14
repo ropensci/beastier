@@ -13,5 +13,5 @@
 #' @author Richel J.C. Bilderbeek
 #' @export
 get_default_beast2_jar_path <- function() {
-  normalizePath(file.path(get_default_beast2_folder(), "lib", "beast.jar")) # nolint internal function
+  normalizePath(file.path(get_default_beast2_folder(), "beast", "lib", "beast.jar")) # nolint internal function
 }

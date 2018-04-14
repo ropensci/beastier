@@ -14,5 +14,5 @@
 #'     )
 #'   }
 get_default_beast2_folder <- function() {
-  rappdirs::user_data_dir("beast")
+  rappdirs::user_data_dir()
 }
