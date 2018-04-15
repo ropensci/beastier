@@ -27,7 +27,7 @@ If you want to contribute with an overarching idea, you are at the right spot :-
 Submitted code should follow these quality guidelines:
 
  * All tests pass cleanly/silently
- * Code coverage above 95%
+ * Code coverage must be 100%, expect for platform specific code paths
  * Coding style should follow the default style by `lintr`
 
 These are all checked by Travis CI when submitting
