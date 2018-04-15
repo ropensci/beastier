@@ -107,7 +107,7 @@ run_beast2 <- function(
     overwrite_state_file = TRUE,
     beast2_jar_path = beast2_jar_path
   )
-  if (!verbose && rappdirs:::get_os() == "unix") {
+  if (!verbose && .Platform$OS.type == "unix") {
     cmd <- paste(cmd, "1>/dev/null 2>/dev/null")
   }
   exit_code <- system(cmd, intern = FALSE)
