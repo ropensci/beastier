@@ -2,9 +2,10 @@ context("run_beast2")
 
 test_that("single alignment creates all files", {
 
-  output_log_filename <- "tmp_single.log"
-  output_trees_filenames <- "tmp_single.trees"
-  output_state_filename <- "tmp_single.state"
+
+  output_log_filename <- tempfile("tmp_single.log")
+  output_trees_filenames <- tempfile("tmp_single.trees")
+  output_state_filename <- tempfile("tmp_single.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
@@ -27,9 +28,9 @@ test_that("single alignment creates all files", {
 
 test_that("single alignment, WIRITTES setting", {
 
-  output_log_filename <- "tmp_single.log"
-  output_trees_filenames <- "tmp_single.trees"
-  output_state_filename <- "tmp_single.state"
+  output_log_filename <- tempfile("tmp_single.log")
+  output_trees_filenames <- tempfile("tmp_single.trees")
+  output_state_filename <- tempfile("tmp_single.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
@@ -57,12 +58,12 @@ test_that("single alignment, WIRITTES setting", {
 
 test_that("single alignment, equal RNG seed equal results", {
 
-  output_log_filename_1 <- "tmp_single_rng_1.log"
-  output_log_filename_2 <- "tmp_single_rng_2.log"
-  output_trees_filenames_1 <- "tmp_single_rng_1.trees"
-  output_trees_filenames_2 <- "tmp_single_rng_2.trees"
-  output_state_filename_1 <- "tmp_single_rng_1.state"
-  output_state_filename_2 <- "tmp_single_rng_2.state"
+  output_log_filename_1 <- tempfile("tmp_single_rng_1.log")
+  output_log_filename_2 <- tempfile("tmp_single_rng_2.log")
+  output_trees_filenames_1 <- tempfile("tmp_single_rng_1.trees")
+  output_trees_filenames_2 <- tempfile("tmp_single_rng_2.trees")
+  output_state_filename_1 <- tempfile("tmp_single_rng_1.state")
+  output_state_filename_2 <- tempfile("tmp_single_rng_2.state")
 
   output_files <- c(
     output_log_filename_1,
@@ -108,9 +109,9 @@ test_that("single alignment, equal RNG seed equal results", {
 
 test_that("two alignments creates all files", {
 
-  output_log_filename <- "tmp_two.log"
-  output_trees_filenames <- c("tmp_two_a.trees", "tmp_two_b.trees")
-  output_state_filename <- "tmp_two.state"
+  output_log_filename <- tempfile("tmp_two.log")
+  output_trees_filenames <- c(tempfile("tmp_two_a.trees"), tempfile("tmp_two_b.trees"))
+  output_state_filename <- tempfile("tmp_two.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
@@ -135,9 +136,9 @@ test_that("two alignments creates all files", {
 
 test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
 
-  output_log_filename <- "15_15.log"
-  output_trees_filenames <- c("15_15_a.trees", "15_15_b.trees")
-  output_state_filename <- "15_15.state"
+  output_log_filename <- tempfile("15_15.log")
+  output_trees_filenames <- c(tempfile("15_15_a.trees"), tempfile("15_15_b.trees"))
+  output_state_filename <- tempfile("15_15.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
@@ -175,9 +176,9 @@ test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
 
 test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
 
-  output_log_filename <- "na_15.log"
-  output_trees_filenames <- c("na_15_a.trees", "na_15_b.trees")
-  output_state_filename <- "na_15.state"
+  output_log_filename <- tempfile("na_15.log")
+  output_trees_filenames <- c(tempfile("na_15_a.trees"), tempfile("na_15_b.trees"))
+  output_state_filename <- tempfile("na_15.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
@@ -275,9 +276,9 @@ test_that("Create data from anthus_15_15_long.xml", {
 
   return()
 
-  output_log_filename <- "15_15_long.log"
-  output_trees_filenames <- c("15_15_long_a.trees", "15_15_long_b.trees")
-  output_state_filename <- "15_15_long.state"
+  output_log_filename <- tempfile("15_15_long.log")
+  output_trees_filenames <- c(tempfile("15_15_long_a.trees"), tempfile("15_15_long_b.trees"))
+  output_state_filename <- tempfile("15_15_long.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
