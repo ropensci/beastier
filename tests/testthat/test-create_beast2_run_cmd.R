@@ -28,7 +28,7 @@ test_that("use, WIRITTES", {
   input_filename <- "input.xml"
   output_state_filename <- "output.xml.state"
   rng_seed <- 42
-  beast2_jar_path <- "C:/some/path/to/beast.jar"
+  beast2_jar_path <- "C:/some path with spaces/to/beast.jar"
 
   created <- create_beast2_run_cmd(
     input_filename = input_filename,
@@ -41,12 +41,12 @@ test_that("use, WIRITTES", {
   )
 
   expected <- paste0(
-    "java -jar ", beast2_jar_path,
+    "java -jar ", "\"", beast2_jar_path, "\"",
     " -seed ", rng_seed,
     " -threads 8 -beagle",
-    " -statefile ", output_state_filename,
+    " -statefile \"", output_state_filename, "\"",
     " -overwrite ",
-    input_filename
+    "\"", input_filename, "\""
   )
 
   testthat::expect_equal(created, expected)
