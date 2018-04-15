@@ -116,7 +116,6 @@ run_beast2 <- function(
     exit_code <- system(
       cmd,
       intern = FALSE,
-      invisible = !verbose,
       show.output.on.console = !verbose
     )
   }
