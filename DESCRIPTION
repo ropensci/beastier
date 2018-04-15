@@ -14,7 +14,7 @@ Description: 'BEAST2' (<http://www.beast2.org>) is a widely used
 License: GPL-3 | file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.1
+RoxygenNote: 6.0.1.9000
 Imports:
   ape,
   beautier,

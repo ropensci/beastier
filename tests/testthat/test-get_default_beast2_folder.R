@@ -13,7 +13,7 @@ test_that("use", {
   if (rappdirs::app_dir()$os == "win") {
     testthat::expect_true(
       grepl(
-        "C:/Users/<username>/Local/beast/beast",
+        "C:\\\\Users\\\\",
         get_default_beast2_folder()
       )
     )

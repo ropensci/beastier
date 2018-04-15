@@ -12,11 +12,11 @@ test_that("use", {
     overwrite_state_file = TRUE,
     beast2_jar_path = beast2_jar_path
   )
-  expected <- paste(
-    "java -jar", beast2_jar_path,
-    "-statefile", output_state_filename,
-    "-overwrite",
-    input_filename
+  expected <- paste0(
+    "java -jar \"", beast2_jar_path,
+    "\" -statefile \"", output_state_filename,
+    "\" -overwrite \"",
+    input_filename, "\""
   )
   testthat::expect_equal(created, expected)
 

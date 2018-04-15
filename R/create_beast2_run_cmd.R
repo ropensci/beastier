@@ -24,7 +24,7 @@ create_beast2_run_cmd <- function(
   overwrite_state_file = TRUE,
   beast2_jar_path = get_default_beast2_jar_path()
 ) {
-  cmd <- paste("java -jar", beast2_jar_path)
+  cmd <- paste0("java -jar \"", beast2_jar_path, "\"")
   if (!is.na(rng_seed)) {
     cmd <- paste(cmd, "-seed", rng_seed)
   }
@@ -34,11 +34,11 @@ create_beast2_run_cmd <- function(
   if (use_beagle == TRUE) {
     cmd <- paste(cmd, "-beagle")
   }
-  cmd <- paste(cmd, "-statefile", output_state_filename)
+  cmd <- paste0(cmd, " -statefile \"", output_state_filename, "\"")
   if (overwrite_state_file == TRUE) {
     cmd <- paste(cmd, "-overwrite")
   }
 
-  cmd <- paste(cmd, input_filename)
+  cmd <- paste0(cmd, " \"", input_filename, "\"")
   cmd
 }
