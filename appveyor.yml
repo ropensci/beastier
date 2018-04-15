@@ -25,14 +25,12 @@ build_script:
   - travis-tool.sh install_deps
   - travis-tool.sh install_github richelbilderbeek/beautier
   - travis-tool.sh install_github richelbilderbeek/tracerer
-  - travis-tool.sh install_github jimhester/covr
-  - travis-tool.sh install_github jimhester/lintr
-  - travis-tool.sh install_github MangoTheCat/goodpractice
+  #- travis-tool.sh install_github jimhester/covr
+  #- travis-tool.sh install_github jimhester/lintr
+  #- travis-tool.sh install_github MangoTheCat/goodpractice
   - Rscript -e "source(\"R/install_beast2.R\"); install_beast2()"
   - Rscript -e "source(\"R/get_default_beast2_folder.R\"); print(get_default_beast2_folder())"
   - Rscript -e "source(\"R/get_default_beast2_folder.R\"); source(\"R/get_default_beast2_jar_path.R\"); print(get_default_beast2_jar_path())"
-  #- R -e "library(beastier); beastier::install_beast2()"
-  #- install_beast2
 
 test_script:
   - travis-tool.sh run_tests
@@ -40,8 +38,6 @@ test_script:
 on_failure:
   - 7z a failure.zip *.Rcheck\*
   - appveyor PushArtifact failure.zip
-  - cd C:\Users\appveyor\AppData\Local\beast
-  - dir /s
 
 artifacts:
   - path: '*.Rcheck\**\*.log'
