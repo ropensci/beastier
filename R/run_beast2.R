@@ -117,7 +117,9 @@ run_beast2 <- function(
       cmd,
       intern = FALSE,
       invisible = !verbose,
-      show.output.on.console = !verbose
+      show.output.on.console = !verbose,
+      ignore.stdout = !verbose,
+      ignore.stderr = !verbose
     )
   }
 
