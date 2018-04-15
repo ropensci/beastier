@@ -107,8 +107,12 @@ run_beast2 <- function(
     overwrite_state_file = TRUE,
     beast2_jar_path = beast2_jar_path
   )
-  if (!verbose && .Platform$OS.type == "unix") {
-    cmd <- paste(cmd, "1>/dev/null 2>/dev/null")
+  if (!verbose) {
+    if (.Platform$OS.type == "unix") {
+      cmd <- paste(cmd, "1>/dev/null 2>/dev/null")
+    } else {
+      cmd <- paste(cmd, "1>nul 2>nul")
+    }
   }
   exit_code <- system(cmd, intern = FALSE)
 
