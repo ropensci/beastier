@@ -11,6 +11,11 @@ create_beast2_validate_cmd <- function(
   input_filename,
   beast2_jar_path = get_default_beast2_jar_path()
 ) {
-  paste0("java -jar \"", beast2_jar_path, "\" -validate \"", input_filename, "\"")
+  paste0(
+    "java -jar ",
+    "\"", beast2_jar_path, "\"",
+    " -validate",
+    " \"", input_filename, "\""
+  )
 
 }

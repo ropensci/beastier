@@ -110,7 +110,10 @@ test_that("single alignment, equal RNG seed equal results", {
 test_that("two alignments creates all files", {
 
   output_log_filename <- tempfile("tmp_two.log")
-  output_trees_filenames <- c(tempfile("tmp_two_a.trees"), tempfile("tmp_two_b.trees"))
+  output_trees_filenames <- c(
+    tempfile("tmp_two_a.trees"),
+    tempfile("tmp_two_b.trees")
+  )
   output_state_filename <- tempfile("tmp_two.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
@@ -137,7 +140,10 @@ test_that("two alignments creates all files", {
 test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
 
   output_log_filename <- tempfile("15_15.log")
-  output_trees_filenames <- c(tempfile("15_15_a.trees"), tempfile("15_15_b.trees"))
+  output_trees_filenames <- c(
+    tempfile("15_15_a.trees"),
+    tempfile("15_15_b.trees")
+  )
   output_state_filename <- tempfile("15_15.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
@@ -177,7 +183,10 @@ test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
 test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
 
   output_log_filename <- tempfile("na_15.log")
-  output_trees_filenames <- c(tempfile("na_15_a.trees"), tempfile("na_15_b.trees"))
+  output_trees_filenames <- c(
+    tempfile("na_15_a.trees"),
+    tempfile("na_15_b.trees")
+  )
   output_state_filename <- tempfile("na_15.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
@@ -277,7 +286,10 @@ test_that("Create data from anthus_15_15_long.xml", {
   return()
 
   output_log_filename <- tempfile("15_15_long.log")
-  output_trees_filenames <- c(tempfile("15_15_long_a.trees"), tempfile("15_15_long_b.trees"))
+  output_trees_filenames <- c(
+    tempfile("15_15_long_a.trees"),
+    tempfile("15_15_long_b.trees")
+  )
   output_state_filename <- tempfile("15_15_long.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
