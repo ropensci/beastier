@@ -107,31 +107,21 @@ run_beast2 <- function(
     overwrite_state_file = TRUE,
     beast2_jar_path = beast2_jar_path
   )
-
-  # Windows settings
-  ignore.stdout <- !verbose
-  ignore.stderr <- !verbose
-  show.output.on.console <- !verbose
-  invisible <- !verbose
-
   if (.Platform$OS.type == "unix") {
-    # Default settings again
-    ignore.stdout <- FALSE
-    ignore.stderr <- FALSE
-    show.output.on.console <- TRUE
-    invisible <- TRUE
     if (!verbose) {
       cmd <- paste(cmd, "1>/dev/null 2>/dev/null")
     }
+    exit_code <- system(cmd, intern = FALSE)
+  } else {
+    exit_code <- system(
+      cmd,
+      intern = FALSE,
+      invisible = !verbose,
+      show.output.on.console = !verbose,
+      ignore.stdout = !verbose,
+      ignore.stderr = !verbose
+    )
   }
-  exit_code <- system(
-    cmd,
-    intern = FALSE,
-    invisible = invisible,
-    show.output.on.console = show.output.on.console,
-    ignore.stdout = ignore.stdout,
-    ignore.stderr = ignore.stderr
-  )
 
   testit::assert(exit_code == 0)
   testit::assert(file.exists(output_state_filename))
