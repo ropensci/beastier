@@ -19,7 +19,7 @@ develop|[![Build Status](https://travis-ci.org/richelbilderbeek/beastier.svg?bra
 
 See [examples](examples.md).
 
-## Installation
+## Install `beastier`
 
 If you use the `devtools` R package, this is easy:
 
@@ -27,8 +27,21 @@ If you use the `devtools` R package, this is easy:
 devtools::install_github("richelbilderbeek/beastier")
 ```
 
-`beastier` assumes that BEAST2 is installed. See [install BEAST2](install_beast2.md)
-for how to [install BEAST2](install_beast2.md).
+`beastier` assumes that BEAST2 is installed.
+
+To install BEAST2, from R do:
+
+```{r}
+library(beastier)
+install_beast2()
+```
+
+This will download and extract BEAST2 to:
+
+OS|Full path
+---|---
+Linux|`~/.local/share/beast/bin/beast.jar`
+Windows|`C:/Users/<username>/Local/beast/bin/beast.jar`
 
 ## FAQ
 
