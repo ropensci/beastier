@@ -324,3 +324,22 @@ test_that("Create data from anthus_15_15_long.xml", {
 
   # Copy those file to where needed
 })
+
+test_that("suppress warning", {
+
+  withCallingHandlers(
+      suppressMessages(
+        exit_code <- system(
+          command = "echo hello",
+          intern = FALSE,
+          invisible = FALSE,
+          show.output.on.console = FALSE,
+          ignore.stdout = FALSE,
+          ignore.stderr = FALSE
+        )
+      )
+  )
+
+
+
+})
