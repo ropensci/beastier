@@ -1,9 +1,5 @@
 # FAQ
 
-## Which version of BEAUti do you use as a guideline?
-
-Version 2.4.8.
-
 ## How can I indicate a feature that I miss?
 
 Submit an Issue.

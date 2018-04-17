@@ -27,9 +27,7 @@ If you use the `devtools` R package, this is easy:
 devtools::install_github("richelbilderbeek/beastier")
 ```
 
-`beastier` assumes that BEAST2 is installed.
-
-To install BEAST2, from R do:
+`beastier` assumes that BEAST2 is installed. To install BEAST2, from R do:
 
 ```{r}
 library(beastier)
@@ -53,7 +51,6 @@ See [FAQ](faq.md)
 
 Here are some missing or (yet) unsupported features:
 
- * Validate a BEAST2 input file
  * Continue a BEAST2 run
  * Setup BEAGLE
 
