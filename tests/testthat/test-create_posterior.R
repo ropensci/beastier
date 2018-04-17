@@ -179,7 +179,7 @@ test_that(paste0("One fixed crown age must result in a posterior ",
   testthat::expect_equal(
     crown_age,
     beautier:::get_phylo_crown_age(
-      posterior$tmp_create_posterior_1_trees$STATE_2000
+      posterior$tmp_create_posterior_1_trees[[3]]
     ),
     tolerance = 0.001
   )
@@ -210,7 +210,7 @@ test_that(paste0("Two same fixed crown ages must result in a posterior ",
 
   testthat::expect_equal(crown_age,
     beautier:::get_phylo_crown_age(
-      posterior$tmp_create_posterior_1_trees$STATE_2000
+      posterior$tmp_create_posterior_1_trees[[3]]
     ),
     tolerance = 0.001
   )
@@ -219,7 +219,7 @@ test_that(paste0("Two same fixed crown ages must result in a posterior ",
   # desired fixed crown age
   testthat::expect_true(crown_age !=
     beautier:::get_phylo_crown_age(
-      posterior$tmp_create_posterior_2_trees$STATE_2000
+      posterior$tmp_create_posterior_2_trees[[3]]
     )
   )
 })
@@ -250,7 +250,7 @@ test_that(paste0("Two different fixed crown ages must result in a posterior ",
 
   testthat::expect_equal(crown_age_1,
     beautier:::get_phylo_crown_age(
-      posterior$tmp_create_posterior_1_trees$STATE_2000
+      posterior$tmp_create_posterior_1_trees[[3]]
     ),
     tolerance = 0.001
   )
@@ -258,7 +258,7 @@ test_that(paste0("Two different fixed crown ages must result in a posterior ",
   # Unexpected: will differ
   testthat::expect_true(crown_age_2 !=
     beautier:::get_phylo_crown_age(
-      posterior$tmp_create_posterior_2_trees$STATE_2000
+      posterior$tmp_create_posterior_2_trees[[3]]
     )
   )
 
@@ -284,14 +284,14 @@ test_that(paste0("One fixed crown age, one estimated, ",
     tolerance = 0.001)
   testthat::expect_equal(crown_age,
     beautier:::get_phylo_crown_age(
-      posterior$tmp_create_posterior_1_trees$STATE_2000
+      posterior$tmp_create_posterior_1_trees[[3]]
     ),
     tolerance = 0.001
   )
 
   testthat::expect_true(crown_age !=
     beautier:::get_phylo_crown_age(
-      posterior$tmp_create_posterior_2_trees$STATE_2000
+      posterior$tmp_create_posterior_2_trees[[3]]
     )
   )
 })
