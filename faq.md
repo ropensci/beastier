@@ -49,7 +49,7 @@ To prevent problems with Marvel, a different logo was picked.
 
 The current logo shows a hippo, 'quite a formidable beast', also shown
 intimidatingly big for the R logo. 
-The hippo is drawn by Jose Scholten, who kindly allowed her work to
+The hippo is drawn by Jose Scholte, who kindly allowed her work to
 be used for free, by attribution.
 
 ## How did you convert the fuzzy white background to one single color?
