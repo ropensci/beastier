@@ -1,5 +1,11 @@
 # FAQ
 
+## How to install BEAST2?
+
+```
+beastier::install_beast2()
+```
+
 ## How can I indicate a feature that I miss?
 
 Submit an Issue.
