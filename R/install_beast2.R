@@ -7,11 +7,10 @@
 #'   install_beast2()
 #'   testit::assert(file.exists(get_default_beast2_jar_path()))
 #' @author Richel J.C. Bilderbeek
-#' @note This function only tested to work under GNU/Linux
 #' @export
 install_beast2 <- function(
   folder_name = rappdirs::user_data_dir(),
-  verbose = TRUE
+  verbose = FALSE
 ) {
   dir.create(path = folder_name,  showWarnings = FALSE, recursive = TRUE)
   tgz_filename <- "BEAST.v2.4.8.Linux.tgz"

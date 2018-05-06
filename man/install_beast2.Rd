@@ -4,7 +4,7 @@
 \alias{install_beast2}
 \title{Install BEAST2}
 \usage{
-install_beast2(folder_name = rappdirs::user_data_dir(), verbose = TRUE)
+install_beast2(folder_name = rappdirs::user_data_dir(), verbose = FALSE)
 }
 \arguments{
 \item{folder_name}{name of the folder where the BEAST2 files will
@@ -15,9 +15,6 @@ be put. The name of the BEAST2 jar file will be at
 }
 \description{
 Install BEAST2
-}
-\note{
-This function only tested to work under GNU/Linux
 }
 \examples{
   install_beast2()
