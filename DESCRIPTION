@@ -1,7 +1,7 @@
 Package: beastier
 Type: Package
 Title: beastier: BEAST2 from R
-Version: 1.4.2
+Version: 1.4.3
 Author: Richel J.C. Bilderbeek <richel@richelbilderbeek.nl>
 Maintainer: Richel J.C. Bilderbeek <richel@richelbilderbeek.nl>
 Description: 'BEAST2' (<http://www.beast2.org>) is a widely used
