@@ -52,6 +52,25 @@ intimidatingly big for the R logo.
 The hippo is drawn by Jose Scholte, who kindly allowed her work to
 be used for free, by attribution.
 
+## Installing Java under Bionic
+
+The `.travis.yml` file shows a Trusty install:
+
+```
+ - sudo apt-get install -qq oracle-java8-installer # Java 8
+ - sudo apt-get install oracle-java8-set-default
+```
+
+On Bionic, I assume the same can be achieved with:
+
+
+```
+  - sudo add-apt-repository -y ppa:webupd8team/java 
+  - sudo apt-get update -qq
+  - sudo apt-get install oracle-java8-installer
+  - sudo apt-get install oracle-java8-set-default
+``
+
 ## How did you convert the fuzzy white background to one single color?
 
 ```
