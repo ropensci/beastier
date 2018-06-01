@@ -24,6 +24,7 @@ Imports:
   stringr,
   xml2
 Suggests:
+  hunspell,
   knitr,
   rmarkdown,
   testit,
