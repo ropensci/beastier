@@ -18,9 +18,9 @@
 #'   of the initial phylogeny.
 #' @param initial_phylogenies one or more MCMC chain's initial phylogenies.
 #'   Each one set to NA will result in BEAST2 using a random phylogeny. Else
-#'   the phylogeny is assumed to be of class ape::phylo.
+#'   the phylogeny is assumed to be of class \code{ape::phylo}.
 #' @param input_filenames One or more FASTA filenames.
-#' @param mcmc one \code{beautier} mcmc object
+#' @param mcmc one \code{beautier} MCMC
 #' @param misc_options one \code{beautier} misc_options object
 #' @param output_filename Name of the XML parameter file created by this
 #'   function. BEAST2 uses this file as input.

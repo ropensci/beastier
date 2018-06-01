@@ -37,11 +37,11 @@ of the initial phylogeny.}
 
 \item{initial_phylogenies}{one or more MCMC chain's initial phylogenies.
 Each one set to NA will result in BEAST2 using a random phylogeny. Else
-the phylogeny is assumed to be of class ape::phylo.}
+the phylogeny is assumed to be of class \code{ape::phylo}.}
 
 \item{input_filenames}{One or more FASTA filenames.}
 
-\item{mcmc}{one \code{beautier} mcmc object}
+\item{mcmc}{one \code{beautier} MCMC}
 
 \item{misc_options}{one \code{beautier} misc_options object}
 

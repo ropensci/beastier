@@ -10,7 +10,7 @@ get_beastier_path(filename)
 \item{filename}{the file's name, without the path}
 }
 \value{
-the filename's full path
+the full path to the filename
 }
 \description{
 Get the full path of a file in the 'inst/extdata' folder
