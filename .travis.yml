@@ -11,6 +11,7 @@ r_github_packages:
   - MangoTheCat/goodpractice
   - richelbilderbeek/beautier
   - richelbilderbeek/tracerer
+  - ropensci/spelling
 
 before_script:
   - sudo apt-get install -qq oracle-java8-installer # Java 8

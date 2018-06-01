@@ -24,6 +24,7 @@ Imports:
   stringr,
   xml2
 Suggests:
+    spelling,
   hunspell,
   knitr,
   rmarkdown,
@@ -38,3 +39,4 @@ Remotes:
 VignetteBuilder: knitr
 URL: https://github.com/richelbilderbeek/beastier
 BugReports: https://github.com/richelbilderbeek/beastier
+Language: en-US
