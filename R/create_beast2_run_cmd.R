@@ -13,6 +13,14 @@
 #'   (usually has a \code{.jar} extension).
 #'   Use \link{get_default_beast2_jar_path} to get
 #'   the default BEAST jar file's path
+#' @return one character string that calls the BEAST2
+#'   \code{.jar} file, starting with \code{"java -jar "}
+#' @examples
+#'   cmd <- create_beast2_run_cmd(
+#'     input_filename = "input.xml",
+#'     output_state_filename = "output.xml.state"
+#'   )
+#'   testit::assert(substr(cmd, 1, 10) == "java -jar ")
 #' @author Richel J.C. Bilderbeek
 #' @export
 create_beast2_run_cmd <- function(
