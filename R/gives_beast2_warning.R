@@ -14,38 +14,18 @@ gives_beast2_warning <- function(
   verbose = FALSE,
   beast2_jar_path = get_default_beast2_jar_path()
 ) {
-  if (!file.exists(filename)) {
-    stop(
-      "'filename' must be the name of an existing file. ",
-      "Filename '", filename, "' not found"
-    )
-  }
-  if (!file.exists(beast2_jar_path)) {
-    stop(
-      "'beast2_jar_path' must be the full path ",
-      "of the BEAST2 file 'beast.jar'. ",
-      "beast.jar not found at path '", beast2_jar_path, "'"
-    )
-  }
-
-  # Create the command to let BEAST2 validate the created XML file
-  cmd <- beastier::create_beast2_validate_cmd(
-    input_filename = filename,
-    beast2_jar_path = beast2_jar_path
+  tryCatch(
+    {
+      is_beast2_input_file(
+        filename = filename,
+        show_warnings = TRUE,
+        verbose = verbose,
+        beast2_jar_path = beast2_jar_path
+      )
+      FALSE
+    },
+    warning = function(msg) {
+      return(TRUE)
+    }
   )
-
-  # Valid BEAST2 input files will result in an output with 'Done!' at the
-  # last line
-  cmds <- unlist(strsplit(x = cmd, split = " "))
-  output <- system2(
-    cmds[1],
-    args = cmds[2:length(cmds)],
-    stdout = TRUE,
-    stderr = TRUE
-  )
-  if (verbose) {
-    print(output)
-  }
-
-  sum(grepl(x = output, pattern = "WARNING: ")) > 0
 }
