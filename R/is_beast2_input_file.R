@@ -35,10 +35,6 @@ is_beast2_input_file <- function(
     beast2_jar_path = beast2_jar_path
   )
 
-  # BEAST2 returns an error code.
-  # An error code of 0 denotes that the file was valid
-  status_code <- system(cmd, ignore.stderr = TRUE, ignore.stdout = TRUE)
-
   cmds <- unlist(strsplit(x = cmd, split = " "))
   output <- system2(
     cmds[1],
@@ -54,11 +50,6 @@ is_beast2_input_file <- function(
       sum(grepl(x = output, pattern = "WARNING: "))) {
     warning(output[grepl(x = output, pattern = "WARNING: ")])
   }
-  # Invalid files are not valid BEAST2 input files
-  # Create an if statement here,
-  # if there is an input file that violates this assert,
-  # and add it to the test
-  testit::assert(status_code == 0)
 
   is_valid <- utils::tail(output, n = 1) == "Done!"
   is_valid
