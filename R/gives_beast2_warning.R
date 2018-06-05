@@ -14,8 +14,7 @@ gives_beast2_warning <- function(
   verbose = FALSE,
   beast2_jar_path = get_default_beast2_jar_path()
 ) {
-  tryCatch(
-    {
+  tryCatch( {
       is_beast2_input_file(
         filename = filename,
         show_warnings = TRUE,
