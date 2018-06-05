@@ -7,7 +7,10 @@ test_that("use", {
   folder_name <- tempdir()
   beast_jar_path <- file.path(folder_name, "beast", "lib", "beast.jar")
   testit::assert(!file.exists(beast_jar_path))
-  install_beast2(folder_name)
+  testthat::expect_output(
+    install_beast2(folder_name, verbose = TRUE),
+    "BEAST2 installed at"
+  )
   testthat::expect_true(file.exists(beast_jar_path))
 })
 

@@ -13,9 +13,9 @@ install_beast2 <- function(
   verbose = FALSE
 ) {
   dir.create(path = folder_name,  showWarnings = FALSE, recursive = TRUE)
-  tgz_filename <- "BEAST.v2.4.8.Linux.tgz"
+  tgz_filename <- "BEAST.v2.5.0.Linux.tgz"
   url <- paste0(
-    "https://github.com/CompEvol/beast2/releases/download/v2.4.8/",
+    "https://github.com/CompEvol/beast2/releases/download/v2.5.0/",
     tgz_filename
   )
   local_path <- file.path(folder_name, tgz_filename)
@@ -32,7 +32,7 @@ install_beast2 <- function(
 
   jar_file_path <- file.path(folder_name, "beast", "lib", "beast.jar")
   if (verbose == TRUE) {
-    print(paste("BEAST installed at", jar_file_path))
+    print(paste("BEAST2 installed at", jar_file_path))
   }
   testit::assert(file.exists(jar_file_path))
 }
