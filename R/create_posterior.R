@@ -24,7 +24,7 @@ create_posterior <- function(
       stop("crown age must be either NA or a non-zero positive number")
     }
   }
-  base_filename <- "tmp_create_posterior"
+  base_filename <- tempfile("tmp_create_posterior")
   # BEAST2 input XML file, created by beautier::create_beast2_input_file
   beast_filename <- paste0(base_filename, ".xml")
   # BEAST2 output file, containing the posterior parameter estimates
