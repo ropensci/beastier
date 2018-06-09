@@ -1,8 +1,8 @@
-#' Determine if the XML text has unique distribution IDs and unique
-#'   parameter IDs
+#' Determine if the XML text has unique parameter IDs
 #' @param text the XML as text
-#' @return TRUE if all IDs are unique, FALSE otherwise
-#' @seealso to obtain the duplicate IDs, use \code{\link{get_duplicate_param_ids}}
+#' @return TRUE if all parameter IDs are unique, FALSE otherwise
+#' @seealso to obtain the duplicate parameter IDs, use
+#'   \code{\link{get_duplicate_param_ids}}
 #' @author Richel J.C. Bilderbeek
 #' @examples
 #'   line_1 <- "<parameter id=\"RealParameter.1\" ...</parameter>"
