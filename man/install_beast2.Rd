@@ -13,6 +13,9 @@ be put. The name of the BEAST2 jar file will be at
 
 \item{verbose}{show debug info}
 }
+\value{
+Nothing. Will install BEAST2
+}
 \description{
 Install BEAST2
 }

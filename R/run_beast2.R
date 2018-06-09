@@ -16,6 +16,9 @@
 #' @param beast2_jar_path the path of \code{beast.jar}.
 #'   Use \link{get_default_beast2_jar_path} to get
 #'   the default BEAST jar file's path
+#' @return Nothing. It will create the files with names
+#'   \code{output_log_filename}, \code{output_trees_filenames}
+#'   and \code{output_state_filenames}
 #' @export
 #' @examples
 #'   output_log_filename <- "out.log"

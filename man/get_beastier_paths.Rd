@@ -10,7 +10,8 @@ get_beastier_paths(filenames)
 \item{filenames}{the files' names, without the path}
 }
 \value{
-the filenames' full paths
+the filenames' full paths. Will \code{stop} if a file
+  is absent in the \code{inst/extdata} folder
 }
 \description{
 Get the full paths of files in the \code{inst/extdata} folder

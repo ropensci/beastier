@@ -6,6 +6,9 @@
 \usage{
 get_default_beast2_jar_path()
 }
+\value{
+the default BEAST2 jar file's path
+}
 \description{
 Get the default BEAST2 jar file's path
 }

@@ -61,6 +61,9 @@ function. BEAST2 uses this file as input.}
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
 }
+\value{
+Nothing. This is an internal function that does nothing
+}
 \description{
 This function does nothing. It is intended to inherit is parameters'
 documentation.

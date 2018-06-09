@@ -1,7 +1,7 @@
 #' Save text (a container of strings) to a file
 #' @param filename filename of the file to have the text written to
 #' @param lines lines of text to be written to file
-#' @return Nothing
+#' @return Nothing. Will save the lines to file
 #' @author Richel J.C. Bilderbeek
 #' @examples
 #'   text <- c("hello", "world")

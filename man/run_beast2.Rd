@@ -40,6 +40,11 @@ the default BEAST jar file's path}
 
 \item{verbose}{show more (debug) output}
 }
+\value{
+Nothing. It will create the files with names
+  \code{output_log_filename}, \code{output_trees_filenames}
+  and \code{output_state_filenames}
+}
 \description{
 Run BEAST2
 }

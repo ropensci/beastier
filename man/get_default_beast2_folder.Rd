@@ -7,6 +7,10 @@ BEAST2 by default}
 \usage{
 get_default_beast2_folder()
 }
+\value{
+the path to the folder where this package installs
+  BEAST2 by default
+}
 \description{
 Get the path to the folder where this package installs
 BEAST2 by default

@@ -1,6 +1,8 @@
 #' Create a BEAST2 posterior by running BEAST2 from a random alignment
 #' @inheritParams default_params_doc
 #' @param n_taxa number of taxa in the simulated phylogeny
+#' @return a posterior, as created by
+#'   \code{\link[tracerer]{parse_beast_posterior}}
 #' @author Richel J.C. Bilderbeek
 #' @noRd
 create_posterior <- function(

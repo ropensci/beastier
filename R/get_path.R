@@ -1,6 +1,7 @@
 #' Get the full path of a file in the \code{inst/extdata} folder
 #' @param filename the file's name, without the path
-#' @return the full path to the filename
+#' @return the full path to the filename. Will \code{stop} if the file
+#'   is absent in the \code{inst/extdata} folder
 #' @author Richel J.C. Bilderbeek
 #' @seealso for more files, use \code{\link{get_beastier_paths}}
 #' @examples

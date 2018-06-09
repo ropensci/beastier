@@ -1,5 +1,7 @@
 #' Get the path to the folder where this package installs
 #' BEAST2 by default
+#' @return the path to the folder where this package installs
+#'   BEAST2 by default
 #' @author Richel J.C. Bilderbeek
 #' @seealso Use \link{get_default_beast2_jar_path} to get the path
 #'   to the BEAST2 jar file, when installed by this package
