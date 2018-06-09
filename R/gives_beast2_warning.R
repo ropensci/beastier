@@ -7,7 +7,11 @@
 #'   the default BEAST jar file's path
 #' @return TRUE if the file produces a BEAST2 warning, FALSE if not
 #' @author Richel J.C. Bilderbeek
-#' @seealso Use \code{\link{are_beast2_input_lines}} to check the lines
+#' @seealso
+#'   Use \code{\link{is_beast2_input_file}} to check if a file is a
+#'   valid BEAST2 input file.
+#'   Use \code{\link{are_beast2_input_lines}} to check if the text (for
+#'   example, as loaded from a file) to be valid BEAST2 input.
 #' @export
 gives_beast2_warning <- function(
   filename,

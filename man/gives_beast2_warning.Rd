@@ -26,7 +26,10 @@ Determines if BEAST2 issues a warning
 when using the BEAST2 XML input file
 }
 \seealso{
-Use \code{\link{are_beast2_input_lines}} to check the lines
+Use \code{\link{is_beast2_input_file}} to check if a file is a
+  valid BEAST2 input file.
+  Use \code{\link{are_beast2_input_lines}} to check if the text (for
+  example, as loaded from a file) to be valid BEAST2 input.
 }
 \author{
 Richel J.C. Bilderbeek
