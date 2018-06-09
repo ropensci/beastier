@@ -9,9 +9,13 @@
 #'   testit::assert(
 #'     length(beastier:::get_duplicate_param_ids(c(line_1, line_2))) == 0)
 #'   testit::assert(
-#'     beastier:::get_duplicate_param_ids(c(line_1, line_1)) == c("RealParameter.1"))
+#'     beastier:::get_duplicate_param_ids(
+#'     c(line_1, line_1)) == c("RealParameter.1")
+#'   )
 #'   testit::assert(
-#'     beastier:::get_duplicate_param_ids(c(line_2, line_2)) == c("RealParameter.2"))
+#'     beastier:::get_duplicate_param_ids(
+#'     c(line_2, line_2)) == c("RealParameter.2")
+#'   )
 #' @noRd
 get_duplicate_param_ids <- function(
   text
