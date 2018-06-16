@@ -51,3 +51,23 @@ test_that("use, WIRITTES", {
 
   testthat::expect_equal(created, expected)
 })
+
+
+test_that("different overwrite option results in different command", {
+
+  output_state_filename <- "output.xml.state"
+  input_filename <- "input.xml"
+
+  cmd_true <- beastier::create_beast2_run_cmd(
+    input_filename = input_filename,
+    output_state_filename = output_state_filename,
+    overwrite_state_file = TRUE
+  )
+  cmd_false <- beastier::create_beast2_run_cmd(
+    input_filename = input_filename,
+    output_state_filename = output_state_filename,
+    overwrite_state_file = FALSE
+  )
+  testthat::expect_true(cmd_false != cmd_true)
+
+})

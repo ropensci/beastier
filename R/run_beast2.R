@@ -97,17 +97,16 @@ run_beast2 <- function(
   beast_trees_filenames <- paste0(alignment_ids, ".trees")
 
   # Run BEAST2
-  remove_files(
-    c(output_state_filename, beast_log_filename, beast_trees_filenames))
-  testthat::expect_false(files_exist(
-    c(output_state_filename, beast_log_filename, beast_trees_filenames)))
+  remove_files(c(beast_log_filename, beast_trees_filenames))
+  testthat::expect_false(files_exist(c(output_state_filename, beast_log_filename, beast_trees_filenames)))
+
   cmd <- beastier::create_beast2_run_cmd(
     input_filename = input_filename,
     output_state_filename = output_state_filename,
     rng_seed = rng_seed,
     n_threads = n_threads,
     use_beagle = use_beagle,
-    overwrite_state_file = TRUE,
+    overwrite_state_file = overwrite_state_file,
     beast2_jar_path = beast2_jar_path
   )
 

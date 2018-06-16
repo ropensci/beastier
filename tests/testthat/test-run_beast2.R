@@ -10,7 +10,6 @@ test_that("single alignment creates all files", {
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
   )
-  beastier:::remove_files(output_files)
   testit::assert(!beastier:::files_exist(output_files))
 
   testthat::expect_silent(
@@ -23,7 +22,6 @@ test_that("single alignment creates all files", {
   )
 
   testthat::expect_true(beastier:::files_exist(output_files))
-  beastier:::remove_files(output_files)
 })
 
 test_that("single alignment, WIRITTES setting", {
@@ -35,7 +33,6 @@ test_that("single alignment, WIRITTES setting", {
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
   )
-  beastier:::remove_files(output_files)
   testit::assert(!beastier:::files_exist(output_files))
 
   testthat::expect_silent(
@@ -52,7 +49,6 @@ test_that("single alignment, WIRITTES setting", {
   )
 
   testthat::expect_true(beastier:::files_exist(output_files))
-  beastier:::remove_files(output_files)
 })
 
 
@@ -73,7 +69,6 @@ test_that("single alignment, equal RNG seed equal results", {
     output_state_filename_1,
     output_state_filename_2
   )
-  beastier:::remove_files(output_files)
   testit::assert(!beastier:::files_exist(output_files))
 
   rng_seed <- 42
@@ -102,7 +97,6 @@ test_that("single alignment, equal RNG seed equal results", {
   lines_1 <- readLines(output_state_filename_1)
   lines_2 <- readLines(output_state_filename_2)
   testthat::expect_identical(lines_1, lines_2)
-  beastier:::remove_files(output_files)
 })
 
 
@@ -119,7 +113,6 @@ test_that("two alignments creates all files", {
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
   )
-  beastier:::remove_files(output_files)
   testit::assert(!beastier:::files_exist(output_files))
 
   testthat::expect_silent(
@@ -132,10 +125,7 @@ test_that("two alignments creates all files", {
   )
 
   testthat::expect_true(beastier:::files_exist(output_files))
-  beastier:::remove_files(output_files)
 })
-
-
 
 test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
 
@@ -149,7 +139,6 @@ test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
   )
-  beastier:::remove_files(output_files)
   testit::assert(!beastier:::files_exist(output_files))
 
   testthat::expect_silent(
@@ -175,8 +164,6 @@ test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
   testthat::expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
     != TRUE
   )
-
-  beastier:::remove_files(output_files)
 })
 
 
@@ -192,7 +179,6 @@ test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
   )
-  beastier:::remove_files(output_files)
   testit::assert(!beastier:::files_exist(output_files))
 
   testthat::expect_silent(
@@ -221,8 +207,6 @@ test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
   testthat::expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
     != TRUE
   )
-
-  beastier:::remove_files(output_files)
 })
 
 
@@ -276,9 +260,6 @@ test_that("abuse", {
     ),
     "'rng_seed' should be NA or non-zero positive"
   )
-
-
-
 })
 
 test_that("Create data from anthus_15_15_long.xml", {
@@ -295,7 +276,6 @@ test_that("Create data from anthus_15_15_long.xml", {
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
   )
-  beastier:::remove_files(output_files)
   testit::assert(!beastier:::files_exist(output_files))
 
   testthat::expect_silent(
@@ -321,7 +301,6 @@ test_that("Create data from anthus_15_15_long.xml", {
   testthat::expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
     != TRUE
   )
-
   # Copy those file to where needed
 })
 
@@ -351,7 +330,7 @@ test_that("BEAST2 does not overwrites log and trees files", {
     )
   )
 
-  # Overwrites all
+  # Overwrites all???
   testit::assert(all(readLines(output_log_filename) != "log"))
   testit::assert(all(readLines(output_trees_filename, warn = FALSE) != "trees"))
   testit::assert(all(readLines(output_state_filename) != "state"))
