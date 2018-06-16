@@ -308,8 +308,8 @@ test_that("BEAST2 does not overwrites log and trees files", {
 
   skip("WIP")
   output_log_filename <- tempfile(fileext =  ".log")
-  output_trees_filename <- tempfile(fileext =".trees")
-  output_state_filename <- tempfile(fileext =".state")
+  output_trees_filename <- tempfile(fileext = ".trees")
+  output_state_filename <- tempfile(fileext = ".state")
 
   # Create files to be detectably overwritten
   write(x = "log", file = output_log_filename)
@@ -339,8 +339,8 @@ test_that("BEAST2 does not overwrites log and trees files", {
 test_that("BEAST2 overwrites log and trees files", {
 
   output_log_filename <- tempfile(fileext =  ".log")
-  output_trees_filename <- tempfile(fileext =".trees")
-  output_state_filename <- tempfile(fileext =".state")
+  output_trees_filename <- tempfile(fileext = ".trees")
+  output_state_filename <- tempfile(fileext = ".state")
 
   # Create files to be detectably overwritten
   write(x = "log", file = output_log_filename)

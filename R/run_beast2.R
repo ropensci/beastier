@@ -97,8 +97,12 @@ run_beast2 <- function(
   beast_trees_filenames <- paste0(alignment_ids, ".trees")
 
   # Run BEAST2
-  remove_files(c(beast_log_filename, beast_trees_filenames))
-  testthat::expect_false(files_exist(c(output_state_filename, beast_log_filename, beast_trees_filenames)))
+  beastier:::remove_files(c(beast_log_filename, beast_trees_filenames))
+  testthat::expect_false(
+    files_exist(
+      c(output_state_filename, beast_log_filename, beast_trees_filenames)
+    )
+  )
 
   cmd <- beastier::create_beast2_run_cmd(
     input_filename = input_filename,
