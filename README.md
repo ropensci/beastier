@@ -17,9 +17,24 @@ develop|[![Build Status](https://travis-ci.org/richelbilderbeek/beastier.svg?bra
  * [beastier](https://github.com/richelbilderbeek/beastier) runs BEAST2
  * [tracerer](https://github.com/richelbilderbeek/tracerer) pastes BEAST2 output (`.log`, `.trees`, etc) files.
 
-## Examples
+## Example
 
-See [examples](examples.md).
+```
+output_log_filename <- "out.log"
+output_trees_filename <- "out.trees"
+output_state_filename <- "out.state"
+
+run_beast2(
+  input_filename = get_beastier_path("2_4.xml"),
+  output_log_filename = output_log_filename,
+  output_trees_filenames = output_trees_filename,
+  output_state_filename = output_state_filename
+)
+
+testit::assert(file.exists(output_log_filename))
+testit::assert(file.exists(output_trees_filename))
+testit::assert(file.exists(output_state_filename))
+```
 
 ## Install `beastier`
 
