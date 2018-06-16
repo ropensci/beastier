@@ -324,3 +324,66 @@ test_that("Create data from anthus_15_15_long.xml", {
 
   # Copy those file to where needed
 })
+
+test_that("BEAST2 does not overwrites log and trees files", {
+
+  skip("WIP")
+  output_log_filename <- tempfile(fileext =  ".log")
+  output_trees_filename <- tempfile(fileext =".trees")
+  output_state_filename <- tempfile(fileext =".state")
+
+  # Create files to be detectably overwritten
+  write(x = "log", file = output_log_filename)
+  write(x = "trees", file = output_trees_filename)
+  write(x = "state", file = output_state_filename)
+
+  testit::assert(all(readLines(output_log_filename) == "log"))
+  testit::assert(all(readLines(output_trees_filename, warn = FALSE) == "trees"))
+  testit::assert(all(readLines(output_state_filename) == "state"))
+
+  testthat::expect_silent(
+    run_beast2(
+      input_filename = get_beastier_path("2_4.xml"),
+      output_log_filename = output_log_filename,
+      output_trees_filenames = output_trees_filename,
+      output_state_filename = output_state_filename,
+      overwrite_state_file = FALSE
+    )
+  )
+
+  # Overwrites all
+  testit::assert(all(readLines(output_log_filename) != "log"))
+  testit::assert(all(readLines(output_trees_filename, warn = FALSE) != "trees"))
+  testit::assert(all(readLines(output_state_filename) != "state"))
+})
+
+test_that("BEAST2 overwrites log and trees files", {
+
+  output_log_filename <- tempfile(fileext =  ".log")
+  output_trees_filename <- tempfile(fileext =".trees")
+  output_state_filename <- tempfile(fileext =".state")
+
+  # Create files to be detectably overwritten
+  write(x = "log", file = output_log_filename)
+  write(x = "trees", file = output_trees_filename)
+  write(x = "state", file = output_state_filename)
+
+  testit::assert(all(readLines(output_log_filename) == "log"))
+  testit::assert(all(readLines(output_trees_filename, warn = FALSE) == "trees"))
+  testit::assert(all(readLines(output_state_filename) == "state"))
+
+  testthat::expect_silent(
+    run_beast2(
+      input_filename = get_beastier_path("2_4.xml"),
+      output_log_filename = output_log_filename,
+      output_trees_filenames = output_trees_filename,
+      output_state_filename = output_state_filename,
+      overwrite_state_file = TRUE
+    )
+  )
+
+  # Overwrites all
+  testit::assert(all(readLines(output_log_filename) != "log"))
+  testit::assert(all(readLines(output_trees_filename, warn = FALSE) != "trees"))
+  testit::assert(all(readLines(output_state_filename) != "state"))
+})
