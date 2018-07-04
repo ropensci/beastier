@@ -115,6 +115,11 @@ run_beast2 <- function(
       cmd <- paste(cmd, "1>/dev/null 2>/dev/null")
     }
   }
+  if (.Platform$OS.type == "windows") { #edited by Giappo
+    if (!verbose) {
+      cmd <- paste0("invisible(capture.output(,", cmd, ",))")
+    }
+  }
   # Message will be posted on Linux: show.output.on.console and invisible
   # should only be used under Windows
   withCallingHandlers(
