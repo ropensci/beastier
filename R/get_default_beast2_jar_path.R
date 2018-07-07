@@ -1,7 +1,9 @@
 #' Get the default BEAST2 jar file's path
 #' @return the default BEAST2 jar file's path
 #' @seealso Use \link{get_default_beast2_folder} to get the default
-#'   folder in which BEAST2 is installed
+#'   folder in which BEAST2 is installed.
+#'   Use \link{install_beast2} with default arguments
+#'   to install BEAST2 to this location.
 #' @examples
 #'   if (rappdirs::app_dir()$os == "unix") {
 #'     testit::assert(

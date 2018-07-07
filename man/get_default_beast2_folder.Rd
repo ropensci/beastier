@@ -28,6 +28,8 @@ BEAST2 by default
 \seealso{
 Use \link{get_default_beast2_jar_path} to get the path
   to the BEAST2 jar file, when installed by this package
+  Use \link{install_beast2} with default arguments
+  to install BEAST2 to this folder.
 }
 \author{
 Richel J.C. Bilderbeek
