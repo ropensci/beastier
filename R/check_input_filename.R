@@ -1,6 +1,6 @@
 #' Checks the input filename.
 #' Will stop if there is a problem with the input filename.
-#' @param input_filename the name of a BEAST2 input XML file
+#' @inheritParams default_params_doc
 #' @return nothing. Will call \code{\link{stop}} if the input file is invalid
 #' @author Richel J.C. Bilderbeek
 check_input_filename <- function(input_filename) {
@@ -14,7 +14,7 @@ check_input_filename <- function(input_filename) {
 
 #' Checks the input filename.
 #' Will stop if there is a problem with the input filename.
-#' @param input_filename the name of a BEAST2 input XML file
+#' @inheritParams default_params_doc
 #' @return nothing. Will call \code{\link{stop}} if the input file is invalid
 #' @author Richel J.C. Bilderbeek
 check_input_filename_validity <- function(

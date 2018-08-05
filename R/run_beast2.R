@@ -1,5 +1,5 @@
 #' Run BEAST2
-#' @param input_filename the name of a BEAST2 input XML file
+#' @inheritParams default_params_doc
 #' @param output_log_filename name of the .log file to create
 #' @param output_trees_filenames one or more names for .trees file to create.
 #'   There will be one .trees file created per alignment in the input
@@ -19,10 +19,6 @@
 #'     \item{the \code{.log} file created by BEAST2 exists}
 #'     \item{the \code{.trees} files created by BEAST2 exist}
 #'  }
-#' @param verbose show more (debug) output
-#' @param beast2_jar_path the path of \code{beast.jar}.
-#'   Use \link{get_default_beast2_jar_path} to get
-#'   the default BEAST jar file's path
 #' @return Nothing. It will create the files with names
 #'   \code{output_log_filename}, \code{output_trees_filenames}
 #'   and \code{output_state_filenames}

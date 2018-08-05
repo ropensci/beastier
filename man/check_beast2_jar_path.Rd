@@ -8,7 +8,10 @@ Will stop if there is a problem with the BEAST2 \code{.jar} path.}
 check_beast2_jar_path(beast2_jar_path)
 }
 \arguments{
-\item{beast2_jar_path}{the path of \code{beast.jar}.}
+\item{beast2_jar_path}{name of the BEAST2 jar file
+(usually has a \code{.jar} extension).
+Use \link{get_default_beast2_jar_path} to get
+the default BEAST jar file's path}
 }
 \value{
 nothing.

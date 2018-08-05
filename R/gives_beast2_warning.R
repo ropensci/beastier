@@ -2,9 +2,6 @@
 #' when using the BEAST2 XML input file
 #' @inheritParams default_params_doc
 #' @param filename name of the BEAST2 XML input file
-#' @param beast2_jar_path the path of \code{beast.jar}.
-#'   Use \link{get_default_beast2_jar_path} to get
-#'   the default BEAST jar file's path
 #' @return TRUE if the file produces a BEAST2 warning, FALSE if not
 #' @author Richel J.C. Bilderbeek
 #' @seealso

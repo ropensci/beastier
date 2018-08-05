@@ -8,7 +8,16 @@ Will stop if there is a problem with the input filename.}
 check_input_filename_validity(input_filename, beast2_jar_path, verbose)
 }
 \arguments{
-\item{input_filename}{the name of a BEAST2 input XML file}
+\item{input_filename}{the name of a BEAST2 input XML file.
+This file usually has an \code{.xml} extension.}
+
+\item{beast2_jar_path}{name of the BEAST2 jar file
+(usually has a \code{.jar} extension).
+Use \link{get_default_beast2_jar_path} to get
+the default BEAST jar file's path}
+
+\item{verbose}{if TRUE, additional information is displayed, that
+is potentially useful in debugging}
 }
 \value{
 nothing. Will call \code{\link{stop}} if the input file is invalid

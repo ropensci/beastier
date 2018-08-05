@@ -1,5 +1,5 @@
 #' Get the .trees filenames that BEAST2 will produce
-#' @param input_filename name of a BEAST2 XML file
+#' @inheritParams default_params_doc
 #' @return character vector with the names of the .trees files that BEAST2
 #'   will produce
 #' @author Richel J.C. Bilderbeek

@@ -1,6 +1,6 @@
 #' Checks the BEAST2 \code{.jar} path.
 #' Will stop if there is a problem with the BEAST2 \code{.jar} path.
-#' @param beast2_jar_path the path of \code{beast.jar}.
+#' @inheritParams default_params_doc
 #' @return nothing.
 #'   Will call \code{\link{stop}} if the BEAST2 \code{.jar} path has a problem
 #' @author Richel J.C. Bilderbeek

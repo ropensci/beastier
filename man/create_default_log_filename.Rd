@@ -2,15 +2,27 @@
 % Please edit documentation in R/create_default_log_filename.R
 \name{create_default_log_filename}
 \alias{create_default_log_filename}
-\title{Create the default \code{.log} filename}
+\title{Create the default \code{.log} filename as will be created by BEAST}
 \usage{
 create_default_log_filename(input_filename, beast2_jar_path, verbose)
 }
 \arguments{
-\item{input_filename}{the name of a BEAST2 input XML file}
+\item{input_filename}{the name of a BEAST2 input XML file.
+This file usually has an \code{.xml} extension.}
+
+\item{beast2_jar_path}{name of the BEAST2 jar file
+(usually has a \code{.jar} extension).
+Use \link{get_default_beast2_jar_path} to get
+the default BEAST jar file's path}
+
+\item{verbose}{if TRUE, additional information is displayed, that
+is potentially useful in debugging}
+}
+\value{
+the default \code{.log} filename as will be created by BEAST
 }
 \description{
-Create the default \code{.log} filename
+Create the default \code{.log} filename as will be created by BEAST
 }
 \author{
 : Richel J.C. Bilderbeek

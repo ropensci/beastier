@@ -1,5 +1,9 @@
 #' This function does nothing. It is intended to inherit is parameters'
 #' documentation.
+#' @param beast2_jar_path name of the BEAST2 jar file
+#'   (usually has a \code{.jar} extension).
+#'   Use \link{get_default_beast2_jar_path} to get
+#'   the default BEAST jar file's path
 #' @param clock_model a \code{beautier} clock model
 #' @param clock_models a list of one or more \code{beautier} clock models
 #' @param crown_age the crown age of the phylogeny
@@ -19,7 +23,8 @@
 #' @param initial_phylogenies one or more MCMC chain's initial phylogenies.
 #'   Each one set to NA will result in BEAST2 using a random phylogeny. Else
 #'   the phylogeny is assumed to be of class \code{ape::phylo}.
-#' @param input_filenames One or more FASTA filenames.
+#' @param input_filename the name of a BEAST2 input XML file.
+#'   This file usually has an \code{.xml} extension.
 #' @param mcmc one \code{beautier} MCMC
 #' @param misc_options one \code{beautier} misc_options object
 #' @param output_filename Name of the XML parameter file created by this

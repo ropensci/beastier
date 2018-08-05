@@ -39,8 +39,6 @@ of the initial phylogeny.}
 Each one set to NA will result in BEAST2 using a random phylogeny. Else
 the phylogeny is assumed to be of class \code{ape::phylo}.}
 
-\item{input_filenames}{One or more FASTA filenames.}
-
 \item{mcmc}{one \code{beautier} MCMC}
 
 \item{misc_options}{one \code{beautier} misc_options object}
@@ -60,6 +58,14 @@ function. BEAST2 uses this file as input.}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
+
+\item{beast2_jar_path}{name of the BEAST2 jar file
+(usually has a \code{.jar} extension).
+Use \link{get_default_beast2_jar_path} to get
+the default BEAST jar file's path}
+
+\item{input_filename}{the name of a BEAST2 input XML file.
+This file usually has an \code{.xml} extension.}
 }
 \value{
 Nothing. This is an internal function that does nothing

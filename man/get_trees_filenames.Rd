@@ -7,7 +7,8 @@
 get_trees_filenames(input_filename)
 }
 \arguments{
-\item{input_filename}{name of a BEAST2 XML file}
+\item{input_filename}{the name of a BEAST2 input XML file.
+This file usually has an \code{.xml} extension.}
 }
 \value{
 character vector with the names of the .trees files that BEAST2

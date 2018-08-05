@@ -1,9 +1,6 @@
 #' Is a file a valid BEAST2 input file?
 #' @inheritParams default_params_doc
 #' @param filename name of the BEAST2 XML input file
-#' @param beast2_jar_path the path of \code{beast.jar}.
-#'   Use \link{get_default_beast2_jar_path} to get
-#'   the default BEAST jar file's path
 #' @param show_warnings if TRUE, warnings will shown
 #' @return TRUE if the file is valid, FALSE if not
 #' @author Richel J.C. Bilderbeek

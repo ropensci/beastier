@@ -15,7 +15,8 @@ is_beast2_input_file(filename, show_warnings = FALSE, verbose = FALSE,
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
 
-\item{beast2_jar_path}{the path of \code{beast.jar}.
+\item{beast2_jar_path}{name of the BEAST2 jar file
+(usually has a \code{.jar} extension).
 Use \link{get_default_beast2_jar_path} to get
 the default BEAST jar file's path}
 }

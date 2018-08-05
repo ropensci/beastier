@@ -2,7 +2,6 @@
 #' @param folder_name name of the folder where the BEAST2 files will
 #'   be put. The name of the BEAST2 jar file will be at
 #'   \code{[folder_name]/beast/lib/beast.jar}
-#' @param verbose show debug info
 #' @return Nothing. Will install BEAST2
 #' @examples
 #'   install_beast2()

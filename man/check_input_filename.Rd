@@ -8,7 +8,8 @@ Will stop if there is a problem with the input filename.}
 check_input_filename(input_filename)
 }
 \arguments{
-\item{input_filename}{the name of a BEAST2 input XML file}
+\item{input_filename}{the name of a BEAST2 input XML file.
+This file usually has an \code{.xml} extension.}
 }
 \value{
 nothing. Will call \code{\link{stop}} if the input file is invalid

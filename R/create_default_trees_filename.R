@@ -1,5 +1,6 @@
-#' Create the default \code{.trees} filenames
-#' @param input_filename the name of a BEAST2 input XML file
+#' Create the default \code{.trees} filenames as will be created by BEAST
+#' @inheritParams default_params_doc
+#' @return the default \code{.trees} filenames as will be created by BEAST
 #' @author: Richel J.C. Bilderbeek
 create_default_trees_filenames <- function(
   input_filename,

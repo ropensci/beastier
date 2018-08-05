@@ -1,6 +1,5 @@
 #' Creates the terminal command to run BEAST2
-#' @param input_filename name of the BEAST2 input file
-#'   (usually has a \code{.xml} extension)
+#' @inheritParams default_params_doc
 #' @param output_state_filename name of the BEAST2 output file that
 #'   stores the state
 #'   (usually has a \code{.xml.state} extension)
@@ -10,10 +9,6 @@
 #' @param overwrite if TRUE: overwrite the \code{.log}
 #'   and \code{.trees} files if one of these exists.
 #'   If FALSE, BEAST2 will not be started if one of these files exists
-#' @param beast2_jar_path name of the BEAST2 jar file
-#'   (usually has a \code{.jar} extension).
-#'   Use \link{get_default_beast2_jar_path} to get
-#'   the default BEAST jar file's path
 #' @return one character string that calls the BEAST2
 #'   \code{.jar} file, starting with \code{"java -jar "}
 #' @examples

@@ -9,8 +9,8 @@ create_beast2_run_cmd(input_filename, output_state_filename, rng_seed = NA,
   beast2_jar_path = get_default_beast2_jar_path())
 }
 \arguments{
-\item{input_filename}{name of the BEAST2 input file
-(usually has a \code{.xml} extension)}
+\item{input_filename}{the name of a BEAST2 input XML file.
+This file usually has an \code{.xml} extension.}
 
 \item{output_state_filename}{name of the BEAST2 output file that
 stores the state

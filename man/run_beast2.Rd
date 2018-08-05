@@ -14,7 +14,8 @@ run_beast2(input_filename,
   beast2_jar_path = get_default_beast2_jar_path(), verbose = FALSE)
 }
 \arguments{
-\item{input_filename}{the name of a BEAST2 input XML file}
+\item{input_filename}{the name of a BEAST2 input XML file.
+This file usually has an \code{.xml} extension.}
 
 \item{output_log_filename}{name of the .log file to create}
 
@@ -42,11 +43,13 @@ by their IDs}
    \item{the \code{.trees} files created by BEAST2 exist}
 }}
 
-\item{beast2_jar_path}{the path of \code{beast.jar}.
+\item{beast2_jar_path}{name of the BEAST2 jar file
+(usually has a \code{.jar} extension).
 Use \link{get_default_beast2_jar_path} to get
 the default BEAST jar file's path}
 
-\item{verbose}{show more (debug) output}
+\item{verbose}{if TRUE, additional information is displayed, that
+is potentially useful in debugging}
 }
 \value{
 Nothing. It will create the files with names
