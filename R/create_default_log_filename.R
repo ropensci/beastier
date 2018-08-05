@@ -7,9 +7,9 @@ create_default_log_filename <- function(
   beast2_jar_path,
   verbose
 ) {
-  check_input_filename(input_filename)
-  check_beast2_jar_path(beast2_jar_path)
-  check_input_filename_validity(
+  check_input_filename(input_filename) # nolint internal function
+  check_beast2_jar_path(beast2_jar_path) # nolint internal function
+  check_input_filename_validity( # nolint internal function
     input_filename = input_filename,
     beast2_jar_path = beast2_jar_path,
     verbose = verbose

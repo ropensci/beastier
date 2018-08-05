@@ -52,9 +52,9 @@ run_beast2 <- function(
   beast2_jar_path = get_default_beast2_jar_path(),
   verbose = FALSE
 ) {
-  check_input_filename(input_filename)
-  check_beast2_jar_path(beast2_jar_path)
-  check_input_filename_validity(
+  check_input_filename(input_filename) # nolint internal function
+  check_beast2_jar_path(beast2_jar_path) # nolint internal function
+  check_input_filename_validity( # nolint internal function
     input_filename = input_filename,
     beast2_jar_path = beast2_jar_path,
     verbose = verbose
@@ -108,14 +108,6 @@ run_beast2 <- function(
     )
   }
 
-  # Run BEAST2
-  #beastier:::remove_files(c(beast_log_filename, beast_trees_filenames))
-  #testthat::expect_false(
-  #  files_exist(
-  #    c(output_state_filename, beast_log_filename, beast_trees_filenames)
-  #  )
-  #)
-
   cmd <- beastier::create_beast2_run_cmd(
     input_filename = input_filename,
     output_state_filename = output_state_filename,
@@ -148,26 +140,7 @@ run_beast2 <- function(
 
   testit::assert(exit_code == 0)
   testit::assert(file.exists(output_state_filename))
-  #testit::assert(file.exists(beast_log_filename))
-  #testit::assert(file.exists(beast_trees_filenames))
 
-  #if (beast_log_filename != output_log_filename) {
-  #  file.copy(from = beast_log_filename, to = output_log_filename,
-  #    overwrite = TRUE)
-  #  file.remove(beast_log_filename)
-  #}
-
-  #testit::assert(length(beast_trees_filenames)
-  #  == length(output_trees_filenames))
-
-  #for (i in seq_along(beast_trees_filenames)) {
-  #  from <- beast_trees_filenames[i]
-  #  to <- output_trees_filenames[i]
-  #  if (from != to) {
-  #    file.copy(from = from, to = to, overwrite = TRUE)
-  #    file.remove(from)
-  #  }
-  #}
   if (!file.exists(output_log_filename)) {
     from <- create_default_log_filename(
       input_filename = input_filename,

@@ -12,7 +12,7 @@ test_that("single alignment creates all files", {
   )
   testit::assert(!beastier:::files_exist(output_files))
 
-  testthat::expect_silent(
+  expect_silent(
     run_beast2(
       input_filename = get_beastier_path("2_4.xml"),
       output_log_filename = output_log_filename,
@@ -22,7 +22,7 @@ test_that("single alignment creates all files", {
     )
   )
 
-  testthat::expect_true(beastier:::files_exist(output_files))
+  expect_true(beastier:::files_exist(output_files))
 })
 
 test_that("single alignment, WIRITTES setting", {
@@ -36,7 +36,7 @@ test_that("single alignment, WIRITTES setting", {
   )
   testit::assert(!beastier:::files_exist(output_files))
 
-  testthat::expect_silent(
+  expect_silent(
     run_beast2(
       input_filename = get_beastier_path("2_4.xml"),
       output_log_filename = output_log_filename,
@@ -49,7 +49,7 @@ test_that("single alignment, WIRITTES setting", {
     )
   )
 
-  testthat::expect_true(beastier:::files_exist(output_files))
+  expect_true(beastier:::files_exist(output_files))
 })
 
 
@@ -91,13 +91,13 @@ test_that("single alignment, equal RNG seed equal results", {
   )
   lines_1 <- readLines(output_log_filename_1)
   lines_2 <- readLines(output_log_filename_2)
-  testthat::expect_identical(lines_1, lines_2)
+  expect_identical(lines_1, lines_2)
   lines_1 <- readLines(output_trees_filenames_1, warn = FALSE)
   lines_2 <- readLines(output_trees_filenames_2, warn = FALSE)
-  testthat::expect_identical(lines_1, lines_2)
+  expect_identical(lines_1, lines_2)
   lines_1 <- readLines(output_state_filename_1)
   lines_2 <- readLines(output_state_filename_2)
-  testthat::expect_identical(lines_1, lines_2)
+  expect_identical(lines_1, lines_2)
 })
 
 
@@ -116,7 +116,7 @@ test_that("two alignments creates all files", {
   )
   testit::assert(!beastier:::files_exist(output_files))
 
-  testthat::expect_silent(
+  expect_silent(
     run_beast2(
       input_filename = get_beastier_path("anthus_2_4.xml"),
       output_log_filename = output_log_filename,
@@ -126,7 +126,7 @@ test_that("two alignments creates all files", {
     )
   )
 
-  testthat::expect_true(beastier:::files_exist(output_files))
+  expect_true(beastier:::files_exist(output_files))
 })
 
 test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
@@ -143,7 +143,7 @@ test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
   )
   testit::assert(!beastier:::files_exist(output_files))
 
-  testthat::expect_silent(
+  expect_silent(
     run_beast2(
       input_filename = get_beastier_path("anthus_15_15.xml"),
       output_log_filename = output_log_filename,
@@ -153,18 +153,18 @@ test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
     )
   )
 
-  testthat::expect_true(beastier:::files_exist(output_files))
+  expect_true(beastier:::files_exist(output_files))
 
   out <- tracerer::parse_beast_posterior(
     output_trees_filenames, output_log_filename
   )
   n <- length(out$estimates$TreeHeight.aco)
-  testthat::expect_true(all.equal(out$estimates$TreeHeight.aco, rep(15, n)))
+  expect_true(all.equal(out$estimates$TreeHeight.aco, rep(15, n)))
 
   # Unexpected: this will fail:
   # Even though the crown ages of both initial phylogenies have been fixed,
   # the second TreeHeights will deviate from it
-  testthat::expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
+  expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
     != TRUE
   )
 })
@@ -184,7 +184,7 @@ test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
   )
   testit::assert(!beastier:::files_exist(output_files))
 
-  testthat::expect_silent(
+  expect_silent(
     run_beast2(
       input_filename = get_beastier_path("anthus_na_15.xml"),
       output_log_filename = output_log_filename,
@@ -194,21 +194,21 @@ test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
     )
   )
 
-  testthat::expect_true(beastier:::files_exist(output_files))
+  expect_true(beastier:::files_exist(output_files))
 
   out <- tracerer::parse_beast_posterior(
     output_trees_filenames, output_log_filename
   )
   n <- length(out$estimates$TreeHeight.aco)
   # Expected: these are all different
-  testthat::expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
+  expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
     != TRUE
   )
 
   # Unexpected: these should be 15, but are not
   # Even though the crown ages of the second phylogeny has been fixed at 15,
   # the second TreeHeights will deviate from it
-  testthat::expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
+  expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
     != TRUE
   )
 })
@@ -216,17 +216,17 @@ test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
 
 test_that("abuse", {
 
-  testthat::expect_error(
+  expect_error(
     run_beast2("abs.ent"),
     "'input_filename' must be the name of an existing file"
   )
 
-  testthat::expect_error(
+  expect_error(
     run_beast2(get_beastier_path("anthus_aco.fas")),
     "'input_filename' must be a valid BEAST2 XML file"
   )
 
-  testthat::expect_error(
+  expect_error(
     run_beast2(
       get_beastier_path("anthus_2_4.xml"),
       beast2_jar_path = "abs.ent"
@@ -234,7 +234,7 @@ test_that("abuse", {
     "'beast2_jar_path' must be the name of an existing file"
   )
 
-  testthat::expect_error(
+  expect_error(
     run_beast2(
       input_filename = get_beastier_path("2_4.xml"),
       output_trees_filenames = c("too", "much")
@@ -245,21 +245,21 @@ test_that("abuse", {
     )
   )
 
-  testthat::expect_silent(
+  expect_silent(
     run_beast2(
       get_beastier_path("anthus_2_4.xml"),
       rng_seed = 1,
       overwrite = TRUE
     )
   )
-  testthat::expect_silent(
+  expect_silent(
     run_beast2(
       get_beastier_path("anthus_2_4.xml"),
       rng_seed = NA,
       overwrite = TRUE
     )
   )
-  testthat::expect_error(
+  expect_error(
     run_beast2(
       get_beastier_path("anthus_2_4.xml"),
       rng_seed = 0,
@@ -285,7 +285,7 @@ test_that("Create data from anthus_15_15_long.xml", {
   )
   testit::assert(!beastier:::files_exist(output_files))
 
-  testthat::expect_silent(
+  expect_silent(
     run_beast2(
       input_filename = get_beastier_path("anthus_15_15_long.xml"),
       output_log_filename = output_log_filename,
@@ -294,18 +294,18 @@ test_that("Create data from anthus_15_15_long.xml", {
     )
   )
 
-  testthat::expect_true(beastier:::files_exist(output_files))
+  expect_true(beastier:::files_exist(output_files))
 
   out <- tracerer::parse_beast_posterior(
     output_trees_filenames, output_log_filename
   )
   n <- length(out$estimates$TreeHeight.aco)
-  testthat::expect_true(all.equal(out$estimates$TreeHeight.aco, rep(15, n)))
+  expect_true(all.equal(out$estimates$TreeHeight.aco, rep(15, n)))
 
   # Unexpected: this will fail:
   # Even though the crown ages of both initial phylogenies have been fixed,
   # the second TreeHeights will deviate from it
-  testthat::expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
+  expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
     != TRUE
   )
   # Copy those file to where needed
@@ -319,7 +319,7 @@ test_that("BEAST2 does not overwrite log file", {
   write(x = "log", file = output_log_filename)
   testit::assert(all(readLines(output_log_filename) == "log"))
 
-  testthat::expect_error(
+  expect_error(
     run_beast2(
       input_filename = get_beastier_path("2_4.xml"),
       output_log_filename = output_log_filename,
@@ -337,7 +337,7 @@ test_that("BEAST2 does not overwrite .trees file", {
   write(x = "trees", file = output_trees_filename)
   testit::assert(all(readLines(output_trees_filename, warn = FALSE) == "trees"))
 
-  testthat::expect_error(
+  expect_error(
     run_beast2(
       input_filename = get_beastier_path("2_4.xml"),
       output_log_filename = tempfile(fileext = ".log"),
@@ -372,7 +372,7 @@ test_that("BEAST2 overwrites log and trees files", {
   testit::assert(all(readLines(output_trees_filename, warn = FALSE) == "trees"))
   testit::assert(all(readLines(output_state_filename) == "state"))
 
-  testthat::expect_silent(
+  expect_silent(
     run_beast2(
       input_filename = input_filename,
       output_log_filename = output_log_filename,
@@ -383,7 +383,7 @@ test_that("BEAST2 overwrites log and trees files", {
   )
 
   # Overwrites all
-  testthat::expect_true(all(readLines(output_log_filename) != "log"))
-  testthat::expect_true(all(readLines(output_trees_filename, warn = FALSE) != "trees"))
-  testthat::expect_true(all(readLines(output_state_filename) != "state"))
+  expect_true(all(readLines(output_log_filename) != "log"))
+  expect_true(all(readLines(output_trees_filename, warn = FALSE) != "trees"))
+  expect_true(all(readLines(output_state_filename) != "state"))
 })
