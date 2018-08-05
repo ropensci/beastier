@@ -4,13 +4,14 @@
 \alias{run_beast2}
 \title{Run BEAST2}
 \usage{
-run_beast2(input_filename, output_log_filename = tempfile(pattern =
-  "beastier_", fileext = ".log"),
-  output_trees_filenames = get_trees_filenames(input_filename),
-  output_state_filename = tempfile(pattern = "beastier_", fileext =
-  ".xml.state"), rng_seed = NA, n_threads = NA, use_beagle = FALSE,
-  overwrite = TRUE, beast2_jar_path = get_default_beast2_jar_path(),
-  verbose = FALSE)
+run_beast2(input_filename,
+  output_log_filename = create_default_log_filename(input_filename,
+  beast2_jar_path, verbose),
+  output_trees_filenames = create_default_trees_filenames(input_filename,
+  beast2_jar_path, verbose), output_state_filename = tempfile(pattern =
+  "beastier_", fileext = ".xml.state"), rng_seed = NA, n_threads = NA,
+  use_beagle = FALSE, overwrite = FALSE,
+  beast2_jar_path = get_default_beast2_jar_path(), verbose = FALSE)
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file}
@@ -32,8 +33,14 @@ by their IDs}
 \item{use_beagle}{use BEAGLE if present}
 
 \item{overwrite}{if TRUE: overwrite the \code{.log}
-and \code{.trees} files if one of these exists.
-If FALSE, BEAST2 will not be started if one of these files exists}
+ and \code{.trees} files if one of these exists.
+ If FALSE, BEAST2 will not be started if
+ \itemize{
+   \item{the \code{.log} file exists}
+   \item{the \code{.trees} files exist}
+   \item{the \code{.log} file created by BEAST2 exists}
+   \item{the \code{.trees} files created by BEAST2 exist}
+}}
 
 \item{beast2_jar_path}{the path of \code{beast.jar}.
 Use \link{get_default_beast2_jar_path} to get
@@ -51,18 +58,18 @@ Run BEAST2
 }
 \examples{
   output_log_filename <- "out.log"
-  output_trees_filename <- "out.trees"
+  output_trees_filenames <- "out.trees"
   output_state_filename <- "out.state"
 
   run_beast2(
     input_filename = get_beastier_path("2_4.xml"),
     output_log_filename = output_log_filename,
-    output_trees_filenames = output_trees_filename,
+    output_trees_filenames = output_trees_filenames,
     output_state_filename = output_state_filename
   )
 
   testit::assert(file.exists(output_log_filename))
-  testit::assert(file.exists(output_trees_filename))
+  testit::assert(file.exists(output_trees_filenames))
   testit::assert(file.exists(output_state_filename))
 
 }

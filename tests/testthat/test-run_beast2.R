@@ -3,9 +3,9 @@ context("run_beast2")
 test_that("single alignment creates all files", {
 
 
-  output_log_filename <- tempfile("tmp_single.log")
-  output_trees_filenames <- tempfile("tmp_single.trees")
-  output_state_filename <- tempfile("tmp_single.state")
+  output_log_filename <- tempfile(fileext = ".log")
+  output_trees_filenames <- tempfile(fileext = ".trees")
+  output_state_filename <- tempfile(fileext = ".xml.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
@@ -17,7 +17,8 @@ test_that("single alignment creates all files", {
       input_filename = get_beastier_path("2_4.xml"),
       output_log_filename = output_log_filename,
       output_trees_filenames = output_trees_filenames,
-      output_state_filename = output_state_filename
+      output_state_filename = output_state_filename,
+      overwrite = TRUE
     )
   )
 
@@ -26,9 +27,9 @@ test_that("single alignment creates all files", {
 
 test_that("single alignment, WIRITTES setting", {
 
-  output_log_filename <- tempfile("tmp_single.log")
-  output_trees_filenames <- tempfile("tmp_single.trees")
-  output_state_filename <- tempfile("tmp_single.state")
+  output_log_filename <- tempfile(fileext = ".log")
+  output_trees_filenames <- tempfile(fileext = ".trees")
+  output_state_filename <- tempfile(fileext = ".xml.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
@@ -54,12 +55,12 @@ test_that("single alignment, WIRITTES setting", {
 
 test_that("single alignment, equal RNG seed equal results", {
 
-  output_log_filename_1 <- tempfile("tmp_single_rng_1.log")
-  output_log_filename_2 <- tempfile("tmp_single_rng_2.log")
-  output_trees_filenames_1 <- tempfile("tmp_single_rng_1.trees")
-  output_trees_filenames_2 <- tempfile("tmp_single_rng_2.trees")
-  output_state_filename_1 <- tempfile("tmp_single_rng_1.state")
-  output_state_filename_2 <- tempfile("tmp_single_rng_2.state")
+  output_log_filename_1 <- tempfile(fileext = "_1.log")
+  output_log_filename_2 <- tempfile(fileext = "_2.log")
+  output_trees_filenames_1 <- tempfile(fileext = "_1.trees")
+  output_trees_filenames_2 <- tempfile(fileext = "_2.trees")
+  output_state_filename_1 <- tempfile(fileext = "_1.xml.state")
+  output_state_filename_2 <- tempfile(fileext = "_2.xml.state")
 
   output_files <- c(
     output_log_filename_1,
@@ -103,12 +104,12 @@ test_that("single alignment, equal RNG seed equal results", {
 
 test_that("two alignments creates all files", {
 
-  output_log_filename <- tempfile("tmp_two.log")
+  output_log_filename <- tempfile(fileext = ".log")
   output_trees_filenames <- c(
-    tempfile("tmp_two_a.trees"),
-    tempfile("tmp_two_b.trees")
+    tempfile(fileext = "_a.trees"),
+    tempfile(fileext = "_b.trees")
   )
-  output_state_filename <- tempfile("tmp_two.state")
+  output_state_filename <- tempfile(fileext = ".xml.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
@@ -120,7 +121,8 @@ test_that("two alignments creates all files", {
       input_filename = get_beastier_path("anthus_2_4.xml"),
       output_log_filename = output_log_filename,
       output_trees_filenames = output_trees_filenames,
-      output_state_filename = output_state_filename
+      output_state_filename = output_state_filename,
+      overwrite = TRUE
     )
   )
 
@@ -129,12 +131,12 @@ test_that("two alignments creates all files", {
 
 test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
 
-  output_log_filename <- tempfile("15_15.log")
+  output_log_filename <- tempfile(fileext = ".log")
   output_trees_filenames <- c(
-    tempfile("15_15_a.trees"),
-    tempfile("15_15_b.trees")
+    tempfile(fileext = "_a.trees"),
+    tempfile(fileext = "_b.trees")
   )
-  output_state_filename <- tempfile("15_15.state")
+  output_state_filename <- tempfile(fileext = ".xml.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
@@ -146,7 +148,8 @@ test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
       input_filename = get_beastier_path("anthus_15_15.xml"),
       output_log_filename = output_log_filename,
       output_trees_filenames = output_trees_filenames,
-      output_state_filename = output_state_filename
+      output_state_filename = output_state_filename,
+      overwrite = TRUE
     )
   )
 
@@ -169,12 +172,12 @@ test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
 
 test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
 
-  output_log_filename <- tempfile("na_15.log")
+  output_log_filename <- tempfile(fileext = ".log")
   output_trees_filenames <- c(
-    tempfile("na_15_a.trees"),
-    tempfile("na_15_b.trees")
+    tempfile(fileext = "_a.trees"),
+    tempfile(fileext = "_b.trees")
   )
-  output_state_filename <- tempfile("na_15.state")
+  output_state_filename <- tempfile(fileext = ".xml.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
@@ -186,7 +189,8 @@ test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
       input_filename = get_beastier_path("anthus_na_15.xml"),
       output_log_filename = output_log_filename,
       output_trees_filenames = output_trees_filenames,
-      output_state_filename = output_state_filename
+      output_state_filename = output_state_filename,
+      overwrite = TRUE
     )
   )
 
@@ -244,19 +248,22 @@ test_that("abuse", {
   testthat::expect_silent(
     run_beast2(
       get_beastier_path("anthus_2_4.xml"),
-      rng_seed = 1
+      rng_seed = 1,
+      overwrite = TRUE
     )
   )
   testthat::expect_silent(
     run_beast2(
       get_beastier_path("anthus_2_4.xml"),
-      rng_seed = NA
+      rng_seed = NA,
+      overwrite = TRUE
     )
   )
   testthat::expect_error(
     run_beast2(
       get_beastier_path("anthus_2_4.xml"),
-      rng_seed = 0
+      rng_seed = 0,
+      overwrite = TRUE
     ),
     "'rng_seed' should be NA or non-zero positive"
   )
@@ -266,12 +273,12 @@ test_that("Create data from anthus_15_15_long.xml", {
 
   return()
 
-  output_log_filename <- tempfile("15_15_long.log")
+  output_log_filename <- tempfile(fileext = ".log")
   output_trees_filenames <- c(
-    tempfile("15_15_long_a.trees"),
-    tempfile("15_15_long_b.trees")
+    tempfile(fileext = "_a.trees"),
+    tempfile(fileext = "_b.trees")
   )
-  output_state_filename <- tempfile("15_15_long.state")
+  output_state_filename <- tempfile(fileext = ".xml.state")
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
@@ -304,42 +311,56 @@ test_that("Create data from anthus_15_15_long.xml", {
   # Copy those file to where needed
 })
 
-test_that("BEAST2 does not overwrites log and trees files", {
+test_that("BEAST2 does not overwrite log file", {
 
-  skip("WIP")
-  output_log_filename <- tempfile(fileext =  ".log")
-  output_trees_filename <- tempfile(fileext = ".trees")
-  output_state_filename <- tempfile(fileext = ".state")
+  output_log_filename <- tempfile(fileext = ".log")
 
   # Create files to be detectably overwritten
   write(x = "log", file = output_log_filename)
-  write(x = "trees", file = output_trees_filename)
-  write(x = "state", file = output_state_filename)
-
   testit::assert(all(readLines(output_log_filename) == "log"))
-  testit::assert(all(readLines(output_trees_filename, warn = FALSE) == "trees"))
-  testit::assert(all(readLines(output_state_filename) == "state"))
 
-  testthat::expect_silent(
+  testthat::expect_error(
     run_beast2(
       input_filename = get_beastier_path("2_4.xml"),
       output_log_filename = output_log_filename,
-      output_trees_filenames = output_trees_filename,
-      output_state_filename = output_state_filename,
       overwrite = FALSE
-    )
+    ),
+    "Will not overwrite 'output_log_filename'"
   )
+})
 
-  # Overwrites all???
-  testit::assert(all(readLines(output_log_filename) != "log"))
-  testit::assert(all(readLines(output_trees_filename, warn = FALSE) != "trees"))
-  testit::assert(all(readLines(output_state_filename) != "state"))
+test_that("BEAST2 does not overwrite .trees file", {
+
+  output_trees_filename <- tempfile(fileext = ".trees")
+
+  # Create files to be detectably overwritten
+  write(x = "trees", file = output_trees_filename)
+  testit::assert(all(readLines(output_trees_filename, warn = FALSE) == "trees"))
+
+  testthat::expect_error(
+    run_beast2(
+      input_filename = get_beastier_path("2_4.xml"),
+      output_log_filename = tempfile(fileext = ".log"),
+      output_trees_filenames = output_trees_filename,
+      overwrite = FALSE
+    ),
+    "Will not overwrite 'output_trees_filenames'"
+  )
 })
 
 test_that("BEAST2 overwrites log and trees files", {
 
-  output_log_filename <- tempfile(fileext =  ".log")
-  output_trees_filename <- tempfile(fileext = ".trees")
+  input_filename <- get_beastier_path("2_4.xml")
+  output_log_filename <- beastier:::create_default_log_filename(
+    input_filename = input_filename,
+    beast2_jar_path = get_default_beast2_jar_path(),
+    verbose = FALSE
+  )
+  output_trees_filename <- beastier:::create_default_trees_filenames(
+    input_filename = input_filename,
+    beast2_jar_path = get_default_beast2_jar_path(),
+    verbose = FALSE
+  )
   output_state_filename <- tempfile(fileext = ".state")
 
   # Create files to be detectably overwritten
@@ -353,7 +374,7 @@ test_that("BEAST2 overwrites log and trees files", {
 
   testthat::expect_silent(
     run_beast2(
-      input_filename = get_beastier_path("2_4.xml"),
+      input_filename = input_filename,
       output_log_filename = output_log_filename,
       output_trees_filenames = output_trees_filename,
       output_state_filename = output_state_filename,
@@ -362,7 +383,7 @@ test_that("BEAST2 overwrites log and trees files", {
   )
 
   # Overwrites all
-  testit::assert(all(readLines(output_log_filename) != "log"))
-  testit::assert(all(readLines(output_trees_filename, warn = FALSE) != "trees"))
-  testit::assert(all(readLines(output_state_filename) != "state"))
+  testthat::expect_true(all(readLines(output_log_filename) != "log"))
+  testthat::expect_true(all(readLines(output_trees_filename, warn = FALSE) != "trees"))
+  testthat::expect_true(all(readLines(output_state_filename) != "state"))
 })

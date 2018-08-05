@@ -1,0 +1,14 @@
+#' Checks the BEAST2 \code{.jar} path.
+#' Will stop if there is a problem with the BEAST2 \code{.jar} path.
+#' @param beast2_jar_path the path of \code{beast.jar}.
+#' @return nothing.
+#'   Will call \code{\link{stop}} if the BEAST2 \code{.jar} path has a problem
+#' @author Richel J.C. Bilderbeek
+check_beast2_jar_path <- function(beast2_jar_path) {
+  if (!file.exists(beast2_jar_path)) {
+    stop(
+      "'beast2_jar_path' must be the name of an existing file. ",
+      "File '", beast2_jar_path, "' not found"
+    )
+  }
+}
