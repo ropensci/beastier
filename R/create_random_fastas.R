@@ -1,6 +1,5 @@
 #' Create one or more random FASTA files
 #' @inheritParams default_params_doc
-#' @param n_taxa The number of taxa
 #' @return Nothing, creates one or more random FASTA files
 #' @author Richel J.C. Bilderbeek
 #' @noRd

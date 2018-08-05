@@ -27,8 +27,19 @@
 #'   This file usually has an \code{.xml} extension.
 #' @param mcmc one \code{beautier} MCMC
 #' @param misc_options one \code{beautier} misc_options object
+#' @param n_taxa The number of taxa
 #' @param output_filename Name of the XML parameter file created by this
 #'   function. BEAST2 uses this file as input.
+#' @param overwrite if TRUE: overwrite the \code{.log}
+#'   and \code{.trees} files if one of these exists.
+#'   If FALSE, BEAST2 will not be started if
+#'   \itemize{
+#'     \item{the \code{.log} file exists}
+#'     \item{the \code{.trees} files exist}
+#'     \item{the \code{.log} file created by BEAST2 exists}
+#'     \item{the \code{.trees} files created by BEAST2 exist}
+#'  }
+#' @param rng_seed the random number generator seed
 #' @param sequence_length a DNA sequence length, in base pairs
 #' @param site_model a \code{beautier} site model
 #' @param site_models one or more \code{beautier} site models

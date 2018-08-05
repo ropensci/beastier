@@ -1,5 +1,5 @@
 #' Create a random alignment
-#' @param n_taxa The number of taxa
+#' @inheritParams default_params_doc
 #' @param sequence_length The number of base pairs the alignment will have
 #' @param rate mutation rate
 #' @param taxa_name_ext the extension of the taxa names

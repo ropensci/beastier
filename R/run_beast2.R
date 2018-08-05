@@ -7,18 +7,8 @@
 #'   filenames, else an error is thrown. Alignments are sorted alphabetically
 #'   by their IDs
 #' @param output_state_filename name of the .xml.state file to create
-#' @param rng_seed the RNG seed
 #' @param n_threads number of threads to use
 #' @param use_beagle use BEAGLE if present
-#' @param overwrite if TRUE: overwrite the \code{.log}
-#'   and \code{.trees} files if one of these exists.
-#'   If FALSE, BEAST2 will not be started if
-#'   \itemize{
-#'     \item{the \code{.log} file exists}
-#'     \item{the \code{.trees} files exist}
-#'     \item{the \code{.log} file created by BEAST2 exists}
-#'     \item{the \code{.trees} files created by BEAST2 exist}
-#'  }
 #' @return Nothing. It will create the files with names
 #'   \code{output_log_filename}, \code{output_trees_filenames}
 #'   and \code{output_state_filenames}

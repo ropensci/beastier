@@ -3,12 +3,8 @@
 #' @param output_state_filename name of the BEAST2 output file that
 #'   stores the state
 #'   (usually has a \code{.xml.state} extension)
-#' @param rng_seed the RNG seed
 #' @param n_threads number of threads to use
 #' @param use_beagle use BEAGLE if present
-#' @param overwrite if TRUE: overwrite the \code{.log}
-#'   and \code{.trees} files if one of these exists.
-#'   If FALSE, BEAST2 will not be started if one of these files exists
 #' @return one character string that calls the BEAST2
 #'   \code{.jar} file, starting with \code{"java -jar "}
 #' @examples
