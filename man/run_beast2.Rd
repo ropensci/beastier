@@ -10,7 +10,7 @@ run_beast2(input_filename,
   output_trees_filenames = create_default_trees_filenames(input_filename,
   beast2_jar_path, verbose), output_state_filename = tempfile(pattern =
   "beastier_", fileext = ".xml.state"), rng_seed = NA, n_threads = NA,
-  use_beagle = FALSE, overwrite = FALSE,
+  use_beagle = FALSE, overwrite = TRUE,
   beast2_jar_path = get_default_beast2_jar_path(), verbose = FALSE)
 }
 \arguments{
@@ -27,7 +27,7 @@ by their IDs}
 
 \item{output_state_filename}{name of the .xml.state file to create}
 
-\item{rng_seed}{the RNG seed}
+\item{rng_seed}{the random number generator seed}
 
 \item{n_threads}{number of threads to use}
 

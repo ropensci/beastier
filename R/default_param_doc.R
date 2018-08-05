@@ -53,16 +53,20 @@
 #'   \code{@noRd}. This is not done, as this will disallow all
 #'   functions to find the documentation parameters
 default_params_doc <- function(
+  beast2_jar_path,
   clock_model, clock_models,
   crown_age, crown_ages,
   fasta_filename, fasta_filenames,
   fixed_crown_age,
   fixed_crown_ages,
   initial_phylogenies,
-  input_filenames,
+  input_filename,
   mcmc,
   misc_options,
+  n_taxa,
   output_filename,
+  overwrite,
+  rng_seed,
   sequence_length,
   site_model, site_models,
   tree_prior, tree_priors,

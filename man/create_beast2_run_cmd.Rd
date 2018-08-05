@@ -16,15 +16,21 @@ This file usually has an \code{.xml} extension.}
 stores the state
 (usually has a \code{.xml.state} extension)}
 
-\item{rng_seed}{the RNG seed}
+\item{rng_seed}{the random number generator seed}
 
 \item{n_threads}{number of threads to use}
 
 \item{use_beagle}{use BEAGLE if present}
 
 \item{overwrite}{if TRUE: overwrite the \code{.log}
-and \code{.trees} files if one of these exists.
-If FALSE, BEAST2 will not be started if one of these files exists}
+ and \code{.trees} files if one of these exists.
+ If FALSE, BEAST2 will not be started if
+ \itemize{
+   \item{the \code{.log} file exists}
+   \item{the \code{.trees} files exist}
+   \item{the \code{.log} file created by BEAST2 exists}
+   \item{the \code{.trees} files created by BEAST2 exist}
+}}
 
 \item{beast2_jar_path}{name of the BEAST2 jar file
 (usually has a \code{.jar} extension).

@@ -1,4 +1,5 @@
 #' Install BEAST2
+#' @inheritParams default_params_doc
 #' @param folder_name name of the folder where the BEAST2 files will
 #'   be put. The name of the BEAST2 jar file will be at
 #'   \code{[folder_name]/beast/lib/beast.jar}

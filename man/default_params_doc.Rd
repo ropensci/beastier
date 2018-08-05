@@ -5,12 +5,18 @@
 \title{This function does nothing. It is intended to inherit is parameters'
 documentation.}
 \usage{
-default_params_doc(clock_model, clock_models, crown_age, crown_ages,
-  fasta_filename, fasta_filenames, fixed_crown_age, fixed_crown_ages,
-  initial_phylogenies, input_filenames, mcmc, misc_options, output_filename,
-  sequence_length, site_model, site_models, tree_prior, tree_priors, verbose)
+default_params_doc(beast2_jar_path, clock_model, clock_models, crown_age,
+  crown_ages, fasta_filename, fasta_filenames, fixed_crown_age,
+  fixed_crown_ages, initial_phylogenies, input_filename, mcmc, misc_options,
+  n_taxa, output_filename, overwrite, rng_seed, sequence_length, site_model,
+  site_models, tree_prior, tree_priors, verbose)
 }
 \arguments{
+\item{beast2_jar_path}{name of the BEAST2 jar file
+(usually has a \code{.jar} extension).
+Use \link{get_default_beast2_jar_path} to get
+the default BEAST jar file's path}
+
 \item{clock_model}{a \code{beautier} clock model}
 
 \item{clock_models}{a list of one or more \code{beautier} clock models}
@@ -39,12 +45,29 @@ of the initial phylogeny.}
 Each one set to NA will result in BEAST2 using a random phylogeny. Else
 the phylogeny is assumed to be of class \code{ape::phylo}.}
 
+\item{input_filename}{the name of a BEAST2 input XML file.
+This file usually has an \code{.xml} extension.}
+
 \item{mcmc}{one \code{beautier} MCMC}
 
 \item{misc_options}{one \code{beautier} misc_options object}
 
+\item{n_taxa}{The number of taxa}
+
 \item{output_filename}{Name of the XML parameter file created by this
 function. BEAST2 uses this file as input.}
+
+\item{overwrite}{if TRUE: overwrite the \code{.log}
+ and \code{.trees} files if one of these exists.
+ If FALSE, BEAST2 will not be started if
+ \itemize{
+   \item{the \code{.log} file exists}
+   \item{the \code{.trees} files exist}
+   \item{the \code{.log} file created by BEAST2 exists}
+   \item{the \code{.trees} files created by BEAST2 exist}
+}}
+
+\item{rng_seed}{the random number generator seed}
 
 \item{sequence_length}{a DNA sequence length, in base pairs}
 
@@ -58,14 +81,6 @@ function. BEAST2 uses this file as input.}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
-
-\item{beast2_jar_path}{name of the BEAST2 jar file
-(usually has a \code{.jar} extension).
-Use \link{get_default_beast2_jar_path} to get
-the default BEAST jar file's path}
-
-\item{input_filename}{the name of a BEAST2 input XML file.
-This file usually has an \code{.xml} extension.}
 }
 \value{
 Nothing. This is an internal function that does nothing

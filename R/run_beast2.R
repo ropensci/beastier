@@ -48,7 +48,7 @@ run_beast2 <- function(
   rng_seed = NA,
   n_threads = NA,
   use_beagle = FALSE,
-  overwrite = FALSE,
+  overwrite = TRUE,
   beast2_jar_path = get_default_beast2_jar_path(),
   verbose = FALSE
 ) {
