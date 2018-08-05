@@ -9,7 +9,7 @@ test_that("use", {
   created <- beastier::create_beast2_run_cmd(
     input_filename = input_filename,
     output_state_filename = output_state_filename,
-    overwrite_state_file = TRUE,
+    overwrite = TRUE,
     beast2_jar_path = beast2_jar_path
   )
   expected <- paste0(
@@ -36,7 +36,7 @@ test_that("use, WIRITTES", {
     rng_seed = rng_seed,
     n_threads = 8,
     use_beagle = TRUE,
-    overwrite_state_file = TRUE,
+    overwrite = TRUE,
     beast2_jar_path = beast2_jar_path
   )
 
@@ -61,12 +61,12 @@ test_that("different overwrite option results in different command", {
   cmd_true <- beastier::create_beast2_run_cmd(
     input_filename = input_filename,
     output_state_filename = output_state_filename,
-    overwrite_state_file = TRUE
+    overwrite = TRUE
   )
   cmd_false <- beastier::create_beast2_run_cmd(
     input_filename = input_filename,
     output_state_filename = output_state_filename,
-    overwrite_state_file = FALSE
+    overwrite = FALSE
   )
   testthat::expect_true(cmd_false != cmd_true)
 

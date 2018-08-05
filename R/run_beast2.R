@@ -10,8 +10,9 @@
 #' @param rng_seed the RNG seed
 #' @param n_threads number of threads to use
 #' @param use_beagle use BEAGLE if present
-#' @param overwrite_state_file set to TRUE to overwrite the file with name
-#'   \code{output_state_filename} if it already exists
+#' @param overwrite if TRUE: overwrite the \code{.log}
+#'   and \code{.trees} files if one of these exists.
+#'   If FALSE, BEAST2 will not be started if one of these files exists
 #' @param verbose show more (debug) output
 #' @param beast2_jar_path the path of \code{beast.jar}.
 #'   Use \link{get_default_beast2_jar_path} to get
@@ -47,7 +48,7 @@ run_beast2 <- function(
   rng_seed = NA,
   n_threads = NA,
   use_beagle = FALSE,
-  overwrite_state_file = TRUE,
+  overwrite = TRUE,
   beast2_jar_path = get_default_beast2_jar_path(),
   verbose = FALSE
 ) {
@@ -110,7 +111,7 @@ run_beast2 <- function(
     rng_seed = rng_seed,
     n_threads = n_threads,
     use_beagle = use_beagle,
-    overwrite_state_file = overwrite_state_file,
+    overwrite = overwrite,
     beast2_jar_path = beast2_jar_path
   )
 

@@ -5,7 +5,7 @@
 \title{Creates the terminal command to run BEAST2}
 \usage{
 create_beast2_run_cmd(input_filename, output_state_filename, rng_seed = NA,
-  n_threads = NA, use_beagle = FALSE, overwrite_state_file = TRUE,
+  n_threads = NA, use_beagle = FALSE, overwrite = FALSE,
   beast2_jar_path = get_default_beast2_jar_path())
 }
 \arguments{
@@ -22,8 +22,9 @@ stores the state
 
 \item{use_beagle}{use BEAGLE if present}
 
-\item{overwrite_state_file}{set to TRUE to overwrite the file with name
-\code{output_state_filename} if it already exists}
+\item{overwrite}{if TRUE: overwrite the \code{.log}
+and \code{.trees} files if one of these exists.
+If FALSE, BEAST2 will not be started if one of these files exists}
 
 \item{beast2_jar_path}{name of the BEAST2 jar file
 (usually has a \code{.jar} extension).

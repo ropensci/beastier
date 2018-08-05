@@ -9,8 +9,8 @@ run_beast2(input_filename, output_log_filename = tempfile(pattern =
   output_trees_filenames = get_trees_filenames(input_filename),
   output_state_filename = tempfile(pattern = "beastier_", fileext =
   ".xml.state"), rng_seed = NA, n_threads = NA, use_beagle = FALSE,
-  overwrite_state_file = TRUE,
-  beast2_jar_path = get_default_beast2_jar_path(), verbose = FALSE)
+  overwrite = TRUE, beast2_jar_path = get_default_beast2_jar_path(),
+  verbose = FALSE)
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file}
@@ -31,8 +31,9 @@ by their IDs}
 
 \item{use_beagle}{use BEAGLE if present}
 
-\item{overwrite_state_file}{set to TRUE to overwrite the file with name
-\code{output_state_filename} if it already exists}
+\item{overwrite}{if TRUE: overwrite the \code{.log}
+and \code{.trees} files if one of these exists.
+If FALSE, BEAST2 will not be started if one of these files exists}
 
 \item{beast2_jar_path}{the path of \code{beast.jar}.
 Use \link{get_default_beast2_jar_path} to get

@@ -44,7 +44,7 @@ test_that("single alignment, WIRITTES setting", {
       rng_seed = 42,
       n_threads = 8,
       use_beagle = TRUE,
-      overwrite_state_file = TRUE
+      overwrite = TRUE
     )
   )
 
@@ -78,7 +78,7 @@ test_that("single alignment, equal RNG seed equal results", {
     output_trees_filenames = output_trees_filenames_1,
     output_state_filename = output_state_filename_1,
     rng_seed = rng_seed,
-    overwrite_state_file = TRUE
+    overwrite = TRUE
   )
   run_beast2(
     input_filename = get_beastier_path("2_4.xml"),
@@ -86,7 +86,7 @@ test_that("single alignment, equal RNG seed equal results", {
     output_trees_filenames = output_trees_filenames_2,
     output_state_filename = output_state_filename_2,
     rng_seed = rng_seed,
-    overwrite_state_file = TRUE
+    overwrite = TRUE
   )
   lines_1 <- readLines(output_log_filename_1)
   lines_2 <- readLines(output_log_filename_2)
@@ -326,7 +326,7 @@ test_that("BEAST2 does not overwrites log and trees files", {
       output_log_filename = output_log_filename,
       output_trees_filenames = output_trees_filename,
       output_state_filename = output_state_filename,
-      overwrite_state_file = FALSE
+      overwrite = FALSE
     )
   )
 
@@ -357,7 +357,7 @@ test_that("BEAST2 overwrites log and trees files", {
       output_log_filename = output_log_filename,
       output_trees_filenames = output_trees_filename,
       output_state_filename = output_state_filename,
-      overwrite_state_file = TRUE
+      overwrite = TRUE
     )
   )
 
