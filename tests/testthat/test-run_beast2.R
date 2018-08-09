@@ -387,3 +387,16 @@ test_that("BEAST2 overwrites log and trees files", {
   expect_true(all(readLines(output_trees_filename, warn = FALSE) != "trees"))
   expect_true(all(readLines(output_state_filename) != "state"))
 })
+
+
+test_that("should be silent when verbose is FALSE", {
+
+  expect_silent(
+    run_beast2(
+      input_filename = get_beastier_path("2_4.xml"),
+      verbose = FALSE
+    )
+  )
+
+})
+
