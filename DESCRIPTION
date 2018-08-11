@@ -21,19 +21,19 @@ LazyData: true
 RoxygenNote: 6.0.1.9000
 Imports:
   ape,
-  beautier,
   phangorn,
   rappdirs,
-  tracerer,
   stringr,
   xml2
 Suggests:
-    spelling,
+  beautier,
   hunspell,
   knitr,
   rmarkdown,
+  spelling,
   testit,
-  testthat
+  testthat,
+  tracerer
 Remotes:
   jimhester/covr,
   jimhester/lintr,
