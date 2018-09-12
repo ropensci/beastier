@@ -229,9 +229,9 @@ test_that("abuse", {
   expect_error(
     run_beast2(
       get_beastier_path("anthus_2_4.xml"),
-      beast2_jar_path = "abs.ent"
+      beast2_path = "abs.ent"
     ),
-    "'beast2_jar_path' must be the name of an existing file"
+    "'beast2_path' must be the name of an existing file"
   )
 
   expect_error(
@@ -353,12 +353,12 @@ test_that("BEAST2 overwrites log and trees files", {
   input_filename <- get_beastier_path("2_4.xml")
   output_log_filename <- beastier:::create_default_log_filename(
     input_filename = input_filename,
-    beast2_jar_path = get_default_beast2_jar_path(),
+    beast2_path = get_default_beast2_path(),
     verbose = FALSE
   )
   output_trees_filename <- beastier:::create_default_trees_filenames(
     input_filename = input_filename,
-    beast2_jar_path = get_default_beast2_jar_path(),
+    beast2_path = get_default_beast2_path(),
     verbose = FALSE
   )
   output_state_filename <- tempfile(fileext = ".state")
