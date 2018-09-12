@@ -30,9 +30,12 @@ test_that("abuse", {
   testthat::expect_error(
     gives_beast2_warning(
       get_beastier_path("anthus_2_4.xml"),
-      beast2_jar_path = "abs.ent"
+      beast2_path = "abs.ent"
     ),
-    "'beast2_path' must be the full path of the BEAST2 file 'beast.jar'."
+    paste0(
+      "'beast2_path' must be the full path of either 'beast' or 'beast.jar'. ",
+      "Both not found at path 'abs.ent'"
+    )
   )
 
 })
