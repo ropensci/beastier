@@ -1,7 +1,19 @@
 #' This function does nothing. It is intended to inherit is parameters'
 #' documentation.
+#' @param beast2_bin_path name of the BEAST2 binary file
+#'   (usually simply \code{beast}).
+#'   Use \link{get_default_beast2_bin_path} to get
+#'   the default BEAST binary file's path
 #' @param beast2_jar_path name of the BEAST2 jar file
 #'   (usually has a \code{.jar} extension).
+#'   Use \link{get_default_beast2_jar_path} to get
+#'   the default BEAST jar file's path
+#' @param beast2_path name of either a BEAST2 binary file
+#'   (usually simply \code{beast})
+#'   or a BEAST2 jar file
+#'   (usually has a \code{.jar} extension).
+#'   Use \link{get_default_beast2_bin_path} to get
+#'   the default BEAST binary file's path
 #'   Use \link{get_default_beast2_jar_path} to get
 #'   the default BEAST jar file's path
 #' @param clock_model a \code{beautier} clock model
@@ -53,7 +65,9 @@
 #'   \code{@noRd}. This is not done, as this will disallow all
 #'   functions to find the documentation parameters
 default_params_doc <- function(
+  beast2_bin_path,
   beast2_jar_path,
+  beast2_path,
   clock_model, clock_models,
   crown_age, crown_ages,
   fasta_filename, fasta_filenames,

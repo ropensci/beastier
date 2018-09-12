@@ -20,7 +20,7 @@ create_default_trees_filenames <- function(
   testit::assert(
     is_beast2_input_file( # nolint internal function
       input_filename,
-      beast2_jar_path = beast2_jar_path
+      beast2_path = beast2_jar_path
     )
   )
   alignment_ids <- get_alignment_ids(input_filename) # nolint internal function

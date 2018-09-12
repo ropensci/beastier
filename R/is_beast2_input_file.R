@@ -10,7 +10,7 @@ is_beast2_input_file <- function(
   filename,
   show_warnings = FALSE,
   verbose = FALSE,
-  beast2_jar_path = get_default_beast2_jar_path()
+  beast2_path = get_default_beast2_path()
 ) {
   if (!file.exists(filename)) {
     stop(
@@ -18,18 +18,18 @@ is_beast2_input_file <- function(
       "Filename '", filename, "' not found"
     )
   }
-  if (!file.exists(beast2_jar_path)) {
+  if (!file.exists(beast2_path)) {
     stop(
-      "'beast2_jar_path' must be the full path ",
+      "'beast2_path' must be the full path ",
       "of the BEAST2 file 'beast.jar'. ",
-      "beast.jar not found at path '", beast2_jar_path, "'"
+      "beast.jar not found at path '", beast2_path, "'"
     )
   }
 
   # Create the command to let BEAST2 validate the created XML file
   cmds <- beastier::create_beast2_validate_cmd(
     input_filename = filename,
-    beast2_jar_path = beast2_jar_path
+    beast2_path = beast2_path
   )
   output <- system2(
     cmds[1],

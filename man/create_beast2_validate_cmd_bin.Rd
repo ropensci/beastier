@@ -11,6 +11,11 @@ create_beast2_validate_cmd_bin(input_filename,
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file.
 This file usually has an \code{.xml} extension.}
+
+\item{beast2_bin_path}{name of the BEAST2 binary file
+(usually simply \code{beast}).
+Use \link{get_default_beast2_bin_path} to get
+the default BEAST binary file's path}
 }
 \value{
 a character vector, of which the first element

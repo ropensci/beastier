@@ -20,7 +20,7 @@ gives_beast2_warning <- function(
         filename = filename,
         show_warnings = TRUE,
         verbose = verbose,
-        beast2_jar_path = beast2_jar_path
+        beast2_path = beast2_jar_path
       )
       FALSE
     },

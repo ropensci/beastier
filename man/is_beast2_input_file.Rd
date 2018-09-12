@@ -5,7 +5,7 @@
 \title{Is a file a valid BEAST2 input file?}
 \usage{
 is_beast2_input_file(filename, show_warnings = FALSE, verbose = FALSE,
-  beast2_jar_path = get_default_beast2_jar_path())
+  beast2_path = get_default_beast2_path())
 }
 \arguments{
 \item{filename}{name of the BEAST2 XML input file}
@@ -15,8 +15,12 @@ is_beast2_input_file(filename, show_warnings = FALSE, verbose = FALSE,
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
 
-\item{beast2_jar_path}{name of the BEAST2 jar file
+\item{beast2_path}{name of either a BEAST2 binary file
+(usually simply \code{beast})
+or a BEAST2 jar file
 (usually has a \code{.jar} extension).
+Use \link{get_default_beast2_bin_path} to get
+the default BEAST binary file's path
 Use \link{get_default_beast2_jar_path} to get
 the default BEAST jar file's path}
 }

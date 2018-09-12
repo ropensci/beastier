@@ -14,12 +14,21 @@
 #' @export
 create_beast2_validate_cmd <- function(
   input_filename,
-  beast2_jar_path = get_default_beast2_jar_path()
+  beast2_path = get_default_beast2_jar_path()
 ) {
-  create_beast2_validate_cmd_jar(
-    input_filename = input_filename,
-    beast2_jar_path = beast2_jar_path
-  )
+  if (is_jar_path(beast2_path))
+  {
+    create_beast2_validate_cmd_jar(
+      input_filename = input_filename,
+      beast2_jar_path = beast2_path
+    )
+  } else {
+    testit::assert(is_bin_path(beast2_path))
+    create_beast2_validate_cmd_bin(
+      input_filename = input_filename,
+      beast2_bin_path = beast2_path
+    )
+  }
 }
 
 #' Creates the terminal command to validate a BEAST2 input file
@@ -42,6 +51,7 @@ create_beast2_validate_cmd_jar <- function(
   input_filename,
   beast2_jar_path = get_default_beast2_jar_path()
 ) {
+  testit::assert(is_jar_path(beast2_jar_path)) # nolint internal function
   c(
     "java",
     "-jar",
@@ -70,6 +80,7 @@ create_beast2_validate_cmd_bin <- function(
   input_filename,
   beast2_bin_path = get_default_beast2_bin_path()
 ) {
+  testit::assert(is_bin_path(beast2_bin_path)) # nolint internal function
   c(
     beast2_bin_path,
     "-validate",

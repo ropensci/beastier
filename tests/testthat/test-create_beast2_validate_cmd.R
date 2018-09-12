@@ -7,7 +7,7 @@ test_that("use", {
 
   created <- beastier:::create_beast2_validate_cmd(
     input_filename = input_filename,
-    beast2_jar_path = beast2_jar_path
+    beast2_path = beast2_jar_path
   )
   expected <- c(
     "java", "-jar",
