@@ -127,7 +127,9 @@ run_beast2 <- function(
   )
 
   if (.Platform$OS.type == "unix") {
-    cmd[1] <- stringr::str_sub(cmd[1], 2, -2)
+    if (is_bin_path(beast2_path)) {
+      cmd[1] <- stringr::str_sub(cmd[1], 2, -2)
+    }
   }
 
   if (verbose == TRUE) {
