@@ -17,17 +17,20 @@ Use \link{get_default_beast2_jar_path} to get
 the default BEAST jar file's path}
 }
 \value{
-one character string that calls the BEAST2
-  \code{.jar} file, starting with \code{"java -jar "}
+a numeric vector, of which the first element
+  is the command (\code{java}, in this case),
+  and the others are arguments (\code{-jar}, in this case, followed
+  by more arguments.
 }
 \description{
 Creates the terminal command to validate a BEAST2 input file
 }
 \examples{
-  cmd <- create_beast2_validate_cmd(
+  cmds <- create_beast2_validate_cmd(
     input_filename = "input.xml"
   )
-  testit::assert(substr(cmd, 1, 10) == "java -jar ")
+  testit::assert(cmds[1] == "java")
+  testit::assert(cmds[2] == "-jar")
 }
 \author{
 Richel J.C. Bilderbeek

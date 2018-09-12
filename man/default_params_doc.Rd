@@ -7,9 +7,10 @@ documentation.}
 \usage{
 default_params_doc(beast2_jar_path, clock_model, clock_models, crown_age,
   crown_ages, fasta_filename, fasta_filenames, fixed_crown_age,
-  fixed_crown_ages, initial_phylogenies, input_filename, mcmc, misc_options,
-  n_taxa, output_filename, overwrite, rng_seed, sequence_length, site_model,
-  site_models, tree_prior, tree_priors, verbose)
+  fixed_crown_ages, initial_phylogenies, input_filename, mcmc,
+  misc_options, n_taxa, output_filename, overwrite, rng_seed,
+  sequence_length, site_model, site_models, tree_prior, tree_priors,
+  verbose)
 }
 \arguments{
 \item{beast2_jar_path}{name of the BEAST2 jar file

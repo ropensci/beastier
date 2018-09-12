@@ -9,12 +9,11 @@ test_that("use", {
     input_filename = input_filename,
     beast2_jar_path = beast2_jar_path
   )
-  expected <- paste0(
-    "java -jar ",
-    "\"", beast2_jar_path, "\"",
-    " -validate ",
-    "\"", input_filename, "\""
+  expected <- c(
+    "java", "-jar",
+    paste0("\"", beast2_jar_path, "\""),
+    "-validate",
+    paste0("\"", input_filename, "\"")
   )
   testthat::expect_equal(created, expected)
-
 })
