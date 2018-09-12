@@ -118,16 +118,16 @@ run_beast2 <- function(
     beast2_path = beast2_path
   )
 
-  if (.Platform$OS.type == "unix") {
-    if (!verbose) {
-      cmd <- c(cmd, "1>/dev/null")
-      cmd <- c(cmd, "2>/dev/null")
-    }
-  }
+  # if (.Platform$OS.type == "unix") {
+  #   if (!verbose) {
+  #     cmd <- c(cmd, "1>/dev/null")
+  #     cmd <- c(cmd, "2>/dev/null")
+  #   }
+  # }
 
   exit_code <- system2(
-    command = cmd[[1]][1],
-    args = cmd[[1]][-1],
+    command = cmd[1],
+    args = cmd[-1],
     stdout = NULL,
     stderr = NULL
   )
