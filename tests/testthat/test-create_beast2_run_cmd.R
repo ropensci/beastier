@@ -10,7 +10,7 @@ test_that("use", {
     input_filename = input_filename,
     output_state_filename = output_state_filename,
     overwrite = TRUE,
-    beast2_jar_path = beast2_jar_path
+    beast2_path = beast2_jar_path
   )
   expected <- paste0(
     "java -jar \"", beast2_jar_path,
@@ -37,7 +37,7 @@ test_that("use, WIRITTES", {
     n_threads = 8,
     use_beagle = TRUE,
     overwrite = TRUE,
-    beast2_jar_path = beast2_jar_path
+    beast2_path = beast2_jar_path
   )
 
   expected <- paste0(

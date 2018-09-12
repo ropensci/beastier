@@ -6,6 +6,8 @@
 #' @return Nothing. Will install BEAST2
 #' @examples
 #'   install_beast2()
+#'   testit::assert(file.exists(get_default_beast2_path()))
+#'   testit::assert(file.exists(get_default_beast2_bin_path()))
 #'   testit::assert(file.exists(get_default_beast2_jar_path()))
 #' @author Richel J.C. Bilderbeek
 #' @export

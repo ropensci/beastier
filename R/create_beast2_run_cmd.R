@@ -22,9 +22,14 @@ create_beast2_run_cmd <- function(
   n_threads = NA,
   use_beagle = FALSE,
   overwrite = FALSE,
-  beast2_jar_path = get_default_beast2_jar_path()
+  beast2_path = get_default_beast2_path()
 ) {
-  cmd <- paste0("java -jar \"", beast2_jar_path, "\"")
+  if (is_jar_path(beast2_path)) {
+    cmd <- paste0("java -jar \"", beast2_path, "\"")
+  } else {
+    testit::assert(is_bin_path(beast2_path))
+    cmd <- paste0("", beast2_path, "\"")
+  }
   if (!is.na(rng_seed)) {
     cmd <- paste(cmd, "-seed", rng_seed)
   }

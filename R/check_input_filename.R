@@ -19,7 +19,7 @@ check_input_filename <- function(input_filename) {
 #' @author Richel J.C. Bilderbeek
 check_input_filename_validity <- function(
   input_filename,
-  beast2_jar_path,
+  beast2_path,
   verbose
 ) {
 
@@ -27,7 +27,7 @@ check_input_filename_validity <- function(
     !is_beast2_input_file(
       filename = input_filename,
       verbose = verbose,
-      beast2_path = beast2_jar_path
+      beast2_path = beast2_path
     )
   ) {
     stop(
@@ -36,7 +36,7 @@ check_input_filename_validity <- function(
       is_beast2_input_file( # nolint internal function
         input_filename,
         verbose = verbose,
-        beast2_path = beast2_jar_path)
+        beast2_path = beast2_path)
     )
   }
 }

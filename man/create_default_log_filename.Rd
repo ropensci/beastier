@@ -4,14 +4,18 @@
 \alias{create_default_log_filename}
 \title{Create the default \code{.log} filename as will be created by BEAST}
 \usage{
-create_default_log_filename(input_filename, beast2_jar_path, verbose)
+create_default_log_filename(input_filename, beast2_path, verbose)
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file.
 This file usually has an \code{.xml} extension.}
 
-\item{beast2_jar_path}{name of the BEAST2 jar file
+\item{beast2_path}{name of either a BEAST2 binary file
+(usually simply \code{beast})
+or a BEAST2 jar file
 (usually has a \code{.jar} extension).
+Use \link{get_default_beast2_bin_path} to get
+the default BEAST binary file's path
 Use \link{get_default_beast2_jar_path} to get
 the default BEAST jar file's path}
 

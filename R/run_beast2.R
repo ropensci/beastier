@@ -34,12 +34,12 @@ run_beast2 <- function(
   input_filename,
   output_log_filename = create_default_log_filename(
     input_filename,
-    beast2_jar_path,
+    beast2_path,
     verbose
   ),
   output_trees_filenames = create_default_trees_filenames(
     input_filename,
-    beast2_jar_path,
+    beast2_path,
     verbose
   ),
   output_state_filename = tempfile(
@@ -49,14 +49,14 @@ run_beast2 <- function(
   n_threads = NA,
   use_beagle = FALSE,
   overwrite = TRUE,
-  beast2_jar_path = get_default_beast2_jar_path(),
+  beast2_path = get_default_beast2_path(),
   verbose = FALSE
 ) {
   check_input_filename(input_filename) # nolint internal function
-  check_beast2_jar_path(beast2_jar_path) # nolint internal function
+  check_beast2_path(beast2_path) # nolint internal function
   check_input_filename_validity( # nolint internal function
     input_filename = input_filename,
-    beast2_jar_path = beast2_jar_path,
+    beast2_path = beast2_path,
     verbose = verbose
   )
 
@@ -74,7 +74,7 @@ run_beast2 <- function(
   # These are files created by BEAST2
   beast_log_filename <- create_default_log_filename(
     input_filename = input_filename,
-    beast2_jar_path = beast2_jar_path,
+    beast2_path = beast2_path,
     verbose = verbose
   )
   if (file.exists(beast_log_filename) && overwrite == FALSE) {
@@ -84,7 +84,7 @@ run_beast2 <- function(
   }
   beast_trees_filename <- create_default_trees_filenames(
     input_filename = input_filename,
-    beast2_jar_path = beast2_jar_path,
+    beast2_path = beast2_path,
     verbose = verbose
   )
   if (file.exists(beast_trees_filename) && overwrite == FALSE) {
@@ -115,7 +115,7 @@ run_beast2 <- function(
     n_threads = n_threads,
     use_beagle = use_beagle,
     overwrite = overwrite,
-    beast2_jar_path = beast2_jar_path
+    beast2_path = beast2_path
   )
 
   if (.Platform$OS.type == "unix") {
@@ -138,7 +138,7 @@ run_beast2 <- function(
   if (!file.exists(output_log_filename)) {
     from <- create_default_log_filename(
       input_filename = input_filename,
-      beast2_jar_path = beast2_jar_path,
+      beast2_path = beast2_path,
       verbose = verbose
     )
     testit::assert(file.exists(from))
@@ -149,7 +149,7 @@ run_beast2 <- function(
     if (!file.exists(to)) {
       from <- create_default_trees_filenames(
         input_filename = input_filename,
-        beast2_jar_path = beast2_jar_path,
+        beast2_path = beast2_path,
         verbose = verbose
       )[i]
       testit::assert(file.exists(from))

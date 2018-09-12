@@ -6,12 +6,12 @@
 \usage{
 run_beast2(input_filename,
   output_log_filename = create_default_log_filename(input_filename,
-  beast2_jar_path, verbose),
+  beast2_path, verbose),
   output_trees_filenames = create_default_trees_filenames(input_filename,
-  beast2_jar_path, verbose), output_state_filename = tempfile(pattern =
+  beast2_path, verbose), output_state_filename = tempfile(pattern =
   "beastier_", fileext = ".xml.state"), rng_seed = NA, n_threads = NA,
   use_beagle = FALSE, overwrite = TRUE,
-  beast2_jar_path = get_default_beast2_jar_path(), verbose = FALSE)
+  beast2_path = get_default_beast2_path(), verbose = FALSE)
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file.
@@ -43,8 +43,12 @@ by their IDs}
    \item{the \code{.trees} files created by BEAST2 exist}
 }}
 
-\item{beast2_jar_path}{name of the BEAST2 jar file
+\item{beast2_path}{name of either a BEAST2 binary file
+(usually simply \code{beast})
+or a BEAST2 jar file
 (usually has a \code{.jar} extension).
+Use \link{get_default_beast2_bin_path} to get
+the default BEAST binary file's path
 Use \link{get_default_beast2_jar_path} to get
 the default BEAST jar file's path}
 
