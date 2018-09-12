@@ -17,7 +17,7 @@ Use \link{get_default_beast2_jar_path} to get
 the default BEAST jar file's path}
 }
 \value{
-a numeric vector, of which the first element
+a character vector, of which the first element
   is the command (\code{java}, in this case),
   and the others are arguments (\code{-jar}, in this case, followed
   by more arguments.

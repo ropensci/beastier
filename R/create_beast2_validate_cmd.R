@@ -1,6 +1,6 @@
 #' Creates the terminal command to validate a BEAST2 input file
 #' @inheritParams default_params_doc
-#' @return a numeric vector, of which the first element
+#' @return a character vector, of which the first element
 #'   is the command (\code{java}, in this case),
 #'   and the others are arguments (\code{-jar}, in this case, followed
 #'   by more arguments.
