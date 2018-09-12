@@ -397,21 +397,12 @@ test_that("silent minimal run", {
   )
 })
 
-test_that("run from binary path", {
-
-  skip("WIP")
-  run_beast2(
-    input_filename = get_beastier_path("2_4.xml"),
-    beast2_path = get_default_beast2_bin_path(),
-    verbose = TRUE
-  )
-
+test_that("run BEAST2 from binary path", {
 
   expect_silent(
     run_beast2(
       input_filename = get_beastier_path("2_4.xml"),
-      beast2_path = get_default_beast2_bin_path(),
-      verbose = TRUE
+      beast2_path = get_default_beast2_bin_path()
     )
   )
 })

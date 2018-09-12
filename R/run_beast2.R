@@ -108,6 +108,14 @@ run_beast2 <- function(
     )
   }
 
+  testit::assert(length(input_filename) == 1)
+  testit::assert(length(output_state_filename) == 1)
+  testit::assert(length(rng_seed) == 1)
+  testit::assert(length(n_threads) == 1)
+  testit::assert(length(use_beagle) == 1)
+  testit::assert(length(overwrite) == 1)
+  testit::assert(length(beast2_path) == 1)
+
   cmd <- beastier::create_beast2_run_cmd(
     input_filename = input_filename,
     output_state_filename = output_state_filename,
@@ -118,12 +126,13 @@ run_beast2 <- function(
     beast2_path = beast2_path
   )
 
-  # if (.Platform$OS.type == "unix") {
-  #   if (!verbose) {
-  #     cmd <- c(cmd, "1>/dev/null")
-  #     cmd <- c(cmd, "2>/dev/null")
-  #   }
-  # }
+  if (.Platform$OS.type == "unix") {
+    cmd[1] <- stringr::str_sub(cmd[1], 2, -2)
+  }
+
+  if (verbose == TRUE) {
+    print(paste("cmd:", paste0(cmd, collapse = " ")))
+  }
 
   exit_code <- system2(
     command = cmd[1],

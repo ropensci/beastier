@@ -27,13 +27,15 @@ is_beast2_input_file <- function(
   }
 
   # Create the command to let BEAST2 validate the created XML file
+  testit::assert(length(filename) == 1)
+  testit::assert(length(beast2_path) == 1)
   cmds <- beastier::create_beast2_validate_cmd(
     input_filename = filename,
     beast2_path = beast2_path
   )
   output <- system2(
     cmds[1],
-    args = cmds[2:length(cmds)],
+    args = cmds[-1],
     stdout = TRUE,
     stderr = TRUE
   )
