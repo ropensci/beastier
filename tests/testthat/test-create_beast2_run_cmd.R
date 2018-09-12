@@ -74,6 +74,6 @@ test_that("different overwrite option results in different command", {
     output_state_filename = output_state_filename,
     overwrite = FALSE
   )
-  testthat::expect_true(cmd_false != cmd_true)
+  testthat::expect_true(length(cmd_false) != length(cmd_true))
 
 })
