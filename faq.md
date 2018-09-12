@@ -6,6 +6,10 @@
 beastier::install_beast2()
 ```
 
+## Which version of BEAUti do you use as a guideline?
+
+Version 2.5.0, as can be found in the [install_beast2](https://github.com/richelbilderbeek/beastier/blob/master/R/install_beast2.R) function.
+
 ## How can I indicate a feature that I miss?
 
 Submit an Issue.

@@ -399,4 +399,3 @@ test_that("should be silent when verbose is FALSE", {
   )
 
 })
-
