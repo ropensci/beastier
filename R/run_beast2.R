@@ -120,14 +120,14 @@ run_beast2 <- function(
 
   if (.Platform$OS.type == "unix") {
     if (!verbose) {
-      cmd <- paste(cmd, "1>/dev/null 2>/dev/null")
+      cmd <- c(cmd, "1>/dev/null")
+      cmd <- c(cmd, "2>/dev/null")
     }
   }
 
-  cmds <- strsplit(x = cmd, " ")
   exit_code <- system2(
-    command = cmds[[1]][1],
-    args = cmds[[1]][-1],
+    command = cmd[[1]][1],
+    args = cmd[[1]][-1],
     stdout = NULL,
     stderr = NULL
   )

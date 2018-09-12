@@ -389,13 +389,29 @@ test_that("BEAST2 overwrites log and trees files", {
 })
 
 
-test_that("should be silent when verbose is FALSE", {
+test_that("silent minimal run", {
+  expect_silent(
+    run_beast2(
+      input_filename = get_beastier_path("2_4.xml")
+    )
+  )
+})
+
+test_that("run from binary path", {
+
+  skip("WIP")
+  run_beast2(
+    input_filename = get_beastier_path("2_4.xml"),
+    beast2_path = get_default_beast2_bin_path(),
+    verbose = TRUE
+  )
+
 
   expect_silent(
     run_beast2(
       input_filename = get_beastier_path("2_4.xml"),
-      verbose = FALSE
+      beast2_path = get_default_beast2_bin_path(),
+      verbose = TRUE
     )
   )
-
 })

@@ -42,8 +42,8 @@ Use \link{get_default_beast2_jar_path} to get
 the default BEAST jar file's path}
 }
 \value{
-one character string that calls the BEAST2
-  \code{.jar} file, starting with \code{"java -jar "}
+a character vector with the command and
+  arguments to call BEAST2
 }
 \description{
 Creates the terminal command to run BEAST2
@@ -51,9 +51,11 @@ Creates the terminal command to run BEAST2
 \examples{
   cmd <- create_beast2_run_cmd(
     input_filename = "input.xml",
-    output_state_filename = "output.xml.state"
+    output_state_filename = "output.xml.state",
+    beast2_path = get_default_beast2_jar_path()
   )
-  testit::assert(substr(cmd, 1, 10) == "java -jar ")
+  testit::assert(cmd[1] == "java")
+  testit::assert(cmd[2] == "-jar")
 }
 \author{
 Richel J.C. Bilderbeek

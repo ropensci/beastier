@@ -12,11 +12,14 @@ test_that("use", {
     overwrite = TRUE,
     beast2_path = beast2_jar_path
   )
-  expected <- paste0(
-    "java -jar \"", beast2_jar_path,
-    "\" -statefile \"", output_state_filename,
-    "\" -overwrite \"",
-    input_filename, "\""
+  expected <- c(
+    "java",
+    "-jar",
+    paste0("\"", beast2_jar_path, "\""),
+    "-statefile",
+    paste0("\"", output_state_filename, "\""),
+    "-overwrite",
+    paste0("\"", input_filename, "\"")
   )
   testthat::expect_equal(created, expected)
 
@@ -40,13 +43,16 @@ test_that("use, WIRITTES", {
     beast2_path = beast2_jar_path
   )
 
-  expected <- paste0(
-    "java -jar ", "\"", beast2_jar_path, "\"",
-    " -seed ", rng_seed,
-    " -threads 8 -beagle",
-    " -statefile \"", output_state_filename, "\"",
-    " -overwrite ",
-    "\"", input_filename, "\""
+  expected <- c(
+    "java",
+    "-jar",
+    paste0("\"", beast2_jar_path, "\""),
+    "-seed", rng_seed,
+    "-threads", "8", "-beagle",
+    "-statefile",
+    paste0("\"", output_state_filename, "\""),
+    "-overwrite",
+    paste0("\"", input_filename, "\"")
   )
 
   testthat::expect_equal(created, expected)
