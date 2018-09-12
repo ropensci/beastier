@@ -41,7 +41,7 @@ test_that("anthus_2_4.xml is valid", {
 test_that("nested_sampling.xml is valid", {
 
   if (!beastier:::is_on_travis()) return()
-
+  skip("WIP")
   filename <- get_beastier_path("nested_sampling.xml")
   expect_true(file.exists(filename))
   expect_true(is_beast2_input_file(filename))
