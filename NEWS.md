@@ -2,6 +2,27 @@
 
 Newest versions at top.
 
+## beastier 1.5 (2018-09-12)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Instead of supplying a BEAST2 `.jar` path 
+    (using the argument `beast2_jar_path`), one
+    can now also supply the BEAST2 binary path.
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * All parameters named `beast2_jar_path` are now called `beast2_path`
+
+
 ## beastier 1.4.4 (2018-08-05)
 
 ### NEW FEATURES
