@@ -1,6 +1,28 @@
 context("create_beast2_run_cmd")
 
-test_that("use", {
+test_that("use, bin", {
+
+  beast2_bin_path <- file.path("some", "path", "to", "beast")
+  output_state_filename <- "output.xml.state"
+  input_filename <- "input.xml"
+
+  created <- beastier::create_beast2_run_cmd(
+    input_filename = input_filename,
+    output_state_filename = output_state_filename,
+    overwrite = TRUE,
+    beast2_path = beast2_bin_path
+  )
+  expected <- c(
+    paste0("\"", beast2_bin_path, "\""),
+    "-statefile",
+    paste0("\"", output_state_filename, "\""),
+    "-overwrite",
+    paste0("\"", input_filename, "\"")
+  )
+  testthat::expect_equal(created, expected)
+})
+
+test_that("use, jar", {
 
   beast2_jar_path <- file.path("some", "path", "to", "beast.jar")
   output_state_filename <- "output.xml.state"
