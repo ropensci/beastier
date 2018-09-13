@@ -29,13 +29,32 @@ test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
 
 })
 
-test_that("anthus_2_4.xml is valid", {
+test_that("anthus_2_4.xml is valid, from bin", {
 
   if (!beastier:::is_on_travis()) return()
 
   filename <- get_beastier_path("anthus_2_4.xml")
   expect_true(file.exists(filename))
-  expect_true(beastier::is_beast2_input_file(filename))
+  expect_true(
+    beastier::is_beast2_input_file(
+      filename,
+      beast2_path = get_default_beast2_bin_path()
+    )
+  )
+})
+
+test_that("anthus_2_4.xml is valid, from jar", {
+
+  if (!beastier:::is_on_travis()) return()
+
+  filename <- get_beastier_path("anthus_2_4.xml")
+  expect_true(file.exists(filename))
+  expect_true(
+    beastier::is_beast2_input_file(
+      filename,
+      beast2_path = get_default_beast2_jar_path()
+    )
+  )
 })
 
 test_that("abuse", {
