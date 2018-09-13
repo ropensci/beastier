@@ -3,5 +3,7 @@ beautier
 FASTA
 http
 phylogenies
+STDERR
+STDOUT
 tracerer
 www
