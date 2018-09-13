@@ -13,4 +13,3 @@ check_beast2_path <- function(beast2_path) {
     )
   }
 }
-

@@ -16,14 +16,13 @@ create_beast2_validate_cmd <- function(
   input_filename,
   beast2_path = get_default_beast2_path()
 ) {
-  if (is_jar_path(beast2_path))
-  {
+  if (is_jar_path(beast2_path)) {
     create_beast2_validate_cmd_jar(
       input_filename = input_filename,
       beast2_jar_path = beast2_path
     )
   } else {
-    testit::assert(is_bin_path(beast2_path))
+    testit::assert(is_bin_path(beast2_path)) # nolint internal function
     create_beast2_validate_cmd_bin(
       input_filename = input_filename,
       beast2_bin_path = beast2_path

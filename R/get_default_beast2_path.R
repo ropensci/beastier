@@ -17,5 +17,5 @@
 #' @author Richel J.C. Bilderbeek
 #' @export
 get_default_beast2_path <- function() {
-  get_default_beast2_jar_path()
+  beastier::get_default_beast2_jar_path()
 }

@@ -33,7 +33,7 @@ create_beast2_run_cmd <- function(
       paste0("\"", beast2_path, "\"")
     )
   } else {
-    testit::assert(is_bin_path(beast2_path))
+    testit::assert(is_bin_path(beast2_path)) # nolint internal function
     cmd <- paste0("\"", beast2_path, "\"")
   }
   if (!is.na(rng_seed)) {
