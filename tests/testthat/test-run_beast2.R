@@ -388,21 +388,25 @@ test_that("BEAST2 overwrites log and trees files", {
   expect_true(all(readLines(output_state_filename) != "state"))
 })
 
-
-test_that("silent minimal run", {
+test_that("run BEAST2 from jar path", {
   expect_silent(
     run_beast2(
-      input_filename = get_beastier_path("2_4.xml")
+      input_filename = get_beastier_path("2_4.xml"),
+      beast2_path = get_default_beast2_jar_path()
     )
   )
 })
 
 test_that("run BEAST2 from binary path", {
-
   expect_silent(
     run_beast2(
       input_filename = get_beastier_path("2_4.xml"),
       beast2_path = get_default_beast2_bin_path()
     )
   )
+})
+
+test_that("run_beast2 produces output", {
+  output <- run_beast2(get_beastier_path("2_4.xml"))
+  expect_true(length(output) > 50)
 })

@@ -56,7 +56,8 @@ the default BEAST jar file's path}
 is potentially useful in debugging}
 }
 \value{
-Nothing. It will create the files with names
+The text sent to STDOUT and STDERR.
+  It will create the files with names
   \code{output_log_filename}, \code{output_trees_filenames}
   and \code{output_state_filenames}
 }
@@ -68,13 +69,14 @@ Run BEAST2
   output_trees_filenames <- "out.trees"
   output_state_filename <- "out.state"
 
-  run_beast2(
+  output <- run_beast2(
     input_filename = get_beastier_path("2_4.xml"),
     output_log_filename = output_log_filename,
     output_trees_filenames = output_trees_filenames,
     output_state_filename = output_state_filename
   )
 
+  testit::assert(length(output) > 40)
   testit::assert(file.exists(output_log_filename))
   testit::assert(file.exists(output_trees_filenames))
   testit::assert(file.exists(output_state_filename))

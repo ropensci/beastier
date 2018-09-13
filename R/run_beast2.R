@@ -9,7 +9,8 @@
 #' @param output_state_filename name of the .xml.state file to create
 #' @param n_threads number of threads to use
 #' @param use_beagle use BEAGLE if present
-#' @return Nothing. It will create the files with names
+#' @return The text sent to STDOUT and STDERR.
+#'   It will create the files with names
 #'   \code{output_log_filename}, \code{output_trees_filenames}
 #'   and \code{output_state_filenames}
 #' @export
@@ -18,13 +19,14 @@
 #'   output_trees_filenames <- "out.trees"
 #'   output_state_filename <- "out.state"
 #'
-#'   run_beast2(
+#'   output <- run_beast2(
 #'     input_filename = get_beastier_path("2_4.xml"),
 #'     output_log_filename = output_log_filename,
 #'     output_trees_filenames = output_trees_filenames,
 #'     output_state_filename = output_state_filename
 #'   )
 #'
+#'   testit::assert(length(output) > 40)
 #'   testit::assert(file.exists(output_log_filename))
 #'   testit::assert(file.exists(output_trees_filenames))
 #'   testit::assert(file.exists(output_state_filename))
@@ -136,14 +138,13 @@ run_beast2 <- function(
     print(paste("cmd:", paste0(cmd, collapse = " ")))
   }
 
-  exit_code <- system2(
+  output <- system2(
     command = cmd[1],
     args = cmd[-1],
-    stdout = NULL,
-    stderr = NULL
+    stdout = TRUE,
+    stderr = TRUE
   )
 
-  testit::assert(exit_code == 0)
   testit::assert(file.exists(output_state_filename))
 
   if (!file.exists(output_log_filename)) {
@@ -170,4 +171,5 @@ run_beast2 <- function(
   testit::assert(file.exists(output_log_filename))
   testit::assert(files_exist(output_trees_filenames)) # nolint internal function
   testit::assert(file.exists(output_state_filename))
+  output
 }
