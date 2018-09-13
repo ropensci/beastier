@@ -31,7 +31,7 @@ check_input_filename_validity <- function(
     )
   ) {
     stop(
-      "'input_filename' must be a valid BEAST2 XML file",
+      "'input_filename' must be a valid BEAST2 XML file. ",
       "File '", input_filename, "' is not a valid BEAST2 file",
       is_beast2_input_file( # nolint internal function
         input_filename,
