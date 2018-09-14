@@ -16,11 +16,8 @@ install_beast2 <- function(
   verbose = FALSE
 ) {
   dir.create(path = folder_name,  showWarnings = FALSE, recursive = TRUE)
-  tgz_filename <- "BEAST.v2.5.0.Linux.tgz"
-  url <- paste0(
-    "https://github.com/CompEvol/beast2/releases/download/v2.5.0/",
-    tgz_filename
-  )
+  url <- get_default_beast2_download_url()
+  tgz_filename <- basename(url)
   local_path <- file.path(folder_name, tgz_filename)
   utils::download.file(
     url = url,

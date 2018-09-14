@@ -2,11 +2,24 @@ context("gives_beast2_warning")
 
 test_that("use", {
 
+  testit::assert(is_beast2_installed())
+
+  # Binary
   testthat::expect_true(
     gives_beast2_warning(
-      filename = beastier:::get_beastier_path("beast2_warning.xml")
+      filename = beastier:::get_beastier_path("beast2_warning.xml"),
+      beast2_path = get_default_beast2_bin_path()
     )
   )
+
+  # Jar
+  testthat::expect_true(
+    gives_beast2_warning(
+      filename = beastier:::get_beastier_path("beast2_warning.xml"),
+      beast2_path = get_default_beast2_jar_path()
+    )
+  )
+
   testthat::expect_output(
     gives_beast2_warning(
       filename = beastier:::get_beastier_path("beast2_warning.xml"),
