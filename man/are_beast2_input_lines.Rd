@@ -6,7 +6,8 @@
   result in a valid BEAST2 input file?}
 \usage{
 are_beast2_input_lines(lines, verbose = FALSE,
-  method = ifelse(beastier:::is_on_travis(), "deep", "fast"))
+  method = ifelse(beastier:::is_on_travis(), "deep", "fast"),
+  beast2_path = get_default_beast2_path())
 }
 \arguments{
 \item{lines}{lines of text}
@@ -18,6 +19,15 @@ is potentially useful in debugging}
 The 'deep' method uses BEAST2 to validate the complete file.
 The 'fast' method uses some superficial tests (for example: if all
 IDs are unique)}
+
+\item{beast2_path}{name of either a BEAST2 binary file
+(usually simply \code{beast})
+or a BEAST2 jar file
+(usually has a \code{.jar} extension).
+Use \link{get_default_beast2_bin_path} to get
+the default BEAST binary file's path
+Use \link{get_default_beast2_jar_path} to get
+the default BEAST jar file's path}
 }
 \value{
 TRUE if the text is valid, FALSE if not

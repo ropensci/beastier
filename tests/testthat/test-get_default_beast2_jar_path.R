@@ -1,6 +1,6 @@
 context("get_default_beast2_jar_path")
 
-test_that("use", {
+test_that("must have a correct location", {
 
   if (rappdirs::app_dir()$os == "unix") {
     testthat::expect_true(
@@ -18,5 +18,13 @@ test_that("use", {
       )
     )
   }
+})
 
+test_that("must exist", {
+
+  if (is_beast2_installed()) {
+    expect_true(
+      file.exists(get_default_beast2_jar_path())
+    )
+  }
 })

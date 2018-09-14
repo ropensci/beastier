@@ -17,7 +17,8 @@
 are_beast2_input_lines <- function(
   lines,
   verbose = FALSE,
-  method = ifelse(beastier:::is_on_travis(), "deep", "fast")
+  method = ifelse(beastier:::is_on_travis(), "deep", "fast"),
+  beast2_path = get_default_beast2_path()
 ) {
   if (!method %in% c("deep", "fast")) {
     stop("'method' must be \"deep\" or \"fast\", value was '", method, "'")
@@ -26,7 +27,11 @@ are_beast2_input_lines <- function(
     filename <- tempfile()
     save_lines(filename = filename, lines = lines) # nolint internal function
     return(
-      are_beast2_input_lines_deep(lines = lines, verbose = verbose)
+      are_beast2_input_lines_deep(
+        lines = lines,
+        verbose = verbose,
+        beast2_path = beast2_path
+      )
     )
   } else {
     testit::assert(method == "fast")
@@ -51,13 +56,15 @@ are_beast2_input_lines <- function(
 #'   testit::assert(beastier:::are_beast2_input_lines_deep(text))
 are_beast2_input_lines_deep <- function(
   lines,
-  verbose = FALSE
+  verbose = FALSE,
+  beast2_path = get_default_beast2_path()
 ) {
   filename <- tempfile()
   save_lines(filename = filename, lines = lines) # nolint internal function
   is_beast2_input_file(
     filename = filename,
-    verbose = verbose
+    verbose = verbose,
+    beast2_path = beast2_path
   )
 }
 

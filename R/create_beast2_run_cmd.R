@@ -26,31 +26,40 @@ create_beast2_run_cmd <- function(
   overwrite = FALSE,
   beast2_path = get_default_beast2_path()
 ) {
+  testit::assert(file.exists(beast2_path))
+  cmds <- NULL
   if (is_jar_path(beast2_path)) {
-    cmd <- c(
-      "java",
+    cmds <- c(
+      get_default_java_path(),
       "-jar",
-      paste0("\"", beast2_path, "\"")
+      beast2_path #paste0("\"", beast2_path, "\"")
     )
+    testit::assert(file.exists(cmds[1]))
   } else {
     testit::assert(is_bin_path(beast2_path)) # nolint internal function
-    cmd <- paste0("\"", beast2_path, "\"")
+    #cmds <- paste0("\"", beast2_path, "\"")
+    cmds <- beast2_path
+    testit::assert(file.exists(cmds[1]))
   }
   if (!is.na(rng_seed)) {
-    cmd <- c(cmd, "-seed")
-    cmd <- c(cmd, rng_seed)
+    cmds <- c(cmds, "-seed")
+    cmds <- c(cmds, rng_seed)
   }
   if (!is.na(n_threads)) {
-    cmd <- c(cmd, "-threads")
-    cmd <- c(cmd, n_threads)
+    cmds <- c(cmds, "-threads")
+    cmds <- c(cmds, n_threads)
   }
   if (use_beagle == TRUE) {
-    cmd <- c(cmd, "-beagle")
+    cmds <- c(cmds, "-beagle")
   }
-  cmd <- c(cmd, "-statefile")
-  cmd <- c(cmd, paste0("\"", output_state_filename, "\""))
+  cmds <- c(cmds, "-statefile")
+  cmds <- c(cmds, paste0("\"", output_state_filename, "\""))
+  testit::assert(file.exists(cmds[1]))
   if (overwrite == TRUE) {
-    cmd <- c(cmd, "-overwrite")
+    cmds <- c(cmds, "-overwrite")
   }
-  c(cmd, paste0("\"", input_filename, "\""))
+  testit::assert(file.exists(cmds[1]))
+  cmds <- c(cmds, paste0("\"", input_filename, "\""))
+  testit::assert(file.exists(cmds[1]))
+  cmds
 }

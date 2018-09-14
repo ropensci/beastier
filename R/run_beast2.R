@@ -128,11 +128,11 @@ run_beast2 <- function(
     beast2_path = beast2_path
   )
 
-  if (.Platform$OS.type == "unix") {
-    if (is_bin_path(beast2_path)) {
-      cmd[1] <- stringr::str_sub(cmd[1], 2, -2)
-    }
-  }
+  # if (.Platform$OS.type == "unix") {
+  #   if (is_bin_path(beast2_path)) {
+  #     cmd[1] <- stringr::str_sub(cmd[1], 2, -2)
+  #   }
+  # }
 
   if (verbose == TRUE) {
     print(paste("cmd:", paste0(cmd, collapse = " ")))

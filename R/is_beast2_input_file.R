@@ -33,6 +33,7 @@ is_beast2_input_file <- function(
     input_filename = filename,
     beast2_path = beast2_path
   )
+  testit::assert(file.exists(cmds[1]))
   output <- system2(
     cmds[1],
     args = cmds[-1],

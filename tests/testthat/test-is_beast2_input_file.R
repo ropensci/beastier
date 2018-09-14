@@ -8,7 +8,11 @@ test_that("beast2_example_output.log is not a valid BEAST2 input file", {
   is_ok <- NULL
 
   expect_output(
-    is_ok <- beastier::is_beast2_input_file(filename, verbose = TRUE)
+    is_ok <- beastier::is_beast2_input_file(
+      filename,
+      verbose = TRUE,
+      beast2_path = get_default_beast2_bin_path()
+    )
   )
 
   testthat::expect_false(is_ok)
@@ -34,7 +38,7 @@ test_that("anthus_2_4.xml is valid, from bin", {
   if (!beastier:::is_on_travis()) return()
 
   filename <- get_beastier_path("anthus_2_4.xml")
-  expect_true(file.exists(filename))
+  testit::assert(file.exists(filename))
   expect_true(
     beastier::is_beast2_input_file(
       filename,

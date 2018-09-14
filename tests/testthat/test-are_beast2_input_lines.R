@@ -1,19 +1,10 @@
 context("are_beast2_input_lines")
 
-test_that("use", {
+test_that("use, fast", {
 
   testthat::expect_true(
     beastier::are_beast2_input_lines(
       readLines(beastier::get_beastier_path("anthus_2_4.xml"))
-    )
-  )
-
-
-  testthat::expect_true(
-    beastier::are_beast2_input_lines(
-      readLines(beastier::get_beastier_path("anthus_2_4.xml")),
-      method = "deep",
-      verbose = TRUE
     )
   )
 
@@ -24,6 +15,28 @@ test_that("use", {
     )
   )
 
+})
+
+test_that("use, deep", {
+
+  skip("WIP, #15")
+  testthat::expect_true(
+    beastier::are_beast2_input_lines(
+      readLines(beastier::get_beastier_path("anthus_2_4.xml")),
+      method = "deep",
+      verbose = TRUE,
+      beast2_path = get_default_beast2_jar_path()
+    )
+  )
+
+  testthat::expect_true(
+    beastier::are_beast2_input_lines(
+      readLines(beastier::get_beastier_path("anthus_2_4.xml")),
+      method = "deep",
+      verbose = TRUE,
+      beast2_path = get_default_beast2_bin_path()
+    )
+  )
 })
 
 test_that("abuse", {

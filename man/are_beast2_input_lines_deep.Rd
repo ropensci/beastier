@@ -5,13 +5,23 @@
 \title{Would these lines of text, when written to a file,
   result in a valid BEAST2 input file?}
 \usage{
-are_beast2_input_lines_deep(lines, verbose = FALSE)
+are_beast2_input_lines_deep(lines, verbose = FALSE,
+  beast2_path = get_default_beast2_path())
 }
 \arguments{
 \item{lines}{lines of text}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
+
+\item{beast2_path}{name of either a BEAST2 binary file
+(usually simply \code{beast})
+or a BEAST2 jar file
+(usually has a \code{.jar} extension).
+Use \link{get_default_beast2_bin_path} to get
+the default BEAST binary file's path
+Use \link{get_default_beast2_jar_path} to get
+the default BEAST jar file's path}
 }
 \value{
 TRUE if the text is valid, FALSE if not

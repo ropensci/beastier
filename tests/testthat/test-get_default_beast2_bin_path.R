@@ -20,3 +20,12 @@ test_that("use", {
   }
 
 })
+
+test_that("must exist", {
+
+  if (is_beast2_installed()) {
+    expect_true(
+      file.exists(get_default_beast2_bin_path())
+    )
+  }
+})

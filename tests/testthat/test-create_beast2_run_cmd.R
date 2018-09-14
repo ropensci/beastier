@@ -2,7 +2,8 @@ context("create_beast2_run_cmd")
 
 test_that("use, bin", {
 
-  beast2_bin_path <- file.path("some", "path", "to", "beast")
+  testit::assert(is_beast2_installed())
+  beast2_bin_path <- get_default_beast2_bin_path()
   output_state_filename <- "output.xml.state"
   input_filename <- "input.xml"
 
@@ -13,7 +14,7 @@ test_that("use, bin", {
     beast2_path = beast2_bin_path
   )
   expected <- c(
-    paste0("\"", beast2_bin_path, "\""),
+    beast2_bin_path, #paste0("\"", beast2_bin_path, "\""),
     "-statefile",
     paste0("\"", output_state_filename, "\""),
     "-overwrite",
@@ -24,7 +25,7 @@ test_that("use, bin", {
 
 test_that("use, jar", {
 
-  beast2_jar_path <- file.path("some", "path", "to", "beast.jar")
+  beast2_jar_path <- get_default_beast2_jar_path()
   output_state_filename <- "output.xml.state"
   input_filename <- "input.xml"
 
@@ -35,9 +36,9 @@ test_that("use, jar", {
     beast2_path = beast2_jar_path
   )
   expected <- c(
-    "java",
+    get_default_java_path(),
     "-jar",
-    paste0("\"", beast2_jar_path, "\""),
+    beast2_jar_path, # paste0("\"", beast2_jar_path, "\""),
     "-statefile",
     paste0("\"", output_state_filename, "\""),
     "-overwrite",
@@ -53,7 +54,7 @@ test_that("use, WIRITTES", {
   input_filename <- "input.xml"
   output_state_filename <- "output.xml.state"
   rng_seed <- 42
-  beast2_jar_path <- "C:/some path with spaces/to/beast.jar"
+  beast2_jar_path <- get_default_beast2_jar_path()
 
   created <- create_beast2_run_cmd(
     input_filename = input_filename,
@@ -66,9 +67,9 @@ test_that("use, WIRITTES", {
   )
 
   expected <- c(
-    "java",
+    get_default_java_path(),
     "-jar",
-    paste0("\"", beast2_jar_path, "\""),
+    beast2_jar_path, # paste0("\"", beast2_jar_path, "\""),
     "-seed", rng_seed,
     "-threads", "8", "-beagle",
     "-statefile",

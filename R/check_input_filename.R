@@ -36,7 +36,8 @@ check_input_filename_validity <- function(
       is_beast2_input_file( # nolint internal function
         input_filename,
         verbose = verbose,
-        beast2_path = beast2_path)
+        beast2_path = beast2_path
+      )
     )
   }
 }
