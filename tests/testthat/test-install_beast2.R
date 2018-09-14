@@ -1,6 +1,6 @@
 context("install_beast2")
 
-test_that("use", {
+test_that("install at non-standard location", {
 
   if (!is_on_travis()) return()
 
@@ -11,16 +11,18 @@ test_that("use", {
     install_beast2(folder_name, verbose = TRUE),
     "BEAST2 installed at"
   )
-  testthat::expect_true(file.exists(beast_jar_path))
+  expect_true(file.exists(beast_jar_path))
+  expect_true(is_beast2_installed(folder_name = folder_name))
 })
 
-test_that("default", {
+test_that("install twice must throw", {
 
   if (!is_on_travis()) return()
 
-  beast_jar_path <- get_default_beast2_jar_path()
-  if (!file.exists(beast_jar_path)) {
-    install_beast2()
-  }
-  testthat::expect_true(file.exists(beast_jar_path))
+  folder_name <- tempdir()
+  expect_silent(install_beast2(folder_name))
+  expect_error(
+    install_beast2(folder_name),
+    "BEAST2 already installed"
+  )
 })
