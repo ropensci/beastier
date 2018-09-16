@@ -1,6 +1,9 @@
 context("get_default_beast2_path")
 
 test_that("must be either binary or jar file", {
+
+  testit::assert(is_beast2_installed())
+
   def_path <- get_default_beast2_path()
   bin_path <- get_default_beast2_bin_path()
   jar_path <- get_default_beast2_jar_path()
@@ -9,9 +12,9 @@ test_that("must be either binary or jar file", {
 
 test_that("must exist", {
 
-  if (is_beast2_installed()) {
-    expect_true(
-      file.exists(get_default_beast2_path())
-    )
-  }
+  testit::assert(is_beast2_installed())
+
+  expect_true(
+    file.exists(get_default_beast2_path())
+  )
 })

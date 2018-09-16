@@ -2,6 +2,8 @@ context("get_default_beast2_bin_path")
 
 test_that("use", {
 
+  testit::assert(is_beast2_installed())
+
   if (rappdirs::app_dir()$os == "unix") {
     testthat::expect_true(
       grepl(

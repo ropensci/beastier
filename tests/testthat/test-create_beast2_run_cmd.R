@@ -25,6 +25,7 @@ test_that("use, bin", {
 
 test_that("use, jar", {
 
+  testit::assert(is_beast2_installed())
   beast2_jar_path <- get_default_beast2_jar_path()
   output_state_filename <- "output.xml.state"
   input_filename <- "input.xml"
@@ -50,6 +51,8 @@ test_that("use, jar", {
 
 
 test_that("use, WIRITTES", {
+
+  testit::assert(is_beast2_installed())
 
   input_filename <- "input.xml"
   output_state_filename <- "output.xml.state"
@@ -83,6 +86,8 @@ test_that("use, WIRITTES", {
 
 
 test_that("different overwrite option results in different command", {
+
+  testit::assert(is_beast2_installed())
 
   output_state_filename <- "output.xml.state"
   input_filename <- "input.xml"

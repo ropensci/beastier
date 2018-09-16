@@ -2,6 +2,8 @@ context("create_beast2_validate_cmd")
 
 test_that("use, bin", {
 
+  testit::assert(is_beast2_installed())
+
   beast2_bin_path <- get_default_beast2_bin_path()
   input_filename <- "input.xml"
 
@@ -18,6 +20,8 @@ test_that("use, bin", {
 })
 
 test_that("use, jar", {
+
+  testit::assert(is_beast2_installed())
 
   beast2_jar_path <- get_default_beast2_jar_path()
   input_filename <- "input.xml"
