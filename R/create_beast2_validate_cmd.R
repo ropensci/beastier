@@ -87,7 +87,7 @@ create_beast2_validate_cmd_bin <- function(
   cmds <- c(
     beast2_bin_path,
     "-validate",
-    input_filename #paste0("\"", input_filename, "\"")
+    input_filename
   )
   testit::assert(file.exists(cmds[1]))
   cmds

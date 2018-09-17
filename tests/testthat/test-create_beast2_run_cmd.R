@@ -14,7 +14,7 @@ test_that("use, bin", {
     beast2_path = beast2_bin_path
   )
   expected <- c(
-    beast2_bin_path, #paste0("\"", beast2_bin_path, "\""),
+    beast2_bin_path,
     "-statefile",
     paste0("\"", output_state_filename, "\""),
     "-overwrite",

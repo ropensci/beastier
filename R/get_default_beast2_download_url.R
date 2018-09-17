@@ -7,9 +7,9 @@ get_default_beast2_download_url <- function(
   os = rappdirs::app_dir()$os
 ) {
   testit::assert(os == "win" || os == "unix")
-  url <- get_default_beast2_download_url_win()
+  url <- get_default_beast2_download_url_win() # nolint internal function
   if (os == "unix") {
-    url <- get_default_beast2_download_url_linux()
+    url <- get_default_beast2_download_url_linux() # nolint internal function
   }
   url
 }
@@ -18,7 +18,7 @@ get_default_beast2_download_url <- function(
 #' @return the URL where BEAST2 can be downloaded from
 #' @author Richel J.C. Bilderbeek
 #' @noRd
-get_default_beast2_download_url_linux <- function() {
+get_default_beast2_download_url_linux <- function() { # nolint internal functions may be long
   "https://github.com/CompEvol/beast2/releases/download/v2.5.0/BEAST.v2.5.0.Linux.tgz" # nolint URL can be long
 }
 
@@ -26,6 +26,6 @@ get_default_beast2_download_url_linux <- function() {
 #' @return the URL where BEAST2 can be downloaded from
 #' @author Richel J.C. Bilderbeek
 #' @noRd
-get_default_beast2_download_url_win <- function() {
+get_default_beast2_download_url_win <- function() { # nolint internal functions may be long
   "https://github.com/CompEvol/beast2/releases/download/v2.5.0/BEAST.v2.5.0.Windows.zip" # nolint URL can be long
 }
