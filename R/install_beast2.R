@@ -13,10 +13,20 @@
 #' @export
 install_beast2 <- function(
   folder_name = rappdirs::user_data_dir(),
-  verbose = FALSE
+  verbose = FALSE,
+  os = rappdirs::app_dir()$os
 ) {
+  if (!os %in% c("win","unix")) {
+    stop("'os' must be either 'win' or 'unix")
+  }
+  if (verbose == TRUE) {
+    print(paste("Operating system:", os))
+  }
   dir.create(path = folder_name,  showWarnings = FALSE, recursive = TRUE)
-  url <- get_default_beast2_download_url()
+  url <- get_default_beast2_download_url(os = os)
+  if (verbose == TRUE) {
+    print(paste("Download from URL:", url))
+  }
   tgz_filename <- basename(url)
   local_path <- file.path(folder_name, tgz_filename)
   utils::download.file(

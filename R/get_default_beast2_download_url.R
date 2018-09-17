@@ -9,7 +9,7 @@ get_default_beast2_download_url <- function(
   testit::assert(os == "win" || os == "unix")
   url <- get_default_beast2_download_url_win()
   if (os == "unix") {
-    get_default_beast2_download_url_linux()
+    url <- get_default_beast2_download_url_linux()
   }
   url
 }

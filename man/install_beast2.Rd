@@ -5,7 +5,7 @@
 \title{Install BEAST2}
 \usage{
 install_beast2(folder_name = rappdirs::user_data_dir(),
-  verbose = FALSE)
+  verbose = FALSE, os = rappdirs::app_dir()$os)
 }
 \arguments{
 \item{folder_name}{name of the folder where the BEAST2 files will
