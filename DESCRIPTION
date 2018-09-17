@@ -23,6 +23,7 @@ Imports:
   ape,
   phangorn,
   rappdirs,
+  rJava,
   stringr,
   xml2
 Suggests:
