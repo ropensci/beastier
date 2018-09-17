@@ -3,5 +3,8 @@
 #' @author Richel J.C. Bilderbeek
 #' @export
 is_beast2_installed <- function() {
-  # file.exists(get_default_beast2_jar_path())
+  bin_exists <- file.exists(get_default_beast2_bin_path())
+  jar_exists <- file.exists(get_default_beast2_jar_path())
+  testit::assert(bin_exists == jar_exists)
+  jar_exists
 }
