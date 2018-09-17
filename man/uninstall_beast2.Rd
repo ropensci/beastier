@@ -4,7 +4,7 @@
 \alias{uninstall_beast2}
 \title{Uninstall BEAST2}
 \usage{
-uninstall_beast2(folder_name)
+uninstall_beast2(folder_name = get_default_beast2_folder())
 }
 \description{
 Uninstall BEAST2

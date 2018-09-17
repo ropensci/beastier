@@ -1,4 +1,5 @@
 #' Checks if BEAST2 is installed
+#' @inheritParams default_params_doc
 #' @return TRUE if BEAST2 is installed
 #' @author Richel J.C. Bilderbeek
 #' @export
