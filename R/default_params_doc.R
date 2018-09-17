@@ -80,6 +80,7 @@ default_params_doc <- function(
   mcmc,
   misc_options,
   n_taxa,
+  os,
   output_filename,
   overwrite,
   rng_seed,
