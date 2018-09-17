@@ -3,7 +3,7 @@
 #' @return the URL where BEAST2 can be downloaded from
 #' @author Richel J.C. Bilderbeek
 #' @noRd
-get_default_beast2_download_url <- function(
+get_default_beast2_download_url <- function( # nolint internal functions may be long
   os = rappdirs::app_dir()$os
 ) {
   testit::assert(os == "win" || os == "unix")
