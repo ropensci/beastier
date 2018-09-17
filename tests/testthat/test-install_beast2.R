@@ -21,7 +21,7 @@ test_that("install twice must throw", {
 
   folder_name <- tempdir()
   if (!is_beast2_installed(folder_name)) {
-    expect_silent(install_beast2(folder_name))
+    install_beast2(folder_name)
   }
   expect_error(
     install_beast2(folder_name),
