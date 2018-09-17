@@ -8,7 +8,7 @@
 #'   cmds <- create_beast2_validate_cmd(
 #'     input_filename = "input.xml"
 #'   )
-#'   testit::assert(cmds[1] == "java")
+#'   testit::assert(stringr::str_sub(cmds[1], -4) == "java")
 #'   testit::assert(cmds[2] == "-jar")
 #' @author Richel J.C. Bilderbeek
 #' @export
@@ -42,7 +42,7 @@ create_beast2_validate_cmd <- function(
 #'     input_filename = "input.xml"
 #'   )
 #'   testit::assert(length(cmds) == 5)
-#'   testit::assert(cmds[1] == "java")
+#'   testit::assert(stringr::str_sub(cmds[1], -4) == "java")
 #'   testit::assert(cmds[2] == "-jar")
 #' @author Richel J.C. Bilderbeek
 #' @export

@@ -18,7 +18,8 @@ test_that("single alignment creates all files", {
       output_log_filename = output_log_filename,
       output_trees_filenames = output_trees_filenames,
       output_state_filename = output_state_filename,
-      overwrite = TRUE
+      overwrite = TRUE,
+      verbose = TRUE
     )
   )
 

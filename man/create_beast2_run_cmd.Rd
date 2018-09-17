@@ -49,13 +49,13 @@ a character vector with the command and
 Creates the terminal command to run BEAST2
 }
 \examples{
-  cmd <- create_beast2_run_cmd(
+  cmds <- create_beast2_run_cmd(
     input_filename = "input.xml",
     output_state_filename = "output.xml.state",
     beast2_path = get_default_beast2_jar_path()
   )
-  testit::assert(cmd[1] == "java")
-  testit::assert(cmd[2] == "-jar")
+  testit::assert(stringr::str_sub(cmds[1], -4) == "java")
+  testit::assert(cmds[2] == "-jar")
 }
 \author{
 Richel J.C. Bilderbeek
