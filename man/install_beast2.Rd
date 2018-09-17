@@ -28,7 +28,9 @@ Nothing. Will install BEAST2
 Install BEAST2
 }
 \examples{
-  install_beast2()
+  if (!is_beast2_installed()) {
+    install_beast2()
+  }
   testit::assert(file.exists(get_default_beast2_path()))
   testit::assert(file.exists(get_default_beast2_bin_path()))
   testit::assert(file.exists(get_default_beast2_jar_path()))
