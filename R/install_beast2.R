@@ -19,6 +19,10 @@ install_beast2 <- function(
   verbose = FALSE,
   os = rappdirs::app_dir()$os
 ) {
+  jar_file_path <- file.path(folder_name, "beast", "lib", "beast.jar")
+  if (file.exists(jar_file_path)) {
+    stop("BEAST2 already installed")
+  }
   if (!os %in% c("win","unix")) {
     stop("'os' must be either 'win' or 'unix")
   }
@@ -43,7 +47,6 @@ install_beast2 <- function(
     verbose = TRUE
   )
 
-  jar_file_path <- file.path(folder_name, "beast", "lib", "beast.jar")
   if (verbose == TRUE) {
     print(paste("BEAST2 installed at", jar_file_path))
   }

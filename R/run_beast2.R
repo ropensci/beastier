@@ -145,7 +145,6 @@ run_beast2 <- function(
     stderr = TRUE
   )
 
-  testit::assert(file.exists(output_state_filename))
 
   if (!file.exists(output_log_filename)) {
     from <- create_default_log_filename(
@@ -168,8 +167,13 @@ run_beast2 <- function(
       file.rename(from = from, to = to)
     }
   }
+  if (verbose) {
+    print(paste0("output_log_filename ('", output_log_filename, "'): ", file.exists(output_log_filename)))
+    print(paste0("output_state_filename ('", output_state_filename, "'): ", file.exists(output_state_filename)))
+    print(paste0("output_trees_filenames ('", output_trees_filenames, "'): ", file.exists(output_trees_filenames)))
+  }
   testit::assert(file.exists(output_log_filename))
-  testit::assert(files_exist(output_trees_filenames)) # nolint internal function
   testit::assert(file.exists(output_state_filename))
+  testit::assert(files_exist(output_trees_filenames)) # nolint internal function
   output
 }

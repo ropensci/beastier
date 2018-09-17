@@ -7,6 +7,10 @@ test_that("single alignment creates all files", {
   output_trees_filenames <- tempfile(fileext = ".trees")
   output_state_filename <- tempfile(fileext = ".xml.state")
 
+  unlink(output_log_filename, recursive = TRUE)
+  unlink(output_trees_filenames, recursive = TRUE)
+  unlink(output_state_filename, recursive = TRUE)
+
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
   )
@@ -18,8 +22,7 @@ test_that("single alignment creates all files", {
       output_log_filename = output_log_filename,
       output_trees_filenames = output_trees_filenames,
       output_state_filename = output_state_filename,
-      overwrite = TRUE,
-      verbose = TRUE
+      overwrite = TRUE
     )
   )
 
@@ -31,6 +34,10 @@ test_that("single alignment, WIRITTES setting", {
   output_log_filename <- tempfile(fileext = ".log")
   output_trees_filenames <- tempfile(fileext = ".trees")
   output_state_filename <- tempfile(fileext = ".xml.state")
+
+  unlink(output_log_filename, recursive = TRUE)
+  unlink(output_trees_filenames, recursive = TRUE)
+  unlink(output_state_filename, recursive = TRUE)
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
@@ -63,6 +70,13 @@ test_that("single alignment, equal RNG seed equal results", {
   output_state_filename_1 <- tempfile(fileext = "_1.xml.state")
   output_state_filename_2 <- tempfile(fileext = "_2.xml.state")
 
+  unlink(output_log_filename_1, recursive = TRUE)
+  unlink(output_log_filename_2, recursive = TRUE)
+  unlink(output_trees_filenames_1, recursive = TRUE)
+  unlink(output_trees_filenames_2, recursive = TRUE)
+  unlink(output_state_filename_1, recursive = TRUE)
+  unlink(output_state_filename_2, recursive = TRUE)
+
   output_files <- c(
     output_log_filename_1,
     output_log_filename_2,
@@ -93,12 +107,6 @@ test_that("single alignment, equal RNG seed equal results", {
   lines_1 <- readLines(output_log_filename_1)
   lines_2 <- readLines(output_log_filename_2)
   expect_identical(lines_1, lines_2)
-  lines_1 <- readLines(output_trees_filenames_1, warn = FALSE)
-  lines_2 <- readLines(output_trees_filenames_2, warn = FALSE)
-  expect_identical(lines_1, lines_2)
-  lines_1 <- readLines(output_state_filename_1)
-  lines_2 <- readLines(output_state_filename_2)
-  expect_identical(lines_1, lines_2)
 })
 
 
@@ -111,6 +119,10 @@ test_that("two alignments creates all files", {
     tempfile(fileext = "_b.trees")
   )
   output_state_filename <- tempfile(fileext = ".xml.state")
+
+  unlink(output_log_filename, recursive = TRUE)
+  unlink(output_trees_filenames, recursive = TRUE)
+  unlink(output_state_filename, recursive = TRUE)
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
@@ -138,6 +150,10 @@ test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
     tempfile(fileext = "_b.trees")
   )
   output_state_filename <- tempfile(fileext = ".xml.state")
+
+  unlink(output_log_filename, recursive = TRUE)
+  unlink(output_trees_filenames, recursive = TRUE)
+  unlink(output_state_filename, recursive = TRUE)
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
@@ -179,6 +195,10 @@ test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
     tempfile(fileext = "_b.trees")
   )
   output_state_filename <- tempfile(fileext = ".xml.state")
+
+  unlink(output_log_filename, recursive = TRUE)
+  unlink(output_trees_filenames, recursive = TRUE)
+  unlink(output_state_filename, recursive = TRUE)
 
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
