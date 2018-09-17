@@ -8,9 +8,9 @@ documentation.}
 default_params_doc(beast2_bin_path, beast2_jar_path, beast2_path,
   clock_model, clock_models, crown_age, crown_ages, fasta_filename,
   fasta_filenames, fixed_crown_age, fixed_crown_ages, initial_phylogenies,
-  input_filename, mcmc, misc_options, n_taxa, output_filename, overwrite,
-  rng_seed, sequence_length, site_model, site_models, tree_prior,
-  tree_priors, verbose)
+  input_filename, mcmc, misc_options, n_taxa, os, output_filename,
+  overwrite, rng_seed, sequence_length, site_model, site_models,
+  tree_prior, tree_priors, verbose)
 }
 \arguments{
 \item{beast2_bin_path}{name of the BEAST2 binary file
@@ -69,6 +69,9 @@ This file usually has an \code{.xml} extension.}
 
 \item{n_taxa}{The number of taxa}
 
+\item{os}{name of the operating system,
+must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
+
 \item{output_filename}{Name of the XML parameter file created by this
 function. BEAST2 uses this file as input.}
 
@@ -96,9 +99,6 @@ function. BEAST2 uses this file as input.}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
-
-\item{os}{name of the operating system,
-must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 }
 \value{
 Nothing. This is an internal function that does nothing
