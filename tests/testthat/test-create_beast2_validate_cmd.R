@@ -14,7 +14,7 @@ test_that("use, bin", {
   expected <- c(
     beast2_bin_path,
     "-validate",
-    input_filename # paste0("\"", input_filename, "\"")
+    input_filename
   )
   testthat::expect_equal(created, expected)
 })

@@ -25,7 +25,7 @@ install_beast2 <- function(
   if (file.exists(jar_file_path)) {
     stop("BEAST2 already installed")
   }
-  if (!os %in% c("win","unix")) {
+  if (!os %in% c("win", "unix")) {
     stop("'os' must be either 'win' or 'unix")
   }
   if (verbose == TRUE) {

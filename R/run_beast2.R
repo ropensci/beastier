@@ -168,9 +168,15 @@ run_beast2 <- function(
     }
   }
   if (verbose) {
-    print(paste0("output_log_filename ('", output_log_filename, "'): ", file.exists(output_log_filename)))
-    print(paste0("output_state_filename ('", output_state_filename, "'): ", file.exists(output_state_filename)))
-    print(paste0("output_trees_filenames ('", output_trees_filenames, "'): ", file.exists(output_trees_filenames)))
+    print(paste0("output_log_filename ('", output_log_filename, "'): ",
+      file.exists(output_log_filename))
+    )
+    print(paste0("output_state_filename ('", output_state_filename, "'): ",
+      file.exists(output_state_filename))
+    )
+    print(paste0("output_trees_filenames ('", output_trees_filenames, "'): ",
+      file.exists(output_trees_filenames))
+    )
   }
   testit::assert(file.exists(output_log_filename))
   testit::assert(file.exists(output_state_filename))
