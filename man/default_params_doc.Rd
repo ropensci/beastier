@@ -96,6 +96,9 @@ function. BEAST2 uses this file as input.}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
+
+\item{os}{name of the operating system,
+must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 }
 \value{
 Nothing. This is an internal function that does nothing

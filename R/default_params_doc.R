@@ -40,6 +40,8 @@
 #' @param mcmc one \code{beautier} MCMC
 #' @param misc_options one \code{beautier} misc_options object
 #' @param n_taxa The number of taxa
+#' @param os name of the operating system,
+#'   must be \code{unix} (Linux, Mac) or \code{win} (Windows)
 #' @param output_filename Name of the XML parameter file created by this
 #'   function. BEAST2 uses this file as input.
 #' @param overwrite if TRUE: overwrite the \code{.log}

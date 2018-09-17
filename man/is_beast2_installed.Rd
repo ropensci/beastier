@@ -6,6 +6,13 @@
 \usage{
 is_beast2_installed(folder_name = get_default_beast2_folder())
 }
+\arguments{
+\item{folder_name}{name of the folder where the BEAST2 files are put.
+The name of the BEAST2 binary file will be at
+\code{[folder_name]/beast/bin/beast}
+The name of the BEAST2 jar file will be at
+\code{[folder_name]/beast/lib/beast.jar}}
+}
 \value{
 TRUE if BEAST2 is installed
 }

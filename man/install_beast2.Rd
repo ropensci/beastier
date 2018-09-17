@@ -9,11 +9,17 @@ install_beast2(folder_name = rappdirs::user_data_dir(),
 }
 \arguments{
 \item{folder_name}{name of the folder where the BEAST2 files will
-be put. The name of the BEAST2 jar file will be at
+be put.
+The name of the BEAST2 binary file will be at
+\code{[folder_name]/beast/bin/beast}
+The name of the BEAST2 jar file will be at
 \code{[folder_name]/beast/lib/beast.jar}}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
+
+\item{os}{name of the operating system,
+must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 }
 \value{
 Nothing. Will install BEAST2
