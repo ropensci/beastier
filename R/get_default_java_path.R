@@ -11,7 +11,9 @@ get_default_java_path <- function() {
   # java_path
   #
   rJava::.jinit()
-  java_path <- rJava::.jcall( 'java/lang/System', 'S', 'getProperty', 'java.home' )
-  file.exists(java_path)
+  java_folder <- rJava::.jcall( 'java/lang/System', 'S', 'getProperty', 'java.home' )
+  testit::assert(dir.exists(java_folder))
+  java_path <- file.path(java_folder, "bin", "java")
+  testit::assert(file.exists(java_path))
   java_path
 }
