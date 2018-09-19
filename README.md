@@ -15,12 +15,12 @@ develop|[![Build Status](https://travis-ci.org/richelbilderbeek/beastier.svg?bra
 
  * [beautier](https://github.com/richelbilderbeek/beautier) creates BEAST2 input (`.xml`) files.
  * [beastier](https://github.com/richelbilderbeek/beastier) runs BEAST2
+ * [mauricer](https://github.com/richelbilderbeek/mauricer): install BEAST2 packages
  * [tracerer](https://github.com/richelbilderbeek/tracerer) pastes BEAST2 output (`.log`, `.trees`, etc) files.
 
 Related R packages:
 
  * [lumier](https://github.com/richelbilderbeek/lumier): Shiny app to help create the function call needed
- * [mauricer](https://github.com/richelbilderbeek/mauricer): install BEAST2 packages
 
 ## Example
 
@@ -41,31 +41,13 @@ testit::assert(file.exists(output_trees_filename))
 testit::assert(file.exists(output_state_filename))
 ```
 
-## Install `beastier`
+## [Install](doc/install.md)
 
-If you use the `devtools` R package, this is easy:
+See [install](doc/install.md).
 
-```
-devtools::install_github("richelbilderbeek/beastier")
-```
+## [FAQ](doc/faq.md)
 
-`beastier` assumes that BEAST2 is installed. To install BEAST2, from R do:
-
-```{r}
-library(beastier)
-install_beast2()
-```
-
-This will download and extract BEAST2 to:
-
-OS|Full path
----|---
-Linux|`~/.local/share/beast/bin/beast.jar`
-Windows|`C:/Users/<username>/Local/beast/bin/beast.jar`
-
-## FAQ
-
-See [FAQ](faq.md)
+See [FAQ](doc/faq.md)
 
 ## Missing features/unsupported
 
