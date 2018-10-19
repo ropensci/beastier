@@ -4,17 +4,18 @@
 \alias{uninstall_beast2}
 \title{Uninstall BEAST2}
 \usage{
-uninstall_beast2(os = rappdirs::app_dir()$os)
+uninstall_beast2(folder_name = rappdirs::user_data_dir(),
+  os = rappdirs::app_dir()$os)
 }
 \arguments{
-\item{os}{name of the operating system,
-must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
-
 \item{folder_name}{name of the folder where the BEAST2 files are installed.
 The name of the BEAST2 binary file will be at
 \code{[folder_name]/beast/bin/beast}
 The name of the BEAST2 jar file will be at
 \code{[folder_name]/beast/lib/beast.jar}}
+
+\item{os}{name of the operating system,
+must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 }
 \description{
 Uninstall BEAST2

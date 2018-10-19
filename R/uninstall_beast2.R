@@ -8,9 +8,12 @@
 #' @author Richel J.C. Bilderbeek
 #' @export
 uninstall_beast2 <- function(
+  folder_name = rappdirs::user_data_dir(),
   os = rappdirs::app_dir()$os
 ) {
-  if (!is_beast2_installed(folder_name, os = os)) {
+  if (!is_beast2_installed(
+    folder_name = folder_name,
+    os = os)) {
     stop("Cannot uninstall absent BEAST2 at")
   }
   if (!os %in% c("win", "unix")) {
@@ -22,7 +25,7 @@ uninstall_beast2 <- function(
   }
   bin_file_path <- file.path(folder_name, "BEAST", "BEAST.exe")
   if (os == "unix") {
-    jar_file_path <- file.path(folder_name, "beast", "bin", "beast")
+    bin_file_path <- file.path(folder_name, "beast", "bin", "beast")
   }
   testit::assert(file.exists(jar_file_path))
   testit::assert(file.exists(bin_file_path))

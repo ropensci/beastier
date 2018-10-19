@@ -21,7 +21,7 @@ is_beast2_installed <- function(
   }
   bin_file_path <- file.path(folder_name, "BEAST", "BEAST.exe")
   if (os == "unix") {
-    jar_file_path <- file.path(folder_name, "beast", "bin", "beast")
+    bin_file_path <- file.path(folder_name, "beast", "bin", "beast")
   }
 
   bin_exists <- file.exists(bin_file_path)
