@@ -2,13 +2,21 @@
 #' @return the default path to the Java executable
 #' @author Richel J.C. Bilderbeek
 #' @export
-get_default_java_path <- function() {
+get_default_java_path <- function(
+  os = rappdirs::app_dir()$os
+) {
+  if (!os %in% c("win", "unix")) {
+    stop("'os' must be either 'win' or 'unix")
+  }
   rJava::.jinit()
   java_folder <- rJava::.jcall(
     "java/lang/System", "S", "getProperty", "java.home"
   )
   testit::assert(dir.exists(java_folder))
-  java_path <- file.path(java_folder, "bin", "java")
+  java_path <- file.path(java_folder, "bin", "java.exe")
+  if (os == "unix") {
+    java_path <- file.path(java_folder, "bin", "java")
+  }
   testit::assert(file.exists(java_path))
   java_path
 }
