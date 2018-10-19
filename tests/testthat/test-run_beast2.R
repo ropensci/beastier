@@ -386,12 +386,27 @@ test_that("run BEAST2 from jar path", {
 })
 
 test_that("run BEAST2 from binary path", {
-  expect_silent(
-    run_beast2(
-      input_filename = get_beastier_path("2_4.xml"),
-      beast2_path = get_default_beast2_bin_path()
+
+  # Binary fails under Windows, but works under Unix (see 'use' section above)
+  if (rappdirs::app_dir()$os == "unix") {
+    expect_silent(
+      run_beast2(
+        input_filename = get_beastier_path("2_4.xml"),
+        beast2_path = get_default_beast2_bin_path()
+      )
     )
-  )
+  } else {
+  # Binary fails under Windows, but works under Unix (see 'use' section above)
+    testit::assert(rappdirs::app_dir()$os == "win")
+    expect_error(
+      gives_beast2_warning(
+        filename = beastier:::get_beastier_path("beast2_warning.xml"),
+        beast2_path = get_default_beast2_bin_path()
+      ),
+      "Cannot use the Windows executable BEAST2.exe is scripts"
+    )
+  }
+
 })
 
 test_that("run_beast2 produces output", {

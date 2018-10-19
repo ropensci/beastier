@@ -62,7 +62,7 @@ run_beast2 <- function(
     verbose = verbose
   )
   if (rappdirs::app_dir()$os == "win" && is_bin_path(beast2_path)) {
-    stop("Cannot use the Windows exectuable BEAST2.exe is scripts")
+    stop("Cannot use the Windows executable BEAST2.exe is scripts")
   }
 
   if (file.exists(output_log_filename) && overwrite == FALSE) {
