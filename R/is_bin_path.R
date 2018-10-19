@@ -21,5 +21,5 @@
 #'   )
 #' @noRd
 is_bin_path <- function(path) {
-  !is.na(stringr::str_match(path, "(.*/)?(beast|BEAST)(\\.exe)?$")[1][1])
+  !is.na(stringr::str_match(path, "(.*/)?(beast|BEAST\\.exe)$")[1][1])
 }
