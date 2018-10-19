@@ -28,3 +28,15 @@ test_that("install twice must throw", {
     "BEAST2 already installed"
   )
 })
+
+
+test_that("install for other OS", {
+
+  if (!is_on_travis()) return()
+  os <- rappdirs::app_dir()$os
+  other_os <- "unix"
+  if (os == "unix") {
+    other_os <- "win"
+  }
+  install_beast2(os = other_os)
+})
