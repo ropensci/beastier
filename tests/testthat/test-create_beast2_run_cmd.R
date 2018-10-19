@@ -37,9 +37,7 @@ test_that("use, jar", {
     beast2_path = beast2_jar_path
   )
 
-  if (rappdirs::app_dir()$os == "win") {
-    beast2_jar_path <- paste0("\"", beast2_jar_path, "\"")
-  }
+  beast2_jar_path <- shQuote(beast2_jar_path)
 
   expected <- c(
     get_default_java_path(),
@@ -51,7 +49,6 @@ test_that("use, jar", {
     paste0("\"", input_filename, "\"")
   )
   expect_equal(created, expected)
-
 })
 
 
@@ -74,9 +71,7 @@ test_that("use, WIRITTES", {
     beast2_path = beast2_jar_path
   )
 
-  if (rappdirs::app_dir()$os == "win") {
-    beast2_jar_path <- paste0("\"", beast2_jar_path, "\"")
-  }
+  beast2_jar_path <- shQuote(beast2_jar_path)
 
   expected <- c(
     get_default_java_path(),
