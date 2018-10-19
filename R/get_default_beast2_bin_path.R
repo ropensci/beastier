@@ -26,22 +26,18 @@ get_default_beast2_bin_path <- function(
   if (os == "unix") {
     beast_foldername <- "beast"
   }
-  beast2_bin_path <- beast2_bin_path <- normalizePath(
-    file.path(
-      rappdirs::user_data_dir(),
-      beast_foldername,
-      "BEAST.exe"
-    )
+  beast2_bin_raw_path <- file.path(
+    rappdirs::user_data_dir(),
+    beast_foldername,
+    "BEAST.exe"
   )
   if (os == "unix") {
-    beast2_bin_path <- normalizePath(
-      file.path(
-        rappdirs::user_data_dir(),
-        beast_foldername,
-        "bin",
-        "beast"
-      )
+    beast2_bin_raw_path <- file.path(
+      rappdirs::user_data_dir(),
+      beast_foldername,
+      "bin",
+      "beast"
     )
   }
-  beast2_bin_path
+  normalizePath(beast2_bin_raw_path)
 }

@@ -4,7 +4,7 @@
 \alias{get_default_beast2_bin_path}
 \title{Get the default BEAST2 binary file (\code{beast}, that is) path}
 \usage{
-get_default_beast2_bin_path()
+get_default_beast2_bin_path(os = rappdirs::app_dir()$os)
 }
 \value{
 the default BEAST2 binary file's path

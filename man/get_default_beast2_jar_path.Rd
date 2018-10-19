@@ -4,7 +4,11 @@
 \alias{get_default_beast2_jar_path}
 \title{Get the default BEAST2 jar file's path}
 \usage{
-get_default_beast2_jar_path()
+get_default_beast2_jar_path(os = rappdirs::app_dir()$os)
+}
+\arguments{
+\item{os}{name of the operating system,
+must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 }
 \value{
 the default BEAST2 jar file's path
