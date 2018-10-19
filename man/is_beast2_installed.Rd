@@ -4,7 +4,8 @@
 \alias{is_beast2_installed}
 \title{Checks if BEAST2 is installed}
 \usage{
-is_beast2_installed(folder_name = get_default_beast2_folder())
+is_beast2_installed(folder_name = get_default_beast2_folder(),
+  os = rappdirs::app_dir()$os)
 }
 \arguments{
 \item{folder_name}{name of the folder where the BEAST2 files are put.
@@ -12,6 +13,9 @@ The name of the BEAST2 binary file will be at
 \code{[folder_name]/beast/bin/beast}
 The name of the BEAST2 jar file will be at
 \code{[folder_name]/beast/lib/beast.jar}}
+
+\item{os}{name of the operating system,
+must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 }
 \value{
 TRUE if BEAST2 is installed

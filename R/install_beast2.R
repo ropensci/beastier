@@ -21,12 +21,15 @@ install_beast2 <- function(
   verbose = FALSE,
   os = rappdirs::app_dir()$os
 ) {
-  jar_file_path <- file.path(folder_name, "beast", "lib", "beast.jar")
-  if (file.exists(jar_file_path)) {
-    stop("BEAST2 already installed")
-  }
   if (!os %in% c("win", "unix")) {
     stop("'os' must be either 'win' or 'unix")
+  }
+  jar_file_path <- file.path(folder_name, "BEAST", "lib", "beast.jar")
+  if (os == "unix") {
+    jar_file_path <- file.path(folder_name, "beast", "lib", "beast.jar")
+  }
+  if (file.exists(jar_file_path)) {
+    stop("BEAST2 already installed")
   }
   if (verbose == TRUE) {
     print(paste("Operating system:", os))
@@ -36,19 +39,29 @@ install_beast2 <- function(
   if (verbose == TRUE) {
     print(paste("Download from URL:", url))
   }
-  tgz_filename <- basename(url)
-  local_path <- file.path(folder_name, tgz_filename)
+  # archive_filename is a .tar.gz for Linux and a .zip for Windows
+  archive_filename <- basename(url)
+  local_path <- file.path(folder_name, archive_filename)
   utils::download.file(
     url = url,
     destfile = local_path
   )
   testit::assert(file.exists(local_path))
-  utils::untar(
-    tarfile = local_path,
-    exdir = path.expand(folder_name),
-    verbose = TRUE
-  )
-
+  if (os == "unix") {
+    # Linux has a tar file
+    utils::untar(
+      tarfile = local_path,
+      exdir = path.expand(folder_name),
+      verbose = verbose
+    )
+  } else {
+    # Windows has a zip file
+    testit::assert(os == "win")
+    utils::unzip(
+      zipfile = local_path,
+      exdir = path.expand(folder_name)
+    )
+  }
   if (verbose == TRUE) {
     print(paste("BEAST2 installed at", jar_file_path))
   }

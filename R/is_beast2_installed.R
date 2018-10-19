@@ -9,10 +9,23 @@
 #' @author Richel J.C. Bilderbeek
 #' @export
 is_beast2_installed <- function(
-  folder_name = get_default_beast2_folder()
+  folder_name = get_default_beast2_folder(),
+  os = rappdirs::app_dir()$os
 ) {
-  bin_exists <- file.exists(file.path(folder_name, "beast", "bin", "beast"))
-  jar_exists <- file.exists(file.path(folder_name, "beast", "lib", "beast.jar"))
+  if (!os %in% c("win", "unix")) {
+    stop("'os' must be either 'win' or 'unix")
+  }
+  jar_file_path <- file.path(folder_name, "BEAST", "lib", "beast.jar")
+  if (os == "unix") {
+    jar_file_path <- file.path(folder_name, "beast", "lib", "beast.jar")
+  }
+  bin_file_path <- file.path(folder_name, "BEAST", "BEAST.exe")
+  if (os == "unix") {
+    jar_file_path <- file.path(folder_name, "beast", "bin", "beast")
+  }
+
+  bin_exists <- file.exists(bin_file_path)
+  jar_exists <- file.exists(jar_file_path)
   testit::assert(bin_exists == jar_exists)
   jar_exists
 }
