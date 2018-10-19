@@ -54,6 +54,9 @@ run_beast2 <- function(
   beast2_path = get_default_beast2_path(),
   verbose = FALSE
 ) {
+  if (is_win_bin_path(beast2_path)) {
+    stop("Cannot use the Windows executable BEAST2.exe in scripts")
+  }
   check_input_filename(input_filename) # nolint internal function
   check_beast2_path(beast2_path) # nolint internal function
   check_input_filename_validity( # nolint internal function
@@ -61,9 +64,6 @@ run_beast2 <- function(
     beast2_path = beast2_path,
     verbose = verbose
   )
-  if (rappdirs::app_dir()$os == "win" && is_bin_path(beast2_path)) {
-    stop("Cannot use the Windows executable BEAST2.exe is scripts")
-  }
 
   if (file.exists(output_log_filename) && overwrite == FALSE) {
     stop("Will not overwrite 'output_log_filename' ('",
