@@ -15,6 +15,33 @@
 #'   }
 #' @author Richel J.C. Bilderbeek
 #' @export
-get_default_beast2_bin_path <- function() {
-  normalizePath(file.path(get_default_beast2_folder(), "beast", "bin", "beast")) # nolint internal function
+get_default_beast2_bin_path <- function(
+  os = rappdirs::app_dir()$os
+) {
+  if (!os %in% c("win", "unix")) {
+    stop("'os' must be either 'win' or 'unix")
+  }
+  # Windows has uppercase folder name
+  beast_foldername <- "BEAST"
+  if (os == "unix") {
+    beast_foldername <- "beast"
+  }
+  beast2_bin_path <- beast2_bin_path <- normalizePath(
+    file.path(
+      rappdirs::user_data_dir(),
+      beast_foldername,
+      "BEAST.exe"
+    )
+  )
+  if (os == "unix") {
+    beast2_bin_path <- normalizePath(
+      file.path(
+        rappdirs::user_data_dir(),
+        beast_foldername,
+        "bin",
+        "beast"
+      )
+    )
+  }
+  beast2_bin_path
 }

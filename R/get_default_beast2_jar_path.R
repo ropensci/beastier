@@ -1,4 +1,5 @@
 #' Get the default BEAST2 jar file's path
+#' @inheritParams default_params_doc
 #' @return the default BEAST2 jar file's path
 #' @seealso Use \link{get_default_beast2_folder} to get the default
 #'   folder in which BEAST2 is installed.
@@ -15,10 +16,22 @@
 #'   }
 #' @author Richel J.C. Bilderbeek
 #' @export
-get_default_beast2_jar_path <- function() {
+get_default_beast2_jar_path <- function(
+  os = rappdirs::app_dir()$os
+) {
+  if (!os %in% c("win", "unix")) {
+    stop("'os' must be either 'win' or 'unix")
+  }
+  # Windows has uppercase folder name
+  beast_foldername <- "BEAST"
+  if (os == "unix") {
+    beast_foldername <- "beast"
+  }
+
   normalizePath(
-    file.path(get_default_beast2_folder(),
-      "beast",
+    file.path(
+      rappdirs::user_data_dir(),
+      beast_foldername,
       "lib",
       "beast.jar"
     ),
