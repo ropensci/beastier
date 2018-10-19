@@ -4,7 +4,7 @@
 \alias{get_default_java_path}
 \title{Obtains the default path to the Java executable}
 \usage{
-get_default_java_path()
+get_default_java_path(os = rappdirs::app_dir()$os)
 }
 \value{
 the default path to the Java executable
