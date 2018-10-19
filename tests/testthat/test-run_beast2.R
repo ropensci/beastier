@@ -347,7 +347,10 @@ test_that("BEAST2 does not overwrite its own log file", {
   testit::assert(!file.exists(beast_log_file))
 
   # Create files to be detectably overwritten
-  write(x = "log", file = beastier:::create_default_log_filename(input_filename))
+  write(
+    x = "log",
+    file = beastier:::create_default_log_filename(input_filename)
+  )
 
   expect_error(
     run_beast2(
@@ -380,7 +383,10 @@ test_that("BEAST2 does not overwrite its own trees file", {
   testit::assert(!file.exists(beast_trees_file))
 
   # Create files to be detectably overwritten
-  write(x = "trees", file = beastier:::create_default_trees_filenames(input_filename))
+  write(
+    x = "trees",
+    file = beastier:::create_default_trees_filenames(input_filename)
+  )
 
   expect_error(
     run_beast2(
