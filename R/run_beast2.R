@@ -142,7 +142,10 @@ run_beast2 <- function(
     stderr = TRUE
   )
   if (length(output) == 1) {
-    stop("Command '", paste0(cmd, collapse = " "), "'failed with error '", output, "'")
+    stop(
+      "Command '", paste0(cmd, collapse = " "), "' failed ",
+      "with error '", output, "'"
+    )
   }
 
 
