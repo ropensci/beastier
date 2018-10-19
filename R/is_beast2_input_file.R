@@ -18,15 +18,15 @@ is_beast2_input_file <- function(
       "Filename '", filename, "' not found"
     )
   }
+  if (is_win_bin_path(beast2_path)) {
+    stop("Cannot use the Windows executable BEAST2.exe in scripts")
+  }
   if (!file.exists(beast2_path)) {
     stop(
       "'beast2_path' must be the full path ",
       "of either 'beast' or 'beast.jar'. ",
       "Both not found at path '", beast2_path, "'"
     )
-  }
-  if (rappdirs::app_dir()$os == "win" && is_bin_path(beast2_path)) {
-    stop("Cannot use the Windows executable BEAST2.exe in scripts")
   }
 
   # Create the command to let BEAST2 validate the created XML file

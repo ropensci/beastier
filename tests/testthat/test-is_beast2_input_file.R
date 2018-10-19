@@ -79,6 +79,14 @@ test_that("abuse", {
     )
   )
 
+  expect_error(
+    beastier::is_beast2_input_file(
+      get_beastier_path("anthus_2_4.xml"),
+      beast2_path = "BEAST.exe"
+    ),
+    "Cannot use the Windows executable BEAST2.exe in scripts"
+  )
+
 })
 
 test_that("detect warnings", {
