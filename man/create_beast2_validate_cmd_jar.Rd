@@ -32,7 +32,6 @@ using a call to the \code{beast.jar} file
     input_filename = "input.xml"
   )
   testit::assert(length(cmds) == 5)
-  testit::assert(stringr::str_sub(cmds[1], -4) == "java")
   testit::assert(cmds[2] == "-jar")
 }
 \author{

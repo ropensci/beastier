@@ -33,7 +33,6 @@ Creates the terminal command to validate a BEAST2 input file
   cmds <- create_beast2_validate_cmd(
     input_filename = "input.xml"
   )
-  testit::assert(stringr::str_sub(cmds[1], -4) == "java")
   testit::assert(cmds[2] == "-jar")
 }
 \author{
