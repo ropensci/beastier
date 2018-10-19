@@ -1,6 +1,10 @@
 context("is_bin_path")
 
 test_that("use", {
+  expect_true(beastier:::is_bin_path("beast"))
+  expect_true(beastier:::is_bin_path("BEAST.exe"))
+  expect_false(beastier:::is_bin_path("beast.exe"))
+  expect_false(beastier:::is_bin_path("beast.jar"))
   expect_true(beastier:::is_bin_path(get_default_beast2_bin_path()))
   expect_false(beastier:::is_bin_path(get_default_beast2_jar_path()))
   expect_false(beastier:::is_bin_path("nonsense"))

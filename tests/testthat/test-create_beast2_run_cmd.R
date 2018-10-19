@@ -45,7 +45,7 @@ test_that("use, jar", {
     "-overwrite",
     paste0("\"", input_filename, "\"")
   )
-  testthat::expect_equal(created, expected)
+  expect_equal(created, expected)
 
 })
 
@@ -81,7 +81,7 @@ test_that("use, WIRITTES", {
     paste0("\"", input_filename, "\"")
   )
 
-  testthat::expect_equal(created, expected)
+  expect_equal(created, expected)
 })
 
 

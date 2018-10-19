@@ -7,6 +7,9 @@
 #'   testthat::expect_true(
 #'     beastier:::is_bin_path("beast")
 #'   )
+#'   testthat::expect_true(
+#'     beastier:::is_bin_path("BEAST.exe")
+#'   )
 #'   testthat::expect_false(
 #'     beastier:::is_bin_path("beast.jar")
 #'   )
@@ -18,5 +21,5 @@
 #'   )
 #' @noRd
 is_bin_path <- function(path) {
-  !is.na(stringr::str_match(path, "(.*/)?beast$")[1][1])
+  !is.na(stringr::str_match(path, "(.*/)?(beast|BEAST)(\\.exe)?$")[1][1])
 }
