@@ -299,7 +299,7 @@ test_that("Create data from anthus_15_15_long.xml", {
   # Copy those file to where needed
 })
 
-test_that("BEAST2 does not overwrite log file", {
+test_that("BEAST2 does not overwrite the log file specified by the user", {
 
   output_log_filename <- tempfile(fileext = ".log")
 
@@ -317,7 +317,7 @@ test_that("BEAST2 does not overwrite log file", {
   )
 })
 
-test_that("BEAST2 does not overwrite .trees file", {
+test_that("BEAST2 does not overwrite the .trees file specified by the user", {
 
   output_trees_filename <- tempfile(fileext = ".trees")
 
@@ -333,6 +333,65 @@ test_that("BEAST2 does not overwrite .trees file", {
       overwrite = FALSE
     ),
     "Will not overwrite 'output_trees_filenames'"
+  )
+})
+
+test_that("BEAST2 does not overwrite its own log file", {
+
+  input_filename <- get_beastier_path("2_4.xml")
+
+  beast_log_file <- beastier:::create_default_log_filename(input_filename)
+  if (file.exists(beast_log_file)) {
+    file.remove(beast_log_file)
+  }
+  testit::assert(!file.exists(beast_log_file))
+
+  # Create files to be detectably overwritten
+  write(x = "log", file = beastier:::create_default_log_filename(input_filename))
+
+  expect_error(
+    run_beast2(
+      input_filename = input_filename,
+      output_log_filename = tempfile(fileext = ".log"),
+      overwrite = FALSE
+    ),
+    paste0(
+      "Cannot overwrite the .log file created by BEAST2 ",
+      "\\('test_output_0.log'\\) with 'overwrite' is FALSE"
+    )
+  )
+})
+
+test_that("BEAST2 does not overwrite its own trees file", {
+
+  input_filename <- get_beastier_path("2_4.xml")
+
+  # First remove the other BEAST2 file
+  beast_log_file <- beastier:::create_default_log_filename(input_filename)
+  if (file.exists(beast_log_file)) {
+    file.remove(beast_log_file)
+  }
+  testit::assert(!file.exists(beast_log_file))
+
+  beast_trees_file <- beastier:::create_default_trees_filenames(input_filename)
+  if (file.exists(beast_trees_file)) {
+    file.remove(beast_trees_file)
+  }
+  testit::assert(!file.exists(beast_trees_file))
+
+  # Create files to be detectably overwritten
+  write(x = "trees", file = beastier:::create_default_trees_filenames(input_filename))
+
+  expect_error(
+    run_beast2(
+      input_filename = input_filename,
+      output_trees_filenames = tempfile(fileext = ".trees"),
+      overwrite = FALSE
+    ),
+    paste0(
+      "Cannot overwrite the .trees files created by BEAST2 ",
+      "\\('test_output_0.trees'\\) with 'overwrite' is FALSE"
+    )
   )
 })
 

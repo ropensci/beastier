@@ -4,7 +4,8 @@
 \alias{create_default_log_filename}
 \title{Create the default \code{.log} filename as will be created by BEAST}
 \usage{
-create_default_log_filename(input_filename, beast2_path, verbose)
+create_default_log_filename(input_filename,
+  beast2_path = get_default_beast2_path(), verbose = FALSE)
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file.

@@ -4,8 +4,8 @@
 #' @author: Richel J.C. Bilderbeek
 create_default_trees_filenames <- function(
   input_filename,
-  beast2_path,
-  verbose
+  beast2_path = get_default_beast2_path(),
+  verbose = FALSE
 ) {
   check_input_filename(input_filename) # nolint internal function
   check_beast2_path(beast2_path) # nolint internal function
