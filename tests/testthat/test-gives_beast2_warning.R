@@ -4,13 +4,15 @@ test_that("use", {
 
   testit::assert(is_beast2_installed())
 
-  # Binary
-  testthat::expect_true(
-    gives_beast2_warning(
-      filename = beastier:::get_beastier_path("beast2_warning.xml"),
-      beast2_path = get_default_beast2_bin_path()
+  # Binary works under Unix, fails under Windows (see 'abuse' section below)
+  if (rappdirs::app_dir()$os == "unix") {
+    expect_true(
+      gives_beast2_warning(
+        filename = beastier:::get_beastier_path("beast2_warning.xml"),
+        beast2_path = get_default_beast2_bin_path()
+      )
     )
-  )
+  }
 
   # Jar
   testthat::expect_true(
@@ -40,7 +42,7 @@ test_that("abuse", {
     "'filename' must be the name of an existing file. "
   )
 
-  testthat::expect_error(
+  expect_error(
     gives_beast2_warning(
       get_beastier_path("anthus_2_4.xml"),
       beast2_path = "abs.ent"
@@ -50,5 +52,16 @@ test_that("abuse", {
       "Both not found at path 'abs.ent'"
     )
   )
+
+  # Binary fails under Windows, but works under Unix (see 'use' section above)
+  if (rappdirs::app_dir()$os == "win") {
+    expect_error(
+      gives_beast2_warning(
+        filename = beastier:::get_beastier_path("beast2_warning.xml"),
+        beast2_path = get_default_beast2_bin_path()
+      ),
+      "Cannot use the Windows exectuable BEAST2.exe is scripts"
+    )
+  }
 
 })
