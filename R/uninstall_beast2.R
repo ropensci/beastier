@@ -16,9 +16,7 @@ uninstall_beast2 <- function(
     os = os)) {
     stop("Cannot uninstall absent BEAST2 at")
   }
-  if (!os %in% c("win", "unix")) {
-    stop("'os' must be either 'win' or 'unix")
-  }
+  check_os(os = os) # nolint internal function
   jar_file_path <- file.path(folder_name, "BEAST", "lib", "beast.jar")
   if (os == "unix") {
     jar_file_path <- file.path(folder_name, "beast", "lib", "beast.jar")

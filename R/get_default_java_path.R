@@ -6,9 +6,7 @@
 get_default_java_path <- function(
   os = rappdirs::app_dir()$os
 ) {
-  if (!os %in% c("win", "unix")) {
-    stop("'os' must be either 'win' or 'unix")
-  }
+  check_os(os = os) # nolint internal function
   rJava::.jinit()
   java_folder <- rJava::.jcall(
     "java/lang/System", "S", "getProperty", "java.home"

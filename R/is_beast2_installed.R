@@ -12,9 +12,7 @@ is_beast2_installed <- function(
   folder_name = get_default_beast2_folder(),
   os = rappdirs::app_dir()$os
 ) {
-  if (!os %in% c("win", "unix")) {
-    stop("'os' must be either 'win' or 'unix")
-  }
+  check_os(os = os) # nolint internal function
   jar_file_path <- file.path(folder_name, "BEAST", "lib", "beast.jar")
   if (os == "unix") {
     jar_file_path <- file.path(folder_name, "beast", "lib", "beast.jar")
