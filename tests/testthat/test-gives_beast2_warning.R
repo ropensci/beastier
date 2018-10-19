@@ -60,7 +60,7 @@ test_that("abuse", {
         filename = beastier:::get_beastier_path("beast2_warning.xml"),
         beast2_path = get_default_beast2_bin_path()
       ),
-      "Cannot use the Windows executable BEAST2.exe is scripts"
+      "Cannot use the Windows executable BEAST2.exe in scripts"
     )
   }
 
