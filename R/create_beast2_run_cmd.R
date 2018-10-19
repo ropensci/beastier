@@ -33,7 +33,7 @@ create_beast2_run_cmd <- function(
     cmds <- c(
       get_default_java_path(),
       "-jar",
-      shQuote(beast2_path)
+      beast2_path
     )
     testit::assert(file.exists(cmds[1]))
     # Cannot do: testit::assert(file.exists(cmds[3]))
