@@ -18,5 +18,6 @@ create_random_fastas <- function(
       taxa_name_ext = taxa_name_ext
     )
   }
-  testit::assert(files_exist(fasta_filenames)) # nolint internal function
+  testit::assert(all(files_exist(fasta_filenames))) # nolint internal function
+  NULL
 }

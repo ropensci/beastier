@@ -31,4 +31,5 @@ create_random_fasta <- function(
     taxa_name_ext = taxa_name_ext
   )
   phangorn::write.phyDat(alignments, file = fasta_filename, format = "fasta")
+  NULL
 }
