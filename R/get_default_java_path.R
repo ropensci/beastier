@@ -1,4 +1,5 @@
 #' Obtains the default path to the Java executable
+#' @inheritParams default_params_doc
 #' @return the default path to the Java executable
 #' @author Richel J.C. Bilderbeek
 #' @export

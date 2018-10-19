@@ -6,6 +6,10 @@
 \usage{
 get_default_java_path(os = rappdirs::app_dir()$os)
 }
+\arguments{
+\item{os}{name of the operating system,
+must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
+}
 \value{
 the default path to the Java executable
 }

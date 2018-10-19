@@ -1,4 +1,5 @@
 #' Get the default BEAST2 binary file (\code{beast}, that is) path
+#' @inheritParams default_params_doc
 #' @return the default BEAST2 binary file's path
 #' @seealso Use \link{get_default_beast2_folder} to get the default
 #'   folder in which BEAST2 is installed.
