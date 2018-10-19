@@ -36,10 +36,15 @@ test_that("use, jar", {
     overwrite = TRUE,
     beast2_path = beast2_jar_path
   )
+
+  if (rappdirs::app_dir()$os == "win") {
+    beast2_jar_path <- paste0("\"", beast2_jar_path, "\"")
+  }
+
   expected <- c(
     get_default_java_path(),
     "-jar",
-    beast2_jar_path, # paste0("\"", beast2_jar_path, "\""),
+    beast2_jar_path,
     "-statefile",
     paste0("\"", output_state_filename, "\""),
     "-overwrite",
@@ -69,10 +74,14 @@ test_that("use, WIRITTES", {
     beast2_path = beast2_jar_path
   )
 
+  if (rappdirs::app_dir()$os == "win") {
+    beast2_jar_path <- paste0("\"", beast2_jar_path, "\"")
+  }
+
   expected <- c(
     get_default_java_path(),
     "-jar",
-    beast2_jar_path, # paste0("\"", beast2_jar_path, "\""),
+    beast2_jar_path,
     "-seed", rng_seed,
     "-threads", "8", "-beagle",
     "-statefile",

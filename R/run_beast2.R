@@ -141,6 +141,9 @@ run_beast2 <- function(
     stdout = TRUE,
     stderr = TRUE
   )
+  if (length(output) == 1) {
+    stop("Command '", paste0(cmd, collapse = " "), "'failed with error '", output, "'")
+  }
 
 
   if (!file.exists(output_log_filename)) {

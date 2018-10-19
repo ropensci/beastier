@@ -17,5 +17,5 @@ get_default_java_path <- function(
     java_path <- file.path(java_folder, "bin", "java")
   }
   testit::assert(file.exists(java_path))
-  java_path
+  normalizePath(java_path)
 }
