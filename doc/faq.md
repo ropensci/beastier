@@ -1,14 +1,20 @@
 # FAQ
 
-## How to install BEAST2?
+ * [beast2](##BEAST2)
+
+[beast2](##BEAST2)
+
+### How to install BEAST2?
 
 ```
 beastier::install_beast2()
 ```
 
-## Which version of BEAUti do you use as a guideline?
+### Which version of BEAUti do you use as a guideline?
 
 Version 2.5.0, as can be found in the [install_beast2](https://github.com/richelbilderbeek/beastier/blob/master/R/install_beast2.R) function.
+
+## `beastier` development 
 
 ## How can I indicate a feature that I miss?
 
@@ -26,17 +32,12 @@ See [CONTRIBUTING](CONTRIBUTING.md), at 'Submitting bugs'
 
 Submit an Issue. Or send an email to Richel Bilderbeek.
 
-## How do I reference to this work?
-
-Cite:
-
- * Bilderbeek, Richel J.C., Etienne, Rampal S., "babette: BEAUti 2, BEAST2 and Tracer for R". bioRxiv 271866; doi: https://doi.org/10.1101/271866
-
 ## What is the idea behind the logo?
 
 The logo consists of a rough redraw of Beast, 
 a fictional character from Marvel Comics, 
 and the R logo. 
+
 
 ## What are the FASTA files?
 
@@ -56,7 +57,9 @@ intimidatingly big for the R logo.
 The hippo is drawn by Jose Scholte, who kindly allowed her work to
 be used for free, by attribution.
 
-## Installing Java under Bionic
+## `beastier` technical questions
+
+### Installing Java under Bionic
 
 The `.travis.yml` file shows a Trusty install:
 
@@ -75,7 +78,17 @@ On Bionic, I assume the same can be achieved with:
   - sudo apt-get install oracle-java8-set-default
 ``
 
-## How did you convert the fuzzy white background to one single color?
+## `beastier` in academia
+
+## How do I reference to this work?
+
+Cite:
+
+ * Bilderbeek, Richel J.C., Etienne, Rampal S., "babette: BEAUti 2, BEAST2 and Tracer for R". bioRxiv 271866; doi: https://doi.org/10.1101/271866
+
+## `beastier` misc
+
+### How did you convert the fuzzy white background to one single color?
 
 ```
 convert hippo.png -fuzz 15% -fill white -opaque white hippo_mono_background.png
