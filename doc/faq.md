@@ -89,7 +89,7 @@ On Bionic, I assume the same can be achieved with:
   - sudo apt-get update -qq
   - sudo apt-get install oracle-java8-installer
   - sudo apt-get install oracle-java8-set-default
-``
+```
 
 ## [misc](#misc)
 
