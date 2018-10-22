@@ -3,7 +3,7 @@
  * [BEAST2](#BEAST2)
  * `beastier` [development](#development) 
  * `beastier` in [academia](#academia) 
- * `beastier` [technical](#technical) questions
+ * `beastier` [technical](#technical)
 
 ## [BEAST2](#BEAST2)
 
@@ -36,6 +36,16 @@ See [CONTRIBUTING](CONTRIBUTING.md), at 'Submitting bugs'
 Submit an Issue. Or send an email to Richel Bilderbeek.
 
 ## `beastier` [technical](#technical) questions
+
+### Why doesn't `beastier` support calling the Windows BEAST2.exe file?
+
+The goal of `beastier` is to call BEAST2 from R scripts.
+The Windows `BEAST2.exe` executable starts a graphical user interface.
+An R script should be silent, without pop-ups. 
+Therefore, calling the Windows `BEAST2.exe` executable is disallowed.
+
+If this changes, you are encouraged to inform me, by either an Issue
+or an email.
 
 ### Installing Java under Bionic
 
