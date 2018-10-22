@@ -1,8 +1,8 @@
 # FAQ
 
- * [beast2](##BEAST2)
+ * [beast2](#BEAST2)
 
-[beast2](##BEAST2)
+## [beast2](#BEAST2)
 
 ### How to install BEAST2?
 
