@@ -1,6 +1,6 @@
 # FAQ
 
- * [beast2](#BEAST2)
+ * [BEAST2](#BEAST2)
  * [development](#development) 
 
 ## [BEAST2](#BEAST2)
