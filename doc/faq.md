@@ -6,7 +6,9 @@
  4. `beastier` [technical](#technical)
  5. `beastier` [misc](#misc)
 
-## 1. `beastier` in [academia](#academia)
+## [academia](#academia)
+
+`beastier` in [academia](#academia).
 
 ### 1.1 How do I reference to this work?
 
@@ -22,7 +24,9 @@ FASTA files `anthus_aco.fas` and `anthus_nd2.fas` from:
 
 Thanks to Paul van Els.
 
-## 2. `beastier` and [BEAST2](#BEAST2)
+## [BEAST2](#BEAST2)
+
+`beastier` and [BEAST2](#BEAST2).
 
 ### 2.1 How to install BEAST2?
 
@@ -34,7 +38,9 @@ beastier::install_beast2()
 
 Version 2.5.0, as can be found in the [install_beast2](https://github.com/richelbilderbeek/beastier/blob/master/R/install_beast2.R) function.
 
-## 3. `beastier` [development](#development) 
+## [development](#development) 
+
+`beastier` [development](#development).
 
 ### 3.1 How can I indicate a feature that I miss?
 
@@ -52,7 +58,9 @@ See [CONTRIBUTING](CONTRIBUTING.md), at 'Submitting bugs'
 
 Submit an Issue. Or send an email to Richel Bilderbeek.
 
-## 4. `beastier` [technical](#technical) questions
+## [technical](#technical)
+
+`beastier` technical questions.
 
 ### 4.1 Why doesn't `beastier` support calling the Windows BEAST2.exe file?
 
@@ -83,7 +91,9 @@ On Bionic, I assume the same can be achieved with:
   - sudo apt-get install oracle-java8-set-default
 ``
 
-## 5. `beastier` [misc](#misc)
+## [misc](#misc)
+
+`beastier` miscellaneous topics.
 
 ### 5.1 Why the logo?
 
