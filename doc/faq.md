@@ -1,7 +1,7 @@
 # FAQ
 
  * [beast2](#BEAST2)
- * [`beastier` development](#development) 
+ * [development](#development) 
 
 ## [BEAST2](#BEAST2)
 
@@ -15,7 +15,7 @@ beastier::install_beast2()
 
 Version 2.5.0, as can be found in the [install_beast2](https://github.com/richelbilderbeek/beastier/blob/master/R/install_beast2.R) function.
 
-## [`beastier` development](#development) 
+## [development](#development) 
 
 ## How can I indicate a feature that I miss?
 
