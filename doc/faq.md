@@ -1,9 +1,10 @@
 # FAQ
 
- * `beastier` in [academia](#academia) 
- * `beastier` and [BEAST2](#BEAST2)
- * `beastier` [development](#development) 
- * `beastier` [technical](#technical)
+ 1. `beastier` in [academia](#academia) 
+ 2. `beastier` and [BEAST2](#BEAST2)
+ 3. `beastier` [development](#development) 
+ 4. `beastier` [technical](#technical)
+ 5. `beastier` [misc](#misc)
 
 ## 1. `beastier` in [academia](#academia)
 
@@ -82,7 +83,7 @@ On Bionic, I assume the same can be achieved with:
   - sudo apt-get install oracle-java8-set-default
 ``
 
-## 5. `beastier` misc
+## 5. `beastier` [misc](#misc)
 
 ### 5.1 Why the logo?
 
