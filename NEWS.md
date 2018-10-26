@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 1.5.1 (2018-10-26)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Made up-to-date with newer version of `beautier`
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 1.5 (2018-09-12)
 
 ### NEW FEATURES
