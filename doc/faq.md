@@ -91,6 +91,19 @@ On Bionic, I assume the same can be achieved with:
   - sudo apt-get install oracle-java8-set-default
 ```
 
+### 4.3 Why doesn't `beastier` have 100% code coverage?
+
+Because `beastier` cannot be fully tested for both
+Linux and Windows on the same operating system.
+
+Code coverage is measured by [codecov](https://codecov.io/gh/richelbilderbeek/beastier/tree/master/R) by the Travis CI continuous integration service.
+Travis uses Linux. 
+One can observe all missing code coverage is due to Windows-only functions.
+
+Sure, there are also tests by the AppVeyor continuous integration service.
+AppVeyor uses Windows. Would one observe that code coverage report, 
+one would observe all missing code coverage is due to Linux-only functions.
+
 ## [misc](#misc)
 
 `beastier` miscellaneous topics.
