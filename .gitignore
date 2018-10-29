@@ -26,3 +26,4 @@ anthus_aco.log
 anthus_aco.trees
 anthus_nd2.trees
 tests/spelling.Rout.save
+scripts/build/
