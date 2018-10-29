@@ -35,12 +35,6 @@ Suggests:
   testit,
   testthat,
   tracerer
-Remotes:
-  jimhester/covr,
-  jimhester/lintr,
-  richelbilderbeek/tracerer,
-  richelbilderbeek/beautier,
-  MangoTheCat/goodpractice
 VignetteBuilder: knitr
 URL: https://github.com/richelbilderbeek/beastier
 BugReports: https://github.com/richelbilderbeek/beastier
