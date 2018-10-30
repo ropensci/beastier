@@ -12,6 +12,7 @@ fortran: false
 r_packages:
   - devtools
   - hunspell
+  - rJava
 
 r_github_packages:
   - jimhester/covr
