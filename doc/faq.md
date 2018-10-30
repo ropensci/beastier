@@ -30,7 +30,21 @@ Submit an Issue. Or send an email to Richel Bilderbeek.
 
 Cite:
 
- * Bilderbeek, Richel J.C., Etienne, Rampal S., "babette: BEAUti 2, BEAST2 and Tracer for R". bioRxiv 271866; doi: https://doi.org/10.1101/271866
+```
+Bilderbeek, Richèl JC, and Rampal S. Etienne. "babette: BEAUti 2, BEAST 2 and Tracer for R." Methods in Ecology and Evolution (2018).
+```
+
+or
+
+```
+@article{bilderbeek2018babette,
+  title={babette: BEAUti 2, BEAST 2 and Tracer for R},
+  author={Bilderbeek, Richèl JC and Etienne, Rampal S},
+  journal={Methods in Ecology and Evolution},
+  year={2018},
+  publisher={Wiley Online Library}
+}
+```
 
 ## What is the idea behind the logo?
 
