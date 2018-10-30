@@ -22,7 +22,7 @@ get_default_beast2_bin_path <- function(
   check_os(os = os) # nolint internal function
   # Windows has uppercase folder name
   beast_foldername <- "BEAST"
-  if (os == "unix") {
+  if (os != "win") {
     beast_foldername <- "beast"
   }
   beast2_bin_raw_path <- file.path(
@@ -30,7 +30,7 @@ get_default_beast2_bin_path <- function(
     beast_foldername,
     "BEAST.exe"
   )
-  if (os == "unix") {
+  if (os != "win") {
     beast2_bin_raw_path <- file.path(
       rappdirs::user_data_dir(),
       beast_foldername,

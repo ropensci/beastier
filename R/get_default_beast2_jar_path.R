@@ -22,7 +22,7 @@ get_default_beast2_jar_path <- function(
   check_os(os = os) # nolint internal function
   # Windows has uppercase folder name
   beast_foldername <- "BEAST"
-  if (os == "unix") {
+  if (os != "win") {
     beast_foldername <- "beast"
   }
 

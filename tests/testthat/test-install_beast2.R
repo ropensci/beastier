@@ -30,13 +30,10 @@ test_that("install twice must throw", {
 })
 
 
-test_that("install for other OS", {
+test_that("install Windows from Linux", {
 
   if (!is_on_travis()) return()
-  os <- rappdirs::app_dir()$os
-  other_os <- "unix"
-  if (os == "unix") {
-    other_os <- "win"
+  if (rappdirs::app_dir()$os == "unix") {
+    install_beast2(os = "win")
   }
-  install_beast2(os = other_os)
 })

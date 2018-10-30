@@ -18,11 +18,11 @@ uninstall_beast2 <- function(
   }
   check_os(os = os) # nolint internal function
   jar_file_path <- file.path(folder_name, "BEAST", "lib", "beast.jar")
-  if (os == "unix") {
+  if (os != "win") {
     jar_file_path <- file.path(folder_name, "beast", "lib", "beast.jar")
   }
   bin_file_path <- file.path(folder_name, "BEAST", "BEAST.exe")
-  if (os == "unix") {
+  if (os != "win") {
     bin_file_path <- file.path(folder_name, "beast", "bin", "beast")
   }
   testit::assert(file.exists(jar_file_path))

@@ -6,9 +6,9 @@
 get_default_beast2_download_url <- function( # nolint internal functions may be long
   os = rappdirs::app_dir()$os
 ) {
-  testit::assert(os == "win" || os == "unix")
+  check_os(os) # nolint internal function
   url <- get_default_beast2_download_url_win() # nolint internal function
-  if (os == "unix") {
+  if (os != "win") {
     url <- get_default_beast2_download_url_linux() # nolint internal function
   }
   url
