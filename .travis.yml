@@ -12,7 +12,6 @@ fortran: false
 r_packages:
   - devtools
   - hunspell
-  - rJava
 
 r_github_packages:
   - jimhester/covr
@@ -25,6 +24,7 @@ r_github_packages:
 before_script:
   - # Java
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install java; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then R --quiet -e 'install.packages("rJava", type="source", repos="http://cran.us.r-project.org")'; fi
   - # Java 8
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -qq oracle-java8-installer; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install oracle-java8-set-default; fi
