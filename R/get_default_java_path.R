@@ -13,7 +13,7 @@ get_default_java_path <- function(
   )
   testit::assert(dir.exists(java_folder))
   java_path <- file.path(java_folder, "bin", "java.exe")
-  if (os == "unix") {
+  if (os != "win") {
     java_path <- file.path(java_folder, "bin", "java")
   }
   testit::assert(file.exists(java_path))

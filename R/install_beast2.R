@@ -23,7 +23,7 @@ install_beast2 <- function(
 ) {
   check_os(os = os) # nolint internal function
   jar_file_path <- file.path(folder_name, "BEAST", "lib", "beast.jar")
-  if (os == "unix") {
+  if (os != "win") {
     jar_file_path <- file.path(folder_name, "beast", "lib", "beast.jar")
   }
   if (file.exists(jar_file_path)) {
@@ -45,7 +45,7 @@ install_beast2 <- function(
     destfile = local_path
   )
   testit::assert(file.exists(local_path))
-  if (os == "unix") {
+  if (os != "win") {
     # Linux has a tar file
     utils::untar(
       tarfile = local_path,
