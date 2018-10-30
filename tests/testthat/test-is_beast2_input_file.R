@@ -103,10 +103,12 @@ test_that("detect warnings", {
       show_warnings = FALSE
     )
   )
-  expect_silent(
-    is_beast2_input_file(
-      beautier:::get_beautier_paths("2_4.xml"),
-      show_warnings = TRUE
+  if (rappdirs::app_dir()$os != "mac") {
+    expect_silent(
+      is_beast2_input_file(
+        beautier:::get_beautier_paths("2_4.xml"),
+        show_warnings = TRUE
+      )
     )
-  )
+  }
 })

@@ -8,36 +8,38 @@ test_that("use", {
   if (rappdirs::app_dir()$os == "unix") {
     expect_true(
       gives_beast2_warning(
-        filename = beastier:::get_beastier_path("beast2_warning.xml"),
+        filename = get_beastier_path("beast2_warning.xml"),
         beast2_path = get_default_beast2_bin_path()
       )
     )
   }
 
   # Jar
-  testthat::expect_true(
+  expect_true(
     gives_beast2_warning(
-      filename = beastier:::get_beastier_path("beast2_warning.xml"),
+      filename = get_beastier_path("beast2_warning.xml"),
       beast2_path = get_default_beast2_jar_path()
     )
   )
 
-  testthat::expect_output(
+  expect_output(
     gives_beast2_warning(
-      filename = beastier:::get_beastier_path("beast2_warning.xml"),
+      filename = get_beastier_path("beast2_warning.xml"),
       verbose = TRUE
     )
   )
-  testthat::expect_false(
-    gives_beast2_warning(
-      beautier:::get_beautier_paths("2_4.xml")
+  if (rappdirs::app_dir()$os != "mac") {
+    expect_false(
+      gives_beast2_warning(
+        beautier:::get_beautier_paths("2_4.xml")
+      )
     )
-  )
+  }
 })
 
 test_that("abuse", {
 
-  testthat::expect_error(
+  expect_error(
     gives_beast2_warning("abs.ent"),
     "'filename' must be the name of an existing file. "
   )
@@ -57,7 +59,7 @@ test_that("abuse", {
   if (rappdirs::app_dir()$os == "win") {
     expect_error(
       gives_beast2_warning(
-        filename = beastier:::get_beastier_path("beast2_warning.xml"),
+        filename = get_beastier_path("beast2_warning.xml"),
         beast2_path = get_default_beast2_bin_path()
       ),
       "Cannot use the Windows executable BEAST2.exe in scripts"
