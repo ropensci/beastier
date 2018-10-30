@@ -22,7 +22,6 @@ r_github_packages:
   - ropensci/spelling
 
 before_script:
-
   - # Java
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install java; fi
   - # Java 8
