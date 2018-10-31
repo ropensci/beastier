@@ -42,6 +42,10 @@ after_success:
   - Rscript -e 'covr::codecov()'
   - Rscript -e 'goodpractice::gp()'
   - proselint *.md | egrep -v "typography\.symbols\.curly_quotes"
+  - # No local files created
+  - egrep -oR "\"~" --include={*.R,*.Rmd}
+  - if [[ $(egrep -R "\"~" --include={*.R,*.Rmd}) ]]; then echo "Local file created"; exit 1; fi
+  - # Build for CRAN
   - cd scripts; ./build_cran
   # temporarily disabled due to CERT_UNTRUSTED
   #- ./check_dead_links
