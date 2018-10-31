@@ -118,6 +118,27 @@ Sure, there are also tests by the AppVeyor continuous integration service.
 AppVeyor uses Windows. Would one observe that code coverage report, 
 one would observe all missing code coverage is due to Linux-only functions.
 
+### 4.4 tar: Failed to set default locale
+
+On Mac, El Capitain, when doing
+
+```
+beastier::install_beast2()
+```
+
+one can get:
+
+```
+tar: Failed to set default locale
+``` 
+
+The solution, from [RStudio Support](https://support.rstudio.com/hc/en-us/community/posts/212446787-tar-Failed-to-set-default-locale) 
+is, to type the following in a terminal:
+
+```
+defaults write org.R-project.R force.LANG en_US.UTF-8
+```
+
 ## [misc](#misc)
 
 `beastier` miscellaneous topics.
