@@ -3,12 +3,12 @@ context("get_default_beast2_download_url")
 test_that("use", {
 
   expect_equal(
-    "https://github.com/CompEvol/beast2/releases/download/v2.5.0/BEAST.v2.5.0.Linux.tgz", # nolint URL can be long
+    "https://github.com/CompEvol/beast2/releases/download/v2.5.1/BEAST.v2.5.1.Linux.tgz", # nolint URL can be long
     get_default_beast2_download_url_linux()
   )
 
   expect_equal(
-    "https://github.com/CompEvol/beast2/releases/download/v2.5.0/BEAST.v2.5.0.Windows.zip", # nolint URL can be long
+    "https://github.com/CompEvol/beast2/releases/download/v2.5.1/BEAST.v2.5.1.Windows.zip", # nolint URL can be long
     get_default_beast2_download_url_win()
   )
 
