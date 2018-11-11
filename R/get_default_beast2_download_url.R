@@ -19,7 +19,7 @@ get_default_beast2_download_url <- function( # nolint internal functions may be 
 #' @author Richel J.C. Bilderbeek
 #' @noRd
 get_default_beast2_download_url_linux <- function() { # nolint internal functions may be long
-  "https://github.com/CompEvol/beast2/releases/download/v2.5.0/BEAST.v2.5.0.Linux.tgz" # nolint URL can be long
+  "https://github.com/CompEvol/beast2/releases/download/v2.5.1/BEAST.v2.5.1.Linux.tgz" # nolint URL can be long
 }
 
 #' Get the BEAST2 download URL for Windows
@@ -27,5 +27,5 @@ get_default_beast2_download_url_linux <- function() { # nolint internal function
 #' @author Richel J.C. Bilderbeek
 #' @noRd
 get_default_beast2_download_url_win <- function() { # nolint internal functions may be long
-  "https://github.com/CompEvol/beast2/releases/download/v2.5.0/BEAST.v2.5.0.Windows.zip" # nolint URL can be long
+  "https://github.com/CompEvol/beast2/releases/download/v2.5.1/BEAST.v2.5.1.Windows.zip" # nolint URL can be long
 }
