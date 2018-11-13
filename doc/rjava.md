@@ -102,6 +102,7 @@ sudo apt-get install r-cran-rjava
 
 ![BEAST2 cannot find Java](beast_cannot_find_java.png)
 
+
 Download the Oracle Java SDK:
 
 ![](download_oracle_java_sdk.png)
@@ -113,6 +114,30 @@ Open the Oracle Java SDK with the package installer:
 Install the Oracle Java SDK with the package installer:
 
 ![](install_oracle_java_sdk.png)
+
+Pick the right `java`:
+
+
+```
+sudo update-alternatives --config java
+```
+
+I picked:
+
+```
+There are 5 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                            Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-9-openjdk-amd64/bin/java       1091      auto mode
+  1            /usr/bin/gij-4.8                                 1048      manual mode
+  2            /usr/bin/gij-5                                   1050      manual mode
+* 3            /usr/bin/gij-6                                   1060      manual mode
+  4            /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java   1081      manual mode
+  5            /usr/lib/jvm/java-9-openjdk-amd64/bin/java       1091      manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 
+```
 
 Reconfig:
 
