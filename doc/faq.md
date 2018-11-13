@@ -86,6 +86,14 @@ Therefore, calling the Windows `BEAST2.exe` executable is disallowed.
 If this changes, you are encouraged to inform me, by either an Issue
 or an email.
 
+### 4.2 Installing Java under A
+
+
+```
+sudo apt-get install r-cran-rjava
+R CMD javareconf
+```
+
 ### 4.2 Installing Java under Bionic
 
 The `.travis.yml` file shows a Trusty install:
@@ -97,12 +105,11 @@ The `.travis.yml` file shows a Trusty install:
 
 On Bionic, I assume the same can be achieved with:
 
-
 ```
-  - sudo add-apt-repository -y ppa:webupd8team/java 
-  - sudo apt-get update -qq
-  - sudo apt-get install oracle-java8-installer
-  - sudo apt-get install oracle-java8-set-default
+sudo add-apt-repository -y ppa:webupd8team/java 
+sudo apt-get update -qq
+sudo apt-get install oracle-java8-installer
+sudo apt-get install oracle-java8-set-default
 ```
 
 ### 4.3 Why doesn't `beastier` have 100% code coverage?
