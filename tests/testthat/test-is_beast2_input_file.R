@@ -10,8 +10,7 @@ test_that("beast2_example_output.log is not a valid BEAST2 input file", {
   expect_output(
     is_ok <- beastier::is_beast2_input_file(
       filename,
-      verbose = TRUE,
-      beast2_path = get_default_beast2_bin_path()
+      verbose = TRUE
     )
   )
 
@@ -36,6 +35,7 @@ test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
 test_that("anthus_2_4.xml is valid, from bin", {
 
   if (!is_on_ci()) return()
+  if (rappdirs::app_dir()$os == "win") return()
 
   filename <- get_beastier_path("anthus_2_4.xml")
   testit::assert(file.exists(filename))
