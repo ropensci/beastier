@@ -2,7 +2,7 @@ context("is_beast2_input_file")
 
 test_that("beast2_example_output.log is not a valid BEAST2 input file", {
 
-  if (!beastier:::is_on_travis()) return()
+  if (!is_on_ci()) return()
 
   filename <- get_beastier_path("beast2_example_output.log")
   is_ok <- NULL
@@ -21,7 +21,7 @@ test_that("beast2_example_output.log is not a valid BEAST2 input file", {
 test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
 
   # Gives a status error
-  if (!beastier:::is_on_travis()) return()
+  if (!is_on_ci()) return()
 
   filename <- get_beastier_path("beast2_example_output.trees")
 
@@ -35,7 +35,7 @@ test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
 
 test_that("anthus_2_4.xml is valid, from bin", {
 
-  if (!beastier:::is_on_travis()) return()
+  if (!is_on_ci()) return()
 
   filename <- get_beastier_path("anthus_2_4.xml")
   testit::assert(file.exists(filename))
@@ -49,7 +49,7 @@ test_that("anthus_2_4.xml is valid, from bin", {
 
 test_that("anthus_2_4.xml is valid, from jar", {
 
-  if (!beastier:::is_on_travis()) return()
+  if (!is_on_ci()) return()
 
   filename <- get_beastier_path("anthus_2_4.xml")
   expect_true(file.exists(filename))

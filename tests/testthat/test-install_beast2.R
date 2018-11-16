@@ -2,7 +2,7 @@ context("install_beast2")
 
 test_that("install at non-standard location", {
 
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
 
   folder_name <- tempdir()
   beast_jar_path <- file.path(folder_name, "beast", "lib", "beast.jar")
@@ -17,7 +17,7 @@ test_that("install at non-standard location", {
 
 test_that("install twice must throw", {
 
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
 
   folder_name <- tempdir()
   if (!is_beast2_installed(folder_name)) {
@@ -32,7 +32,7 @@ test_that("install twice must throw", {
 
 test_that("install Windows from Linux", {
 
-  if (!is_on_travis()) return()
+  if (!is_on_ci()) return()
   if (rappdirs::app_dir()$os == "unix") {
     install_beast2(os = "win")
   }

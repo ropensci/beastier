@@ -17,7 +17,7 @@
 are_beast2_input_lines <- function(
   lines,
   verbose = FALSE,
-  method = ifelse(beastier:::is_on_travis(), "deep", "fast"),
+  method = ifelse(is_on_ci(), "deep", "fast"),
   beast2_path = get_default_beast2_path()
 ) {
   if (!method %in% c("deep", "fast")) {
