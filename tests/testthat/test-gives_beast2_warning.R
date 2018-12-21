@@ -4,6 +4,13 @@ test_that("use", {
 
   testit::assert(is_beast2_installed())
 
+  expect_false(
+    gives_beast2_warning(
+      filename = get_beastier_path("2_4.xml"),
+      beast2_path = get_default_beast2_jar_path()
+    )
+  )
+
   # Binary works under Unix, fails under Windows (see 'abuse' section below)
   if (rappdirs::app_dir()$os == "unix") {
     expect_true(

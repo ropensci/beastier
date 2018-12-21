@@ -473,6 +473,6 @@ test_that("run BEAST2 from binary path", {
 })
 
 test_that("run_beast2 produces output", {
-  output <- run_beast2(get_beastier_path("2_4.xml"))
+  output <- run_beast2(get_beastier_path("2_4.xml"), verbose = TRUE)
   expect_true(length(output) > 50)
 })
