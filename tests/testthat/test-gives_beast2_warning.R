@@ -1,15 +1,8 @@
 context("gives_beast2_warning")
 
-test_that("use", {
+test_that("use, bin", {
 
   testit::assert(is_beast2_installed())
-
-  expect_false(
-    gives_beast2_warning(
-      filename = get_beastier_path("2_4.xml"),
-      beast2_path = get_default_beast2_jar_path()
-    )
-  )
 
   # Binary works under Unix, fails under Windows (see 'abuse' section below)
   if (rappdirs::app_dir()$os == "unix") {
@@ -20,8 +13,22 @@ test_that("use", {
       )
     )
   }
+})
 
-  # Jar
+test_that("use, jar", {
+
+  testit::assert(is_beast2_installed())
+
+  if (rappdirs::app_dir()$os == "unix") {
+    # No idea why this only work under UNIX
+    expect_false(
+      gives_beast2_warning(
+        filename = get_beastier_path("2_4.xml"),
+        beast2_path = get_default_beast2_jar_path()
+      )
+    )
+  }
+
   expect_true(
     gives_beast2_warning(
       filename = get_beastier_path("beast2_warning.xml"),
