@@ -4,7 +4,7 @@
 \alias{install_beast2}
 \title{Install BEAST2}
 \usage{
-install_beast2(folder_name = get_default_beast2_folder(),
+install_beast2(folder_name = rappdirs::user_data_dir(),
   verbose = FALSE, os = rappdirs::app_dir()$os)
 }
 \arguments{
