@@ -17,7 +17,7 @@
 #' @author Richel J.C. Bilderbeek
 #' @export
 install_beast2 <- function(
-  folder_name = rappdirs::user_data_dir(),
+  folder_name = get_default_beast2_folder(),
   verbose = FALSE,
   os = rappdirs::app_dir()$os
 ) {
