@@ -12,13 +12,13 @@ This GitHub follows the [Contributor Covenant Code of Conduct](code_of_conduct.m
 `babette` consists out of three packages.
 
 If you want to contribute to the creation of BEAST2 XML input file,
-go to [beautier](https://github.com/richelbilderbeek/beautier/blob/master/CONTRIBUTING.md).
+go to [beautier](https://github.com/ropensci/beautier/blob/master/CONTRIBUTING.md).
 
 If you want to contribute to how BEAST2 is run,
-go to [beautier](https://github.com/richelbilderbeek/beautier/blob/master/CONTRIBUTING.md).
+go to [beautier](https://github.com/ropensci/beautier/blob/master/CONTRIBUTING.md).
 
 If you want to contribute to how BEAST2 output is parsed,
-go to [tracerer](https://github.com/richelbilderbeek/tracerer/blob/master/CONTRIBUTING.md)
+go to [tracerer](https://github.com/ropensci/tracerer/blob/master/CONTRIBUTING.md)
 
 If you want to contribute with an overarching idea, you are at the right spot :-) 
 
@@ -55,7 +55,7 @@ Pull Requests should follow the same guidelines as 'Submitting code'.
 To get started working on `babette` do:
 
 ```
-git clone https://github.com/richelbilderbeek/babette
+git clone https://github.com/ropensci/babette
 ```
 
 Development is done on the `develop` branch. 

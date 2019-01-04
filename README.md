@@ -4,8 +4,8 @@
 
 Branch|[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)|[![AppVeyor logo](pics/AppVeyor.png)](https://www.appveyor.com)|[![Codecov logo](pics/Codecov.png)](https://www.codecov.io)
 ---|---|---|---
-master|[![Build Status](https://travis-ci.org/richelbilderbeek/beastier.svg?branch=master)](https://travis-ci.org/richelbilderbeek/beastier)|[![Build status](https://ci.appveyor.com/api/projects/status/tny9jb7jkwbfamm2/branch/master?svg=true)](https://ci.appveyor.com/project/richelbilderbeek/beastier/branch/master)|[![codecov.io](https://codecov.io/github/richelbilderbeek/beastier/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/beastier/branch/master)
-develop|[![Build Status](https://travis-ci.org/richelbilderbeek/beastier.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/beastier)|[![Build status](https://ci.appveyor.com/api/projects/status/tny9jb7jkwbfamm2/branch/develop?svg=true)](https://ci.appveyor.com/project/richelbilderbeek/beastier/branch/develop)|[![codecov.io](https://codecov.io/github/richelbilderbeek/beastier/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/beastier/branch/develop)
+master|[![Build Status](https://travis-ci.org/ropensci/beastier.svg?branch=master)](https://travis-ci.org/ropensci/beastier)|[![Build status](https://ci.appveyor.com/api/projects/status/tny9jb7jkwbfamm2/branch/master?svg=true)](https://ci.appveyor.com/project/ropensci/beastier/branch/master)|[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=master)](https://codecov.io/github/ropensci/beastier/branch/master)
+develop|[![Build Status](https://travis-ci.org/ropensci/beastier.svg?branch=develop)](https://travis-ci.org/ropensci/beastier)|[![Build status](https://ci.appveyor.com/api/projects/status/tny9jb7jkwbfamm2/branch/develop?svg=true)](https://ci.appveyor.com/project/ropensci/beastier/branch/develop)|[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=develop)](https://codecov.io/github/ropensci/beastier/branch/develop)
 
 [![DOI](https://zenodo.org/badge/115617629.svg)](https://zenodo.org/badge/latestdoi/115617629)
 
@@ -13,16 +13,16 @@ develop|[![Build Status](https://travis-ci.org/richelbilderbeek/beastier.svg?bra
 
 ![beastier logo](pics/beastier_logo.png)
 
-`beastier` is part of the [babette](https://github.com/richelbilderbeek/babette) package suite:
+`beastier` is part of the [babette](https://github.com/ropensci/babette) package suite:
 
- * [beautier](https://github.com/richelbilderbeek/beautier) creates BEAST2 input (`.xml`) files.
- * [beastier](https://github.com/richelbilderbeek/beastier) runs BEAST2
- * [mauricer](https://github.com/richelbilderbeek/mauricer): install BEAST2 packages
- * [tracerer](https://github.com/richelbilderbeek/tracerer) pastes BEAST2 output (`.log`, `.trees`, etc) files.
+ * [beautier](https://github.com/ropensci/beautier) creates BEAST2 input (`.xml`) files.
+ * [beastier](https://github.com/ropensci/beastier) runs BEAST2
+ * [mauricer](https://github.com/ropensci/mauricer): install BEAST2 packages
+ * [tracerer](https://github.com/ropensci/tracerer) pastes BEAST2 output (`.log`, `.trees`, etc) files.
 
 Related R packages:
 
- * [lumier](https://github.com/richelbilderbeek/lumier): Shiny app to help create the function call needed
+ * [lumier](https://github.com/ropensci/lumier): Shiny app to help create the function call needed
 
 ## Example
 

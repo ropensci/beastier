@@ -36,6 +36,6 @@ Suggests:
   testthat,
   tracerer
 VignetteBuilder: knitr
-URL: https://github.com/richelbilderbeek/beastier
-BugReports: https://github.com/richelbilderbeek/beastier
+URL: https://github.com/ropensci/beastier
+BugReports: https://github.com/ropensci/beastier
 Language: en-US

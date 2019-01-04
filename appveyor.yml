@@ -22,8 +22,8 @@ environment:
     USE_RTOOLS: true
 
 build_script:
-  - travis-tool.sh install_github richelbilderbeek/beautier
-  - travis-tool.sh install_github richelbilderbeek/tracerer
+  - travis-tool.sh install_github ropensci/beautier
+  - travis-tool.sh install_github ropensci/tracerer
   - travis-tool.sh install_deps
   #- travis-tool.sh install_github jimhester/covr
   #- travis-tool.sh install_github jimhester/lintr

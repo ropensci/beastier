@@ -11,14 +11,14 @@ If you have problems installing rJava, [Duck](http://www.duckduckgo.com) or [vie
 `beastier` is not on CRAN yet. The simplest way now is to install `beastier` with the `devtools` R package:
 
 ```
-devtools::install_github("richelbilderbeek/beastier")
+devtools::install_github("ropensci/beastier")
 ```
 
 `beastier` assumes that `beautier` and `tracerer` are also installed. Do so:
 
 ```
-devtools::install_github("richelbilderbeek/beautier")
-devtools::install_github("richelbilderbeek/tracerer")
+devtools::install_github("ropensci/beautier")
+devtools::install_github("ropensci/tracerer")
 ```
 
 `beastier` assumes that BEAST2 is installed. To install BEAST2, from R do:

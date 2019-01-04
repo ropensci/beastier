@@ -50,7 +50,7 @@ beastier::install_beast2()
 
 ### 2.2 Which version of BEAUti do you use as a guideline?
 
-Version 2.5.1, as can be found in the [install_beast2](https://github.com/richelbilderbeek/beastier/blob/master/R/install_beast2.R) function.
+Version 2.5.1, as can be found in the [install_beast2](https://github.com/ropensci/beastier/blob/master/R/install_beast2.R) function.
 
 ## [development](#development) 
 
@@ -117,7 +117,7 @@ sudo apt-get install oracle-java8-set-default
 Because `beastier` cannot be fully tested for both
 Linux and Windows on the same operating system.
 
-Code coverage is measured by [codecov](https://codecov.io/gh/richelbilderbeek/beastier/tree/master/R) by the Travis CI continuous integration service.
+Code coverage is measured by [codecov](https://codecov.io/gh/ropensci/beastier/tree/master/R) by the Travis CI continuous integration service.
 Travis uses Linux. 
 One can observe all missing code coverage is due to Windows-only functions.
 

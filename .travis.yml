@@ -13,8 +13,8 @@ r_github_packages:
   - jimhester/covr
   - jimhester/lintr
   - MangoTheCat/goodpractice
-  - richelbilderbeek/beautier
-  - richelbilderbeek/tracerer
+  - ropensci/beautier
+  - ropensci/tracerer
   - ropensci/spelling
 
 before_script:
@@ -46,5 +46,5 @@ after_success:
   #- ./check_dead_links
 
 after_failure:
-  - cat /home/travis/build/richelbilderbeek/beastier/..Rcheck/00install.out
-  - cat /home/travis/build/richelbilderbeek/beastier/..Rcheck/00check.log
+  - cat /home/travis/build/ropensci/beastier/..Rcheck/00install.out
+  - cat /home/travis/build/ropensci/beastier/..Rcheck/00check.log
