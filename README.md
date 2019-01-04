@@ -4,8 +4,8 @@
 
 Branch|[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)|[![AppVeyor logo](pics/AppVeyor.png)](https://www.appveyor.com)|[![Codecov logo](pics/Codecov.png)](https://www.codecov.io)
 ---|---|---|---
-master|[![Build Status](https://travis-ci.org/ropensci/beastier.svg?branch=master)](https://travis-ci.org/ropensci/beastier)|[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ropensci/beastier?branch=master&svg=true)](https://ci.appveyor.com/project/richelbilderbeek/beastier)|[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=master)](https://codecov.io/github/ropensci/beastier/branch/master)
-develop|[![Build Status](https://travis-ci.org/ropensci/beastier.svg?branch=develop)](https://travis-ci.org/ropensci/beastier)|[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ropensci/beastier?branch=develop&svg=true)](https://ci.appveyor.com/project/richelbilderbeek/beastier)|[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=develop)](https://codecov.io/github/ropensci/beastier/branch/develop)
+master|[![Build Status](https://travis-ci.org/ropensci/beastier.svg?branch=master)](https://travis-ci.org/ropensci/beastier)|[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ropensci/beastier?branch=master&svg=true)](https://ci.appveyor.com/project/ropensci/beastier)|[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=master)](https://codecov.io/github/ropensci/beastier/branch/master)
+develop|[![Build Status](https://travis-ci.org/ropensci/beastier.svg?branch=develop)](https://travis-ci.org/ropensci/beastier)|[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/ropensci/beastier?branch=develop&svg=true)](https://ci.appveyor.com/project/ropensci/beastier)|[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=develop)](https://codecov.io/github/ropensci/beastier/branch/develop)
 
 [![DOI](https://zenodo.org/badge/115617629.svg)](https://zenodo.org/badge/latestdoi/115617629)
 

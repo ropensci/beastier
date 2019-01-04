@@ -202,10 +202,10 @@
     "https://www.appveyor.com",
     "https://www.codecov.io",
     "https://travis-ci.org/ropensci/beastier",
-    "https://ci.appveyor.com/project/richelbilderbeek/beastier",
+    "https://ci.appveyor.com/project/ropensci/beastier",
     "https://codecov.io/github/ropensci/beastier/branch/master",
     "https://travis-ci.org/ropensci/beastier",
-    "https://ci.appveyor.com/project/richelbilderbeek/beastier",
+    "https://ci.appveyor.com/project/ropensci/beastier",
     "https://codecov.io/github/ropensci/beastier/branch/develop"
   ],
   "citation": [
