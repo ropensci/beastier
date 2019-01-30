@@ -102,6 +102,10 @@ If \code{rng_seed} is \link{NA}, BEAST2 will pick a random seed}
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
 
+\item{beast2_options}{a set of BEAST2 options,
+that are the R equivalent of the BEAST2 command-line options,
+as can be created by \link{create_beast2_options}}
+
 \item{n_threads}{the number of computational threads to use.
 Use \link{NA} to use the BEAST2 default of 1.}
 

@@ -8,6 +8,9 @@
 #'   (usually has a \code{.jar} extension).
 #'   Use \link{get_default_beast2_jar_path} to get
 #'   the default BEAST jar file's path
+#' @param beast2_options a set of BEAST2 options,
+#'   that are the R equivalent of the BEAST2 command-line options,
+#'   as can be created by \link{create_beast2_options}
 #' @param beast2_path name of either a BEAST2 binary file
 #'   (usually simply \code{beast})
 #'   or a BEAST2 jar file

@@ -10,6 +10,10 @@ run_beast2_from_options(input_filename,
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file.
 This file usually has an \code{.xml} extension.}
+
+\item{beast2_options}{a set of BEAST2 options,
+that are the R equivalent of the BEAST2 command-line options,
+as can be created by \link{create_beast2_options}}
 }
 \description{
 Run BEAST2
