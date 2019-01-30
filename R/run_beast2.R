@@ -6,9 +6,9 @@
 #'   and \code{output_state_filenames}
 #' @export
 #' @examples
-#'   output_log_filename <- "out.log"
-#'   output_trees_filenames <- "out.trees"
-#'   output_state_filename <- "out.state"
+#'   output_log_filename <- tempfile(fileext = ".log")
+#'   output_trees_filenames <- tempfile(fileext = ".trees")
+#'   output_state_filename <- tempfile(fileext = ".xml.state")
 #'
 #'   output <- run_beast2(
 #'     input_filename = get_beastier_path("2_4.xml"),
