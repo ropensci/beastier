@@ -21,7 +21,7 @@ Run BEAST2
     output_state_filename = tempfile(fileext = ".xml.state")
   )
 
-  output <- run_beast2(
+  output <- run_beast2_from_options(
     input_filename = get_beastier_path("2_4.xml"),
     beast2_options = beast2_options
   )
