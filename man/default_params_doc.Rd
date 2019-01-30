@@ -85,7 +85,9 @@ function. BEAST2 uses this file as input.}
    \item{the \code{.trees} files created by BEAST2 exist}
 }}
 
-\item{rng_seed}{the random number generator seed}
+\item{rng_seed}{the random number generator seed of the BEAST2 run.
+Must be a non-zero positive integer value or \link{NA}.
+If \code{rng_seed} is \link{NA}, BEAST2 will pick a random seed}
 
 \item{sequence_length}{a DNA sequence length, in base pairs}
 
@@ -99,6 +101,21 @@ function. BEAST2 uses this file as input.}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
+
+\item{n_threads}{the number of computational threads to use.
+Use \link{NA} to use the BEAST2 default of 1.}
+
+\item{output_log_filename}{name of the .log file to create}
+
+\item{output_trees_filenames}{one or more names for .trees file to create.
+There will be one .trees file created per alignment in the input
+file. The number of alignments must equal the number of .trees
+filenames, else an error is thrown. Alignments are sorted alphabetically
+by their IDs}
+
+\item{output_state_filename}{name of the .xml.state file to create}
+
+\item{use_beagle}{use BEAGLE if present}
 }
 \value{
 Nothing. This is an internal function that does nothing

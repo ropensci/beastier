@@ -16,9 +16,12 @@ This file usually has an \code{.xml} extension.}
 stores the state
 (usually has a \code{.xml.state} extension)}
 
-\item{rng_seed}{the random number generator seed}
+\item{rng_seed}{the random number generator seed of the BEAST2 run.
+Must be a non-zero positive integer value or \link{NA}.
+If \code{rng_seed} is \link{NA}, BEAST2 will pick a random seed}
 
-\item{n_threads}{number of threads to use}
+\item{n_threads}{the number of computational threads to use.
+Use \link{NA} to use the BEAST2 default of 1.}
 
 \item{use_beagle}{use BEAGLE if present}
 

@@ -3,7 +3,6 @@
 #' @param output_state_filename name of the BEAST2 output file that
 #'   stores the state
 #'   (usually has a \code{.xml.state} extension)
-#' @param n_threads number of threads to use
 #' @param use_beagle use BEAGLE if present
 #' @return a character vector with the command and
 #'   arguments to call BEAST2

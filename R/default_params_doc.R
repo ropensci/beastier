@@ -40,10 +40,19 @@
 #' @param mcmc one \code{beautier} MCMC
 #' @param misc_options one \code{beautier} misc_options object
 #' @param n_taxa The number of taxa
+#' @param n_threads the number of computational threads to use.
+#' Use \link{NA} to use the BEAST2 default of 1.
 #' @param os name of the operating system,
 #'   must be \code{unix} (Linux, Mac) or \code{win} (Windows)
 #' @param output_filename Name of the XML parameter file created by this
 #'   function. BEAST2 uses this file as input.
+#' @param output_log_filename name of the .log file to create
+#' @param output_trees_filenames one or more names for .trees file to create.
+#'   There will be one .trees file created per alignment in the input
+#'   file. The number of alignments must equal the number of .trees
+#'   filenames, else an error is thrown. Alignments are sorted alphabetically
+#'   by their IDs
+#' @param output_state_filename name of the .xml.state file to create
 #' @param overwrite if TRUE: overwrite the \code{.log}
 #'   and \code{.trees} files if one of these exists.
 #'   If FALSE, BEAST2 will not be started if
@@ -53,12 +62,15 @@
 #'     \item{the \code{.log} file created by BEAST2 exists}
 #'     \item{the \code{.trees} files created by BEAST2 exist}
 #'  }
-#' @param rng_seed the random number generator seed
+#' @param rng_seed the random number generator seed of the BEAST2 run.
+#'   Must be a non-zero positive integer value or \link{NA}.
+#'   If \code{rng_seed} is \link{NA}, BEAST2 will pick a random seed
 #' @param sequence_length a DNA sequence length, in base pairs
 #' @param site_model a \code{beautier} site model
 #' @param site_models one or more \code{beautier} site models
 #' @param tree_prior a \code{beautier} tree prior
 #' @param tree_priors one or more \code{beautier} tree priors
+#' @param use_beagle use BEAGLE if present
 #' @param verbose if TRUE, additional information is displayed, that
 #'   is potentially useful in debugging
 #' @return Nothing. This is an internal function that does nothing

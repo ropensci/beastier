@@ -1,14 +1,5 @@
 #' Run BEAST2
 #' @inheritParams default_params_doc
-#' @param output_log_filename name of the .log file to create
-#' @param output_trees_filenames one or more names for .trees file to create.
-#'   There will be one .trees file created per alignment in the input
-#'   file. The number of alignments must equal the number of .trees
-#'   filenames, else an error is thrown. Alignments are sorted alphabetically
-#'   by their IDs
-#' @param output_state_filename name of the .xml.state file to create
-#' @param n_threads number of threads to use
-#' @param use_beagle use BEAGLE if present
 #' @return The text sent to STDOUT and STDERR.
 #'   It will create the files with names
 #'   \code{output_log_filename}, \code{output_trees_filenames}
@@ -98,9 +89,7 @@ run_beast2 <- function(
     )
   }
 
-  if (!is.na(rng_seed) && !(rng_seed > 0)) {
-    stop("'rng_seed' should be NA or non-zero positive")
-  }
+  check_rng_seed(rng_seed)
 
   alignment_ids <- get_alignment_ids(input_filename) # nolint internal function
 

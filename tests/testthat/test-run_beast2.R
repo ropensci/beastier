@@ -253,7 +253,7 @@ test_that("abuse", {
       rng_seed = 0,
       overwrite = TRUE
     ),
-    "'rng_seed' should be NA or non-zero positive"
+    "'rng_seed' should be one NA or non-zero positive"
   )
 })
 
