@@ -89,7 +89,7 @@ run_beast2 <- function(
     )
   }
 
-  check_rng_seed(rng_seed)
+  check_rng_seed(rng_seed) # nolint beastier function
 
   alignment_ids <- get_alignment_ids(input_filename) # nolint internal function
 

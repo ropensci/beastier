@@ -41,8 +41,8 @@ check_beast2_options <- function(
     !is.character(beast2_options$output_state_filename)) {
     stop("'output_state_filename' must be one character string")
   }
-  check_rng_seed(beast2_options$rng_seed)
-  check_n_threads(beast2_options$n_threads)
+  check_rng_seed(beast2_options$rng_seed) # nolint beastier function
+  check_n_threads(beast2_options$n_threads) # nolint beastier function
   if (length(beast2_options$verbose) != 1 ||
     is.na(beast2_options$use_beagle) ||
     !is.logical(beast2_options$use_beagle)) {
