@@ -7,10 +7,11 @@
 #' @return a character vector with the command and
 #'   arguments to call BEAST2
 #' @examples
-#'   cmds <- beastier:::create_beast2_run_cmd(
+#'   library(beastier)
+#'   cmds <- create_beast2_run_cmd(
 #'     input_filename = "input.xml",
 #'     output_state_filename = "output.xml.state",
-#'     beast2_path = beastier:::get_default_beast2_jar_path()
+#'     beast2_path = get_default_beast2_jar_path()
 #'   )
 #'   testit::assert(cmds[2] == "-jar")
 #' @author Richel J.C. Bilderbeek

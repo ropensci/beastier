@@ -7,7 +7,7 @@ test_that("use, bin", {
   beast2_bin_path <- get_default_beast2_bin_path()
   input_filename <- "input.xml"
 
-  created <- beastier:::create_beast2_validate_cmd(
+  created <- create_beast2_validate_cmd(
     input_filename = input_filename,
     beast2_path = beast2_bin_path
   )
@@ -16,7 +16,7 @@ test_that("use, bin", {
     "-validate",
     input_filename
   )
-  testthat::expect_equal(created, expected)
+  expect_equal(created, expected)
 })
 
 test_that("use, jar", {
@@ -26,7 +26,7 @@ test_that("use, jar", {
   beast2_jar_path <- get_default_beast2_jar_path()
   input_filename <- "input.xml"
 
-  created <- beastier:::create_beast2_validate_cmd(
+  created <- create_beast2_validate_cmd(
     input_filename = input_filename,
     beast2_path = beast2_jar_path
   )
@@ -37,5 +37,5 @@ test_that("use, jar", {
     "-validate",
     paste0("\"", input_filename, "\"")
   )
-  testthat::expect_equal(created, expected)
+  expect_equal(created, expected)
 })
