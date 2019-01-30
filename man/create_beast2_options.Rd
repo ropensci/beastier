@@ -57,10 +57,7 @@ is potentially useful in debugging}
 a BEAST2 options structure
 }
 \description{
-BEAUti options are settings that differ between BEAUti
-version. The use of these options is mostly for testing
-older versions
-Whatever option chosen here, the created XML file will be valid.
+These BEAST2 options are the R equivalent of the command-line options.
 }
 \examples{
   beast2_options <- create_beast2_options()
