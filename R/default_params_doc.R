@@ -84,6 +84,7 @@
 default_params_doc <- function(
   beast2_bin_path,
   beast2_jar_path,
+  beast2_options,
   beast2_path,
   clock_model, clock_models,
   crown_age, crown_ages,
@@ -95,13 +96,18 @@ default_params_doc <- function(
   mcmc,
   misc_options,
   n_taxa,
+  n_threads,
   os,
   output_filename,
+  output_log_filename,
+  output_state_filename,
+  output_trees_filenames,
   overwrite,
   rng_seed,
   sequence_length,
   site_model, site_models,
   tree_prior, tree_priors,
+  use_beagle,
   verbose
 ) {
   # Nothing

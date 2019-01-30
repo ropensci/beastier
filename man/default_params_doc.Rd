@@ -5,12 +5,14 @@
 \title{This function does nothing. It is intended to inherit is parameters'
 documentation.}
 \usage{
-default_params_doc(beast2_bin_path, beast2_jar_path, beast2_path,
-  clock_model, clock_models, crown_age, crown_ages, fasta_filename,
-  fasta_filenames, fixed_crown_age, fixed_crown_ages, initial_phylogenies,
-  input_filename, mcmc, misc_options, n_taxa, os, output_filename,
-  overwrite, rng_seed, sequence_length, site_model, site_models,
-  tree_prior, tree_priors, verbose)
+default_params_doc(beast2_bin_path, beast2_jar_path, beast2_options,
+  beast2_path, clock_model, clock_models, crown_age, crown_ages,
+  fasta_filename, fasta_filenames, fixed_crown_age, fixed_crown_ages,
+  initial_phylogenies, input_filename, mcmc, misc_options, n_taxa,
+  n_threads, os, output_filename, output_log_filename,
+  output_state_filename, output_trees_filenames, overwrite, rng_seed,
+  sequence_length, site_model, site_models, tree_prior, tree_priors,
+  use_beagle, verbose)
 }
 \arguments{
 \item{beast2_bin_path}{name of the BEAST2 binary file
@@ -22,6 +24,10 @@ the default BEAST binary file's path}
 (usually has a \code{.jar} extension).
 Use \link{get_default_beast2_jar_path} to get
 the default BEAST jar file's path}
+
+\item{beast2_options}{a set of BEAST2 options,
+that are the R equivalent of the BEAST2 command-line options,
+as can be created by \link{create_beast2_options}}
 
 \item{beast2_path}{name of either a BEAST2 binary file
 (usually simply \code{beast})
@@ -69,11 +75,24 @@ This file usually has an \code{.xml} extension.}
 
 \item{n_taxa}{The number of taxa}
 
+\item{n_threads}{the number of computational threads to use.
+Use \link{NA} to use the BEAST2 default of 1.}
+
 \item{os}{name of the operating system,
 must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 
 \item{output_filename}{Name of the XML parameter file created by this
 function. BEAST2 uses this file as input.}
+
+\item{output_log_filename}{name of the .log file to create}
+
+\item{output_state_filename}{name of the .xml.state file to create}
+
+\item{output_trees_filenames}{one or more names for .trees file to create.
+There will be one .trees file created per alignment in the input
+file. The number of alignments must equal the number of .trees
+filenames, else an error is thrown. Alignments are sorted alphabetically
+by their IDs}
 
 \item{overwrite}{if TRUE: overwrite the \code{.log}
  and \code{.trees} files if one of these exists.
@@ -99,27 +118,10 @@ If \code{rng_seed} is \link{NA}, BEAST2 will pick a random seed}
 
 \item{tree_priors}{one or more \code{beautier} tree priors}
 
+\item{use_beagle}{use BEAGLE if present}
+
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
-
-\item{beast2_options}{a set of BEAST2 options,
-that are the R equivalent of the BEAST2 command-line options,
-as can be created by \link{create_beast2_options}}
-
-\item{n_threads}{the number of computational threads to use.
-Use \link{NA} to use the BEAST2 default of 1.}
-
-\item{output_log_filename}{name of the .log file to create}
-
-\item{output_trees_filenames}{one or more names for .trees file to create.
-There will be one .trees file created per alignment in the input
-file. The number of alignments must equal the number of .trees
-filenames, else an error is thrown. Alignments are sorted alphabetically
-by their IDs}
-
-\item{output_state_filename}{name of the .xml.state file to create}
-
-\item{use_beagle}{use BEAGLE if present}
 }
 \value{
 Nothing. This is an internal function that does nothing
