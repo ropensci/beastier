@@ -4,8 +4,8 @@
 \alias{create_beast2_options}
 \title{Function to create a set of BEAST2 options.}
 \usage{
-create_beast2_options(input_filename,
-  output_log_filename = tempfile(fileext = "log"),
+create_beast2_options(input_filename = tempfile(fileext = ".xml"),
+  output_log_filename = tempfile(fileext = ".log"),
   output_trees_filenames = tempfile(fileext = ".trees"),
   output_state_filename = tempfile(fileext = ".xml.state"),
   rng_seed = NA, n_threads = NA, use_beagle = FALSE,

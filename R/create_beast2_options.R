@@ -8,8 +8,8 @@
 #'   beast2_options <- create_beast2_options()
 #' @export
 create_beast2_options <- function(
-  input_filename,
-  output_log_filename = tempfile(fileext = "log"),
+  input_filename = tempfile(fileext = ".xml"),
+  output_log_filename = tempfile(fileext = ".log"),
   output_trees_filenames = tempfile(fileext = ".trees"),
   output_state_filename = tempfile(fileext = ".xml.state"),
   rng_seed = NA,
