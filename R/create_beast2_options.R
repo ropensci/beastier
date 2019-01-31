@@ -8,6 +8,7 @@
 #'   beast2_options <- create_beast2_options()
 #' @export
 create_beast2_options <- function(
+  input_filename,
   output_log_filename = tempfile(fileext = "log"),
   output_trees_filenames = tempfile(fileext = ".trees"),
   output_state_filename = tempfile(fileext = ".xml.state"),
@@ -19,6 +20,7 @@ create_beast2_options <- function(
   verbose = FALSE
 ) {
   beast2_options <- list(
+    input_filename = input_filename,
     output_log_filename = output_log_filename,
     output_trees_filenames = output_trees_filenames,
     output_state_filename = output_state_filename,

@@ -18,8 +18,10 @@ check_beast2_options <- function(
   beast2_options
 ) {
   argument_names <- c(
-    "output_log_filename", "output_trees_filenames", "output_state_filename",
-    "rng_seed", "n_threads", "use_beagle", "overwrite", "beast2_path", "verbose"
+    "input_filename", "output_log_filename", "output_trees_filenames",
+    "output_state_filename",
+    "rng_seed", "n_threads", "use_beagle", "overwrite", "beast2_path",
+    "verbose"
   )
   for (arg_name in argument_names) {
     if (!arg_name %in% names(beast2_options)) {
@@ -28,6 +30,10 @@ check_beast2_options <- function(
         "Tip: use 'create_beast2_options'"
       )
     }
+  }
+  if (length(beast2_options$input_filename) != 1 ||
+    !is.character(beast2_options$input_filename)) {
+    stop("'input_filename' must be one character string")
   }
   if (length(beast2_options$output_log_filename) != 1 ||
     !is.character(beast2_options$output_log_filename)) {
