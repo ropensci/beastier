@@ -6,13 +6,13 @@
 documentation.}
 \usage{
 default_params_doc(beast2_bin_path, beast2_jar_path, beast2_options,
-  beast2_path, clock_model, clock_models, crown_age, crown_ages,
-  fasta_filename, fasta_filenames, fixed_crown_age, fixed_crown_ages,
-  initial_phylogenies, input_filename, mcmc, misc_options, n_taxa,
-  n_threads, os, output_filename, output_log_filename,
-  output_state_filename, output_trees_filenames, overwrite, rng_seed,
-  sequence_length, site_model, site_models, tree_prior, tree_priors,
-  use_beagle, verbose)
+  beast2_optionses, beast2_path, clock_model, clock_models, crown_age,
+  crown_ages, fasta_filename, fasta_filenames, fixed_crown_age,
+  fixed_crown_ages, initial_phylogenies, input_filename, mcmc,
+  misc_options, n_taxa, n_threads, os, output_filename,
+  output_log_filename, output_state_filename, output_trees_filenames,
+  overwrite, rng_seed, sequence_length, site_model, site_models,
+  tree_prior, tree_priors, use_beagle, verbose)
 }
 \arguments{
 \item{beast2_bin_path}{name of the BEAST2 binary file
@@ -28,6 +28,12 @@ the default BEAST jar file's path}
 \item{beast2_options}{a set of BEAST2 options,
 that are the R equivalent of the BEAST2 command-line options,
 as can be created by \link{create_beast2_options}}
+
+\item{beast2_optionses}{list of one or more \code{beast2_options}
+structures,
+as can be created by \link{create_beast2_options}.
+Use of reduplicated plural to achieve difference with
+\code{beast2_options}}
 
 \item{beast2_path}{name of either a BEAST2 binary file
 (usually simply \code{beast})

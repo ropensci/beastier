@@ -11,6 +11,11 @@
 #' @param beast2_options a set of BEAST2 options,
 #'   that are the R equivalent of the BEAST2 command-line options,
 #'   as can be created by \link{create_beast2_options}
+#' @param beast2_optionses list of one or more \code{beast2_options}
+#'   structures,
+#'   as can be created by \link{create_beast2_options}.
+#'   Use of reduplicated plural to achieve difference with
+#'   \code{beast2_options}
 #' @param beast2_path name of either a BEAST2 binary file
 #'   (usually simply \code{beast})
 #'   or a BEAST2 jar file
@@ -84,7 +89,7 @@
 default_params_doc <- function(
   beast2_bin_path,
   beast2_jar_path,
-  beast2_options,
+  beast2_options, beast2_optionses,
   beast2_path,
   clock_model, clock_models,
   crown_age, crown_ages,

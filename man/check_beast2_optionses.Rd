@@ -6,6 +6,13 @@
 \usage{
 check_beast2_optionses(beast2_optionses)
 }
+\arguments{
+\item{beast2_optionses}{list of one or more \code{beast2_options}
+structures,
+as can be created by \link{create_beast2_options}.
+Use of reduplicated plural to achieve difference with
+\code{beast2_options}}
+}
 \value{
 nothing
 }
