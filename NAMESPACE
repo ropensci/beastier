@@ -2,6 +2,7 @@
 
 export(are_beast2_input_lines)
 export(check_beast2_options)
+export(check_beast2_optionses)
 export(check_beast2_path)
 export(check_n_threads)
 export(check_rng_seed)
