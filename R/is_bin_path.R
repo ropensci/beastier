@@ -5,21 +5,21 @@
 #' @author Richel J.C. Bilderbeek
 #' @examples
 #'   testthat::expect_true(
-#'     beastier:::is_bin_path("beast")
+#'     beastier::is_bin_path("beast")
 #'   )
 #'   testthat::expect_true(
-#'     beastier:::is_bin_path("BEAST.exe")
+#'     beastier::is_bin_path("BEAST.exe")
 #'   )
 #'   testthat::expect_false(
-#'     beastier:::is_bin_path("beast.jar")
+#'     beastier::is_bin_path("beast.jar")
 #'   )
 #'   testthat::expect_true(
-#'     beastier:::is_bin_path(get_default_beast2_bin_path())
+#'     beastier::is_bin_path(get_default_beast2_bin_path())
 #'   )
 #'   testthat::expect_false(
-#'     beastier:::is_bin_path(get_default_beast2_jar_path())
+#'     beastier::is_bin_path(get_default_beast2_jar_path())
 #'   )
-#' @noRd
+#' @export
 is_bin_path <- function(path) {
   !is.na(stringr::str_match(path, "(.*/)?(beast|BEAST\\.exe)$")[1][1])
 }
@@ -31,13 +31,13 @@ is_bin_path <- function(path) {
 #' @author Richel J.C. Bilderbeek
 #' @examples
 #'   testthat::expect_false(
-#'     beastier:::is_win_bin_path("beast")
+#'     beastier::is_win_bin_path("beast")
 #'   )
 #'   testthat::expect_true(
-#'     beastier:::is_win_bin_path("BEAST.exe")
+#'     beastier::is_win_bin_path("BEAST.exe")
 #'   )
 #'   testthat::expect_false(
-#'     beastier:::is_win_bin_path("beast.jar")
+#'     beastier::is_win_bin_path("beast.jar")
 #'   )
 #' @noRd
 is_win_bin_path <- function(path) {
