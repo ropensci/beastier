@@ -70,7 +70,7 @@ test_that("single alignment, equal RNG seed equal results", {
   testit::assert(!beastier:::files_exist(output_files))
 
   rng_seed <- 42
-  run_beast2(
+  stdout_1 <- run_beast2(
     input_filename = get_beastier_path("2_4.xml"),
     output_log_filename = output_log_filename_1,
     output_trees_filenames = output_trees_filenames_1,
@@ -78,7 +78,7 @@ test_that("single alignment, equal RNG seed equal results", {
     rng_seed = rng_seed,
     overwrite = TRUE
   )
-  run_beast2(
+  stdout_2 <- run_beast2(
     input_filename = get_beastier_path("2_4.xml"),
     output_log_filename = output_log_filename_2,
     output_trees_filenames = output_trees_filenames_2,
@@ -86,8 +86,38 @@ test_that("single alignment, equal RNG seed equal results", {
     rng_seed = rng_seed,
     overwrite = TRUE
   )
+  expect_equal(length(stdout_1), length(stdout_2))
+  expect_equal(2, sum(stdout_1 != stdout_2))
+  expect_true(
+    all(
+      !is.na(
+        stringr::str_match(
+          string = stdout_1[stdout_1 != stdout_2][1],
+          pattern = "^Writing state to file"
+        )
+      )
+    )
+  )
+  expect_true(
+    all(
+      !is.na(
+        stringr::str_match(
+          string = stdout_1[stdout_1 != stdout_2][2],
+          pattern = "^Total calculation time:"
+        )
+      )
+    )
+  )
   lines_1 <- readLines(output_log_filename_1)
   lines_2 <- readLines(output_log_filename_2)
+  expect_identical(lines_1, lines_2)
+
+  lines_1 <- readLines(output_trees_filenames_1, warn = FALSE)
+  lines_2 <- readLines(output_trees_filenames_2, warn = FALSE)
+  expect_identical(lines_1, lines_2)
+
+  lines_1 <- readLines(output_state_filename_1)
+  lines_2 <- readLines(output_state_filename_2)
   expect_identical(lines_1, lines_2)
 })
 
