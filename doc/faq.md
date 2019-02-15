@@ -70,7 +70,7 @@ See [CONTRIBUTING](CONTRIBUTING.md), at 'Submitting bugs'
 
 ### 3.4 How can I indicate something else?
 
-Submit an Issue. Or send an email to Richel Bilderbeek.
+Submit an Issue. Or send an email to Richèl Bilderbeek.
 
 ## [technical](#technical)
 
