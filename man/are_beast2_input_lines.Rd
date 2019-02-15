@@ -46,5 +46,5 @@ Would these lines of text, when written to a file,
 Use \code{\link{is_beast2_input_file}} to check a file
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

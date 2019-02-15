@@ -82,7 +82,7 @@
 #' @param verbose if TRUE, additional information is displayed, that
 #'   is potentially useful in debugging
 #' @return Nothing. This is an internal function that does nothing
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @note This is an internal function, so it should be marked with
 #'   \code{@noRd}. This is not done, as this will disallow all
 #'   functions to find the documentation parameters

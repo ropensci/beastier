@@ -2,7 +2,7 @@
 #' @inheritParams default_params_doc
 #' @return character vector with the names of the .trees files that BEAST2
 #'   will produce
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_trees_filenames <- function(input_filename) {
 

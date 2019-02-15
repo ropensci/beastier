@@ -34,5 +34,5 @@ Is a file a valid BEAST2 input file?
 Use \code{\link{are_beast2_input_lines}} to check the lines
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

@@ -13,5 +13,5 @@ TRUE if run on AppVeyor, FALSE otherwise
 Determines if the environment is AppVeyor
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

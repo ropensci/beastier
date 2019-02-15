@@ -36,5 +36,5 @@ Install BEAST2
   testit::assert(file.exists(get_default_beast2_jar_path()))
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

@@ -1,7 +1,7 @@
 #' Obtains the default path to the Java executable
 #' @inheritParams default_params_doc
 #' @return the default path to the Java executable
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_default_java_path <- function(
   os = rappdirs::app_dir()$os

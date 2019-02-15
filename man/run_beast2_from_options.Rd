@@ -33,5 +33,5 @@ Run BEAST2
 
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

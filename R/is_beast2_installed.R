@@ -6,7 +6,7 @@
 #'   The name of the BEAST2 jar file will be at
 #'   \code{[folder_name]/beast/lib/beast.jar}
 #' @return TRUE if BEAST2 is installed
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 is_beast2_installed <- function(
   folder_name = get_default_beast2_folder(),

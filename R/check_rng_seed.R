@@ -2,7 +2,7 @@
 #'
 #' Will \link{stop} if not.
 #' @inheritParams default_params_doc
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 check_rng_seed <- function(rng_seed) {
   if (length(rng_seed) != 1) {

@@ -36,5 +36,5 @@ Creates the terminal command to validate a BEAST2 input file
   testit::assert(cmds[2] == "-jar")
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

@@ -14,7 +14,7 @@
 #'   bin_path <- get_default_beast2_bin_path()
 #'   jar_path <- get_default_beast2_jar_path()
 #'   testthat::expect_true(def_path == bin_path || def_path == jar_path)
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_default_beast2_path <- function() {
   beastier::get_default_beast2_jar_path()

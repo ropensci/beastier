@@ -2,7 +2,7 @@
 #' @param text the XML as text
 #' @return a vector of duplicate IDs, will be empty if all IDs are unique
 #' @seealso to see if all IDs are unqiue, use \code{\link{has_unique_ids}}
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @examples
 #'   line_1 <- "<parameter id=\"RealParameter.1\" ...</parameter>"
 #'   line_2 <- "<parameter id=\"RealParameter.2\" ...</parameter>"

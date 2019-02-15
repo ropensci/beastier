@@ -2,7 +2,7 @@
 #' Will stop if there is a problem with the input filename.
 #' @inheritParams default_params_doc
 #' @return nothing. Will call \code{\link{stop}} if the input file is invalid
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 check_input_filename <- function(input_filename) {
   if (!file.exists(input_filename)) {
     stop(
@@ -16,7 +16,7 @@ check_input_filename <- function(input_filename) {
 #' Will stop if there is a problem with the input filename.
 #' @inheritParams default_params_doc
 #' @return nothing. Will call \code{\link{stop}} if the input file is invalid
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 check_input_filename_validity <- function(
   input_filename,
   beast2_path,

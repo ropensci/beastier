@@ -26,5 +26,5 @@ Get the alignment ID from a file with one alignment
 
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

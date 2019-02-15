@@ -18,5 +18,5 @@ character vector with the names of the .trees files that BEAST2
 Get the .trees filenames that BEAST2 will produce
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

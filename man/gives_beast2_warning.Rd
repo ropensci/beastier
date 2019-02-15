@@ -37,5 +37,5 @@ Use \code{\link{is_beast2_input_file}} to check if a file is a
   example, as loaded from a file) to be valid BEAST2 input.
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

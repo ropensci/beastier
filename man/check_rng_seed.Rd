@@ -15,5 +15,5 @@ If \code{rng_seed} is \link{NA}, BEAST2 will pick a random seed}
 Will \link{stop} if not.
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

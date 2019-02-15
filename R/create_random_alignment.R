@@ -4,7 +4,7 @@
 #' @param rate mutation rate
 #' @param taxa_name_ext the extension of the taxa names
 #' @return an alignment of class DNAbin
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @examples
 #'  alignment <- beastier:::create_random_alignment(
 #'    n_taxa = 5,

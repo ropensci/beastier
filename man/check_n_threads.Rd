@@ -14,5 +14,5 @@ Use \link{NA} to use the BEAST2 default of 1.}
 Will \link{stop} if not.
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

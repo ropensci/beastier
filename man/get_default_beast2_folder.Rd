@@ -32,5 +32,5 @@ Use \link{get_default_beast2_jar_path} to get the path
   to install BEAST2 to this folder.
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

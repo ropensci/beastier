@@ -17,5 +17,5 @@ nothing. Will stop if the OS is unsupported
 Checks if the operating system is supported
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

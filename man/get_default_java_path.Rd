@@ -17,5 +17,5 @@ the default path to the Java executable
 Obtains the default path to the Java executable
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

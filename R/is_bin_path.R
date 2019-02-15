@@ -2,7 +2,7 @@
 #' Does not check if the file at that path is present
 #' @param path a string to a path
 #' @return TRUE if the path is a path to a BEAST2 binary file
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @examples
 #'   testthat::expect_true(
 #'     beastier::is_bin_path("beast")
@@ -28,7 +28,7 @@ is_bin_path <- function(path) {
 #' Does not check if the file at that path is present
 #' @param path a string to a path
 #' @return TRUE if the path is a path to a BEAST2 binary file
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @examples
 #'   testthat::expect_false(
 #'     beastier::is_win_bin_path("beast")

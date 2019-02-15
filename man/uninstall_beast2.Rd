@@ -21,5 +21,5 @@ must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 Uninstall BEAST2
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

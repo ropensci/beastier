@@ -14,7 +14,7 @@
 #'   testit::assert(file.exists(get_default_beast2_path()))
 #'   testit::assert(file.exists(get_default_beast2_bin_path()))
 #'   testit::assert(file.exists(get_default_beast2_jar_path()))
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 install_beast2 <- function(
   folder_name = rappdirs::user_data_dir(),

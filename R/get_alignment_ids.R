@@ -10,7 +10,7 @@
 #'    == c("anthus_aco","anthus_nd2")
 #'  )
 #'
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_alignment_ids <- function(
   xml_filename

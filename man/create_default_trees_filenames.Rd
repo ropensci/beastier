@@ -30,5 +30,5 @@ the default \code{.trees} filenames as will be created by BEAST
 Create the default \code{.trees} filenames as will be created by BEAST
 }
 \author{
-: Richel J.C. Bilderbeek
+: Richèl J.C. Bilderbeek
 }

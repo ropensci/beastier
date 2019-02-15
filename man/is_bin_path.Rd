@@ -35,5 +35,5 @@ Does not check if the file at that path is present
   )
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

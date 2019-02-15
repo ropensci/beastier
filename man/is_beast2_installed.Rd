@@ -24,5 +24,5 @@ TRUE if BEAST2 is installed
 Checks if BEAST2 is installed
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

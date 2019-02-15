@@ -18,7 +18,7 @@
 #'   testit::assert(file.exists(beast2_options$output_trees_filenames))
 #'   testit::assert(file.exists(beast2_options$output_state_filename))
 #'
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 run_beast2_from_options <- function(
   beast2_options = create_beast2_options()
 ) {

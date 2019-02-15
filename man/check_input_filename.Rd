@@ -19,5 +19,5 @@ Checks the input filename.
 Will stop if there is a problem with the input filename.
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

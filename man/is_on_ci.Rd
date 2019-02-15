@@ -13,5 +13,5 @@ TRUE if run on Travis CI, FALSE otherwise
 Determines if the environment is Travis CI
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

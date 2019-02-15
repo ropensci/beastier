@@ -3,7 +3,7 @@
 #' @return TRUE if all parameter IDs are unique, FALSE otherwise
 #' @seealso to obtain the duplicate parameter IDs, use
 #'   \code{\link{get_duplicate_param_ids}}
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @examples
 #'   line_1 <- "<parameter id=\"RealParameter.1\" ...</parameter>"
 #'   line_2 <- "<parameter id=\"RealParameter.2\" ...</parameter>"

@@ -3,7 +3,7 @@
 #' @inheritParams default_params_doc
 #' @return nothing.
 #'   Will call \code{\link{stop}} if the BEAST2 \code{.jar} path has a problem
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 check_beast2_path <- function(beast2_path) {
   if (!file.exists(beast2_path)) {

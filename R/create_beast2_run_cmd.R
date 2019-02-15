@@ -14,7 +14,7 @@
 #'     beast2_path = get_default_beast2_jar_path()
 #'   )
 #'   testit::assert(cmds[2] == "-jar")
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 create_beast2_run_cmd <- function(
   input_filename,

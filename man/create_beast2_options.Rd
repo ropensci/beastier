@@ -67,5 +67,5 @@ These BEAST2 options are the R equivalent of the command-line options.
   beast2_options <- create_beast2_options()
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

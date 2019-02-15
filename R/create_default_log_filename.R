@@ -1,7 +1,7 @@
 #' Create the default \code{.log} filename as will be created by BEAST
 #' @inheritParams default_params_doc
 #' @return the default \code{.log} filename as will be created by BEAST
-#' @author: Richel J.C. Bilderbeek
+#' @author: Richèl J.C. Bilderbeek
 create_default_log_filename <- function(
   input_filename,
   beast2_path = get_default_beast2_path(),

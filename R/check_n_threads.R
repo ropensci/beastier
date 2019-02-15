@@ -2,7 +2,7 @@
 #'
 #' Will \link{stop} if not.
 #' @inheritParams default_params_doc
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 check_n_threads <- function(n_threads) {
   if (length(n_threads) != 1) {

@@ -2,7 +2,7 @@
 #' @inheritParams default_params_doc
 #' @param taxa_name_ext the extension of the taxa names
 #' @return Nothing, creates a FASTA file
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @noRd
 create_random_fasta <- function(
   n_taxa,

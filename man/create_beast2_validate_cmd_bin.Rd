@@ -35,5 +35,5 @@ using a call to the \code{beast.jar} file
   testit::assert(cmds[2] == "-validate")
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

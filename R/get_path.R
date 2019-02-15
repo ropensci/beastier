@@ -2,7 +2,7 @@
 #' @param filename the file's name, without the path
 #' @return the full path to the filename. Will \code{stop} if the file
 #'   is absent in the \code{inst/extdata} folder
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @seealso for more files, use \code{\link{get_beastier_paths}}
 #' @examples
 #'   testit::assert(

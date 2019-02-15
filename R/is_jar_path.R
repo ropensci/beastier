@@ -2,7 +2,7 @@
 #' Does not check if the file at that path is present
 #' @param path a string to a path
 #' @return TRUE if the path is a path to a BEAST2 jar file
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @examples
 #'   testthat::expect_false(
 #'     beastier:::is_jar_path("beast")

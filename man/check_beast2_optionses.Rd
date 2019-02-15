@@ -37,5 +37,5 @@ Use \link{create_beast2_options} to create a valid
   BEAST2 options object
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

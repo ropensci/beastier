@@ -2,7 +2,7 @@
 #' @inheritParams default_params_doc
 #' @param taxa_name_ext the extension of the taxa names
 #' @return a phylogeny of class \code{phylo}
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @noRd
 create_random_phylogeny <- function(
   n_taxa = n_taxa,

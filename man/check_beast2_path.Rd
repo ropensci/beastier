@@ -26,5 +26,5 @@ Checks the BEAST2 \code{.jar} path.
 Will stop if there is a problem with the BEAST2 \code{.jar} path.
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

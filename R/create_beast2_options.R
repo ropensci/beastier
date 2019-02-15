@@ -3,7 +3,7 @@
 #' These BEAST2 options are the R equivalent of the command-line options.
 #' @inheritParams default_params_doc
 #' @return a BEAST2 options structure
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @examples
 #'   beast2_options <- create_beast2_options()
 #' @export

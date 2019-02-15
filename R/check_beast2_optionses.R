@@ -17,7 +17,7 @@
 #'  testthat::expect_error(check_beast2_optionses("nonsense"))
 #'  testthat::expect_error(check_beast2_optionses(NULL))
 #'  testthat::expect_error(check_beast2_optionses(NA))
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 check_beast2_optionses <- function(
   beast2_optionses

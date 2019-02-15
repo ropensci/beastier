@@ -61,5 +61,5 @@ Creates the terminal command to run BEAST2
   testit::assert(cmds[2] == "-jar")
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }

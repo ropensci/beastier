@@ -22,7 +22,7 @@
 #'   testit::assert(file.exists(output_trees_filenames))
 #'   testit::assert(file.exists(output_state_filename))
 #'
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 run_beast2 <- function(
   input_filename,
   output_log_filename = create_default_log_filename(

@@ -14,7 +14,7 @@
 #'       )
 #'     )
 #'   }
-#' @author Richel J.C. Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_default_beast2_jar_path <- function(
   os = rappdirs::app_dir()$os

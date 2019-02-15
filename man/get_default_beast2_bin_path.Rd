@@ -33,5 +33,5 @@ Use \link{get_default_beast2_folder} to get the default
   to install BEAST2 to this location.
 }
 \author{
-Richel J.C. Bilderbeek
+Richèl J.C. Bilderbeek
 }
