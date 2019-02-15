@@ -22,9 +22,7 @@ Run BEAST2
     output_state_filename = tempfile(fileext = ".xml.state")
   )
 
-  output <- run_beast2_from_options(
-    beast2_options = beast2_options
-  )
+  output <- run_beast2_from_options(beast2_options)
 
   testit::assert(length(output) > 40)
   testit::assert(file.exists(beast2_options$output_log_filename))

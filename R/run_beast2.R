@@ -1,6 +1,6 @@
 #' Run BEAST2
 #' @inheritParams default_params_doc
-#' @return The text sent to STDOUT and STDERR.
+#' @return The text sent to \code{STDOUT} and \code{STDERR}.
 #'   It will create the files with names
 #'   \code{output_log_filename}, \code{output_trees_filenames}
 #'   and \code{output_state_filenames}

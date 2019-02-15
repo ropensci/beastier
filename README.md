@@ -13,16 +13,16 @@ develop|[![Build Status](https://travis-ci.org/ropensci/beastier.svg?branch=deve
 
 ![beastier logo](pics/beastier_logo.png)
 
-`beastier` is part of the [babette](https://github.com/ropensci/babette) package suite:
+`beastier` is part of the [`babette`](https://github.com/ropensci/babette) package suite:
 
- * [beautier](https://github.com/ropensci/beautier) creates BEAST2 input (`.xml`) files.
- * [beastier](https://github.com/ropensci/beastier) runs BEAST2
- * [mauricer](https://github.com/ropensci/mauricer): install BEAST2 packages
- * [tracerer](https://github.com/ropensci/tracerer) pastes BEAST2 output (`.log`, `.trees`, etc) files.
+ * [`beautier`](https://github.com/ropensci/beautier) creates BEAST2 input (`.xml`) files.
+ * [`beastier`](https://github.com/ropensci/beastier) runs BEAST2
+ * [`mauricer`](https://github.com/ropensci/mauricer): install BEAST2 packages
+ * [`tracerer`](https://github.com/ropensci/tracerer) pastes BEAST2 output (`.log`, `.trees`, etc) files.
 
 Related R packages:
 
- * [lumier](https://github.com/ropensci/lumier): Shiny app to help create the function call needed
+ * [`lumier`](https://github.com/ropensci/lumier): Shiny app to help create the function call needed
 
 ## Example
 
@@ -84,7 +84,7 @@ Sure, just add an Issue. Or send an email.
 
 Article about `babette`:
 
- * Bilderbeek, Richèl JC, and Rampal S. Etienne. "babette: BEAUti 2, BEAST 2 and Tracer for R." Methods in Ecology and Evolution (2018). https://doi.org/10.1111/2041-210X.13032
+ * Bilderbeek, Richèl JC, and Rampal S. Etienne. "`babette`: BEAUti 2, BEAST 2 and Tracer for R." Methods in Ecology and Evolution (2018). https://doi.org/10.1111/2041-210X.13032
 
 FASTA files `anthus_aco.fas` and `anthus_nd2.fas` from:
  

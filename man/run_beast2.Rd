@@ -59,7 +59,7 @@ the default BEAST jar file's path}
 is potentially useful in debugging}
 }
 \value{
-The text sent to STDOUT and STDERR.
+The text sent to \code{STDOUT} and \code{STDERR}.
   It will create the files with names
   \code{output_log_filename}, \code{output_trees_filenames}
   and \code{output_state_filenames}
