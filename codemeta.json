@@ -196,7 +196,7 @@
   ],
   "releaseNotes": "https://github.com/ropensci/beastier/blob/master/NEWS.md",
   "readme": "https://github.com/ropensci/beastier/blob/master/README.md",
-  "fileSize": "102.913KB",
+  "fileSize": "103.039KB",
   "contIntegration": [
     "https://travis-ci.org",
     "https://www.appveyor.com",
@@ -236,5 +236,9 @@
       }
     }
   ],
-  "keywords": ["r", "r-package", "rstats"]
+  "keywords": [
+    "r",
+    "r-package",
+    "rstats"
+  ]
 }
