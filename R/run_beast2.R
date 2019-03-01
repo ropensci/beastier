@@ -56,12 +56,12 @@ run_beast2 <- function(
     verbose = verbose
   )
 
-  if (file.exists(output_log_filename) && overwrite == FALSE) {
+  if (any(file.exists(output_log_filename)) && overwrite == FALSE) {
     stop("Will not overwrite 'output_log_filename' ('",
       output_log_filename, "') with 'overwrite' is FALSE"
     )
   }
-  if (file.exists(output_trees_filenames) && overwrite == FALSE) {
+  if (any(file.exists(output_trees_filenames)) && overwrite == FALSE) {
     stop("Will not overwrite 'output_trees_filenames' ('",
       output_trees_filenames, "') with 'overwrite' is FALSE"
     )
@@ -73,7 +73,7 @@ run_beast2 <- function(
     beast2_path = beast2_path,
     verbose = verbose
   )
-  if (file.exists(beast_log_filename) && overwrite == FALSE) {
+  if (any(file.exists(beast_log_filename)) && overwrite == FALSE) {
     stop("Cannot overwrite the .log file created by BEAST2 ('",
       beast_log_filename, "') with 'overwrite' is FALSE"
     )
@@ -83,7 +83,7 @@ run_beast2 <- function(
     beast2_path = beast2_path,
     verbose = verbose
   )
-  if (file.exists(beast_trees_filename) && overwrite == FALSE) {
+  if (any(file.exists(beast_trees_filename)) && overwrite == FALSE) {
     stop("Cannot overwrite the .trees files created by BEAST2 ('",
       beast_trees_filename, "') with 'overwrite' is FALSE"
     )
@@ -170,8 +170,8 @@ run_beast2 <- function(
       file.exists(output_trees_filenames))
     )
   }
-  testit::assert(file.exists(output_log_filename))
-  testit::assert(file.exists(output_state_filename))
-  testit::assert(files_exist(output_trees_filenames)) # nolint internal function
+  testit::assert(all(file.exists(output_log_filename)))
+  testit::assert(all(file.exists(output_state_filename)))
+  testit::assert(all(file.exists(output_trees_filenames)))
   output
 }
