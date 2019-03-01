@@ -18,5 +18,5 @@
 #'   )
 #' @noRd
 is_jar_path <- function(path) {
-  !is.na(stringr::str_match(path, "(.*/)?beast\\.jar$")[1][1])
+  !is_one_na(stringr::str_match(path, "(.*/)?beast\\.jar$")[1][1])
 }
