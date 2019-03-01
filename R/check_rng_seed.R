@@ -11,13 +11,13 @@ check_rng_seed <- function(rng_seed) {
       "Actual length: ", length(rng_seed)
     )
   }
-  if (!is_one_na(rng_seed) && !is.numeric(rng_seed)) {
+  if (!beautier::is_one_na(rng_seed) && !is.numeric(rng_seed)) {
     stop(
       "'rng_seed' should be one NA or one non-zero positive value.\n",
       "Actual value: ", rng_seed
     )
   }
-  if (!is_one_na(rng_seed) && !(rng_seed > 0)) {
+  if (!beautier::is_one_na(rng_seed) && !(rng_seed > 0)) {
     stop(
       "'rng_seed' should be one NA or one non-zero positive value.\n",
       "Actual value: ", rng_seed

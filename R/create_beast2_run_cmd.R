@@ -43,11 +43,11 @@ create_beast2_run_cmd <- function(
     cmds <- beast2_path
     testit::assert(file.exists(cmds[1]))
   }
-  if (!is_one_na(rng_seed)) {
+  if (!beautier::is_one_na(rng_seed)) {
     cmds <- c(cmds, "-seed")
     cmds <- c(cmds, rng_seed)
   }
-  if (!is_one_na(n_threads)) {
+  if (!beautier::is_one_na(n_threads)) {
     cmds <- c(cmds, "-threads")
     cmds <- c(cmds, n_threads)
   }

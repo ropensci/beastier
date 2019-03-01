@@ -90,7 +90,7 @@ test_that("single alignment, equal RNG seed equal results", {
   expect_equal(2, sum(stdout_1 != stdout_2))
   expect_true(
     all(
-      !is_one_na(
+      !beautier::is_one_na(
         stringr::str_match(
           string = stdout_1[stdout_1 != stdout_2][1],
           pattern = "^Writing state to file"
@@ -100,7 +100,7 @@ test_that("single alignment, equal RNG seed equal results", {
   )
   expect_true(
     all(
-      !is_one_na(
+      !beautier::is_one_na(
         stringr::str_match(
           string = stdout_1[stdout_1 != stdout_2][2],
           pattern = "^Total calculation time:"

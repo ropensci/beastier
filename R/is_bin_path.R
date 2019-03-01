@@ -21,7 +21,9 @@
 #'   )
 #' @export
 is_bin_path <- function(path) {
-  !is_one_na(stringr::str_match(path, "(.*/)?(beast|BEAST\\.exe)$")[1][1])
+  !beautier::is_one_na(stringr::str_match(
+    path, "(.*/)?(beast|BEAST\\.exe)$")[1][1]
+  )
 }
 
 #' Is the path a path to the BEAST2 binary file?
@@ -41,5 +43,7 @@ is_bin_path <- function(path) {
 #'   )
 #' @noRd
 is_win_bin_path <- function(path) {
-  !is_one_na(stringr::str_match(path, "(.*/)?BEAST\\.exe$")[1][1])
+  !beautier::is_one_na(stringr::str_match(
+    path, "(.*/)?BEAST\\.exe$")[1][1]
+  )
 }
