@@ -19,8 +19,6 @@ r_github_packages:
   - jimhester/covr
   - jimhester/lintr
   - MangoTheCat/goodpractice
-  - ropensci/beautier
-  - ropensci/tracerer
   - ropensci/spelling
 
 before_script:
