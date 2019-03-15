@@ -24,7 +24,7 @@ Newest versions at top.
 
 ### NEW FEATURES
 
-  * GitHub repo is owned by `ropensci`
+  * GitHub repository is owned by `ropensci`
 
 ### MINOR IMPROVEMENTS
 
