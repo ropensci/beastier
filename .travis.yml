@@ -26,14 +26,9 @@ r_github_packages:
 
 before_script:
   - # Java
-  - # if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then brew cask install java; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then R CMD javareconf; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then R --quiet -e 'install.packages("rJava", type="source", repos="http://cran.us.r-project.org")'; fi
-  - # Java 8
-  - # if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install -qq oracle-java8-installer; fi
-  - # if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install oracle-java8-set-default; fi
-  - Rscript -e "source(\"R/install_beast2.R\"); source(\"R/get_default_beast2_download_url.R\"); source(\"R/check_os.R\"); install_beast2()"
-  #- ./install_beast2
+  - #Rscript -e "source(\"R/install_beast2.R\"); source(\"R/get_default_beast2_download_url.R\"); source(\"R/check_os.R\"); install_beast2()"
   # proselint
   - sudo pip install proselint
   # markdown-link-check, temporarily disabled due to CERT_UNTRUSTED
