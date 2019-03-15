@@ -30,10 +30,12 @@ a character vector, of which the first element
 Creates the terminal command to validate a BEAST2 input file
 }
 \examples{
-  cmds <- create_beast2_validate_cmd(
-    input_filename = "input.xml"
-  )
-  testit::assert(cmds[2] == "-jar")
+  if (is_beast2_installed()) {
+    cmds <- create_beast2_validate_cmd(
+      input_filename = "input.xml"
+    )
+    testit::assert(cmds[2] == "-jar")
+  }
 }
 \author{
 Richèl J.C. Bilderbeek

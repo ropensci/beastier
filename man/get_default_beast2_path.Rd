@@ -13,10 +13,12 @@ the default BEAST2 path
 Get the default BEAST2 path
 }
 \examples{
-  def_path <- get_default_beast2_path()
-  bin_path <- get_default_beast2_bin_path()
-  jar_path <- get_default_beast2_jar_path()
-  testthat::expect_true(def_path == bin_path || def_path == jar_path)
+  if (is_beast2_installed()) {
+    def_path <- get_default_beast2_path()
+    bin_path <- get_default_beast2_bin_path()
+    jar_path <- get_default_beast2_jar_path()
+    testthat::expect_true(def_path == bin_path || def_path == jar_path)
+  }
 }
 \seealso{
 Use \link{get_default_beast2_bin_path}

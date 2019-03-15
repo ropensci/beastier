@@ -53,10 +53,11 @@ are_beast2_input_lines <- function(
 #' @seealso Use \code{\link{is_beast2_input_file}} to check a file
 #' @examples
 #'   library(beastier)
-#'   testit::assert(is_beast2_installed())
-#'   beast2_filename <- get_beastier_path("anthus_2_4.xml")
-#'   text <- readLines(beast2_filename)
-#'   testit::assert(beastier:::are_beast2_input_lines_deep(text))
+#'   if (is_beast2_installed()) {
+#'     beast2_filename <- get_beastier_path("anthus_2_4.xml")
+#'     text <- readLines(beast2_filename)
+#'     testit::assert(beastier:::are_beast2_input_lines_deep(text))
+#'   }
 are_beast2_input_lines_deep <- function(
   lines,
   verbose = FALSE,

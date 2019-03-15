@@ -18,21 +18,13 @@ Is the path a path to the BEAST2 binary file?
 Does not check if the file at that path is present
 }
 \examples{
-  testthat::expect_true(
-    beastier::is_bin_path("beast")
-  )
-  testthat::expect_true(
-    beastier::is_bin_path("BEAST.exe")
-  )
-  testthat::expect_false(
-    beastier::is_bin_path("beast.jar")
-  )
-  testthat::expect_true(
-    beastier::is_bin_path(get_default_beast2_bin_path())
-  )
-  testthat::expect_false(
-    beastier::is_bin_path(get_default_beast2_jar_path())
-  )
+  if (is_beast2_installed()) {
+    testthat::expect_true(is_bin_path("beast"))
+    testthat::expect_true(is_bin_path("BEAST.exe"))
+    testthat::expect_false(is_bin_path("beast.jar"))
+    testthat::expect_true(is_bin_path(get_default_beast2_bin_path()))
+    testthat::expect_false(is_bin_path(get_default_beast2_jar_path()))
+  }
 }
 \author{
 Richèl J.C. Bilderbeek

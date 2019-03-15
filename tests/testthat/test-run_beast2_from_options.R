@@ -2,6 +2,10 @@ context("test-run_beast2_from_options")
 
 test_that("use", {
 
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
+
   expect_silent(
     run_beast2_from_options(
       create_beast2_options(

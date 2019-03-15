@@ -14,7 +14,7 @@ uninstall_beast2 <- function(
   if (!is_beast2_installed(
     folder_name = folder_name,
     os = os)) {
-    stop("Cannot uninstall absent BEAST2 at")
+    stop("Cannot uninstall absent BEAST2 at", folder_name)
   }
   check_os(os = os) # nolint internal function
   jar_file_path <- file.path(folder_name, "BEAST", "lib", "beast.jar")

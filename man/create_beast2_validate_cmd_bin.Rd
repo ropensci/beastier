@@ -28,11 +28,13 @@ Creates the terminal command to validate a BEAST2 input file
 using a call to the \code{beast.jar} file
 }
 \examples{
-  cmds <- create_beast2_validate_cmd_bin(
-    input_filename = "input.xml"
-  )
-  testit::assert(length(cmds) == 3)
-  testit::assert(cmds[2] == "-validate")
+  if (is_beast2_installed()) {
+    cmds <- create_beast2_validate_cmd_bin(
+      input_filename = "input.xml"
+    )
+    testit::assert(length(cmds) == 3)
+    testit::assert(cmds[2] == "-validate")
+  }
 }
 \author{
 Richèl J.C. Bilderbeek

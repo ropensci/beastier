@@ -17,7 +17,7 @@ the default BEAST2 jar file's path
 Get the default BEAST2 jar file's path
 }
 \examples{
-  if (rappdirs::app_dir()$os == "unix") {
+  if (is_beast2_installed() && rappdirs::app_dir()$os == "unix") {
     testit::assert(
       grepl(
         "/home/[A-Za-z0-9_]*/.local/share/beast/lib/beast.jar",

@@ -2,6 +2,10 @@ context("gives_beast2_warning")
 
 test_that("use, bin", {
 
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
+
   testit::assert(is_beast2_installed())
 
   # Binary works under Unix, fails under Windows (see 'abuse' section below)
@@ -16,6 +20,10 @@ test_that("use, bin", {
 })
 
 test_that("use, jar", {
+
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
 
   testit::assert(is_beast2_installed())
 

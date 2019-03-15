@@ -2,6 +2,10 @@ context("get_default_beast2_bin_path")
 
 test_that("use", {
 
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
+
   testit::assert(is_beast2_installed())
 
   if (rappdirs::app_dir()$os == "unix") {

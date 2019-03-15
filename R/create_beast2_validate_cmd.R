@@ -5,10 +5,12 @@
 #'   and the others are arguments (\code{-jar}, in this case, followed
 #'   by more arguments.
 #' @examples
-#'   cmds <- create_beast2_validate_cmd(
-#'     input_filename = "input.xml"
-#'   )
-#'   testit::assert(cmds[2] == "-jar")
+#'   if (is_beast2_installed()) {
+#'     cmds <- create_beast2_validate_cmd(
+#'       input_filename = "input.xml"
+#'     )
+#'     testit::assert(cmds[2] == "-jar")
+#'   }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_beast2_validate_cmd <- function(
@@ -37,11 +39,13 @@ create_beast2_validate_cmd <- function(
 #'   and the others are arguments (\code{-jar}, in this case, followed
 #'   by more arguments.
 #' @examples
-#'   cmds <- create_beast2_validate_cmd_jar(
-#'     input_filename = "input.xml"
-#'   )
-#'   testit::assert(length(cmds) == 5)
-#'   testit::assert(cmds[2] == "-jar")
+#'   if (is_beast2_installed()) {
+#'     cmds <- create_beast2_validate_cmd_jar(
+#'       input_filename = "input.xml"
+#'     )
+#'     testit::assert(length(cmds) == 5)
+#'     testit::assert(cmds[2] == "-jar")
+#'   }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_beast2_validate_cmd_jar <- function(
@@ -69,11 +73,13 @@ create_beast2_validate_cmd_jar <- function(
 #'   and the others are arguments (\code{-jar}, in this case, followed
 #'   by more arguments.
 #' @examples
-#'   cmds <- create_beast2_validate_cmd_bin(
-#'     input_filename = "input.xml"
-#'   )
-#'   testit::assert(length(cmds) == 3)
-#'   testit::assert(cmds[2] == "-validate")
+#'   if (is_beast2_installed()) {
+#'     cmds <- create_beast2_validate_cmd_bin(
+#'       input_filename = "input.xml"
+#'     )
+#'     testit::assert(length(cmds) == 3)
+#'     testit::assert(cmds[2] == "-validate")
+#'   }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_beast2_validate_cmd_bin <- function(

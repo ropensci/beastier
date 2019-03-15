@@ -2,6 +2,9 @@ context("run_beast2")
 
 test_that("single alignment creates all files", {
 
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
 
   output_log_filename <- tempfile(fileext = ".log")
   output_trees_filenames <- tempfile(fileext = ".trees")
@@ -23,35 +26,12 @@ test_that("single alignment creates all files", {
 
   expect_true(beastier:::files_exist(output_files))
 })
-
-test_that("single alignment, WIRITTES setting", {
-
-  output_log_filename <- tempfile(fileext = ".log")
-  output_trees_filenames <- tempfile(fileext = ".trees")
-  output_state_filename <- tempfile(fileext = ".xml.state")
-  output_files <- c(output_log_filename, output_trees_filenames,
-    output_state_filename
-  )
-  testit::assert(!beastier:::files_exist(output_files))
-
-  expect_silent(
-    run_beast2(
-      input_filename = get_beastier_path("2_4.xml"),
-      output_log_filename = output_log_filename,
-      output_trees_filenames = output_trees_filenames,
-      output_state_filename = output_state_filename,
-      rng_seed = 42,
-      n_threads = 8,
-      use_beagle = TRUE,
-      overwrite = TRUE
-    )
-  )
-
-  expect_true(beastier:::files_exist(output_files))
-})
-
 
 test_that("single alignment, equal RNG seed equal results", {
+
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
 
   output_log_filename_1 <- tempfile(fileext = "_1.log")
   output_log_filename_2 <- tempfile(fileext = "_2.log")
@@ -125,6 +105,10 @@ test_that("single alignment, equal RNG seed equal results", {
 
 test_that("two alignments creates all files", {
 
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
+
   output_log_filename <- tempfile(fileext = ".log")
   output_trees_filenames <- c(
     tempfile(fileext = "_a.trees"),
@@ -150,6 +134,10 @@ test_that("two alignments creates all files", {
 })
 
 test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
+
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
 
   output_log_filename <- tempfile(fileext = ".log")
   output_trees_filenames <- c(
@@ -190,6 +178,10 @@ test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
 
 
 test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
+
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
 
   output_log_filename <- tempfile(fileext = ".log")
   output_trees_filenames <- c(
@@ -232,16 +224,11 @@ test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
 })
 
 
-test_that("abuse", {
+test_that("detect errors when BEAST2 need not be installed", {
 
   expect_error(
     run_beast2("abs.ent"),
     "'input_filename' must be the name of an existing file"
-  )
-
-  expect_error(
-    run_beast2(get_beastier_path("anthus_aco.fas")),
-    "'input_filename' must be a valid BEAST2 XML file"
   )
 
   expect_error(
@@ -251,6 +238,19 @@ test_that("abuse", {
     ),
     "'beast2_path' must be the name of an existing file"
   )
+})
+
+test_that("detect errors when BEAST2 is installed", {
+
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
+
+  expect_error(
+    run_beast2(get_beastier_path("anthus_aco.fas")),
+    "'input_filename' must be a valid BEAST2 XML file"
+  )
+
 
   expect_error(
     run_beast2(
@@ -261,6 +261,15 @@ test_that("abuse", {
       "'output_trees_filenames' must have as much elements ",
       "as 'input_filename' has alignments"
     )
+  )
+
+  expect_error(
+    run_beast2(
+      get_beastier_path("anthus_2_4.xml"),
+      rng_seed = 0,
+      overwrite = TRUE
+    ),
+    "'rng_seed' should be one NA or one non-zero positive value"
   )
 
   expect_silent(
@@ -277,59 +286,13 @@ test_that("abuse", {
       overwrite = TRUE
     )
   )
-  expect_error(
-    run_beast2(
-      get_beastier_path("anthus_2_4.xml"),
-      rng_seed = 0,
-      overwrite = TRUE
-    ),
-    "'rng_seed' should be one NA or one non-zero positive value"
-  )
-})
-
-test_that("Create data from anthus_15_15_long.xml", {
-
-  return()
-
-  output_log_filename <- tempfile(fileext = ".log")
-  output_trees_filenames <- c(
-    tempfile(fileext = "_a.trees"),
-    tempfile(fileext = "_b.trees")
-  )
-  output_state_filename <- tempfile(fileext = ".xml.state")
-
-  output_files <- c(output_log_filename, output_trees_filenames,
-    output_state_filename
-  )
-  testit::assert(!beastier:::files_exist(output_files))
-
-  expect_silent(
-    run_beast2(
-      input_filename = get_beastier_path("anthus_15_15_long.xml"),
-      output_log_filename = output_log_filename,
-      output_trees_filenames = output_trees_filenames,
-      output_state_filename = output_state_filename
-    )
-  )
-
-  expect_true(beastier:::files_exist(output_files))
-
-  out <- tracerer::parse_beast_posterior(
-    output_trees_filenames, output_log_filename
-  )
-  n <- length(out$estimates$TreeHeight.aco)
-  expect_true(all.equal(out$estimates$TreeHeight.aco, rep(15, n)))
-
-  # Unexpected: this will fail:
-  # Even though the crown ages of both initial phylogenies have been fixed,
-  # the second TreeHeights will deviate from it
-  expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
-    != TRUE
-  )
-  # Copy those file to where needed
 })
 
 test_that("BEAST2 does not overwrite the log file specified by the user", {
+
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
 
   output_log_filename <- tempfile(fileext = ".log")
 
@@ -349,6 +312,10 @@ test_that("BEAST2 does not overwrite the log file specified by the user", {
 
 test_that("BEAST2 does not overwrite the .trees file specified by the user", {
 
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
+
   output_trees_filename <- tempfile(fileext = ".trees")
 
   # Create files to be detectably overwritten
@@ -367,6 +334,10 @@ test_that("BEAST2 does not overwrite the .trees file specified by the user", {
 })
 
 test_that("BEAST2 does not overwrite its own log file", {
+
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
 
   input_filename <- get_beastier_path("2_4.xml")
 
@@ -396,6 +367,10 @@ test_that("BEAST2 does not overwrite its own log file", {
 })
 
 test_that("BEAST2 does not overwrite its own trees file", {
+
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
 
   input_filename <- get_beastier_path("2_4.xml")
 
@@ -432,6 +407,10 @@ test_that("BEAST2 does not overwrite its own trees file", {
 })
 
 test_that("BEAST2 overwrites log and trees files", {
+
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
 
   input_filename <- get_beastier_path("2_4.xml")
   output_log_filename <- beastier:::create_default_log_filename(
@@ -472,6 +451,11 @@ test_that("BEAST2 overwrites log and trees files", {
 })
 
 test_that("run BEAST2 from jar path", {
+
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
+
   expect_silent(
     run_beast2(
       input_filename = get_beastier_path("2_4.xml"),
@@ -481,6 +465,10 @@ test_that("run BEAST2 from jar path", {
 })
 
 test_that("run BEAST2 from binary path", {
+
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
 
   # Binary fails under Windows, but works under Unix (see 'use' section above)
   if (rappdirs::app_dir()$os == "unix") {
@@ -503,6 +491,11 @@ test_that("run BEAST2 from binary path", {
 })
 
 test_that("run_beast2 produces output", {
+
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
+
   output <- run_beast2(get_beastier_path("2_4.xml"), verbose = TRUE)
   expect_true(length(output) > 50)
 })

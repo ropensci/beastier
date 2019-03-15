@@ -68,22 +68,24 @@ The text sent to \code{STDOUT} and \code{STDERR}.
 Run BEAST2
 }
 \examples{
-  output_log_filename <- tempfile(fileext = ".log")
-  output_trees_filenames <- tempfile(fileext = ".trees")
-  output_state_filename <- tempfile(fileext = ".xml.state")
+  if (is_on_ci()) {
 
-  output <- run_beast2(
-    input_filename = get_beastier_path("2_4.xml"),
-    output_log_filename = output_log_filename,
-    output_trees_filenames = output_trees_filenames,
-    output_state_filename = output_state_filename
-  )
+    output_log_filename <- tempfile(fileext = ".log")
+    output_trees_filenames <- tempfile(fileext = ".trees")
+    output_state_filename <- tempfile(fileext = ".xml.state")
 
-  testit::assert(length(output) > 40)
-  testit::assert(file.exists(output_log_filename))
-  testit::assert(file.exists(output_trees_filenames))
-  testit::assert(file.exists(output_state_filename))
+    output <- run_beast2(
+      input_filename = get_beastier_path("2_4.xml"),
+      output_log_filename = output_log_filename,
+      output_trees_filenames = output_trees_filenames,
+      output_state_filename = output_state_filename
+    )
 
+    testit::assert(length(output) > 40)
+    testit::assert(file.exists(output_log_filename))
+    testit::assert(file.exists(output_trees_filenames))
+    testit::assert(file.exists(output_state_filename))
+  }
 }
 \author{
 Richèl J.C. Bilderbeek

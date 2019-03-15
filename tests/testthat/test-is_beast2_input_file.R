@@ -91,6 +91,10 @@ test_that("abuse", {
 
 test_that("detect warnings", {
 
+  if (!is_beast2_installed()) {
+    skip("BEAST2 not installed. Testing from CRAN?")
+  }
+
   testthat::expect_warning(
     is_beast2_input_file(
       filename = beastier:::get_beastier_path("beast2_warning.xml"),
