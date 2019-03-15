@@ -1,6 +1,6 @@
 Package: beastier
 Type: Package
-Title: beastier: BEAST2 from R
+Title: Call BEAST2 from R
 Version: 2.0.1
 Authors@R: c(
   person("Richèl J.C.", "Bilderbeek", email = "richel@richelbilderbeek.nl", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-1107-7049")),
@@ -35,7 +35,6 @@ Suggests:
   testit,
   testthat,
   tracerer
-VignetteBuilder: knitr
 URL: https://github.com/ropensci/beastier
 BugReports: https://github.com/ropensci/beastier
 Language: en-US
