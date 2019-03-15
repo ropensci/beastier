@@ -2,6 +2,42 @@
 
 Newest versions at top.
 
+## beastier 2.0.1 (2019-03-15)
+
+### NEW FEATURES
+
+  * CRAN and rOpenSci release candidate
+
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
+## beastier 2.0 (2019-01-04)
+
+### NEW FEATURES
+
+  * GitHub repo is owned by `ropensci`
+
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 1.5.2 (2018-10-30)
 
 ### NEW FEATURES
@@ -19,7 +55,6 @@ Newest versions at top.
 ### DEPRECATED AND DEFUNCT
 
   * None
-
 
 ## beastier 1.5.1 (2018-10-26)
 
