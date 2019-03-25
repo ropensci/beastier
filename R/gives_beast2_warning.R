@@ -10,6 +10,8 @@
 #'   Use \code{\link{are_beast2_input_lines}} to check if the text (for
 #'   example, as loaded from a file) to be valid BEAST2 input.
 #' @examples
+#'   library(testthat)
+#'
 #'   if (is_beast2_installed()) {
 #'
 #'     # This file is OK for BEAST2

@@ -31,6 +31,8 @@ Determines if BEAST2 issues a warning
 when using the BEAST2 XML input file
 }
 \examples{
+  library(testthat)
+
   if (is_beast2_installed()) {
 
     # This file is OK for BEAST2
