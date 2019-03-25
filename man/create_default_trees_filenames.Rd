@@ -29,6 +29,13 @@ the default \code{.trees} filenames as will be created by BEAST
 \description{
 Create the default \code{.trees} filenames as will be created by BEAST
 }
+\examples{
+  library(testthat)
+
+  input_filename <- get_beastier_path("2_4.xml")
+  trees_filename <- create_default_trees_filenames(input_filename)
+  expect_equal("test_output_0.trees", trees_filename)
+}
 \author{
 : Richèl J.C. Bilderbeek
 }

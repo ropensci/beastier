@@ -2,6 +2,13 @@
 #' @inheritParams default_params_doc
 #' @return the default \code{.trees} filenames as will be created by BEAST
 #' @author: Richèl J.C. Bilderbeek
+#' @examples
+#'   library(testthat)
+#'
+#'   input_filename <- get_beastier_path("2_4.xml")
+#'   trees_filename <- create_default_trees_filenames(input_filename)
+#'   expect_equal("test_output_0.trees", trees_filename)
+#' @export
 create_default_trees_filenames <- function(
   input_filename,
   beast2_path = get_default_beast2_path(),

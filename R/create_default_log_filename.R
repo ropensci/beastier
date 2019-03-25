@@ -2,6 +2,13 @@
 #' @inheritParams default_params_doc
 #' @return the default \code{.log} filename as will be created by BEAST
 #' @author: Richèl J.C. Bilderbeek
+#' @examples
+#'   library(testthat)
+#'
+#'   input_filename <- get_beastier_path("2_4.xml")
+#'   log_filename <- create_default_log_filename(input_filename)
+#'   expect_equal("test_output_0.log", log_filename)
+#' @export
 create_default_log_filename <- function(
   input_filename,
   beast2_path = get_default_beast2_path(),

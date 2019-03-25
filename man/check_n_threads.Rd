@@ -2,7 +2,7 @@
 % Please edit documentation in R/check_n_threads.R
 \name{check_n_threads}
 \alias{check_n_threads}
-\title{Check if the input is a valid RNG seed.}
+\title{Check if the input is a valid number of threads.}
 \usage{
 check_n_threads(n_threads)
 }
@@ -12,6 +12,19 @@ Use \link{NA} to use the BEAST2 default of 1.}
 }
 \description{
 Will \link{stop} if not.
+}
+\examples{
+  library(testthat)
+
+  expect_silent(check_n_threads(1))
+  expect_silent(check_n_threads(2))
+  expect_silent(check_n_threads(NA))
+
+  expect_error(check_n_threads(-1))
+  expect_error(check_n_threads("nonsense"))
+  expect_error(check_n_threads(c(1, 2)))
+  expect_error(check_n_threads(c()))
+  expect_error(check_n_threads(NULL))
 }
 \author{
 Richèl J.C. Bilderbeek

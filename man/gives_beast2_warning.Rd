@@ -30,6 +30,24 @@ TRUE if the file produces a BEAST2 warning, FALSE if not
 Determines if BEAST2 issues a warning
 when using the BEAST2 XML input file
 }
+\examples{
+  if (is_beast2_installed()) {
+
+    # This file is OK for BEAST2
+    expect_false(
+      gives_beast2_warning(
+        filename = get_beastier_path("2_4.xml")
+      )
+    )
+
+    # BEAST2 will give a warning on this file
+    expect_true(
+      gives_beast2_warning(
+        filename = get_beastier_path("beast2_warning.xml")
+      )
+    )
+  }
+}
 \seealso{
 Use \code{\link{is_beast2_input_file}} to check if a file is a
   valid BEAST2 input file.

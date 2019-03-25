@@ -37,10 +37,11 @@ Would these lines of text, when written to a file,
   result in a valid BEAST2 input file?
 }
 \examples{
-  library(beastier)
+  library(testthat)
+
   beast2_filename <- get_beastier_path("anthus_2_4.xml")
   text <- readLines(beast2_filename)
-  testit::assert(are_beast2_input_lines(text))
+  expect_true(are_beast2_input_lines(text))
 }
 \seealso{
 Use \code{\link{is_beast2_input_file}} to check a file

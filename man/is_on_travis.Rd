@@ -12,6 +12,11 @@ TRUE if run on Travis CI, FALSE otherwise
 \description{
 Determines if the environment is Travis CI
 }
+\examples{
+  if (is_on_travis()) {
+    print("Running on Travis CI")
+  }
+}
 \author{
 Richèl J.C. Bilderbeek
 }

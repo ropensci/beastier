@@ -29,6 +29,13 @@ the default \code{.log} filename as will be created by BEAST
 \description{
 Create the default \code{.log} filename as will be created by BEAST
 }
+\examples{
+  library(testthat)
+
+  input_filename <- get_beastier_path("2_4.xml")
+  log_filename <- create_default_log_filename(input_filename)
+  expect_equal("test_output_0.log", log_filename)
+}
 \author{
 : Richèl J.C. Bilderbeek
 }

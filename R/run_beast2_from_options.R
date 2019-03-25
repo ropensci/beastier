@@ -2,22 +2,24 @@
 #' @inheritParams default_params_doc
 #' @export
 #' @examples
+#'   library(testthat)
+#'
 #'   if (is_on_ci()) {
 #'
 #'     beast2_options <- create_beast2_options(
 #'       input_filename = get_beastier_path("2_4.xml")
 #'     )
 #'
-#'     testit::assert(!file.exists(beast2_options$output_log_filename))
-#'     testit::assert(!file.exists(beast2_options$output_trees_filenames))
-#'     testit::assert(!file.exists(beast2_options$output_state_filename))
+#'     expect_false(file.exists(beast2_options$output_log_filename))
+#'     expect_false(file.exists(beast2_options$output_trees_filenames))
+#'     expect_false(file.exists(beast2_options$output_state_filename))
 #'
 #'     output <- run_beast2_from_options(beast2_options)
 #'
-#'     testit::assert(length(output) > 40)
-#'     testit::assert(file.exists(beast2_options$output_log_filename))
-#'     testit::assert(file.exists(beast2_options$output_trees_filenames))
-#'     testit::assert(file.exists(beast2_options$output_state_filename))
+#'     expect_true(length(output) > 40)
+#'     expect_true(file.exists(beast2_options$output_log_filename))
+#'     expect_true(file.exists(beast2_options$output_trees_filenames))
+#'     expect_true(file.exists(beast2_options$output_state_filename))
 #'   }
 #' @author Richèl J.C. Bilderbeek
 run_beast2_from_options <- function(

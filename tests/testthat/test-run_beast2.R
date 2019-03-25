@@ -165,13 +165,13 @@ test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
   out <- tracerer::parse_beast_posterior(
     output_trees_filenames, output_log_filename
   )
-  n <- length(out$estimates$TreeHeight.aco)
-  expect_true(all.equal(out$estimates$TreeHeight.aco, rep(15, n)))
+  n <- length(out$estimates$TreeHeight.aco) # nolint BEAST2 variable names are not snake_case
+  expect_true(all.equal(out$estimates$TreeHeight.aco, rep(15, n))) # nolint BEAST2 variable names are not snake_case
 
   # Unexpected: this will fail:
   # Even though the crown ages of both initial phylogenies have been fixed,
   # the second TreeHeights will deviate from it
-  expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
+  expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n)) # nolint BEAST2 variable names are not snake_case
     != TRUE
   )
 })
@@ -209,16 +209,16 @@ test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
   out <- tracerer::parse_beast_posterior(
     output_trees_filenames, output_log_filename
   )
-  n <- length(out$estimates$TreeHeight.aco)
+  n <- length(out$estimates$TreeHeight.aco) # nolint BEAST2 variable names are not snake_case
   # Expected: these are all different
-  expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
+  expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n)) # nolint BEAST2 variable names are not snake_case
     != TRUE
   )
 
   # Unexpected: these should be 15, but are not
   # Even though the crown ages of the second phylogeny has been fixed at 15,
   # the second TreeHeights will deviate from it
-  expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n))
+  expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n)) # nolint BEAST2 variable names are not snake_case
     != TRUE
   )
 })

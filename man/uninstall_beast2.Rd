@@ -20,6 +20,20 @@ must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 \description{
 Uninstall BEAST2
 }
+\examples{
+  library(testthat)
+
+  if (is_on_ci() && is_beast2_installed()) {
+
+    uninstall_beast2()
+
+    expect_false(is_beast2_installed())
+
+    install_beast2()
+
+    expect_true(is_beast2_installed())
+  }
+}
 \author{
 Richèl J.C. Bilderbeek
 }

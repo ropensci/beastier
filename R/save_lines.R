@@ -4,9 +4,14 @@
 #' @return Nothing. Will save the lines to file
 #' @author Richèl J.C. Bilderbeek
 #' @examples
+#'   library(testthat)
+#'
 #'   text <- c("hello", "world")
-#'   beastier:::save_lines(filename = "test.txt", lines = text)
-#'   testit::assert(file.exists("test.txt"))
+#'   filename <- tempfile(fileext = ".txt")
+#'
+#'   expect_false(file.exists(filename))
+#'   save_lines(filename = filename, lines = text)
+#'   expect_true(file.exists(filename))
 #' @noRd
 save_lines <- function(filename, lines) {
   my_file <- file(filename)

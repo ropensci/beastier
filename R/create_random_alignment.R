@@ -6,7 +6,7 @@
 #' @return an alignment of class DNAbin
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#'  alignment <- beastier:::create_random_alignment(
+#'  alignment <- create_random_alignment(
 #'    n_taxa = 5,
 #'    sequence_length = 10
 #'  )
