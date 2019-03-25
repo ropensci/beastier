@@ -2,15 +2,20 @@
 % Please edit documentation in R/is_on_ci.R
 \name{is_on_ci}
 \alias{is_on_ci}
-\title{Determines if the environment is Travis CI}
+\title{Determines if the environment is a continuous integration service}
 \usage{
 is_on_ci()
 }
 \value{
-TRUE if run on Travis CI, FALSE otherwise
+TRUE if run on AppVeyor or Travis CI, FALSE otherwise
 }
 \description{
-Determines if the environment is Travis CI
+Determines if the environment is a continuous integration service
+}
+\examples{
+  if (is_on_ci()) {
+    print("Running on a continuous integration service")
+  }
 }
 \author{
 Richèl J.C. Bilderbeek

@@ -2,19 +2,15 @@
 #' @param filename the file's name, without the path
 #' @return the full path to the filename. Will \code{stop} if the file
 #'   is absent in the \code{inst/extdata} folder
-#' @author Richèl J.C. Bilderbeek
 #' @seealso for more files, use \code{\link{get_beastier_paths}}
+#' @author Richèl J.C. Bilderbeek
 #' @examples
-#'   testit::assert(
-#'     is.character(get_beastier_path("beast2_example_output.log"))
-#'   )
-#'   testit::assert(
-#'     is.character(get_beastier_path("beast2_example_output.trees"))
-#'   )
-#'   testit::assert(
-#'     is.character(get_beastier_path("beast2_example_output.xml"))
-#'   )
-#'   testit::assert(
+#'   library(testthat)
+#'
+#'   expect_true(is.character(get_beastier_path("beast2_example_output.log")))
+#'   expect_true(is.character(get_beastier_path("beast2_example_output.trees")))
+#'   expect_true(is.character(get_beastier_path("beast2_example_output.xml")))
+#'   expect_true(
 #'     is.character(get_beastier_path("beast2_example_output.xml.state"))
 #'   )
 #' @export

@@ -30,6 +30,19 @@ TRUE if the file is valid, FALSE if not
 \description{
 Is a file a valid BEAST2 input file?
 }
+\examples{
+  library(testthat)
+
+  if (is_on_ci()) {
+    filename <- get_beastier_path("anthus_2_4.xml")
+    expect_true(file.exists(filename))
+    expect_true(is_beast2_input_file(filename))
+
+    filename <- get_beastier_path("beast2_example_output.log")
+    expect_true(file.exists(filename))
+    expect_false(is_beast2_input_file(filename))
+  }
+}
 \seealso{
 Use \code{\link{are_beast2_input_lines}} to check the lines
 }

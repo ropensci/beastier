@@ -4,18 +4,12 @@
 #' @return TRUE if the path is a path to a BEAST2 jar file
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#'   testthat::expect_false(
-#'     beastier:::is_jar_path("beast")
-#'   )
-#'   testthat::expect_true(
-#'     beastier:::is_jar_path("beast.jar")
-#'   )
-#'   testthat::expect_false(
-#'     beastier:::is_jar_path(get_default_beast2_bin_path())
-#'   )
-#'   testthat::expect_true(
-#'     beastier:::is_jar_path(get_default_beast2_jar_path())
-#'   )
+#'   library(testthat)
+#'
+#'   expect_false(is_jar_path("beast"))
+#'   expect_true(is_jar_path("beast.jar"))
+#'   expect_false(is_jar_path(get_default_beast2_bin_path()))
+#'   expect_true(is_jar_path(get_default_beast2_jar_path()))
 #' @noRd
 is_jar_path <- function(path) {
   !beautier::is_one_na(stringr::str_match(

@@ -64,7 +64,22 @@ a BEAST2 options structure
 These BEAST2 options are the R equivalent of the command-line options.
 }
 \examples{
+  library(testthat)
+
   beast2_options <- create_beast2_options()
+
+  expect_true("input_filename" \%in\% names(beast2_options))
+  expect_true("output_log_filename" \%in\% names(beast2_options))
+  expect_true("output_trees_filenames" \%in\% names(beast2_options))
+  expect_true("output_state_filename" \%in\% names(beast2_options))
+  expect_true("rng_seed" \%in\% names(beast2_options))
+  expect_true("n_threads" \%in\% names(beast2_options))
+  expect_true("use_beagle" \%in\% names(beast2_options))
+  expect_true("overwrite" \%in\% names(beast2_options))
+  expect_true("beast2_path" \%in\% names(beast2_options))
+  expect_true("verbose" \%in\% names(beast2_options))
+
+  expect_silent(check_beast2_options(beast2_options))
 }
 \author{
 Richèl J.C. Bilderbeek

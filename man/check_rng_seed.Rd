@@ -14,6 +14,20 @@ If \code{rng_seed} is \link{NA}, BEAST2 will pick a random seed}
 \description{
 Will \link{stop} if not.
 }
+\examples{
+  library(testthat)
+
+  expect_silent(check_rng_seed(1))
+  expect_silent(check_rng_seed(2))
+  expect_silent(check_rng_seed(NA))
+
+  expect_error(check_rng_seed(0))
+  expect_error(check_rng_seed(-1))
+  expect_error(check_rng_seed("nonsense"))
+  expect_error(check_rng_seed(c(1, 2)))
+  expect_error(check_rng_seed(c()))
+  expect_error(check_rng_seed(NULL))
+}
 \author{
 Richèl J.C. Bilderbeek
 }

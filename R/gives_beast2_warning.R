@@ -9,6 +9,23 @@
 #'   valid BEAST2 input file.
 #'   Use \code{\link{are_beast2_input_lines}} to check if the text (for
 #'   example, as loaded from a file) to be valid BEAST2 input.
+#' @examples
+#'   if (is_beast2_installed()) {
+#'
+#'     # This file is OK for BEAST2
+#'     expect_false(
+#'       gives_beast2_warning(
+#'         filename = get_beastier_path("2_4.xml")
+#'       )
+#'     )
+#'
+#'     # BEAST2 will give a warning on this file
+#'     expect_true(
+#'       gives_beast2_warning(
+#'         filename = get_beastier_path("beast2_warning.xml")
+#'       )
+#'     )
+#'   }
 #' @export
 gives_beast2_warning <- function(
   filename,

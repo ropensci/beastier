@@ -12,6 +12,11 @@ TRUE if run on AppVeyor, FALSE otherwise
 \description{
 Determines if the environment is AppVeyor
 }
+\examples{
+  if (is_on_appveyor()) {
+    print("Running on AppVeyor")
+  }
+}
 \author{
 Richèl J.C. Bilderbeek
 }

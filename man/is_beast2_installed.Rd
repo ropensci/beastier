@@ -23,6 +23,11 @@ TRUE if BEAST2 is installed
 \description{
 Checks if BEAST2 is installed
 }
+\examples{
+  if (is_beast2_installed()) {
+    print("BEAST2 is installed")
+  }
+}
 \author{
 Richèl J.C. Bilderbeek
 }

@@ -6,8 +6,10 @@
 #'   Use \link{install_beast2} with default arguments
 #'   to install BEAST2 to this location.
 #' @examples
+#'   library(testthat)
+#'
 #'   if (is_beast2_installed() && rappdirs::app_dir()$os == "unix") {
-#'     testit::assert(
+#'     expect_true(
 #'       grepl(
 #'         "/home/[A-Za-z0-9_]*/.local/share/beast/lib/beast.jar",
 #'         get_default_beast2_jar_path()

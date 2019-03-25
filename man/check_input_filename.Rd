@@ -18,6 +18,16 @@ nothing. Will call \code{\link{stop}} if the input file is invalid
 Checks the input filename.
 Will stop if there is a problem with the input filename.
 }
+\examples{
+  library(testthat)
+
+  expect_error(check_input_filename(tempfile()))
+  expect_silent(
+    check_input_filename(
+      get_beastier_path("beast2_example_output.log")
+    )
+  )
+}
 \author{
 Richèl J.C. Bilderbeek
 }
