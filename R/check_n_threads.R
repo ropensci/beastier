@@ -23,7 +23,7 @@ check_n_threads <- function(n_threads) {
       "Actual number of values: ", length(n_threads)
     )
   }
-  if (beautier::is_one_na(n_threads)) return ()
+  if (beautier::is_one_na(n_threads)) return()
   if (!is.numeric(n_threads)) {
     stop(
       "'n_threads' should be one NA or one non-zero positive value.\n",
