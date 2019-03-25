@@ -18,7 +18,7 @@
 #'   expect_true(files_exist(c(filename_1, filename_2)))
 #'   expect_false(files_exist(c(filename_1, absent)))
 #'   expect_false(files_exist(c(absent, filename_2)))
-#' @noRd
+#' @export
 files_exist <- function(filenames) {
   for (filename in filenames) {
     if (!file.exists(filename)) {
