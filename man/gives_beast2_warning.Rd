@@ -33,7 +33,7 @@ when using the BEAST2 XML input file
 \examples{
   library(testthat)
 
-  if (is_beast2_installed()) {
+  if (is_beast2_installed() && rappdirs::app_dir()$os == "unix") {
 
     # This file is OK for BEAST2
     expect_false(
