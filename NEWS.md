@@ -10,7 +10,7 @@ Newest versions at top.
 
 ### MINOR IMPROVEMENTS
 
-  * Documentation examples work on MacOS
+  * Documentation examples work on macOS
 
 ### BUG FIXES
 

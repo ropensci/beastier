@@ -210,7 +210,7 @@
   ],
   "releaseNotes": "https://github.com/ropensci/beastier/blob/master/NEWS.md",
   "readme": "https://github.com/ropensci/beastier/blob/master/README.md",
-  "fileSize": "89.73KB",
+  "fileSize": "89.469KB",
   "contIntegration": [
     "https://travis-ci.org",
     "https://www.appveyor.com",
