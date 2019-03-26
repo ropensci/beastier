@@ -38,5 +38,5 @@ get_default_beast2_bin_path <- function(
       "beast"
     )
   }
-  normalizePath(beast2_bin_raw_path)
+  normalizePath(beast2_bin_raw_path, mustWork = FALSE)
 }
