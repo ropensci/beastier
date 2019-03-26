@@ -12,9 +12,11 @@
 #' @examples
 #'   library(testthat)
 #'
-#'   beast2_filename <- get_beastier_path("anthus_2_4.xml")
-#'   text <- readLines(beast2_filename)
-#'   expect_true(are_beast2_input_lines(text))
+#'   if (is_beast2_installed() && is_on_ci()) {
+#'     beast2_filename <- get_beastier_path("anthus_2_4.xml")
+#'     text <- readLines(beast2_filename)
+#'     expect_true(are_beast2_input_lines(text))
+#'   }
 #' @export
 are_beast2_input_lines <- function(
   lines,

@@ -23,7 +23,7 @@ Uninstall BEAST2
 \examples{
   library(testthat)
 
-  if (is_on_ci() && is_beast2_installed()) {
+  if (is_beast2_installed() && is_on_ci()) {
 
     uninstall_beast2()
 

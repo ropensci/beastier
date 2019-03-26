@@ -8,7 +8,7 @@
 #' @examples
 #'   library(testthat)
 #'
-#'   if (is_on_ci()) {
+#'   if (is_beast2_installed() && is_on_ci()) {
 #'
 #'     output_log_filename <- tempfile(fileext = ".log")
 #'     output_trees_filenames <- tempfile(fileext = ".trees")
