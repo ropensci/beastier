@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.0.7 (2019-03-26)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Documentation examples work on MacOS
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.0.6 (2019-03-25)
 
 ### NEW FEATURES
