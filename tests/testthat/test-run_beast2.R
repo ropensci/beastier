@@ -2,9 +2,7 @@ context("run_beast2")
 
 test_that("single alignment creates all files", {
 
-  if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
-  }
+  if (!is_beast2_installed()) return()
 
   output_log_filename <- tempfile(fileext = ".log")
   output_trees_filenames <- tempfile(fileext = ".trees")
@@ -29,9 +27,7 @@ test_that("single alignment creates all files", {
 
 test_that("single alignment, equal RNG seed equal results", {
 
-  if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
-  }
+  if (!is_beast2_installed()) return()
 
   output_log_filename_1 <- tempfile(fileext = "_1.log")
   output_log_filename_2 <- tempfile(fileext = "_2.log")
@@ -100,8 +96,6 @@ test_that("single alignment, equal RNG seed equal results", {
   lines_2 <- readLines(output_state_filename_2)
   expect_identical(lines_1, lines_2)
 })
-
-
 
 test_that("two alignments creates all files", {
 
