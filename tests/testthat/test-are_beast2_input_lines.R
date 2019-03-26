@@ -2,6 +2,8 @@ context("are_beast2_input_lines")
 
 test_that("use, fast", {
 
+  if (!is_beast2_installed()) return()
+
   testthat::expect_true(
     beastier::are_beast2_input_lines(
       readLines(beastier::get_beastier_path("anthus_2_4.xml"))
@@ -20,6 +22,9 @@ test_that("use, fast", {
 test_that("use, deep", {
 
   skip("WIP, #15")
+
+  if (!is_beast2_installed()) return()
+
   testthat::expect_true(
     beastier::are_beast2_input_lines(
       readLines(beastier::get_beastier_path("anthus_2_4.xml")),
