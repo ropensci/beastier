@@ -5,7 +5,7 @@
 #'   and the others are arguments (\code{-jar}, in this case, followed
 #'   by more arguments.
 #' @examples
-#'   if (is_beast2_installed()) {
+#'   if (is_beast2_installed() && is_on_ci()) {
 #'     cmds <- create_beast2_validate_cmd(
 #'       input_filename = "input.xml"
 #'     )
@@ -39,7 +39,7 @@ create_beast2_validate_cmd <- function(
 #'   and the others are arguments (\code{-jar}, in this case, followed
 #'   by more arguments.
 #' @examples
-#'   if (is_beast2_installed()) {
+#'   if (is_beast2_installed() && is_on_ci()) {
 #'     cmds <- create_beast2_validate_cmd_jar(
 #'       input_filename = "input.xml"
 #'     )
@@ -73,7 +73,7 @@ create_beast2_validate_cmd_jar <- function(
 #'   and the others are arguments (\code{-jar}, in this case, followed
 #'   by more arguments.
 #' @examples
-#'   if (is_beast2_installed()) {
+#'   if (is_beast2_installed() && is_on_ci()) {
 #'     cmds <- create_beast2_validate_cmd_bin(
 #'       input_filename = "input.xml"
 #'     )

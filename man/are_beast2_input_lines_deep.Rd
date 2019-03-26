@@ -31,8 +31,7 @@ Would these lines of text, when written to a file,
   result in a valid BEAST2 input file?
 }
 \examples{
-  library(beastier)
-  if (is_beast2_installed()) {
+  if (is_beast2_installed() && is_on_ci()) {
     beast2_filename <- get_beastier_path("anthus_2_4.xml")
     text <- readLines(beast2_filename)
     testit::assert(beastier:::are_beast2_input_lines_deep(text))

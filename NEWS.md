@@ -2,6 +2,25 @@
 
 Newest versions at top.
 
+## beastier 2.0.9 (2019-03-26)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Pass local CRAN tests
+  * Shortened examples' runtime 
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.0.8 (2019-03-26)
 
 ### NEW FEATURES

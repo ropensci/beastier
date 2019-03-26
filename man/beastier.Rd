@@ -18,7 +18,7 @@ of BEAST2, including its default settings.
     input_filename = get_beastier_path("2_4.xml")
   )
 
-  if (is_beast2_installed()) {
+  if (is_beast2_installed() && is_on_ci()) {
 
     expect_false(file.exists(beast2_options$output_log_filename))
     expect_false(file.exists(beast2_options$output_trees_filenames))

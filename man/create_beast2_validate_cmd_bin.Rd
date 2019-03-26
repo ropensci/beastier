@@ -28,7 +28,7 @@ Creates the terminal command to validate a BEAST2 input file
 using a call to the \code{beast.jar} file
 }
 \examples{
-  if (is_beast2_installed()) {
+  if (is_beast2_installed() && is_on_ci()) {
     cmds <- create_beast2_validate_cmd_bin(
       input_filename = "input.xml"
     )
