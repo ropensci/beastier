@@ -6,8 +6,11 @@
 #'   library(testthat)
 #'
 #'   input_filename <- get_beastier_path("2_4.xml")
-#'   trees_filename <- create_default_trees_filenames(input_filename)
-#'   expect_equal("test_output_0.trees", trees_filename)
+#'
+#'   if (is_beast2_installed()) {
+#'     trees_filename <- create_default_trees_filenames(input_filename)
+#'     expect_equal("test_output_0.trees", trees_filename)
+#'   }
 #' @export
 create_default_trees_filenames <- function(
   input_filename,
