@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.0.8 (2019-03-26)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Fix spelling error
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.0.7 (2019-03-26)
 
 ### NEW FEATURES
