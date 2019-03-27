@@ -2,6 +2,25 @@
 
 Newest versions at top.
 
+## beastier 2.0.11 (2019-03-27)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * `get_default_beast2_bin_path` is silent if BEAST2 is absent
+  * Package builds successfully without BEAST2 installed
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.0.10 (2019-03-26)
 
 ### NEW FEATURES
