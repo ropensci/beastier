@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.0.12 (2019-04-08)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Package builds successfully without BEAST2 installed
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.0.11 (2019-03-27)
 
 ### NEW FEATURES
