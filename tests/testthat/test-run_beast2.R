@@ -332,6 +332,7 @@ test_that("BEAST2 does not overwrite its own log file", {
   if (!is_beast2_installed()) {
     skip("BEAST2 not installed. Testing from CRAN?")
   }
+  skip("#21")
 
   input_filename <- get_beastier_path("2_4.xml")
 
@@ -405,6 +406,7 @@ test_that("BEAST2 overwrites log and trees files", {
   if (!is_beast2_installed()) {
     skip("BEAST2 not installed. Testing from CRAN?")
   }
+  skip("#21")
 
   input_filename <- get_beastier_path("2_4.xml")
   output_log_filename <- beastier:::create_default_log_filename(
