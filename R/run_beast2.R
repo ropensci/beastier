@@ -133,10 +133,13 @@ run_beast2 <- function(
   }
 
   # Move working directory to temporary folder
-  cur_wd <- getwd()
-  tmp_wd <- tempfile(pattern = "beast2_tmp_folder")
-  dir.create(tmp_wd)
-  setwd(tmp_wd)
+  work_in_tmp_folder <- FALSE
+  if (work_in_tmp_folder) {
+    cur_wd <- getwd()
+    tmp_wd <- tempfile(pattern = "beast2_tmp_folder")
+    dir.create(tmp_wd)
+    setwd(tmp_wd)
+  }
 
   output <- system2(
     command = cmd[1],
@@ -191,7 +194,9 @@ run_beast2 <- function(
   testit::assert(all(file.exists(output_trees_filenames)))
 
   # Copying done, back to original working directory
-  setwd(cur_wd)
+  if (work_in_tmp_folder) {
+    setwd(cur_wd)
+  }
 
   output
 }
