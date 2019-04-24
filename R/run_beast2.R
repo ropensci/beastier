@@ -132,12 +132,20 @@ run_beast2 <- function(
     print(paste("cmd:", paste0(cmd, collapse = " ")))
   }
 
+  # Move working directory to temporary folder
+  cur_wd <- getwd()
+  tmp_wd <- tempfile(pattern = "beast2_tmp_folder")
+  dir.create(tmp_wd)
+  setwd(tmp_wd)
+
   output <- system2(
     command = cmd[1],
     args = cmd[-1],
     stdout = TRUE,
     stderr = TRUE
   )
+
+
   if (length(output) == 1) {
     stop(
       "Command '", paste0(cmd, collapse = " "), "' failed ",
@@ -181,5 +189,9 @@ run_beast2 <- function(
   testit::assert(all(file.exists(output_log_filename)))
   testit::assert(all(file.exists(output_state_filename)))
   testit::assert(all(file.exists(output_trees_filenames)))
+
+  # Copying done, back to original working directory
+  setwd(cur_wd)
+
   output
 }
