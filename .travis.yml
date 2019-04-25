@@ -33,13 +33,10 @@ before_script:
   - Rscript -e "source(\"R/install_beast2.R\"); source(\"R/get_default_beast2_download_url.R\"); source(\"R/check_os.R\"); install_beast2()"
   # proselint
   - sudo pip install proselint
-  # markdown-link-check, temporarily disabled due to CERT_UNTRUSTED
-  #- sudo apt-get install npm
-  #- sudo npm install -g markdown-link-check
 
 script:
-  - # travis_wait 60 R CMD build .
-  - # travis_wait 60 R CMD check *tar.gz
+  - travis_wait 60 R CMD build .
+  - travis_wait 60 R CMD check *tar.gz
 
 after_success:
   - Rscript -e 'lintr::lint_package()'
@@ -50,8 +47,6 @@ after_success:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then if [[ $(egrep -R "\"~" --include={*.R,*.Rmd}) ]]; then echo "Local file created"; exit 1; fi; fi
   - # Build for CRAN
   - cd scripts; ./build_cran
-  # temporarily disabled due to CERT_UNTRUSTED
-  #- ./check_dead_links
 
 after_failure:
   - cat /home/travis/build/ropensci/beastier/..Rcheck/00install.out
