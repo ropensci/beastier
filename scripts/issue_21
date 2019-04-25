@@ -17,5 +17,6 @@
 for rng_seed in $(seq 1 100)
 do
   sbatch run_r_script issue_21.R
+  sleep 1
 done
 
