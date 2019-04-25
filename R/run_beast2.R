@@ -56,6 +56,10 @@ run_beast2 <- function(
   if (is_win_bin_path(beast2_path)) {
     stop("Cannot use the Windows executable BEAST2.exe in scripts")
   }
+  # Add the full path of the input file
+  if (basename(input_filename) == input_filename) {
+    input_filename <- file.path(getwd(), input_filename)
+  }
   check_input_filename(input_filename) # nolint internal function
   check_beast2_path(beast2_path) # nolint internal function
   check_input_filename_validity( # nolint internal function
@@ -133,7 +137,7 @@ run_beast2 <- function(
   }
 
   # Move working directory to temporary folder
-  work_in_tmp_folder <- FALSE
+  work_in_tmp_folder <- TRUE
   if (work_in_tmp_folder) {
     cur_wd <- getwd()
     tmp_wd <- tempfile(pattern = "beast2_tmp_folder")
