@@ -52,6 +52,10 @@ test_that("local file in temp folder", {
     )
   )
   setwd(cur_wd)
+
+  expect_true(file.exists(output_log_filename))
+  expect_true(all(file.exists(output_trees_filename)))
+  expect_true(file.exists(output_state_filename))
 })
 
 test_that("file with full path in temp folder", {
@@ -65,8 +69,14 @@ test_that("file with full path in temp folder", {
   dir.create(tmp_wd)
   setwd(tmp_wd)
   input_filename <- get_beastier_path("2_4.xml")
+  beast2_options <- create_beast2_options(input_filename = input_filename)
+
   expect_silent(
-    run_beast2_from_options(create_beast2_options(input_filename = input_filename))
+    run_beast2_from_options(beast2_options = beast2_options)
   )
   setwd(cur_wd)
+
+  expect_true(file.exists(beast2_options$output_log_filename))
+  expect_true(all(file.exists(beast2_options$output_trees_filename)))
+  expect_true(file.exists(beast2_options$output_state_filename))
 })
