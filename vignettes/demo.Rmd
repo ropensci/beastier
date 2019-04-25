@@ -1,0 +1,56 @@
+---
+title: "beastier demo"
+author: "Richèl J.C. Bilderbeek"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{beastier demo}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Introduction
+
+This vignette demonstrates how to use `beastier`.
+
+First, load the library:
+
+```{r load_beastier, results='hide', warning=FALSE, error=FALSE, message=FALSE}
+library(beastier)
+```
+
+Create BEAST2 options:
+
+
+```{r}
+beast2_options <- create_beast2_options(
+  input_filename = get_beastier_path("2_4.xml")
+)
+```
+
+Running:
+
+```{r}
+if (is_beast2_installed()) {
+
+  library(testthat)
+  
+  expect_false(file.exists(beast2_options$output_log_filename))
+  expect_false(file.exists(beast2_options$output_trees_filenames))
+  expect_false(file.exists(beast2_options$output_state_filename))
+
+  output <- run_beast2_from_options(beast2_options)
+
+  expect_true(length(output) > 40)
+  expect_true(file.exists(beast2_options$output_log_filename))
+  expect_true(file.exists(beast2_options$output_trees_filenames))
+  expect_true(file.exists(beast2_options$output_state_filename))
+}
+```
