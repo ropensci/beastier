@@ -61,10 +61,6 @@ create_beast2_run_cmd <- function(
   if (overwrite == TRUE) {
     cmds <- c(cmds, "-overwrite")
   }
-  add_working <- TRUE
-  if (add_working) {
-    cmds <- c(cmds, "-working")
-  }
   testit::assert(file.exists(cmds[1]))
   cmds <- c(cmds, paste0("\"", input_filename, "\""))
   testit::assert(file.exists(cmds[1]))
