@@ -31,6 +31,7 @@ create_beast2_options <- function(
   n_threads = NA,
   use_beagle = FALSE,
   overwrite = TRUE,
+  beast2_working_dir = tempfile(pattern = "beast2_tmp_folder"),
   beast2_path = get_default_beast2_path(),
   verbose = FALSE
 ) {
@@ -43,6 +44,7 @@ create_beast2_options <- function(
     n_threads = n_threads,
     use_beagle = use_beagle,
     overwrite = overwrite,
+    beast2_working_dir = beast2_working_dir,
     beast2_path = beast2_path,
     verbose = verbose
   )

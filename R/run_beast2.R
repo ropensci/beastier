@@ -50,6 +50,7 @@ run_beast2 <- function(
   n_threads = NA,
   use_beagle = FALSE,
   overwrite = TRUE,
+  beast2_working_dir = tempfile(pattern = "beast2_tmp_folder"),
   beast2_path = get_default_beast2_path(),
   verbose = FALSE
 ) {
@@ -152,7 +153,7 @@ run_beast2 <- function(
   work_in_tmp_folder <- TRUE
   if (work_in_tmp_folder) {
     cur_wd <- getwd()
-    tmp_wd <- tempfile(pattern = "beast2_tmp_folder")
+    tmp_wd <- beast2_working_dir
     dir.create(tmp_wd)
     setwd(tmp_wd)
   }

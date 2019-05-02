@@ -24,6 +24,10 @@
 #'   the default BEAST binary file's path
 #'   Use \link{get_default_beast2_jar_path} to get
 #'   the default BEAST jar file's path
+#' @param beast2_working_dir the folder BEAST2 will work in. This is
+#'   an (empty) temporary folder by default. This allows to call
+#'   BEAST2 in multiple parallel processes, as each process can have
+#'   its own working directory
 #' @param clock_model a \code{beautier} clock model
 #' @param clock_models a list of one or more \code{beautier} clock models
 #' @param crown_age the crown age of the phylogeny
@@ -91,6 +95,7 @@ default_params_doc <- function(
   beast2_jar_path,
   beast2_options, beast2_optionses,
   beast2_path,
+  beast2_working_dir,
   clock_model, clock_models,
   crown_age, crown_ages,
   fasta_filename, fasta_filenames,

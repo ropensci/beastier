@@ -36,6 +36,7 @@ run_beast2_from_options <- function(
     n_threads = beast2_options$n_threads,
     use_beagle = beast2_options$use_beagle,
     overwrite  = beast2_options$overwrite,
+    beast2_working_dir = beast2_options$beast2_working_dir,
     beast2_path = beast2_options$beast2_path,
     verbose = beast2_options$verbose
   )

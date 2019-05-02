@@ -22,8 +22,8 @@ check_beast2_options <- function(
   argument_names <- c(
     "input_filename", "output_log_filename", "output_trees_filenames",
     "output_state_filename",
-    "rng_seed", "n_threads", "use_beagle", "overwrite", "beast2_path",
-    "verbose"
+    "rng_seed", "n_threads", "use_beagle", "overwrite", "beast2_working_dir",
+    "beast2_path", "verbose"
   )
   for (arg_name in argument_names) {
     if (!arg_name %in% names(beast2_options)) {
@@ -60,6 +60,10 @@ check_beast2_options <- function(
     beautier::is_one_na(beast2_options$overwrite) ||
     !is.logical(beast2_options$overwrite)) {
     stop("'overwrite' must be one boolean")
+  }
+  if (length(beast2_options$beast2_working_dir) != 1 ||
+    !is.character(beast2_options$beast2_working_dir)) {
+    stop("'beast2_working_dir' must be one character string")
   }
   if (length(beast2_options$beast2_path) != 1 ||
     !is.character(beast2_options$beast2_path)) {
