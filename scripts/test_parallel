@@ -4,24 +4,24 @@
 # ./test_parallel
 #
 echo "--------------"
-echo "R command: "
-echo "--------------"
-r_cmd="beastier::run_beast2(beastier::get_beastier_path("2_4.xml"), verbose = TRUE)"
-echo $r_cmd
-
-echo "--------------"
 echo "Bash command: "
 echo "--------------"
-cmd="Rscript -e \"$r_cmd\""
+cmd='Rscript -e "beastier::do_minimal_run()"'
 echo $cmd
 
 echo "--------------"
 echo "RUN"
+echo "--------------"
+(echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd; echo $cmd) | parallel && echo "All jobs went OK"
+
+exit
+
+echo "--------------"
+echo "RUN 2"
 echo "--------------"
 for rng_seed in $(seq 1 2)
 do
   $cmd
 done
 
-# (echo $cmd; echo $cmd) | parallel
 
