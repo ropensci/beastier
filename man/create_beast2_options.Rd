@@ -9,7 +9,8 @@ create_beast2_options(input_filename = tempfile(fileext = ".xml"),
   output_trees_filenames = tempfile(fileext = ".trees"),
   output_state_filename = tempfile(fileext = ".xml.state"),
   rng_seed = NA, n_threads = NA, use_beagle = FALSE,
-  overwrite = TRUE, beast2_path = get_default_beast2_path(),
+  overwrite = TRUE, beast2_working_dir = tempfile(pattern =
+  "beast2_tmp_folder"), beast2_path = get_default_beast2_path(),
   verbose = FALSE)
 }
 \arguments{
@@ -44,6 +45,11 @@ Use \link{NA} to use the BEAST2 default of 1.}
    \item{the \code{.log} file created by BEAST2 exists}
    \item{the \code{.trees} files created by BEAST2 exist}
 }}
+
+\item{beast2_working_dir}{the folder BEAST2 will work in. This is
+an (empty) temporary folder by default. This allows to call
+BEAST2 in multiple parallel processes, as each process can have
+its own working directory}
 
 \item{beast2_path}{name of either a BEAST2 binary file
 (usually simply \code{beast})

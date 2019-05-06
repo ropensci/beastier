@@ -3,19 +3,25 @@
 #
 # ./test_parallel
 #
-r_cmd='beastier::run_beast2(beastier::get_beastier_path("2_4.xml"), verbose = TRUE)'
+echo "--------------"
 echo "R command: "
+echo "--------------"
+r_cmd="beastier::run_beast2(beastier::get_beastier_path("2_4.xml"), verbose = TRUE)"
 echo $r_cmd
-cmd="Rscript -e $r_cmd"
+
+echo "--------------"
 echo "Bash command: "
+echo "--------------"
+cmd="Rscript -e \"$r_cmd\""
 echo $cmd
 
-(echo $cmd; echo $cmd) | parallel
-
-exit
-
+echo "--------------"
+echo "RUN"
+echo "--------------"
 for rng_seed in $(seq 1 2)
 do
-  $cmd &
+  $cmd
 done
+
+# (echo $cmd; echo $cmd) | parallel
 

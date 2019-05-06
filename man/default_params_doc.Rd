@@ -6,10 +6,10 @@
 documentation.}
 \usage{
 default_params_doc(beast2_bin_path, beast2_jar_path, beast2_options,
-  beast2_optionses, beast2_path, clock_model, clock_models, crown_age,
-  crown_ages, fasta_filename, fasta_filenames, fixed_crown_age,
-  fixed_crown_ages, initial_phylogenies, input_filename, mcmc,
-  misc_options, n_taxa, n_threads, os, output_filename,
+  beast2_optionses, beast2_path, beast2_working_dir, clock_model,
+  clock_models, crown_age, crown_ages, fasta_filename, fasta_filenames,
+  fixed_crown_age, fixed_crown_ages, initial_phylogenies, input_filename,
+  mcmc, misc_options, n_taxa, n_threads, os, output_filename,
   output_log_filename, output_state_filename, output_trees_filenames,
   overwrite, rng_seed, sequence_length, site_model, site_models,
   tree_prior, tree_priors, use_beagle, verbose)
@@ -43,6 +43,11 @@ Use \link{get_default_beast2_bin_path} to get
 the default BEAST binary file's path
 Use \link{get_default_beast2_jar_path} to get
 the default BEAST jar file's path}
+
+\item{beast2_working_dir}{the folder BEAST2 will work in. This is
+an (empty) temporary folder by default. This allows to call
+BEAST2 in multiple parallel processes, as each process can have
+its own working directory}
 
 \item{clock_model}{a \code{beautier} clock model}
 
