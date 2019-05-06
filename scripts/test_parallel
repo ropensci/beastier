@@ -1,0 +1,21 @@
+#!/bin/bash
+# Script to run beastier in parallel
+#
+# ./test_parallel
+#
+r_cmd='beastier::run_beast2(beastier::get_beastier_path("2_4.xml"), verbose = TRUE)'
+echo "R command: "
+echo $r_cmd
+cmd="Rscript -e $r_cmd"
+echo "Bash command: "
+echo $cmd
+
+(echo $cmd; echo $cmd) | parallel
+
+exit
+
+for rng_seed in $(seq 1 2)
+do
+  $cmd &
+done
+
