@@ -154,7 +154,8 @@ run_beast2 <- function(
   if (work_in_tmp_folder) {
     cur_wd <- getwd()
     tmp_wd <- beast2_working_dir
-    dir.create(tmp_wd)
+    # Do not warning if the folder already exists
+    dir.create(tmp_wd, showWarnings = FALSE)
     setwd(tmp_wd)
   }
 
