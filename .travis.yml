@@ -39,14 +39,14 @@ script:
   - travis_wait 60 R CMD check *tar.gz
 
 after_success:
-  - Rscript -e 'lintr::lint_package()'
-  - Rscript -e 'covr::codecov()'
-  - Rscript -e 'goodpractice::gp()'
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then Rscript -e 'lintr::lint_package()'; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then Rscript -e 'covr::codecov()'; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then Rscript -e 'goodpractice::gp()'; fi
   - proselint *.md | egrep -v "typography\.symbols\.curly_quotes"
   - # No local files created
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then if [[ $(egrep -R "\"~" --include={*.R,*.Rmd}) ]]; then echo "Local file created"; exit 1; fi; fi
   - # Build for CRAN
-  - cd scripts; ./build_cran
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cd scripts; ./build_cran; fi
 
 after_failure:
   - cat /home/travis/build/ropensci/beastier/..Rcheck/00install.out
