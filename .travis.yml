@@ -48,7 +48,7 @@ after_success:
   - # Test if beastier can indeed run in parallel
   - ./scripts/test_parallel
   - # Build for CRAN, without BEAST2 installed
-  - Rscript -e "source(\"R/uninstall_beast2.R\"); source(\"R/get_default_beast2_download_url.R\"); source(\"R/check_os.R\"); uninstall_beast2()"
+  - Rscript -e "source(\"R/uninstall_beast2.R\"); source(\"R/get_default_beast2_download_url.R\"); source(\"R/check_os.R\"); source(\"R/is_beast2_installed.R\"); uninstall_beast2()"
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cd scripts; ./build_cran; fi
 
 after_failure:
