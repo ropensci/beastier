@@ -6,6 +6,25 @@ Newest versions at top.
 
 ### NEW FEATURES
 
+  * Install BEAST2 `v2.5.2`, instead of `v2.5.1`
+  * Can call `run_beast2`/`run_beast2_from_options` in parallel
+
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
+## beastier 2.0.12 (2019-04-08)
+
+### NEW FEATURES
+
   * None
 
 ### MINOR IMPROVEMENTS

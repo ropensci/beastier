@@ -50,7 +50,7 @@ beastier::install_beast2()
 
 ### 2.2 Which version of BEAUti do you use as a guideline?
 
-Version 2.5.1, as can be found in the [install_beast2](https://github.com/ropensci/beastier/blob/master/R/install_beast2.R) function.
+Version 2.5.2, as can be found in the [install_beast2](https://github.com/ropensci/beastier/blob/master/R/install_beast2.R) function.
 
 ## [development](#development) 
 
