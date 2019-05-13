@@ -34,6 +34,9 @@ test_that("install Windows from Linux", {
 
   if (!is_on_ci()) return()
   if (rappdirs::app_dir()$os == "unix") {
+    if (is_beast2_installed()) {
+      uninstall_beast2(os = "win")
+    }
     install_beast2(os = "win")
   }
 })
