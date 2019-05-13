@@ -47,6 +47,8 @@ after_success:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then if [[ $(egrep -R "\"~" --include={*.R,*.Rmd}) ]]; then echo "Local file created"; exit 1; fi; fi
   - # Build for CRAN
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cd scripts; ./build_cran; fi
+  - # Test if beastier can indeed run in parallel
+  - ./scripts/test_parallel
 
 after_failure:
   - cat /home/travis/build/ropensci/beastier/..Rcheck/00install.out
