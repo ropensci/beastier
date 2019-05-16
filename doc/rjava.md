@@ -39,17 +39,26 @@ Do not use `openjdk-9-jdk`.
 The `.travis.yml` file shows a Trusty install:
 
 ```
- - sudo apt-get install -qq oracle-java8-installer # Java 8
- - sudo apt-get install oracle-java8-set-default
+# - sudo apt install -qq oracle-java8-installer # Java 8
+# - sudo apt install oracle-java8-set-default
 ```
 
-On Bionic, I assume the same can be achieved with:
+On Bionic, I achieved the same with approx:
 
 ```
-sudo add-apt-repository -y ppa:webupd8team/java 
-sudo apt-get update -qq
-sudo apt-get install oracle-java8-installer
-sudo apt-get install oracle-java8-set-default
+sudo add-apt-repository ppa:marutter/c2d4u3.5
+sudo apt update
+sudo apt grade
+sudo apt install r-cran-rjava
+sudo apt-get install openjdk-11-jdk
+sudo R CMD javareconf
+```
+
+```
+#sudo add-apt-repository -y ppa:webupd8team/java 
+#sudo apt-get update -qq
+#sudo apt-get install oracle-java8-installer
+#sudo apt-get install oracle-java8-set-default
 ```
 
 
