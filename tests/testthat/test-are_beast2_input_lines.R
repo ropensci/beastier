@@ -4,13 +4,13 @@ test_that("use, fast", {
 
   if (!is_beast2_installed()) return()
 
-  testthat::expect_true(
+  expect_true(
     beastier::are_beast2_input_lines(
       readLines(beastier::get_beastier_path("anthus_2_4.xml"))
     )
   )
 
-  testthat::expect_true(
+  expect_true(
     beastier::are_beast2_input_lines(
       readLines(beastier::get_beastier_path("anthus_2_4.xml")),
       method = "fast"
@@ -21,11 +21,9 @@ test_that("use, fast", {
 
 test_that("use, deep", {
 
-  skip("WIP, #15")
-
   if (!is_beast2_installed()) return()
 
-  testthat::expect_true(
+  expect_true(
     beastier::are_beast2_input_lines(
       readLines(beastier::get_beastier_path("anthus_2_4.xml")),
       method = "deep",
@@ -34,7 +32,7 @@ test_that("use, deep", {
     )
   )
 
-  testthat::expect_true(
+  expect_true(
     beastier::are_beast2_input_lines(
       readLines(beastier::get_beastier_path("anthus_2_4.xml")),
       method = "deep",
