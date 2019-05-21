@@ -100,7 +100,7 @@ test_that("single alignment, equal RNG seed equal results", {
 test_that("two alignments creates all files", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
 
   output_log_filename <- tempfile(fileext = ".log")
@@ -130,7 +130,7 @@ test_that("two alignments creates all files", {
 test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
 
   output_log_filename <- tempfile(fileext = ".log")
@@ -174,7 +174,7 @@ test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
 test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
 
   output_log_filename <- tempfile(fileext = ".log")
@@ -237,7 +237,7 @@ test_that("detect errors when BEAST2 need not be installed", {
 test_that("detect errors when BEAST2 is installed", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
 
   expect_error(
@@ -285,7 +285,7 @@ test_that("detect errors when BEAST2 is installed", {
 test_that("BEAST2 does not overwrite the log file specified by the user", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
 
   output_log_filename <- tempfile(fileext = ".log")
@@ -307,7 +307,7 @@ test_that("BEAST2 does not overwrite the log file specified by the user", {
 test_that("BEAST2 does not overwrite the .trees file specified by the user", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
 
   output_trees_filename <- tempfile(fileext = ".trees")
@@ -330,10 +330,8 @@ test_that("BEAST2 does not overwrite the .trees file specified by the user", {
 test_that("BEAST2 does not overwrite its own log file", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
-  skip("#21")
-
   input_filename <- get_beastier_path("2_4.xml")
 
   beast_log_file <- beastier:::create_default_log_filename(input_filename)

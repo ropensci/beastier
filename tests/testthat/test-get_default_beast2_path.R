@@ -3,7 +3,7 @@ context("get_default_beast2_path")
 test_that("must be either binary or jar file", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
 
   testit::assert(is_beast2_installed())
@@ -17,7 +17,7 @@ test_that("must be either binary or jar file", {
 test_that("must exist", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
 
   testit::assert(is_beast2_installed())

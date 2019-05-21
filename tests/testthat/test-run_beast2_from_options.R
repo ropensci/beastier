@@ -3,7 +3,7 @@ context("test-run_beast2_from_options")
 test_that("use", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
 
   expect_silent(
@@ -24,7 +24,7 @@ test_that("abuse", {
 test_that("local file in temp folder", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed")
+    return()
   }
 
   cur_wd <- getwd()
@@ -64,7 +64,7 @@ test_that("local file in temp folder", {
 test_that("file with full path in temp folder", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed")
+    return()
   }
 
   cur_wd <- getwd()
