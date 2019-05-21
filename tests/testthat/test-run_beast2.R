@@ -362,7 +362,7 @@ test_that("BEAST2 does not overwrite its own log file", {
 test_that("BEAST2 does not overwrite its own trees file", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
 
   input_filename <- get_beastier_path("2_4.xml")
@@ -402,7 +402,7 @@ test_that("BEAST2 does not overwrite its own trees file", {
 test_that("BEAST2 overwrites log and trees files", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
   skip("#21")
 
@@ -447,7 +447,7 @@ test_that("BEAST2 overwrites log and trees files", {
 test_that("run BEAST2 from jar path", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
 
   expect_silent(
@@ -461,7 +461,7 @@ test_that("run BEAST2 from jar path", {
 test_that("run BEAST2 from binary path", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
 
   # Binary fails under Windows, but works under Unix (see 'use' section above)
@@ -487,7 +487,7 @@ test_that("run BEAST2 from binary path", {
 test_that("run_beast2 produces output", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
 
   output <- run_beast2(get_beastier_path("2_4.xml"), verbose = TRUE)
