@@ -3,7 +3,7 @@ context("create_beast2_validate_cmd")
 test_that("use, bin", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
 
   testit::assert(is_beast2_installed())
@@ -26,7 +26,7 @@ test_that("use, bin", {
 test_that("use, jar", {
 
   if (!is_beast2_installed()) {
-    skip("BEAST2 not installed. Testing from CRAN?")
+    return()
   }
 
   testit::assert(is_beast2_installed())
