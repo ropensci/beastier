@@ -31,10 +31,6 @@ if (!is_beast2_installed()) {
   expect_error(check_beast2())
 }
 }
-\seealso{
-Use \link{create_beast2_options} to create a valid
-  BEAST2 options object
-}
 \author{
 Richèl J.C. Bilderbeek
 }

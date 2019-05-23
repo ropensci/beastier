@@ -3,8 +3,6 @@
 #' Calls \code{stop} if BEAST2 is improperly installed
 #' @inheritParams default_params_doc
 #' @return nothing
-#' @seealso Use \link{create_beast2_options} to create a valid
-#'   BEAST2 options object
 #' @examples
 #' library(testthat)
 #'
