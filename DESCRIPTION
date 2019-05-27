@@ -32,9 +32,10 @@ Suggests:
     rmarkdown,
     spelling,
     testit,
-    testthat (>= 2.1.0),
+    testthat,
     tracerer
 URL: https://github.com/ropensci/beastier
 BugReports: https://github.com/ropensci/beastier
 Language: en-US
 VignetteBuilder: knitr
+SystemRequirements: BEAST2 (http://www.beast2.org/)
