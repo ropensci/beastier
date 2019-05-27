@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.0.14 (to be released)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Add `SystemRequirements` field to `DESCRIPTION`
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.0.13 (2019-05-14)
 
 ### NEW FEATURES
