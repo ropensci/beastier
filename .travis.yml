@@ -27,7 +27,7 @@ r_github_packages:
 
 before_install:
   # Vignettes
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then tlmgr install inconsolata; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo tlmgr install inconsolata; fi
 
 before_script:
   # Java
