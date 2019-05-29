@@ -127,6 +127,31 @@ run_beast2 <- function(
     )
   }
 
+  # Move working directory to temporary folder
+  cur_wd <- getwd()
+  tmp_wd <- beast2_working_dir
+  # Do not warning if the folder already exists, unless when being verbose
+  dir.create(tmp_wd, showWarnings = verbose)
+
+  if (!dir.exists(tmp_wd)) {
+    stop(
+      "Cannot create working directory '", tmp_wd, "' \n",
+      "Maybe no permission to create it there? \n"
+    )
+  }
+
+  # This will fail if the temp_wd cannot be created
+  tryCatch(
+    setwd(tmp_wd),
+    error = function(e) {
+      stop(
+        "Cannot set working directory to '", tmp_wd, "' \n",
+        "Maybe no permission to change to that location?\n",
+        "Error message: ", e$message, " \n"
+      )
+    }
+  )
+
   testit::assert(length(input_filename_full) == 1)
   testit::assert(length(output_state_filename) == 1)
   testit::assert(length(rng_seed) == 1)
@@ -149,22 +174,6 @@ run_beast2 <- function(
     print(paste("cmd:", paste0(cmd, collapse = " ")))
   }
 
-  # Move working directory to temporary folder
-  cur_wd <- getwd()
-  tmp_wd <- beast2_working_dir
-  # Do not warning if the folder already exists, unless when being verbose
-  dir.create(tmp_wd, showWarnings = !verbose)
-
-  # This will fail if the temp_wd cannot be created
-  tryCatch(
-    setwd(tmp_wd),
-    error = function(e) {
-      stop(
-        "Cannot set working directory to '", tmp_wd, "' \n",
-        "Error message: ", e$message, " \n"
-      )
-    }
-  )
 
   output <- system2(
     command = cmd[1],
@@ -182,9 +191,7 @@ run_beast2 <- function(
   }
 
   # Copying done, back to original working directory
-  if (work_in_tmp_folder) {
-    setwd(cur_wd)
-  }
+  setwd(cur_wd)
 
   ##############################################################################
   # The filenames as created by BEAST2
@@ -198,6 +205,13 @@ run_beast2 <- function(
       )
     )
   )
+  if (!file.exists(actual_log_filename)) {
+    stop(
+      "BEAST2 .log file not created at '", actual_log_filename, "' \n",
+      "Maybe no permission to write at that location?"
+    )
+  }
+
   if (!file.exists(output_log_filename)) {
     testit::assert(file.exists(actual_log_filename))
     file.rename(from = actual_log_filename, to = output_log_filename)
