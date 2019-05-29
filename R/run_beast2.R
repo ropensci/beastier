@@ -133,6 +133,9 @@ run_beast2 <- function(
   # Do not warning if the folder already exists, unless when being verbose
   dir.create(tmp_wd, showWarnings = verbose)
 
+  # Although 'dir.create' creates folders recursively,
+  # it only has the user's permission. As the user
+  # is not running as root, it cannot create root folders
   if (!dir.exists(tmp_wd)) {
     stop(
       "Cannot create working directory '", tmp_wd, "' \n",
