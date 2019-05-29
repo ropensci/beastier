@@ -131,7 +131,7 @@ run_beast2 <- function(
   cur_wd <- getwd()
   tmp_wd <- beast2_working_dir
   # Do not warning if the folder already exists, unless when being verbose
-  dir.create(tmp_wd, showWarnings = verbose)
+  dir.create(tmp_wd, showWarnings = verbose, recursive = TRUE)
 
   # Although 'dir.create' creates folders recursively,
   # it only has the user's permission. As the user
