@@ -137,6 +137,7 @@ run_beast2 <- function(
   # it only has the user's permission. As the user
   # is not running as root, it cannot create root folders
   if (!dir.exists(tmp_wd)) {
+    dir.create(tmp_wd, showWarnings = TRUE)
     stop(
       "Cannot create working directory '", tmp_wd, "' \n",
       "Maybe no permission to create it there? \n"
