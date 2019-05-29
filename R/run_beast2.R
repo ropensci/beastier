@@ -150,14 +150,21 @@ run_beast2 <- function(
   }
 
   # Move working directory to temporary folder
-  work_in_tmp_folder <- TRUE
-  if (work_in_tmp_folder) {
-    cur_wd <- getwd()
-    tmp_wd <- beast2_working_dir
-    # Do not warning if the folder already exists
-    dir.create(tmp_wd, showWarnings = FALSE)
-    setwd(tmp_wd)
-  }
+  cur_wd <- getwd()
+  tmp_wd <- beast2_working_dir
+  # Do not warning if the folder already exists, unless when being verbose
+  dir.create(tmp_wd, showWarnings = !verbose)
+
+  # This will fail if the temp_wd cannot be created
+  tryCatch(
+    setwd(tmp_wd),
+    error = function(e) {
+      stop(
+        "Cannot set working directory to '", tmp_wd, "' \n",
+        "Error message: ", e$message, " \n"
+      )
+    }
+  )
 
   output <- system2(
     command = cmd[1],
