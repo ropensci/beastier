@@ -7,8 +7,8 @@ matrix:
     os: linux
   - r: devel
     os: linux
-  #- r: release
-  #  os: osx
+  - r: release
+    os: osx
 
 cache: packages
 
@@ -24,6 +24,10 @@ r_github_packages:
   - jimhester/lintr
   - MangoTheCat/goodpractice
   - ropensci/spelling
+
+before_install:
+  # Vignettes
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then tlmgr install inconsolata; fi
 
 before_script:
   # Java
