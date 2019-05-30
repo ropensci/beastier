@@ -2,6 +2,27 @@
 
 Newest versions at top.
 
+## beastier 2.0.15 (in progress)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Simplified `run_beast2`
+  * Improved error checking and logging in `run_beast2`
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
+## beastier 2.0.13 (2019-05-14)
+
 ## beastier 2.0.14 (2019-05-27)
 
 ### NEW FEATURES

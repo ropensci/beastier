@@ -264,13 +264,19 @@ run_beast2 <- function(
 
   if (verbose) {
     print("[variable name]: [full path] [exists?]")
-    print(paste("Filename:", input_filename_full))
+    print(paste("Filename:", input_filename_full,
+      file.exists(input_filename_full)))
     print(paste("input_filename_full:", input_filename_full))
-    print(paste("actual_log_filename:", actual_log_filename, file.exists(actual_log_filename)))
-    print(paste("actual_trees_filenames:", actual_trees_filenames, file.exists(actual_trees_filenames)))
-    print(paste("output_log_filename_full:", output_log_filename_full, file.exists(output_log_filename_full)))
-    print(paste("output_trees_filenames_full:", output_trees_filenames_full, file.exists(output_trees_filenames_full)))
-    print(paste("output_state_filename_full:", output_state_filename_full, file.exists(output_state_filename_full)))
+    print(paste("actual_log_filename:", actual_log_filename,
+      file.exists(actual_log_filename)))
+    print(paste("actual_trees_filenames:", actual_trees_filenames,
+      file.exists(actual_trees_filenames)))
+    print(paste("output_log_filename_full:", output_log_filename_full,
+      file.exists(output_log_filename_full)))
+    print(paste("output_trees_filenames_full:", output_trees_filenames_full,
+      file.exists(output_trees_filenames_full)))
+    print(paste("output_state_filename_full:", output_state_filename_full,
+      file.exists(output_state_filename_full)))
   }
 
   testit::assert(file.exists(output_log_filename))
