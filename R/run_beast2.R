@@ -6,30 +6,30 @@
 #'   and \code{output_state_filenames}
 #' @export
 #' @examples
-#'   library(testthat)
+#' library(testthat)
 #'
-#'   if (is_beast2_installed() && is_on_ci()) {
+#' if (is_beast2_installed() && is_on_ci()) {
 #'
-#'     output_log_filename <- tempfile(fileext = ".log")
-#'     output_trees_filenames <- tempfile(fileext = ".trees")
-#'     output_state_filename <- tempfile(fileext = ".xml.state")
+#'   output_log_filename <- tempfile(fileext = ".log")
+#'   output_trees_filenames <- tempfile(fileext = ".trees")
+#'   output_state_filename <- tempfile(fileext = ".xml.state")
 #'
-#'     expect_false(file.exists(output_log_filename))
-#'     expect_false(file.exists(output_trees_filenames))
-#'     expect_false(file.exists(output_state_filename))
+#'   expect_false(file.exists(output_log_filename))
+#'   expect_false(file.exists(output_trees_filenames))
+#'   expect_false(file.exists(output_state_filename))
 #'
-#'     output <- run_beast2(
-#'       input_filename = get_beastier_path("2_4.xml"),
-#'       output_log_filename = output_log_filename,
-#'       output_trees_filenames = output_trees_filenames,
-#'       output_state_filename = output_state_filename
-#'     )
+#'   output <- run_beast2(
+#'     input_filename = get_beastier_path("2_4.xml"),
+#'     output_log_filename = output_log_filename,
+#'     output_trees_filenames = output_trees_filenames,
+#'     output_state_filename = output_state_filename
+#'   )
 #'
-#'     expect_true(length(output) > 40)
-#'     expect_true(file.exists(output_log_filename))
-#'     expect_true(file.exists(output_trees_filenames))
-#'     expect_true(file.exists(output_state_filename))
-#'   }
+#'   expect_true(length(output) > 40)
+#'   expect_true(file.exists(output_log_filename))
+#'   expect_true(file.exists(output_trees_filenames))
+#'   expect_true(file.exists(output_state_filename))
+#' }
 #' @author Richèl J.C. Bilderbeek
 run_beast2 <- function(
   input_filename,
@@ -54,67 +54,120 @@ run_beast2 <- function(
   beast2_path = get_default_beast2_path(),
   verbose = FALSE
 ) {
+  if (is_win_bin_path(beast2_path)) {
+    stop("Cannot use the Windows executable BEAST2.exe in scripts")
+  }
+  ##############################################################################
+  # Deduce the full paths of the input and output files
+  ##############################################################################
   if (verbose) {
     print(paste("input_filename:", input_filename))
     print(paste("output_log_filename:", output_log_filename))
     print(paste("output_trees_filenames:", output_trees_filenames))
     print(paste("output_state_filename:", output_state_filename))
   }
-  if (is_win_bin_path(beast2_path)) {
-    stop("Cannot use the Windows executable BEAST2.exe in scripts")
-  }
-  # Add the full path of the input file
+  # Input
   input_filename_full <- input_filename
   if (basename(input_filename) == input_filename) {
     input_filename_full <- file.path(getwd(), input_filename)
+  }
+  # Intermediate, these are files created by BEAST2
+  beast_log_filename <- create_default_log_filename(
+    input_filename = input_filename_full,
+    beast2_path = beast2_path,
+    verbose = verbose
+  )
+  beast_trees_filename <- create_default_trees_filenames(
+    input_filename = input_filename_full,
+    beast2_path = beast2_path,
+    verbose = verbose
+  )
+  actual_log_filename <- file.path(
+    beast2_working_dir,
+    basename(
+      create_default_log_filename(
+        input_filename = input_filename_full,
+        beast2_path = beast2_path
+      )
+    )
+  )
+  actual_trees_filenames <- NA
+  for (i in seq_along(output_trees_filenames)) {
+    actual_trees_filenames[i] <- file.path(
+      beast2_working_dir,
+      basename(
+        create_default_trees_filenames(
+          input_filename = input_filename_full,
+          beast2_path = beast2_path,
+          verbose = verbose
+        )[i]
+      )
+    )
+  }
+  # Output
+  output_log_filename_full <- output_log_filename
+  if (basename(output_log_filename) == output_log_filename) {
+    output_log_filename_full <- file.path(getwd(), output_log_filename)
+  }
+  output_trees_filenames_full <- output_trees_filenames
+  for (i in seq_along(output_trees_filenames_full)) {
+    if (basename(output_trees_filenames[i]) == output_trees_filenames[i]) {
+      output_trees_filenames_full[i] <- file.path(getwd(), output_trees_filenames[i])
+    }
   }
   output_state_filename_full <- output_state_filename
   if (basename(output_state_filename) == output_state_filename) {
     output_state_filename_full <- file.path(getwd(), output_state_filename)
   }
-
+  if (verbose) {
+    print(paste("input_filename_full:", input_filename_full))
+    print(paste("beast_log_filename:", beast_log_filename))
+    print(paste("beast_trees_filenames:", beast_trees_filenames))
+    print(paste("actual_log_filename:", actual_log_filename))
+    print(paste("actual_trees_filenames:", actual_trees_filenames))
+    print(paste("output_log_filename_full:", output_log_filename_full))
+    print(paste("output_trees_filenames_full:", output_trees_filenames_full))
+    print(paste("output_state_filename_full:", output_state_filename_full))
+  }
+  ##############################################################################
+  # Check files
+  ##############################################################################
   check_input_filename(input_filename_full) # nolint internal function
   check_beast2_path(beast2_path) # nolint internal function
+  if (overwrite == FALSE) {
+    if (file.exists(beast_log_filename)) {
+      stop("Cannot overwrite the .log file created by BEAST2 ('",
+        beast_log_filename, "') with 'overwrite' is FALSE"
+      )
+    }
+    if (file.exists(beast_trees_filename)) {
+      stop("Cannot overwrite the .trees files created by BEAST2 ('",
+        beast_trees_filename, "') with 'overwrite' is FALSE"
+      )
+    }
+    if (file.exists(output_log_filename_full)) {
+      stop("Will not overwrite 'output_log_filename' ('",
+        output_log_filename_full, "') with 'overwrite' is FALSE"
+      )
+    }
+    if (any(file.exists(output_trees_filenames_full))) {
+      stop("Will not overwrite 'output_trees_filenames' ('",
+        output_trees_filenames_full, "') with 'overwrite' is FALSE"
+      )
+    }
+    if (file.exists(output_state_filename_full)) {
+      stop("Will not overwrite 'output_state_filename' ('",
+        output_state_filename_full, "') with 'overwrite' is FALSE"
+      )
+    }
+  }
+  check_rng_seed(rng_seed) # nolint beastier function
   check_input_filename_validity( # nolint internal function
     input_filename = input_filename_full,
     beast2_path = beast2_path,
     verbose = verbose
   )
 
-  if (any(file.exists(output_log_filename)) && overwrite == FALSE) {
-    stop("Will not overwrite 'output_log_filename' ('",
-      output_log_filename, "') with 'overwrite' is FALSE"
-    )
-  }
-  if (any(file.exists(output_trees_filenames)) && overwrite == FALSE) {
-    stop("Will not overwrite 'output_trees_filenames' ('",
-      output_trees_filenames, "') with 'overwrite' is FALSE"
-    )
-  }
-
-  # These are files created by BEAST2
-  beast_log_filename <- create_default_log_filename(
-    input_filename = input_filename_full,
-    beast2_path = beast2_path,
-    verbose = verbose
-  )
-  if (any(file.exists(beast_log_filename)) && overwrite == FALSE) {
-    stop("Cannot overwrite the .log file created by BEAST2 ('",
-      beast_log_filename, "') with 'overwrite' is FALSE"
-    )
-  }
-  beast_trees_filename <- create_default_trees_filenames(
-    input_filename = input_filename_full,
-    beast2_path = beast2_path,
-    verbose = verbose
-  )
-  if (any(file.exists(beast_trees_filename)) && overwrite == FALSE) {
-    stop("Cannot overwrite the .trees files created by BEAST2 ('",
-      beast_trees_filename, "') with 'overwrite' is FALSE"
-    )
-  }
-
-  check_rng_seed(rng_seed) # nolint beastier function
 
   alignment_ids <- get_alignment_ids(input_filename_full) # nolint internal function
 
@@ -127,35 +180,39 @@ run_beast2 <- function(
     )
   }
 
-  # Move working directory to temporary folder
+  ##############################################################################
+  # Store old wd, create and change to beast2_working_dir
+  ##############################################################################
   cur_wd <- getwd()
-  tmp_wd <- beast2_working_dir
+  # Move working directory to temporary folder
   # Do not warning if the folder already exists, unless when being verbose
-  dir.create(tmp_wd, showWarnings = verbose, recursive = TRUE)
+  dir.create(beast2_working_dir, showWarnings = verbose, recursive = TRUE)
 
   # Although 'dir.create' creates folders recursively,
   # it only has the user's permission. As the user
   # is not running as root, it cannot create root folders
-  if (!dir.exists(tmp_wd)) {
-    dir.create(tmp_wd, showWarnings = TRUE)
+  if (!dir.exists(beast2_working_dir)) {
+    dir.create(beast2_working_dir, showWarnings = TRUE)
     stop(
-      "Cannot create working directory '", tmp_wd, "' \n",
+      "Cannot create working directory '", beast2_working_dir, "' \n",
       "Maybe no permission to create it there? \n"
     )
   }
-
   # This will fail if the temp_wd cannot be created
   tryCatch(
-    setwd(tmp_wd),
+    setwd(beast2_working_dir),
     error = function(e) {
       stop(
-        "Cannot set working directory to '", tmp_wd, "' \n",
+        "Cannot set working directory to '", beast2_working_dir, "' \n",
         "Maybe no permission to change to that location?\n",
         "Error message: ", e$message, " \n"
       )
     }
   )
 
+  ##############################################################################
+  # Create the BEAST2 command
+  ##############################################################################
   testit::assert(length(input_filename_full) == 1)
   testit::assert(length(output_state_filename) == 1)
   testit::assert(length(rng_seed) == 1)
@@ -179,14 +236,15 @@ run_beast2 <- function(
   }
 
 
+  ##############################################################################
+  # Run BEAST2
+  ##############################################################################
   output <- system2(
     command = cmd[1],
     args = cmd[-1],
     stdout = TRUE,
     stderr = TRUE
   )
-
-
   if (length(output) == 1) {
     stop(
       "Command '", paste0(cmd, collapse = " "), "' failed ",
@@ -198,17 +256,8 @@ run_beast2 <- function(
   setwd(cur_wd)
 
   ##############################################################################
-  # The filenames as created by BEAST2
+  # The files as created by BEAST2
   ##############################################################################
-  actual_log_filename <- file.path(
-    tmp_wd,
-    basename(
-      create_default_log_filename(
-        input_filename = input_filename_full,
-        beast2_path = beast2_path
-      )
-    )
-  )
   if (!file.exists(actual_log_filename)) {
     stop(
       "BEAST2 .log file not created at '", actual_log_filename, "' \n",
@@ -224,16 +273,7 @@ run_beast2 <- function(
   for (i in seq_along(output_trees_filenames)) {
     to <- output_trees_filenames[i]
     if (!file.exists(to)) {
-      actual_trees_filename <- file.path(
-        tmp_wd,
-        basename(
-          create_default_trees_filenames(
-            input_filename = input_filename_full,
-            beast2_path = beast2_path,
-            verbose = verbose
-          )[i]
-        )
-      )
+      actual_trees_filename <- actual_trees_filenames[i]
       testit::assert(file.exists(actual_trees_filename))
       file.rename(from = actual_trees_filename, to = to)
     }
