@@ -102,7 +102,9 @@ run_beast2 <- function(
   output_trees_filenames_full <- output_trees_filenames
   for (i in seq_along(output_trees_filenames_full)) {
     if (basename(output_trees_filenames[i]) == output_trees_filenames[i]) {
-      output_trees_filenames_full[i] <- file.path(getwd(), output_trees_filenames[i])
+      output_trees_filenames_full[i] <- file.path(
+        getwd(), output_trees_filenames[i]
+      )
     }
   }
   output_state_filename_full <- output_state_filename
