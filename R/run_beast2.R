@@ -248,18 +248,15 @@ run_beast2 <- function(
     )
   }
 
-  if (!file.exists(output_log_filename)) {
-    testit::assert(file.exists(actual_log_filename))
-    file.rename(from = actual_log_filename, to = output_log_filename)
-  }
+  # Copy to target, will overwrite if this was desired
+  testit::assert(file.exists(actual_log_filename))
+  file.rename(from = actual_log_filename, to = output_log_filename)
 
   for (i in seq_along(output_trees_filenames)) {
     to <- output_trees_filenames[i]
-    if (!file.exists(to)) {
-      actual_trees_filename <- actual_trees_filenames[i]
-      testit::assert(file.exists(actual_trees_filename))
-      file.rename(from = actual_trees_filename, to = to)
-    }
+    actual_trees_filename <- actual_trees_filenames[i]
+    testit::assert(file.exists(actual_trees_filename))
+    file.rename(from = actual_trees_filename, to = to)
   }
 
   if (verbose) {
