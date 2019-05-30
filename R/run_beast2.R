@@ -122,7 +122,7 @@ run_beast2 <- function(
   if (verbose) {
     print(paste("input_filename_full:", input_filename_full))
     print(paste("beast_log_filename:", beast_log_filename))
-    print(paste("beast_trees_filenames:", beast_trees_filenames))
+    print(paste("beast_trees_filename:", beast_trees_filename))
     print(paste("actual_log_filename:", actual_log_filename))
     print(paste("actual_trees_filenames:", actual_trees_filenames))
     print(paste("output_log_filename_full:", output_log_filename_full))
