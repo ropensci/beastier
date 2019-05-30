@@ -341,8 +341,6 @@ test_that("BEAST2 overwrites log and trees files", {
   if (!is_beast2_installed()) {
     return()
   }
-  skip("#21")
-
   input_filename <- get_beastier_path("2_4.xml")
   output_log_filename <- beastier:::create_default_log_filename(
     input_filename = input_filename,
