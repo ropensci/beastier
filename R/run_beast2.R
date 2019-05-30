@@ -72,16 +72,6 @@ run_beast2 <- function(
     input_filename_full <- file.path(getwd(), input_filename)
   }
   # Intermediate, these are files created by BEAST2
-  beast_log_filename <- create_default_log_filename(
-    input_filename = input_filename_full,
-    beast2_path = beast2_path,
-    verbose = verbose
-  )
-  beast_trees_filename <- create_default_trees_filenames(
-    input_filename = input_filename_full,
-    beast2_path = beast2_path,
-    verbose = verbose
-  )
   actual_log_filename <- file.path(
     beast2_working_dir,
     basename(
@@ -121,8 +111,6 @@ run_beast2 <- function(
   }
   if (verbose) {
     print(paste("input_filename_full:", input_filename_full))
-    print(paste("beast_log_filename:", beast_log_filename))
-    print(paste("beast_trees_filename:", beast_trees_filename))
     print(paste("actual_log_filename:", actual_log_filename))
     print(paste("actual_trees_filenames:", actual_trees_filenames))
     print(paste("output_log_filename_full:", output_log_filename_full))
@@ -135,16 +123,6 @@ run_beast2 <- function(
   check_input_filename(input_filename_full) # nolint internal function
   check_beast2_path(beast2_path) # nolint internal function
   if (overwrite == FALSE) {
-    if (file.exists(beast_log_filename)) {
-      stop("Cannot overwrite the .log file created by BEAST2 ('",
-        beast_log_filename, "') with 'overwrite' is FALSE"
-      )
-    }
-    if (file.exists(beast_trees_filename)) {
-      stop("Cannot overwrite the .trees files created by BEAST2 ('",
-        beast_trees_filename, "') with 'overwrite' is FALSE"
-      )
-    }
     if (file.exists(output_log_filename_full)) {
       stop("Will not overwrite 'output_log_filename' ('",
         output_log_filename_full, "') with 'overwrite' is FALSE"
@@ -286,8 +264,6 @@ run_beast2 <- function(
     print("[variable name]: [full path] [exists?]")
     print(paste("Filename:", input_filename_full))
     print(paste("input_filename_full:", input_filename_full))
-    print(paste("beast_log_filename:", beast_log_filename, file.exists(beast_log_filename)))
-    print(paste("beast_trees_filename:", beast_trees_filename, file.exists(beast_trees_filename)))
     print(paste("actual_log_filename:", actual_log_filename, file.exists(actual_log_filename)))
     print(paste("actual_trees_filenames:", actual_trees_filenames, file.exists(actual_trees_filenames)))
     print(paste("output_log_filename_full:", output_log_filename_full, file.exists(output_log_filename_full)))
