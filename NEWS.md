@@ -12,6 +12,7 @@ Newest versions at top.
 
   * Simplified `run_beast2`
   * Improved error checking and logging in `run_beast2`
+  * Will overwrite files if requested (which is by default)
 
 ### BUG FIXES
 
