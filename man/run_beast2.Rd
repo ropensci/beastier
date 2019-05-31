@@ -74,30 +74,30 @@ The text sent to \code{STDOUT} and \code{STDERR}.
 Run BEAST2
 }
 \examples{
-  library(testthat)
+library(testthat)
 
-  if (is_beast2_installed() && is_on_ci()) {
+if (is_beast2_installed() && is_on_ci()) {
 
-    output_log_filename <- tempfile(fileext = ".log")
-    output_trees_filenames <- tempfile(fileext = ".trees")
-    output_state_filename <- tempfile(fileext = ".xml.state")
+  output_log_filename <- tempfile(fileext = ".log")
+  output_trees_filenames <- tempfile(fileext = ".trees")
+  output_state_filename <- tempfile(fileext = ".xml.state")
 
-    expect_false(file.exists(output_log_filename))
-    expect_false(file.exists(output_trees_filenames))
-    expect_false(file.exists(output_state_filename))
+  expect_false(file.exists(output_log_filename))
+  expect_false(file.exists(output_trees_filenames))
+  expect_false(file.exists(output_state_filename))
 
-    output <- run_beast2(
-      input_filename = get_beastier_path("2_4.xml"),
-      output_log_filename = output_log_filename,
-      output_trees_filenames = output_trees_filenames,
-      output_state_filename = output_state_filename
-    )
+  output <- run_beast2(
+    input_filename = get_beastier_path("2_4.xml"),
+    output_log_filename = output_log_filename,
+    output_trees_filenames = output_trees_filenames,
+    output_state_filename = output_state_filename
+  )
 
-    expect_true(length(output) > 40)
-    expect_true(file.exists(output_log_filename))
-    expect_true(file.exists(output_trees_filenames))
-    expect_true(file.exists(output_state_filename))
-  }
+  expect_true(length(output) > 40)
+  expect_true(file.exists(output_log_filename))
+  expect_true(file.exists(output_trees_filenames))
+  expect_true(file.exists(output_state_filename))
+}
 }
 \author{
 Richèl J.C. Bilderbeek

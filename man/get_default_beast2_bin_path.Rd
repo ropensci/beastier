@@ -20,7 +20,7 @@ Get the default BEAST2 binary file (\code{beast}, that is) path
   if (is_beast2_installed() && rappdirs::app_dir()$os == "unix") {
     testit::assert(
       grepl(
-        "/home/[A-Za-z0-9_]*/.local/share/beast/bin/beast",
+        "beast/bin/beast",
         get_default_beast2_bin_path()
       )
     )

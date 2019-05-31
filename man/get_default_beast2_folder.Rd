@@ -16,16 +16,7 @@ Get the path to the folder where this package installs
 BEAST2 by default
 }
 \examples{
-  library(testthat)
-
-  if (rappdirs::app_dir()$os == "unix") {
-    expect_true(
-      grepl(
-        "/home/[A-Za-z0-9_]*/.local/share",
-        get_default_beast2_folder()
-      )
-    )
-  }
+  print(get_default_beast2_folder())
 }
 \seealso{
 Use \link{get_default_beast2_jar_path} to get the path
