@@ -2,7 +2,7 @@
 
 Newest versions at top.
 
-## beastier 2.0.15 (in progress)
+## beastier 2.0.15 (2019-06-01)
 
 ### NEW FEATURES
 
@@ -13,6 +13,8 @@ Newest versions at top.
   * Simplified `run_beast2`
   * Improved error checking and logging in `run_beast2`
   * Will overwrite files if requested (which is by default)
+  * Removed example code that assumed all Linuxes have `/home/username`,
+    thanks to Brian Ripley 
 
 ### BUG FIXES
 
@@ -21,8 +23,6 @@ Newest versions at top.
 ### DEPRECATED AND DEFUNCT
 
   * None
-
-## beastier 2.0.13 (2019-05-14)
 
 ## beastier 2.0.14 (2019-05-27)
 
