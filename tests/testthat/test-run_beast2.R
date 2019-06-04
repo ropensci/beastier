@@ -334,10 +334,9 @@ test_that("BEAST2 does not overwrite the .xml.state file specified by user", {
 
   # Delete the trees file iff it is present,
   # only needed when running these tests locally for multiple times
-  input_filename <- get_beastier_path("2_4.xml")
   output_trees_filenames <- create_default_trees_filenames(input_filename)
   if (any(file.exists(output_trees_filenames))) {
-    file.remove(output_trees_filenames, warn = FALSE)
+    file.remove(output_trees_filenames)
   }
 
   expect_error(
