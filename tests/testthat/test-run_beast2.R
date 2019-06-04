@@ -326,15 +326,25 @@ test_that("BEAST2 does not overwrite the .xml.state file specified by user", {
   write(x = "state", file = output_state_filename)
   testit::assert(all(readLines(output_state_filename, warn = FALSE) == "state"))
 
-  # Delete the log file iff it is present
+  # Delete the log file iff it is present,
+  # only needed when running these tests locally for multiple times
   input_filename <- get_beastier_path("2_4.xml")
   output_log_filename <- create_default_log_filename(input_filename)
   if (file.exists(output_log_filename)) file.remove(output_log_filename)
+
+  # Delete the trees file iff it is present,
+  # only needed when running these tests locally for multiple times
+  input_filename <- get_beastier_path("2_4.xml")
+  output_trees_filenames <- create_default_trees_filenames(input_filename)
+  if (any(file.exists(output_trees_filenames))) {
+    file.remove(output_trees_filenames, warn = FALSE)
+  }
 
   expect_error(
     run_beast2(
       input_filename = input_filename,
       output_state_filename = output_state_filename,
+      output_trees_filenames = output_trees_filenames,
       output_log_filename = output_log_filename,
       overwrite = FALSE
     ),
