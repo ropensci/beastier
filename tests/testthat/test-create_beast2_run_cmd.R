@@ -2,9 +2,7 @@ context("create_beast2_run_cmd")
 
 test_that("use, bin", {
 
-  if (!is_beast2_installed()) {
-    return()
-  }
+  if (!is_beast2_installed()) return()
 
   testit::assert(is_beast2_installed())
   beast2_bin_path <- get_default_beast2_bin_path()
@@ -29,9 +27,7 @@ test_that("use, bin", {
 
 test_that("use, jar", {
 
-  if (!is_beast2_installed()) {
-    return()
-  }
+  if (!is_beast2_installed()) return()
 
   testit::assert(is_beast2_installed())
   beast2_jar_path <- get_default_beast2_jar_path()
@@ -59,15 +55,9 @@ test_that("use, jar", {
   expect_equal(created, expected)
 })
 
-
-
-
-
 test_that("different overwrite option results in different command", {
 
-  if (!is_beast2_installed()) {
-    return()
-  }
+  if (!is_beast2_installed()) return()
 
   testit::assert(is_beast2_installed())
 
