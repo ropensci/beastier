@@ -2,6 +2,25 @@
 
 Newest versions at top.
 
+## beastier 2.0.16 (unreleased)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Use `-Dbeast.load.jars` in calling BEAST2 jar files
+    to one day call BEAST2 from the command line under Windows 
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.0.15 (2019-06-01)
 
 ### NEW FEATURES
