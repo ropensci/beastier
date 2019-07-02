@@ -78,14 +78,14 @@ test_that("abuse", {
   )
 
   # Binary fails under Windows, but works under Unix (see 'use' section above)
-  if (rappdirs::app_dir()$os == "win") {
-    expect_error(
-      gives_beast2_warning(
-        filename = get_beastier_path("beast2_warning.xml"),
-        beast2_path = get_default_beast2_bin_path()
-      ),
-      "Cannot use the Windows executable BEAST2.exe in scripts"
-    )
-  }
+  # if (rappdirs::app_dir()$os == "win") {
+  #   expect_error(
+  #     gives_beast2_warning(
+  #       filename = get_beastier_path("beast2_warning.xml"),
+  #       beast2_path = get_default_beast2_bin_path()
+  #     ),
+  #     "Cannot use the Windows executable BEAST2.exe in scripts"
+  #   )
+  # }
 
 })

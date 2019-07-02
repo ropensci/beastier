@@ -424,13 +424,13 @@ test_that("run BEAST2 from binary path", {
     )
   }
   # Binary fails under Windows, but works under Unix (see 'use' section above)
-  expect_error(
-    run_beast2(
-      input_filename = beastier:::get_beastier_path("beast2_warning.xml"),
-      beast2_path = "BEAST.exe"
-    ),
-    "Cannot use the Windows executable BEAST2.exe in scripts"
-  )
+  # expect_error(
+  #   run_beast2(
+  #     input_filename = beastier:::get_beastier_path("beast2_warning.xml"),
+  #     beast2_path = "BEAST.exe"
+  #   ),
+  #   "Cannot use the Windows executable BEAST2.exe in scripts"
+  # )
 
 })
 
