@@ -459,14 +459,19 @@ test_that("run_beast2 with that cannot write to target directory", {
 test_that("run_beast2 with invalid working directory", {
 
   if (!is_beast2_installed()) return()
-  expect_error(
-    run_beast2(
-      input_filename = get_beastier_path("2_4.xml"),
-      beast2_working_dir = "/no/way"
-    ),
-    paste0(
-      "Cannot create working directory '/no/way' \n",
-      "Maybe no permission to create it there?"
+  # When creating an invalid working directory,
+  # this gives both a warning and an error.
+  # Here, I test for the error and suppress the warning
+  suppressWarnings(
+    expect_error(
+      run_beast2(
+        input_filename = get_beastier_path("2_4.xml"),
+        beast2_working_dir = "/no/way"
+      ),
+      paste0(
+        "Cannot create working directory '/no/way' \n",
+        "Maybe no permission to create it there?"
+      )
     )
   )
 })
