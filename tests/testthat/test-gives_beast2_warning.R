@@ -27,15 +27,13 @@ test_that("use, jar", {
 
   testit::assert(is_beast2_installed())
 
-  if (rappdirs::app_dir()$os == "unix") {
-    # No idea why this only work under UNIX
-    expect_false(
-      gives_beast2_warning(
-        filename = get_beastier_path("2_4.xml"),
-        beast2_path = get_default_beast2_jar_path()
-      )
+  # No idea why this only work under UNIX
+  expect_false(
+    gives_beast2_warning(
+      filename = get_beastier_path("2_4.xml"),
+      beast2_path = get_default_beast2_jar_path()
     )
-  }
+  )
 
   expect_true(
     gives_beast2_warning(
@@ -78,14 +76,14 @@ test_that("abuse", {
   )
 
   # Binary fails under Windows, but works under Unix (see 'use' section above)
-  # if (rappdirs::app_dir()$os == "win") {
-  #   expect_error(
-  #     gives_beast2_warning(
-  #       filename = get_beastier_path("beast2_warning.xml"),
-  #       beast2_path = get_default_beast2_bin_path()
-  #     ),
-  #     "Cannot use the Windows executable BEAST2.exe in scripts"
-  #   )
-  # }
+  if (rappdirs::app_dir()$os == "win") {
+    expect_error(
+      gives_beast2_warning(
+        filename = get_beastier_path("beast2_warning.xml"),
+        beast2_path = get_default_beast2_bin_path()
+      ),
+      "Cannot use the Windows executable BEAST2.exe in scripts"
+    )
+  }
 
 })

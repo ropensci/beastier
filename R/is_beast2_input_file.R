@@ -34,9 +34,9 @@ is_beast2_input_file <- function(
       "Filename '", filename, "' not found"
     )
   }
-  #if (is_win_bin_path(beast2_path)) {
-  #  stop("Cannot use the Windows executable BEAST2.exe in scripts")
-  #}
+  if (is_win_bin_path(beast2_path)) {
+   stop("Cannot use the Windows executable BEAST2.exe in scripts")
+  }
   if (!file.exists(beast2_path)) {
     stop(
       "'beast2_path' must be the full path ",
