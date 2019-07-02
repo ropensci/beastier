@@ -43,7 +43,7 @@ create_beast2_validate_cmd <- function(
 #'     cmds <- create_beast2_validate_cmd_jar(
 #'       input_filename = "input.xml"
 #'     )
-#'     testit::assert(length(cmds) == 5)
+#'     testit::assert(length(cmds) == 6)
 #'     testit::assert(cmds[2] == "-jar")
 #'   }
 #' @author Richèl J.C. Bilderbeek
@@ -57,6 +57,7 @@ create_beast2_validate_cmd_jar <- function(
   cmds <- c(
     get_default_java_path(),
     "-jar",
+    "-Dbeast.load.jars",
     paste0("\"", beast2_jar_path, "\""),
     "-validate",
     paste0("\"", input_filename, "\"")
