@@ -46,6 +46,7 @@ test_that("use, jar", {
   expected <- c(
     get_default_java_path(),
     "-jar",
+    "-Dbeast.load.jars",
     beast2_jar_path,
     "-statefile",
     paste0("\"", output_state_filename, "\""),
