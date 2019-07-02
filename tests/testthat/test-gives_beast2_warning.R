@@ -27,13 +27,15 @@ test_that("use, jar", {
 
   testit::assert(is_beast2_installed())
 
-  # No idea why this only work under UNIX
-  expect_false(
-    gives_beast2_warning(
-      filename = get_beastier_path("2_4.xml"),
-      beast2_path = get_default_beast2_jar_path()
+  if (rappdirs::app_dir()$os == "unix") {
+    # No idea why this only work under UNIX
+    expect_false(
+      gives_beast2_warning(
+        filename = get_beastier_path("2_4.xml"),
+        beast2_path = get_default_beast2_jar_path()
+      )
     )
-  )
+  }
 
   expect_true(
     gives_beast2_warning(
