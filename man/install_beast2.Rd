@@ -13,7 +13,7 @@ be put.
 The name of the BEAST2 binary file will be at
 \code{[folder_name]/beast/bin/beast}
 The name of the BEAST2 jar file will be at
-\code{[folder_name]/beast/lib/beast.jar}}
+\code{[folder_name]/beast/lib/launcher.jar}}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}

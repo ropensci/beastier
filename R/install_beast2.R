@@ -5,7 +5,7 @@
 #'   The name of the BEAST2 binary file will be at
 #'   \code{[folder_name]/beast/bin/beast}
 #'   The name of the BEAST2 jar file will be at
-#'   \code{[folder_name]/beast/lib/beast.jar}
+#'   \code{[folder_name]/beast/lib/launcher.jar}
 #' @return Nothing. Will install BEAST2
 #' @examples
 #'   library(testthat)
@@ -27,9 +27,9 @@ install_beast2 <- function(
   os = rappdirs::app_dir()$os
 ) {
   check_os(os = os) # nolint internal function
-  jar_file_path <- file.path(folder_name, "BEAST", "lib", "beast.jar")
+  jar_file_path <- file.path(folder_name, "BEAST", "lib", "launcher.jar")
   if (os != "win") {
-    jar_file_path <- file.path(folder_name, "beast", "lib", "beast.jar")
+    jar_file_path <- file.path(folder_name, "beast", "lib", "launcher.jar")
   }
   if (file.exists(jar_file_path)) {
     stop("BEAST2 already installed")

@@ -12,7 +12,7 @@ uninstall_beast2(folder_name = rappdirs::user_data_dir(),
 The name of the BEAST2 binary file will be at
 \code{[folder_name]/beast/bin/beast}
 The name of the BEAST2 jar file will be at
-\code{[folder_name]/beast/lib/beast.jar}}
+\code{[folder_name]/beast/lib/launcher.jar}}
 
 \item{os}{name of the operating system,
 must be \code{unix} (Linux, Mac) or \code{win} (Windows)}

@@ -40,7 +40,7 @@ is_beast2_input_file <- function(
   if (!file.exists(beast2_path)) {
     stop(
       "'beast2_path' must be the full path ",
-      "of either 'beast' or 'beast.jar'. ",
+      "of either 'beast' or 'launcher.jar'. ",
       "Both not found at path '", beast2_path, "'"
     )
   }

@@ -10,8 +10,7 @@ Newest versions at top.
 
 ### MINOR IMPROVEMENTS
 
-  * Use `-Dbeast.load.jars` in calling BEAST2 jar files
-    to one day call BEAST2 from the command line under Windows 
+  * None
 
 ### BUG FIXES
 

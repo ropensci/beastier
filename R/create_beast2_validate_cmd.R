@@ -32,7 +32,7 @@ create_beast2_validate_cmd <- function(
 }
 
 #' Creates the terminal command to validate a BEAST2 input file
-#' using a call to the \code{beast.jar} file
+#' using a call to the \code{launcher.jar} file
 #' @inheritParams default_params_doc
 #' @return a character vector, of which the first element
 #'   is the command (\code{java}, in this case),
@@ -57,7 +57,6 @@ create_beast2_validate_cmd_jar <- function(
   cmds <- c(
     get_default_java_path(),
     "-jar",
-    "-Dbeast.load.jars",
     paste0("\"", beast2_jar_path, "\""),
     "-validate",
     paste0("\"", input_filename, "\"")
@@ -67,7 +66,7 @@ create_beast2_validate_cmd_jar <- function(
 }
 
 #' Creates the terminal command to validate a BEAST2 input file
-#' using a call to the \code{beast.jar} file
+#' using a call to the \code{launcher.jar} file
 #' @inheritParams default_params_doc
 #' @return a character vector, of which the first element
 #'   is the command (\code{java}, in this case),

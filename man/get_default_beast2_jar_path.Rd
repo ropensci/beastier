@@ -22,7 +22,7 @@ Get the default BEAST2 jar file's path
   if (is_beast2_installed() && rappdirs::app_dir()$os == "unix") {
     expect_true(
       grepl(
-        "beast/lib/beast.jar",
+        "beast/lib/launcher.jar",
         get_default_beast2_jar_path()
       )
     )

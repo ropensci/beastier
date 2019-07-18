@@ -4,7 +4,7 @@ test_that("use", {
   expect_true(is_bin_path("beast"))
   expect_true(is_bin_path("BEAST.exe"))
   expect_false(is_bin_path("beast.exe"))
-  expect_false(is_bin_path("beast.jar"))
+  expect_false(is_bin_path("launcher.jar"))
   expect_true(is_bin_path(get_default_beast2_bin_path()))
   expect_false(is_bin_path(get_default_beast2_jar_path()))
   expect_false(is_bin_path("nonsense"))

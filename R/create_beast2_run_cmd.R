@@ -30,13 +30,9 @@ create_beast2_run_cmd <- function(
   testit::assert(file.exists(get_default_java_path())) # nolint internal function
   cmds <- NULL
   if (is_jar_path(beast2_path)) {
-    # From https://github.com/CompEvol/beast2/issues/813:
-    # java -Dbeast.load.jars \path\to\BEAST\lib\beast.jar myfile.xml
-
     cmds <- c(
       get_default_java_path(),
       "-jar",
-      "-Dbeast.load.jars",
       shQuote(beast2_path)
     )
     testit::assert(file.exists(cmds[1]))

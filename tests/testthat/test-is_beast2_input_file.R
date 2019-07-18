@@ -81,7 +81,7 @@ test_that("abuse", {
       beast2_path = "abs.ent"
     ),
     paste0(
-      "'beast2_path' must be the full path of either 'beast' or 'beast.jar'. ",
+      "'beast2_path' must be the full path of either 'beast' or 'launcher.jar'. ",
       "Both not found at path 'abs.ent'"
     )
   )

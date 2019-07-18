@@ -11,7 +11,7 @@
 #'   if (is_beast2_installed() && rappdirs::app_dir()$os == "unix") {
 #'     expect_true(
 #'       grepl(
-#'         "beast/lib/beast.jar",
+#'         "beast/lib/launcher.jar",
 #'         get_default_beast2_jar_path()
 #'       )
 #'     )
@@ -33,7 +33,7 @@ get_default_beast2_jar_path <- function(
       rappdirs::user_data_dir(),
       beast_foldername,
       "lib",
-      "beast.jar"
+      "launcher.jar"
     ),
     mustWork = FALSE
   ) # nolint internal function
