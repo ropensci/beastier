@@ -43,7 +43,7 @@ create_beast2_validate_cmd <- function(
 #'     cmds <- create_beast2_validate_cmd_jar(
 #'       input_filename = "input.xml"
 #'     )
-#'     testit::assert(length(cmds) == 6)
+#'     testit::assert(length(cmds) == 5)
 #'     testit::assert(cmds[2] == "-jar")
 #'   }
 #' @author Richèl J.C. Bilderbeek
