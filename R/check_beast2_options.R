@@ -51,14 +51,10 @@ check_beast2_options <- function(
   }
   check_rng_seed(beast2_options$rng_seed) # nolint beastier function
   check_n_threads(beast2_options$n_threads) # nolint beastier function
-  if (length(beast2_options$verbose) != 1 ||
-    beautier::is_one_na(beast2_options$use_beagle) ||
-    !is.logical(beast2_options$use_beagle)) {
+  if (!beautier::is_one_bool(beast2_options$use_beagle)) {
     stop("'use_beagle' must be one boolean")
   }
-  if (length(beast2_options$overwrite) != 1 ||
-    beautier::is_one_na(beast2_options$overwrite) ||
-    !is.logical(beast2_options$overwrite)) {
+  if (!beautier::is_one_bool(beast2_options$overwrite)) {
     stop("'overwrite' must be one boolean")
   }
   if (length(beast2_options$beast2_working_dir) != 1 ||
@@ -69,9 +65,7 @@ check_beast2_options <- function(
     !is.character(beast2_options$beast2_path)) {
     stop("'beast2_path' must be one character string")
   }
-  if (length(beast2_options$verbose) != 1 ||
-    beautier::is_one_na(beast2_options$verbose) ||
-    !is.logical(beast2_options$verbose)) {
+  if (!beautier::is_one_bool(beast2_options$verbose)) {
     stop("'verbose' must be one boolean")
   }
 }
