@@ -77,3 +77,48 @@ test_that("different overwrite option results in different command", {
   expect_true(length(cmd_false) != length(cmd_true))
 
 })
+
+test_that("different use_beagle option results in different command", {
+
+  if (!is_beast2_installed()) return()
+
+  testit::assert(is_beast2_installed())
+
+  output_state_filename <- "output.xml.state"
+  input_filename <- "input.xml"
+
+  cmd_true <- beastier::create_beast2_run_cmd(
+    input_filename = input_filename,
+    output_state_filename = output_state_filename,
+    use_beagle = TRUE
+  )
+  cmd_false <- beastier::create_beast2_run_cmd(
+    input_filename = input_filename,
+    output_state_filename = output_state_filename,
+    use_beagle = FALSE
+  )
+  expect_true(length(cmd_false) != length(cmd_true))
+
+})
+
+test_that("different n_threads option results in different command", {
+
+  if (!is_beast2_installed()) return()
+
+  testit::assert(is_beast2_installed())
+
+  output_state_filename <- "output.xml.state"
+  input_filename <- "input.xml"
+
+  cmd_true <- beastier::create_beast2_run_cmd(
+    input_filename = input_filename,
+    output_state_filename = output_state_filename,
+    n_threads = 2
+  )
+  cmd_false <- beastier::create_beast2_run_cmd(
+    input_filename = input_filename,
+    output_state_filename = output_state_filename,
+    n_threads = 3
+  )
+  expect_false(all(cmd_false == cmd_true))
+})

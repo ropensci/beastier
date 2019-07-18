@@ -28,6 +28,7 @@ create_beast2_run_cmd <- function(
 ) {
   testit::assert(file.exists(beast2_path))
   testit::assert(file.exists(get_default_java_path())) # nolint internal function
+  testit::assert(beautier::is_one_bool(use_beagle))
   cmds <- NULL
   if (is_jar_path(beast2_path)) {
     cmds <- c(
