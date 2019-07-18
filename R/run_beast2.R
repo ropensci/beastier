@@ -187,7 +187,7 @@ run_beast2 <- function(
   cur_wd <- getwd()
   # Move working directory to temporary folder
   # Do not warning if the folder already exists, unless when being verbose
-  dir.create(beast2_working_dir, showWarnings = verbose, recursive = TRUE)
+  dir.create(beast2_working_dir, showWarnings = FALSE, recursive = TRUE)
 
   # Although 'dir.create' creates folders recursively,
   # it only has the user's permission. As the user
