@@ -2,5 +2,5 @@ context("create_beast2_options")
 
 test_that("use", {
 
-  testthat::expect_silent(create_beast2_options())
+  expect_silent(create_beast2_options())
 })

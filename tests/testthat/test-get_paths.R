@@ -2,7 +2,7 @@ context("get_beastier_paths")
 
 test_that("use", {
 
-  testthat::expect_equal(
+  expect_equal(
     length(
       beastier::get_beastier_paths(
         c(

@@ -2,7 +2,7 @@ context("create_random_alignment")
 
 test_that("use", {
 
-  testthat::expect_silent(
+  expect_silent(
     beastier:::create_random_alignment(
       n_taxa = 5,
       sequence_length = 20,
@@ -10,7 +10,7 @@ test_that("use", {
     )
   )
 
-  testthat::expect_silent(
+  expect_silent(
     beastier:::create_random_alignment(
       n_taxa = 5,
       sequence_length = 20,
@@ -23,7 +23,7 @@ test_that("use", {
 
 test_that("checks input", {
 
-  testthat::expect_silent(
+  expect_silent(
     beastier:::create_random_alignment(
       n_taxa = 5,
       sequence_length = 20,
@@ -31,7 +31,7 @@ test_that("checks input", {
     )
   )
 
-  testthat::expect_error(
+  expect_error(
     beastier:::create_random_alignment(
       n_taxa = 0, #Error
       sequence_length = 20,
@@ -39,7 +39,7 @@ test_that("checks input", {
     )
   )
 
-  testthat::expect_error(
+  expect_error(
     beastier:::create_random_alignment(
       n_taxa = 5,
       sequence_length = 0, # Error
@@ -47,7 +47,7 @@ test_that("checks input", {
     )
   )
 
-  testthat::expect_error(
+  expect_error(
     beastier:::create_random_alignment(
       n_taxa = 5,
       sequence_length = 20,
@@ -55,7 +55,7 @@ test_that("checks input", {
     )
   )
 
-  testthat::expect_error(
+  expect_error(
     beastier:::create_random_alignment(
       n_taxa = 5,
       sequence_length = 20,
@@ -68,5 +68,5 @@ test_that("checks input", {
       sequence_length = 20,
       rate = 0.1
     )
-  testthat::expect_equal(class(result), "DNAbin")
+  expect_equal(class(result), "DNAbin")
 })

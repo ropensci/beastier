@@ -22,7 +22,7 @@ test_that("use, bin", {
     "-overwrite",
     paste0("\"", input_filename, "\"")
   )
-  testthat::expect_equal(created, expected)
+  expect_equal(created, expected)
 })
 
 test_that("use, jar", {
@@ -74,6 +74,6 @@ test_that("different overwrite option results in different command", {
     output_state_filename = output_state_filename,
     overwrite = FALSE
   )
-  testthat::expect_true(length(cmd_false) != length(cmd_true))
+  expect_true(length(cmd_false) != length(cmd_true))
 
 })

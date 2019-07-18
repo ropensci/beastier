@@ -7,9 +7,9 @@ test_that("save_lines: use", {
     filename = filename,
     lines = lines
   )
-  testthat::expect_equal(file.exists(filename), TRUE)
+  expect_equal(file.exists(filename), TRUE)
 
   # Remove temporary file
   has_removed <- file.remove(filename)
-  testthat::expect_equal(file.exists(filename), FALSE)
+  expect_equal(file.exists(filename), FALSE)
 })

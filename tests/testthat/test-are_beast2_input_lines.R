@@ -44,7 +44,7 @@ test_that("use, deep", {
 
 test_that("abuse", {
 
-  testthat::expect_error(
+  expect_error(
     beastier::are_beast2_input_lines(
       readLines(beastier::get_beastier_path("anthus_2_4.xml")),
       method = "nonsense"

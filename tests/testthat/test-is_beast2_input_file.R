@@ -15,7 +15,7 @@ test_that("beast2_example_output.log is not a valid BEAST2 input file", {
     )
   )
 
-  testthat::expect_false(is_ok)
+  expect_false(is_ok)
 })
 
 test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
@@ -30,7 +30,7 @@ test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
   expect_output(
     is_ok <- beastier::is_beast2_input_file(filename, verbose = TRUE)
   )
-  testthat::expect_false(is_ok)
+  expect_false(is_ok)
 
 })
 
@@ -70,18 +70,18 @@ test_that("anthus_2_4.xml is valid, from jar", {
 
 test_that("abuse", {
 
-  testthat::expect_error(
+  expect_error(
     beastier::is_beast2_input_file("abs.ent"),
     "'filename' must be the name of an existing file. "
   )
 
-  testthat::expect_error(
+  expect_error(
     beastier::is_beast2_input_file(
       get_beastier_path("anthus_2_4.xml"),
       beast2_path = "abs.ent"
     ),
     paste0(
-      "'beast2_path' must be the full path of either 'beast' or 'launcher.jar'. ",
+      "'beast2_path' must be the full path of either 'beast' or 'launcher.jar'. ", # nolint indeed a long line
       "Both not found at path 'abs.ent'"
     )
   )
@@ -100,7 +100,7 @@ test_that("detect warnings", {
 
   if (!is_beast2_installed()) return()
 
-  testthat::expect_warning(
+  expect_warning(
     is_beast2_input_file(
       filename = beastier:::get_beastier_path("beast2_warning.xml"),
       show_warnings = TRUE

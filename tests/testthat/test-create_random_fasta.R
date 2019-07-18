@@ -2,19 +2,19 @@ context("create_random_fasta")
 
 test_that("create_random_fasta: use", {
   filename <- tempfile()
-  testthat::expect_silent(
+  expect_silent(
     sequences_table <- beastier:::create_random_fasta(
       n_taxa = 5,
       sequence_length = 20,
       fasta_filename = filename
     )
   )
-  testthat::expect_true(file.exists(filename))
+  expect_true(file.exists(filename))
 })
 
 test_that("create_random_fasta: abuse", {
 
-  testthat::expect_error(
+  expect_error(
     beastier:::create_random_fasta(
       n_taxa = 0, #Error
       sequence_length = 20,
@@ -23,7 +23,7 @@ test_that("create_random_fasta: abuse", {
     "'n_taxa' must two or more"
   )
 
-  testthat::expect_error(
+  expect_error(
     beastier:::create_random_fasta(
       n_taxa = 5,
       sequence_length = 0, # Error
@@ -32,7 +32,7 @@ test_that("create_random_fasta: abuse", {
     "'sequence_length' must be one or more"
   )
 
-  testthat::expect_error(
+  expect_error(
     beastier:::create_random_fasta(
       n_taxa = 5,
       sequence_length = 20,
@@ -41,7 +41,7 @@ test_that("create_random_fasta: abuse", {
     "'fasta_filename' must be a character string"
   )
 
-  testthat::expect_error(
+  expect_error(
     beastier:::create_random_fasta(
       n_taxa = 5,
       sequence_length = 20,
@@ -50,7 +50,7 @@ test_that("create_random_fasta: abuse", {
     "'fasta_filename' must have at least one character"
   )
 
-  testthat::expect_error(
+  expect_error(
     beastier:::create_random_fasta(
       n_taxa = 5,
       sequence_length = 20,
