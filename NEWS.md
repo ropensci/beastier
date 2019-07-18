@@ -2,11 +2,11 @@
 
 Newest versions at top.
 
-## beastier 2.0.16 (unreleased)
+## beastier 2.0.16 (2019-07-18)
 
 ### NEW FEATURES
 
-  * Install BEAST2 `v2.6.0`, instead of `v2.6.0`
+  * Install BEAST2 `v2.6.0`, instead of `v2.5.2`
 
 ### MINOR IMPROVEMENTS
 
