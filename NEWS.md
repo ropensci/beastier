@@ -6,7 +6,7 @@ Newest versions at top.
 
 ### NEW FEATURES
 
-  * None
+  * Install BEAST2 `v2.6.0`, instead of `v2.6.0`
 
 ### MINOR IMPROVEMENTS
 
