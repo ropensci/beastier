@@ -286,7 +286,8 @@ run_beast2 <- function(
     to <- output_trees_filenames[i]
     actual_trees_filename <- actual_trees_filenames[i]
     beautier::check_file_exists(actual_trees_filename, "actual_trees_filename")
-    # Create the folder to hold the file, without warning if it's already present
+    # Create the folder to hold the file,
+    # without warning if it's already present
     dir.create(
       path = dirname(to),
       recursive = TRUE,
