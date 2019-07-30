@@ -84,3 +84,25 @@ test_that("file with full path in temp folder", {
 
   setwd(cur_wd) # Really do this last
 })
+
+test_that("use sub-sub-sub-folders", {
+
+  if (!is_beast2_installed()) return()
+
+  input_filename <- get_beastier_path("2_4.xml")
+  beast2_options <- create_beast2_options(input_filename = input_filename)
+  beast2_options$output_log_filename <-
+    file.path(tempdir(), "a", "b", "c", "d.log")
+  beast2_options$output_trees_filenames <-
+    file.path(tempdir(), "e", "f", "g", "g.trees")
+  beast2_options$output_state_filename <-
+    file.path(tempdir(), "h", "i", "j", "k.xml.state")
+
+  expect_silent(
+    run_beast2_from_options(beast2_options = beast2_options)
+  )
+
+  expect_true(file.exists(beast2_options$output_log_filename))
+  expect_true(all(file.exists(beast2_options$output_trees_filename)))
+  expect_true(file.exists(beast2_options$output_state_filename))
+})

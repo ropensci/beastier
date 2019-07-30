@@ -236,6 +236,12 @@ run_beast2 <- function(
     print(paste("cmd:", paste0(cmd, collapse = " ")))
   }
 
+  # Create the folder to hold the file, without warning if it's already present
+  dir.create(
+    path = dirname(output_state_filename_full),
+    recursive = TRUE,
+    showWarnings = FALSE
+  )
 
   ##############################################################################
   # Run BEAST2
@@ -268,12 +274,24 @@ run_beast2 <- function(
 
   # Copy to target, will overwrite if this was desired
   testit::assert(file.exists(actual_log_filename))
+  # Create the folder to hold the file, without warning if it's already present
+  dir.create(
+    path = dirname(output_log_filename),
+    recursive = TRUE,
+    showWarnings = FALSE
+  )
   file.rename(from = actual_log_filename, to = output_log_filename)
 
   for (i in seq_along(output_trees_filenames)) {
     to <- output_trees_filenames[i]
     actual_trees_filename <- actual_trees_filenames[i]
     testit::assert(file.exists(actual_trees_filename))
+    # Create the folder to hold the file, without warning if it's already present
+    dir.create(
+      path = dirname(to),
+      recursive = TRUE,
+      showWarnings = FALSE
+    )
     file.rename(from = actual_trees_filename, to = to)
   }
 
