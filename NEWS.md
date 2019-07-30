@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.0.17 (unreleased)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Can create files in sub-sub-subfolders
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.0.16 (2019-07-18)
 
 ### NEW FEATURES
