@@ -212,7 +212,7 @@ test_that("detect errors when BEAST2 need not be installed", {
 
   expect_error(
     run_beast2("abs.ent"),
-    "'input_filename' must be the name of an existing file"
+    "File '.*' not found"
   )
 
   expect_error(
@@ -220,7 +220,7 @@ test_that("detect errors when BEAST2 need not be installed", {
       get_beastier_path("anthus_2_4.xml"),
       beast2_path = "abs.ent"
     ),
-    "'beast2_path' must be the name of an existing file"
+    "File '.*' not found"
   )
 })
 
