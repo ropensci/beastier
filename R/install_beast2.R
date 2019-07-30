@@ -27,7 +27,9 @@ install_beast2 <- function(
   os = rappdirs::app_dir()$os
 ) {
   check_os(os = os) # nolint internal function
-  jar_file_path <- file.path(folder_name, "BEAST", "lib", "launcher.jar")
+  # Windows    : BEAST/lib/beast.jar                                            # nolint
+  # Non-Windows: beast/lib/launcher.jar                                         # nolint
+  jar_file_path <- file.path(folder_name, "BEAST", "lib", "beast.jar")
   if (os != "win") {
     jar_file_path <- file.path(folder_name, "beast", "lib", "launcher.jar")
   }

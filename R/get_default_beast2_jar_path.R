@@ -22,10 +22,15 @@ get_default_beast2_jar_path <- function(
   os = rappdirs::app_dir()$os
 ) {
   check_os(os = os) # nolint internal function
-  # Windows has uppercase folder name
+  # Windows    : BEAST/lib/beast.jar                                            # nolint
+  # Non-Windows: beast/lib/launcher.jar                                         # nolint
   beast_foldername <- "BEAST"
   if (os != "win") {
     beast_foldername <- "beast"
+  }
+  launcher_name <- "beast.jar"
+  if (os != "win") {
+    launcher_name <- "launcher.jar"
   }
 
   normalizePath(
@@ -33,7 +38,7 @@ get_default_beast2_jar_path <- function(
       rappdirs::user_data_dir(),
       beast_foldername,
       "lib",
-      "launcher.jar"
+      launcher_name
     ),
     mustWork = FALSE
   ) # nolint internal function
