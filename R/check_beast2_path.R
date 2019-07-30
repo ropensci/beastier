@@ -13,10 +13,5 @@
 #'   }
 #' @export
 check_beast2_path <- function(beast2_path) {
-  if (!file.exists(beast2_path)) {
-    stop(
-      "'beast2_path' must be the name of an existing file. ",
-      "File '", beast2_path, "' not found"
-    )
-  }
+  beautier::check_file_exists(beast2_path, "beast2_path")
 }

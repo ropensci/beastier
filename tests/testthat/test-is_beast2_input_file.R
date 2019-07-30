@@ -71,8 +71,8 @@ test_that("anthus_2_4.xml is valid, from jar", {
 test_that("abuse", {
 
   expect_error(
-    beastier::is_beast2_input_file("abs.ent"),
-    "'filename' must be the name of an existing file. "
+    is_beast2_input_file("abs.ent"),
+    "File 'filename' not found. Could not find file with path 'abs.ent'"
   )
 
   expect_error(

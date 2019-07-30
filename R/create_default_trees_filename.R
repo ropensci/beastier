@@ -24,7 +24,6 @@ create_default_trees_filenames <- function(
     beast2_path = beast2_path,
     verbose = verbose
   )
-
   testit::assert(file.exists(input_filename))
   testit::assert(file.exists(beast2_path))
   testit::assert(

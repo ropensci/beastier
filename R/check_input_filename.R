@@ -14,12 +14,7 @@
 #'   )
 #' @export
 check_input_filename <- function(input_filename) {
-  if (!file.exists(input_filename)) {
-    stop(
-      "'input_filename' must be the name of an existing file. ",
-      "File '", input_filename, "' not found"
-    )
-  }
+  beautier::check_file_exists(input_filename, "input_filename")
 }
 
 #' Checks the input filename.

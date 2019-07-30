@@ -63,7 +63,7 @@ test_that("abuse", {
 
   expect_error(
     gives_beast2_warning("abs.ent"),
-    "'filename' must be the name of an existing file. "
+    "File 'filename' not found. Could not find file with path 'abs.ent'"
   )
 
   expect_error(

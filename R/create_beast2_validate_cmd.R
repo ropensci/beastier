@@ -52,7 +52,7 @@ create_beast2_validate_cmd_jar <- function(
   input_filename,
   beast2_jar_path = get_default_beast2_jar_path()
 ) {
-  testit::assert(file.exists(beast2_jar_path))
+  beautier::check_file_exists(beast2_jar_path, "beast2_jar_path")
   testit::assert(is_jar_path(beast2_jar_path)) # nolint internal function
   cmds <- c(
     get_default_java_path(),
@@ -61,7 +61,7 @@ create_beast2_validate_cmd_jar <- function(
     "-validate",
     paste0("\"", input_filename, "\"")
   )
-  testit::assert(file.exists(cmds[1]))
+  beautier::check_file_exists(cmds[1], "cmds[1]")
   cmds
 }
 
@@ -86,13 +86,13 @@ create_beast2_validate_cmd_bin <- function(
   input_filename,
   beast2_bin_path = get_default_beast2_bin_path()
 ) {
-  testit::assert(file.exists(beast2_bin_path))
+  beautier::check_file_exists(beast2_bin_path, "beast2_bin_path")
   testit::assert(is_bin_path(beast2_bin_path)) # nolint internal function
   cmds <- c(
     beast2_bin_path,
     "-validate",
     input_filename
   )
-  testit::assert(file.exists(cmds[1]))
+  beautier::check_file_exists(cmds[1], "cmds[1]")
   cmds
 }

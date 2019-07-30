@@ -51,7 +51,7 @@ install_beast2 <- function(
     url = url,
     destfile = local_path
   )
-  testit::assert(file.exists(local_path))
+  beautier::check_file_exists(local_path, "local_path")
   if (os != "win") {
     # Linux has a tar file
     utils::untar(
@@ -67,11 +67,8 @@ install_beast2 <- function(
       exdir = path.expand(folder_name)
     )
   }
-  if (!file.exists(jar_file_path)) {
-    stop("BEAST2 .jar path does not exist at '", jar_file_path, "'")
-  }
+  beautier::check_file_exists(jar_file_path, "BEAST2 .jar path")
   if (verbose == TRUE) {
     print(paste("BEAST2 installed at", jar_file_path))
   }
-  testit::assert(file.exists(jar_file_path))
 }

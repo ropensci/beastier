@@ -273,7 +273,7 @@ run_beast2 <- function(
   }
 
   # Copy to target, will overwrite if this was desired
-  testit::assert(file.exists(actual_log_filename))
+  beautier::check_file_exists(actual_log_filename, "actual_log_filename")
   # Create the folder to hold the file, without warning if it's already present
   dir.create(
     path = dirname(output_log_filename),
@@ -285,7 +285,7 @@ run_beast2 <- function(
   for (i in seq_along(output_trees_filenames)) {
     to <- output_trees_filenames[i]
     actual_trees_filename <- actual_trees_filenames[i]
-    testit::assert(file.exists(actual_trees_filename))
+    beautier::check_file_exists(actual_trees_filename, "actual_trees_filename")
     # Create the folder to hold the file, without warning if it's already present
     dir.create(
       path = dirname(to),
@@ -312,8 +312,10 @@ run_beast2 <- function(
       file.exists(output_state_filename_full)))
   }
 
-  testit::assert(file.exists(output_log_filename))
-  testit::assert(file.exists(output_state_filename_full))
+  beautier::check_file_exists(output_log_filename, "output_log_filename")
+  beautier::check_file_exists(
+    output_state_filename_full, "output_state_filename_full"
+  )
   testit::assert(all(file.exists(output_trees_filenames)))
 
   output
