@@ -65,6 +65,9 @@ install_beast2 <- function(
       exdir = path.expand(folder_name)
     )
   }
+  if (!file.exists(jar_file_path)) {
+    stop("BEAST2 .jar path does not exist at '", jar_file_path, "'")
+  }
   if (verbose == TRUE) {
     print(paste("BEAST2 installed at", jar_file_path))
   }
