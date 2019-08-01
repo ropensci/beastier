@@ -30,13 +30,13 @@ create_random_fasta <- function(
   if (sequence_length < 1) {
     stop("'sequence_length' must be one or more")
   }
-  if (!beautier::is_one_string(fasta_filename)) {
+  if (!assertive::is_a_string(fasta_filename)) {
     stop("'fasta_filename' must be a character string")
   }
   if (fasta_filename == "") {
     stop("'fasta_filename' must have at least one character")
   }
-  if (!beautier::is_one_string(taxa_name_ext)) {
+  if (!assertive::is_a_string(taxa_name_ext)) {
     stop("'taxa_name_ext' must be a character string")
   }
   alignments <- create_random_alignment(

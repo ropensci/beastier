@@ -33,16 +33,16 @@ check_beast2_options <- function(
       )
     }
   }
-  if (!beautier::is_one_string(beast2_options$input_filename)) {
+  if (!assertive::is_a_string(beast2_options$input_filename)) {
     stop("'input_filename' must be one character string")
   }
-  if (!beautier::is_one_string(beast2_options$output_log_filename)) {
+  if (!assertive::is_a_string(beast2_options$output_log_filename)) {
     stop("'output_log_filename' must be one character string")
   }
-  if (!beautier::is_one_string(beast2_options$output_trees_filenames)) {
+  if (!assertive::is_a_string(beast2_options$output_trees_filenames)) {
     stop("'output_trees_filenames' must be one character string")
   }
-  if (!beautier::is_one_string(beast2_options$output_state_filename)) {
+  if (!assertive::is_a_string(beast2_options$output_state_filename)) {
     stop("'output_state_filename' must be one character string")
   }
   check_rng_seed(beast2_options$rng_seed) # nolint beastier function
@@ -53,10 +53,10 @@ check_beast2_options <- function(
   if (!beautier::is_one_bool(beast2_options$overwrite)) {
     stop("'overwrite' must be one boolean")
   }
-  if (!beautier::is_one_string(beast2_options$beast2_working_dir)) {
+  if (!assertive::is_a_string(beast2_options$beast2_working_dir)) {
     stop("'beast2_working_dir' must be one character string")
   }
-  if (!beautier::is_one_string(beast2_options$beast2_path)) {
+  if (!assertive::is_a_string(beast2_options$beast2_path)) {
     stop("'beast2_path' must be one character string")
   }
   if (!beautier::is_one_bool(beast2_options$verbose)) {
