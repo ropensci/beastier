@@ -11,7 +11,8 @@ Newest versions at top.
 ### MINOR IMPROVEMENTS
 
   * Can create files in sub-sub-subfolders
-
+  * Builds on Travis CI distro 'Bionic'
+ 
 ### BUG FIXES
 
   * None
