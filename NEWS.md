@@ -2,26 +2,7 @@
 
 Newest versions at top.
 
-## beastier 2.0.17 (unreleased)
-
-### NEW FEATURES
-
-  * None
-
-### MINOR IMPROVEMENTS
-
-  * Can create files in sub-sub-subfolders
-  * Builds on Travis CI distro 'Bionic'
- 
-### BUG FIXES
-
-  * None
-
-### DEPRECATED AND DEFUNCT
-
-  * None
-
-## beastier 2.0.16 (2019-07-18)
+## beastier 2.0.17 (2019-08-05)
 
 ### NEW FEATURES
 
@@ -29,7 +10,8 @@ Newest versions at top.
 
 ### MINOR IMPROVEMENTS
 
-  * None
+  * Can create files in sub-sub-subfolders
+  * Builds on Travis CI distro 'Bionic'
 
 ### BUG FIXES
 
@@ -38,6 +20,10 @@ Newest versions at top.
 ### DEPRECATED AND DEFUNCT
 
   * None
+
+## beastier 2.0.16
+
+This version never had a formal release.
 
 ## beastier 2.0.15 (2019-06-01)
 
