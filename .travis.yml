@@ -16,8 +16,8 @@ cache: packages
 #  - devtools
 #  - hunspell
 
-r_binary_packages:
-  - phangorn
+#r_binary_packages:
+#  - phangorn
 
 r_github_packages:
   - jimhester/covr
