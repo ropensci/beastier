@@ -12,9 +12,9 @@ matrix:
 
 cache: packages
 
-r_packages:
-  - devtools
-  - hunspell
+#r_packages:
+#  - devtools
+#  - hunspell
 
 r_binary_packages:
   - phangorn
