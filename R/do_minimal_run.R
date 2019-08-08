@@ -17,9 +17,13 @@
 #'   }
 #' @author Richèl J.C. Bilderbeek
 do_minimal_run <- function() {
+  folder <- tempfile()
   run_beast2_from_options(
     create_beast2_options(
       input_filename = get_beastier_path("2_4.xml"),
+      output_log_filename = file.path(folder, "out.log"),
+      output_trees_filenames = file.path(folder, "out.trees"),
+      output_state_filename = file.path(folder, "out.xml.state"),
       rng_seed = 314
     )
   )

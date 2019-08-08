@@ -71,7 +71,8 @@ run_beast2 <- function(
   if (basename(input_filename) == input_filename) {
     input_filename_full <- file.path(getwd(), input_filename)
   }
-  # Intermediate, these are files created by BEAST2
+  # Intermediate, these are files created by BEAST2, if there is
+  # a folder for them
   actual_log_filename <- file.path(
     beast2_working_dir,
     basename(
@@ -81,6 +82,11 @@ run_beast2 <- function(
       )
     )
   )
+  # Do not warning if the folder already exists, unless when being verbose
+  dir.create(
+    dirname(actual_log_filename), showWarnings = FALSE, recursive = TRUE
+  )
+
   actual_trees_filenames <- NA
   for (i in seq_along(output_trees_filenames)) {
     actual_trees_filenames[i] <- file.path(
@@ -93,12 +99,23 @@ run_beast2 <- function(
         )[i]
       )
     )
+    # Do not warning if the folder already exists, unless when being verbose
+    dir.create(
+      dirname(actual_trees_filenames[i]),
+      showWarnings = FALSE, recursive = TRUE
+    )
   }
+
   # Output
   output_log_filename_full <- output_log_filename
   if (basename(output_log_filename) == output_log_filename) {
     output_log_filename_full <- file.path(getwd(), output_log_filename)
   }
+  # Do not warning if the folder already exists, unless when being verbose
+  dir.create(
+    dirname(output_log_filename_full), showWarnings = FALSE, recursive = TRUE
+  )
+
   output_trees_filenames_full <- output_trees_filenames
   for (i in seq_along(output_trees_filenames_full)) {
     if (basename(output_trees_filenames[i]) == output_trees_filenames[i]) {
@@ -106,11 +123,21 @@ run_beast2 <- function(
         getwd(), output_trees_filenames[i]
       )
     }
+    # Do not warning if the folder already exists, unless when being verbose
+    dir.create(
+      dirname(output_trees_filenames_full[i]),
+      showWarnings = FALSE, recursive = TRUE
+    )
   }
   output_state_filename_full <- output_state_filename
   if (basename(output_state_filename) == output_state_filename) {
     output_state_filename_full <- file.path(getwd(), output_state_filename)
   }
+  # Do not warning if the folder already exists, unless when being verbose
+  dir.create(
+    dirname(output_state_filename_full), showWarnings = FALSE, recursive = TRUE
+  )
+
   if (verbose) {
     print(paste("input_filename_full:", input_filename_full))
     print(paste("actual_log_filename:", actual_log_filename))
