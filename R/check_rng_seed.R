@@ -25,10 +25,15 @@ check_rng_seed <- function(rng_seed) {
     )
   }
   if (beautier::is_one_na(rng_seed)) return()
-
   if (!is.numeric(rng_seed)) {
     stop(
-      "'rng_seed' should be one NA or one non-zero positive value.\n",
+      "'rng_seed' should be one NA or one non-zero positive value. \n",
+      "Actual value: ", rng_seed
+    )
+  }
+  if (!assertive::is_whole_number(rng_seed)) {
+    stop(
+      "'rng_seed' must be a whole number. \n",
       "Actual value: ", rng_seed
     )
   }

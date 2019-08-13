@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.0.18 (2019-08-13)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * RNG seed is checked to be a whole number (Issue #35, thanks @thijsjanzen)
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.0.17 (2019-08-05)
 
 ### NEW FEATURES

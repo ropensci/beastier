@@ -13,6 +13,11 @@ test_that("use", {
     check_rng_seed(0),
     "'rng_seed' should be one NA or one non-zero positive value"
   )
+  expect_error(
+    check_rng_seed(3.14),
+    "'rng_seed' must be a whole number"
+  )
   expect_error(check_rng_seed("nonsense"))
   expect_error(check_rng_seed(NULL))
+  expect_error(check_rng_seed(Inf))
 })
