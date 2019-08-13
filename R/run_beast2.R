@@ -169,22 +169,14 @@ run_beast2 <- function(
     }
   }
   if (file.exists(actual_log_filename)) {
-    stop(
-      "log file to be created '", actual_log_filename, "' ",
-      "is already present. \n",
-      "This should never happen. \n",
-      "If you have a reproducible example, please post a bug report at ",
-      "https://github.com/ropensci/beastier/issues \n"
-    )
+    # It is fine that this file existed, as it existed in the
+    # temporary BEAST2 working directory.
+    file.remove(actual_log_filename)
   }
   if (any(file.exists(actual_trees_filenames))) {
-    stop(
-      "trees file(s) to be created '", actual_trees_filenames, " '",
-      "is/are already present. \n",
-      "This should never happen. \n",
-      "If you have a reproducible example, please post a bug report at ",
-      "https://github.com/ropensci/beastier/issues \n"
-    )
+    # It is fine that this file existed, as it existed in the
+    # temporary BEAST2 working directory.
+    file.remove(actual_trees_filenames)
   }
   testit::assert(!file.exists(actual_log_filename))
   testit::assert(all(!file.exists(actual_trees_filenames)))
