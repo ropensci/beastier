@@ -6,10 +6,12 @@ Newest versions at top.
 
 ### NEW FEATURES
 
-  * None
+  * Install BEAST2 `v2.6.0`, instead of `v2.5.2`
 
 ### MINOR IMPROVEMENTS
 
+  * Can create files in sub-sub-subfolders
+  * Builds on Travis CI distribution 'Bionic'
   * Add `are_identical_alignments`
   * Add `is_alignment`
 
@@ -21,24 +23,9 @@ Newest versions at top.
 
   * None
 
-## beastier 2.0.17 (2019-08-05)
+## beastier 2.0.17
 
-### NEW FEATURES
-
-  * Install BEAST2 `v2.6.0`, instead of `v2.5.2`
-
-### MINOR IMPROVEMENTS
-
-  * Can create files in sub-sub-subfolders
-  * Builds on Travis CI distribution 'Bionic'
-
-### BUG FIXES
-
-  * None
-
-### DEPRECATED AND DEFUNCT
-
-  * None
+This version never had a formal release.
 
 ## beastier 2.0.16
 
