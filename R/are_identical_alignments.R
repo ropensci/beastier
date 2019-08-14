@@ -5,10 +5,10 @@
 #' @author Richel Bilderbeek
 #' @export
 are_identical_alignments <- function(p, q) {
-  if (!ribir::is_alignment(p)) {
+  if (!is_alignment(p)) {
     stop("p must be an alignment")
   }
-  if (!ribir::is_alignment(q)) {
+  if (!is_alignment(q)) {
     stop("q must be an alignment")
   }
   return(identical(p, q))
