@@ -1,8 +1,8 @@
-#' Determines if the input is an alignment of type DNAbin
-#' @param input The input to be testes
+#' Determines if the input is an alignment of type \link[ape]{DNAbin}
+#' @param input The input to be tested
 #' @return TRUE or FALSE
-#' @author Richel Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 is_alignment <- function(input) {
-  return(class(input) == "DNAbin")
+  class(input) == "DNAbin"
 }

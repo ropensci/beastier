@@ -3,7 +3,7 @@
 #' @param sequence_length The number of base pairs the alignment will have
 #' @param rate mutation rate
 #' @param taxa_name_ext the extension of the taxa names
-#' @return an alignment of class DNAbin
+#' @return an alignment of class \link[ape]{DNAbin}
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #'  alignment <- create_random_alignment(

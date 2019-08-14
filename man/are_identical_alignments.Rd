@@ -18,5 +18,5 @@ TRUE or FALSE
 Determines if the two alignments are equal
 }
 \author{
-Richel Bilderbeek
+Richèl J.C. Bilderbeek
 }

@@ -2,7 +2,7 @@
 #' @param p the first alignment
 #' @param q the second alignment
 #' @return TRUE or FALSE
-#' @author Richel Bilderbeek
+#' @author Richèl J.C. Bilderbeek
 #' @export
 are_identical_alignments <- function(p, q) {
   if (!is_alignment(p)) {

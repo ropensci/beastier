@@ -2,19 +2,19 @@
 % Please edit documentation in R/is_alignment.R
 \name{is_alignment}
 \alias{is_alignment}
-\title{Determines if the input is an alignment of type DNAbin}
+\title{Determines if the input is an alignment of type \link[ape]{DNAbin}}
 \usage{
 is_alignment(input)
 }
 \arguments{
-\item{input}{The input to be testes}
+\item{input}{The input to be tested}
 }
 \value{
 TRUE or FALSE
 }
 \description{
-Determines if the input is an alignment of type DNAbin
+Determines if the input is an alignment of type \link[ape]{DNAbin}
 }
 \author{
-Richel Bilderbeek
+Richèl J.C. Bilderbeek
 }
