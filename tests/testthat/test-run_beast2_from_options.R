@@ -23,9 +23,7 @@ test_that("abuse", {
 
 test_that("local file in temp folder", {
 
-  if (!is_beast2_installed()) {
-    return()
-  }
+  if (!is_beast2_installed()) return()
 
   cur_wd <- getwd()
   tmp_wd <- tempfile(pattern = "beast2_tmp_folder")
@@ -105,4 +103,37 @@ test_that("use sub-sub-sub-folders", {
   expect_true(file.exists(beast2_options$output_log_filename))
   expect_true(all(file.exists(beast2_options$output_trees_filename)))
   expect_true(file.exists(beast2_options$output_state_filename))
+})
+
+
+test_that("show proper error message when using CBS with too few taxa", {
+
+  if (!is_beast2_installed()) return()
+
+  # Prepare XML file for beastier
+  fasta_filename <- beastier::get_beastier_path("test_output_2.fas")
+  beast2_input_file <- tempfile(fileext = ".xml")
+
+  # The error is already detected when creating a BEAST2 input file
+  expect_error(
+    beautier::create_beast2_input_file(
+      input_filename = fasta_filename,
+      output_filename = beast2_input_file,
+      tree_prior = beautier::create_cbs_tree_prior()
+    ),
+    "'group_sizes_dimension' .* must be less than the number of taxa"
+  )
+  # The error is already detected when creating a BEAST2 input file
+  expect_error(
+    beautier::create_beast2_input_file_from_model(
+      input_filename = fasta_filename,
+      output_filename = beast2_input_file,
+      inference_model = beautier::create_inference_model(
+        tree_prior = beautier::create_cbs_tree_prior()
+      )
+    ),
+    "'group_sizes_dimension' .* must be less than the number of taxa"
+  )
+
+  # Conclusion: what does mcbette do different to get into the unsafe zone?
 })
