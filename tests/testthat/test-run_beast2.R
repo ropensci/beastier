@@ -10,7 +10,7 @@ test_that("single alignment creates all files", {
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
   )
-  testit::assert(!beastier:::files_exist(output_files))
+  testit::assert(!files_exist(output_files))
 
   expect_silent(
     run_beast2(
@@ -21,7 +21,7 @@ test_that("single alignment creates all files", {
     )
   )
 
-  expect_true(beastier:::files_exist(output_files))
+  expect_true(files_exist(output_files))
 })
 
 test_that("single alignment, equal RNG seed equal results", {
@@ -42,7 +42,7 @@ test_that("single alignment, equal RNG seed equal results", {
     output_state_filename_1,
     output_state_filename_2
   )
-  testit::assert(!beastier:::files_exist(output_files))
+  testit::assert(!files_exist(output_files))
 
   rng_seed <- 42
   stdout_1 <- run_beast2(
@@ -105,7 +105,7 @@ test_that("two alignments creates all files", {
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
   )
-  testit::assert(!beastier:::files_exist(output_files))
+  testit::assert(!files_exist(output_files))
 
   expect_silent(
     run_beast2(
@@ -116,7 +116,7 @@ test_that("two alignments creates all files", {
     )
   )
 
-  expect_true(beastier:::files_exist(output_files))
+  expect_true(files_exist(output_files))
 })
 
 test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
@@ -134,7 +134,7 @@ test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
   )
-  testit::assert(!beastier:::files_exist(output_files))
+  testit::assert(!files_exist(output_files))
 
   expect_silent(
     run_beast2(
@@ -145,7 +145,7 @@ test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
     )
   )
 
-  expect_true(beastier:::files_exist(output_files))
+  expect_true(files_exist(output_files))
 
   out <- tracerer::parse_beast_posterior(
     output_trees_filenames, output_log_filename
@@ -177,7 +177,7 @@ test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
   output_files <- c(output_log_filename, output_trees_filenames,
     output_state_filename
   )
-  testit::assert(!beastier:::files_exist(output_files))
+  testit::assert(!files_exist(output_files))
 
   expect_silent(
     run_beast2(
@@ -188,7 +188,7 @@ test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
     )
   )
 
-  expect_true(beastier:::files_exist(output_files))
+  expect_true(files_exist(output_files))
 
   out <- tracerer::parse_beast_posterior(
     output_trees_filenames, output_log_filename
@@ -357,12 +357,12 @@ test_that("BEAST2 overwrites log and trees files", {
     return()
   }
   input_filename <- get_beastier_path("2_4.xml")
-  output_log_filename <- beastier:::create_default_log_filename(
+  output_log_filename <- create_default_log_filename(
     input_filename = input_filename,
     beast2_path = get_default_beast2_path(),
     verbose = FALSE
   )
-  output_trees_filename <- beastier:::create_default_trees_filenames(
+  output_trees_filename <- create_default_trees_filenames(
     input_filename = input_filename,
     beast2_path = get_default_beast2_path(),
     verbose = FALSE
@@ -426,7 +426,7 @@ test_that("run BEAST2 from binary path", {
   # Binary fails under Windows, but works under Unix (see 'use' section above)
   expect_error(
     run_beast2(
-      input_filename = beastier:::get_beastier_path("beast2_warning.xml"),
+      input_filename = get_beastier_path("beast2_warning.xml"),
       beast2_path = "BEAST.exe"
     ),
     "Cannot use the Windows executable BEAST2.exe in scripts"

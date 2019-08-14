@@ -2,11 +2,11 @@ context("are_identical_alignments")
 
 test_that("are_identical_alignments: use", {
 
-  p <- beastier:::create_random_alignment(
+  p <- create_random_alignment(
     n_taxa = 5,
     sequence_length = 10
   )
-  q <- beastier:::create_random_alignment(
+  q <- create_random_alignment(
     n_taxa = 5,
     sequence_length = 10
   )
@@ -17,7 +17,7 @@ test_that("are_identical_alignments: use", {
 
 test_that("are_identical_alignments: abuse", {
 
-  p <- beastier:::create_random_alignment(
+  p <- create_random_alignment(
     n_taxa = 5,
     sequence_length = 10
   )

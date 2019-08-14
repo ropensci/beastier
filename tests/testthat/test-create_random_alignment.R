@@ -3,7 +3,7 @@ context("create_random_alignment")
 test_that("use", {
 
   expect_silent(
-    beastier:::create_random_alignment(
+    create_random_alignment(
       n_taxa = 5,
       sequence_length = 20,
       rate = 0.1
@@ -11,7 +11,7 @@ test_that("use", {
   )
 
   expect_silent(
-    beastier:::create_random_alignment(
+    create_random_alignment(
       n_taxa = 5,
       sequence_length = 20,
       rate = 0.1,
@@ -24,7 +24,7 @@ test_that("use", {
 test_that("checks input", {
 
   expect_silent(
-    beastier:::create_random_alignment(
+    create_random_alignment(
       n_taxa = 5,
       sequence_length = 20,
       rate = 0.1
@@ -32,7 +32,7 @@ test_that("checks input", {
   )
 
   expect_error(
-    beastier:::create_random_alignment(
+    create_random_alignment(
       n_taxa = 0, #Error
       sequence_length = 20,
       rate = 0.1
@@ -40,7 +40,7 @@ test_that("checks input", {
   )
 
   expect_error(
-    beastier:::create_random_alignment(
+    create_random_alignment(
       n_taxa = 5,
       sequence_length = 0, # Error
       rate = 0.1
@@ -48,7 +48,7 @@ test_that("checks input", {
   )
 
   expect_error(
-    beastier:::create_random_alignment(
+    create_random_alignment(
       n_taxa = 5,
       sequence_length = 20,
       rate = -0.1 #Error
@@ -56,14 +56,14 @@ test_that("checks input", {
   )
 
   expect_error(
-    beastier:::create_random_alignment(
+    create_random_alignment(
       n_taxa = 5,
       sequence_length = 20,
       rate = 1.1 # Error
     )
   )
 
-  result <- beastier:::create_random_alignment(
+  result <- create_random_alignment(
       n_taxa = 5,
       sequence_length = 20,
       rate = 0.1
