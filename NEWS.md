@@ -2,7 +2,7 @@
 
 Newest versions at top.
 
-## beastier 2.0.18 (2019-08-13)
+## beastier 2.0.18 (2019-08-14)
 
 ### NEW FEATURES
 
@@ -10,7 +10,8 @@ Newest versions at top.
 
 ### MINOR IMPROVEMENTS
 
-  * None
+  * Add `are_identical_alignments`
+  * Add `is_alignment`
 
 ### BUG FIXES
 
