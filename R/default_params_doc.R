@@ -29,12 +29,12 @@
 #'   In this folder, BEAST2 is allowed to create all of its output files,
 #'   without the risk of overwriting existing ones.
 #'   Currently, it appears possible that one can set
-#'   \code{beast2_working_dir} to the same longer-storare folder
+#'   \code{beast2_working_dir} to the same longer-storage folder
 #'   as where the BEAST2 output files are created, but this may change
 #'   in future version.
 #'   Using this working directory allows to call
 #'   BEAST2 in multiple parallel processes, as each process can have
-#'   its own seperate environment
+#'   its own separate environment
 #' @param clock_model a \code{beautier} clock model
 #' @param clock_models a list of one or more \code{beautier} clock models
 #' @param crown_age the crown age of the phylogeny
