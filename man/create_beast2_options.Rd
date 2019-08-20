@@ -46,10 +46,17 @@ Use \link{NA} to use the BEAST2 default of 1.}
    \item{the \code{.trees} files created by BEAST2 exist}
 }}
 
-\item{beast2_working_dir}{the folder BEAST2 will work in. This is
-an (empty) temporary folder by default. This allows to call
+\item{beast2_working_dir}{a (temporary) folder where BEAST2 can work in
+isolation.  This is a new and empty temporary folder by default.
+In this folder, BEAST2 is allowed to create all of its output files,
+without the risk of overwriting existing ones.
+Currently, it appears possible that one can set
+\code{beast2_working_dir} to the same longer-storare folder
+as where the BEAST2 output files are created, but this may change
+in future version.
+Using this working directory allows to call
 BEAST2 in multiple parallel processes, as each process can have
-its own working directory}
+its own seperate environment}
 
 \item{beast2_path}{name of either a BEAST2 binary file
 (usually simply \code{beast})
