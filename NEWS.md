@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.0.19 (2019-08-23)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * `check_beast2_options` checks for duplicate filenames
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.0.18 (2019-08-14)
 
 ### NEW FEATURES
