@@ -36,7 +36,8 @@ Suggests:
     testit,
     testthat (>= 2.1.0),
     tracerer
-URL: https://github.com/ropensci/beastier
+URL: https://docs.ropensci.org/beastier (website)
+    https://github.com/ropensci/beastier
 BugReports: https://github.com/ropensci/beastier
 Language: en-US
 VignetteBuilder: knitr
