@@ -4,10 +4,13 @@
 \alias{check_can_create_file}
 \title{Check that a file can be created at a certain path.}
 \usage{
-check_can_create_file(filename)
+check_can_create_file(filename, overwrite = TRUE)
 }
 \arguments{
 \item{filename}{file that may or may not be created}
+
+\item{overwrite}{if TRUE, if \code{filename} already exists, it
+will be deleted by this function}
 }
 \description{
 Will \link{stop} if not. Will \link{stop} if the file already exists.

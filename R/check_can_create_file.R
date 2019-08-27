@@ -4,15 +4,30 @@
 #' Does so by creating an empty file at the path,
 #' and then deleting it.
 #' @param filename file that may or may not be created
+#' @param overwrite if TRUE, if \code{filename} already exists, it
+#' will be deleted by this function
 #' @author Richèl J.C. Bilderbeek
 #' @export
-check_can_create_file <- function(filename) {
+check_can_create_file <- function(
+  filename,
+  overwrite = TRUE
+) {
   if (file.exists(filename)) {
-    stop(
-      "Cannot check if a file can be created ",
-      "if the desired file already exists. \n",
-      "Filename: ", filename
-    )
+    if (overwrite == FALSE) {
+      stop(
+        "Cannot check if a file can be created ",
+        "if the desired file already exists. \n",
+        "Filename: ", filename
+      )
+    } else {
+      # Delete the file
+      file.remove(filename)
+      if (file.exists(filename)) {
+        stop(
+          "Cannot delete the file already present at location ", filename
+        )
+      }
+    }
   }
   tryCatch(
     suppressWarnings(
@@ -28,7 +43,7 @@ check_can_create_file <- function(filename) {
   file.remove(filename)
   if (file.exists(filename)) {
     stop(
-      "Cannot delete the temporory file createdat location ", filename
+      "Cannot delete the temporary file created at location ", filename
     )
   }
 }

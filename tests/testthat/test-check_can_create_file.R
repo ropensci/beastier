@@ -8,8 +8,13 @@ test_that("use", {
 
   tempfile <- tempfile()
   writeLines(text = "irreleveant", con = tempfile)
+
   expect_error(
-    check_can_create_file(tempfile),
+    check_can_create_file(tempfile, overwrite = FALSE),
     "Cannot check if a file can be created if the desired file already exists"
+  )
+
+  expect_silent(
+    check_can_create_file(tempfile, overwrite = TRUE)
   )
 })
