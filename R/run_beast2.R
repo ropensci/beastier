@@ -299,6 +299,7 @@ run_beast2 <- function(
     recursive = TRUE,
     showWarnings = FALSE
   )
+  check_can_create_file(output_log_filename) # nolint beautier function
   file.rename(from = actual_log_filename, to = output_log_filename)
 
   for (i in seq_along(output_trees_filenames)) {
@@ -312,6 +313,7 @@ run_beast2 <- function(
       recursive = TRUE,
       showWarnings = FALSE
     )
+    check_can_create_file(to) # nolint beautier function
     file.rename(from = actual_trees_filename, to = to)
   }
 
