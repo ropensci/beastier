@@ -10,7 +10,7 @@ Newest versions at top.
 
 ### MINOR IMPROVEMENTS
 
-  * Added `get_beast2_options_filenames` to obtain the filesnames in a
+  * Added `get_beast2_options_filenames` to obtain the filenames in a
     `beast2_options` 
 
 ### BUG FIXES
