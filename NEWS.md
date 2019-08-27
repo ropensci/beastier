@@ -2,6 +2,26 @@
 
 Newest versions at top.
 
+## beastier 2.0.20 (2019-08-27)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Added `get_beast2_options_filenames` to obtain the filesnames in a
+    `beast2_options` 
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
+
 ## beastier 2.0.19 (2019-08-23)
 
 ### NEW FEATURES
