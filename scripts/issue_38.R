@@ -48,7 +48,8 @@ beast2_options <- beastier::create_beast2_options(
   output_trees_filenames = get_pff_tempfile(pattern = "out_", fileext = ".trees"),
   output_state_filename = get_pff_tempfile(pattern = "out_", fileext = ".state.xml"),
   beast2_working_dir = get_pff_tempfile(),
-  beast2_path = beastier::get_default_beast2_bin_path()
+  beast2_path = beastier::get_default_beast2_bin_path(),
+  verbose = TRUE
 )
 
-beastier::run_beast2_from_options()
+beastier::run_beast2_from_options(beast2_options = beast2_options)
