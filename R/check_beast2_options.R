@@ -73,13 +73,16 @@ check_beast2_options <- function(
   if (beast2_options$input_filename == beast2_options$output_state_filename) {
     stop("'input_filename' and 'output_state_filename' must differ")
   }
-  if (beast2_options$output_log_filename == beast2_options$output_trees_filenames) {
+  if (beast2_options$output_log_filename ==
+      beast2_options$output_trees_filenames) {
     stop("'output_log_filename' and 'output_trees_filenames' must differ")
   }
-  if (beast2_options$output_log_filename == beast2_options$output_state_filename) {
+  if (beast2_options$output_log_filename ==
+      beast2_options$output_state_filename) {
     stop("'output_log_filename' and 'output_state_filename' must differ")
   }
-  if (beast2_options$output_trees_filenames == beast2_options$output_state_filename) {
+  if (beast2_options$output_trees_filenames ==
+      beast2_options$output_state_filename) {
     stop("'output_trees_filenames' and 'output_state_filename' must differ")
   }
 }
