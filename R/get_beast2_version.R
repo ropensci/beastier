@@ -8,7 +8,7 @@
 #' }
 #' @export
 get_beast2_version <- function(
-  beast2_path = get_default_beast2_jar_path()
+  beast2_path = get_default_beast2_path()
 ) {
   if (is_win_bin_path(beast2_path)) {
    stop("Cannot use the Windows executable BEAST2.exe in scripts")
@@ -48,10 +48,15 @@ get_beast2_version <- function(
         "Tip: try running the command indicated by the warning message ",
           "in a terminal. \n",
         "\n",
-        "Known problems: ",
+        "Known problems: \n",
         "\n",
-        "'no main manifest attribute': update to a newer BEAST2 version ",
-          "(or use an older Java version)"
+        "'no main manifest attribute': \n",
+        "  * call 'get_beast2_version' with 'get_default_beast2_bin_path()':\n",
+        "  \n",
+        "    get_beast2_version(get_default_beast2_bin_path()) \n",
+        "  \n",
+        "  * update to a newer BEAST2 version \n",
+        "  * downgrade to an older Java version"
       )
     }
   )
