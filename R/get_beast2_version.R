@@ -1,4 +1,5 @@
 #' Get the BEAST2 version
+#' @inheritParams default_params_doc
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #' library(testthat)

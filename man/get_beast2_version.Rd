@@ -4,7 +4,17 @@
 \alias{get_beast2_version}
 \title{Get the BEAST2 version}
 \usage{
-get_beast2_version(beast2_path = get_default_beast2_jar_path())
+get_beast2_version(beast2_path = get_default_beast2_path())
+}
+\arguments{
+\item{beast2_path}{name of either a BEAST2 binary file
+(usually simply \code{beast})
+or a BEAST2 jar file
+(usually has a \code{.jar} extension).
+Use \link{get_default_beast2_bin_path} to get
+the default BEAST binary file's path
+Use \link{get_default_beast2_jar_path} to get
+the default BEAST jar file's path}
 }
 \description{
 Get the BEAST2 version
