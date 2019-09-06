@@ -8,7 +8,7 @@
 #' }
 #' @export
 get_beast2_version <- function(
-  beast2_path = get_default_beast2_bin_path()
+  beast2_path = get_default_beast2_jar_path()
 ) {
   if (is_win_bin_path(beast2_path)) {
    stop("Cannot use the Windows executable BEAST2.exe in scripts")
@@ -25,13 +25,36 @@ get_beast2_version <- function(
   testit::assert(length(beast2_path) == 1)
   cmds <- create_beast2_version_cmd(beast2_path)
   beautier::check_file_exists(cmds[1], "cmds[1]")
-  output <- system2(
-    cmds[1],
-    args = cmds[-1],
-    stdout = TRUE,
-    stderr = TRUE
-  )
+  output <- NA
 
+  tryCatch(
+    {
+      output <- system2(
+        cmds[1],
+        args = cmds[-1],
+        stdout = TRUE,
+        stderr = TRUE
+      )
+    },
+    warning = function(e) {
+      print(names(e))
+      stop(
+        "Unknown warning emitted", "\n",
+        "\n",
+        "Java version: ", get_java_version(), "\n",
+        "\n",
+        "Warning message: ", e$message, "\n",
+        "\n",
+        "Tip: try running the command indicated by the warning message ",
+          "in a terminal. \n",
+        "\n",
+        "Known problems: ",
+        "\n",
+        "'no main manifest attribute': update to a newer BEAST2 version ",
+          "(or use an older Java version)"
+      )
+    }
+  )
   # When doing
   #
   # ./beast -version

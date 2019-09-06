@@ -4,7 +4,7 @@
 \alias{get_beast2_version}
 \title{Get the BEAST2 version}
 \usage{
-get_beast2_version(beast2_path = get_default_beast2_path())
+get_beast2_version(beast2_path = get_default_beast2_jar_path())
 }
 \description{
 Get the BEAST2 version
