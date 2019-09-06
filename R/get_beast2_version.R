@@ -42,9 +42,9 @@ get_beast2_version <- function(
       stop(
         "Unknown warning emitted", "\n",
         "\n",
-        "Java version: ", get_java_version(), "\n",
-        "\n",
         "Warning message: ", e$message, "\n",
+        "\n",
+        "Java version: ", get_java_version(), "\n",
         "\n",
         "Tip: try running the command indicated by the warning message ",
           "in a terminal. \n",
@@ -56,7 +56,10 @@ get_beast2_version <- function(
         "  \n",
         "    get_beast2_version(get_default_beast2_bin_path()) \n",
         "  \n",
-        "  * update to a newer BEAST2 version \n",
+        "  * upgrade to a newer BEAST2 version: \n",
+        "  \n",
+        "    upgrade_beast2() \n",
+        "  \n",
         "  * downgrade to an older Java version"
       )
     }
