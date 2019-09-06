@@ -8,7 +8,7 @@
 #' }
 #' @export
 get_beast2_version <- function(
-  beast2_path = get_default_beast2_path()
+  beast2_path = get_default_beast2_bin_path()
 ) {
   if (is_win_bin_path(beast2_path)) {
    stop("Cannot use the Windows executable BEAST2.exe in scripts")
@@ -32,5 +32,16 @@ get_beast2_version <- function(
     stderr = TRUE
   )
 
-  substring(output, 2)
+  # When doing
+  #
+  # ./beast -version
+  #
+  # output can be:
+  #
+  #
+  # [java, -Xms8g, -Xms256m, -Djava.library.path=/usr/local/lib:/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib, -cp, ::/home/richel/.beast/2.5/BEASTLabs/lib/BEASTlabs.addon.jar:/home/richel/.beast/2.5/NS/lib/NS.addon.jar:/home/richel/.beast/2.5/MODEL_SELECTION/lib/MODEL_SELECTION.addon.jar:/home/richel/.beast/2.5/BEAST/lib/beast.jar:/home/richel/.beast/2.5/BEAST/lib/beast.src.jar, beast.app.beastapp.BeastMain, -version]
+  # v2.5.2
+  last_lines <- output[ length(output) ]
+
+  substring(last_lines, 2)
 }
