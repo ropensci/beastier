@@ -32,6 +32,8 @@ create_default_trees_filenames <- function(
       beast2_path = beast2_path
     )
   )
-  alignment_ids <- get_alignment_ids(input_filename) # nolint internal function
+  alignment_ids <- get_alignment_ids_from_xml_filename( # nolint beastier function
+    xml_filename = input_filename
+  )
   paste0(alignment_ids, ".trees")
 }

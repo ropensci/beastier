@@ -189,7 +189,7 @@ run_beast2 <- function(
   )
 
 
-  alignment_ids <- get_alignment_ids(input_filename_full) # nolint internal function
+  alignment_ids <- get_alignment_ids_from_xml_filename(input_filename_full) # nolint internal function
 
   if (length(output_trees_filenames) != length(alignment_ids)) {
     stop(

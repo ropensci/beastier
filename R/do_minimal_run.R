@@ -24,7 +24,8 @@ do_minimal_run <- function() {
       output_log_filename = file.path(folder, "out.log"),
       output_trees_filenames = file.path(folder, "out.trees"),
       output_state_filename = file.path(folder, "out.xml.state"),
-      rng_seed = 314
+      rng_seed = 314,
+      beast2_path = get_default_beast2_bin_path()
     )
   )
 }
