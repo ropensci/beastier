@@ -27,7 +27,7 @@ using a call to the \code{launcher.jar} file
 \examples{
   if (is_beast2_installed() && is_on_ci()) {
     cmds <- create_beast2_version_cmd_jar()
-    testit::assert(length(cmds) == 3)
+    testit::assert(length(cmds) == 4)
     testit::assert(cmds[2] == "-jar")
   }
 }
