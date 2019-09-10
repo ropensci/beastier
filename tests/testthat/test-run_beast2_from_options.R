@@ -131,22 +131,3 @@ test_that("show proper error message when using CBS with too few taxa", {
     "'group_sizes_dimension' .* must be less than the number of taxa"
   )
 })
-
-test_that("use BEAST2 working directory in same folder as BEAST2 output", {
-
-  if (!is_beast2_installed()) return()
-
-  folder_name <- tempfile()
-
-  expect_silent(
-    run_beast2_from_options(
-      create_beast2_options(
-        input_filename = get_beastier_path("2_4.xml"),
-        output_log_filename = file.path(folder_name, "out.log"),
-        output_trees_filenames = file.path(folder_name, "out.trees"),
-        output_state_filename = file.path(folder_name, "out.xml.state"),
-        beast2_working_dir = folder_name
-      )
-    )
-  )
-})

@@ -19,6 +19,25 @@
 check_beast2_options <- function(
   beast2_options
 ) {
+  check_beast2_options_names(beast2_options) # nolint beastier function
+  check_beast2_options_data_types(beast2_options) # nolint beastier function
+  check_beast2_options_filenames_differ(beast2_options) # nolint beastier function
+  check_beast2_options_filenames_not_in_working_dir(beast2_options) # nolint beastier function
+}
+
+#' Check if the \code{beast2_options}, which is a list,
+#' has all the elements needed.
+#'
+#' Calls \code{stop} if not.
+#' @inheritParams default_params_doc
+#' @return nothing
+#' @seealso Use \link{check_beast2_options} to check
+#'   the entire \code{beast2_options} object
+#' @author Richèl J.C. Bilderbeek
+#' @noRd
+check_beast2_options_names <- function(
+  beast2_options
+) {
   argument_names <- c(
     "input_filename", "output_log_filename", "output_trees_filenames",
     "output_state_filename",
@@ -33,6 +52,21 @@ check_beast2_options <- function(
       )
     }
   }
+}
+
+#' Check if the \code{beast2_options}, which is a list,
+#' has all elements of the right data types
+#'
+#' Calls \code{stop} if not.
+#' @inheritParams default_params_doc
+#' @return nothing
+#' @seealso Use \link{check_beast2_options} to check
+#'   the entire \code{beast2_options} object
+#' @author Richèl J.C. Bilderbeek
+#' @noRd
+check_beast2_options_data_types <- function(
+  beast2_options
+) {
   if (!assertive::is_a_string(beast2_options$input_filename)) {
     stop("'input_filename' must be one character string")
   }
@@ -62,8 +96,20 @@ check_beast2_options <- function(
   if (!beautier::is_one_bool(beast2_options$verbose)) {
     stop("'verbose' must be one boolean")
   }
+}
 
-  # Files must differ
+#' Check if the filenames in \code{beast2_options} differ
+#'
+#' Calls \code{stop} if not.
+#' @inheritParams default_params_doc
+#' @return nothing
+#' @seealso Use \link{check_beast2_options} to check
+#'   the entire \code{beast2_options} object
+#' @author Richèl J.C. Bilderbeek
+#' @noRd
+check_beast2_options_filenames_differ <- function(
+  beast2_options
+) {
   if (beast2_options$input_filename == beast2_options$output_log_filename) {
     stop("'input_filename' and 'output_log_filename' must differ")
   }
@@ -84,5 +130,33 @@ check_beast2_options <- function(
   if (beast2_options$output_trees_filenames ==
       beast2_options$output_state_filename) {
     stop("'output_trees_filenames' and 'output_state_filename' must differ")
+  }
+}
+
+#' Check if the filenames in \code{beast2_options} have a
+#' different folder than the working directory
+#'
+#' Calls \code{stop} if not.
+#' @inheritParams default_params_doc
+#' @return nothing
+#' @seealso Use \link{check_beast2_options} to check
+#'   the entire \code{beast2_options} object
+#' @author Richèl J.C. Bilderbeek
+#' @noRd
+check_beast2_options_filenames_not_in_working_dir <- function( # nolint indeed a long function name, which is fine for an internal function
+  beast2_options
+) {
+  beast2_working_dir <- beast2_options$beast2_working_dir
+  if (dirname(beast2_options$input_filename) == beast2_working_dir) {
+    stop("'beast2_working_dir' must be a different folder than the folder of 'input_filename'")
+  }
+  if (dirname(beast2_options$output_log_filename) == beast2_working_dir) {
+    stop("'beast2_working_dir' must be a different folder than the folder of 'output_log_filename'")
+  }
+  if (dirname(beast2_options$output_trees_filenames) == beast2_working_dir) {
+    stop("'beast2_working_dir' must be a different folder than the folder of 'output_trees_filenames'")
+  }
+  if (dirname(beast2_options$output_state_filename) == beast2_working_dir) {
+    stop("'beast2_working_dir' must be a different folder than the folder of 'output_state_filename'")
   }
 }

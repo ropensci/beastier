@@ -2,6 +2,25 @@
 
 Newest versions at top.
 
+## beastier 2.0.21 (unreleased)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * `create_beast2_options` checks that the filenames are not in the same
+    folder as the BEAST2 working directory
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.0.20 (2019-08-27)
 
 ### NEW FEATURES

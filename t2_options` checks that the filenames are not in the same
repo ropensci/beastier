@@ -1,0 +1,218 @@
+[1mdiff --git a/NEWS.md b/NEWS.md[m
+[1mindex 78c2b1e..2f93f6c 100644[m
+[1m--- a/NEWS.md[m
+[1m+++ b/NEWS.md[m
+[36m@@ -2,6 +2,25 @@[m
+ [m
+ Newest versions at top.[m
+ [m
+[32m+[m[32m## beastier 2.0.21 (unreleased)[m
+[32m+[m
+[32m+[m[32m### NEW FEATURES[m
+[32m+[m
+[32m+[m[32m  * None[m
+[32m+[m
+[32m+[m[32m### MINOR IMPROVEMENTS[m
+[32m+[m
+[32m+[m[32m  * `create_beast2_options` checks that the filenames are not in the same[m
+[32m+[m[32m    folder as the BEAST2 working directory[m
+[32m+[m
+[32m+[m[32m### BUG FIXES[m
+[32m+[m
+[32m+[m[32m  * None[m
+[32m+[m
+[32m+[m[32m### DEPRECATED AND DEFUNCT[m
+[32m+[m
+[32m+[m[32m  * None[m
+[32m+[m
+ ## beastier 2.0.20 (2019-08-27)[m
+ [m
+ ### NEW FEATURES[m
+[1mdiff --git a/R/check_beast2_options.R b/R/check_beast2_options.R[m
+[1mindex 1dbbd6e..4b72f7b 100644[m
+[1m--- a/R/check_beast2_options.R[m
+[1m+++ b/R/check_beast2_options.R[m
+[36m@@ -18,6 +18,25 @@[m
+ #' @export[m
+ check_beast2_options <- function([m
+   beast2_options[m
+[32m+[m[32m) {[m
+[32m+[m[32m  check_beast2_options_names(beast2_options) # nolint beastier function[m
+[32m+[m[32m  check_beast2_options_data_types(beast2_options) # nolint beastier function[m
+[32m+[m[32m  check_beast2_options_filenames_differ(beast2_options) # nolint beastier function[m
+[32m+[m[32m  check_beast2_options_filenames_not_in_working_dir(beast2_options) # nolint beastier function[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m#' Check if the \code{beast2_options}, which is a list,[m
+[32m+[m[32m#' has all the elements needed.[m
+[32m+[m[32m#'[m
+[32m+[m[32m#' Calls \code{stop} if not.[m
+[32m+[m[32m#' @inheritParams default_params_doc[m
+[32m+[m[32m#' @return nothing[m
+[32m+[m[32m#' @seealso Use \link{check_beast2_options} to check[m
+[32m+[m[32m#'   the entire \code{beast2_options} object[m
+[32m+[m[32m#' @author Richèl J.C. Bilderbeek[m
+[32m+[m[32m#' @noRd[m
+[32m+[m[32mcheck_beast2_options_names <- function([m
+[32m+[m[32m  beast2_options[m
+ ) {[m
+   argument_names <- c([m
+     "input_filename", "output_log_filename", "output_trees_filenames",[m
+[36m@@ -33,6 +52,21 @@[m [mcheck_beast2_options <- function([m
+       )[m
+     }[m
+   }[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m#' Check if the \code{beast2_options}, which is a list,[m
+[32m+[m[32m#' has all elements of the right data types[m
+[32m+[m[32m#'[m
+[32m+[m[32m#' Calls \code{stop} if not.[m
+[32m+[m[32m#' @inheritParams default_params_doc[m
+[32m+[m[32m#' @return nothing[m
+[32m+[m[32m#' @seealso Use \link{check_beast2_options} to check[m
+[32m+[m[32m#'   the entire \code{beast2_options} object[m
+[32m+[m[32m#' @author Richèl J.C. Bilderbeek[m
+[32m+[m[32m#' @noRd[m
+[32m+[m[32mcheck_beast2_options_data_types <- function([m
+[32m+[m[32m  beast2_options[m
+[32m+[m[32m) {[m
+   if (!assertive::is_a_string(beast2_options$input_filename)) {[m
+     stop("'input_filename' must be one character string")[m
+   }[m
+[36m@@ -62,8 +96,20 @@[m [mcheck_beast2_options <- function([m
+   if (!beautier::is_one_bool(beast2_options$verbose)) {[m
+     stop("'verbose' must be one boolean")[m
+   }[m
+[32m+[m[32m}[m
+ [m
+[31m-  # Files must differ[m
+[32m+[m[32m#' Check if the filenames in \code{beast2_options} differ[m
+[32m+[m[32m#'[m
+[32m+[m[32m#' Calls \code{stop} if not.[m
+[32m+[m[32m#' @inheritParams default_params_doc[m
+[32m+[m[32m#' @return nothing[m
+[32m+[m[32m#' @seealso Use \link{check_beast2_options} to check[m
+[32m+[m[32m#'   the entire \code{beast2_options} object[m
+[32m+[m[32m#' @author Richèl J.C. Bilderbeek[m
+[32m+[m[32m#' @noRd[m
+[32m+[m[32mcheck_beast2_options_filenames_differ <- function([m
+[32m+[m[32m  beast2_options[m
+[32m+[m[32m) {[m
+   if (beast2_options$input_filename == beast2_options$output_log_filename) {[m
+     stop("'input_filename' and 'output_log_filename' must differ")[m
+   }[m
+[36m@@ -86,3 +132,31 @@[m [mcheck_beast2_options <- function([m
+     stop("'output_trees_filenames' and 'output_state_filename' must differ")[m
+   }[m
+ }[m
+[32m+[m
+[32m+[m[32m#' Check if the filenames in \code{beast2_options} have a[m
+[32m+[m[32m#' different folder than the working directory[m
+[32m+[m[32m#'[m
+[32m+[m[32m#' Calls \code{stop} if not.[m
+[32m+[m[32m#' @inheritParams default_params_doc[m
+[32m+[m[32m#' @return nothing[m
+[32m+[m[32m#' @seealso Use \link{check_beast2_options} to check[m
+[32m+[m[32m#'   the entire \code{beast2_options} object[m
+[32m+[m[32m#' @author Richèl J.C. Bilderbeek[m
+[32m+[m[32m#' @noRd[m
+[32m+[m[32mcheck_beast2_options_filenames_not_in_working_dir <- function( # nolint indeed a long function name, which is fine for an internal function[m
+[32m+[m[32m  beast2_options[m
+[32m+[m[32m) {[m
+[32m+[m[32m  beast2_working_dir <- beast2_options$beast2_working_dir[m
+[32m+[m[32m  if (dirname(beast2_options$input_filename) == beast2_working_dir) {[m
+[32m+[m[32m    stop("'beast2_working_dir' must be a different folder than the folder of 'input_filename'")[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (dirname(beast2_options$output_log_filename) == beast2_working_dir) {[m
+[32m+[m[32m    stop("'beast2_working_dir' must be a different folder than the folder of 'output_log_filename'")[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (dirname(beast2_options$output_trees_filenames) == beast2_working_dir) {[m
+[32m+[m[32m    stop("'beast2_working_dir' must be a different folder than the folder of 'output_trees_filenames'")[m
+[32m+[m[32m  }[m
+[32m+[m[32m  if (dirname(beast2_options$output_state_filename) == beast2_working_dir) {[m
+[32m+[m[32m    stop("'beast2_working_dir' must be a different folder than the folder of 'output_state_filename'")[m
+[32m+[m[32m  }[m
+[32m+[m[32m}[m
+[1mdiff --git a/tests/testthat/test-create_beast2_options.R b/tests/testthat/test-create_beast2_options.R[m
+[1mindex 505a0fe..86b7932 100644[m
+[1m--- a/tests/testthat/test-create_beast2_options.R[m
+[1m+++ b/tests/testthat/test-create_beast2_options.R[m
+[36m@@ -1,6 +1,49 @@[m
+ context("create_beast2_options")[m
+ [m
+ test_that("use", {[m
+[31m-[m
+   expect_silent(create_beast2_options())[m
+ })[m
+[32m+[m
+[32m+[m[32mtest_that("BEAST2 working dir and folder for filenames must differ", {[m
+[32m+[m
+[32m+[m[32m  folder_name <- tempfile()[m
+[32m+[m
+[32m+[m[32m  # input_filename[m
+[32m+[m[32m  expect_error([m
+[32m+[m[32m    create_beast2_options([m
+[32m+[m[32m      input_filename = file.path(folder_name, "simple.xml"),[m
+[32m+[m[32m      beast2_working_dir = folder_name[m
+[32m+[m[32m    ),[m
+[32m+[m[32m    "'beast2_working_dir' must be a different folder than the folder of 'input_filename'" # nolint[m
+[32m+[m[32m  )[m
+[32m+[m
+[32m+[m[32m  # output_log_filename[m
+[32m+[m[32m  expect_error([m
+[32m+[m[32m    create_beast2_options([m
+[32m+[m[32m      output_log_filename = file.path(folder_name, "simple.log"),[m
+[32m+[m[32m      beast2_working_dir = folder_name[m
+[32m+[m[32m    ),[m
+[32m+[m[32m    "'beast2_working_dir' must be a different folder than the folder of 'output_log_filename'" # nolint[m
+[32m+[m[32m  )[m
+[32m+[m
+[32m+[m[32m  # output_trees_filenames[m
+[32m+[m[32m  expect_error([m
+[32m+[m[32m    create_beast2_options([m
+[32m+[m[32m      output_trees_filenames = file.path(folder_name, "simple.trees"),[m
+[32m+[m[32m      beast2_working_dir = folder_name[m
+[32m+[m[32m    ),[m
+[32m+[m[32m    "'beast2_working_dir' must be a different folder than the folder of 'output_trees_filenames'" # nolint[m
+[32m+[m[32m  )[m
+[32m+[m
+[32m+[m[32m  # output_state_filename[m
+[32m+[m[32m  expect_error([m
+[32m+[m[32m    create_beast2_options([m
+[32m+[m[32m      output_state_filename = file.path(folder_name, "simple.xml.state"),[m
+[32m+[m[32m      beast2_working_dir = folder_name[m
+[32m+[m[32m    ),[m
+[32m+[m[32m    "'beast2_working_dir' must be a different folder than the folder of 'output_state_filename'" # nolint[m
+[32m+[m[32m  )[m
+[32m+[m
+[32m+[m[32m})[m
+[41m+[m
+[41m+[m
+[1mdiff --git a/tests/testthat/test-run_beast2_from_options.R b/tests/testthat/test-run_beast2_from_options.R[m
+[1mindex 47f5422..2afa4fb 100644[m
+[1m--- a/tests/testthat/test-run_beast2_from_options.R[m
+[1m+++ b/tests/testthat/test-run_beast2_from_options.R[m
+[36m@@ -131,22 +131,3 @@[m [mtest_that("show proper error message when using CBS with too few taxa", {[m
+     "'group_sizes_dimension' .* must be less than the number of taxa"[m
+   )[m
+ })[m
+[31m-[m
+[31m-test_that("use BEAST2 working directory in same folder as BEAST2 output", {[m
+[31m-[m
+[31m-  if (!is_beast2_installed()) return()[m
+[31m-[m
+[31m-  folder_name <- tempfile()[m
+[31m-[m
+[31m-  expect_silent([m
+[31m-    run_beast2_from_options([m
+[31m-      create_beast2_options([m
+[31m-        input_filename = get_beastier_path("2_4.xml"),[m
+[31m-        output_log_filename = file.path(folder_name, "out.log"),[m
+[31m-        output_trees_filenames = file.path(folder_name, "out.trees"),[m
+[31m-        output_state_filename = file.path(folder_name, "out.xml.state"),[m
+[31m-        beast2_working_dir = folder_name[m
+[31m-      )[m
+[31m-    )[m
+[31m-  )[m
+[31m-})[m
