@@ -28,7 +28,7 @@ Imports:
     stringr,
     xml2
 Suggests:
-    beautier (>= 2.2.2),
+    beautier (>= 2.2.3),
     hunspell,
     knitr,
     rmarkdown,
