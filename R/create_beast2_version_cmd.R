@@ -66,7 +66,7 @@ create_beast2_version_cmd_jar <- function(
 #' @examples
 #'   if (is_beast2_installed() && is_on_ci()) {
 #'     cmds <- create_beast2_version_cmd_bin()
-#'     testit::assert(length(cmds) == 3)
+#'     testit::assert(length(cmds) == 2)
 #'     testit::assert(cmds[2] == "-version")
 #'   }
 #' @author Richèl J.C. Bilderbeek
