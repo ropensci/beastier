@@ -35,7 +35,7 @@ check_beast2_options <- function(
 #'   the entire \code{beast2_options} object
 #' @author Richèl J.C. Bilderbeek
 #' @noRd
-check_beast2_options_names <- function(
+check_beast2_options_names <- function( # nolint long function name indeed, which is fine for an internal function
   beast2_options
 ) {
   argument_names <- c(
@@ -64,7 +64,7 @@ check_beast2_options_names <- function(
 #'   the entire \code{beast2_options} object
 #' @author Richèl J.C. Bilderbeek
 #' @noRd
-check_beast2_options_data_types <- function(
+check_beast2_options_data_types <- function( # nolint long function name indeed, which is fine for an internal function
   beast2_options
 ) {
   if (!assertive::is_a_string(beast2_options$input_filename)) {
@@ -107,7 +107,7 @@ check_beast2_options_data_types <- function(
 #'   the entire \code{beast2_options} object
 #' @author Richèl J.C. Bilderbeek
 #' @noRd
-check_beast2_options_filenames_differ <- function(
+check_beast2_options_filenames_differ <- function( # nolint long function name indeed, which is fine for an internal function
   beast2_options
 ) {
   if (beast2_options$input_filename == beast2_options$output_log_filename) {
@@ -148,15 +148,27 @@ check_beast2_options_filenames_not_in_working_dir <- function( # nolint indeed a
 ) {
   beast2_working_dir <- beast2_options$beast2_working_dir
   if (dirname(beast2_options$input_filename) == beast2_working_dir) {
-    stop("'beast2_working_dir' must be a different folder than the folder of 'input_filename'")
+    stop(
+      "'beast2_working_dir' must be a different folder than ",
+      "the folder of 'input_filename'"
+    )
   }
   if (dirname(beast2_options$output_log_filename) == beast2_working_dir) {
-    stop("'beast2_working_dir' must be a different folder than the folder of 'output_log_filename'")
+    stop(
+      "'beast2_working_dir' must be a different folder than ",
+      "the folder of 'output_log_filename'"
+    )
   }
   if (dirname(beast2_options$output_trees_filenames) == beast2_working_dir) {
-    stop("'beast2_working_dir' must be a different folder than the folder of 'output_trees_filenames'")
+    stop(
+      "'beast2_working_dir' must be a different folder than ",
+      "the folder of 'output_trees_filenames'"
+    )
   }
   if (dirname(beast2_options$output_state_filename) == beast2_working_dir) {
-    stop("'beast2_working_dir' must be a different folder than the folder of 'output_state_filename'")
+    stop(
+      "'beast2_working_dir' must be a different folder than ",
+      "the folder of 'output_state_filename'"
+    )
   }
 }

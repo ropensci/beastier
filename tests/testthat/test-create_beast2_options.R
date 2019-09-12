@@ -45,5 +45,3 @@ test_that("BEAST2 working dir and folder for filenames must differ", {
   )
 
 })
-
-

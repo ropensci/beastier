@@ -26,6 +26,6 @@ upgrade_beast2 <- function(
       "Tip: use 'beastier::install_beast2()'"
     )
   }
-  uninstall_beast2()
-  install_beast2()
+  uninstall_beast2() # nolint beastier function
+  install_beast2() # nolint beastier function
 }

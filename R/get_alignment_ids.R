@@ -9,7 +9,9 @@
 #'     "test_output_0"
 #'   )
 #'   expect_equal(
-#'    get_alignment_ids_from_xml_filename(get_beastier_path("anthus_15_15.xml")),
+#'    get_alignment_ids_from_xml_filename(
+#'      get_beastier_path("anthus_15_15.xml")
+#'    ),
 #'    c("anthus_aco","anthus_nd2")
 #'  )
 #' @author Richèl J.C. Bilderbeek

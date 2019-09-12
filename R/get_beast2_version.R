@@ -24,12 +24,11 @@ get_beast2_version <- function(
 
   # Create the command
   testit::assert(length(beast2_path) == 1)
-  cmds <- create_beast2_version_cmd(beast2_path)
+  cmds <- create_beast2_version_cmd(beast2_path) # nolint beastier function
   beautier::check_file_exists(cmds[1], "cmds[1]")
   output <- NA
 
-  tryCatch(
-    {
+  tryCatch({
       output <- system2(
         cmds[1],
         args = cmds[-1],
@@ -66,14 +65,14 @@ get_beast2_version <- function(
   )
   # When doing
   #
-  # ./beast -version
+  # ./beast -version                                                            # nolint this is not commented code: it is proper documentation
   #
   # output can be:
   #
   #
-  # [java, -Xms8g, -Xms256m, -Djava.library.path=/usr/local/lib:/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib, -cp, ::/home/richel/.beast/2.5/BEASTLabs/lib/BEASTlabs.addon.jar:/home/richel/.beast/2.5/NS/lib/NS.addon.jar:/home/richel/.beast/2.5/MODEL_SELECTION/lib/MODEL_SELECTION.addon.jar:/home/richel/.beast/2.5/BEAST/lib/beast.jar:/home/richel/.beast/2.5/BEAST/lib/beast.src.jar, beast.app.beastapp.BeastMain, -version]
+  # [java, -Xms8g, -Xms256m, -Djava.library.path=/usr/local/lib:/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib, -cp, ::/home/richel/.beast/2.5/BEASTLabs/lib/BEASTlabs.addon.jar:/home/richel/.beast/2.5/NS/lib/NS.addon.jar:/home/richel/.beast/2.5/MODEL_SELECTION/lib/MODEL_SELECTION.addon.jar:/home/richel/.beast/2.5/BEAST/lib/beast.jar:/home/richel/.beast/2.5/BEAST/lib/beast.src.jar, beast.app.beastapp.BeastMain, -version] # nolint indeed a long line
   # v2.5.2
-  last_lines <- output[ length(output) ]
+  last_lines <- output[length(output)]
 
   substring(last_lines, 2)
 }
