@@ -16,7 +16,7 @@
 #'  )
 #' @author Richèl J.C. Bilderbeek
 #' @export
-get_alignment_ids_from_xml_filename <- function(
+get_alignment_ids_from_xml_filename <- function( # nolint indeed a long function name, but I preferred to keep it: a normal user should use 'get_alignment_ids'
   xml_filename
 ) {
 
