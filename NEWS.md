@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.0.22 (no release yet)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Add `update_beastier` to update the `beastier` dependencies
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.0.21 (2019-09-10)
 
 ### NEW FEATURES

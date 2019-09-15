@@ -24,6 +24,7 @@ Imports:
     assertive,
     phangorn,
     rappdirs,
+    remotes,
     rJava,
     stringr,
     xml2
