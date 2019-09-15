@@ -168,16 +168,11 @@ run_beast2 <- function(
       )
     }
   }
-  if (file.exists(actual_log_filename)) {
-    # It is fine that this file existed, as it existed in the
-    # temporary BEAST2 working directory.
-    file.remove(actual_log_filename)
-  }
-  if (any(file.exists(actual_trees_filenames))) {
-    # It is fine that this file existed, as it existed in the
-    # temporary BEAST2 working directory.
-    file.remove(actual_trees_filenames)
-  }
+  # It is fine that these files existed, as they existed in the
+  # temporary BEAST2 working directory.
+  remove_file_if_present(actual_log_filename) # nolint beastier function
+  remove_file_if_present(actual_trees_filenames) # nolint beastier function
+
   testit::assert(!file.exists(actual_log_filename))
   testit::assert(all(!file.exists(actual_trees_filenames)))
 
