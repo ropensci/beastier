@@ -11,6 +11,6 @@ remove_file_if_present <- function(filename) {
 #' @noRd
 remove_files_if_present <- function(filenames) {
   for (filename in filenames) {
-    remove_file_if_present(filename)
+    remove_file_if_present(filename) # nolint beastier function
   }
 }
