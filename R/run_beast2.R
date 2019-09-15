@@ -171,7 +171,7 @@ run_beast2 <- function(
   # It is fine that these files existed, as they existed in the
   # temporary BEAST2 working directory.
   remove_file_if_present(actual_log_filename) # nolint beastier function
-  remove_file_if_present(actual_trees_filenames) # nolint beastier function
+  remove_files_if_present(actual_trees_filenames) # nolint beastier function
 
   testit::assert(!file.exists(actual_log_filename))
   testit::assert(all(!file.exists(actual_trees_filenames)))
