@@ -3,13 +3,13 @@
 \name{update_beastier}
 \alias{update_beastier}
 \title{Update all beastier dependencies, by installing their
-latests versions}
+latest versions}
 \usage{
 update_beastier()
 }
 \description{
 Update all beastier dependencies, by installing their
-latests versions
+latest versions
 }
 \author{
 Richèl J.C. Bilderbeek

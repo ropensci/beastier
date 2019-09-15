@@ -1,5 +1,5 @@
 #' Update all beastier dependencies, by installing their
-#' latests versions
+#' latest versions
 #' @author Richèl J.C. Bilderbeek
 #' @export
 update_beastier <- function() {
