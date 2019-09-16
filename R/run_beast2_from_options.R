@@ -28,7 +28,7 @@ run_beast2_from_options <- function(
   check_beast2_options(beast2_options) # nolint beastier function
 
   if (beast2_options$verbose) {
-    print_beast2_options(beast2_options)
+    print_beast2_options(beast2_options) # nolint beastier function
   }
 
   if (is_win_bin_path(beast2_options$beast2_path)) {
@@ -211,7 +211,7 @@ run_beast2_from_options <- function(
   }
 
   if (beast2_options$verbose) {
-    print_beast2_internal_filenames(bifs, show_exist = TRUE)
+    print_beast2_internal_filenames(bifs, show_exist = TRUE) # nolint beautier function
   }
 
   beautier::check_file_exists(
