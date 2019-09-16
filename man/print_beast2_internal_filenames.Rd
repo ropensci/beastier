@@ -13,7 +13,7 @@ used BEAST2 filenames,
 as created by \link{create_beast2_internal_filenames}}
 
 \item{show_exist}{if TRUE, a column is added to indicate each
-file's existance}
+file's existence}
 }
 \description{
 Print a \code{beast2_internal_filenames} as a table

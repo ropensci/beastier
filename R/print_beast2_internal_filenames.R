@@ -1,7 +1,7 @@
 #' Print a \code{beast2_internal_filenames} as a table
 #' @inheritParams default_params_doc
 #' @param show_exist if TRUE, a column is added to indicate each
-#' file's existance
+#' file's existence
 #' @export
 print_beast2_internal_filenames <- function(
   beast2_internal_filenames,
