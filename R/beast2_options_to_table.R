@@ -1,4 +1,5 @@
 #' Convert a \code{beast2_options} to a table
+#' @inheritParams default_params_doc
 #' @export
 beast2_options_to_table <- function(beast2_options) {
   check_beast2_options(beast2_options)

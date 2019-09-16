@@ -6,6 +6,11 @@
 \usage{
 print_beast2_options(beast2_options)
 }
+\arguments{
+\item{beast2_options}{a set of BEAST2 options,
+that are the R equivalent of the BEAST2 command-line options,
+as can be created by \link{create_beast2_options}}
+}
 \description{
 Pretty-print a \code{beast2_options}
 }

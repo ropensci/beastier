@@ -1,7 +1,7 @@
 #' Create a list with the internally used BEAST2 filenames
 #' @inheritParams default_params_doc
 #' @return a list with the internally used BEAST2 filenames
-#' @noRd
+#' @export
 create_beast2_internal_filenames <- function(beast2_options) {
 
   # BEAST2 Internally-used FilenameS
