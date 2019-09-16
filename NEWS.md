@@ -11,6 +11,7 @@ Newest versions at top.
 ### MINOR IMPROVEMENTS
 
   * Add `update_beastier` to update the `beastier` dependencies
+  * Lowered cyclomatic complexity, thanks @lintr-bot 
 
 ### BUG FIXES
 
