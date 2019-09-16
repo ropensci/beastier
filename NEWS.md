@@ -2,7 +2,7 @@
 
 Newest versions at top.
 
-## beastier 2.0.22 (no release yet)
+## beastier 2.0.22 (2019-09-16)
 
 ### NEW FEATURES
 
