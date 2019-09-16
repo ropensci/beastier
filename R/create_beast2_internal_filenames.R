@@ -2,7 +2,7 @@
 #' @inheritParams default_params_doc
 #' @return a list with the internally used BEAST2 filenames
 #' @export
-create_beast2_internal_filenames <- function(beast2_options) {
+create_beast2_internal_filenames <- function(beast2_options) { # nolint indeed a long function name, which is fine for internal function
 
   # BEAST2 Internally-used FilenameS
   bifs <- list()

@@ -2,7 +2,7 @@
 #' @inheritParams default_params_doc
 #' @export
 beast2_options_to_table <- function(beast2_options) {
-  check_beast2_options(beast2_options)
+  check_beast2_options(beast2_options) # nolint beastier function
   data.frame(
     row.names = names(beast2_options),
     value = unlist(beast2_options)

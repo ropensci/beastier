@@ -1,10 +1,11 @@
-#' Check if the \code{beast2_internal_filenames} is a valid BEAST2 options object.
+#' Check if the \code{beast2_internal_filenames}
+#' is a valid BEAST2 internal filenames object.
 #'
-#' Calls \code{stop} if the BEAST2 option object is invalid
+#' Calls \code{stop} if the BEAST2 internal filenames object is invalid
 #' @inheritParams default_params_doc
 #' @return nothing
-#' @seealso Use \link{create_beast2_internal_filenames} to create a valid
-#'   BEAST2 options object
+#' @seealso Use \link{create_beast2_internal_filenames}
+#'   to create a valid BEAST2 internal filenames object
 #' @examples
 #' library(testthat)
 #'
@@ -24,7 +25,7 @@
 #' expect_error(check_beast2_internal_filenames(NA))
 #' @author Richèl J.C. Bilderbeek
 #' @export
-check_beast2_internal_filenames <- function(
+check_beast2_internal_filenames <- function( # nolint indeed a long function, which is fine for internal functions
   beast2_internal_filenames
 ) {
   check_beast2_internal_filenames_names(beast2_internal_filenames) # nolint beastier function
@@ -56,7 +57,8 @@ check_beast2_internal_filenames_names <- function( # nolint long function name i
   for (arg_name in argument_names) {
     if (!arg_name %in% names(beast2_internal_filenames)) {
       stop(
-        "'", arg_name, "' must be an element of an 'beast2_internal_filenames'. ",
+        "'", arg_name, "' must be an element of an ",
+        "'beast2_internal_filenames'. \n",
         "Tip: use 'create_beast2_internal_filenames'"
       )
     }

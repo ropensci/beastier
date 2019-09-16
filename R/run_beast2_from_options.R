@@ -38,12 +38,10 @@ run_beast2_from_options <- function(
   # Deduce the full paths of the input and output files
   ##############################################################################
   # Beast2 Internal FilenameS
-  bifs <- create_beast2_internal_filenames(
-    beast2_options
-  )
+  bifs <- create_beast2_internal_filenames(beast2_options)  # nolint beastier function
 
   if (beast2_options$verbose) {
-    print_beast2_internal_filenames(bifs, show_exist = FALSE)
+    print_beast2_internal_filenames(bifs, show_exist = FALSE)  # nolint beastier function
   }
   ##############################################################################
   # Check files
@@ -101,7 +99,8 @@ run_beast2_from_options <- function(
       showWarnings = TRUE, recursive = TRUE
     )
     stop(
-      "Cannot create working directory '", beast2_options$beast2_working_dir, "' \n",
+      "Cannot create working directory '",
+      beast2_options$beast2_working_dir, "' \n",
       "Maybe no permission to create it there? \n"
     )
   }
@@ -187,8 +186,14 @@ run_beast2_from_options <- function(
     recursive = TRUE,
     showWarnings = FALSE
   )
-  check_can_create_file(beast2_options$output_log_filename, overwrite = beast2_options$overwrite) # nolint beautier function
-  file.rename(from = bifs$actual_log_filename, to = beast2_options$output_log_filename)
+  check_can_create_file(# nolint beautier function
+    beast2_options$output_log_filename,
+    overwrite = beast2_options$overwrite
+  )
+  file.rename(
+    from = bifs$actual_log_filename,
+    to = beast2_options$output_log_filename
+  )
 
   for (i in seq_along(beast2_options$output_trees_filenames)) {
     to <- beast2_options$output_trees_filenames[i]
@@ -209,7 +214,9 @@ run_beast2_from_options <- function(
     print_beast2_internal_filenames(bifs, show_exist = TRUE)
   }
 
-  beautier::check_file_exists(beast2_options$output_log_filename, "output_log_filename")
+  beautier::check_file_exists(
+    beast2_options$output_log_filename, "output_log_filename"
+  )
   beautier::check_file_exists(
     bifs$output_state_filename_full, "output_state_filename_full"
   )

@@ -3,7 +3,7 @@
 #' @param show_exist if TRUE, a column is added to indicate each
 #' file's existence
 #' @export
-print_beast2_internal_filenames <- function(
+print_beast2_internal_filenames <- function( # nolint indeed a long function name, which is fine for internal function
   beast2_internal_filenames,
   show_exist = FALSE
 ) {
