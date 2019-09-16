@@ -37,9 +37,6 @@ get_beast2_version <- function(
       )
     },
     warning = function(e) {
-      print("Warning elements: ")
-      print(names(e))
-      print(e)
       stop(
         "Unknown warning emitted", "\n",
         "\n",
