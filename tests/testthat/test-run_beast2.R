@@ -90,124 +90,6 @@ test_that("single alignment, equal RNG seed equal results", {
   expect_identical(lines_1, lines_2)
 })
 
-test_that("two alignments creates all files", {
-
-  if (!is_beast2_installed()) {
-    return()
-  }
-
-  output_log_filename <- tempfile(fileext = ".log")
-  output_trees_filenames <- c(
-    tempfile(fileext = "_a.trees"),
-    tempfile(fileext = "_b.trees")
-  )
-  output_state_filename <- tempfile(fileext = ".xml.state")
-  output_files <- c(output_log_filename, output_trees_filenames,
-    output_state_filename
-  )
-  testit::assert(!files_exist(output_files))
-
-  expect_silent(
-    run_beast2(
-      input_filename = get_beastier_path("anthus_2_4.xml"),
-      output_log_filename = output_log_filename,
-      output_trees_filenames = output_trees_filenames,
-      output_state_filename = output_state_filename
-    )
-  )
-
-  expect_true(files_exist(output_files))
-})
-
-test_that("anthus_15_15.xml has fixed crown ages of 15 and 15", {
-
-  if (!is_beast2_installed()) {
-    return()
-  }
-
-  output_log_filename <- tempfile(fileext = ".log")
-  output_trees_filenames <- c(
-    tempfile(fileext = "_a.trees"),
-    tempfile(fileext = "_b.trees")
-  )
-  output_state_filename <- tempfile(fileext = ".xml.state")
-  output_files <- c(output_log_filename, output_trees_filenames,
-    output_state_filename
-  )
-  testit::assert(!files_exist(output_files))
-
-  expect_silent(
-    run_beast2(
-      input_filename = get_beastier_path("anthus_15_15.xml"),
-      output_log_filename = output_log_filename,
-      output_trees_filenames = output_trees_filenames,
-      output_state_filename = output_state_filename
-    )
-  )
-
-  expect_true(files_exist(output_files))
-
-  out <- tracerer::parse_beast_posterior(
-    output_trees_filenames, output_log_filename
-  )
-  n <- length(out$estimates$TreeHeight.aco) # nolint BEAST2 variable names are not snake_case
-  expect_true(all.equal(out$estimates$TreeHeight.aco, rep(15, n))) # nolint BEAST2 variable names are not snake_case
-
-  # Unexpected: this will fail:
-  # Even though the crown ages of both initial phylogenies have been fixed,
-  # the second TreeHeights will deviate from it
-  expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n)) # nolint BEAST2 variable names are not snake_case
-    != TRUE
-  )
-})
-
-
-test_that("anthus_na_15.xml has an estimated and a fixed crown age of 15", {
-
-  if (!is_beast2_installed()) {
-    return()
-  }
-
-  output_log_filename <- tempfile(fileext = ".log")
-  output_trees_filenames <- c(
-    tempfile(fileext = "_a.trees"),
-    tempfile(fileext = "_b.trees")
-  )
-  output_state_filename <- tempfile(fileext = ".xml.state")
-  output_files <- c(output_log_filename, output_trees_filenames,
-    output_state_filename
-  )
-  testit::assert(!files_exist(output_files))
-
-  expect_silent(
-    run_beast2(
-      input_filename = get_beastier_path("anthus_na_15.xml"),
-      output_log_filename = output_log_filename,
-      output_trees_filenames = output_trees_filenames,
-      output_state_filename = output_state_filename
-    )
-  )
-
-  expect_true(files_exist(output_files))
-
-  out <- tracerer::parse_beast_posterior(
-    output_trees_filenames, output_log_filename
-  )
-  n <- length(out$estimates$TreeHeight.aco) # nolint BEAST2 variable names are not snake_case
-  # Expected: these are all different
-  expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n)) # nolint BEAST2 variable names are not snake_case
-    != TRUE
-  )
-
-  # Unexpected: these should be 15, but are not
-  # Even though the crown ages of the second phylogeny has been fixed at 15,
-  # the second TreeHeights will deviate from it
-  expect_true(all.equal(out$estimates$TreeHeight.nd2, rep(15, n)) # nolint BEAST2 variable names are not snake_case
-    != TRUE
-  )
-})
-
-
 test_that("detect errors when BEAST2 need not be installed", {
 
   expect_error(
@@ -241,15 +123,12 @@ test_that("detect errors when BEAST2 is installed", {
       input_filename = get_beastier_path("2_4.xml"),
       output_trees_filenames = c("too", "much")
     ),
-    paste0(
-      "'output_trees_filenames' must have as much elements ",
-      "as 'input_filename' has alignments"
-    )
+    "output_trees_filenames"
   )
 
   expect_error(
     run_beast2(
-      input_filename = get_beastier_path("anthus_2_4.xml"),
+      input_filename = get_beastier_path("2_4.xml"),
       rng_seed = 0
     ),
     "'rng_seed' should be one NA or one non-zero positive value"
@@ -257,13 +136,13 @@ test_that("detect errors when BEAST2 is installed", {
 
   expect_silent(
     run_beast2(
-      get_beastier_path("anthus_2_4.xml"),
+      get_beastier_path("2_4.xml"),
       rng_seed = 1
     )
   )
   expect_silent(
     run_beast2(
-      get_beastier_path("anthus_2_4.xml"),
+      get_beastier_path("2_4.xml"),
       rng_seed = NA
     )
   )
@@ -424,10 +303,16 @@ test_that("run BEAST2 from binary path", {
     )
   }
   # Binary fails under Windows, but works under Unix (see 'use' section above)
+  fake_windows_exe_filename <- file.path(tempfile(), "BEAST2.exe")
+  dir.create(
+    dirname(fake_windows_exe_filename),
+    recursive = TRUE, showWarnings = FALSE
+  )
+  writeLines(text = "dummy content", con = fake_windows_exe_filename)
   expect_error(
     run_beast2(
       input_filename = get_beastier_path("beast2_warning.xml"),
-      beast2_path = "BEAST.exe"
+      beast2_path = fake_windows_exe_filename
     ),
     "Cannot use the Windows executable BEAST2.exe in scripts"
   )
@@ -439,7 +324,6 @@ test_that("run_beast2 produces output", {
   if (!is_beast2_installed()) {
     return()
   }
-
   output <- run_beast2(get_beastier_path("2_4.xml"), verbose = TRUE)
   expect_true(length(output) > 50)
 })

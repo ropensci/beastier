@@ -54,7 +54,7 @@ run_beast2 <- function(
   beast2_path = get_default_beast2_path(),
   verbose = FALSE
 ) {
-  beast2_options <- create_beast2_options(
+  beast2_options <- create_beast2_options( # nolint beastier function
     input_filename = input_filename,
     output_log_filename = output_log_filename,
     output_trees_filenames = output_trees_filenames,
@@ -68,6 +68,5 @@ run_beast2 <- function(
     verbose = verbose
   )
 
-  run_beast2_from_options(beast2_options)
-
+  run_beast2_from_options(beast2_options) # nolint beastier function
 }

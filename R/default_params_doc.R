@@ -4,6 +4,9 @@
 #'   (usually simply \code{beast}).
 #'   Use \link{get_default_beast2_bin_path} to get
 #'   the default BEAST binary file's path
+#' @param beast2_internal_filenames a list of internally
+#'   used BEAST2 filenames,
+#'   as created by \link{create_beast2_internal_filenames}
 #' @param beast2_jar_path name of the BEAST2 jar file
 #'   (usually has a \code{.jar} extension).
 #'   Use \link{get_default_beast2_jar_path} to get
@@ -99,6 +102,7 @@
 #'   functions to find the documentation parameters
 default_params_doc <- function(
   beast2_bin_path,
+  beast2_internal_filenames,
   beast2_jar_path,
   beast2_options, beast2_optionses,
   beast2_path,
