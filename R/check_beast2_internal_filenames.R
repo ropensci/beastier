@@ -6,14 +6,22 @@
 #' @seealso Use \link{create_beast2_internal_filenames} to create a valid
 #'   BEAST2 options object
 #' @examples
-#'  library(testthat)
+#' library(testthat)
 #'
-#'  expect_silent(check_beast2_internal_filenames(create_beast2_internal_filenames()))
+#' expect_silent(
+#'   check_beast2_internal_filenames(
+#'     create_beast2_internal_filenames(
+#'       create_beast2_options(
+#'         input_filename = get_beastier_path("2_4.xml")
+#'       )
+#'     )
+#'   )
+#' )
 #'
-#'  # Must stop on nonsense
-#'  expect_error(check_beast2_internal_filenames(beast2_internal_filenames = "nonsense"))
-#'  expect_error(check_beast2_internal_filenames(beast2_internal_filenames = NULL))
-#'  expect_error(check_beast2_internal_filenames(beast2_internal_filenames = NA))
+#' # Must stop on nonsense
+#' expect_error(check_beast2_internal_filenames("nonsense"))
+#' expect_error(check_beast2_internal_filenames(NULL))
+#' expect_error(check_beast2_internal_filenames(NA))
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_beast2_internal_filenames <- function(
