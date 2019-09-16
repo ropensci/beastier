@@ -2,7 +2,6 @@
 
 export(are_beast2_input_lines)
 export(are_identical_alignments)
-export(beast2_internal_filenames_to_table)
 export(beast2_options_to_table)
 export(check_beast2)
 export(check_beast2_internal_filenames)

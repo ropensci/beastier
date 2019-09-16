@@ -6,6 +6,11 @@
 \usage{
 check_beast2_internal_filenames(beast2_internal_filenames)
 }
+\arguments{
+\item{beast2_internal_filenames}{a list of internally
+used BEAST2 filenames,
+as created by \link{create_beast2_internal_filenames}}
+}
 \value{
 nothing
 }

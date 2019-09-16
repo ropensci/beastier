@@ -2,11 +2,19 @@
 % Please edit documentation in R/print_beast2_internal_filenames.R
 \name{print_beast2_internal_filenames}
 \alias{print_beast2_internal_filenames}
-\title{Pretty-print a \code{beast2_options}}
+\title{Print a \code{beast2_internal_filenames} as a table}
 \usage{
 print_beast2_internal_filenames(beast2_internal_filenames,
   show_exist = FALSE)
 }
+\arguments{
+\item{beast2_internal_filenames}{a list of internally
+used BEAST2 filenames,
+as created by \link{create_beast2_internal_filenames}}
+
+\item{show_exist}{if TRUE, a column is added to indicate each
+file's existance}
+}
 \description{
-Pretty-print a \code{beast2_options}
+Print a \code{beast2_internal_filenames} as a table
 }
