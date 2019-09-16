@@ -303,20 +303,21 @@ test_that("run BEAST2 from binary path", {
     )
   }
   # Binary fails under Windows, but works under Unix (see 'use' section above)
-  fake_windows_exe_filename <- file.path(tempfile(), "BEAST2.exe")
-  dir.create(
-    dirname(fake_windows_exe_filename),
-    recursive = TRUE, showWarnings = FALSE
-  )
-  writeLines(text = "dummy content", con = fake_windows_exe_filename)
-  expect_error(
-    run_beast2(
-      input_filename = get_beastier_path("beast2_warning.xml"),
-      beast2_path = fake_windows_exe_filename
-    ),
-    "Cannot use the Windows executable BEAST2.exe in scripts"
-  )
-
+  if (rappdirs::app_dir()$os == "win") {
+    fake_windows_exe_filename <- file.path(tempfile(), "BEAST2.exe")
+    dir.create(
+      dirname(fake_windows_exe_filename),
+      recursive = TRUE, showWarnings = FALSE
+    )
+    writeLines(text = "dummy content", con = fake_windows_exe_filename)
+    expect_error(
+      run_beast2(
+        input_filename = get_beastier_path("beast2_warning.xml"),
+        beast2_path = fake_windows_exe_filename
+      ),
+      "Cannot use the Windows executable BEAST2.exe in scripts"
+    )
+  }
 })
 
 test_that("run_beast2 produces output", {
