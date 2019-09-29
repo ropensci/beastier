@@ -152,25 +152,33 @@ check_beast2_options_filenames_not_in_working_dir <- function( # nolint indeed a
     beast2_options$beast2_working_dir,
     mustWork = FALSE
   )
-  if (dirname(beast2_options$input_filename) == beast2_working_dir) {
+  if (normalizePath(
+      dirname(beast2_options$input_filename), mustWork = FALSE
+    ) == beast2_working_dir) {
     stop(
       "'beast2_working_dir' must be a different folder than ",
       "the folder of 'input_filename'"
     )
   }
-  if (dirname(beast2_options$output_log_filename) == beast2_working_dir) {
+  if (normalizePath(
+      dirname(beast2_options$output_log_filename), mustWork = FALSE
+    ) == beast2_working_dir) {
     stop(
       "'beast2_working_dir' must be a different folder than ",
       "the folder of 'output_log_filename'"
     )
   }
-  if (dirname(beast2_options$output_trees_filenames) == beast2_working_dir) {
+  if (normalizePath(
+      dirname(beast2_options$output_trees_filenames), mustWork = FALSE
+    ) == beast2_working_dir) {
     stop(
       "'beast2_working_dir' must be a different folder than ",
       "the folder of 'output_trees_filenames'"
     )
   }
-  if (dirname(beast2_options$output_state_filename) == beast2_working_dir) {
+  if (normalizePath(
+    dirname(beast2_options$output_state_filename), mustWork = FALSE
+    ) == beast2_working_dir) {
     stop(
       "'beast2_working_dir' must be a different folder than ",
       "the folder of 'output_state_filename'"
