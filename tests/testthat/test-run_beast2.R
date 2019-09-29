@@ -305,6 +305,7 @@ test_that("run BEAST2 from binary path", {
   # Binary fails under Windows, but works under Unix (see 'use' section above)
   if (rappdirs::app_dir()$os == "win") {
     fake_windows_exe_filename <- file.path(tempfile(), "BEAST2.exe")
+    testit::assert(is_bin_path(fake_windows_exe_filename))
     dir.create(
       dirname(fake_windows_exe_filename),
       recursive = TRUE, showWarnings = FALSE
@@ -359,10 +360,7 @@ test_that("run_beast2 with invalid working directory", {
         input_filename = get_beastier_path("2_4.xml"),
         beast2_working_dir = beast2_working_dir
       ),
-      paste0(
-        "Cannot create working directory '/no/way' \n",
-        "Maybe no permission to create it there?"
-      )
+      "no permission"
     )
   )
 })
