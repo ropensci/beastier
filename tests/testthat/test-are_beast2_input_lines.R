@@ -27,7 +27,7 @@ test_that("use, deep", {
     are_beast2_input_lines(
       readLines(get_beastier_path("anthus_2_4.xml")),
       method = "deep",
-      beast2_path = get_default_beast2_bin_path()
+      beast2_path = get_default_beast2_path()
     )
   )
 })
