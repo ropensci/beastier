@@ -316,7 +316,7 @@ test_that("run BEAST2 from binary path", {
         input_filename = get_beastier_path("beast2_warning.xml"),
         beast2_path = fake_windows_exe_filename
       ),
-      "Cannot use the Windows executable BEAST2.exe in scripts"
+      "'CreateProcess' failed to run"
     )
   }
 })
