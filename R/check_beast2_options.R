@@ -146,7 +146,12 @@ check_beast2_options_filenames_differ <- function( # nolint long function name i
 check_beast2_options_filenames_not_in_working_dir <- function( # nolint indeed a long function name, which is fine for an internal function
   beast2_options
 ) {
-  beast2_working_dir <- beast2_options$beast2_working_dir
+  # Because 'dirname' returns a normalized path,
+  # normalize beast2_working_dir as well
+  beast2_working_dir <- normalizePath(
+    beast2_options$beast2_working_dir,
+    mustWork = FALSE
+  )
   if (dirname(beast2_options$input_filename) == beast2_working_dir) {
     stop(
       "'beast2_working_dir' must be a different folder than ",
