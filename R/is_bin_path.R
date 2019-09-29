@@ -16,7 +16,7 @@
 #' @export
 is_bin_path <- function(path) {
   !beautier::is_one_na(stringr::str_match(
-    path, "(.*/)?(beast|BEAST\\.exe)$")[1][1]
+    path, "(.*/)?(beast|BEAST(2)?\\.exe)$")[1][1]
   )
 }
 

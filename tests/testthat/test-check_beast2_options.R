@@ -172,6 +172,14 @@ test_that("in-depth use", {
     ),
     "'beast2_path' must be one character string"
   )
+  # beast2_path
+  expect_error(
+    check_beast2_options(
+      create_beast2_options(beast2_path = tempfile())
+    ),
+    "'beast2_path' must exist"
+  )
+
 
   # verbose
   expect_error(
