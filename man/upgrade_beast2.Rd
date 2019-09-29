@@ -25,7 +25,7 @@ Will \link{stop} if BEAST2 is not installed
 library(testthat)
 
 if (is_beast2_installed() && is_on_ci()) {
-  expect_equal(get_beast2_version(), "2.6.1")
+  expect_equal(get_beast2_version(), "2.6.0")
 }
 }
 \author{

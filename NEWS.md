@@ -6,7 +6,7 @@ Newest versions at top.
 
 ### NEW FEATURES
 
-  * Install BEAST2 `v2.6.1`, instead of `v2.6.0`
+  * Install manifest
 
 ### MINOR IMPROVEMENTS
 
