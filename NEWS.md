@@ -2,6 +2,25 @@
 
 Newest versions at top.
 
+## beastier 2.0.23 (2019-09-29)
+
+### NEW FEATURES
+
+  * Install BEAST2 `v2.6.1`, instead of `v2.6.0`
+
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
+
 ## beastier 2.0.22 (2019-09-16)
 
 ### NEW FEATURES

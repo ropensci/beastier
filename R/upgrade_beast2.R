@@ -13,7 +13,7 @@
 #' library(testthat)
 #'
 #' if (is_beast2_installed() && is_on_ci()) {
-#'   expect_equal(get_beast2_version(), "2.6.0")
+#'   expect_equal(get_beast2_version(), "2.6.1")
 #' }
 upgrade_beast2 <- function(
   folder_name = rappdirs::user_data_dir(),

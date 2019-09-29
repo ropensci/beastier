@@ -23,7 +23,7 @@ Get the BEAST2 version
 library(testthat)
 
 if (is_beast2_installed() && is_on_ci()) {
-  expect_equal(get_beast2_version(), "2.6.0")
+  expect_equal(get_beast2_version(), "2.6.1")
 }
 }
 \author{

@@ -2,7 +2,8 @@
 % Please edit documentation in R/check_beast2_internal_filenames.R
 \name{check_beast2_internal_filenames}
 \alias{check_beast2_internal_filenames}
-\title{Check if the \code{beast2_internal_filenames} is a valid BEAST2 options object.}
+\title{Check if the \code{beast2_internal_filenames}
+is a valid BEAST2 internal filenames object.}
 \usage{
 check_beast2_internal_filenames(beast2_internal_filenames)
 }
@@ -15,7 +16,7 @@ as created by \link{create_beast2_internal_filenames}}
 nothing
 }
 \description{
-Calls \code{stop} if the BEAST2 option object is invalid
+Calls \code{stop} if the BEAST2 internal filenames object is invalid
 }
 \examples{
 library(testthat)
@@ -36,8 +37,8 @@ expect_error(check_beast2_internal_filenames(NULL))
 expect_error(check_beast2_internal_filenames(NA))
 }
 \seealso{
-Use \link{create_beast2_internal_filenames} to create a valid
-  BEAST2 options object
+Use \link{create_beast2_internal_filenames}
+  to create a valid BEAST2 internal filenames object
 }
 \author{
 Richèl J.C. Bilderbeek
