@@ -7,7 +7,7 @@
 #' @examples
 #'   if (is_beast2_installed() && is_on_ci()) {
 #'     cmds <- create_beast2_version_cmd()
-#'     testit::assert(cmds[2] == "-jar")
+#'     testit::assert(cmds[2] == "-cp")
 #'   }
 #' @author Richèl J.C. Bilderbeek
 #' @export
@@ -36,8 +36,8 @@ create_beast2_version_cmd <- function(
 #' @examples
 #'   if (is_beast2_installed() && is_on_ci()) {
 #'     cmds <- create_beast2_version_cmd_jar()
-#'     testit::assert(length(cmds) == 4)
-#'     testit::assert(cmds[2] == "-jar")
+#'     testit::assert(length(cmds) == 5)
+#'     testit::assert(cmds[2] == "-cp")
 #'   }
 #' @author Richèl J.C. Bilderbeek
 #' @export
@@ -48,8 +48,9 @@ create_beast2_version_cmd_jar <- function(
   testit::assert(is_jar_path(beast2_jar_path)) # nolint internal function
   cmds <- c(
     get_default_java_path(),
-    "-jar",
+    "-cp",
     paste0("\"", beast2_jar_path, "\""),
+    "beast.app.beastapp.BeastLauncher",
     "-version"
   )
   beautier::check_file_exists(cmds[1], "cmds[1]")

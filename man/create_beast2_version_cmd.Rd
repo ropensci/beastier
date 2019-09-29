@@ -28,7 +28,7 @@ Creates the terminal command to version a BEAST2 input file
 \examples{
   if (is_beast2_installed() && is_on_ci()) {
     cmds <- create_beast2_version_cmd()
-    testit::assert(cmds[2] == "-jar")
+    testit::assert(cmds[2] == "-cp")
   }
 }
 \author{
