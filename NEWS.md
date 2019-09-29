@@ -6,7 +6,8 @@ Newest versions at top.
 
 ### NEW FEATURES
 
-  * Install manifest
+  * Use BEAST2 main class name when calling the jar file, 
+    to fix the 'no main manifest attribute' error
 
 ### MINOR IMPROVEMENTS
 

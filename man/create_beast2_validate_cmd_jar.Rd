@@ -33,7 +33,7 @@ using a call to the \code{launcher.jar} file
       input_filename = "input.xml"
     )
     testit::assert(length(cmds) == 5)
-    testit::assert(cmds[2] == "-jar")
+    testit::assert(cmds[2] == "-cp")
   }
 }
 \author{

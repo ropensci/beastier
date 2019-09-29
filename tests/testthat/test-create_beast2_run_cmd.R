@@ -45,8 +45,9 @@ test_that("use, jar", {
 
   expected <- c(
     get_default_java_path(),
-    "-jar",
+    "-cp",
     beast2_jar_path,
+    get_beast2_main_class_name(),
     "-statefile",
     paste0("\"", output_state_filename, "\""),
     "-overwrite",

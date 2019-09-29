@@ -40,8 +40,9 @@ test_that("use, jar", {
   )
   expected <- c(
     get_default_java_path(),
-    "-jar",
+    "-cp",
     paste0("\"", beast2_jar_path, "\""),
+    get_beast2_main_class_name(),
     "-validate",
     paste0("\"", input_filename, "\"")
   )

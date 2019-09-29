@@ -58,7 +58,7 @@ Creates the terminal command to run BEAST2
       output_state_filename = "output.xml.state",
       beast2_path = get_default_beast2_jar_path()
     )
-    testit::assert(cmds[2] == "-jar")
+    testit::assert(cmds[2] == "-cp")
   }
 }
 \author{
