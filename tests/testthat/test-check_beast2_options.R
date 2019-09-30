@@ -173,11 +173,14 @@ test_that("in-depth use", {
     "'beast2_path' must be one character string"
   )
   # beast2_path
-  expect_error(
+  #
+  # Do not check if an error is given if the BEAST2 path
+  # does not exist. It shouldn't be checked by 'check_beast2_options'.
+  # instead, only when running BEAST2 should this be checked
+  expect_silent(
     check_beast2_options(
-      create_beast2_options(beast2_path = tempfile())
-    ),
-    "'beast2_path' must exist"
+      create_beast2_options(beast2_path = tempfile(pattern = "absent"))
+    )
   )
 
 

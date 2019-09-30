@@ -21,12 +21,9 @@ check_beast2_options <- function(
 ) {
   check_beast2_options_names(beast2_options) # nolint beastier function
   check_beast2_options_data_types(beast2_options) # nolint beastier function
-  if (!file.exists(beast2_options$beast2_path)) {
-    stop(
-      "'beast2_path' must exist. \n",
-      "Actual path: '", beast2_options$beast2_path, "'"
-    )
-  }
+  # Do not check if the BEAST2 path already/still exist.
+  # It shouldn't be checked by here, only when actually running BEAST2.
+  # By doing so, data with beast2_options can be analysed on different computers
   check_beast2_options_filenames_differ(beast2_options) # nolint beastier function
   check_beast2_options_filenames_not_in_working_dir(beast2_options) # nolint beastier function
 }
