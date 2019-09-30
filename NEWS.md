@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.0.24 (2019-09-30)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Do not check if `beast2_path` still/already exists in `check_beast2_options`
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.0.23 (2019-09-29)
 
 ### NEW FEATURES
@@ -20,7 +38,6 @@ Newest versions at top.
 ### DEPRECATED AND DEFUNCT
 
   * None
-
 
 ## beastier 2.0.22 (2019-09-16)
 
