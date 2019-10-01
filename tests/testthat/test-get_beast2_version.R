@@ -14,3 +14,16 @@ test_that("abuse", {
     "'beast2_path' must be the full path of either 'beast' or 'launcher.jar'"
   )
 })
+
+test_that("cannot ", {
+  if (!is_beast2_installed()) return()
+
+  win_bin_path <- "BEAST.exe"
+  testit::assert(is_win_bin_path(win_bin_path))
+  expect_error(
+    get_beast2_version(
+      beast2_path = win_bin_path
+    ),
+    "Cannot use the Windows executable BEAST2.exe in scripts"
+  )
+})
