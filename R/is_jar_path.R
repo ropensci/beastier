@@ -11,7 +11,7 @@
 #'   expect_true(is_jar_path("launcher.jar"))
 #'   expect_false(is_jar_path(get_default_beast2_bin_path()))
 #'   expect_true(is_jar_path(get_default_beast2_jar_path()))
-#' @noRd
+#' @export
 is_jar_path <- function(path) {
   # Windows    : BEAST/lib/beast.jar                                            # nolint
   # Non-Windows: beast/lib/launcher.jar                                         # nolint

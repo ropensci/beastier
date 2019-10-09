@@ -82,8 +82,8 @@ check_beast2_options_data_types <- function( # nolint long function name indeed,
   if (!assertive::is_a_string(beast2_options$output_state_filename)) {
     stop("'output_state_filename' must be one character string")
   }
-  check_rng_seed(beast2_options$rng_seed) # nolint beastier function
-  check_n_threads(beast2_options$n_threads) # nolint beastier function
+  beastier::check_rng_seed(beast2_options$rng_seed)
+  beastier::check_n_threads(beast2_options$n_threads)
   if (!beautier::is_one_bool(beast2_options$use_beagle)) {
     stop("'use_beagle' must be one boolean")
   }

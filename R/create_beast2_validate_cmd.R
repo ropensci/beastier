@@ -23,7 +23,7 @@ create_beast2_validate_cmd <- function(
       beast2_jar_path = beast2_path
     )
   } else {
-    testit::assert(is_bin_path(beast2_path)) # nolint internal function
+    testit::assert(beautier::is_bin_path(beast2_path))
     create_beast2_validate_cmd_bin(
       input_filename = input_filename,
       beast2_bin_path = beast2_path
@@ -88,7 +88,7 @@ create_beast2_validate_cmd_bin <- function(
   beast2_bin_path = get_default_beast2_bin_path()
 ) {
   beautier::check_file_exists(beast2_bin_path, "beast2_bin_path")
-  testit::assert(is_bin_path(beast2_bin_path)) # nolint internal function
+  testit::assert(beautier::is_bin_path(beast2_bin_path))
   cmds <- c(
     beast2_bin_path,
     "-validate",

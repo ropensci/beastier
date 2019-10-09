@@ -14,12 +14,12 @@
 create_beast2_version_cmd <- function(
   beast2_path = get_default_beast2_path()
 ) {
-  if (is_jar_path(beast2_path)) {
+  if (beautier::is_jar_path(beast2_path)) {
     create_beast2_version_cmd_jar(
       beast2_jar_path = beast2_path
     )
   } else {
-    testit::assert(is_bin_path(beast2_path)) # nolint internal function
+    testit::assert(beautier::is_bin_path(beast2_path))
     create_beast2_version_cmd_bin(
       beast2_bin_path = beast2_path
     )
@@ -76,7 +76,7 @@ create_beast2_version_cmd_bin <- function(
   beast2_bin_path = get_default_beast2_bin_path()
 ) {
   beautier::check_file_exists(beast2_bin_path, "beast2_bin_path")
-  testit::assert(is_bin_path(beast2_bin_path)) # nolint internal function
+  testit::assert(beautier::is_bin_path(beast2_bin_path))
   cmds <- c(
     beast2_bin_path,
     "-version"
