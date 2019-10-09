@@ -16,7 +16,7 @@ is_beast2_installed <- function(
   folder_name = get_default_beast2_folder(),
   os = rappdirs::app_dir()$os
 ) {
-  check_os(os = os) # nolint internal function
+  beastier::check_os(os = os)
 
   # Windows    : BEAST/lib/beast.jar                                            # nolint
   # Non-Windows: beast/lib/launcher.jar                                         # nolint

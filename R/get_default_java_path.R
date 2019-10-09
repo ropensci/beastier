@@ -6,7 +6,7 @@
 get_default_java_path <- function(
   os = rappdirs::app_dir()$os
 ) {
-  check_os(os = os) # nolint internal function
+  beastier::check_os(os = os)
   rJava::.jinit()
   java_folder <- rJava::.jcall(
     "java/lang/System", "S", "getProperty", "java.home"

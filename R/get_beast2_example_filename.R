@@ -7,7 +7,7 @@ get_beast2_example_filename <- function(
   filename,
   folder = get_default_beast2_folder()
 ) {
-  filenames <- get_beast2_example_filenames(folder = folder)
+  filenames <- beastier::get_beast2_example_filenames(folder = folder)
   index <- which(filename == basename(filenames))
   if (length(index) == 0) {
     stop(

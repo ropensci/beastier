@@ -19,7 +19,7 @@ check_beast2 <- function(
   is_valid <- FALSE
   tryCatch({
     is_valid <- is_beast2_input_file(
-      filename = get_beastier_path("anthus_2_4.xml"),
+      filename = beastier::get_beastier_path("anthus_2_4.xml"),
       beast2_path = beast2_path
     )
   }, error = function(e) {

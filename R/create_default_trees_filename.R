@@ -17,8 +17,8 @@ create_default_trees_filenames <- function(
   beast2_path = get_default_beast2_path(),
   verbose = FALSE
 ) {
-  check_input_filename(input_filename) # nolint internal function
-  check_beast2_path(beast2_path) # nolint internal function
+  beastier::check_input_filename(input_filename)
+  beastier::check_beast2_path(beast2_path)
   check_input_filename_validity( # nolint internal function
     input_filename = input_filename,
     beast2_path = beast2_path,

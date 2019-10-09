@@ -10,7 +10,7 @@ output_state_filename <- basename(tempfile(fileext = ".xml.state"))
 beast2_working_dir <- basename(tempfile(pattern = "beast_working_dir_"))
 
 # Create input file locally
-file.copy(from = get_beastier_path("2_4.xml"), to = input_filename)
+file.copy(from = beastier::get_beastier_path("2_4.xml"), to = input_filename)
 
 run_beast2_from_options(
   create_beast2_options(
