@@ -2,6 +2,28 @@
 
 Newest versions at top.
 
+
+
+## beastier 2.0.25 (unreleased)
+
+### NEW FEATURES
+
+  * Add `get_beast2_example_filenames` to get the
+    full path of the BEAST2 example files
+
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
+
 ## beastier 2.0.24 (2019-09-30)
 
 ### NEW FEATURES

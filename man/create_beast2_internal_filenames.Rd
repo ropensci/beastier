@@ -17,3 +17,20 @@ a list with the internally used BEAST2 filenames
 \description{
 Create a list with the internally used BEAST2 filenames
 }
+\examples{
+library(testthat)
+
+beast2_options <- create_beast2_options(
+  input_filename = get_beastier_path("2_4.xml")
+)
+beast2_internal_filenames <- create_beast2_internal_filenames(
+  beast2_options
+)
+bif_names <- names(beast2_internal_filenames)
+expect_true("input_filename_full" \%in\% bif_names)
+expect_true("actual_log_filename" \%in\% bif_names)
+expect_true("actual_trees_filenames" \%in\% bif_names)
+expect_true("output_log_filename_full" \%in\% bif_names)
+expect_true("output_trees_filenames_full" \%in\% bif_names)
+expect_true("output_state_filename_full" \%in\% bif_names)
+}
