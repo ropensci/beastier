@@ -9,8 +9,10 @@ Newest versions at top.
 ### NEW FEATURES
 
   * Add `get_beast2_example_filenames` to get the
-    full path of the BEAST2 example files
-
+    full paths of all the BEAST2 example files
+  * Add `get_beast2_example_filename` to get the
+    full path of a BEAST2 example file
+ 
 ### MINOR IMPROVEMENTS
 
   * None
