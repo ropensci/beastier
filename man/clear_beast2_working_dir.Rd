@@ -2,12 +2,32 @@
 % Please edit documentation in R/clear_beast2_working_dir.R
 \name{clear_beast2_working_dir}
 \alias{clear_beast2_working_dir}
-\title{Clear the BEAST2 working directory}
+\title{Clear the BEAST2 working directory.}
 \usage{
 
   clear_beast2_working_dir(beast2_working_dir = get_default_beast2_working_dir())
 }
+\arguments{
+\item{beast2_working_dir}{a folder where BEAST2 can work in
+isolation.
+For each BEAST2 run, a new subfolder is created in that folder.
+Within this folder, BEAST2 is allowed to create all of its output files,
+without the risk of overwriting existing ones, allowing
+BEAST2 to run in multiple parallel processes.
+Use \link{get_default_beast2_working_dir} to get the path
+to the default BEAST2 working directory
+Use \link{clear_beast2_working_dir} to clear the BEAST2
+working directory.}
+}
 \description{
-To assure one cannot accidentally delete important folders, 
+This function will remove all folders in the BEAST2 working directory,
+resulting in an empty BEAST2 working directory.
+}
+\details{
+To assure one cannot accidentally delete important folders,
 there are some checks on the name of the supplied \code{beast2_working_dir}
+}
+\seealso{
+use \link{get_default_beast2_working_dir} to get the path
+to the default BEAST2 working directory
 }

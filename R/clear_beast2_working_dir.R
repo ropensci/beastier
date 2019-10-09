@@ -5,6 +5,9 @@
 #'
 #' To assure one cannot accidentally delete important folders,
 #' there are some checks on the name of the supplied \code{beast2_working_dir}
+#' @inheritParams default_params_doc
+#' @seealso use \link{get_default_beast2_working_dir} to get the path
+#' to the default BEAST2 working directory
 #' @export
 clear_beast2_working_dir <- function(
   beast2_working_dir = get_default_beast2_working_dir()

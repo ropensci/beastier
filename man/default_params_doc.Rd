@@ -49,17 +49,16 @@ the default BEAST binary file's path
 Use \link{get_default_beast2_jar_path} to get
 the default BEAST jar file's path}
 
-\item{beast2_working_dir}{a (temporary) folder where BEAST2 can work in
-isolation.  This is a new and empty temporary folder by default.
-In this folder, BEAST2 is allowed to create all of its output files,
-without the risk of overwriting existing ones.
-Currently, it appears possible that one can set
-\code{beast2_working_dir} to the same longer-storage folder
-as where the BEAST2 output files are created, but this may change
-in future version.
-Using this working directory allows to call
-BEAST2 in multiple parallel processes, as each process can have
-its own separate environment}
+\item{beast2_working_dir}{a folder where BEAST2 can work in
+isolation.
+For each BEAST2 run, a new subfolder is created in that folder.
+Within this folder, BEAST2 is allowed to create all of its output files,
+without the risk of overwriting existing ones, allowing
+BEAST2 to run in multiple parallel processes.
+Use \link{get_default_beast2_working_dir} to get the path
+to the default BEAST2 working directory
+Use \link{clear_beast2_working_dir} to clear the BEAST2
+working directory.}
 
 \item{clock_model}{a \code{beautier} clock model}
 
@@ -118,13 +117,13 @@ filenames, else an error is thrown. Alignments are sorted alphabetically
 by their IDs}
 
 \item{overwrite}{if TRUE: overwrite the \code{.log}
- and \code{.trees} files if one of these exists.
- If FALSE, BEAST2 will not be started if
- \itemize{
-   \item{the \code{.log} file exists}
-   \item{the \code{.trees} files exist}
-   \item{the \code{.log} file created by BEAST2 exists}
-   \item{the \code{.trees} files created by BEAST2 exist}
+and \code{.trees} files if one of these exists.
+If FALSE, BEAST2 will not be started if
+\itemize{
+  \item{the \code{.log} file exists}
+  \item{the \code{.trees} files exist}
+  \item{the \code{.log} file created by BEAST2 exists}
+  \item{the \code{.trees} files created by BEAST2 exist}
 }}
 
 \item{rng_seed}{the random number generator seed of the BEAST2 run.
@@ -155,8 +154,8 @@ documentation.
 }
 \note{
 This is an internal function, so it should be marked with
-  \code{@noRd}. This is not done, as this will disallow all
-  functions to find the documentation parameters
+\code{@noRd}. This is not done, as this will disallow all
+functions to find the documentation parameters
 }
 \author{
 Richèl J.C. Bilderbeek

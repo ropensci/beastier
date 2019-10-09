@@ -9,3 +9,7 @@ get_default_beast2_working_dir()
 \description{
 Get the path to the default BEAST2 working directory
 }
+\seealso{
+use \link{clear_beast2_working_dir} to clear the BEAST2
+working directory
+}
