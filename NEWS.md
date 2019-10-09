@@ -13,8 +13,8 @@ Newest versions at top.
   * Add `get_beast2_example_filename` to get the
     full path of a BEAST2 example file
   * Add `get_default_beast2_working_dir` to get the full path of
-    the default BEAST2 working folder
-   
+    the default BEAST2 working directory
+  * Add `clear_beast2_working_dir` to clear the BEAST2 working directory
   
 ### MINOR IMPROVEMENTS
 
