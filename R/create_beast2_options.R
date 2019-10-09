@@ -31,7 +31,9 @@ create_beast2_options <- function(
   n_threads = NA,
   use_beagle = FALSE,
   overwrite = TRUE,
-  beast2_working_dir = tempfile(pattern = "beast2_tmp_folder"),
+  beast2_working_dir = file.path(
+    get_default_beast2_working_dir(), basename(tempfile())
+  ),
   beast2_path = get_default_beast2_path(),
   verbose = FALSE
 ) {
@@ -48,6 +50,6 @@ create_beast2_options <- function(
     beast2_path = beast2_path,
     verbose = verbose
   )
-  check_beast2_options(beast2_options) # nolint beautier function
+  beastier::check_beast2_options(beast2_options)
   beast2_options
 }

@@ -25,7 +25,7 @@
 run_beast2_from_options <- function(
   beast2_options = create_beast2_options()
 ) {
-  check_beast2_options(beast2_options) # nolint beastier function
+  beastier::check_beast2_options(beast2_options)
 
   if (beast2_options$verbose) {
     print_beast2_options(beast2_options) # nolint beastier function

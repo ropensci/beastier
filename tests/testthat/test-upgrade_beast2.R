@@ -17,4 +17,3 @@ test_that("give error when BEAST2 is not installed", {
 
   testit::assert(is_beast2_installed())
 })
-

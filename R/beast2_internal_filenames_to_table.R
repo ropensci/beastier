@@ -5,7 +5,7 @@ beast2_internal_filenames_to_table <- function(beast2_internal_filenames) { # no
   # BEAST2 Internal FilenameS
   bifs <- beast2_internal_filenames
 
-  check_beast2_internal_filenames(bifs) # nolint beastier function
+  beastier::check_beast2_internal_filenames(bifs)
   data.frame(
     row.names = names(bifs),
     value = unlist(bifs),

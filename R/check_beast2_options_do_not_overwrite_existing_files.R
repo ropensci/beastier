@@ -8,8 +8,8 @@ check_beast2_options_do_not_overwrite_existing_files <- function( # nolint indee
   beast2_options,
   beast2_internal_filenames
 ) {
-  check_beast2_options(beast2_options) # nolint beastier function
-  check_beast2_internal_filenames(beast2_internal_filenames) # nolint beastier function
+  beastier::check_beast2_options(beast2_options)
+  beastier::check_beast2_internal_filenames(beast2_internal_filenames)
   if (beast2_options$overwrite) return()
   testit::assert(beast2_options$overwrite == FALSE)
 

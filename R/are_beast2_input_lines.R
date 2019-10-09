@@ -29,7 +29,7 @@ are_beast2_input_lines <- function(
   }
   if (method == "deep") {
     filename <- tempfile()
-    save_lines(filename = filename, lines = lines) # nolint internal function
+    beastier:::save_lines(filename = filename, lines = lines)
     return(
       are_beast2_input_lines_deep(
         lines = lines,
@@ -66,7 +66,7 @@ are_beast2_input_lines_deep <- function(
   beast2_path = get_default_beast2_path()
 ) {
   filename <- tempfile()
-  save_lines(filename = filename, lines = lines) # nolint internal function
+  beastier:::save_lines(filename = filename, lines = lines)
   is_beast2_input_file(
     filename = filename,
     verbose = verbose,

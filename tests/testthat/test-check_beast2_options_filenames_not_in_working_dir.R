@@ -33,7 +33,9 @@ test_that("BEAST2 working dir and folder for filenames must differ", {
 
   # output_trees_filenames
   beast2_options <- good_beast2_options
-  beast2_options$output_trees_filenames <- file.path(folder_name, "simple.trees")
+  beast2_options$output_trees_filenames <- file.path(
+    folder_name, "simple.trees"
+  )
   beast2_options$beast2_working_dir <- folder_name
   expect_error(
     check_beast2_options_filenames_not_in_working_dir(
@@ -44,7 +46,9 @@ test_that("BEAST2 working dir and folder for filenames must differ", {
 
   # output_state_filename
   beast2_options <- good_beast2_options
-  beast2_options$output_state_filename <- file.path(folder_name, "simple.xml.state")
+  beast2_options$output_state_filename <- file.path(
+    folder_name, "simple.xml.state"
+  )
   beast2_options$beast2_working_dir <- folder_name
   expect_error(
     check_beast2_options_filenames_not_in_working_dir(
