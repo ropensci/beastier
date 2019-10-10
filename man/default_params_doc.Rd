@@ -5,21 +5,29 @@
 \title{This function does nothing. It is intended to inherit is parameters'
 documentation.}
 \usage{
-default_params_doc(beast2_bin_path, beast2_internal_filenames,
-  beast2_jar_path, beast2_options, beast2_optionses, beast2_path,
-  beast2_working_dir, clock_model, clock_models, crown_age, crown_ages,
-  fasta_filename, fasta_filenames, fixed_crown_age, fixed_crown_ages,
-  initial_phylogenies, input_filename, mcmc, misc_options, n_taxa,
-  n_threads, os, output_filename, output_log_filename,
-  output_state_filename, output_trees_filenames, overwrite, rng_seed,
-  sequence_length, site_model, site_models, tree_prior, tree_priors,
-  use_beagle, verbose)
+default_params_doc(beast2_bin_path, beast2_folder,
+  beast2_internal_filenames, beast2_jar_path, beast2_options,
+  beast2_optionses, beast2_path, beast2_working_dir, clock_model,
+  clock_models, crown_age, crown_ages, fasta_filename, fasta_filenames,
+  fixed_crown_age, fixed_crown_ages, initial_phylogenies, input_filename,
+  mcmc, misc_options, n_taxa, n_threads, os, output_filename,
+  output_log_filename, output_state_filename, output_trees_filenames,
+  overwrite, rng_seed, sequence_length, site_model, site_models,
+  tree_prior, tree_priors, use_beagle, verbose)
 }
 \arguments{
 \item{beast2_bin_path}{name of the BEAST2 binary file
 (usually simply \code{beast}).
 Use \link{get_default_beast2_bin_path} to get
 the default BEAST binary file's path}
+
+\item{beast2_folder}{the folder where the BEAST2 is installed.
+Note that this is not the folder where the BEAST2 executable
+is installed: the BEAST2 executable is in a subfolder.
+Use \link{get_default_beast2_folder} to get the default BEAST2
+folder.
+Use \link{get_default_beast2_bin_path} to get the full path to
+the default BEAST2 executable.}
 
 \item{beast2_internal_filenames}{a list of internally
 used BEAST2 filenames,
@@ -144,14 +152,6 @@ If \code{rng_seed} is \link{NA}, BEAST2 will pick a random seed}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
-
-\item{beast2_folder}{the folder where the BEAST2 is installed.
-Note that this is not the folder where the BEAST2 executable
-is installed: the BEAST2 executable is in a subfolder.
-Use \link{get_default_beast2_folder} to get the default BEAST2
-folder.
-Use \link{get_default_beast2_bin_path} to get the full path to
-the default BEAST2 executable.}
 }
 \value{
 Nothing. This is an internal function that does nothing

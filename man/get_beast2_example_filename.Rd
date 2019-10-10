@@ -8,6 +8,9 @@ get_beast2_example_filename(filename,
   beast2_folder = get_default_beast2_folder())
 }
 \arguments{
+\item{filename}{name of the BEAST2 example file. This should exclude
+the full path; this function exists to add that full path}
+
 \item{beast2_folder}{the folder where the BEAST2 is installed.
 Note that this is not the folder where the BEAST2 executable
 is installed: the BEAST2 executable is in a subfolder.
@@ -18,4 +21,15 @@ the default BEAST2 executable.}
 }
 \description{
 Will \link{stop} if the filename is not a BEAST2 example file
+}
+\examples{
+library(testthat)
+
+filename <- get_beast2_example_filename("testJukesCantor.xml")
+expect_true(file.exists(filename))
+
+filename <- get_beast2_example_filename("Primates.nex")
+expect_true(file.exists(filename))
+
+expect_error(get_beast2_example_filename("abs.ent"))
 }

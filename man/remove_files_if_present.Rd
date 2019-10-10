@@ -7,7 +7,7 @@
 remove_files_if_present(filenames)
 }
 \arguments{
-\item{filename}{one or more names of files}
+\item{filenames}{one or more names of files}
 }
 \description{
 Remove a file if it is present

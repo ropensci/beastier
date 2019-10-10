@@ -1,5 +1,6 @@
 #' Get the default BEAST2 download URL,
 #' which depends on the operating system
+#' @inheritParams default_params_doc
 #' @return the URL where BEAST2 can be downloaded from
 #' @author Richèl J.C. Bilderbeek
 #' @examples

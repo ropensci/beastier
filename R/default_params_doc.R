@@ -108,6 +108,7 @@
 #' functions to find the documentation parameters
 default_params_doc <- function(
   beast2_bin_path,
+  beast2_folder,
   beast2_internal_filenames,
   beast2_jar_path,
   beast2_options, beast2_optionses,

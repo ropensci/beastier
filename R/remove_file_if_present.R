@@ -9,7 +9,7 @@ remove_file_if_present <- function(filename) {
 }
 
 #' Remove a file if it is present
-#' @param filename one or more names of files
+#' @param filenames one or more names of files
 #' @export
 remove_files_if_present <- function(filenames) {
   for (filename in filenames) {

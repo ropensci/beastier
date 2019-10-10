@@ -7,6 +7,10 @@ which depends on the operating system}
 \usage{
 get_default_beast2_download_url(os = rappdirs::app_dir()$os)
 }
+\arguments{
+\item{os}{name of the operating system,
+must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
+}
 \value{
 the URL where BEAST2 can be downloaded from
 }

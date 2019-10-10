@@ -2,7 +2,19 @@
 #'
 #' Will \link{stop} if the filename is not a BEAST2 example file
 #'
+#' @param filename name of the BEAST2 example file. This should exclude
+#' the full path; this function exists to add that full path
 #' @inheritParams default_params_doc
+#' @examples
+#' library(testthat)
+#'
+#' filename <- get_beast2_example_filename("testJukesCantor.xml")
+#' expect_true(file.exists(filename))
+#'
+#' filename <- get_beast2_example_filename("Primates.nex")
+#' expect_true(file.exists(filename))
+#'
+#' expect_error(get_beast2_example_filename("abs.ent"))
 #' @export
 get_beast2_example_filename <- function(
   filename,
