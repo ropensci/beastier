@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_duplicate_param_ids.R
 \name{get_duplicate_param_ids}
 \alias{get_duplicate_param_ids}
-\title{Find duplicate RealParameter IDs}
+\title{Find duplicate \code{RealParameter} IDs}
 \usage{
 get_duplicate_param_ids(text)
 }
@@ -13,7 +13,7 @@ get_duplicate_param_ids(text)
 a vector of duplicate IDs, will be empty if all IDs are unique
 }
 \description{
-Find duplicate RealParameter IDs
+Find duplicate \code{RealParameter} IDs
 }
 \examples{
   line_1 <- "<parameter id=\\"RealParameter.1\\" ...</parameter>"
@@ -30,7 +30,7 @@ Find duplicate RealParameter IDs
   )
 }
 \seealso{
-to see if all IDs are unqiue, use \code{\link{has_unique_ids}}
+to see if all IDs are unique, use \code{\link{has_unique_ids}}
 }
 \author{
 Richèl J.C. Bilderbeek
