@@ -21,7 +21,7 @@
 get_default_beast2_jar_path <- function(
   os = rappdirs::app_dir()$os
 ) {
-  beastier::check_os(os = os)
+  beastier::check_os(os)
   # Windows    : BEAST/lib/beast.jar                                            # nolint
   # Non-Windows: beast/lib/launcher.jar                                         # nolint
   beast_foldername <- "BEAST"
