@@ -9,15 +9,17 @@
 #' @examples
 #' library(testthat)
 #'
-#' expect_silent(
-#'   check_beast2_internal_filenames(
-#'     create_beast2_internal_filenames(
-#'       create_beast2_options(
-#'         input_filename = get_beastier_path("2_4.xml")
+#' if (beastier::is_beast2_installed()) {
+#'   expect_silent(
+#'     check_beast2_internal_filenames(
+#'       create_beast2_internal_filenames(
+#'         create_beast2_options(
+#'           input_filename = get_beastier_path("2_4.xml")
+#'         )
 #'       )
 #'     )
 #'   )
-#' )
+#' }
 #'
 #' # Must stop on nonsense
 #' expect_error(check_beast2_internal_filenames("nonsense"))
