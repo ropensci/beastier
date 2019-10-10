@@ -4,6 +4,13 @@
 #' (usually simply \code{beast}).
 #' Use \link{get_default_beast2_bin_path} to get
 #' the default BEAST binary file's path
+#' @param beast2_folder the folder where the BEAST2 is installed.
+#' Note that this is not the folder where the BEAST2 executable
+#' is installed: the BEAST2 executable is in a subfolder.
+#' Use \link{get_default_beast2_folder} to get the default BEAST2
+#' folder.
+#' Use \link{get_default_beast2_bin_path} to get the full path to
+#' the default BEAST2 executable.
 #' @param beast2_internal_filenames a list of internally
 #' used BEAST2 filenames,
 #' as created by \link{create_beast2_internal_filenames}

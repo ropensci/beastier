@@ -144,6 +144,14 @@ If \code{rng_seed} is \link{NA}, BEAST2 will pick a random seed}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
+
+\item{beast2_folder}{the folder where the BEAST2 is installed.
+Note that this is not the folder where the BEAST2 executable
+is installed: the BEAST2 executable is in a subfolder.
+Use \link{get_default_beast2_folder} to get the default BEAST2
+folder.
+Use \link{get_default_beast2_bin_path} to get the full path to
+the default BEAST2 executable.}
 }
 \value{
 Nothing. This is an internal function that does nothing

@@ -6,6 +6,9 @@
 \usage{
 remove_file_if_present(filename)
 }
+\arguments{
+\item{filename}{name of a file}
+}
 \description{
 Remove a file if it is present
 }
