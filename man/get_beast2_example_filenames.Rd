@@ -10,7 +10,7 @@ BEAST2 example filenames}
 }
 \value{
 a list with the full paths of all
-BEAST2 example filenames
+  BEAST2 example filenames
 }
 \description{
 Get a list with the full paths of all

@@ -12,7 +12,7 @@
 #'   expect_false(file.exists(filename))
 #'   save_lines(filename = filename, lines = text)
 #'   expect_true(file.exists(filename))
-#' @noRd
+#' @export
 save_lines <- function(filename, lines) {
   my_file <- file(filename)
   writeLines(lines, my_file)

@@ -11,7 +11,7 @@ print_beast2_internal_filenames <- function( # nolint indeed a long function nam
   bifs <- beast2_internal_filenames
 
   beastier::check_beast2_internal_filenames(bifs)
-  df <- beast2_internal_filenames_to_table(bifs) # nolint beastier function
+  df <- beastier::beast2_internal_filenames_to_table(bifs)
   if (show_exist) {
     df$exists <- file.exists(df$value)
   }

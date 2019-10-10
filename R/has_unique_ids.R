@@ -11,9 +11,9 @@
 #'   line_2 <- "<parameter id=\"RealParameter.2\" ...</parameter>"
 #'   expect_true(has_unique_ids(c(line_1, line_2)))
 #'   expect_false(has_unique_ids(c(line_1, line_1)))
-#' @noRd
+#' @export
 has_unique_ids <- function(
   text
 ) {
-  length(get_duplicate_param_ids(text)) == 0 # nolint internal function
+  length(beastier::get_duplicate_param_ids(text)) == 0
 }

@@ -18,14 +18,14 @@
 #' @author Richèl J.C. Bilderbeek
 do_minimal_run <- function() {
   folder <- tempfile()
-  run_beast2_from_options(
-    create_beast2_options(
+  beastier::run_beast2_from_options(
+    beastier::create_beast2_options(
       input_filename = beastier::get_beastier_path("2_4.xml"),
       output_log_filename = file.path(folder, "out.log"),
       output_trees_filenames = file.path(folder, "out.trees"),
       output_state_filename = file.path(folder, "out.xml.state"),
       rng_seed = 314,
-      beast2_path = get_default_beast2_path()
+      beast2_path = beastier::get_default_beast2_path()
     )
   )
 }

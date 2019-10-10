@@ -1,6 +1,5 @@
 #' Run BEAST2
 #' @inheritParams default_params_doc
-#' @export
 #' @examples
 #' library(testthat)
 #'
@@ -22,13 +21,14 @@
 #'   expect_true(file.exists(beast2_options$output_state_filename))
 #' }
 #' @author Richèl J.C. Bilderbeek
+#' @export
 run_beast2_from_options <- function(
   beast2_options = create_beast2_options()
 ) {
   beastier::check_beast2_options(beast2_options)
 
   if (beast2_options$verbose) {
-    print_beast2_options(beast2_options) # nolint beastier function
+    beastier::print_beast2_options(beast2_options)
   }
 
   if (is_win_bin_path(beast2_options$beast2_path)) {
@@ -54,8 +54,8 @@ run_beast2_from_options <- function(
   )
   # It is fine that these files existed, as they existed in the
   # temporary BEAST2 working directory.
-  remove_file_if_present(bifs$actual_log_filename) # nolint beastier function
-  remove_files_if_present(bifs$actual_trees_filenames) # nolint beastier function
+  beastier::remove_file_if_present(bifs$actual_log_filename)
+  beastier::remove_files_if_present(bifs$actual_trees_filenames)
 
   testit::assert(!file.exists(bifs$actual_log_filename))
   testit::assert(all(!file.exists(bifs$actual_trees_filenames)))
@@ -186,7 +186,7 @@ run_beast2_from_options <- function(
     recursive = TRUE,
     showWarnings = FALSE
   )
-  check_can_create_file(# nolint beautier function
+  beastier::check_can_create_file(
     beast2_options$output_log_filename,
     overwrite = beast2_options$overwrite
   )
@@ -206,7 +206,7 @@ run_beast2_from_options <- function(
       recursive = TRUE,
       showWarnings = FALSE
     )
-    check_can_create_file(to, overwrite = beast2_options$overwrite) # nolint beautier function
+    beastier::check_can_create_file(to, overwrite = beast2_options$overwrite)
     file.rename(from = actual_trees_filename, to = to)
   }
 

@@ -1,5 +1,5 @@
 #' Remove a file if it is present
-#' @noRd
+#' @export
 remove_file_if_present <- function(filename) {
   testit::assert(length(filename) == 1)
   if (file.exists(filename)) {
@@ -8,9 +8,9 @@ remove_file_if_present <- function(filename) {
 }
 
 #' Remove a file if it is present
-#' @noRd
+#' @export
 remove_files_if_present <- function(filenames) {
   for (filename in filenames) {
-    remove_file_if_present(filename) # nolint beastier function
+    beastier::remove_file_if_present(filename)
   }
 }

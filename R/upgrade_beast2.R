@@ -19,13 +19,13 @@ upgrade_beast2 <- function(
   folder_name = rappdirs::user_data_dir(),
   os = rappdirs::app_dir()$os
 ) {
-  if (!is_beast2_installed(folder_name = folder_name, os = os)) {
+  if (!beastier::is_beast2_installed(folder_name = folder_name, os = os)) {
     stop(
       "BEAST2 is not installed, so cannot upgrade.\n",
       "\n",
       "Tip: use 'beastier::install_beast2()'"
     )
   }
-  uninstall_beast2() # nolint beastier function
-  install_beast2() # nolint beastier function
+  beastier::uninstall_beast2()
+  beastier::install_beast2()
 }

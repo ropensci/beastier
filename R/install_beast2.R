@@ -40,7 +40,7 @@ install_beast2 <- function(
     print(paste("Operating system:", os))
   }
   dir.create(path = folder_name, showWarnings = FALSE, recursive = TRUE)
-  url <- get_default_beast2_download_url(os = os) # nolint internal function
+  url <- beastier::get_default_beast2_download_url(os = os) # nolint internal function
   if (verbose == TRUE) {
     print(paste("Download from URL:", url))
   }
