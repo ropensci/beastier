@@ -11,20 +11,12 @@ matrix:
   - r: release
     os: osx
 
-
-#r_packages:
-#  - devtools
-#  - hunspell
-
-#r_binary_packages:
-#  - phangorn
-
 r_github_packages:
   - jimhester/covr
   - jimhester/lintr
   - MangoTheCat/goodpractice
   - ropensci/spelling
-  - ropensci/beautier
+  - ropensci/beautier@develop
 
 before_install:
   # Vignettes
