@@ -5,7 +5,8 @@
 \title{Get a list with the full paths of all
 BEAST2 example filenames}
 \usage{
-get_beast2_example_filenames(folder = get_default_beast2_folder())
+
+  get_beast2_example_filenames(beast2_folder = get_default_beast2_folder())
 }
 \value{
 a list with the full paths of all

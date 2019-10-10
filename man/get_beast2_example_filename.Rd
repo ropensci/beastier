@@ -5,7 +5,7 @@
 \title{Get the full path of a BEAST2 example file}
 \usage{
 get_beast2_example_filename(filename,
-  folder = get_default_beast2_folder())
+  beast2_folder = get_default_beast2_folder())
 }
 \description{
 Will \link{stop} if the filename is not a BEAST2 example file
