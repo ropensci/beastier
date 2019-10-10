@@ -38,10 +38,11 @@ script:
 
 after_success:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then Rscript -e 'lintr::lint_package()'; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then Rscript -e 'covr::codecov()'; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then Rscript -e 'goodpractice::gp()'; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then travis_wait 60 Rscript -e 'covr::codecov()'; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then travis_wait 60 Rscript -e 'goodpractice::gp()'; fi
   - proselint *.md | egrep -v "typography\.symbols\.curly_quotes"
   - # No local files created
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then egrep -R "\"~" --include={*.R,*.Rmd}); fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then if [[ $(egrep -R "\"~" --include={*.R,*.Rmd}) ]]; then echo "Local file created"; exit 1; fi; fi
   - # Test if beastier can indeed run in parallel
   - ./scripts/test_parallel
