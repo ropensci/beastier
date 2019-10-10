@@ -20,7 +20,7 @@
 #'       )
 #'     )
 #'   }
-#' @noRd
+#' @export
 get_default_beast2_download_url <- function( # nolint internal functions may be long
   os = rappdirs::app_dir()$os
 ) {
