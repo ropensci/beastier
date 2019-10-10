@@ -38,10 +38,10 @@ run_beast2_from_options <- function(
   # Deduce the full paths of the input and output files
   ##############################################################################
   # Beast2 Internal FilenameS
-  bifs <- create_beast2_internal_filenames(beast2_options)  # nolint beastier function
+  bifs <- beastier::create_beast2_internal_filenames(beast2_options)
 
   if (beast2_options$verbose) {
-    print_beast2_internal_filenames(bifs, show_exist = FALSE)  # nolint beastier function
+    beastier::print_beast2_internal_filenames(bifs, show_exist = FALSE)
   }
   ##############################################################################
   # Check files
@@ -211,7 +211,7 @@ run_beast2_from_options <- function(
   }
 
   if (beast2_options$verbose) {
-    print_beast2_internal_filenames(bifs, show_exist = TRUE) # nolint beautier function
+    beastier::print_beast2_internal_filenames(bifs, show_exist = TRUE)
   }
 
   beautier::check_file_exists(
