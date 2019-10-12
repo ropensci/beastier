@@ -8,13 +8,15 @@
 #' @examples
 #' library(testthat)
 #'
-#' filename <- get_beast2_example_filename("testJukesCantor.xml")
-#' expect_true(file.exists(filename))
+#' if (is_beast2_installed()) {
+#'   filename <- get_beast2_example_filename("testJukesCantor.xml")
+#'   expect_true(file.exists(filename))
 #'
-#' filename <- get_beast2_example_filename("Primates.nex")
-#' expect_true(file.exists(filename))
+#'   filename <- get_beast2_example_filename("Primates.nex")
+#'   expect_true(file.exists(filename))
 #'
-#' expect_error(get_beast2_example_filename("abs.ent"))
+#'   expect_error(get_beast2_example_filename("abs.ent"))
+#' }
 #' @export
 get_beast2_example_filename <- function(
   filename,
