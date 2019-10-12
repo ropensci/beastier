@@ -7,16 +7,18 @@
 #' beast2_options <- create_beast2_options(
 #'   input_filename = get_beastier_path("2_4.xml")
 #' )
-#' beast2_internal_filenames <- create_beast2_internal_filenames(
-#'   beast2_options
-#' )
-#' bif_names <- names(beast2_internal_filenames)
-#' expect_true("input_filename_full" %in% bif_names)
-#' expect_true("actual_log_filename" %in% bif_names)
-#' expect_true("actual_trees_filenames" %in% bif_names)
-#' expect_true("output_log_filename_full" %in% bif_names)
-#' expect_true("output_trees_filenames_full" %in% bif_names)
-#' expect_true("output_state_filename_full" %in% bif_names)
+#' if (is_beast2_installed()) {
+#'   beast2_internal_filenames <- create_beast2_internal_filenames(
+#'     beast2_options
+#'   )
+#'   bif_names <- names(beast2_internal_filenames)
+#'   expect_true("input_filename_full" %in% bif_names)
+#'   expect_true("actual_log_filename" %in% bif_names)
+#'   expect_true("actual_trees_filenames" %in% bif_names)
+#'   expect_true("output_log_filename_full" %in% bif_names)
+#'   expect_true("output_trees_filenames_full" %in% bif_names)
+#'   expect_true("output_state_filename_full" %in% bif_names)
+#' }
 #' @export
 create_beast2_internal_filenames <- function(beast2_options) { # nolint indeed a long function name, which is fine for internal function
 
