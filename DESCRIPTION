@@ -29,7 +29,7 @@ Imports:
     stringr,
     xml2
 Suggests:
-    beautier (>= 2.2.3),
+    beautier (>= 2.2.4),
     hunspell,
     knitr,
     rmarkdown,
