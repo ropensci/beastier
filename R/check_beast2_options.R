@@ -42,7 +42,7 @@ check_beast2_options_names <- function( # nolint long function name indeed, whic
   beast2_options
 ) {
   argument_names <- c(
-    "input_filename", "output_log_filename", "output_trees_filenames",
+    "input_filename",
     "output_state_filename",
     "rng_seed", "n_threads", "use_beagle", "overwrite", "beast2_working_dir",
     "beast2_path", "verbose"
@@ -72,12 +72,6 @@ check_beast2_options_data_types <- function( # nolint long function name indeed,
 ) {
   if (!assertive::is_a_string(beast2_options$input_filename)) {
     stop("'input_filename' must be one character string")
-  }
-  if (!assertive::is_a_string(beast2_options$output_log_filename)) {
-    stop("'output_log_filename' must be one character string")
-  }
-  if (!assertive::is_a_string(beast2_options$output_trees_filenames)) {
-    stop("'output_trees_filenames' must be one character string")
   }
   if (!assertive::is_a_string(beast2_options$output_state_filename)) {
     stop("'output_state_filename' must be one character string")
@@ -113,26 +107,8 @@ check_beast2_options_data_types <- function( # nolint long function name indeed,
 check_beast2_options_filenames_differ <- function( # nolint long function name indeed, which is fine for an internal function
   beast2_options
 ) {
-  if (beast2_options$input_filename == beast2_options$output_log_filename) {
-    stop("'input_filename' and 'output_log_filename' must differ")
-  }
-  if (beast2_options$input_filename == beast2_options$output_trees_filenames) {
-    stop("'input_filename' and 'output_trees_filenames' must differ")
-  }
   if (beast2_options$input_filename == beast2_options$output_state_filename) {
     stop("'input_filename' and 'output_state_filename' must differ")
-  }
-  if (beast2_options$output_log_filename ==
-      beast2_options$output_trees_filenames) {
-    stop("'output_log_filename' and 'output_trees_filenames' must differ")
-  }
-  if (beast2_options$output_log_filename ==
-      beast2_options$output_state_filename) {
-    stop("'output_log_filename' and 'output_state_filename' must differ")
-  }
-  if (beast2_options$output_trees_filenames ==
-      beast2_options$output_state_filename) {
-    stop("'output_trees_filenames' and 'output_state_filename' must differ")
   }
 }
 
@@ -161,22 +137,6 @@ check_beast2_options_filenames_not_in_working_dir <- function( # nolint indeed a
     stop(
       "'beast2_working_dir' must be a different folder than ",
       "the folder of 'input_filename'"
-    )
-  }
-  if (normalizePath(
-      dirname(beast2_options$output_log_filename), mustWork = FALSE
-    ) == beast2_working_dir) {
-    stop(
-      "'beast2_working_dir' must be a different folder than ",
-      "the folder of 'output_log_filename'"
-    )
-  }
-  if (normalizePath(
-      dirname(beast2_options$output_trees_filenames), mustWork = FALSE
-    ) == beast2_working_dir) {
-    stop(
-      "'beast2_working_dir' must be a different folder than ",
-      "the folder of 'output_trees_filenames'"
     )
   }
   if (normalizePath(

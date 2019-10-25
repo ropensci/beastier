@@ -28,7 +28,20 @@ Related R packages:
  * [`beastier_on_windows`](https://github.com/richelbilderbeek/beastier_on_windows): Verify that `beastier` works on the Windows operating system
  * [`lumier`](https://github.com/ropensci/lumier): Shiny app to help create the function call needed
 
-## Example
+## Example for `v2.1`
+
+```
+output_state_filename <- "out.state"
+
+run_beast2(
+  input_filename = get_beastier_path("2_4.xml"),
+  output_state_filename = output_state_filename
+)
+
+testit::assert(file.exists(output_state_filename))
+```
+
+## Example for `v2.0.25`
 
 ```
 output_log_filename <- "out.log"
@@ -46,6 +59,46 @@ testit::assert(file.exists(output_log_filename))
 testit::assert(file.exists(output_trees_filename))
 testit::assert(file.exists(output_state_filename))
 ```
+
+Note that in this version, the filenames for the `.log`
+and `.trees` files could be specified. This is unneeded: a BEAST2
+XML file specifies where these files will be stored:
+
+```
+<?xml [...]?><beast [...]>
+
+[...]
+
+<run [...]>
+
+    [...]
+
+    <logger id="tracelog" fileName="test_output_0.log" [...]>
+        [...]
+    </logger>
+
+    [...]
+
+    <logger id="treelog.t:[...]" fileName="$(tree).trees" [...]>
+        [...]
+    </logger>
+</run>
+</beast>
+```
+
+When using `beautier`, this can be specified in `create_mcmc`:
+
+```
+create_mcmc(
+  tracelog = create_tracelog(
+    filename = "my_trace.log"
+  ),
+  treeslog = create_treeslog(
+    filename = "my_trees.trees"
+  )
+)
+```
+
 
 ## [Install](doc/install.md)
 

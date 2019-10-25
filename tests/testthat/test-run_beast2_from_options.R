@@ -30,8 +30,6 @@ test_that("local file in temp folder", {
 
   # All input and output files will be local
   input_filename <- basename(tempfile(fileext = ".xml"))
-  output_log_filename <- basename(tempfile(fileext = ".log"))
-  output_trees_filename <- basename(tempfile(fileext = ".trees"))
   output_state_filename <- basename(tempfile(fileext = ".xml.state"))
 
   # Create input file locally
@@ -41,16 +39,12 @@ test_that("local file in temp folder", {
     run_beast2_from_options(
       create_beast2_options(
         input_filename = input_filename,
-        output_log_filename = output_log_filename,
-        output_trees_filenames = output_trees_filename,
         output_state_filename = output_state_filename
       )
     )
   )
 
 
-  expect_true(file.exists(output_log_filename))
-  expect_true(all(file.exists(output_trees_filename)))
   expect_true(file.exists(output_state_filename))
 
 
@@ -72,8 +66,6 @@ test_that("file with full path in temp folder", {
     run_beast2_from_options(beast2_options = beast2_options)
   )
 
-  expect_true(file.exists(beast2_options$output_log_filename))
-  expect_true(all(file.exists(beast2_options$output_trees_filename)))
   expect_true(file.exists(beast2_options$output_state_filename))
 
   setwd(cur_wd) # Really do this last
@@ -85,10 +77,6 @@ test_that("use sub-sub-sub-folders", {
 
   input_filename <- get_beastier_path("2_4.xml")
   beast2_options <- create_beast2_options(input_filename = input_filename)
-  beast2_options$output_log_filename <-
-    file.path(tempdir(), "a", "b", "c", "d.log")
-  beast2_options$output_trees_filenames <-
-    file.path(tempdir(), "e", "f", "g", "g.trees")
   beast2_options$output_state_filename <-
     file.path(tempdir(), "h", "i", "j", "k.xml.state")
 
@@ -96,8 +84,6 @@ test_that("use sub-sub-sub-folders", {
     run_beast2_from_options(beast2_options = beast2_options)
   )
 
-  expect_true(file.exists(beast2_options$output_log_filename))
-  expect_true(all(file.exists(beast2_options$output_trees_filename)))
   expect_true(file.exists(beast2_options$output_state_filename))
 })
 
@@ -129,5 +115,19 @@ test_that("show proper error message when using CBS with too few taxa", {
       )
     ),
     "'group_sizes_dimension' .* must be less than the number of taxa"
+  )
+})
+
+test_that("run_beast2 with that cannot write to target directory", {
+
+  if (!is_beast2_installed()) return()
+
+  beast2_options <- create_beast2_options(
+    input_filename = get_beastier_path("2_4.xml"),
+    beast2_working_dir = "/"
+  )
+  expect_error(
+    run_beast2_from_options(beast2_options),
+    "BEAST2 state file not created.*no permission"
   )
 })

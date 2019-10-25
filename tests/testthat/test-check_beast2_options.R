@@ -48,24 +48,6 @@ test_that("in-depth use", {
 
   # Wrong parameter names
   beast2_options <- good_beast2_options
-  beast2_options$output_log_filename <- NULL
-  expect_error(
-    check_beast2_options(
-      beast2_options
-    ),
-    "'output_log_filename' must be an element of an 'beast2_options'"
-  )
-
-  beast2_options <- good_beast2_options
-  beast2_options$output_trees_filenames <- NULL
-  expect_error(
-    check_beast2_options(
-      beast2_options
-    ),
-    "'output_trees_filenames' must be an element of an 'beast2_options'"
-  )
-
-  beast2_options <- good_beast2_options
   beast2_options$rng_seed <- NULL
   expect_error(
     check_beast2_options(beast2_options),
@@ -109,22 +91,6 @@ test_that("in-depth use", {
   ##############################################################################
   # Wrong parameter values
   ##############################################################################
-  # output_log_filename
-  expect_error(
-    check_beast2_options(
-      create_beast2_options(output_log_filename = NULL)
-    ),
-    "'output_log_filename' must be one character string"
-  )
-
-  # output_trees_filenames
-  expect_error(
-    check_beast2_options(
-      create_beast2_options(output_trees_filenames = NULL)
-    ),
-    "'output_trees_filenames' must be one character string"
-  )
-
   # output_state_filename
   expect_error(
     check_beast2_options(
@@ -192,44 +158,7 @@ test_that("in-depth use", {
     "'verbose' must be one boolean"
   )
 
-  ##############################################################################
   # Duplicate filenames
-  ##############################################################################
-
-  # 1: input
-  # 2: output log
-  # 3: output trees
-  # 4: output state
-  #
-  # Files to set equal:
-  # 1 - 2
-  # 1 - 3
-  # 1 - 4
-  # 2 - 3
-  # 2 - 4
-  # 3 - 4
-
-  # 1 - 2
-  beast2_options <- good_beast2_options
-  beast2_options$input_filename <- beast2_options$output_log_filename
-  expect_error(
-    check_beast2_options(
-      beast2_options
-    ),
-    "'input_filename' and 'output_log_filename' must differ"
-  )
-
-  # 1 - 3
-  beast2_options <- good_beast2_options
-  beast2_options$input_filename <- beast2_options$output_trees_filenames
-  expect_error(
-    check_beast2_options(
-      beast2_options
-    ),
-    "'input_filename' and 'output_trees_filenames' must differ"
-  )
-
-  # 1 - 4
   beast2_options <- good_beast2_options
   beast2_options$input_filename <- beast2_options$output_state_filename
   expect_error(
@@ -238,34 +167,4 @@ test_that("in-depth use", {
     ),
     "'input_filename' and 'output_state_filename' must differ"
   )
-
-  # 2 - 3
-  beast2_options <- good_beast2_options
-  beast2_options$output_log_filename <- beast2_options$output_trees_filenames
-  expect_error(
-    check_beast2_options(
-      beast2_options
-    ),
-    "'output_log_filename' and 'output_trees_filenames' must differ"
-  )
-  # 2 - 4
-  beast2_options <- good_beast2_options
-  beast2_options$output_log_filename <- beast2_options$output_state_filename
-  expect_error(
-    check_beast2_options(
-      beast2_options
-    ),
-    "'output_log_filename' and 'output_state_filename' must differ"
-  )
-
-  # 3 - 4
-  beast2_options <- good_beast2_options
-  beast2_options$output_trees_filenames <- beast2_options$output_state_filename
-  expect_error(
-    check_beast2_options(
-      beast2_options
-    ),
-    "'output_trees_filenames' and 'output_state_filename' must differ"
-  )
-
 })

@@ -22,46 +22,6 @@ test_that("use", {
     "'input_filename_full' must be one character string"
   )
 
-  # actual_log_filename
-  beast2_internal_filenames <- good_beast2_internal_filenames
-  beast2_internal_filenames$actual_log_filename <- data.frame()
-  expect_error(
-    check_beast2_internal_filenames_data_types(
-      beast2_internal_filenames
-    ),
-    "'actual_log_filename' must be one character string"
-  )
-
-  # actual_trees_filenames
-  beast2_internal_filenames <- good_beast2_internal_filenames
-  beast2_internal_filenames$actual_trees_filenames <- data.frame()
-  expect_error(
-    check_beast2_internal_filenames_data_types(
-      beast2_internal_filenames
-    ),
-    "'actual_trees_filenames' must be one character string"
-  )
-
-  # output_log_filename_full
-  beast2_internal_filenames <- good_beast2_internal_filenames
-  beast2_internal_filenames$output_log_filename_full <- data.frame()
-  expect_error(
-    check_beast2_internal_filenames_data_types(
-      beast2_internal_filenames
-    ),
-    "'output_log_filename_full' must be one character string"
-  )
-
-  # output_trees_filenames_full
-  beast2_internal_filenames <- good_beast2_internal_filenames
-  beast2_internal_filenames$output_trees_filenames_full <- data.frame()
-  expect_error(
-    check_beast2_internal_filenames_data_types(
-      beast2_internal_filenames
-    ),
-    "'output_trees_filenames_full' must be one character string"
-  )
-
   # output_state_filename_full
   beast2_internal_filenames <- good_beast2_internal_filenames
   beast2_internal_filenames$output_state_filename_full <- data.frame()

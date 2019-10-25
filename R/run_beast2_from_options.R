@@ -9,15 +9,11 @@
 #'     input_filename = get_beastier_path("2_4.xml")
 #'   )
 #'
-#'   expect_false(file.exists(beast2_options$output_log_filename))
-#'   expect_false(file.exists(beast2_options$output_trees_filenames))
 #'   expect_false(file.exists(beast2_options$output_state_filename))
 #'
 #'   output <- run_beast2_from_options(beast2_options)
 #'
 #'   expect_true(length(output) > 40)
-#'   expect_true(file.exists(beast2_options$output_log_filename))
-#'   expect_true(file.exists(beast2_options$output_trees_filenames))
 #'   expect_true(file.exists(beast2_options$output_state_filename))
 #' }
 #' @author Richèl J.C. Bilderbeek
@@ -52,32 +48,12 @@ run_beast2_from_options <- function(
     beast2_options = beast2_options,
     beast2_internal_filenames = bifs
   )
-  # It is fine that these files existed, as they existed in the
-  # temporary BEAST2 working directory.
-  beastier::remove_file_if_present(bifs$actual_log_filename)
-  beastier::remove_files_if_present(bifs$actual_trees_filenames)
-
-  testit::assert(!file.exists(bifs$actual_log_filename))
-  testit::assert(all(!file.exists(bifs$actual_trees_filenames)))
 
   check_input_filename_validity( # nolint internal function
     input_filename = bifs$input_filename_full,
     beast2_path = beast2_options$beast2_path,
     verbose = beast2_options$verbose
   )
-
-  alignment_ids <- get_alignment_ids_from_xml_filename( # nolint internal function
-    bifs$input_filename_full
-  )
-
-  if (length(beast2_options$output_trees_filenames) != length(alignment_ids)) {
-    stop(
-      "'output_trees_filenames' must have as much elements as ",
-      "'input_filename' has alignments. 'output_trees_filenames' has ",
-      length(beast2_options$output_trees_filenames), " elements, ",
-      "'input_filename' has ", length(alignment_ids), " alignments"
-    )
-  }
 
   ##############################################################################
   # Store old wd, create and change to beast2_working_dir
@@ -171,56 +147,21 @@ run_beast2_from_options <- function(
   ##############################################################################
   # The files as created by BEAST2
   ##############################################################################
-  if (!file.exists(bifs$actual_log_filename)) {
-    stop(
-      "BEAST2 .log file not created at '", bifs$actual_log_filename, "' \n",
-      "Maybe no permission to write at that location?"
-    )
-  }
-
-  # Copy to target, will overwrite if this was desired
-  beautier::check_file_exists(bifs$actual_log_filename, "actual_log_filename")
-  # Create the folder to hold the file, without warning if it's already present
-  dir.create(
-    path = dirname(beast2_options$output_log_filename),
-    recursive = TRUE,
-    showWarnings = FALSE
-  )
-  beastier::check_can_create_file(
-    beast2_options$output_log_filename,
-    overwrite = beast2_options$overwrite
-  )
-  file.rename(
-    from = bifs$actual_log_filename,
-    to = beast2_options$output_log_filename
-  )
-
-  for (i in seq_along(beast2_options$output_trees_filenames)) {
-    to <- beast2_options$output_trees_filenames[i]
-    actual_trees_filename <- bifs$actual_trees_filenames[i]
-    beautier::check_file_exists(actual_trees_filename, "actual_trees_filename")
-    # Create the folder to hold the file,
-    # without warning if it's already present
-    dir.create(
-      path = dirname(to),
-      recursive = TRUE,
-      showWarnings = FALSE
-    )
-    beastier::check_can_create_file(to, overwrite = beast2_options$overwrite)
-    file.rename(from = actual_trees_filename, to = to)
-  }
-
   if (beast2_options$verbose) {
     beastier::print_beast2_internal_filenames(bifs, show_exist = TRUE)
   }
-
-  beautier::check_file_exists(
-    beast2_options$output_log_filename, "output_log_filename"
-  )
+  if (!file.exists(bifs$output_state_filename_full)) {
+    stop(
+      "BEAST2 state file not created. \n",
+      "Relative path, from 'beast2_options': '",
+        beast2_options$output_state_filename,"'\n",
+      "Full path: '", bifs$output_state_filename_full,"'\n",
+      "Maybe no permission to write at that location?"
+    )
+  }
   beautier::check_file_exists(
     bifs$output_state_filename_full, "output_state_filename_full"
   )
-  testit::assert(all(file.exists(beast2_options$output_trees_filenames)))
 
   output
 }

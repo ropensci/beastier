@@ -13,7 +13,7 @@ test_that("use", {
   # input_filename_full
   beast2_internal_filenames <- good_beast2_internal_filenames
   beast2_internal_filenames$input_filename_full <-
-    beast2_internal_filenames$actual_log_filename
+    beast2_internal_filenames$output_state_filename_full
   expect_error(
     check_beast2_internal_filenames_filenames_differ(
       beast2_internal_filenames

@@ -8,9 +8,7 @@ do_minimal_run()
 }
 \value{
 The text sent to \code{STDOUT} and \code{STDERR}.
-  It will create the files with names
-  \code{output_log_filename}, \code{output_trees_filenames}
-  and \code{output_state_filenames}
+  It will create the files with name \code{output_state_filename}
 }
 \description{
 To achieve this, \link{run_beast2_from_options} is called.

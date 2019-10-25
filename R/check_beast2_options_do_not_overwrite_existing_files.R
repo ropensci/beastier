@@ -15,16 +15,6 @@ check_beast2_options_do_not_overwrite_existing_files <- function( # nolint indee
 
   bifs <- beast2_internal_filenames
 
-  if (file.exists(bifs$output_log_filename_full)) {
-    stop("Will not overwrite 'output_log_filename' ('",
-      bifs$output_log_filename_full, "') with 'overwrite' is FALSE"
-    )
-  }
-  if (any(file.exists(bifs$output_trees_filenames_full))) {
-    stop("Will not overwrite 'output_trees_filenames' ('",
-      bifs$output_trees_filenames_full, "') with 'overwrite' is FALSE"
-    )
-  }
   if (file.exists(bifs$output_state_filename_full)) {
     stop("Will not overwrite 'output_state_filename' ('",
       bifs$output_state_filename_full, "') with 'overwrite' is FALSE"

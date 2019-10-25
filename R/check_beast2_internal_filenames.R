@@ -50,10 +50,6 @@ check_beast2_internal_filenames_names <- function( # nolint long function name i
 ) {
   argument_names <- c(
     "input_filename_full",
-    "actual_log_filename",
-    "actual_trees_filenames",
-    "output_log_filename_full",
-    "output_trees_filenames_full",
     "output_state_filename_full"
   )
   for (arg_name in argument_names) {
@@ -84,18 +80,6 @@ check_beast2_internal_filenames_data_types <- function( # nolint long function n
   bifs <- beast2_internal_filenames
   if (!assertive::is_a_string(bifs$input_filename_full)) {
     stop("'input_filename_full' must be one character string")
-  }
-  if (!assertive::is_a_string(bifs$actual_log_filename)) {
-    stop("'actual_log_filename' must be one character string")
-  }
-  if (!assertive::is_a_string(bifs$actual_trees_filenames)) {
-    stop("'actual_trees_filenames' must be one character string")
-  }
-  if (!assertive::is_a_string(bifs$output_log_filename_full)) {
-    stop("'output_log_filename_full' must be one character string")
-  }
-  if (!assertive::is_a_string(bifs$output_trees_filenames_full)) {
-    stop("'output_trees_filenames_full' must be one character string")
   }
   if (!assertive::is_a_string(bifs$output_state_filename_full)) {
     stop("'output_state_filename_full' must be one character string")

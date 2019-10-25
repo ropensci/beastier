@@ -2,6 +2,25 @@
 
 Newest versions at top.
 
+## beastier 2.1 (unreleased)
+
+### NEW FEATURES
+
+  * None
+  
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * `output_log_filename` and `output_trees_filenames` are removed
+    as arguments. These values are already set by the BEAST2 XML
+
 ## beastier 2.0.25 (2019-10-10)
 
 ### NEW FEATURES

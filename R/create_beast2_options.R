@@ -5,27 +5,25 @@
 #' @return a BEAST2 options structure
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#'   library(testthat)
+#' library(testthat)
 #'
-#'   beast2_options <- create_beast2_options()
+#' beast2_options <- create_beast2_options()
 #'
-#'   expect_true("input_filename" %in% names(beast2_options))
-#'   expect_true("output_log_filename" %in% names(beast2_options))
-#'   expect_true("output_trees_filenames" %in% names(beast2_options))
-#'   expect_true("output_state_filename" %in% names(beast2_options))
-#'   expect_true("rng_seed" %in% names(beast2_options))
-#'   expect_true("n_threads" %in% names(beast2_options))
-#'   expect_true("use_beagle" %in% names(beast2_options))
-#'   expect_true("overwrite" %in% names(beast2_options))
-#'   expect_true("beast2_path" %in% names(beast2_options))
-#'   expect_true("verbose" %in% names(beast2_options))
+#' expect_true("input_filename" %in% names(beast2_options))
+#' expect_true("output_state_filename" %in% names(beast2_options))
+#' expect_true("rng_seed" %in% names(beast2_options))
+#' expect_true("n_threads" %in% names(beast2_options))
+#' expect_true("use_beagle" %in% names(beast2_options))
+#' expect_true("overwrite" %in% names(beast2_options))
+#' expect_true("beast2_path" %in% names(beast2_options))
+#' expect_true("verbose" %in% names(beast2_options))
 #'
-#'   expect_silent(check_beast2_options(beast2_options))
+#' expect_silent(check_beast2_options(beast2_options))
 #' @export
 create_beast2_options <- function(
   input_filename = tempfile(fileext = ".xml"),
-  output_log_filename = tempfile(fileext = ".log"),
-  output_trees_filenames = tempfile(fileext = ".trees"),
+  output_log_filename = "output_log_filename_is_deprecated",
+  output_trees_filenames = "output_trees_filenames_is_deprecated",
   output_state_filename = tempfile(fileext = ".xml.state"),
   rng_seed = NA,
   n_threads = NA,
@@ -37,10 +35,21 @@ create_beast2_options <- function(
   beast2_path = get_default_beast2_path(),
   verbose = FALSE
 ) {
+  # Check for deprecated argument names
+  calls <- names(sapply(match.call(), deparse))[-1]
+  if (any("output_log_filename" %in% calls)) {
+    stop(
+      "'output_log_filename' is deprecated, it is stored in the BEAST2 XML"
+    )
+  }
+  if (any("output_trees_filenames" %in% calls)) {
+    stop(
+      "'output_trees_filenames' is deprecated, it is stored in the BEAST2 XML"
+    )
+  }
+
   beast2_options <- list(
     input_filename = input_filename,
-    output_log_filename = output_log_filename,
-    output_trees_filenames = output_trees_filenames,
     output_state_filename = output_state_filename,
     rng_seed = rng_seed,
     n_threads = n_threads,
