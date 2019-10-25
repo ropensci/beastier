@@ -154,8 +154,8 @@ run_beast2_from_options <- function(
     stop(
       "BEAST2 state file not created. \n",
       "Relative path, from 'beast2_options': '",
-        beast2_options$output_state_filename,"'\n",
-      "Full path: '", bifs$output_state_filename_full,"'\n",
+        beast2_options$output_state_filename, "'\n",
+      "Full path: '", bifs$output_state_filename_full, "'\n",
       "Maybe no permission to write at that location?"
     )
   }
