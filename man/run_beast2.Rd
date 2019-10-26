@@ -9,9 +9,9 @@ run_beast2(input_filename,
   output_trees_filenames = "output_trees_filenames_is_deprecated",
   output_state_filename = tempfile(pattern = "beastier_", fileext =
   ".xml.state"), rng_seed = NA, n_threads = NA, use_beagle = FALSE,
-  overwrite = TRUE, beast2_working_dir = tempfile(pattern =
-  "beast2_tmp_folder"), beast2_path = get_default_beast2_path(),
-  verbose = FALSE)
+  overwrite = TRUE,
+  beast2_working_dir = "beast2_working_dir_is_deprecated",
+  beast2_path = get_default_beast2_path(), verbose = FALSE)
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file.

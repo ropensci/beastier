@@ -56,44 +56,6 @@ run_beast2_from_options <- function(
   )
 
   ##############################################################################
-  # Store old wd, create and change to beast2_working_dir
-  ##############################################################################
-  cur_wd <- getwd()
-  # Move working directory to temporary folder
-  # Do not warning if the folder already exists, unless when being verbose
-  dir.create(
-    beast2_options$beast2_working_dir,
-    showWarnings = FALSE, recursive = TRUE
-  )
-
-  # Although 'dir.create' creates folders recursively,
-  # it only has the user's permission. As the user
-  # is not running as root, it cannot create root folders
-  if (!dir.exists(beast2_options$beast2_working_dir)) {
-    dir.create(
-      beast2_options$beast2_working_dir,
-      showWarnings = TRUE, recursive = TRUE
-    )
-    stop(
-      "Cannot create working directory '",
-      beast2_options$beast2_working_dir, "' \n",
-      "Maybe no permission to create it there? \n"
-    )
-  }
-  # This will fail if the temp_wd cannot be created
-  tryCatch(
-    setwd(beast2_options$beast2_working_dir),
-    error = function(e) {
-      stop(
-        "Cannot set working directory to '",
-          beast2_options$beast2_working_dir, "' \n",
-        "Maybe no permission to change to that location?\n",
-        "Error message: ", e$message, " \n"
-      )
-    }
-  )
-
-  ##############################################################################
   # Create the BEAST2 command
   ##############################################################################
   testit::assert(length(bifs$input_filename_full) == 1)
@@ -141,15 +103,9 @@ run_beast2_from_options <- function(
     )
   }
 
-  # Copying done, back to original working directory
-  setwd(cur_wd)
-
   ##############################################################################
   # The files as created by BEAST2
   ##############################################################################
-  if (beast2_options$verbose) {
-    beastier::print_beast2_internal_filenames(bifs, show_exist = TRUE)
-  }
   if (!file.exists(bifs$output_state_filename_full)) {
     stop(
       "BEAST2 state file not created. \n",
@@ -159,9 +115,6 @@ run_beast2_from_options <- function(
       "Maybe no permission to write at that location?"
     )
   }
-  beautier::check_file_exists(
-    bifs$output_state_filename_full, "output_state_filename_full"
-  )
 
   output
 }

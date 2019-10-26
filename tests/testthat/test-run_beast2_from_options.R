@@ -117,17 +117,3 @@ test_that("show proper error message when using CBS with too few taxa", {
     "'group_sizes_dimension' .* must be less than the number of taxa"
   )
 })
-
-test_that("run_beast2 with that cannot write to target directory", {
-
-  if (!is_beast2_installed()) return()
-
-  beast2_options <- create_beast2_options(
-    input_filename = get_beastier_path("2_4.xml"),
-    beast2_working_dir = "/"
-  )
-  expect_error(
-    run_beast2_from_options(beast2_options),
-    "BEAST2 state file not created.*no permission"
-  )
-})

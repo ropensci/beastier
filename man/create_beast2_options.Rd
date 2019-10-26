@@ -10,9 +10,8 @@ create_beast2_options(input_filename = tempfile(fileext = ".xml"),
   output_state_filename = tempfile(fileext = ".xml.state"),
   rng_seed = NA, n_threads = NA, use_beagle = FALSE,
   overwrite = TRUE,
-  beast2_working_dir = file.path(get_default_beast2_working_dir(),
-  basename(tempfile())), beast2_path = get_default_beast2_path(),
-  verbose = FALSE)
+  beast2_working_dir = "beast2_working_dir_is_deprecated",
+  beast2_path = get_default_beast2_path(), verbose = FALSE)
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file.

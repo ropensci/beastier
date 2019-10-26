@@ -293,26 +293,3 @@ test_that("run_beast2 produces output", {
   sink()
   expect_true(length(output) > 50)
 })
-
-test_that("run_beast2 with invalid working directory", {
-
-  if (!is_beast2_installed()) return()
-
-  beast2_working_dir <- "/no/way"
-  if (rappdirs::app_dir()$os == "win") {
-    beast2_working_dir <- "C:\\Windows"
-  }
-
-  # When creating an invalid working directory,
-  # this gives both a warning and an error.
-  # Here, I test for the error and suppress the warning
-  suppressWarnings(
-    expect_error(
-      run_beast2(
-        input_filename = get_beastier_path("2_4.xml"),
-        beast2_working_dir = beast2_working_dir
-      ),
-      "no permission"
-    )
-  )
-})

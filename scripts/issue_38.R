@@ -45,7 +45,6 @@ beautier::create_beast2_input_file_from_model(
 beast2_options <- beastier::create_beast2_options(
   input_filename = beast2_input_filename,
   output_state_filename = get_pff_tempfile(pattern = "out_", fileext = ".state.xml"),
-  beast2_working_dir = get_pff_tempfile(),
   beast2_path = beastier::get_default_beast2_bin_path(),
   verbose = TRUE
 )
