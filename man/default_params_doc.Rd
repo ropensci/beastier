@@ -62,11 +62,7 @@ isolation.
 For each BEAST2 run, a new subfolder is created in that folder.
 Within this folder, BEAST2 is allowed to create all of its output files,
 without the risk of overwriting existing ones, allowing
-BEAST2 to run in multiple parallel processes.
-Use \link{get_default_beast2_working_dir} to get the path
-to the default BEAST2 working directory
-Use \link{clear_beast2_working_dir} to clear the BEAST2
-working directory.}
+BEAST2 to run in multiple parallel processes.}
 
 \item{clock_model}{a \code{beautier} clock model}
 

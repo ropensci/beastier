@@ -5,25 +5,16 @@
 \title{Function to create a set of BEAST2 options.}
 \usage{
 create_beast2_options(input_filename = tempfile(fileext = ".xml"),
-  output_log_filename = "output_log_filename_is_deprecated",
-  output_trees_filenames = "output_trees_filenames_is_deprecated",
   output_state_filename = tempfile(fileext = ".xml.state"),
   rng_seed = NA, n_threads = NA, use_beagle = FALSE,
-  overwrite = TRUE,
-  beast2_working_dir = "beast2_working_dir_is_deprecated",
-  beast2_path = get_default_beast2_path(), verbose = FALSE)
+  overwrite = TRUE, beast2_path = get_default_beast2_path(),
+  verbose = FALSE, output_log_filename = "deprecated",
+  output_trees_filenames = "deprecated",
+  beast2_working_dir = "deprecated")
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file.
 This file usually has an \code{.xml} extension.}
-
-\item{output_log_filename}{name of the .log file to create}
-
-\item{output_trees_filenames}{one or more names for .trees file to create.
-There will be one .trees file created per alignment in the input
-file. The number of alignments must equal the number of .trees
-filenames, else an error is thrown. Alignments are sorted alphabetically
-by their IDs}
 
 \item{output_state_filename}{name of the .xml.state file to create}
 
@@ -46,17 +37,6 @@ If FALSE, BEAST2 will not be started if
   \item{the \code{.trees} files created by BEAST2 exist}
 }}
 
-\item{beast2_working_dir}{a folder where BEAST2 can work in
-isolation.
-For each BEAST2 run, a new subfolder is created in that folder.
-Within this folder, BEAST2 is allowed to create all of its output files,
-without the risk of overwriting existing ones, allowing
-BEAST2 to run in multiple parallel processes.
-Use \link{get_default_beast2_working_dir} to get the path
-to the default BEAST2 working directory
-Use \link{clear_beast2_working_dir} to clear the BEAST2
-working directory.}
-
 \item{beast2_path}{name of either a BEAST2 binary file
 (usually simply \code{beast})
 or a BEAST2 jar file
@@ -68,6 +48,21 @@ the default BEAST jar file's path}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
+
+\item{output_log_filename}{name of the .log file to create}
+
+\item{output_trees_filenames}{one or more names for .trees file to create.
+There will be one .trees file created per alignment in the input
+file. The number of alignments must equal the number of .trees
+filenames, else an error is thrown. Alignments are sorted alphabetically
+by their IDs}
+
+\item{beast2_working_dir}{a folder where BEAST2 can work in
+isolation.
+For each BEAST2 run, a new subfolder is created in that folder.
+Within this folder, BEAST2 is allowed to create all of its output files,
+without the risk of overwriting existing ones, allowing
+BEAST2 to run in multiple parallel processes.}
 }
 \value{
 a BEAST2 options structure

@@ -22,16 +22,16 @@
 #' @export
 create_beast2_options <- function(
   input_filename = tempfile(fileext = ".xml"),
-  output_log_filename = "output_log_filename_is_deprecated",
-  output_trees_filenames = "output_trees_filenames_is_deprecated",
   output_state_filename = tempfile(fileext = ".xml.state"),
   rng_seed = NA,
   n_threads = NA,
   use_beagle = FALSE,
   overwrite = TRUE,
-  beast2_working_dir = "beast2_working_dir_is_deprecated",
   beast2_path = get_default_beast2_path(),
-  verbose = FALSE
+  verbose = FALSE,
+  output_log_filename = "deprecated",
+  output_trees_filenames = "deprecated",
+  beast2_working_dir = "deprecated"
 ) {
   # Check for deprecated argument names
   calls <- names(sapply(match.call(), deparse))[-1]
