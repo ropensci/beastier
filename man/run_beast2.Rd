@@ -7,8 +7,8 @@
 run_beast2(input_filename,
   output_log_filename = "output_log_filename_is_deprecated",
   output_trees_filenames = "output_trees_filenames_is_deprecated",
-  output_state_filename = tempfile(pattern = "beastier_", fileext =
-  ".xml.state"), rng_seed = NA, n_threads = NA, use_beagle = FALSE,
+  output_state_filename = create_temp_output_state_filename(),
+  rng_seed = NA, n_threads = NA, use_beagle = FALSE,
   overwrite = TRUE,
   beast2_working_dir = "beast2_working_dir_is_deprecated",
   beast2_path = get_default_beast2_path(), verbose = FALSE)

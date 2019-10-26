@@ -15,7 +15,11 @@
 #'   }
 #' @author Richèl J.C. Bilderbeek
 do_minimal_run <- function() {
-  folder <- tempfile()
+  folder <- file.path(rappdirs::user_cache_dir(),
+    basename(
+      tempfile(pattern = "beastier_minimal_run_")
+    )
+  )
   beastier::run_beast2_from_options(
     beastier::create_beast2_options(
       input_filename = beastier::get_beastier_path("2_4.xml"),

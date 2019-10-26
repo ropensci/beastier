@@ -66,7 +66,13 @@ are_beast2_input_lines_deep <- function(
   verbose = FALSE,
   beast2_path = get_default_beast2_path()
 ) {
-  filename <- tempfile()
+  filename <- file.path(
+    rappdirs::user_cache_dir(),
+    basename(
+      tempfile(pattern = "beast2_", fileext = ".xml")
+    )
+  )
+  dir.create(dirname(filename), recursive = TRUE, showWarnings = FALSE)
   beastier::save_lines(filename = filename, lines = lines)
   is_beast2_input_file(
     filename = filename,

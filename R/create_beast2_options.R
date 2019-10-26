@@ -21,8 +21,8 @@
 #' expect_silent(check_beast2_options(beast2_options))
 #' @export
 create_beast2_options <- function(
-  input_filename = tempfile(fileext = ".xml"),
-  output_state_filename = tempfile(fileext = ".xml.state"),
+  input_filename = create_temp_input_filename(),
+  output_state_filename = create_temp_output_state_filename(),
   rng_seed = NA,
   n_threads = NA,
   use_beagle = FALSE,
