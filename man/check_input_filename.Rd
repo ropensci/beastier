@@ -9,7 +9,9 @@ check_input_filename(input_filename)
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file.
-This file usually has an \code{.xml} extension.}
+This file usually has an \code{.xml} extension.
+Use \link{create_temp_input_filename} to create a temporary
+filename with that extension.}
 }
 \value{
 nothing. Will call \code{\link{stop}} if the input file is invalid

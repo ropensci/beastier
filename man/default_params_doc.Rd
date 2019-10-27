@@ -93,7 +93,9 @@ Each one set to NA will result in BEAST2 using a random phylogeny. Else
 the phylogeny is assumed to be of class \code{ape::phylo}.}
 
 \item{input_filename}{the name of a BEAST2 input XML file.
-This file usually has an \code{.xml} extension.}
+This file usually has an \code{.xml} extension.
+Use \link{create_temp_input_filename} to create a temporary
+filename with that extension.}
 
 \item{mcmc}{one \code{beautier} MCMC}
 
@@ -112,7 +114,9 @@ function. BEAST2 uses this file as input.}
 
 \item{output_log_filename}{name of the .log file to create}
 
-\item{output_state_filename}{name of the .xml.state file to create}
+\item{output_state_filename}{name of the \code{.xml.state} file to create.
+Use \link{create_temp_output_state_filename} to create a temporary
+filename with that extension.}
 
 \item{output_trees_filenames}{one or more names for .trees file to create.
 There will be one .trees file created per alignment in the input

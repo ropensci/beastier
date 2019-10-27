@@ -10,7 +10,9 @@ create_beast2_run_cmd(input_filename, output_state_filename,
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file.
-This file usually has an \code{.xml} extension.}
+This file usually has an \code{.xml} extension.
+Use \link{create_temp_input_filename} to create a temporary
+filename with that extension.}
 
 \item{output_state_filename}{name of the BEAST2 output file that
 stores the state

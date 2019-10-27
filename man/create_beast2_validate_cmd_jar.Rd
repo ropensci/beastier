@@ -10,7 +10,9 @@ create_beast2_validate_cmd_jar(input_filename,
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file.
-This file usually has an \code{.xml} extension.}
+This file usually has an \code{.xml} extension.
+Use \link{create_temp_input_filename} to create a temporary
+filename with that extension.}
 
 \item{beast2_jar_path}{name of the BEAST2 jar file
 (usually has a \code{.jar} extension).

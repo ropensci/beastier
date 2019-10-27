@@ -15,7 +15,9 @@ run_beast2(input_filename,
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file.
-This file usually has an \code{.xml} extension.}
+This file usually has an \code{.xml} extension.
+Use \link{create_temp_input_filename} to create a temporary
+filename with that extension.}
 
 \item{output_log_filename}{name of the .log file to create}
 
@@ -25,7 +27,9 @@ file. The number of alignments must equal the number of .trees
 filenames, else an error is thrown. Alignments are sorted alphabetically
 by their IDs}
 
-\item{output_state_filename}{name of the .xml.state file to create}
+\item{output_state_filename}{name of the \code{.xml.state} file to create.
+Use \link{create_temp_output_state_filename} to create a temporary
+filename with that extension.}
 
 \item{rng_seed}{the random number generator seed of the BEAST2 run.
 Must be a non-zero positive integer value or \link{NA}.

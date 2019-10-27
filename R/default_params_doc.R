@@ -61,6 +61,8 @@
 #' the phylogeny is assumed to be of class \code{ape::phylo}.
 #' @param input_filename the name of a BEAST2 input XML file.
 #' This file usually has an \code{.xml} extension.
+#' Use \link{create_temp_input_filename} to create a temporary
+#' filename with that extension.
 #' @param mcmc one \code{beautier} MCMC
 #' @param misc_options one \code{beautier} misc_options object
 #' @param n_taxa The number of taxa
@@ -76,7 +78,9 @@
 #' file. The number of alignments must equal the number of .trees
 #' filenames, else an error is thrown. Alignments are sorted alphabetically
 #' by their IDs
-#' @param output_state_filename name of the .xml.state file to create
+#' @param output_state_filename name of the \code{.xml.state} file to create.
+#' Use \link{create_temp_output_state_filename} to create a temporary
+#' filename with that extension.
 #' @param overwrite if TRUE: overwrite the \code{.log}
 #' and \code{.trees} files if one of these exists.
 #' If FALSE, BEAST2 will not be started if
