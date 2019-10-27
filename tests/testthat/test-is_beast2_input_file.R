@@ -121,3 +121,22 @@ test_that("detect warnings", {
     )
   }
 })
+
+test_that("detect errors", {
+
+  if (!is_beast2_installed()) return()
+
+  expect_warning(
+    is_beast2_input_file(
+      filename = get_beastier_path("beast2_error.xml"),
+      show_warnings = TRUE
+    )
+  )
+  skip("Issue 51, Issue #51")
+  expect_silent(
+    is_beast2_input_file(
+      filename = get_beastier_path("beast2_error.xml"),
+      show_warnings = FALSE
+    )
+  )
+})
