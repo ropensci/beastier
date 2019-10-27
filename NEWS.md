@@ -2,6 +2,29 @@
 
 Newest versions at top.
 
+## beastier 2.1 (unreleased)
+
+### NEW FEATURES
+
+  * Follows `beautier` v2.3 interface
+  
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * The function arguments `beast2_output_log_filename` 
+    and `beast2_output_trees_filename` have become obsolete. Use
+    `create_tracelog()$filename` and `create_treelog()$filename` as
+    part of an MCMC instead
+  * The function argument `beast2_working_dir` is obsoleted, because it
+    no longer served a purpose. Use `setwd` to set the working directory 
+
 ## beastier 2.0.25 (2019-10-10)
 
 ### NEW FEATURES
