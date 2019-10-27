@@ -132,7 +132,6 @@ test_that("detect errors", {
       show_warnings = TRUE
     )
   )
-  skip("Issue 51, Issue #51")
   expect_silent(
     is_beast2_input_file(
       filename = get_beastier_path("beast2_error.xml"),
