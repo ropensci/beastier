@@ -117,3 +117,46 @@ test_that("show proper error message when using CBS with too few taxa", {
     "'group_sizes_dimension' .* must be less than the number of taxa"
   )
 })
+
+
+test_that("BEAST2 freezes when treelog file already exists", {
+
+  skip("Issue 50, Issue #50")
+
+  if (!is_beast2_installed()) return()
+
+  beast2_xml_filename <- tempfile(
+    pattern = "beast2_", tmpdir = rappdirs::user_cache_dir(),
+    fileext = ".xml"
+  )
+
+  beautier::create_beast2_input_file_from_model(
+    input_filename = beautier::get_fasta_filename(),
+    output_filename = beast2_xml_filename,
+    inference_model = beautier::create_test_inference_model(
+      mcmc = beautier::create_test_mcmc(
+        screenlog = beautier::create_screenlog(filename = "")
+      )
+    )
+  )
+  testit::assert(file.exists(beast2_xml_filename))
+
+  # First run works fine, takes approx 1 sec on my computer
+  beastier::run_beast2_from_options(
+    beastier::create_beast2_options(
+      input_filename = beast2_xml_filename,
+      overwrite = FALSE,
+      verbose = TRUE
+    )
+  )
+
+  # Second run causes BEAST2 to freeze
+  beastier::run_beast2_from_options(
+    beastier::create_beast2_options(
+      input_filename = beast2_xml_filename,
+      overwrite = FALSE,
+      verbose = TRUE
+    )
+  )
+
+})
