@@ -124,7 +124,7 @@ test_that("detect errors when BEAST2 is installed", {
 
 test_that("BEAST2 does not overwrite the log file specified by the user", {
 
-  skip("Not now")
+  skip("Consequence of Issue 50, Issue #50")
   if (!is_beast2_installed()) return()
 
   output_log_filename <- tempfile(fileext = ".log")
@@ -145,7 +145,7 @@ test_that("BEAST2 does not overwrite the log file specified by the user", {
 
 test_that("BEAST2 does not overwrite the .trees file specified by the user", {
 
-  skip("Not now")
+  skip("Consequence of Issue 50, Issue #50")
   if (!is_beast2_installed()) return()
 
   output_trees_filename <- tempfile(fileext = ".trees")
