@@ -49,14 +49,24 @@ is_beast2_input_file <- function(
   )
   beautier::check_file_exists(cmds[1], "cmds[1]")
   output <- NA
-  suppressWarnings({
+  if (show_warnings == TRUE) {
     output <- system2(
       cmds[1],
       args = cmds[-1],
       stdout = TRUE,
-      stderr = TRUE)
-    }
-  )
+      stderr = TRUE
+    )
+
+  } else {
+    suppressWarnings({
+      output <- system2(
+        cmds[1],
+        args = cmds[-1],
+        stdout = TRUE,
+        stderr = TRUE)
+      }
+    )
+  }
   if (verbose) {
     print(output)
   }
