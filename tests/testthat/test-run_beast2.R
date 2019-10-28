@@ -64,19 +64,31 @@ test_that("single alignment, equal RNG seed equal results", {
   expect_identical(lines_1, lines_2)
 })
 
-test_that("detect errors when BEAST2 need not be installed", {
+test_that("abuse", {
 
-  expect_error(
-    run_beast2("abs.ent"),
-    "File '.*' not found"
-  )
+  # Values are checked by 'create_beast2_options'
+  # Only need to check for deprecated arguments
 
   expect_error(
     run_beast2(
-      get_beastier_path("anthus_2_4.xml"),
-      beast2_path = "abs.ent"
+      input_filename = get_beastier_path("2_4.xml"),
+      output_log_filename = "irrevant"
     ),
-    "File '.*' not found"
+    "output_log_filename.*deprecated"
+  )
+  expect_error(
+    run_beast2(
+      input_filename = get_beastier_path("2_4.xml"),
+      output_trees_filenames = "irrevant"
+    ),
+    "output_trees_filenames.*deprecated"
+  )
+  expect_error(
+    run_beast2(
+      input_filename = get_beastier_path("2_4.xml"),
+      beast2_working_dir = "irrevant"
+    ),
+    "beast2_working_dir.*deprecated"
   )
 })
 
@@ -89,36 +101,6 @@ test_that("detect errors when BEAST2 is installed", {
   expect_error(
     run_beast2(get_beastier_path("anthus_aco.fas")),
     "'input_filename' must be a valid BEAST2 XML file"
-  )
-
-
-  expect_error(
-    run_beast2(
-      input_filename = get_beastier_path("2_4.xml"),
-      output_trees_filenames = c("too", "much")
-    ),
-    "output_trees_filenames"
-  )
-
-  expect_error(
-    run_beast2(
-      input_filename = get_beastier_path("2_4.xml"),
-      rng_seed = 0
-    ),
-    "'rng_seed' should be one NA or one non-zero positive value"
-  )
-
-  expect_silent(
-    run_beast2(
-      get_beastier_path("2_4.xml"),
-      rng_seed = 1
-    )
-  )
-  expect_silent(
-    run_beast2(
-      get_beastier_path("2_4.xml"),
-      rng_seed = NA
-    )
   )
 })
 
