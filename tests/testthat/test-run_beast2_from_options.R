@@ -160,3 +160,20 @@ test_that("BEAST2 freezes when treelog file already exists", {
   )
 
 })
+
+test_that("use", {
+
+  if (!is_beast2_installed()) return()
+
+  fake_win_filename <- file.path(tempdir(), "BEAST2.exe")
+  file.create(fake_win_filename)
+  expect_error(
+    run_beast2_from_options(
+      beast2_options = create_beast2_options(
+        input_filename = get_beastier_path("2_4.xml"),
+        beast2_path = fake_win_filename
+      )
+    ),
+    "Cannot use the Windows executable BEAST2.exe in scripts"
+  )
+})
