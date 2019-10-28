@@ -41,4 +41,5 @@
 #' }
 #' @docType package
 #' @name beastier
+#' @import beautier
 NULL

@@ -24,7 +24,7 @@ test_that("single alignment, equal RNG seed equal results", {
     output_state_filename_1,
     output_state_filename_2
   )
-  testit::assert(!files_exist(output_files))
+  testit::assert(!beautier::files_exist(output_files))
 
   rng_seed <- 42
   stdout_1 <- run_beast2(

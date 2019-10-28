@@ -19,6 +19,8 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
+Depends:
+    beautier (>= 2.3)
 Imports:
     ape,
     assertive,
@@ -29,7 +31,6 @@ Imports:
     stringr,
     xml2
 Suggests:
-    beautier (>= 2.3),
     hunspell,
     knitr,
     rmarkdown,
