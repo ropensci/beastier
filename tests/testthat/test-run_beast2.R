@@ -104,49 +104,6 @@ test_that("detect errors when BEAST2 is installed", {
   )
 })
 
-test_that("BEAST2 does not overwrite the log file specified by the user", {
-
-  skip("Consequence of Issue 50, Issue #50")
-  if (!is_beast2_installed()) return()
-
-  output_log_filename <- tempfile(fileext = ".log")
-
-  # Create files to be detectably overwritten
-  write(x = "log", file = output_log_filename)
-  testit::assert(all(readLines(output_log_filename) == "log"))
-
-  expect_error(
-    run_beast2(
-      input_filename = get_beastier_path("2_4.xml"),
-      output_log_filename = output_log_filename,
-      overwrite = FALSE
-    ),
-    "Will not overwrite 'output_log_filename'"
-  )
-})
-
-test_that("BEAST2 does not overwrite the .trees file specified by the user", {
-
-  skip("Consequence of Issue 50, Issue #50")
-  if (!is_beast2_installed()) return()
-
-  output_trees_filename <- tempfile(fileext = ".trees")
-
-  # Create files to be detectably overwritten
-  write(x = "trees", file = output_trees_filename)
-  testit::assert(all(readLines(output_trees_filename, warn = FALSE) == "trees"))
-
-  expect_error(
-    run_beast2(
-      input_filename = get_beastier_path("2_4.xml"),
-      output_log_filename = tempfile(fileext = ".log"),
-      output_trees_filenames = output_trees_filename,
-      overwrite = FALSE
-    ),
-    "Will not overwrite 'output_trees_filenames'"
-  )
-})
-
 test_that("BEAST2 does not overwrite the .xml.state file specified by user", {
 
   if (!is_beast2_installed()) return()
