@@ -189,44 +189,26 @@ test_that("BEAST2 does not overwrite the .xml.state file specified by user", {
   )
 })
 
-test_that("BEAST2 overwrites log and trees files", {
+test_that("BEAST2 overwrites state file", {
 
-  skip("Not now")
   if (!is_beast2_installed()) return()
 
   input_filename <- get_beastier_path("2_4.xml")
-  output_log_filename <- create_default_log_filename(
-    input_filename = input_filename,
-    beast2_path = get_default_beast2_path(),
-    verbose = FALSE
-  )
-  output_trees_filename <- create_default_trees_filenames(
-    input_filename = input_filename,
-    beast2_path = get_default_beast2_path(),
-    verbose = FALSE
-  )
   output_state_filename <- tempfile(fileext = ".state")
 
   # Create files to be detectably overwritten
-  write(x = "log", file = output_log_filename)
-  write(x = "trees", file = output_trees_filename)
   write(x = "state", file = output_state_filename)
 
-  testit::assert(all(readLines(output_log_filename) == "log"))
-  testit::assert(all(readLines(output_trees_filename, warn = FALSE) == "trees"))
   testit::assert(all(readLines(output_state_filename) == "state"))
 
   expect_silent(
     run_beast2(
       input_filename = input_filename,
-      output_log_filename = output_log_filename,
-      overwrite = TRUE
+      output_state_filename = output_state_filename
     )
   )
 
   # Overwrites all
-  expect_true(all(readLines(output_log_filename) != "log"))
-  expect_true(all(readLines(output_trees_filename, warn = FALSE) != "trees"))
   expect_true(all(readLines(output_state_filename) != "state"))
 })
 
