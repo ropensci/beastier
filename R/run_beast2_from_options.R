@@ -37,7 +37,7 @@ run_beast2_from_options <- function(
   bifs <- beastier::create_beast2_internal_filenames(beast2_options)
 
   if (beast2_options$verbose) {
-    beastier::print_beast2_internal_filenames(bifs, show_exist = FALSE)
+    beastier::print_beast2_internal_filenames(bifs)
   }
   ##############################################################################
   # Check files
