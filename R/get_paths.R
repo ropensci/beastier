@@ -17,7 +17,7 @@
 #'   )
 #'
 #'   expect_equal(length(filenames), 4)
-#'   expect_true(files_exist(filenames))
+#'   expect_true(all(file.exists(filenames)))
 #' @export
 get_beastier_paths <- function(filenames) {
 

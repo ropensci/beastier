@@ -29,7 +29,7 @@ Get the full paths of files in the \code{inst/extdata} folder
   )
 
   expect_equal(length(filenames), 4)
-  expect_true(files_exist(filenames))
+  expect_true(all(file.exists(filenames)))
 }
 \seealso{
 for one file, use \code{\link{get_beastier_path}}
