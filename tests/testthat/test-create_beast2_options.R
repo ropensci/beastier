@@ -22,4 +22,11 @@ test_that("deprecated variables", {
     ),
     "'output_trees_filenames' is deprecated, it is stored in the BEAST2 XML"
   )
+  expect_error(
+    create_beast2_options(
+      beast2_working_dir = "deprecated"
+    ),
+    "'beast2_working_dir' is deprecated"
+  )
+
 })
