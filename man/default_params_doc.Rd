@@ -115,7 +115,7 @@ function. BEAST2 uses this file as input.}
 \item{output_log_filename}{name of the .log file to create}
 
 \item{output_state_filename}{name of the \code{.xml.state} file to create.
-Use \link{create_temp_output_state_filename} to create a temporary
+Use \link{create_temp_state_filename} to create a temporary
 filename with that extension.}
 
 \item{output_trees_filenames}{one or more names for .trees file to create.

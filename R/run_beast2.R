@@ -25,7 +25,7 @@ run_beast2 <- function(
   input_filename,
   output_log_filename = "output_log_filename_is_deprecated",
   output_trees_filenames = "output_trees_filenames_is_deprecated",
-  output_state_filename = create_temp_output_state_filename(),
+  output_state_filename = create_temp_state_filename(),
   rng_seed = NA,
   n_threads = NA,
   use_beagle = FALSE,

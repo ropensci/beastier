@@ -79,7 +79,7 @@
 #' filenames, else an error is thrown. Alignments are sorted alphabetically
 #' by their IDs
 #' @param output_state_filename name of the \code{.xml.state} file to create.
-#' Use \link{create_temp_output_state_filename} to create a temporary
+#' Use \link{create_temp_state_filename} to create a temporary
 #' filename with that extension.
 #' @param overwrite if TRUE: overwrite the \code{.log}
 #' and \code{.trees} files if one of these exists.

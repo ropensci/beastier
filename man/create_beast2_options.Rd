@@ -5,10 +5,10 @@
 \title{Function to create a set of BEAST2 options.}
 \usage{
 create_beast2_options(input_filename = create_temp_input_filename(),
-  output_state_filename = create_temp_output_state_filename(),
-  rng_seed = NA, n_threads = NA, use_beagle = FALSE,
-  overwrite = TRUE, beast2_path = get_default_beast2_path(),
-  verbose = FALSE, output_log_filename = "deprecated",
+  output_state_filename = create_temp_state_filename(), rng_seed = NA,
+  n_threads = NA, use_beagle = FALSE, overwrite = TRUE,
+  beast2_path = get_default_beast2_path(), verbose = FALSE,
+  output_log_filename = "deprecated",
   output_trees_filenames = "deprecated",
   beast2_working_dir = "deprecated")
 }
@@ -19,7 +19,7 @@ Use \link{create_temp_input_filename} to create a temporary
 filename with that extension.}
 
 \item{output_state_filename}{name of the \code{.xml.state} file to create.
-Use \link{create_temp_output_state_filename} to create a temporary
+Use \link{create_temp_state_filename} to create a temporary
 filename with that extension.}
 
 \item{rng_seed}{the random number generator seed of the BEAST2 run.
