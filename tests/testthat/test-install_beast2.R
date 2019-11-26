@@ -3,6 +3,8 @@ context("install_beast2")
 test_that("install at non-standard location", {
 
   if (!is_on_ci()) return()
+  if (rappdirs::app_dir()$os == "mac") return()
+
 
   folder_name <- tempdir()
   beast_jar_path <- file.path(folder_name, "beast", "lib", "launcher.jar")
@@ -18,6 +20,7 @@ test_that("install at non-standard location", {
 test_that("install twice must throw", {
 
   if (!is_on_ci()) return()
+  if (rappdirs::app_dir()$os == "mac") return()
 
   folder_name <- tempdir()
   if (!is_beast2_installed(folder_name)) {
