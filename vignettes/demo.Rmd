@@ -18,6 +18,8 @@ knitr::opts_chunk$set(
 
 ## Introduction
 
+![](beastier_logo.png)
+
 This vignette demonstrates how to use `beastier`.
 
 First, load the library:
@@ -26,27 +28,52 @@ First, load the library:
 library(beastier)
 ```
 
-Create BEAST2 options:
+Also, we'll load the `testthat` library, to verify the statements in this vignette:
 
+```{r load_testthat}
+library(testthat)
+```
+
+To run BEAST2, we need to create a BEAST2 options structure`. We will use
+a supplied BEAST2 XML file. For the rest, we'll use the default options:
 
 ```{r}
 beast2_options <- create_beast2_options(
   input_filename = get_beastier_path("2_4.xml")
 )
+names(beast2_options)
 ```
 
-Running:
+
+Before running BEAST2, the BEAST2 input file must exist,
+and we expect no output file to be created just yet:
+
+```{r}
+expect_true(file.exists(beast2_options$input_filename))
+expect_false(file.exists(beast2_options$output_state_filename))
+```
+
+We can run `beastier` now, if BEAST2 is installed. Because BEAST2 needs
+to be installed by the user, this vignette checks if it is installed:
 
 ```{r}
 if (is_beast2_installed()) {
-
-  library(testthat)
-  
-  expect_false(file.exists(beast2_options$output_state_filename))
-
   output <- run_beast2_from_options(beast2_options)
+}
+```
 
-  expect_true(length(output) > 40)
+If `beastier` has run BEAST2, the MCMC's final state will be saved to a file: 
+
+```{r}
+if (is_beast2_installed()) {
   expect_true(file.exists(beast2_options$output_state_filename))
+}
+```
+
+If `beastier` has run BEAST2, the BEAST2 output can be shown:
+
+```{r}
+if (is_beast2_installed()) {
+  print(output)
 }
 ```
