@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.1.1 (2019-12-02)
+
+### NEW FEATURES
+
+  * Add vignettes
+  
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.1 (2019-10-27)
 
 ### NEW FEATURES
