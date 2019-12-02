@@ -16,7 +16,6 @@ r_github_packages:
   - jimhester/lintr
   - MangoTheCat/goodpractice
   - ropensci/spelling
-  - ropensci/beautier
 
 before_install:
   # Vignettes
