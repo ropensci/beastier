@@ -7,14 +7,14 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![DOI](https://zenodo.org/badge/115617629.svg)](https://zenodo.org/badge/latestdoi/115617629)
 
-Branch   |[![Travis CI logo](pics/TravisCI.png)](https://travis-ci.org)                                                         |[![AppVeyor logo](pics/AppVeyor.png)](https://www.appveyor.com)                                                                                                                           |[![Codecov logo](pics/Codecov.png)](https://www.codecov.io)
+Branch   |[![Travis CI logo](man/figures/TravisCI.png)](https://travis-ci.org)                                                  |[![AppVeyor logo](man/figures/AppVeyor.png)](https://www.appveyor.com)                                                                                                                    |[![Codecov logo](man/figures/Codecov.png)](https://www.codecov.io)
 ---------|----------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------
 `master` |[![Build Status](https://travis-ci.org/ropensci/beastier.svg?branch=master)](https://travis-ci.org/ropensci/beastier) |[![Build status](https://ci.appveyor.com/api/projects/status/ralex9sdnnxlwbgx/branch/master?svg=true)](https://ci.appveyor.com/project/richelbilderbeek/beastier-on-windows/branch/master)|[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=master)](https://codecov.io/github/ropensci/beastier/branch/master)
 `develop`|[![Build Status](https://travis-ci.org/ropensci/beastier.svg?branch=develop)](https://travis-ci.org/ropensci/beastier)|None                                                                                                                                                                                      |[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=develop)](https://codecov.io/github/ropensci/beastier/branch/develop)
 
 `beastier` is an R package to run BEAST2.
 
-![beastier logo](pics/beastier_logo.png)
+![beastier logo](man/figures/beastier_logo.png)
 
 `beastier` is part of the [`babette`](https://github.com/ropensci/babette) package suite:
 
