@@ -2,6 +2,25 @@
 
 Newest versions at top.
 
+## beastier 2.1.2 (2020-01-06)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Documentation at [rOpenSci](https://docs.ropensci.org/beastier) to
+    shows pictures
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.1.1 (2019-12-02)
 
 ### NEW FEATURES
