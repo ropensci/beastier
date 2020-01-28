@@ -19,7 +19,6 @@ r_github_packages:
   - ropensci/spelling
 
 before_install:
-  # Vignettes
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo tlmgr update --self; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo tlmgr install inconsolata; fi
 
