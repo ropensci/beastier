@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.1.3 (unreleased)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Enable MacOS build again
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.1.2 (2020-01-06)
 
 ### NEW FEATURES
