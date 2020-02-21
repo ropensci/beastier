@@ -77,7 +77,7 @@ run_beast2_from_options <- function(
   )
 
   if (beast2_options$verbose == TRUE) {
-    message(paste("cmd:", paste0(cmd, collapse = " ")))
+    print(paste("cmd:", paste0(cmd, collapse = " ")))
   }
 
   # Create the folder to hold the file, without warning if it's already present
