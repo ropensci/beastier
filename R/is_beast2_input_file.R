@@ -68,7 +68,7 @@ is_beast2_input_file <- function(
     )
   }
   if (verbose) {
-    print(output)
+    message(output)
   }
 
   if (show_warnings == TRUE &&
