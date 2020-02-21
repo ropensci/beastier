@@ -4,8 +4,10 @@
 \alias{is_beast2_installed}
 \title{Checks if BEAST2 is installed}
 \usage{
-is_beast2_installed(folder_name = get_default_beast2_folder(),
-  os = rappdirs::app_dir()$os)
+is_beast2_installed(
+  folder_name = get_default_beast2_folder(),
+  os = rappdirs::app_dir()$os
+)
 }
 \arguments{
 \item{folder_name}{name of the folder where the BEAST2 files are put.

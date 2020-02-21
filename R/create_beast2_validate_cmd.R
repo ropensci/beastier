@@ -58,7 +58,7 @@ create_beast2_validate_cmd_jar <- function(
     get_default_java_path(),
     "-cp",
     paste0("\"", beast2_jar_path, "\""),
-    get_beast2_main_class_name(), # nolint beastier function
+    beastier::get_beast2_main_class_name(),
     "-validate",
     paste0("\"", input_filename, "\"")
   )

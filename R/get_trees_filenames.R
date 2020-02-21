@@ -18,7 +18,7 @@
 #' @export
 get_trees_filenames <- function(input_filename) {
 
-  alignment_ids <- get_alignment_ids_from_xml_filename( # nolint beastier function
+  alignment_ids <- beastier::get_alignment_ids_from_xml_filename(
     xml_filename = input_filename
   )
   paste0(alignment_ids, ".trees")

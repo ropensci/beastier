@@ -16,8 +16,8 @@ a vector of duplicate IDs, will be empty if all IDs are unique
 Find duplicate \code{RealParameter} IDs
 }
 \examples{
-  line_1 <- "<parameter id=\\"RealParameter.1\\" ...</parameter>"
-  line_2 <- "<parameter id=\\"RealParameter.2\\" ...</parameter>"
+  line_1 <- "<parameter id=\"RealParameter.1\" ...</parameter>"
+  line_2 <- "<parameter id=\"RealParameter.2\" ...</parameter>"
   testit::assert(
     length(get_duplicate_param_ids(c(line_1, line_2))) == 0)
   testit::assert(

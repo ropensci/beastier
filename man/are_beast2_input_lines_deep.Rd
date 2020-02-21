@@ -5,8 +5,11 @@
 \title{Would these lines of text, when written to a file,
   result in a valid BEAST2 input file?}
 \usage{
-are_beast2_input_lines_deep(lines, verbose = FALSE,
-  beast2_path = get_default_beast2_path())
+are_beast2_input_lines_deep(
+  lines,
+  verbose = FALSE,
+  beast2_path = get_default_beast2_path()
+)
 }
 \arguments{
 \item{lines}{lines of text}

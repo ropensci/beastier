@@ -4,8 +4,12 @@
 \alias{is_beast2_input_file}
 \title{Is a file a valid BEAST2 input file?}
 \usage{
-is_beast2_input_file(filename, show_warnings = FALSE, verbose = FALSE,
-  beast2_path = get_default_beast2_path())
+is_beast2_input_file(
+  filename,
+  show_warnings = FALSE,
+  verbose = FALSE,
+  beast2_path = get_default_beast2_path()
+)
 }
 \arguments{
 \item{filename}{name of the BEAST2 XML input file}

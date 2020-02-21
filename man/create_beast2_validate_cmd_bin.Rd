@@ -5,8 +5,10 @@
 \title{Creates the terminal command to validate a BEAST2 input file
 using a call to the \code{launcher.jar} file}
 \usage{
-create_beast2_validate_cmd_bin(input_filename,
-  beast2_bin_path = get_default_beast2_bin_path())
+create_beast2_validate_cmd_bin(
+  input_filename,
+  beast2_bin_path = get_default_beast2_bin_path()
+)
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file.

@@ -44,7 +44,7 @@ run_beast2_from_options <- function(
   ##############################################################################
   beastier::check_input_filename(bifs$input_filename_full)
   beastier::check_beast2_path(beast2_options$beast2_path)
-  check_beast2_options_do_not_overwrite_existing_files( # nolint beastier function
+  beastier::check_beast2_options_do_not_overwrite_existing_files(
     beast2_options = beast2_options,
     beast2_internal_filenames = bifs
   )

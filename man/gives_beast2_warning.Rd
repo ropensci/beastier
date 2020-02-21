@@ -5,8 +5,11 @@
 \title{Determines if BEAST2 issues a warning
 when using the BEAST2 XML input file}
 \usage{
-gives_beast2_warning(filename, verbose = FALSE,
-  beast2_path = get_default_beast2_path())
+gives_beast2_warning(
+  filename,
+  verbose = FALSE,
+  beast2_path = get_default_beast2_path()
+)
 }
 \arguments{
 \item{filename}{name of the BEAST2 XML input file}

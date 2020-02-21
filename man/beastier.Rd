@@ -3,7 +3,6 @@
 \docType{package}
 \name{beastier}
 \alias{beastier}
-\alias{beastier-package}
 \title{\code{beastier}: A package to call BEAST2.}
 \description{
 \code{beastier} allows to call BEAST2, a popular

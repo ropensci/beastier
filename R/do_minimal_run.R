@@ -1,7 +1,6 @@
 #' Do a minimal BEAST2 run
 #'
 #' To achieve this, \link{run_beast2_from_options} is called.
-#' @inheritParams default_params_doc
 #' @return The text sent to \code{STDOUT} and \code{STDERR}.
 #'   It will create the files with name \code{output_state_filename}
 #' @export

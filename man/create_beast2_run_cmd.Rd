@@ -4,9 +4,15 @@
 \alias{create_beast2_run_cmd}
 \title{Creates the terminal command to run BEAST2}
 \usage{
-create_beast2_run_cmd(input_filename, output_state_filename,
-  rng_seed = NA, n_threads = NA, use_beagle = FALSE,
-  overwrite = FALSE, beast2_path = get_default_beast2_path())
+create_beast2_run_cmd(
+  input_filename,
+  output_state_filename,
+  rng_seed = NA,
+  n_threads = NA,
+  use_beagle = FALSE,
+  overwrite = FALSE,
+  beast2_path = get_default_beast2_path()
+)
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file.

@@ -4,8 +4,10 @@
 \alias{upgrade_beast2}
 \title{Upgrade BEAST2.}
 \usage{
-upgrade_beast2(folder_name = rappdirs::user_data_dir(),
-  os = rappdirs::app_dir()$os)
+upgrade_beast2(
+  folder_name = rappdirs::user_data_dir(),
+  os = rappdirs::app_dir()$os
+)
 }
 \arguments{
 \item{folder_name}{name of the folder where the BEAST2 files will

@@ -4,13 +4,19 @@
 \alias{create_beast2_options}
 \title{Function to create a set of BEAST2 options.}
 \usage{
-create_beast2_options(input_filename = create_temp_input_filename(),
-  output_state_filename = create_temp_state_filename(), rng_seed = NA,
-  n_threads = NA, use_beagle = FALSE, overwrite = TRUE,
-  beast2_path = get_default_beast2_path(), verbose = FALSE,
+create_beast2_options(
+  input_filename = create_temp_input_filename(),
+  output_state_filename = create_temp_state_filename(),
+  rng_seed = NA,
+  n_threads = NA,
+  use_beagle = FALSE,
+  overwrite = TRUE,
+  beast2_path = get_default_beast2_path(),
+  verbose = FALSE,
   output_log_filename = "deprecated",
   output_trees_filenames = "deprecated",
-  beast2_working_dir = "deprecated")
+  beast2_working_dir = "deprecated"
+)
 }
 \arguments{
 \item{input_filename}{the name of a BEAST2 input XML file.

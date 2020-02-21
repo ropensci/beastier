@@ -4,8 +4,10 @@
 \alias{uninstall_beast2}
 \title{Uninstall BEAST2}
 \usage{
-uninstall_beast2(folder_name = rappdirs::user_data_dir(),
-  os = rappdirs::app_dir()$os)
+uninstall_beast2(
+  folder_name = rappdirs::user_data_dir(),
+  os = rappdirs::app_dir()$os
+)
 }
 \arguments{
 \item{folder_name}{name of the folder where the BEAST2 files are installed.

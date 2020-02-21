@@ -4,8 +4,10 @@
 \alias{get_default_beast2_bin_path}
 \title{Get the default BEAST2 binary file (\code{beast}, that is) path}
 \usage{
-get_default_beast2_bin_path(beast2_folder = get_default_beast2_folder(),
-  os = rappdirs::app_dir()$os)
+get_default_beast2_bin_path(
+  beast2_folder = get_default_beast2_folder(),
+  os = rappdirs::app_dir()$os
+)
 }
 \arguments{
 \item{beast2_folder}{the folder where the BEAST2 is installed.

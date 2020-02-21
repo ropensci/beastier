@@ -4,8 +4,10 @@
 \alias{get_beast2_example_filename}
 \title{Get the full path of a BEAST2 example file}
 \usage{
-get_beast2_example_filename(filename,
-  beast2_folder = get_default_beast2_folder())
+get_beast2_example_filename(
+  filename,
+  beast2_folder = get_default_beast2_folder()
+)
 }
 \arguments{
 \item{filename}{name of the BEAST2 example file. This should exclude

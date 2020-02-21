@@ -4,8 +4,7 @@
 \alias{create_beast2_version_cmd}
 \title{Creates the terminal command to version a BEAST2 input file}
 \usage{
-
-  create_beast2_version_cmd(beast2_path = beastier::get_default_beast2_path())
+create_beast2_version_cmd(beast2_path = beastier::get_default_beast2_path())
 }
 \arguments{
 \item{beast2_path}{name of either a BEAST2 binary file

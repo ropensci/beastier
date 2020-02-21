@@ -6,25 +6,25 @@
 #' @seealso Use \link{create_beast2_options} to create a valid
 #'   BEAST2 options object
 #' @examples
-#'  library(testthat)
+#' library(testthat)
 #'
-#'  expect_silent(check_beast2_options(create_beast2_options()))
+#' expect_silent(check_beast2_options(create_beast2_options()))
 #'
-#'  # Must stop on nonsense
-#'  expect_error(check_beast2_options(beast2_options = "nonsense"))
-#'  expect_error(check_beast2_options(beast2_options = NULL))
-#'  expect_error(check_beast2_options(beast2_options = NA))
+#' # Must stop on nonsense
+#' expect_error(check_beast2_options("nonsense"))
+#' expect_error(check_beast2_options(NULL))
+#' expect_error(check_beast2_options(NA))
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_beast2_options <- function(
   beast2_options
 ) {
-  check_beast2_options_names(beast2_options) # nolint beastier function
-  check_beast2_options_data_types(beast2_options) # nolint beastier function
+  beastier::check_beast2_options_names(beast2_options)
+  beastier::check_beast2_options_data_types(beast2_options)
   # Do not check if the BEAST2 path already/still exist.
   # It shouldn't be checked by here, only when actually running BEAST2.
   # By doing so, data with beast2_options can be analysed on different computers
-  check_beast2_options_filenames_differ(beast2_options) # nolint beastier function
+  beastier::check_beast2_options_filenames_differ(beast2_options)
 }
 
 #' Check if the \code{beast2_options}, which is a list,
