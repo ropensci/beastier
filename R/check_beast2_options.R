@@ -36,7 +36,7 @@ check_beast2_options <- function(
 #' @seealso Use \link{check_beast2_options} to check
 #'   the entire \code{beast2_options} object
 #' @author Richèl J.C. Bilderbeek
-#' @noRd
+#' @export
 check_beast2_options_names <- function( # nolint long function name indeed, which is fine for an internal function
   beast2_options
 ) {
@@ -65,7 +65,7 @@ check_beast2_options_names <- function( # nolint long function name indeed, whic
 #' @seealso Use \link{check_beast2_options} to check
 #'   the entire \code{beast2_options} object
 #' @author Richèl J.C. Bilderbeek
-#' @noRd
+#' @export
 check_beast2_options_data_types <- function( # nolint long function name indeed, which is fine for an internal function
   beast2_options
 ) {
