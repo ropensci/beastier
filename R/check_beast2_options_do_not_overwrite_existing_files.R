@@ -3,7 +3,7 @@
 #'
 #' Will \link{stop} if a file is threatened to be overwritten
 #' @author Richèl J.C. Bilderbeek
-#' @noRd
+#' @export
 check_beast2_options_do_not_overwrite_existing_files <- function( # nolint indeed a long function name, which is fine for internal functions
   beast2_options,
   beast2_internal_filenames
