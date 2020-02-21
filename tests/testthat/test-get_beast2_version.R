@@ -1,7 +1,13 @@
 test_that("use", {
   if (!is_beast2_installed()) return()
 
-  expect_equal(get_beast2_version(), "2.6.0")
+  # Versions mismatch: the binary from
+  # https://github.com/CompEvol/beast2/releases/download/v2.6.0/BEAST.v2.6.0.Linux.tgz # nolint indeed long URL
+  # (notice the v2.6.0) really returns 'v2.6.1' upon a ./beast/bin/beast -version
+  expect_true(
+    get_beast2_version() == "2.6.0" ||
+      get_beast2_version() == "2.6.1"
+  )
 })
 
 test_that("abuse", {
