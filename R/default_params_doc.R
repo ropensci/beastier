@@ -90,6 +90,18 @@
 #'   \item{the \code{.log} file created by BEAST2 exists}
 #'   \item{the \code{.trees} files created by BEAST2 exist}
 #' }
+#' @param rename_fun a function to rename a filename,
+#' as can be checked by \link{check_rename_fun}. This function should
+#' have one argument, which will be a filename or \link{NA}. The
+#' function should \link{return} one filename (when passed one filename) or
+#' one \link{NA} (when passed one \link{NA}).
+#' Example rename functions are:
+#' \itemize{
+#'   \item \link{get_remove_dir_fun} function that removes the directory
+#'     paths from the filenames, in effect turning these into local files
+#'   \item \link{get_replace_dir_fun} function that replaces the directory
+#'     paths from the filenames
+#' }
 #' @param rng_seed the random number generator seed of the BEAST2 run.
 #' Must be a non-zero positive integer value or \link{NA}.
 #' If \code{rng_seed} is \link{NA}, BEAST2 will pick a random seed
@@ -131,6 +143,7 @@ default_params_doc <- function(
   output_state_filename,
   output_trees_filenames,
   overwrite,
+  rename_fun,
   rng_seed,
   sequence_length,
   site_model, site_models,

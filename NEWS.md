@@ -6,7 +6,7 @@ Newest versions at top.
 
 ### NEW FEATURES
 
-  * None
+  * Add `rename_beast2_options_filenames`
 
 ### MINOR IMPROVEMENTS
 
