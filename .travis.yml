@@ -13,7 +13,7 @@ matrix:
     osx_image: xcode9.2
 
 r_github_packages:
-  - richelbilderbeek/beautier@develop
+  - richelbilderbeek/beautier
   - jimhester/covr
   - jimhester/lintr
   - MangoTheCat/goodpractice
