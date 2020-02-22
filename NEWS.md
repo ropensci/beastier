@@ -7,6 +7,7 @@ Newest versions at top.
 ### NEW FEATURES
 
   * Add `rename_beast2_options_filenames`
+  * Add `get_beast2_options_filenames`
 
 ### MINOR IMPROVEMENTS
 
