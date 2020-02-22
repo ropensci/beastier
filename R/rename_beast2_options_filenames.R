@@ -1,7 +1,7 @@
 #' Rename the filenames in the BEAST2 options
 #' @inheritParams default_params_doc
 #' @export
-rename_beast2_options_filenames <- function(
+rename_beast2_options_filenames <- function( # nolint sure, this is a long function name
   beast2_options,
   rename_fun
 ) {

@@ -11,7 +11,10 @@ test_that("replace dir from local to folder", {
   )
 
   expect_equal(beast2_options$input_filename, "/home/john/my.fas")
-  expect_equal(beast2_options$output_state_filename, "/home/john/my_state.xml.state")
+  expect_equal(
+    beast2_options$output_state_filename,
+    "/home/john/my_state.xml.state"
+  )
 })
 
 test_that("rename dir from folder to folder", {
@@ -26,7 +29,10 @@ test_that("rename dir from folder to folder", {
   )
 
   expect_equal(beast2_options$input_filename, "/home/doe/my.fas")
-  expect_equal(beast2_options$output_state_filename, "/home/doe/my_state.xml.state")
+  expect_equal(
+    beast2_options$output_state_filename,
+    "/home/doe/my_state.xml.state"
+  )
 })
 
 
