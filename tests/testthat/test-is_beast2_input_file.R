@@ -1,5 +1,3 @@
-context("is_beast2_input_file")
-
 test_that("beast2_example_output.log is not a valid BEAST2 input file", {
 
   if (!is_on_ci()) return()
@@ -138,4 +136,29 @@ test_that("detect errors", {
       show_warnings = FALSE
     )
   )
+})
+
+
+
+
+test_that("Check use of tilde in filenames", {
+
+  if (!is_on_ci()) return()
+  if (!is_beast2_installed()) return()
+
+  skip("Issue 53. Issue #53")
+
+  # Copy a file to the home folder, must be deleted in the end
+  full_path <- get_beastier_path("2_4.xml")
+  relative_path <- "~/2_4.xml"
+  file.copy(from = full_path, to = relative_path)
+
+  # Both files are identical
+  expect_equivalent(readLines(full_path), readLines(relative_path))
+
+  # The file with the full path must be valid
+  expect_true(is_beast2_input_file(full_path))
+
+  # The file with the relative path must be valid as well then
+  expect_true(is_beast2_input_file("~/2_4.xml"))
 })

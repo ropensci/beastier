@@ -1,5 +1,3 @@
-context("test-run_beast2_from_options")
-
 test_that("use", {
 
   if (!is_beast2_installed()) return()
@@ -175,5 +173,26 @@ test_that("use", {
       )
     ),
     "Cannot use the Windows executable BEAST2.exe in scripts"
+  )
+})
+
+test_that("use tildes instead of full path", {
+
+  if (!is_beast2_installed()) return()
+
+  skip("Issue 53. Issue #53")
+
+  # Copy a file to the home folder, must be deleted in the end
+  file.copy(from = get_beastier_path("2_4.xml"), "~/2_4.xml")
+  expect_true(file.exists("~/2_4.xml"))
+
+  expect_silent(
+    run_beast2_from_options(
+      create_beast2_options(
+        input_filename = "~/2_4.xml",
+        output_state_filename = "~/output.xml",
+
+      )
+    )
   )
 })
