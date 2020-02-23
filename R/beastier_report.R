@@ -5,7 +5,6 @@ beastier_report <- function() {
   kat("***********")
   kat("* beastier *")
   kat("***********")
-  kat(paste0("Can run beastier: ", beastier::can_run_beastier()))
   kat(paste0("OS: ", rappdirs::app_dir()$os))
   kat("****************")
   kat("* Dependencies *")
