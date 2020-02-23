@@ -46,9 +46,7 @@ after_success:
   # Goodpractice
   - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$TRAVIS_R_VERSION_STRING" == "release" ]; then travis_wait 60 Rscript -e 'goodpractice::gp()'; fi
   # No local files created
-  - rm -rf beastier.Rcheck
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then egrep -R "\"~" --include={*.R,*.Rmd}; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then if [[ $(egrep -R "\"~" --include={*.R,*.Rmd}) ]]; then echo "Local file created"; exit 1; fi; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/check_no_local_files; fi
   - # Test if beastier can indeed run in parallel
   - ./scripts/test_parallel
   - # Build for CRAN, without BEAST2 installed
