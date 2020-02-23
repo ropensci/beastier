@@ -18,9 +18,11 @@ function should \link{return} one filename (when passed one filename) or
 one \link{NA} (when passed one \link{NA}).
 Example rename functions are:
 \itemize{
-  \item \link[beautier]{get_remove_dir_fun} function that removes the directory
+  \item \link[beautier]{get_remove_dir_fun} get a function
+    that removes the directory
     paths from the filenames, in effect turning these into local files
-  \item \link[beautier]{get_replace_dir_fun} function that replaces the directory
+  \item \link[beautier]{get_replace_dir_fun} get a function
+    that replaces the directory
     paths from the filenames
   \item \link[beautier]{get_remove_hex_fun} get a function that
     removes the hex string from filenames.
