@@ -138,15 +138,10 @@ test_that("detect errors", {
   )
 })
 
-
-
-
 test_that("Check use of tilde in filenames", {
 
   if (!is_on_ci()) return()
   if (!is_beast2_installed()) return()
-
-  skip("Issue 53. Issue #53")
 
   # Copy a file to the home folder, must be deleted in the end
   full_path <- get_beastier_path("2_4.xml")
@@ -160,5 +155,7 @@ test_that("Check use of tilde in filenames", {
   expect_true(is_beast2_input_file(full_path))
 
   # The file with the relative path must be valid as well then
-  expect_true(is_beast2_input_file("~/2_4.xml"))
+  expect_true(is_beast2_input_file(relative_path))
+
+  file.remove(relative_path)
 })

@@ -67,8 +67,8 @@ run_beast2_from_options <- function(
   testit::assert(length(beast2_options$beast2_path) == 1)
 
   cmd <- beastier::create_beast2_run_cmd(
-    input_filename = bifs$input_filename_full,
-    output_state_filename = bifs$output_state_filename_full,
+    input_filename = path.expand(bifs$input_filename_full),
+    output_state_filename = path.expand(bifs$output_state_filename_full),
     rng_seed = beast2_options$rng_seed,
     n_threads = beast2_options$n_threads,
     use_beagle = beast2_options$use_beagle,

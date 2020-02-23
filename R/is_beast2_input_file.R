@@ -44,7 +44,7 @@ is_beast2_input_file <- function(
   testit::assert(length(filename) == 1)
   testit::assert(length(beast2_path) == 1)
   cmds <- beastier::create_beast2_validate_cmd(
-    input_filename = filename,
+    input_filename = path.expand(filename),
     beast2_path = beast2_path
   )
   beautier::check_file_exists(cmds[1], "cmds[1]")

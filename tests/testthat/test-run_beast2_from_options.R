@@ -180,19 +180,29 @@ test_that("use tildes instead of full path", {
 
   if (!is_beast2_installed()) return()
 
-  skip("Issue 53. Issue #53")
-
   # Copy a file to the home folder, must be deleted in the end
-  file.copy(from = get_beastier_path("2_4.xml"), "~/2_4.xml")
-  expect_true(file.exists("~/2_4.xml"))
+  full_path <- get_beastier_path("2_4.xml")
+  relative_in_path <- "~/2_4.xml"
+  file.copy(from = full_path, to = relative_in_path)
 
+  # Both files are identical
+  expect_equivalent(readLines(full_path), readLines(relative_in_path))
+  # Also the relative file is a good BEAST2 file
+  expect_true(is_beast2_input_file(relative_in_path))
+
+  relative_out_path <- "~/output.xml"
   expect_silent(
     run_beast2_from_options(
       create_beast2_options(
-        input_filename = "~/2_4.xml",
-        output_state_filename = "~/output.xml",
+        input_filename = relative_in_path,
+        output_state_filename = relative_out_path,
 
       )
     )
   )
+
+  expect_true(file.exists(relative_out_path))
+
+  file.remove(relative_in_path)
+  file.remove(relative_out_path)
 })
