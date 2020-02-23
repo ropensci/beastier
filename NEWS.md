@@ -8,6 +8,7 @@ Newest versions at top.
 
   * Add `rename_beast2_options_filenames`
   * Add `get_beast2_options_filenames`
+  * Allow tildes in file paths, for example `~/beast2.xml`
 
 ### MINOR IMPROVEMENTS
 
