@@ -11,6 +11,15 @@ check_beast2_options_do_not_overwrite_existing_files(
   beast2_internal_filenames
 )
 }
+\arguments{
+\item{beast2_options}{a set of BEAST2 options,
+that are the R equivalent of the BEAST2 command-line options,
+as can be created by \link{create_beast2_options}}
+
+\item{beast2_internal_filenames}{a list of internally
+used BEAST2 filenames,
+as created by \link{create_beast2_internal_filenames}}
+}
 \description{
 Will \link{stop} if a file is threatened to be overwritten
 }
