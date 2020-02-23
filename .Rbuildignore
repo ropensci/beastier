@@ -5,6 +5,7 @@
 ^.lintr$
 ^install_beast2$
 ^install_beast2\.md$
+^doc$
 ^pics$
 ^scripts$
 ^code_of_conduct\.md$
