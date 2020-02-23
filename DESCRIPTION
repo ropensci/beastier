@@ -19,11 +19,10 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.0.2
-Depends:
-    beautier (>= 2.3.5)
 Imports:
     ape,
     assertive,
+    beautier (>= 2.3.5),
     phangorn,
     rappdirs,
     remotes,
