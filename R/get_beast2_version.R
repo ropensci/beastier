@@ -28,40 +28,13 @@ get_beast2_version <- function(
   beautier::check_file_exists(cmds[1], "cmds[1]")
   output <- NA
 
-  tryCatch({
-      output <- system2(
-        cmds[1],
-        args = cmds[-1],
-        stdout = TRUE,
-        stderr = TRUE
-      )
-    },
-    warning = function(e) {
-      stop(
-        "Unknown warning emitted", "\n",
-        "\n",
-        "Warning message: ", e$message, "\n",
-        "\n",
-        "Java version: ", get_java_version(), "\n",
-        "\n",
-        "Tip: try running the command indicated by the warning message ",
-          "in a terminal. \n",
-        "\n",
-        "Known problems: \n",
-        "\n",
-        "'no main manifest attribute': \n",
-        "  * call 'get_beast2_version' with 'get_default_beast2_bin_path()':\n",
-        "  \n",
-        "    get_beast2_version(get_default_beast2_bin_path()) \n",
-        "  \n",
-        "  * upgrade to a newer BEAST2 version: \n",
-        "  \n",
-        "    upgrade_beast2() \n",
-        "  \n",
-        "  * downgrade to an older Java version"
-      )
-    }
+  output <- system2(
+    cmds[1],
+    args = cmds[-1],
+    stdout = TRUE,
+    stderr = TRUE
   )
+
   # When doing
   #
   # ./beast -version                                                            # nolint this is not commented code: it is proper documentation
