@@ -96,8 +96,9 @@ run_beast2_from_options <- function(
     stdout = TRUE,
     stderr = TRUE
   )
-  testthat::expect_equal(
-    length(output), 1,
+  # If the output is only 1 line, this will probably be an error message
+  testthat::expect_true(
+    length(output) != 1,
     info = paste0(
       "Command '", paste0(cmd, collapse = " "), "' failed ",
       "with error '", output, "'"
