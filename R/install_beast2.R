@@ -52,21 +52,24 @@ install_beast2 <- function(
     destfile = local_path
   )
   beautier::check_file_exists(local_path, "local_path")
+
+  # Linux uses a tar file, Windows uses a zip file
+  extract_function_linux <- pryr::partial(
+    utils::untar,
+    tarfile = local_path,
+    exdir = path.expand(folder_name),
+    verbose = verbose
+  )
+  extract_function_win <- pryr::partial(
+    utils::unzip,
+    zipfile = local_path,
+    exdir = path.expand(folder_name)
+  )
+  extract_function <- extract_function_win
   if (os != "win") {
-    # Linux has a tar file
-    utils::untar(
-      tarfile = local_path,
-      exdir = path.expand(folder_name),
-      verbose = verbose
-    )
-  } else {
-    # Windows has a zip file
-    testit::assert(os == "win")
-    utils::unzip(
-      zipfile = local_path,
-      exdir = path.expand(folder_name)
-    )
+    extract_function <- extract_function_linux
   }
+  extract_function()
   beautier::check_file_exists(jar_file_path, "BEAST2 .jar path")
   if (verbose == TRUE) {
     print(paste("BEAST2 installed at", jar_file_path))

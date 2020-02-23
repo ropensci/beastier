@@ -24,6 +24,7 @@ Imports:
     assertive,
     beautier (>= 2.3.5),
     phangorn,
+    pryr,
     rappdirs,
     remotes,
     rJava,
