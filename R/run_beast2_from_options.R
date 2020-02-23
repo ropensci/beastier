@@ -96,25 +96,27 @@ run_beast2_from_options <- function(
     stdout = TRUE,
     stderr = TRUE
   )
-  if (length(output) == 1) {
-    stop(
+  testthat::expect_equal(
+    length(output), 1,
+    info = paste0(
       "Command '", paste0(cmd, collapse = " "), "' failed ",
       "with error '", output, "'"
     )
-  }
+  )
 
   ##############################################################################
   # The files as created by BEAST2
   ##############################################################################
-  if (!file.exists(bifs$output_state_filename_full)) {
-    stop(
+  testthat::expect_true(
+    file.exists(bifs$output_state_filename_full),
+    info = paste0(
       "BEAST2 state file not created. \n",
       "Relative path, from 'beast2_options': '",
         beast2_options$output_state_filename, "'\n",
       "Full path: '", bifs$output_state_filename_full, "'\n",
       "Maybe no permission to write at that location?"
     )
-  }
+  )
 
   output
 }

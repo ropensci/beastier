@@ -41,6 +41,8 @@
 #' }
 #' @docType package
 #' @name beastier
+#'
+#' @importFrom beautier check_rename_fun
 #' @importFrom beautier create_alpha_param
 #' @importFrom beautier create_bd_tree_prior
 #' @importFrom beautier create_beast2_input
@@ -155,4 +157,7 @@
 #' @importFrom beautier create_uniform_distr
 #' @importFrom beautier create_xml_declaration
 #' @importFrom beautier create_yule_tree_prior
+#' @importFrom beautier get_remove_dir_fun
+#' @importFrom beautier get_remove_hex_fun
+#' @importFrom beautier get_replace_dir_fun
 NULL
