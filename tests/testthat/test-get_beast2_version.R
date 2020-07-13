@@ -5,9 +5,9 @@ test_that("use", {
   # https://github.com/CompEvol/beast2/releases/download/v2.6.0/BEAST.v2.6.0.Linux.tgz # nolint indeed long URL
   # (notice the v2.6.0) really returns 'v2.6.1'
   # upon a ./beast/bin/beast -version
-  expect_true(
-    get_beast2_version() == "2.6.0" ||
-      get_beast2_version() == "2.6.1"
+  expect_match(
+    get_beast2_version(),
+    "2\\.6\\.[[:digit:]]"
   )
 })
 
