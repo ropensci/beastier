@@ -58,15 +58,15 @@ Pull Requests should follow the same guidelines as 'Submitting code'.
 
 ## git usage
 
-To get started working on `babette` do:
+To get started working on `beastier` do:
 
 ```
-git clone https://github.com/ropensci/babette
+git clone https://github.com/ropensci/beastier
 ```
 
 Development is done on the `develop` branch. 
 To download and checkout the `develop` branch, 
-first go into the `beautier` folder (`cd babette`), then do:
+first go into the `beastier` folder (`cd beastier`), then do:
 
 ```
 git checkout develop

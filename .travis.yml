@@ -10,7 +10,6 @@ matrix:
     os: linux
   - r: release
     os: osx
-    #osx_image: xcode9.2
 
 r_github_packages:
   - richelbilderbeek/beautier
@@ -31,7 +30,7 @@ before_script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then R CMD javareconf; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then R --quiet -e 'install.packages("rJava", type="source", repos="http://cran.us.r-project.org")'; fi
   # Install BEAST2. Note: beastier must work without BEAST2 installed as well
-  - ./scripts/install_beast2
+  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$TRAVIS_R_VERSION_STRING" == "devel" ]; then ./scripts/install_beast2; fi
   # proselint
   - if [[ "$TRAVIS_OS_NAME" != "osx" ]]; then sudo pip install proselint; fi
 
