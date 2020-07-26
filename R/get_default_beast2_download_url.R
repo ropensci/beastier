@@ -27,9 +27,13 @@ get_default_beast2_download_url <- function(# nolint internal functions may be l
   os = rappdirs::app_dir()$os
 ) {
   beastier::check_os(os)
-  url <- beastier::get_default_beast2_download_url_win(beast2_version)
+  url <- beastier::get_default_beast2_download_url_win(
+    beast2_version = beast2_version
+  )
   if (os != "win") {
-    url <- beastier::get_default_beast2_download_url_linux(beast2_version)
+    url <- beastier::get_default_beast2_download_url_linux(
+      beast2_version = beast2_version
+    )
   }
   url
 }
