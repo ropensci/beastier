@@ -1,4 +1,8 @@
 #' Install BEAST2
+
+#' Installs BEAST2 of the default
+#' version (see \link{get_default_beast2_version}), but another version
+#' can also be specified
 #' @inheritParams default_params_doc
 #' @param folder_name name of the folder where the BEAST2 files will
 #'   be put.
@@ -8,20 +12,13 @@
 #'   \code{[folder_name]/beast/lib/launcher.jar}
 #' @return Nothing. Will install BEAST2
 #' @examples
-#'   library(testthat)
-#'
-#'   if (is_on_ci()) {
-#'
-#'     if (!is_beast2_installed()) {
-#'       install_beast2()
-#'     }
-#'     expect_true(file.exists(get_default_beast2_path()))
-#'     expect_true(file.exists(get_default_beast2_bin_path()))
-#'     expect_true(file.exists(get_default_beast2_jar_path()))
-#'   }
+#' \dontrun{
+#'   install_beast2()
+#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 install_beast2 <- function(
+  beast2_version = get_default_beast2_version(),
   folder_name = rappdirs::user_data_dir(),
   verbose = FALSE,
   os = rappdirs::app_dir()$os
@@ -40,7 +37,10 @@ install_beast2 <- function(
     print(paste("Operating system:", os))
   }
   dir.create(path = folder_name, showWarnings = FALSE, recursive = TRUE)
-  url <- beastier::get_default_beast2_download_url(os = os) # nolint internal function
+  url <- beastier::get_default_beast2_download_url(
+    beast2_version = beast2_version,
+    os = os
+  )
   if (verbose == TRUE) {
     print(paste("Download from URL:", url))
   }

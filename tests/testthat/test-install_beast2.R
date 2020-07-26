@@ -1,5 +1,3 @@
-context("install_beast2")
-
 test_that("install at non-standard location", {
 
   if (!is_on_ci()) return()
@@ -30,4 +28,19 @@ test_that("install twice must throw", {
     install_beast2(folder_name),
     "BEAST2 already installed"
   )
+})
+
+test_that("install at non-standard location with different version", {
+
+  skip("WIP")
+  if (!is_on_ci()) return()
+  if (rappdirs::app_dir()$os == "mac") return()
+
+
+  folder_name <- tempdir()
+  beast_jar_path <- file.path(folder_name, "beast", "lib", "launcher.jar")
+  testit::assert(!file.exists(beast_jar_path))
+  install_beast2(folder_name, beast2_version = "2.4.7")
+  expect_true(file.exists(beast_jar_path))
+  expect_true(is_beast2_installed(folder_name = folder_name))
 })

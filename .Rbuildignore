@@ -13,3 +13,5 @@
 ^CONTRIBUTING\.md$
 ^check_dead_links$
 ^appveyor\.yml$
+^\.github$
+^LICENSE$

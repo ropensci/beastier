@@ -5,9 +5,16 @@
 \title{Get the default BEAST2 download URL,
 which depends on the operating system}
 \usage{
-get_default_beast2_download_url(os = rappdirs::app_dir()$os)
+get_default_beast2_download_url(
+  beast2_version = get_default_beast2_version(),
+  os = rappdirs::app_dir()$os
+)
 }
 \arguments{
+\item{beast2_version}{the version of BEAST2. By
+default, this is the version as returned by
+\link{get_default_beast2_version}}
+
 \item{os}{name of the operating system,
 must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 }

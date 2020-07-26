@@ -13,6 +13,7 @@ default_params_doc(
   beast2_options,
   beast2_optionses,
   beast2_path,
+  beast2_version,
   beast2_working_dir,
   clock_model,
   clock_models,
@@ -86,6 +87,10 @@ Use \link{get_default_beast2_bin_path} to get
 the default BEAST binary file's path
 Use \link{get_default_beast2_jar_path} to get
 the default BEAST jar file's path}
+
+\item{beast2_version}{the version of BEAST2. By
+default, this is the version as returned by
+\link{get_default_beast2_version}}
 
 \item{beast2_working_dir}{a folder where BEAST2 can work in
 isolation.

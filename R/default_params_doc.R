@@ -34,6 +34,9 @@
 #' the default BEAST binary file's path
 #' Use \link{get_default_beast2_jar_path} to get
 #' the default BEAST jar file's path
+#' @param beast2_version the version of BEAST2. By
+#' default, this is the version as returned by
+#' \link{get_default_beast2_version}
 #' @param beast2_working_dir a folder where BEAST2 can work in
 #' isolation.
 #' For each BEAST2 run, a new subfolder is created in that folder.
@@ -130,6 +133,7 @@ default_params_doc <- function(
   beast2_jar_path,
   beast2_options, beast2_optionses,
   beast2_path,
+  beast2_version,
   beast2_working_dir,
   clock_model, clock_models,
   crown_age, crown_ages,

@@ -4,7 +4,14 @@
 \alias{get_default_beast2_download_url_win}
 \title{Get the BEAST2 download URL for Windows}
 \usage{
-get_default_beast2_download_url_win()
+get_default_beast2_download_url_win(
+  beast2_version = get_default_beast2_version()
+)
+}
+\arguments{
+\item{beast2_version}{the version of BEAST2. By
+default, this is the version as returned by
+\link{get_default_beast2_version}}
 }
 \value{
 the URL where BEAST2 can be downloaded from
