@@ -5,7 +5,7 @@
 \title{Get the BEAST2 download URL for Linux}
 \usage{
 get_default_beast2_download_url_linux(
-  beast2_version = get_default_beast2_version()
+  beast2_version = beastier::get_default_beast2_version()
 )
 }
 \arguments{
