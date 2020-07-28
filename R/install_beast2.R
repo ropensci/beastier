@@ -18,8 +18,8 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 install_beast2 <- function(
-  beast2_version = beastier::get_default_beast2_version(),
   folder_name = rappdirs::user_data_dir(),
+  beast2_version = beastier::get_default_beast2_version(),
   verbose = FALSE,
   os = rappdirs::app_dir()$os
 ) {

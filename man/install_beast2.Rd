@@ -8,23 +8,23 @@ version (see \link{get_default_beast2_version}), but another version
 can also be specified}
 \usage{
 install_beast2(
-  beast2_version = beastier::get_default_beast2_version(),
   folder_name = rappdirs::user_data_dir(),
+  beast2_version = beastier::get_default_beast2_version(),
   verbose = FALSE,
   os = rappdirs::app_dir()$os
 )
 }
 \arguments{
-\item{beast2_version}{the version of BEAST2. By
-default, this is the version as returned by
-\link{get_default_beast2_version}}
-
 \item{folder_name}{name of the folder where the BEAST2 files will
 be put.
 The name of the BEAST2 binary file will be at
 \code{[folder_name]/beast/bin/beast}
 The name of the BEAST2 jar file will be at
 \code{[folder_name]/beast/lib/launcher.jar}}
+
+\item{beast2_version}{the version of BEAST2. By
+default, this is the version as returned by
+\link{get_default_beast2_version}}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
