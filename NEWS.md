@@ -2,7 +2,7 @@
 
 Newest versions at top.
 
-## beastier 2.1.3 (unreleased)
+## beastier 2.1.3 (2020-08-05)
 
 ### NEW FEATURES
 
@@ -10,6 +10,7 @@ Newest versions at top.
   * Add `get_beast2_options_filenames`
   * Allow tildes in file paths, for example `~/beast2.xml`
   * Add `beastier_report` to help create a bug report
+  * Can `install_beast2` for a specific version
 
 ### MINOR IMPROVEMENTS
 
