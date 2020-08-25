@@ -1,7 +1,7 @@
 #' Create a \code{beast2_options} structure for \code{mcbette}
 #'
 #' Create a \code{beast2_options} structure to be used for
-#' \code{mcbette} (a package tahat allows one to do model comparison).
+#' \code{mcbette} (a package that allows one to do model comparison).
 #' The generated filenames indicating \code{mcbette} usage,
 #' as well as the correct BEAST2 binary type
 #' @inheritParams default_params_doc
