@@ -18,6 +18,8 @@ r_github_packages:
   - ropensci/spelling
 
 before_install:
+  # Fix rJava error, from https://travis-ci.community/t/cannot-connect-to-java-from-r/9754/8
+  - sudo $(which R) CMD javareconf
   # PDF
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo tlmgr update --self; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then sudo tlmgr install inconsolata; fi
@@ -26,6 +28,8 @@ before_script:
   # Java
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then R CMD javareconf; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then R --quiet -e 'install.packages("rJava", type="source", repos="http://cran.us.r-project.org")'; fi
+  # Lapack
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install liblapack-dev; fi
   # Install BEAST2. Note: beastier must work without BEAST2 installed as well
   - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$TRAVIS_R_VERSION_STRING" == "devel" ]; then ./scripts/install_beast2.sh; fi
   # proselint
