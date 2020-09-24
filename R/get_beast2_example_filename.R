@@ -8,13 +8,7 @@
 #' @examples
 #'
 #' if (is_beast2_installed()) {
-#'   filename <- get_beast2_example_filename("testJukesCantor.xml")
-#'   file.exists(filename))
-#'
-#'   filename <- get_beast2_example_filename("Primates.nex")
-#'   file.exists(filename))
-#'
-#'   expect_error(get_beast2_example_filename("abs.ent"))
+#'   get_beast2_example_filename("testJukesCantor.xml")
 #' }
 #' @export
 get_beast2_example_filename <- function(

@@ -3,7 +3,7 @@
 #' @examples
 #'
 #' if (is_beast2_installed() && is_on_ci()) {
-#'   expect_silent(get_java_version())
+#'   get_java_version()
 #' }
 #' @export
 get_java_version <- function() {

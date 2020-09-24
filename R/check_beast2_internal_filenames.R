@@ -9,21 +9,14 @@
 #' @examples
 #'
 #' if (beastier::is_beast2_installed()) {
-#'   expect_silent(
-#'     check_beast2_internal_filenames(
-#'       create_beast2_internal_filenames(
-#'         create_beast2_options(
-#'           input_filename = get_beastier_path("2_4.xml")
-#'         )
+#'   check_beast2_internal_filenames(
+#'     create_beast2_internal_filenames(
+#'       create_beast2_options(
+#'         input_filename = get_beastier_path("2_4.xml")
 #'       )
 #'     )
 #'   )
 #' }
-#'
-#' # Must stop on nonsense
-#' expect_error(check_beast2_internal_filenames("nonsense"))
-#' expect_error(check_beast2_internal_filenames(NULL))
-#' expect_error(check_beast2_internal_filenames(NA))
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_beast2_internal_filenames <- function( # nolint indeed a long function, which is fine for internal functions
