@@ -6,16 +6,7 @@
 #'   Use \link{install_beast2} with default arguments
 #'   to install BEAST2 to this location.
 #' @examples
-#'   library(testthat)
-#'
-#'   if (is_beast2_installed() && rappdirs::app_dir()$os == "unix") {
-#'     expect_true(
-#'       grepl(
-#'         "beast/lib/launcher.jar",
-#'         get_default_beast2_jar_path()
-#'       )
-#'     )
-#'   }
+#' get_default_beast2_jar_path()
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_default_beast2_jar_path <- function(

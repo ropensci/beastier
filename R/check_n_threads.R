@@ -4,17 +4,11 @@
 #' @inheritParams default_params_doc
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#'   library(testthat)
-#'
-#'   expect_silent(check_n_threads(1))
-#'   expect_silent(check_n_threads(2))
-#'   expect_silent(check_n_threads(NA))
-#'
-#'   expect_error(check_n_threads(-1))
-#'   expect_error(check_n_threads("nonsense"))
-#'   expect_error(check_n_threads(c(1, 2)))
-#'   expect_error(check_n_threads(c()))
-#'   expect_error(check_n_threads(NULL))
+#' # Can have 1 or more threads
+#' check_n_threads(1)
+#' check_n_threads(2)
+#' # Can have NA threads
+#' check_n_threads(NA)
 #' @export
 check_n_threads <- function(n_threads) {
   if (length(n_threads) != 1) {

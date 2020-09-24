@@ -5,13 +5,11 @@
 #'   It will create the files with name \code{output_state_filename}
 #' @export
 #' @examples
-#'   library(testthat)
+#' if (is_beast2_installed() && is_on_ci()) {
 #'
-#'   if (is_beast2_installed() && is_on_ci()) {
+#'   do_minimal_run()
 #'
-#'     expect_silent(do_minimal_run())
-#'
-#'   }
+#' }
 #' @author Richèl J.C. Bilderbeek
 do_minimal_run <- function() {
   folder <- file.path(rappdirs::user_cache_dir(),

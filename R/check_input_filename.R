@@ -4,14 +4,9 @@
 #' @return nothing. Will call \code{\link{stop}} if the input file is invalid
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#'   library(testthat)
-#'
-#'   expect_error(check_input_filename(tempfile()))
-#'   expect_silent(
-#'     check_input_filename(
-#'       get_beastier_path("beast2_example_output.log")
-#'     )
-#'   )
+#' check_input_filename(
+#'   get_beastier_path("beast2_example_output.log")
+#' )
 #' @export
 check_input_filename <- function(input_filename) {
   beautier::check_file_exists(input_filename, "input_filename")
@@ -23,19 +18,9 @@ check_input_filename <- function(input_filename) {
 #' @return nothing. Will call \code{\link{stop}} if the input file is invalid
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#'   library(testthat)
-#'
-#'   expect_error(check_input_filename_validity(tempfile()))
-#'   expect_error(
-#'     check_input_filename_validity(
-#'       get_beastier_path("beast2_example_output.log")
-#'     )
-#'   )
-#'   expect_silent(
-#'     check_input_filename_validity(
-#'       get_beastier_path("2_4.xml")
-#'     )
-#'   )
+#' check_input_filename_validity(
+#'   get_beastier_path("2_4.xml")
+#' )
 #' @noRd
 check_input_filename_validity <- function(
   input_filename,

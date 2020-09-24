@@ -6,7 +6,6 @@
 #' @seealso Use \link{create_beast2_options} to create a valid
 #'   BEAST2 options object
 #' @examples
-#' library(testthat)
 #'
 #' expect_silent(check_beast2_options(create_beast2_options()))
 #'

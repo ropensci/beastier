@@ -6,21 +6,13 @@
 #' of BEAST2, including its default settings.
 #'
 #' @examples
-#'   library(testthat)
+#' beast2_options <- create_beast2_options(
+#'   input_filename = get_beastier_path("2_4.xml")
+#' )
 #'
-#'   beast2_options <- create_beast2_options(
-#'     input_filename = get_beastier_path("2_4.xml")
-#'   )
-#'
-#'   if (is_beast2_installed() && is_on_ci()) {
-#'
-#'     expect_false(file.exists(beast2_options$output_state_filename))
-#'
-#'     output <- run_beast2_from_options(beast2_options)
-#'
-#'     expect_true(length(output) > 40)
-#'     expect_true(file.exists(beast2_options$output_state_filename))
-#'   }
+#' if (is_beast2_installed() && is_on_ci()) {
+#'   run_beast2_from_options(beast2_options)
+#' }
 #' @seealso
 #' These are packages associated with \code{beastier}:
 #' \itemize{

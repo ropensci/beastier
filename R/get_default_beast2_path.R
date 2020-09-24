@@ -10,14 +10,9 @@
 #'   Use \link{install_beast2} with default arguments
 #'   to install BEAST2 to this location.
 #' @examples
-#'   library(testthat)
-#'
-#'   if (is_beast2_installed()) {
-#'     def_path <- get_default_beast2_path()
-#'     bin_path <- get_default_beast2_bin_path()
-#'     jar_path <- get_default_beast2_jar_path()
-#'     expect_true(def_path == bin_path || def_path == jar_path)
-#'   }
+#' if (is_beast2_installed()) {
+#'   get_default_beast2_path()
+#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_default_beast2_path <- function() {

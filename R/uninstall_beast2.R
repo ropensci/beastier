@@ -7,18 +7,9 @@
 #'   \code{[folder_name]/beast/lib/launcher.jar}
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#'   library(testthat)
-#'
-#'   if (is_beast2_installed() && is_on_ci()) {
-#'
-#'     uninstall_beast2()
-#'
-#'     expect_false(is_beast2_installed())
-#'
-#'     install_beast2()
-#'
-#'     expect_true(is_beast2_installed())
-#'   }
+#' \dontrun{
+#'   uninstall_beast2()
+#' }
 #' @export
 uninstall_beast2 <- function(
   folder_name = rappdirs::user_data_dir(),

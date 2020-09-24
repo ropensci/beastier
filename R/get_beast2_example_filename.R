@@ -6,7 +6,6 @@
 #' the full path; this function exists to add that full path
 #' @inheritParams default_params_doc
 #' @examples
-#' library(testthat)
 #'
 #' if (is_beast2_installed()) {
 #'   filename <- get_beast2_example_filename("testJukesCantor.xml")

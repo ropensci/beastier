@@ -2,7 +2,6 @@
 #' @inheritParams default_params_doc
 #' @return a list with the internally used BEAST2 filenames
 #' @examples
-#' library(testthat)
 #'
 #' beast2_options <- create_beast2_options(
 #'   input_filename = get_beastier_path("2_4.xml")

@@ -4,7 +4,6 @@
 #' @inheritParams default_params_doc
 #' @return nothing
 #' @examples
-#' library(testthat)
 #'
 #' if (is_beast2_installed()) {
 #'   expect_silent(check_beast2())

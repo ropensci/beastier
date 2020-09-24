@@ -2,7 +2,6 @@
 #' @inheritParams default_params_doc
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#' library(testthat)
 #'
 #' beast2_options <- beastier::create_beast2_options()
 #' filenames <- get_beast2_options_filenames(beast2_options)

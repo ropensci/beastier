@@ -5,19 +5,14 @@
 #' @author Richèl J.C. Bilderbeek
 #' @seealso for one file, use \code{\link{get_beastier_path}}
 #' @examples
-#'   library(testthat)
-#'
-#'   filenames <- get_beastier_paths(
-#'     c(
-#'       "beast2_example_output.log",
-#'       "beast2_example_output.trees",
-#'       "beast2_example_output.xml",
-#'       "beast2_example_output.xml.state"
-#'     )
+#' get_beastier_paths(
+#'   c(
+#'     "beast2_example_output.log",
+#'     "beast2_example_output.trees",
+#'     "beast2_example_output.xml",
+#'     "beast2_example_output.xml.state"
 #'   )
-#'
-#'   expect_equal(length(filenames), 4)
-#'   expect_true(all(file.exists(filenames)))
+#' )
 #' @export
 get_beastier_paths <- function(filenames) {
 

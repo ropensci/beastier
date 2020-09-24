@@ -4,7 +4,6 @@
 #'   It will create the file with name \code{output_state_filenames}
 #' @export
 #' @examples
-#' library(testthat)
 #'
 #' if (is_beast2_installed() && is_on_ci()) {
 #'

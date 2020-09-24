@@ -5,7 +5,6 @@
 #' @return a BEAST2 options structure
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#' library(testthat)
 #'
 #' beast2_options <- create_beast2_options()
 #'

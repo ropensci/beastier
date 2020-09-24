@@ -4,18 +4,11 @@
 #' @inheritParams default_params_doc
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#'   library(testthat)
-#'
-#'   expect_silent(check_rng_seed(1))
-#'   expect_silent(check_rng_seed(2))
-#'   expect_silent(check_rng_seed(NA))
-#'
-#'   expect_error(check_rng_seed(0))
-#'   expect_error(check_rng_seed(-1))
-#'   expect_error(check_rng_seed("nonsense"))
-#'   expect_error(check_rng_seed(c(1, 2)))
-#'   expect_error(check_rng_seed(c()))
-#'   expect_error(check_rng_seed(NULL))
+#' # Numbers from 1 and higher are valid RNG seeds
+#' check_rng_seed(1)
+#' check_rng_seed(2)
+#' # Also NA is a valid RNG seed
+#' check_rng_seed(NA)
 #' @export
 check_rng_seed <- function(rng_seed) {
   if (length(rng_seed) != 1) {

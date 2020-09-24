@@ -6,14 +6,7 @@
 #' @seealso Use \link{create_beast2_options} to create a valid
 #'   BEAST2 options object
 #' @examples
-#'  library(testthat)
-#'
-#'  expect_silent(check_beast2_optionses(list(create_beast2_options())))
-#'
-#'  # Must stop on nonsense
-#'  expect_error(check_beast2_optionses("nonsense"))
-#'  expect_error(check_beast2_optionses(NULL))
-#'  expect_error(check_beast2_optionses(NA))
+#'  check_beast2_optionses(list(create_beast2_options()))
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_beast2_optionses <- function(

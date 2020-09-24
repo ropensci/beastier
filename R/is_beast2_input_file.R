@@ -9,7 +9,6 @@
 #'     this function will label it as an invalid file
 #' @seealso Use \code{\link{are_beast2_input_lines}} to check the lines
 #' @examples
-#' library(testthat)
 #'
 #' if (is_beast2_installed() && is_on_ci()) {
 #'

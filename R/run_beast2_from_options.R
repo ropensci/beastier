@@ -1,7 +1,6 @@
 #' Run BEAST2
 #' @inheritParams default_params_doc
 #' @examples
-#' library(testthat)
 #'
 #' if (is_beast2_installed() && is_on_ci()) {
 #'

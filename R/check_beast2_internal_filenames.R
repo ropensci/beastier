@@ -7,7 +7,6 @@
 #' @seealso Use \link{create_beast2_internal_filenames}
 #'   to create a valid BEAST2 internal filenames object
 #' @examples
-#' library(testthat)
 #'
 #' if (beastier::is_beast2_installed()) {
 #'   expect_silent(

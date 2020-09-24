@@ -5,14 +5,10 @@
 #' @seealso for more files, use \code{\link{get_beastier_paths}}
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#'   library(testthat)
-#'
-#'   expect_true(is.character(get_beastier_path("beast2_example_output.log")))
-#'   expect_true(is.character(get_beastier_path("beast2_example_output.trees")))
-#'   expect_true(is.character(get_beastier_path("beast2_example_output.xml")))
-#'   expect_true(
-#'     is.character(get_beastier_path("beast2_example_output.xml.state"))
-#'   )
+#' get_beastier_path("beast2_example_output.log")
+#' get_beastier_path("beast2_example_output.trees")
+#' get_beastier_path("beast2_example_output.xml")
+#' get_beastier_path("beast2_example_output.xml.state")
 #' @export
 get_beastier_path <- function(filename) {
 

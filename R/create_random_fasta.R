@@ -4,19 +4,11 @@
 #' @return Nothing, creates a FASTA file
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#'   library(testthat)
-#'
-#'   fasta_filename <- tempfile(fileext = ".fas")
-#'
-#'   expect_silent(
-#'     create_random_fasta(
-#'       n_taxa = 5,
-#'       sequence_length = 20,
-#'       fasta_filename = fasta_filename
-#'     )
-#'   )
-#'
-#'   expect_true(file.exists(fasta_filename))
+#' create_random_fasta(
+#'   n_taxa = 5,
+#'   sequence_length = 20,
+#'   fasta_filename = tempfile(fileext = ".fas")
+#' )
 #' @noRd
 create_random_fasta <- function(
   n_taxa,
