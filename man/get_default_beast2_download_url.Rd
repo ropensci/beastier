@@ -26,23 +26,7 @@ Get the default BEAST2 download URL,
 which depends on the operating system
 }
 \examples{
-  library(testthat)
-
-  expect_true(
-    grepl(
-      "https://github.com/CompEvol/beast2/releases/download",
-      get_default_beast2_download_url()
-    )
-  )
-
-  if (rappdirs::app_dir()$os == "unix") {
-    expect_true(
-      grepl(
-        "BEAST.v[0-9\\\\.]+.Linux.tgz",
-        get_default_beast2_download_url()
-      )
-    )
-  }
+get_default_beast2_download_url()
 }
 \author{
 Richèl J.C. Bilderbeek

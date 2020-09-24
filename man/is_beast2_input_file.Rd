@@ -40,7 +40,6 @@ this function only works on standard BEAST2 input files:
     this function will label it as an invalid file
 }
 \examples{
-library(testthat)
 
 if (is_beast2_installed() && is_on_ci()) {
 

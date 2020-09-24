@@ -26,12 +26,10 @@ Checks the BEAST2 \code{.jar} path.
 Will stop if there is a problem with the BEAST2 \code{.jar} path.
 }
 \examples{
-  library(testthat)
-
-  if (is_beast2_installed()) {
-    beast2_path <- get_default_beast2_jar_path()
-    expect_silent(check_beast2_path(beast2_path))
-  }
+if (is_beast2_installed()) {
+  beast2_path <- get_default_beast2_jar_path()
+  check_beast2_path(beast2_path)
+}
 }
 \author{
 Richèl J.C. Bilderbeek

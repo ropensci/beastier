@@ -23,7 +23,6 @@ nothing
 Calls \code{stop} if BEAST2 is improperly installed
 }
 \examples{
-library(testthat)
 
 if (is_beast2_installed()) {
   expect_silent(check_beast2())

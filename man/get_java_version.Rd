@@ -10,7 +10,6 @@ get_java_version()
 Get the Java version
 }
 \examples{
-library(testthat)
 
 if (is_beast2_installed() && is_on_ci()) {
   expect_silent(get_java_version())

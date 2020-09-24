@@ -17,14 +17,10 @@ the full path to the filename. Will \code{stop} if the file
 Get the full path of a file in the \code{inst/extdata} folder
 }
 \examples{
-  library(testthat)
-
-  expect_true(is.character(get_beastier_path("beast2_example_output.log")))
-  expect_true(is.character(get_beastier_path("beast2_example_output.trees")))
-  expect_true(is.character(get_beastier_path("beast2_example_output.xml")))
-  expect_true(
-    is.character(get_beastier_path("beast2_example_output.xml.state"))
-  )
+get_beastier_path("beast2_example_output.log")
+get_beastier_path("beast2_example_output.trees")
+get_beastier_path("beast2_example_output.xml")
+get_beastier_path("beast2_example_output.xml.state")
 }
 \seealso{
 for more files, use \code{\link{get_beastier_paths}}

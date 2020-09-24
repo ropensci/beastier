@@ -16,18 +16,10 @@ one or more alignment IDs
 Get the alignment ID from a file with one alignment
 }
 \examples{
-  library(testthat)
-
-  expect_equal(
-    get_alignment_ids_from_xml_filename(get_beastier_path("2_4.xml")),
-    "test_output_0"
-  )
-  expect_equal(
-   get_alignment_ids_from_xml_filename(
-     get_beastier_path("anthus_15_15.xml")
-   ),
-   c("anthus_aco","anthus_nd2")
- )
+# test_output_0
+get_alignment_ids_from_xml_filename(get_beastier_path("2_4.xml"))
+# c("anthus_aco","anthus_nd2")
+get_alignment_ids_from_xml_filename(get_beastier_path("anthus_15_15.xml"))
 }
 \author{
 Richèl J.C. Bilderbeek

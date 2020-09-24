@@ -14,13 +14,11 @@ The text sent to \code{STDOUT} and \code{STDERR}.
 To achieve this, \link{run_beast2_from_options} is called.
 }
 \examples{
-  library(testthat)
+if (is_beast2_installed() && is_on_ci()) {
 
-  if (is_beast2_installed() && is_on_ci()) {
+  do_minimal_run()
 
-    expect_silent(do_minimal_run())
-
-  }
+}
 }
 \author{
 Richèl J.C. Bilderbeek

@@ -17,16 +17,7 @@ the default BEAST2 jar file's path
 Get the default BEAST2 jar file's path
 }
 \examples{
-  library(testthat)
-
-  if (is_beast2_installed() && rappdirs::app_dir()$os == "unix") {
-    expect_true(
-      grepl(
-        "beast/lib/launcher.jar",
-        get_default_beast2_jar_path()
-      )
-    )
-  }
+get_default_beast2_jar_path()
 }
 \seealso{
 Use \link{get_default_beast2_folder} to get the default

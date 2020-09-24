@@ -82,7 +82,6 @@ The text sent to \code{STDOUT} and \code{STDERR}.
 Run BEAST2
 }
 \examples{
-library(testthat)
 
 if (is_beast2_installed() && is_on_ci()) {
 

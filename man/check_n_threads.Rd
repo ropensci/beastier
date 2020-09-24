@@ -14,17 +14,11 @@ Use \link{NA} to use the BEAST2 default of 1.}
 Will \link{stop} if not.
 }
 \examples{
-  library(testthat)
-
-  expect_silent(check_n_threads(1))
-  expect_silent(check_n_threads(2))
-  expect_silent(check_n_threads(NA))
-
-  expect_error(check_n_threads(-1))
-  expect_error(check_n_threads("nonsense"))
-  expect_error(check_n_threads(c(1, 2)))
-  expect_error(check_n_threads(c()))
-  expect_error(check_n_threads(NULL))
+# Can have 1 or more threads
+check_n_threads(1)
+check_n_threads(2)
+# Can have NA threads
+check_n_threads(NA)
 }
 \author{
 Richèl J.C. Bilderbeek

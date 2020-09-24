@@ -34,26 +34,18 @@ Determines if BEAST2 issues a warning
 when using the BEAST2 XML input file
 }
 \examples{
-  library(testthat)
+if (is_beast2_installed() &&
+  is_on_ci() &&
+  rappdirs::app_dir()$os == "unix") {
 
-  if (is_beast2_installed() &&
-    is_on_ci() &&
-    rappdirs::app_dir()$os == "unix") {
+  # This file is OK for BEAST2, no warning, returns FALSE
+  gives_beast2_warning(filename = get_beastier_path("2_4.xml"))
 
-    # This file is OK for BEAST2
-    expect_false(
-      gives_beast2_warning(
-        filename = get_beastier_path("2_4.xml")
-      )
-    )
-
-    # BEAST2 will give a warning on this file
-    expect_true(
-      gives_beast2_warning(
-        filename = get_beastier_path("beast2_warning.xml")
-      )
-    )
-  }
+  # BEAST2 will give a warning on this file, returns TRUE
+  gives_beast2_warning(
+    filename = get_beastier_path("beast2_warning.xml")
+  )
+}
 }
 \seealso{
 Use \code{\link{is_beast2_input_file}} to check if a file is a

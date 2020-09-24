@@ -25,7 +25,6 @@ the default BEAST2 executable.}
 Will \link{stop} if the filename is not a BEAST2 example file
 }
 \examples{
-library(testthat)
 
 if (is_beast2_installed()) {
   filename <- get_beast2_example_filename("testJukesCantor.xml")

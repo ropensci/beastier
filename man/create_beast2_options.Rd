@@ -81,7 +81,6 @@ a BEAST2 options structure
 These BEAST2 options are the R equivalent of the command-line options.
 }
 \examples{
-library(testthat)
 
 beast2_options <- create_beast2_options()
 

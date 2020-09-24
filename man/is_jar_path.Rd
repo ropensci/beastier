@@ -18,13 +18,13 @@ Is the path a path to the BEAST2 jar file?
 Does not check if the file at that path is present
 }
 \examples{
-  library(testthat)
-
-  expect_false(is_jar_path("beast"))
-  expect_true(is_jar_path("beast.jar"))
-  expect_true(is_jar_path("launcher.jar"))
-  expect_false(is_jar_path(get_default_beast2_bin_path()))
-  expect_true(is_jar_path(get_default_beast2_jar_path()))
+# Returns TRUE
+is_jar_path("beast.jar")
+is_jar_path("launcher.jar")
+is_jar_path(get_default_beast2_jar_path())
+# Returns FALSE
+is_jar_path("beast")
+is_jar_path(get_default_beast2_bin_path())
 }
 \author{
 Richèl J.C. Bilderbeek

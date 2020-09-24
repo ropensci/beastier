@@ -23,18 +23,9 @@ must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 Uninstall BEAST2
 }
 \examples{
-  library(testthat)
-
-  if (is_beast2_installed() && is_on_ci()) {
-
-    uninstall_beast2()
-
-    expect_false(is_beast2_installed())
-
-    install_beast2()
-
-    expect_true(is_beast2_installed())
-  }
+\dontrun{
+  uninstall_beast2()
+}
 }
 \author{
 Richèl J.C. Bilderbeek

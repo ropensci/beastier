@@ -18,14 +18,9 @@ Nothing. Will save the lines to file
 Save text (a container of strings) to a file
 }
 \examples{
-  library(testthat)
-
-  text <- c("hello", "world")
-  filename <- tempfile(fileext = ".txt")
-
-  expect_false(file.exists(filename))
-  save_lines(filename = filename, lines = text)
-  expect_true(file.exists(filename))
+text <- c("hello", "world")
+filename <- tempfile(fileext = ".txt")
+save_lines(filename = filename, lines = text)
 }
 \author{
 Richèl J.C. Bilderbeek

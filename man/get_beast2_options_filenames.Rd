@@ -15,7 +15,6 @@ as can be created by \link{create_beast2_options}}
 Extract the filenames from a \code{beast2_options}
 }
 \examples{
-library(testthat)
 
 beast2_options <- beastier::create_beast2_options()
 filenames <- get_beast2_options_filenames(beast2_options)

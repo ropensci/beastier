@@ -15,7 +15,6 @@ as can be created by \link{create_beast2_options}}
 Run BEAST2
 }
 \examples{
-library(testthat)
 
 if (is_beast2_installed() && is_on_ci()) {
 

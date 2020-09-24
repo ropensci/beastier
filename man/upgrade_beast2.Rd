@@ -24,7 +24,6 @@ must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 Will \link{stop} if BEAST2 is not installed
 }
 \examples{
-library(testthat)
 
 if (is_beast2_installed() && is_on_ci()) {
   expect_equal(get_beast2_version(), "2.6.0")

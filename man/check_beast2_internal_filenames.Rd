@@ -19,7 +19,6 @@ nothing
 Calls \code{stop} if the BEAST2 internal filenames object is invalid
 }
 \examples{
-library(testthat)
 
 if (beastier::is_beast2_installed()) {
   expect_silent(
