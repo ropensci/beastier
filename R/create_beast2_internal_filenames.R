@@ -11,8 +11,8 @@
 #'     beast2_options
 #'   )
 #'   bif_names <- names(beast2_internal_filenames)
-#'   expect_true("input_filename_full" %in% bif_names)
-#'   expect_true("output_state_filename_full" %in% bif_names)
+#'   "input_filename_full" %in% bif_names)
+#'   "output_state_filename_full" %in% bif_names)
 #' }
 #' @export
 create_beast2_internal_filenames <- function(beast2_options) { # nolint indeed a long function name, which is fine for internal function

@@ -9,15 +9,15 @@
 #'
 #'   output_state_filename <- tempfile(fileext = ".xml.state")
 #'
-#'   expect_false(file.exists(output_state_filename))
+#'   file.exists(output_state_filename))
 #'
 #'   output <- run_beast2(
 #'     input_filename = get_beastier_path("2_4.xml"),
 #'     output_state_filename = output_state_filename
 #'   )
 #'
-#'   expect_true(length(output) > 40)
-#'   expect_true(file.exists(output_state_filename))
+#'   length(output) > 40)
+#'   file.exists(output_state_filename))
 #' }
 #' @author Richèl J.C. Bilderbeek
 run_beast2 <- function(

@@ -8,12 +8,12 @@
 #'     input_filename = get_beastier_path("2_4.xml")
 #'   )
 #'
-#'   expect_false(file.exists(beast2_options$output_state_filename))
+#'   file.exists(beast2_options$output_state_filename))
 #'
 #'   output <- run_beast2_from_options(beast2_options)
 #'
-#'   expect_true(length(output) > 40)
-#'   expect_true(file.exists(beast2_options$output_state_filename))
+#'   length(output) > 40)
+#'   file.exists(beast2_options$output_state_filename))
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
@@ -96,7 +96,7 @@ run_beast2_from_options <- function(
     stderr = TRUE
   )
   # If the output is only 1 line, this will probably be an error message
-  testthat::expect_true(
+  testthat::
     length(output) != 1,
     info = paste0(
       "Command '", paste0(cmd, collapse = " "), "' failed ",
@@ -107,7 +107,7 @@ run_beast2_from_options <- function(
   ##############################################################################
   # The files as created by BEAST2
   ##############################################################################
-  testthat::expect_true(
+  testthat::
     file.exists(bifs$output_state_filename_full),
     info = paste0(
       "BEAST2 state file not created. \n",

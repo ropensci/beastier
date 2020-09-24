@@ -13,12 +13,12 @@
 #' if (is_beast2_installed() && is_on_ci()) {
 #'
 #'   filename <- get_beastier_path("anthus_2_4.xml")
-#'   expect_true(file.exists(filename))
-#'   expect_true(is_beast2_input_file(filename))
+#'   file.exists(filename))
+#'   is_beast2_input_file(filename))
 #'
 #'   filename <- get_beastier_path("beast2_example_output.log")
-#'   expect_true(file.exists(filename))
-#'   expect_false(is_beast2_input_file(filename))
+#'   file.exists(filename))
+#'   is_beast2_input_file(filename))
 #' }
 #' @export
 is_beast2_input_file <- function(
