@@ -96,7 +96,7 @@ run_beast2_from_options <- function(
     stderr = TRUE
   )
   # If the output is only 1 line, this will probably be an error message
-  testthat::
+  testthat::expect_true(
     length(output) != 1,
     info = paste0(
       "Command '", paste0(cmd, collapse = " "), "' failed ",
@@ -107,7 +107,7 @@ run_beast2_from_options <- function(
   ##############################################################################
   # The files as created by BEAST2
   ##############################################################################
-  testthat::
+  testthat::expect_true(
     file.exists(bifs$output_state_filename_full),
     info = paste0(
       "BEAST2 state file not created. \n",
