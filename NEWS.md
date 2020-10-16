@@ -10,7 +10,7 @@ Newest versions at top.
 
 ### MINOR IMPROVEMENTS
 
-  * None
+  * No `testthat` tests in code examples
 
 ### BUG FIXES
 
