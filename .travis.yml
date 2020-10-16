@@ -5,10 +5,10 @@ matrix:
   include:
   - r: release
     os: linux
+    env: INSTALL_BEAST2=true
   - r: devel
     os: linux
-  #- r: release
-  #  os: osx
+    env: INSTALL_BEAST2=false
 
 r_github_packages:
   - jimhester/covr
@@ -28,7 +28,7 @@ before_script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then R CMD javareconf; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then R --quiet -e 'install.packages("rJava", type="source", repos="http://cran.us.r-project.org")'; fi
   # Install BEAST2. Note: beastier must work without BEAST2 installed as well
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$TRAVIS_R_VERSION_STRING" == "devel" ]; then ./scripts/install_beast2.sh; fi
+  - if [[ "$INSTALL_BEAST2" == true ]]; then ./scripts/install_beast2.sh; fi
   # proselint
   - if [[ "$TRAVIS_OS_NAME" != "osx" ]]; then sudo pip install proselint; fi
 
@@ -37,19 +37,19 @@ script:
   - travis_wait 60 R CMD check *tar.gz
 
 after_success:
-  # Lint
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$TRAVIS_R_VERSION_STRING" == "release" ]; then Rscript -e 'lintr::lint_package()'; fi
   # Codecov
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$TRAVIS_R_VERSION_STRING" == "devel" ]; then travis_wait 20 Rscript -e 'covr::codecov()'; fi
-  # Proselint
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$TRAVIS_R_VERSION_STRING" == "release" ]; then proselint *.md | egrep -v "typography\.symbols\.curly_quotes"; fi
+  - if [[ "$INSTALL_BEAST2" == true ]]; then travis_wait 20 Rscript -e 'covr::codecov()'; fi
   # Goodpractice
-  - if [ "$TRAVIS_OS_NAME" == "linux" ] && [ "$TRAVIS_R_VERSION_STRING" == "release" ]; then travis_wait 60 Rscript -e 'goodpractice::gp()'; fi
+  - if [[ "$INSTALL_BEAST2" == true ]]; then travis_wait 60 Rscript -e 'goodpractice::gp()'; fi
   # No local files created
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then ./scripts/check_no_local_files; fi
-  - # Test if beastier can indeed run in parallel
+  # Proselint
+  - if [[ "$INSTALL_BEAST2" == false ]]; then proselint *.md | egrep -v "typography\.symbols\.curly_quotes"; fi
+  # Lint
+  - if [[ "$INSTALL_BEAST2" == false ]]; then Rscript -e 'lintr::lint_package()'; fi
+  # Test if beastier can indeed run in parallel
   - ./scripts/test_parallel
-  - # Build for CRAN, without BEAST2 installed
+  # Build for CRAN, without BEAST2 installed
   - Rscript -e "source(\"R/uninstall_beast2.R\"); source(\"R/get_default_beast2_download_url.R\"); source(\"R/check_os.R\"); source(\"R/is_beast2_installed.R\"); uninstall_beast2()"
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cd scripts; ./build_cran; fi
   # Download thesis
