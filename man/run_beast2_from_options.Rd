@@ -15,19 +15,11 @@ as can be created by \link{create_beast2_options}}
 Run BEAST2
 }
 \examples{
-
 if (is_beast2_installed() && is_on_ci()) {
-
   beast2_options <- create_beast2_options(
     input_filename = get_beastier_path("2_4.xml")
   )
-
-  expect_false(file.exists(beast2_options$output_state_filename))
-
-  output <- run_beast2_from_options(beast2_options)
-
-  expect_true(length(output) > 40)
-  expect_true(file.exists(beast2_options$output_state_filename))
+  run_beast2_from_options(beast2_options)
 }
 }
 \author{

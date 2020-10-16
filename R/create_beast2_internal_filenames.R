@@ -2,17 +2,11 @@
 #' @inheritParams default_params_doc
 #' @return a list with the internally used BEAST2 filenames
 #' @examples
-#'
 #' beast2_options <- create_beast2_options(
 #'   input_filename = get_beastier_path("2_4.xml")
 #' )
 #' if (is_beast2_installed()) {
-#'   beast2_internal_filenames <- create_beast2_internal_filenames(
-#'     beast2_options
-#'   )
-#'   bif_names <- names(beast2_internal_filenames)
-#'   "input_filename_full" %in% bif_names)
-#'   "output_state_filename_full" %in% bif_names)
+#'   create_beast2_internal_filenames(beast2_options)
 #' }
 #' @export
 create_beast2_internal_filenames <- function(beast2_options) { # nolint indeed a long function name, which is fine for internal function

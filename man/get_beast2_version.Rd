@@ -20,9 +20,8 @@ the default BEAST jar file's path}
 Get the BEAST2 version
 }
 \examples{
-
 if (is_beast2_installed() && is_on_ci()) {
-  expect_equal(get_beast2_version(), "2.6.0")
+  get_beast2_version()
 }
 }
 \author{

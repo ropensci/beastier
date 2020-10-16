@@ -44,12 +44,13 @@ this function only works on standard BEAST2 input files:
 if (is_beast2_installed() && is_on_ci()) {
 
   filename <- get_beastier_path("anthus_2_4.xml")
-  expect_true(file.exists(filename))
-  expect_true(is_beast2_input_file(filename))
+  # TRUE, this is a BEAST2 input file
+  is_beast2_input_file(filename)
 
   filename <- get_beastier_path("beast2_example_output.log")
-  expect_true(file.exists(filename))
-  expect_false(is_beast2_input_file(filename))
+  # FALSE, this is not a BEAST2 input file,
+  # it is a BEAST2 output log file insteaf
+  is_beast2_input_file(filename)
 }
 }
 \seealso{

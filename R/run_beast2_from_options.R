@@ -1,19 +1,11 @@
 #' Run BEAST2
 #' @inheritParams default_params_doc
 #' @examples
-#'
 #' if (is_beast2_installed() && is_on_ci()) {
-#'
 #'   beast2_options <- create_beast2_options(
 #'     input_filename = get_beastier_path("2_4.xml")
 #'   )
-#'
-#'   file.exists(beast2_options$output_state_filename))
-#'
-#'   output <- run_beast2_from_options(beast2_options)
-#'
-#'   length(output) > 40)
-#'   file.exists(beast2_options$output_state_filename))
+#'   run_beast2_from_options(beast2_options)
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export

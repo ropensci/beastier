@@ -23,12 +23,6 @@ must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 \description{
 Will \link{stop} if BEAST2 is not installed
 }
-\examples{
-
-if (is_beast2_installed() && is_on_ci()) {
-  expect_equal(get_beast2_version(), "2.6.0")
-}
-}
 \author{
 Richèl J.C. Bilderbeek
 }

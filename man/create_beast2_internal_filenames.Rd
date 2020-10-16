@@ -18,16 +18,10 @@ a list with the internally used BEAST2 filenames
 Create a list with the internally used BEAST2 filenames
 }
 \examples{
-
 beast2_options <- create_beast2_options(
   input_filename = get_beastier_path("2_4.xml")
 )
 if (is_beast2_installed()) {
-  beast2_internal_filenames <- create_beast2_internal_filenames(
-    beast2_options
-  )
-  bif_names <- names(beast2_internal_filenames)
-  expect_true("input_filename_full" \%in\% bif_names)
-  expect_true("output_state_filename_full" \%in\% bif_names)
+  create_beast2_internal_filenames(beast2_options)
 }
 }

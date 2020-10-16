@@ -18,13 +18,7 @@ nothing
 Calls \code{stop} if the BEAST2 option object is invalid
 }
 \examples{
-
-expect_silent(check_beast2_options(create_beast2_options()))
-
-# Must stop on nonsense
-expect_error(check_beast2_options("nonsense"))
-expect_error(check_beast2_options(NULL))
-expect_error(check_beast2_options(NA))
+check_beast2_options(create_beast2_options())
 }
 \seealso{
 Use \link{create_beast2_options} to create a valid
