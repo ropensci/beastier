@@ -11,7 +11,7 @@ matrix:
     os: osx
 
 r_github_packages:
-  - richelbilderbeek/beautier
+  #- richelbilderbeek/beautier
   - jimhester/covr
   - jimhester/lintr
   - MangoTheCat/goodpractice
