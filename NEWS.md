@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.2 (2020-10-16)
+
+### NEW FEATURES
+
+  * Add 'create_mcbette_beast2_options'
+
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.1.3 (2020-08-05)
 
 ### NEW FEATURES
