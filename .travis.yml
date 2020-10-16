@@ -55,12 +55,12 @@ after_success:
   - Rscript -e "source(\"R/uninstall_beast2.R\"); source(\"R/get_default_beast2_download_url.R\"); source(\"R/check_os.R\"); source(\"R/is_beast2_installed.R\"); uninstall_beast2()"
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cd scripts; ./build_cran; fi
   # Download thesis
-  - Rscript -e 'download.file("https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf", tempfile())'
+  - wget https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf
 
 after_failure:
   - cat /home/travis/build/ropensci/beastier/..Rcheck/00install.out
   - cat /home/travis/build/ropensci/beastier/..Rcheck/00check.log
   # Download thesis
-  - Rscript -e 'download.file("https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf", tempfile())'
+  - wget https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf
 
 
