@@ -1,6 +1,4 @@
-context("get_default_beast2_bin_path")
-
-test_that("use", {
+test_that("default locations", {
 
   if (rappdirs::app_dir()$os == "unix") {
     expect_true(
@@ -26,6 +24,16 @@ test_that("must exist", {
   if (is_beast2_installed()) {
     expect_true(
       file.exists(get_default_beast2_bin_path())
+    )
+  }
+})
+
+test_that("custom location", {
+
+  if (rappdirs::app_dir()$os == "unix") {
+    expect_equal(
+      "something/beast/bin/beast", # nolint use an absolute path here
+      get_default_beast2_bin_path(beast2_folder = "something")
     )
   }
 })

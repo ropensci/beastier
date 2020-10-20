@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.2.1 (unreleased)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * `get_default_beast2_jar_path` has a `folder_name`
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.2 (2020-10-16)
 
 ### NEW FEATURES
