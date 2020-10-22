@@ -11,6 +11,7 @@ Newest versions at top.
 ### MINOR IMPROVEMENTS
 
   * `get_default_beast2_jar_path` has a `folder_name`
+  * `install_beast2` is silent
 
 ### BUG FIXES
 

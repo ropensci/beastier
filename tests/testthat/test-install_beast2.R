@@ -59,3 +59,12 @@ test_that("install at non-standard location with v2.6.2", {
   beast2_path <- file.path(folder_name, "beast", "lib", "launcher.jar")
   expect_equal(beast2_version, get_beast2_version(beast2_path))
 })
+
+test_that("install must be silent", {
+
+  if (!is_on_ci()) return()
+  if (rappdirs::app_dir()$os == "mac") return()
+
+  folder_name <- tempfile(pattern = "beastier")
+  expect_silent(install_beast2(folder_name = folder_name))
+})
