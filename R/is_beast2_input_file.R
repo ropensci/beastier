@@ -68,6 +68,7 @@ is_beast2_input_file <- function(
     )
   }
   if (verbose) {
+    print(paste0("Running command: '", paste(cmds, collapse = " "), "'"))
     print(output)
   }
 
