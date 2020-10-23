@@ -13,7 +13,8 @@
 #' @export
 uninstall_beast2 <- function(
   folder_name = rappdirs::user_data_dir(),
-  os = rappdirs::app_dir()$os
+  os = rappdirs::app_dir()$os,
+  verbose = FALSE
 ) {
   if (!is_beast2_installed(
     folder_name = folder_name,
@@ -31,8 +32,10 @@ uninstall_beast2 <- function(
   if (os != "win") {
     bin_file_path <- file.path(folder_name, "beast", "bin", "beast")
   }
-  testit::assert(file.exists(jar_file_path))
-  testit::assert(file.exists(bin_file_path))
-  file.remove(jar_file_path)
-  file.remove(bin_file_path)
+  testthat::expect_true(file.exists(jar_file_path))
+  testthat::expect_true(file.exists(bin_file_path))
+  if (isTRUE(verbose)) {
+    print(paste0("Uninstalling BEAST2 from '", folder_name, "'"))
+  }
+  unlink(folder_name, recursive = TRUE)
 }

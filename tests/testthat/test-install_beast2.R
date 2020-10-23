@@ -68,3 +68,16 @@ test_that("install must be silent", {
   folder_name <- tempfile(pattern = "beastier")
   expect_silent(install_beast2(folder_name = folder_name))
 })
+
+test_that("install can be verbose", {
+
+  if (!is_on_ci()) return()
+  if (rappdirs::app_dir()$os == "mac") return()
+
+  folder_name <- tempfile(pattern = "beastier")
+  expect_output(
+    install_beast2(folder_name = folder_name, verbose = TRUE),
+    "Installing BEAST2"
+  )
+  unlink(folder_name, recursive = TRUE)
+})

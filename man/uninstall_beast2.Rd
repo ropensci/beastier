@@ -6,7 +6,8 @@
 \usage{
 uninstall_beast2(
   folder_name = rappdirs::user_data_dir(),
-  os = rappdirs::app_dir()$os
+  os = rappdirs::app_dir()$os,
+  verbose = FALSE
 )
 }
 \arguments{
@@ -18,6 +19,9 @@ The name of the BEAST2 jar file will be at
 
 \item{os}{name of the operating system,
 must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
+
+\item{verbose}{if TRUE, additional information is displayed, that
+is potentially useful in debugging}
 }
 \description{
 Uninstall BEAST2

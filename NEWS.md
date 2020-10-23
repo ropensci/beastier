@@ -10,8 +10,10 @@ Newest versions at top.
 
 ### MINOR IMPROVEMENTS
 
-  * `get_default_beast2_jar_path` has a `folder_name`
-  * `install_beast2` is silent
+  * `get_default_beast2_jar_path` allows for a custom folder name
+  * `install_beast2` is silent by default
+  * `install_beast2` and `uninstall_beast2` give more information when
+    verbose
 
 ### BUG FIXES
 

@@ -42,6 +42,7 @@ install_beast2 <- function(
     os = os
   )
   if (verbose == TRUE) {
+    print(paste0("Installing BEAST2 at '", folder_name, "'"))
     print(paste("Download from URL:", url))
   }
   # archive_filename is a .tar.gz for Linux and a .zip for Windows
