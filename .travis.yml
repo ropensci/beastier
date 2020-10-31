@@ -32,10 +32,6 @@ before_script:
   # proselint
   - if [[ "$TRAVIS_OS_NAME" != "osx" ]]; then sudo pip install proselint; fi
 
-script:
-  - travis_wait 60 R CMD build .
-  - travis_wait 60 R CMD check *tar.gz
-
 after_success:
   # Codecov
   - if [[ "$INSTALL_BEAST2" == true ]]; then travis_wait 20 Rscript -e 'covr::codecov()'; fi
@@ -56,8 +52,6 @@ after_success:
   - wget https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf
 
 after_failure:
-  - cat /home/travis/build/ropensci/beastier/..Rcheck/00install.out
-  - cat /home/travis/build/ropensci/beastier/..Rcheck/00check.log
   # Download thesis
   - wget https://www.rug.nl/research/portal/files/132028374/Complete_thesis.pdf
 
