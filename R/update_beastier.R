@@ -1,15 +1,12 @@
+#' Deprecated
+#'
 #' Update all beastier dependencies, by installing their
 #' latest versions
 #' @author Richèl J.C. Bilderbeek
 #' @export
 update_beastier <- function() {
-  repo_names <- c("ropensci/beautier", "ropensci/tracerer")
-  for (repo_name in repo_names) {
-    remotes::install_github(
-      repo_name,
-      quiet = TRUE,
-      dependencies = TRUE,
-      upgrade = "always"
-    )
-  }
+  stop(
+    "Deprecated since v2.2.2.",
+    "See last code at v2.2.1"
+  )
 }

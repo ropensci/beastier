@@ -2,8 +2,7 @@
 % Please edit documentation in R/update_beastier.R
 \name{update_beastier}
 \alias{update_beastier}
-\title{Update all beastier dependencies, by installing their
-latest versions}
+\title{Deprecated}
 \usage{
 update_beastier()
 }
