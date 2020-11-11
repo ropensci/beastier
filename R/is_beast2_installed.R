@@ -9,7 +9,7 @@
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #'   if (is_beast2_installed()) {
-#'     print("BEAST2 is installed")
+#'     message("BEAST2 is installed")
 #'   }
 #' @export
 is_beast2_installed <- function(

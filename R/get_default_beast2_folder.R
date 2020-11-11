@@ -8,7 +8,7 @@
 #'   to install BEAST2 to this folder.
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#'   print(get_default_beast2_folder())
+#'   message(get_default_beast2_folder())
 #' @export
 get_default_beast2_folder <- function() {
   rappdirs::user_data_dir()

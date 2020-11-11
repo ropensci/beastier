@@ -34,7 +34,7 @@ install_beast2 <- function(
     stop("BEAST2 already installed")
   }
   if (verbose == TRUE) {
-    print(paste("Operating system:", os))
+    message(paste("Operating system:", os))
   }
   dir.create(path = folder_name, showWarnings = FALSE, recursive = TRUE)
   url <- beastier::get_default_beast2_download_url(
@@ -42,8 +42,8 @@ install_beast2 <- function(
     os = os
   )
   if (verbose == TRUE) {
-    print(paste0("Installing BEAST2 at '", folder_name, "'"))
-    print(paste("Download from URL:", url))
+    message(paste0("Installing BEAST2 at '", folder_name, "'"))
+    message(paste("Download from URL:", url))
   }
   # archive_filename is a .tar.gz for Linux and a .zip for Windows
   archive_filename <- basename(url)
@@ -74,6 +74,6 @@ install_beast2 <- function(
   extract_function()
   beautier::check_file_exists(jar_file_path, "BEAST2 .jar path")
   if (verbose == TRUE) {
-    print(paste("BEAST2 installed at", jar_file_path))
+    message(paste("BEAST2 installed at", jar_file_path))
   }
 }

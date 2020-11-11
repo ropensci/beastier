@@ -68,8 +68,8 @@ is_beast2_input_file <- function(
     )
   }
   if (verbose) {
-    print(paste0("Running command: '", paste(cmds, collapse = " "), "'"))
-    print(output)
+    message(paste0("Running command: '", paste(cmds, collapse = " "), "'"))
+    message(output)
   }
 
   if (show_warnings == TRUE &&

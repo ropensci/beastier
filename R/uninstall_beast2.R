@@ -35,7 +35,7 @@ uninstall_beast2 <- function(
   testthat::expect_true(file.exists(jar_file_path))
   testthat::expect_true(file.exists(bin_file_path))
   if (isTRUE(verbose)) {
-    print(paste0("Uninstalling BEAST2 from '", folder_name, "'"))
+    message(paste0("Uninstalling BEAST2 from '", folder_name, "'"))
   }
   unlink(folder_name, recursive = TRUE)
 }
