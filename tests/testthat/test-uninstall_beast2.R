@@ -24,7 +24,7 @@ test_that("install can be verbose", {
 
   folder_name <- tempfile(pattern = "beastier_")
   expect_silent(install_beast2(folder_name = folder_name))
-  expect_output(
+  expect_message(
     uninstall_beast2(folder_name = folder_name, verbose = TRUE),
     "Uninstalling BEAST2"
   )

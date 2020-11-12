@@ -1,3 +1,3 @@
 test_that("use", {
-  expect_output(beastier_report())
+  expect_message(beastier_report())
 })

@@ -8,7 +8,7 @@ test_that("install at non-standard location", {
   beast_jar_path <- file.path(folder_name, "beast", "lib", "launcher.jar")
   testit::assert(!file.exists(beast_jar_path))
 
-  expect_output(
+  expect_message(
     install_beast2(
       folder_name = folder_name,
       verbose = TRUE
@@ -75,7 +75,7 @@ test_that("install can be verbose", {
   if (rappdirs::app_dir()$os == "mac") return()
 
   folder_name <- tempfile(pattern = "beastier")
-  expect_output(
+  expect_message(
     install_beast2(folder_name = folder_name, verbose = TRUE),
     "Installing BEAST2"
   )

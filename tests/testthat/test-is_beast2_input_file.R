@@ -6,7 +6,7 @@ test_that("beast2_example_output.log is not a valid BEAST2 input file", {
   filename <- get_beastier_path("beast2_example_output.log")
   is_ok <- NULL
 
-  expect_output(
+  expect_message(
     is_ok <- beastier::is_beast2_input_file(
       filename,
       verbose = TRUE
@@ -25,7 +25,7 @@ test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
   filename <- get_beastier_path("beast2_example_output.trees")
 
   is_ok <- NULL
-  expect_output(
+  expect_message(
     is_ok <- beastier::is_beast2_input_file(filename, verbose = TRUE)
   )
   expect_false(is_ok)
@@ -172,7 +172,7 @@ test_that("show commands in output when verbose is TRUE", {
   beast2_folder <- tempfile(pattern = "beastier_")
   beastier::install_beast2(folder_name = beast2_folder)
 
-  expect_output(
+  expect_message(
     beastier::is_beast2_input_file(
       filename = get_beastier_path("anthus_2_4.xml"),
       beast2_path = get_default_beast2_bin_path(beast2_folder = beast2_folder),

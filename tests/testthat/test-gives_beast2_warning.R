@@ -44,7 +44,7 @@ test_that("use, jar", {
     )
   )
 
-  expect_output(
+  expect_message(
     gives_beast2_warning(
       filename = get_beastier_path("beast2_warning.xml"),
       verbose = TRUE
