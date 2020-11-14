@@ -1,7 +1,7 @@
 #' Create a \link{beastier} report, to be used when reporting bugs
 #' @export
 beastier_report <- function() {
-  kat <- function(x) cat(x, sep = "\n")
+  kat <- function(x) message(x, sep = "\n")
   kat("***********")
   kat("* beastier *")
   kat("***********")
