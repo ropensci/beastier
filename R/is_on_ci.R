@@ -14,7 +14,7 @@ is_on_appveyor <- function() {
 #' @return TRUE if run on Travis CI, FALSE otherwise
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#'   if (is_on_travis()) {
+#'   if (is_on_ci()) {
 #'     message("Running on Travis CI")
 #'   }
 #' @export
