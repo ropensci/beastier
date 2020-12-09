@@ -10,7 +10,9 @@ Newest versions at top.
 
 ### MINOR IMPROVEMENTS
 
-  * None
+  * Builds on GitHub Actions
+  * Added `is_on_github_actions` to detect the GitHub Actions environment
+  * `is_on_ci` detects the GitHub Actions environment
 
 ### BUG FIXES
 
