@@ -44,6 +44,8 @@ test_that("abuse", {
 })
 
 test_that("clockRate.c ID and ClockPrior.c ID added twice", {
+
+  if (!is_beast2_installed()) return()
   # From https://github.com/ropensci/beautier/issues/127
   # From https://github.com/ropensci/beautier/issues/128
 
