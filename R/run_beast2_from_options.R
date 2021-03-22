@@ -40,7 +40,7 @@ run_beast2_from_options <- function(
     beast2_internal_filenames = bifs
   )
 
-  babette::check_input_filename_validity(
+  beastier::check_input_filename_validity(
     input_filename = bifs$input_filename_full,
     beast2_path = beast2_options$beast2_path,
     verbose = beast2_options$verbose
