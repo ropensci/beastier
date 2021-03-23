@@ -5,7 +5,7 @@
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #' create_random_phylogeny(n_taxa = 6)
-#' @noRd
+#' @export
 create_random_phylogeny <- function(
   n_taxa,
   taxa_name_ext = ""

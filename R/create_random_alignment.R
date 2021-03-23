@@ -11,7 +11,7 @@
 #'    sequence_length = 10
 #'  )
 #'  image(alignment)
-#' @noRd
+#' @export
 create_random_alignment <- function(
   n_taxa,
   sequence_length,
