@@ -29,3 +29,6 @@ tests/spelling.Rout.save
 scripts/build/
 temp.fasta
 install_beast2.R
+^test_output_0\.log$
+^test_output_0\.trees$
+
