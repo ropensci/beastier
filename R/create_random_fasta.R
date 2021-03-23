@@ -31,7 +31,7 @@ create_random_fasta <- function(
   if (!assertive::is_a_string(taxa_name_ext)) {
     stop("'taxa_name_ext' must be a character string")
   }
-  alignments <- create_random_alignment(
+  alignments <- beastier::create_random_alignment(
     n_taxa,
     sequence_length,
     taxa_name_ext = taxa_name_ext

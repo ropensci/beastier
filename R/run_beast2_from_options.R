@@ -18,7 +18,7 @@ run_beast2_from_options <- function(
     beastier::print_beast2_options(beast2_options)
   }
 
-  if (is_win_bin_path(beast2_options$beast2_path)) {
+  if (beastier::is_win_bin_path(beast2_options$beast2_path)) {
    stop("Cannot use the Windows executable BEAST2.exe in scripts")
   }
   ##############################################################################

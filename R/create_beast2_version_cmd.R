@@ -47,7 +47,7 @@ create_beast2_version_cmd_jar <- function(
   beautier::check_file_exists(beast2_jar_path, "beast2_jar_path")
   testit::assert(beastier::is_jar_path(beast2_jar_path))
   cmds <- c(
-    get_default_java_path(),
+    beastier::get_default_java_path(),
     "-cp",
     paste0("\"", beast2_jar_path, "\""),
     beastier::get_beast2_main_class_name(),

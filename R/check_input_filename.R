@@ -26,12 +26,12 @@ check_input_filename <- function(input_filename) {
 #' @export
 check_input_filename_validity <- function(
   input_filename,
-  beast2_path = get_default_beast2_path(),
+  beast2_path = beastier::get_default_beast2_path(),
   verbose = FALSE
 ) {
 
   if (
-    !is_beast2_input_file(
+    !beastier::is_beast2_input_file(
       filename = input_filename,
       verbose = verbose,
       beast2_path = beast2_path
@@ -40,7 +40,7 @@ check_input_filename_validity <- function(
     stop(
       "'input_filename' must be a valid BEAST2 XML file. ",
       "File '", input_filename, "' is not a valid BEAST2 file. ",
-      is_beast2_input_file( # nolint internal function
+      beastier::is_beast2_input_file(
         input_filename,
         verbose = verbose,
         beast2_path = beast2_path

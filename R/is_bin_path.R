@@ -31,7 +31,7 @@ is_bin_path <- function(path) {
 #' # FALSE
 #' is_win_bin_path("beast")
 #' is_win_bin_path("launcher.jar")
-#' @noRd
+#' @export
 is_win_bin_path <- function(path) {
   !beautier::is_one_na(stringr::str_match(
     path, "(.*/)?BEAST2?\\.exe$")[1][1]

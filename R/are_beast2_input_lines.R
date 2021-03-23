@@ -70,7 +70,7 @@ are_beast2_input_lines_deep <- function(
   )
   dir.create(dirname(filename), recursive = TRUE, showWarnings = FALSE)
   beastier::save_lines(filename = filename, lines = lines)
-  is_beast2_input_file(
+  beastier::is_beast2_input_file(
     filename = filename,
     verbose = verbose,
     beast2_path = beast2_path

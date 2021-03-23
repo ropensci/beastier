@@ -29,7 +29,7 @@ is_beast2_input_file <- function(
   beast2_path = get_default_beast2_path()
 ) {
   beautier::check_file_exists(filename, "filename")
-  if (is_win_bin_path(beast2_path)) {
+  if (beastier::is_win_bin_path(beast2_path)) {
    stop("Cannot use the Windows executable BEAST2.exe in scripts")
   }
   if (!file.exists(beast2_path)) {

@@ -16,7 +16,7 @@ uninstall_beast2 <- function(
   os = rappdirs::app_dir()$os,
   verbose = FALSE
 ) {
-  if (!is_beast2_installed(
+  if (!beastier::is_beast2_installed(
     folder_name = folder_name,
     os = os)) {
     stop("Cannot uninstall absent BEAST2 at", folder_name)

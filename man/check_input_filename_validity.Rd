@@ -7,7 +7,7 @@ Will stop if there is a problem with the input filename.}
 \usage{
 check_input_filename_validity(
   input_filename,
-  beast2_path = get_default_beast2_path(),
+  beast2_path = beastier::get_default_beast2_path(),
   verbose = FALSE
 )
 }
