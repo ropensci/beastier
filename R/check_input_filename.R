@@ -21,7 +21,7 @@ check_input_filename <- function(input_filename) {
 #' check_input_filename_validity(
 #'   get_beastier_path("2_4.xml")
 #' )
-#' @noRd
+#' @export
 check_input_filename_validity <- function(
   input_filename,
   beast2_path = get_default_beast2_path(),

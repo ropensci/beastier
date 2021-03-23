@@ -14,7 +14,7 @@ Determines if the environment is a continuous integration service
 }
 \examples{
   if (is_on_ci()) {
-    print("Running on a continuous integration service")
+    message("Running on a continuous integration service")
   }
 }
 \author{

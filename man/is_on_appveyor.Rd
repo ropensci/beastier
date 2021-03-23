@@ -14,7 +14,7 @@ Determines if the environment is AppVeyor
 }
 \examples{
   if (is_on_appveyor()) {
-    print("Running on AppVeyor")
+    message("Running on AppVeyor")
   }
 }
 \author{

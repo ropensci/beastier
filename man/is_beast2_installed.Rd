@@ -27,7 +27,7 @@ Checks if BEAST2 is installed
 }
 \examples{
   if (is_beast2_installed()) {
-    print("BEAST2 is installed")
+    message("BEAST2 is installed")
   }
 }
 \author{
