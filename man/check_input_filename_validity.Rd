@@ -37,9 +37,11 @@ Checks the input filename.
 Will stop if there is a problem with the input filename.
 }
 \examples{
-check_input_filename_validity(
-  get_beastier_path("2_4.xml")
-)
+if (is_beast2_installed()) {
+  check_input_filename_validity(
+    get_beastier_path("2_4.xml")
+  )
+}
 }
 \author{
 Richèl J.C. Bilderbeek

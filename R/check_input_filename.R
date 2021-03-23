@@ -18,9 +18,11 @@ check_input_filename <- function(input_filename) {
 #' @return nothing. Will call \code{\link{stop}} if the input file is invalid
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#' check_input_filename_validity(
-#'   get_beastier_path("2_4.xml")
-#' )
+#' if (is_beast2_installed()) {
+#'   check_input_filename_validity(
+#'     get_beastier_path("2_4.xml")
+#'   )
+#' }
 #' @export
 check_input_filename_validity <- function(
   input_filename,
