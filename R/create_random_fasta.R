@@ -9,7 +9,7 @@
 #'   sequence_length = 20,
 #'   fasta_filename = tempfile(fileext = ".fas")
 #' )
-#' @noRd
+#' @export
 create_random_fasta <- function(
   n_taxa,
   sequence_length,
