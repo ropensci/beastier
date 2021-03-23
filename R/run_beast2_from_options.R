@@ -63,7 +63,8 @@ run_beast2_from_options <- function(
       path.expand(bifs$input_filename_full)
     ),
     output_state_filename = normalizePath(
-      path.expand(bifs$output_state_filename_full)
+      path.expand(bifs$output_state_filename_full),
+      mustWork = FALSE
     ),
     rng_seed = beast2_options$rng_seed,
     n_threads = beast2_options$n_threads,
@@ -110,6 +111,7 @@ run_beast2_from_options <- function(
     file.exists(bifs$output_state_filename_full),
     info = paste0(
       "BEAST2 state file not created. \n",
+      "Command '", paste0(cmd, collapse = " "), "' failed. ",
       "Relative path, from 'beast2_options': '",
         beast2_options$output_state_filename, "'\n",
       "Full path: '", bifs$output_state_filename_full, "'\n",
