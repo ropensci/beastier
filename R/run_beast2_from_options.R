@@ -60,7 +60,8 @@ run_beast2_from_options <- function(
 
   cmd <- beastier::create_beast2_run_cmd(
     input_filename = normalizePath(
-      path.expand(bifs$input_filename_full)
+      path.expand(bifs$input_filename_full),
+      mustWork = FALSE
     ),
     output_state_filename = normalizePath(
       path.expand(bifs$output_state_filename_full),
@@ -71,7 +72,7 @@ run_beast2_from_options <- function(
     use_beagle = beast2_options$use_beagle,
     overwrite = beast2_options$overwrite,
     beast2_path = normalizePath(
-      beast2_options$beast2_path
+      beast2_options$beast2_path, mustWork = FALSE
     )
   )
 
