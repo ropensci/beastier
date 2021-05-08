@@ -34,6 +34,7 @@ Imports:
 Suggests:
     hunspell,
     knitr,
+    markdown,
     rmarkdown,
     spelling,
     testit,
