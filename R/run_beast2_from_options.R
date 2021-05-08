@@ -109,13 +109,17 @@ run_beast2_from_options <- function(
   # The files as created by BEAST2
   ##############################################################################
   testthat::expect_true(
-    file.exists(bifs$output_state_filename_full),
+    file.exists(
+      normalizePath(bifs$output_state_filename_full, mustWork = FALSE)
+    ),
     info = paste0(
       "BEAST2 state file not created. \n",
       "Command '", paste0(cmd, collapse = " "), "' failed. ",
       "Relative path, from 'beast2_options': '",
         beast2_options$output_state_filename, "'\n",
       "Full path: '", bifs$output_state_filename_full, "'\n",
+      "Normalized full path: '",
+        normalizePath(bifs$output_state_filename_full, mustWork = FALSE), "'\n",
       "Maybe no permission to write at that location?"
     )
   )
