@@ -58,13 +58,13 @@ create_beast2_run_cmd <- function(
     cmds <- c(cmds, "-beagle")
   }
   cmds <- c(cmds, "-statefile")
-  cmds <- c(cmds, paste0("\"", output_state_filename, "\""))
+  cmds <- c(cmds, paste0("\"", normalizePath(output_state_filename), "\""))
   testit::assert(file.exists(cmds[1]))
   if (overwrite == TRUE) {
     cmds <- c(cmds, "-overwrite")
   }
   testit::assert(file.exists(cmds[1]))
-  cmds <- c(cmds, paste0("\"", input_filename, "\""))
+  cmds <- c(cmds, paste0("\"", normalizePath(input_filename), "\""))
   testit::assert(file.exists(cmds[1]))
   cmds
 }
