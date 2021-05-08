@@ -50,11 +50,4 @@ after_success:
   # Build for CRAN, without BEAST2 installed
   - Rscript -e "source(\"R/uninstall_beast2.R\"); source(\"R/get_default_beast2_download_url.R\"); source(\"R/check_os.R\"); source(\"R/is_beast2_installed.R\"); uninstall_beast2()"
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then cd scripts; ./build_cran; fi
-  # Download thesis
-  - wget https://pure.rug.nl/ws/files/132028374/Complete_thesis.pdf
-
-after_failure:
-  # Download thesis
-  - wget https://pure.rug.nl/ws/files/132028374/Complete_thesis.pdf
-
 
