@@ -123,7 +123,8 @@ run_beast2_from_options <- function(
           beast2_options$output_state_filename, "'\n",
         "Full path: '", bifs$output_state_filename_full, "'\n",
         "Normalized full path: '",
-          normalizePath(bifs$output_state_filename_full, mustWork = FALSE), "'\n",
+          normalizePath(bifs$output_state_filename_full, mustWork = FALSE),
+          "'\n",
         "Maybe no permission to write at that location?"
       )
     )
