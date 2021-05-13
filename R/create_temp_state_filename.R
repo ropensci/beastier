@@ -2,10 +2,13 @@
 #' stores its state.
 #' @export
 create_temp_state_filename <- function() {
-  file.path(
-    rappdirs::user_cache_dir(),
-    basename(
-      tempfile(pattern = "beast2_", fileext = ".xml.state")
-    )
+  normalizePath(
+    file.path(
+      rappdirs::user_cache_dir(),
+      basename(
+        tempfile(pattern = "beast2_", fileext = ".xml.state")
+      )
+    ),
+    mustWork = FALSE
   )
 }
