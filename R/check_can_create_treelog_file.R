@@ -8,7 +8,10 @@ check_can_create_treelog_file <- function(
   # Extract the treelog file
   testthat::expect_true(file.exists(beast2_options$input_filename))
   text <- readr::read_lines(beast2_options$input_filename)
-  treelog_line <- stringr::str_subset(string = text, pattern = "<logger id=\"treelog.t:")
+  treelog_line <- stringr::str_subset(
+    string = text,
+    pattern = "<logger id=\"treelog.t:"
+  )
   testthat::expect_equal(length(treelog_line), 1)
   matches <- stringr::str_match(
     string = treelog_line,
@@ -20,7 +23,7 @@ check_can_create_treelog_file <- function(
   if (file.exists(treelog_filename)) return()
 
   tryCatch(
-    check_can_create_file(filename = treelog_filename, overwrite = FALSE),
+    beastier::check_can_create_file(filename = treelog_filename, overwrite = FALSE),
     error = function(e) {
       stop("Cannot create treelog file '", treelog_filename, "'")
     }

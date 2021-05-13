@@ -2,13 +2,16 @@
 #' Will \link{stop} if not
 #' @inheritParams default_params_doc
 #' @export
-check_can_create_screenlog_file <- function(
+check_can_create_screenlog_file <- function( # nolint indeed a long function name
   beast2_options
 ) {
   # Extract the screenlog file
   testthat::expect_true(file.exists(beast2_options$input_filename))
   text <- readr::read_lines(beast2_options$input_filename)
-  screenlog_line <- stringr::str_subset(string = text, pattern = "<logger id=\"screenlog\"")
+  screenlog_line <- stringr::str_subset(
+    string = text,
+    pattern = "<logger id=\"screenlog\""
+  )
   testthat::expect_equal(length(screenlog_line), 1)
   matches <- stringr::str_match(
     string = screenlog_line,
@@ -21,7 +24,7 @@ check_can_create_screenlog_file <- function(
   if (file.exists(screenlog_filename)) return()
 
   tryCatch(
-    check_can_create_file(filename = screenlog_filename, overwrite = FALSE),
+    beastier::check_can_create_file(filename = screenlog_filename, overwrite = FALSE),
     error = function(e) {
       stop("Cannot create screenlog file '", screenlog_filename, "'")
     }
