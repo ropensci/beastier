@@ -1,4 +1,5 @@
 test_that("use", {
+  if (!is_beast2_installed()) return()
   beast2_options <- create_beast2_options(
     input_filename = get_beastier_path("2_4.xml")
   )
