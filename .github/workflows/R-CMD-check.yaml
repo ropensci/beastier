@@ -14,7 +14,7 @@ jobs:
           - install_beast2: "true" 
           - install_beast2: "false"
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
