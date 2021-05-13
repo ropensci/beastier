@@ -11,7 +11,8 @@ create_beast2_run_cmd(
   n_threads = NA,
   use_beagle = FALSE,
   overwrite = FALSE,
-  beast2_path = get_default_beast2_path()
+  beast2_path = get_default_beast2_path(),
+  verbose = FALSE
 )
 }
 \arguments{
@@ -51,6 +52,9 @@ Use \link{get_default_beast2_bin_path} to get
 the default BEAST binary file's path
 Use \link{get_default_beast2_jar_path} to get
 the default BEAST jar file's path}
+
+\item{verbose}{if TRUE, additional information is displayed, that
+is potentially useful in debugging}
 }
 \value{
 a character vector with the command and

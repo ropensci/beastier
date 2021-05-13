@@ -62,6 +62,14 @@ if (is_beast2_installed()) {
 }
 ```
 
+If `beastier` has run BEAST2, the BEAST2 output can be shown:
+
+```{r}
+if (is_beast2_installed()) {
+  print(output)
+}
+```
+
 If `beastier` has run BEAST2, the MCMC's final state will be saved to a file: 
 
 ```{r}
@@ -70,10 +78,4 @@ if (is_beast2_installed()) {
 }
 ```
 
-If `beastier` has run BEAST2, the BEAST2 output can be shown:
-
-```{r}
-if (is_beast2_installed()) {
-  print(output)
-}
-```
+This final state can be used to continue the run.

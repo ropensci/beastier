@@ -24,53 +24,18 @@ create_beast2_run_cmd <- function(
   n_threads = NA,
   use_beagle = FALSE,
   overwrite = FALSE,
-  beast2_path = get_default_beast2_path()
+  beast2_path = get_default_beast2_path(),
+  verbose = FALSE
 ) {
-  testit::assert(file.exists(beast2_path))
-  testit::assert(file.exists(beastier::get_default_java_path()))
-  testit::assert(beautier::is_one_bool(use_beagle))
-  cmds <- NULL
-  if (beastier::is_jar_path(beast2_path)) {
-    cmds <- c(
-      beastier::get_default_java_path(),
-      "-cp",
-      shQuote(beast2_path),
-      beastier::get_beast2_main_class_name()
-    )
-    testit::assert(file.exists(cmds[1]))
-    # Cannot do: testit::assert(file.exists(cmds[3]))
-    # because that path is quotes
-    # and file.exists does not know what to do with that
-  } else {
-    testit::assert(beastier::is_bin_path(beast2_path))
-    cmds <- beast2_path
-    testit::assert(file.exists(cmds[1]))
-  }
-  if (!beautier::is_one_na(rng_seed)) {
-    cmds <- c(cmds, "-seed")
-    cmds <- c(cmds, rng_seed)
-  }
-  if (!beautier::is_one_na(n_threads)) {
-    cmds <- c(cmds, "-threads")
-    cmds <- c(cmds, n_threads)
-  }
-  if (use_beagle == TRUE) {
-    cmds <- c(cmds, "-beagle")
-  }
-  cmds <- c(cmds, "-statefile")
-  cmds <- c(
-    cmds,
-    paste0("\"", normalizePath(output_state_filename, mustWork = FALSE), "\"")
+  beast2_options <- beastier::create_beast2_options(
+    input_filename = input_filename,
+    output_state_filename = output_state_filename,
+    rng_seed = rng_seed,
+    n_threads = n_threads,
+    use_beagle = use_beagle,
+    overwrite = overwrite,
+    beast2_path = beast2_path,
+    verbose = verbose
   )
-  testit::assert(file.exists(cmds[1]))
-  if (overwrite == TRUE) {
-    cmds <- c(cmds, "-overwrite")
-  }
-  testit::assert(file.exists(cmds[1]))
-  cmds <- c(
-    cmds,
-    paste0("\"", normalizePath(input_filename, mustWork = FALSE), "\"")
-  )
-  testit::assert(file.exists(cmds[1]))
-  cmds
+  beastier::create_beast2_run_cmd_from_options(beast2_options)
 }
