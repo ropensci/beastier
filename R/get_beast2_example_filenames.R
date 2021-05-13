@@ -7,6 +7,12 @@
 get_beast2_example_filenames <- function(
   beast2_folder = get_default_beast2_folder()
 ) {
+  if (!dir.exists(beast2_folder)) {
+    stop(
+      "Cannot find BEAST2 example filenames in BEAST folder '",
+      beast2_folder, "'. Maybe BEAST2 is not installed?"
+    )
+  }
   beast2_subfolder <- file.path(beast2_folder, "beast")
   testit::assert(dir.exists(beast2_subfolder))
   examples_folder <- file.path(beast2_subfolder, "examples")

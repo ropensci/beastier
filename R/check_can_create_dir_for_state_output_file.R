@@ -2,7 +2,7 @@
 #' can be created. Will \link{stop} otherwise
 #' @inheritParams default_params_doc
 #' @export
-check_can_create_dir_for_state_output_file <- function(
+check_can_create_dir_for_state_output_file <- function( # nolint indeed a long function name
   beast2_options
 ) {
   beastier::check_beast2_options(beast2_options)

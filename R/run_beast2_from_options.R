@@ -81,7 +81,7 @@ run_beast2_from_options <- function(
   # The files as created by BEAST2
   ##############################################################################
   # This is only true if there has been one sampling event in the MCMC
-  if (1 == 2) {
+  if (1 == 1) {
     testthat::expect_true(
       file.exists(
         normalizePath(beast2_options$output_state_filename, mustWork = FALSE)
