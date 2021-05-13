@@ -7,12 +7,13 @@ check_can_create_state_output_file <- function( # nolint indeed a long function 
 ) {
   beastier::check_beast2_options(beast2_options)
   beastier::check_can_create_dir_for_state_output_file(beast2_options)
+  if (file.exists(beast2_options$output_state_filename)) return()
 
   # Use a more precise error message
   tryCatch(
     beastier::check_can_create_file(
       filename = beast2_options$output_state_filename,
-      overwrite = TRUE
+      overwrite = FALSE
     ),
     error = function(e) {
       stop(
