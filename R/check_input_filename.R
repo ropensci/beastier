@@ -20,15 +20,19 @@ check_input_filename <- function(input_filename) {
 #' @examples
 #' if (is_beast2_installed()) {
 #'   check_input_filename_validity(
-#'     get_beastier_path("2_4.xml")
-#'   )
+#'    create_beast2_options(
+#'      input_filename = get_beastier_path("2_4.xml")
+#'    )
+#'  )
 #' }
 #' @export
 check_input_filename_validity <- function(
-  input_filename,
-  beast2_path = beastier::get_default_beast2_path(),
-  verbose = FALSE
+  beast2_options
 ) {
+  # Do not be smart yet
+  input_filename <- beast2_options$input_filename
+  beast2_path <- beast2_options$beast2_path
+  verbose <- beast2_options$verbose
 
   if (
     !beastier::is_beast2_input_file(

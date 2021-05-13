@@ -27,11 +27,7 @@ run_beast2_from_options <- function(
   beastier::check_input_filename(beast2_options$input_filename)
   beastier::check_beast2_path(beast2_options$beast2_path)
   beastier::check_beast2_options_do_not_overwrite_existing_files(beast2_options)
-  beastier::check_input_filename_validity(
-    input_filename = beast2_options$input_filename,
-    beast2_path = beast2_options$beast2_path,
-    verbose = beast2_options$verbose
-  )
+  beastier::check_input_filename_validity(beast2_options)
   beastier::check_can_create_dir_for_state_output_file(beast2_options)
   beastier::check_can_create_state_output_file(beast2_options)
 
