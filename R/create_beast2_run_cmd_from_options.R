@@ -4,12 +4,9 @@
 #'   arguments to call BEAST2
 #' @examples
 #'   if (is_beast2_installed()) {
-#'     cmds <- create_beast2_run_cmd_from_options(
-#'       input_filename = "input.xml",
-#'       output_state_filename = "output.xml.state",
-#'       beast2_path = get_default_beast2_jar_path()
+#'     create_beast2_run_cmd_from_options(
+#'       beast2_options = create_beast2_options()
 #'     )
-#'     testit::assert(cmds[2] == "-cp")
 #'   }
 #' @author Richèl J.C. Bilderbeek
 #' @export
@@ -58,7 +55,11 @@ create_beast2_run_cmd_from_options <- function(beast2_options) {
   testit::assert(file.exists(cmds[1]))
   cmds <- c(
     cmds,
-    paste0("\"", normalizePath(beast2_options$input_filename, mustWork = FALSE), "\"")
+    paste0(
+      "\"",
+      normalizePath(beast2_options$input_filename, mustWork = FALSE),
+      "\""
+    )
   )
   testit::assert(file.exists(cmds[1]))
   cmds
