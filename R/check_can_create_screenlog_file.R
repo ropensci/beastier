@@ -24,7 +24,9 @@ check_can_create_screenlog_file <- function( # nolint indeed a long function nam
   if (file.exists(screenlog_filename)) return()
 
   tryCatch(
-    beastier::check_can_create_file(filename = screenlog_filename, overwrite = FALSE),
+    beastier::check_can_create_file(
+      filename = screenlog_filename, overwrite = FALSE
+    ),
     error = function(e) {
       stop("Cannot create screenlog file '", screenlog_filename, "'")
     }

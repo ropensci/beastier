@@ -23,7 +23,9 @@ check_can_create_treelog_file <- function(
   if (file.exists(treelog_filename)) return()
 
   tryCatch(
-    beastier::check_can_create_file(filename = treelog_filename, overwrite = FALSE),
+    beastier::check_can_create_file(
+      filename = treelog_filename, overwrite = FALSE
+    ),
     error = function(e) {
       stop("Cannot create treelog file '", treelog_filename, "'")
     }
