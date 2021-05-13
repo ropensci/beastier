@@ -27,6 +27,7 @@ Imports:
     phangorn,
     pryr,
     rappdirs,
+    readr,
     remotes,
     rJava,
     stringr,
