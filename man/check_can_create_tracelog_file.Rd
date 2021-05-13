@@ -3,7 +3,8 @@
 \name{check_can_create_tracelog_file}
 \alias{check_can_create_tracelog_file}
 \title{Check if the MCMC's tracelog file can be created.
-Will \link{stop} if not}
+Will \link{stop} if not.
+If the file already exists, it is assumed that a new file can be created}
 \usage{
 check_can_create_tracelog_file(beast2_options)
 }
@@ -14,5 +15,6 @@ as can be created by \link{create_beast2_options}}
 }
 \description{
 Check if the MCMC's tracelog file can be created.
-Will \link{stop} if not
+Will \link{stop} if not.
+If the file already exists, it is assumed that a new file can be created
 }
