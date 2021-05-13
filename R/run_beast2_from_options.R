@@ -30,6 +30,9 @@ run_beast2_from_options <- function(
   beastier::check_input_filename_validity(beast2_options)
   beastier::check_can_create_dir_for_state_output_file(beast2_options)
   beastier::check_can_create_state_output_file(beast2_options)
+  beastier::check_can_create_treelog_file(beast2_options)
+  beastier::check_can_create_screenlog_file(beast2_options)
+  beastier::check_can_create_tracelog_file(beast2_options)
 
   ##############################################################################
   # Create the BEAST2 command
