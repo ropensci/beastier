@@ -81,23 +81,15 @@ run_beast2_from_options <- function(
   # The files as created by BEAST2
   ##############################################################################
   # This is only true if there has been one sampling event in the MCMC
-  if (1 == 1) {
-    testthat::expect_true(
-      file.exists(
-        normalizePath(beast2_options$output_state_filename, mustWork = FALSE)
-      ),
-      info = paste0(
-        "BEAST2 state file not created. \n",
-        "Command '", paste0(cmd, collapse = " "), "' failed. ",
-        "Relative path, from 'beast2_options': '",
-          beast2_options$output_state_filename, "'\n",
-        "Full path: '", beast2_options$output_state_filename, "'\n",
-        "Normalized full path: '",
-          normalizePath(beast2_options$output_state_filename, mustWork = FALSE),
-          "'\n",
-        "Maybe no permission to write at that location?"
-      )
+  testthat::expect_true(
+    file.exists(beast2_options$output_state_filename),
+    info = paste0(
+      "BEAST2 state file not created. \n",
+      "Command '", paste0(cmd, collapse = " "), "' failed. ",
+      "'beast2_options$output_state_filename': '",
+        beast2_options$output_state_filename, "'\n",
+      "Maybe no permission to write at that location?"
     )
-  }
+  )
   output
 }

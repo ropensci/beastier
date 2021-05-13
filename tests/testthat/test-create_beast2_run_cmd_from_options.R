@@ -51,7 +51,7 @@ test_that("use, jar", {
   expected <- c(
     get_default_java_path(),
     "-cp",
-    shQuote(beast2_options$beast2_path),
+    beast2_options$beast2_path,
     get_beast2_main_class_name(),
     "-statefile",
     paste0(
