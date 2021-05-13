@@ -43,27 +43,13 @@ create_beast2_run_cmd_from_options <- function(beast2_options) { # nolint indeed
     cmds <- c(cmds, "-beagle")
   }
   cmds <- c(cmds, "-statefile")
-  cmds <- c(
-    cmds,
-    paste0(
-      "\"",
-      normalizePath(beast2_options$output_state_filename, mustWork = FALSE),
-      "\""
-    )
-  )
+  cmds <- c(cmds, beast2_options$output_state_filename)
   testit::assert(file.exists(cmds[1]))
   if (beast2_options$overwrite == TRUE) {
     cmds <- c(cmds, "-overwrite")
   }
   testit::assert(file.exists(cmds[1]))
-  cmds <- c(
-    cmds,
-    paste0(
-      "\"",
-      normalizePath(beast2_options$input_filename, mustWork = FALSE),
-      "\""
-    )
-  )
+  cmds <- c(cmds, beast2_options$input_filename)
   testit::assert(file.exists(cmds[1]))
   cmds
 }

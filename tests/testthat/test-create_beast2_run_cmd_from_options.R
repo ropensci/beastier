@@ -22,17 +22,9 @@ test_that("use, bin", {
   expected <- c(
     beast2_options$beast2_path,
     "-statefile",
-    paste0(
-      "\"",
-      normalizePath(beast2_options$output_state_filename, mustWork = FALSE),
-      "\""
-    ),
+    beast2_options$output_state_filename,
     "-overwrite",
-    paste0(
-      "\"",
-      normalizePath(beast2_options$input_filename, mustWork = FALSE),
-      "\""
-    )
+    beast2_options$input_filename
   )
   expect_equal(created_from_options, expected)
 })
@@ -54,17 +46,9 @@ test_that("use, jar", {
     beast2_options$beast2_path,
     get_beast2_main_class_name(),
     "-statefile",
-    paste0(
-      "\"",
-      normalizePath(beast2_options$output_state_filename, mustWork = FALSE),
-      "\""
-    ),
+    beast2_options$output_state_filename,
     "-overwrite",
-    paste0(
-      "\"",
-      normalizePath(beast2_options$input_filename, mustWork = FALSE),
-      "\""
-    )
+    beast2_options$input_filename
   )
   expect_equal(created_from_options, expected)
 })
