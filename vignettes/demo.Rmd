@@ -54,7 +54,7 @@ expect_false(file.exists(beast2_options$output_state_filename))
 ```
 
 We can run `beastier` now, if BEAST2 is installed. Because BEAST2 needs
-to be installed by the user, this vignette checks if it is installed:
+to be installed by the user, this vignette checks if it is installed in every step:
 
 ```{r}
 if (is_beast2_installed()) {
