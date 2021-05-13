@@ -27,8 +27,32 @@ check_input_filename <- function(input_filename) {
 #' }
 #' @export
 check_input_filename_validity <- function(
-  beast2_options
+  beast2_options,
+  input_filename = "deprecated",
+  beast2_path = "deprecated",
+  verbose = "deprecated"
 ) {
+  # Check for deprecated argument names
+  calls <- names(sapply(match.call(), deparse))[-1]
+  if (any("input_filename" %in% calls)) {
+    stop(
+      "'input_filename' is deprecated, ",
+      "use 'create_beast2_options(input_filename = input_filename)' instead"
+    )
+  }
+  if (any("beast2_path" %in% calls)) {
+    stop(
+      "'beast2_path' is deprecated, ",
+      "use 'create_beast2_options(beast2_path = beast2_path)' instead"
+    )
+  }
+  if (any("verbose" %in% calls)) {
+    stop(
+      "'verbose' is deprecated, ",
+      "use 'create_beast2_options(verbose = verbose)' instead"
+    )
+  }
+
   # Do not be smart yet
   input_filename <- beast2_options$input_filename
   beast2_path <- beast2_options$beast2_path
