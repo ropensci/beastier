@@ -85,6 +85,22 @@ test_that("use sub-sub-sub-folders", {
   expect_true(file.exists(beast2_options$output_state_filename))
 })
 
+test_that("use relative and sub-sub-sub-folders", {
+
+  if (!is_beast2_installed()) return()
+
+  input_filename <- get_beastier_path("2_4.xml")
+  beast2_options <- create_beast2_options(input_filename = input_filename)
+  beast2_options$output_state_filename <-
+    file.path(tempdir(), "h", "i", "..", "j", "k.xml.state")
+
+  expect_silent(
+    run_beast2_from_options(beast2_options = beast2_options)
+  )
+
+  expect_true(file.exists(beast2_options$output_state_filename))
+})
+
 
 test_that("show proper error message when using CBS with too few taxa", {
 

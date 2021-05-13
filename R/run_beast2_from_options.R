@@ -43,18 +43,24 @@ run_beast2_from_options <- function(
     beast2_options = beast2_options
   )
 
-  if (beast2_options$verbose == TRUE) {
+  if (beast2_options$verbose) {
     message(paste("cmd:", paste0(cmd, collapse = " ")))
   }
 
   # Create the folder to hold the file, without warning if it's already present
+  output_folder <- dirname(beast2_options$output_state_filename)
+  if (beast2_options$verbose) {
+    message(
+      "Creating folder '", output_folder, "'",
+      "for BEAST2 .xml.state output file"
+    )
+  }
   dir.create(
-    path = dirname(
-      normalizePath(beast2_options$output_state_filename, mustWork = FALSE)
-    ),
+    path = output_folder,
     recursive = TRUE,
     showWarnings = FALSE
   )
+  testthat::expect_true(dir.exists(output_folder))
 
   ##############################################################################
   # Run BEAST2
