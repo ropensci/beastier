@@ -1,4 +1,5 @@
 test_that("use", {
+  if (!is_beast2_installed()) return()
   expect_silent(
     check_input_filename_validity(
       beast2_options = create_beast2_options(
