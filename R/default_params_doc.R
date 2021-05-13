@@ -11,9 +11,6 @@
 #' folder.
 #' Use \link{get_default_beast2_bin_path} to get the full path to
 #' the default BEAST2 executable.
-#' @param beast2_internal_filenames a list of internally
-#' used BEAST2 filenames,
-#' as created by \link{create_beast2_internal_filenames}
 #' @param beast2_jar_path name of the BEAST2 jar file
 #' (usually has a \code{.jar} extension).
 #' Use \link{get_default_beast2_jar_path} to get
@@ -129,7 +126,6 @@
 default_params_doc <- function(
   beast2_bin_path,
   beast2_folder,
-  beast2_internal_filenames,
   beast2_jar_path,
   beast2_options, beast2_optionses,
   beast2_path,
