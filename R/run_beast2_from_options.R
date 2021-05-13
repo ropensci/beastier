@@ -22,25 +22,16 @@ run_beast2_from_options <- function(
    stop("Cannot use the Windows executable BEAST2.exe in scripts")
   }
   ##############################################################################
-  # Deduce the full paths of the input and output files
-  ##############################################################################
-  # Beast2 Internal FilenameS
-  bifs <- beastier::create_beast2_internal_filenames(beast2_options)
-
-  if (beast2_options$verbose) {
-    beastier::print_beast2_internal_filenames(bifs)
-  }
-  ##############################################################################
   # Check files
   ##############################################################################
-  beastier::check_input_filename(bifs$input_filename_full)
+  beastier::check_input_filename(beast2_options$input_filename)
   beastier::check_beast2_path(beast2_options$beast2_path)
   beastier::check_beast2_options_do_not_overwrite_existing_files(
     beast2_options = beast2_options
   )
 
   beastier::check_input_filename_validity(
-    input_filename = bifs$input_filename_full,
+    input_filename = beast2_options$input_filename,
     beast2_path = beast2_options$beast2_path,
     verbose = beast2_options$verbose
   )
@@ -48,7 +39,6 @@ run_beast2_from_options <- function(
   ##############################################################################
   # Create the BEAST2 command
   ##############################################################################
-  testit::assert(length(bifs$input_filename_full) == 1)
   cmd <- beastier::create_beast2_run_cmd_from_options(
     beast2_options = beast2_options
   )
@@ -60,7 +50,7 @@ run_beast2_from_options <- function(
   # Create the folder to hold the file, without warning if it's already present
   dir.create(
     path = dirname(
-      normalizePath(bifs$output_state_filename_full, mustWork = FALSE)
+      normalizePath(beast2_options$output_state_filename, mustWork = FALSE)
     ),
     recursive = TRUE,
     showWarnings = FALSE
@@ -91,16 +81,16 @@ run_beast2_from_options <- function(
   if (1 == 2) {
     testthat::expect_true(
       file.exists(
-        normalizePath(bifs$output_state_filename_full, mustWork = FALSE)
+        normalizePath(beast2_options$output_state_filename, mustWork = FALSE)
       ),
       info = paste0(
         "BEAST2 state file not created. \n",
         "Command '", paste0(cmd, collapse = " "), "' failed. ",
         "Relative path, from 'beast2_options': '",
           beast2_options$output_state_filename, "'\n",
-        "Full path: '", bifs$output_state_filename_full, "'\n",
+        "Full path: '", beast2_options$output_state_filename, "'\n",
         "Normalized full path: '",
-          normalizePath(bifs$output_state_filename_full, mustWork = FALSE),
+          normalizePath(beast2_options$output_state_filename, mustWork = FALSE),
           "'\n",
         "Maybe no permission to write at that location?"
       )
