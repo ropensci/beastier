@@ -36,8 +36,7 @@ run_beast2_from_options <- function(
   beastier::check_input_filename(bifs$input_filename_full)
   beastier::check_beast2_path(beast2_options$beast2_path)
   beastier::check_beast2_options_do_not_overwrite_existing_files(
-    beast2_options = beast2_options,
-    beast2_internal_filenames = bifs
+    beast2_options = beast2_options
   )
 
   beastier::check_input_filename_validity(
@@ -50,38 +49,9 @@ run_beast2_from_options <- function(
   # Create the BEAST2 command
   ##############################################################################
   testit::assert(length(bifs$input_filename_full) == 1)
-  testit::assert(length(beast2_options$output_state_filename) == 1)
-  testit::assert(length(beast2_options$rng_seed) == 1)
-  testit::assert(length(beast2_options$n_threads) == 1)
-  testit::assert(length(beast2_options$use_beagle) == 1)
-  testit::assert(length(beast2_options$overwrite) == 1)
-  testit::assert(length(beast2_options$beast2_path) == 1)
-
-
-  if (1 == 2) {
-    cmd <- beastier::create_beast2_run_cmd(
-      input_filename = normalizePath(
-        path.expand(bifs$input_filename_full),
-        mustWork = FALSE
-      ),
-      output_state_filename = normalizePath(
-        path.expand(bifs$output_state_filename_full),
-        mustWork = FALSE
-      ),
-      rng_seed = beast2_options$rng_seed,
-      n_threads = beast2_options$n_threads,
-      use_beagle = beast2_options$use_beagle,
-      overwrite = beast2_options$overwrite,
-      beast2_path = normalizePath(
-        beast2_options$beast2_path, mustWork = FALSE
-      )
-    )
-  }
-  else {
-    cmd <- beastier::create_beast2_run_cmd_from_options(
-      beast2_options = beast2_options
-    )
-  }
+  cmd <- beastier::create_beast2_run_cmd_from_options(
+    beast2_options = beast2_options
+  )
 
   if (beast2_options$verbose == TRUE) {
     message(paste("cmd:", paste0(cmd, collapse = " ")))

@@ -6,19 +6,14 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_beast2_options_do_not_overwrite_existing_files <- function( # nolint indeed a long function name, which is fine for internal functions
-  beast2_options,
-  beast2_internal_filenames
+  beast2_options
 ) {
   beastier::check_beast2_options(beast2_options)
-  beastier::check_beast2_internal_filenames(beast2_internal_filenames)
   if (beast2_options$overwrite) return()
-  testit::assert(beast2_options$overwrite == FALSE)
 
-  bifs <- beast2_internal_filenames
-
-  if (file.exists(bifs$output_state_filename_full)) {
+  if (file.exists(beast2_options$output_state_filename)) {
     stop("Will not overwrite 'output_state_filename' ('",
-      bifs$output_state_filename_full, "') with 'overwrite' is FALSE"
+      beast2_options$output_state_filename, "') with 'overwrite' is FALSE"
     )
   }
 }
