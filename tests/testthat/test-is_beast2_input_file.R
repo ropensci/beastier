@@ -1,6 +1,5 @@
 test_that("beast2_example_output.log is not a valid BEAST2 input file", {
 
-  if (!is_on_ci()) return()
   if (!is_beast2_installed()) return()
 
   filename <- get_beastier_path("beast2_example_output.log")
