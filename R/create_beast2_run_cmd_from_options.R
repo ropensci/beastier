@@ -10,7 +10,7 @@
 #'   }
 #' @author Richèl J.C. Bilderbeek
 #' @export
-create_beast2_run_cmd_from_options <- function(beast2_options) {
+create_beast2_run_cmd_from_options <- function(beast2_options) { # nolint indeed a long function name
   beastier::check_beast2_options(beast2_options)
   testit::assert(file.exists(beast2_options$beast2_path))
   testit::assert(file.exists(beastier::get_default_java_path()))
@@ -46,7 +46,11 @@ create_beast2_run_cmd_from_options <- function(beast2_options) {
   cmds <- c(cmds, "-statefile")
   cmds <- c(
     cmds,
-    paste0("\"", normalizePath(beast2_options$output_state_filename, mustWork = FALSE), "\"")
+    paste0(
+      "\"",
+      normalizePath(beast2_options$output_state_filename, mustWork = FALSE),
+      "\""
+    )
   )
   testit::assert(file.exists(cmds[1]))
   if (beast2_options$overwrite == TRUE) {
