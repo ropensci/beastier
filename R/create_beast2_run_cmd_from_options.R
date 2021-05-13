@@ -14,7 +14,6 @@ create_beast2_run_cmd_from_options <- function(beast2_options) { # nolint indeed
   beastier::check_beast2_options(beast2_options)
   testit::assert(file.exists(beast2_options$beast2_path))
   testit::assert(file.exists(beastier::get_default_java_path()))
-  testit::assert(beautier::is_one_bool(beast2_options$use_beagle))
   cmds <- NULL
   if (beastier::is_jar_path(beast2_options$beast2_path)) {
     cmds <- c(
