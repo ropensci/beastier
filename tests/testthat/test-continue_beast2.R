@@ -1,4 +1,4 @@
-test_that("use", {
+test_that("minimal use", {
   if (!is_beast2_installed()) return()
   beast2_options <- create_beast2_options(
     input_filename = get_beastier_path("2_4.xml")
@@ -7,4 +7,32 @@ test_that("use", {
   expect_true(file.exists(beast2_options$output_state_filename))
   output_2 <- continue_beast2(beast2_options)
   expect_true(file.exists(beast2_options$output_state_filename))
+})
+
+test_that("longer trace", {
+  if (!is_beast2_installed()) return()
+
+  inference_model <- beautier::create_test_inference_model()
+  beast2_input_filename <- tempfile("beast2_", fileext = ".xml")
+  beautier::create_beast2_input_file_from_model(
+    input_filename = beautier::get_beautier_path("test_output_0.fas"),
+    output_filename = beast2_input_filename,
+    inference_model = inference_model
+  )
+  beast2_options <- create_beast2_options(
+    input_filename = beast2_input_filename
+  )
+  run_beast2_from_options(beast2_options)
+  results <- tracerer::parse_beast_output_files(
+    log_filename = inference_model$mcmc$tracelog$filename,
+    trees_filenames = inference_model$mcmc$treelog$filename,
+    state_filename = beast2_options$output_state_filename
+  )
+  continue_beast2(beast2_options)
+  results_after <- tracerer::parse_beast_output_files(
+    log_filename = inference_model$mcmc$tracelog$filename,
+    trees_filenames = inference_model$mcmc$treelog$filename,
+    state_filename = beast2_options$output_state_filename
+  )
+  expect_true(nrow(results$estimates) < nrow(results_after$estimates))
 })
