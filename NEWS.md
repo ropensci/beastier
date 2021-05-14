@@ -2,11 +2,11 @@
 
 Newest versions at top.
 
-## beastier 2.3 (unreleased)
+## beastier 2.3
 
 ### NEW FEATURES
 
-  * None
+  * Add `continue_beast2` to continue a BEAST2 run
 
 ### MINOR IMPROVEMENTS
 
