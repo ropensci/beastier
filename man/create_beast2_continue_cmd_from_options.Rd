@@ -19,7 +19,7 @@ a character vector with the command and
 If the BEAST2 input \code{.xml} filename
 or the BEAST2 state \code{.state.xml} filename
 contain spaces, these filenames are quoted,
-so that the CLI to BEAST2 correctly parses its arguments
+so that the command-line interface to BEAST2 correctly parses its arguments
 }
 \examples{
   if (is_beast2_installed()) {

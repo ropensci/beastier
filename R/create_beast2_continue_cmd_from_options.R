@@ -3,7 +3,7 @@
 #' If the BEAST2 input \code{.xml} filename
 #' or the BEAST2 state \code{.state.xml} filename
 #' contain spaces, these filenames are quoted,
-#' so that the CLI to BEAST2 correctly parses its arguments
+#' so that the command-line interface to BEAST2 correctly parses its arguments
 #' @inheritParams default_params_doc
 #' @return a character vector with the command and
 #'   arguments to call BEAST2

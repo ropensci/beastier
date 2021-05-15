@@ -2,6 +2,25 @@
 
 Newest versions at top.
 
+## beastier 2.3.1 (unreleased)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * Can correctly call BEAST2 when input or state filename has spaces, thanks Jason Griffiths
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
+
 ## beastier 2.3 (2021-05-14)
 
 ### NEW FEATURES
