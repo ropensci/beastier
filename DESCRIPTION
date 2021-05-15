@@ -23,7 +23,7 @@ RoxygenNote: 7.1.1
 Imports:
     ape,
     assertive,
-    beautier (>= 2.3.5),
+    beautier (>= 2.5),
     devtools,
     phangorn,
     pryr,
