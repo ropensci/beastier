@@ -81,3 +81,13 @@ test_that("install can be verbose", {
   )
   unlink(folder_name, recursive = TRUE)
 })
+
+test_that("install at path with spaces", {
+
+  if (!is_on_ci()) return()
+  if (rappdirs::app_dir()$os == "mac") return()
+
+  folder_name <- file.path(tempfile(), "path with spaces", "even more")
+  expect_silent(install_beast2(folder_name = folder_name))
+  expect_true(is_beast2_installed(folder_name = folder_name))
+})

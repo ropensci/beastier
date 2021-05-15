@@ -58,8 +58,9 @@ test_that("use, bin, spaces in BEAST2 bin path", {
     input_filename = "irrelevant",
     beast2_path = beast2_path
   )
-  expect_false(beast2_path %in% cmd)
-  expect_true(shQuote(beast2_path) %in% cmd)
+  # The first cmd is the file to be run. It must be findable
+  expect_true(file.exists(cmd[1]))
+  expect_equal(cmd[1], beast2_path)
 })
 
 test_that("use, bin, spaces in BEAST2 jar path", {
