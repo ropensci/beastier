@@ -14,12 +14,16 @@ Newest versions at top.
 
 ### BUG FIXES
 
-  * Can correctly call BEAST2 when input or state filename has spaces, thanks Jason Griffiths
+  * Can correctly call BEAST2 when spaces in 
+    (1) BEAST2 bin filename, 
+    (2) BEAST2 jar filename,
+    (3) BEAST2 input filename 
+    (4) BEAST2 state ouput filename.
+    Thanks Jason Griffiths
 
 ### DEPRECATED AND DEFUNCT
 
   * None
-
 
 ## beastier 2.3 (2021-05-14)
 

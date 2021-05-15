@@ -1,8 +1,7 @@
-context("is_bin_path")
-
 test_that("use", {
   expect_true(is_bin_path("beast"))
   expect_true(is_bin_path("BEAST.exe"))
+  expect_true(is_bin_path("/path with spaces/another one/beast"))
   expect_false(is_bin_path("beast.exe"))
   expect_false(is_bin_path("launcher.jar"))
   expect_true(is_bin_path(get_default_beast2_bin_path()))

@@ -24,7 +24,7 @@ create_beast2_continue_cmd_from_options <- function(beast2_options) { # nolint i
     cmds <- c(
       beastier::get_default_java_path(),
       "-cp",
-      beast2_options$beast2_path,
+      beastier::add_quotes_if_has_spaces(beast2_options$beast2_path),
       beastier::get_beast2_main_class_name()
     )
     testit::assert(file.exists(cmds[1]))
@@ -33,8 +33,8 @@ create_beast2_continue_cmd_from_options <- function(beast2_options) { # nolint i
     # and file.exists does not know what to do with that
   } else {
     testit::assert(beastier::is_bin_path(beast2_options$beast2_path))
-    cmds <- beast2_options$beast2_path
-    testit::assert(file.exists(cmds[1]))
+    testit::assert(file.exists(beast2_options$beast2_path))
+    cmds <- beastier::add_quotes_if_has_spaces(beast2_options$beast2_path)
   }
   if (!beautier::is_one_na(beast2_options$rng_seed)) {
     cmds <- c(cmds, "-seed")
@@ -53,15 +53,12 @@ create_beast2_continue_cmd_from_options <- function(beast2_options) { # nolint i
     beastier::add_quotes_if_has_spaces(beast2_options$output_state_filename)
   )
   cmds <- c(cmds, "-resume")
-  testit::assert(file.exists(cmds[1]))
   if (beast2_options$overwrite == TRUE) {
     cmds <- c(cmds, "-overwrite")
   }
-  testit::assert(file.exists(cmds[1]))
   cmds <- c(
     cmds,
     beastier::add_quotes_if_has_spaces(beast2_options$input_filename)
   )
-  testit::assert(file.exists(cmds[1]))
   cmds
 }
