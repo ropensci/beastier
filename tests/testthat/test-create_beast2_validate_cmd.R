@@ -1,5 +1,3 @@
-context("create_beast2_validate_cmd")
-
 test_that("use, bin", {
 
   if (!is_beast2_installed()) return()
@@ -25,8 +23,6 @@ test_that("use, jar", {
 
   if (!is_beast2_installed()) return()
 
-  testit::assert(is_beast2_installed())
-
   beast2_jar_path <- get_default_beast2_jar_path()
   input_filename <- "input.xml"
 
@@ -37,10 +33,82 @@ test_that("use, jar", {
   expected <- c(
     get_default_java_path(),
     "-cp",
-    paste0("\"", beast2_jar_path, "\""),
+    beast2_jar_path,
     get_beast2_main_class_name(),
     "-validate",
-    paste0("\"", input_filename, "\"")
+    input_filename
   )
   expect_equal(created, expected)
+})
+
+test_that("use, bin, spaces in BEAST2 bin path", {
+
+  if (!is_beast2_installed()) return()
+
+  testit::assert(is_beast2_installed())
+  beast2_path <- file.path(tempfile(), "path with spaces", "beast")
+  expect_true(is_bin_path(beast2_path))
+  dir.create(dirname(beast2_path), showWarnings = FALSE, recursive = TRUE)
+  file.copy(
+    from = get_default_beast2_bin_path(),
+    to = beast2_path
+  )
+
+  cmd <- create_beast2_validate_cmd(
+    input_filename = "irrelevant",
+    beast2_path = beast2_path
+  )
+  expect_false(beast2_path %in% cmd)
+  expect_true(shQuote(beast2_path) %in% cmd)
+})
+
+test_that("use, bin, spaces in BEAST2 jar path", {
+
+  if (!is_beast2_installed()) return()
+
+  testit::assert(is_beast2_installed())
+  beast2_path <- file.path(tempfile(), "path with spaces", "launcher.jar")
+  expect_true(is_jar_path(beast2_path))
+  dir.create(dirname(beast2_path), showWarnings = FALSE, recursive = TRUE)
+  file.copy(
+    from = get_default_beast2_jar_path(),
+    to = beast2_path
+  )
+
+  cmd <- create_beast2_validate_cmd(
+    input_filename = "irrelevant",
+    beast2_path = beast2_path
+  )
+  expect_false(beast2_path %in% cmd)
+  expect_true(shQuote(beast2_path) %in% cmd)
+})
+
+test_that("use, bin, spaces in BEAST2 input filename", {
+
+  if (!is_beast2_installed()) return()
+
+  testit::assert(is_beast2_installed())
+  input_filename <- "path with spaces/input.xml"
+
+  cmd <- create_beast2_validate_cmd(
+    input_filename = input_filename,
+    beast2_path = get_default_beast2_bin_path()
+  )
+  expect_false("path with spaces/input.xml" %in% cmd)
+  expect_true(shQuote("path with spaces/input.xml") %in% cmd)
+})
+
+test_that("use, jar, spaces in BEAST2 input filename", {
+
+  if (!is_beast2_installed()) return()
+
+  testit::assert(is_beast2_installed())
+  input_filename <- "path with spaces/input.xml"
+
+  cmd <- create_beast2_validate_cmd(
+    input_filename = input_filename,
+    beast2_path = get_default_beast2_jar_path()
+  )
+  expect_false("path with spaces/input.xml" %in% cmd)
+  expect_true(shQuote("path with spaces/input.xml") %in% cmd)
 })

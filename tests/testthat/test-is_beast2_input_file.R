@@ -180,3 +180,67 @@ test_that("show commands in output when verbose is TRUE", {
     beast2_folder
   )
 })
+
+test_that("Run with spaces in the input filename, for Windows", {
+
+  if (!is_beast2_installed()) return()
+
+  filename <- file.path(tempfile(), "path with spaces", "anthus_2_4.xml")
+  dir.create(dirname(filename), showWarnings = FALSE, recursive = TRUE)
+  expect_true(is_beast2_input_file(get_beastier_path("anthus_2_4.xml")))
+  file.copy(
+    from = get_beastier_path("anthus_2_4.xml"),
+    to = filename
+  )
+  expect_true(is_beast2_input_file(filename))
+})
+
+
+test_that("Run with spaces in the launcher.jar path, for Windows", {
+
+  if (!is_beast2_installed()) return()
+  skip("Need to install BEAST2 to folder with spaces instead")
+  beast2_path <- file.path(
+    tempfile(),
+    "path with spaces",
+    "launcher.jar"
+  )
+  expect_true(is_jar_path(beast2_path))
+  dir.create(dirname(beast2_path), showWarnings = FALSE, recursive = TRUE)
+  file.copy(
+    from = get_default_beast2_path(),
+    to = beast2_path
+  )
+  expect_true(file.exists(beast2_path))
+  expect_true(
+    is_beast2_input_file(
+      filename,
+      beast2_path = beast2_path
+    )
+  )
+})
+
+test_that("Run with spaces in the beast bin path, for Windows", {
+
+  if (!is_beast2_installed()) return()
+
+  skip("Need to install BEAST2 to folder with spaces instead")
+  beast2_path <- file.path(
+    tempfile(),
+    "path with spaces",
+    "beast"
+  )
+  expect_true(is_bin_path(beast2_path))
+  dir.create(dirname(beast2_path), showWarnings = FALSE, recursive = TRUE)
+  file.copy(
+    from = get_default_beast2_bin_path(),
+    to = beast2_path
+  )
+  expect_true(file.exists(beast2_path))
+  expect_true(
+    is_beast2_input_file(
+      filename,
+      beast2_path = beast2_path
+    )
+  )
+})
