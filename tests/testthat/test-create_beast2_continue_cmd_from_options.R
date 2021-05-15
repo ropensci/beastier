@@ -21,7 +21,7 @@ test_that("Run with spaces in the input filename, for Windows", {
   expect_true(shQuote("file with spaces") %in% cmd)
 })
 
-test_that("Run with spaces in the ouput state filename, for Windows", {
+test_that("Run with spaces in the output state filename, for Windows", {
 
   if (!is_beast2_installed()) return()
 

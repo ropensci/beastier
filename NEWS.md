@@ -18,7 +18,7 @@ Newest versions at top.
     (1) BEAST2 bin filename, 
     (2) BEAST2 jar filename,
     (3) BEAST2 input filename 
-    (4) BEAST2 state ouput filename.
+    (4) BEAST2 state output filename.
     Thanks Jason Griffiths
 
 ### DEPRECATED AND DEFUNCT
