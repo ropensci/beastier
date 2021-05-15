@@ -222,3 +222,35 @@ test_that("use tildes instead of full path", {
   file.remove(relative_in_path)
   file.remove(relative_out_path)
 })
+
+test_that("Run with spaces in the input filename, for Windows", {
+
+  if (!is_beast2_installed()) return()
+
+  input_filename <- tempfile("file with spaces ", fileext = ".xml")
+  file.copy(
+    from = get_beastier_path("2_4.xml"),
+    input_filename
+  )
+  expect_silent(
+    run_beast2_from_options(
+      create_beast2_options(
+        input_filename = input_filename
+      )
+    )
+  )
+})
+
+test_that("Run with spaces in the ouput state filename, for Windows", {
+
+  if (!is_beast2_installed()) return()
+
+  expect_silent(
+    run_beast2_from_options(
+      create_beast2_options(
+        input_filename = get_beastier_path("2_4.xml"),
+        output_state_filename = tempfile("file with spaces ", fileext = ".state.xml")
+      )
+    )
+  )
+})

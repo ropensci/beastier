@@ -16,7 +16,10 @@ a character vector with the command and
   arguments to call BEAST2
 }
 \description{
-Creates the terminal command to run BEAST2 from a \code{beast2_options}
+If the BEAST2 input \code{.xml} filename
+or the BEAST2 state \code{.state.xml} filename
+contain spaces, these filenames are quoted,
+so that the CLI to BEAST2 correctly parses its arguments
 }
 \examples{
   if (is_beast2_installed()) {

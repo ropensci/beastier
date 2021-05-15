@@ -1,4 +1,9 @@
 #' Creates the terminal command to run BEAST2 from a \code{beast2_options}
+#'
+#' If the BEAST2 input \code{.xml} filename
+#' or the BEAST2 state \code{.state.xml} filename
+#' contain spaces, these filenames are quoted,
+#' so that the CLI to BEAST2 correctly parses its arguments
 #' @inheritParams default_params_doc
 #' @return a character vector with the command and
 #'   arguments to call BEAST2
@@ -43,14 +48,20 @@ create_beast2_continue_cmd_from_options <- function(beast2_options) { # nolint i
     cmds <- c(cmds, "-beagle")
   }
   cmds <- c(cmds, "-statefile")
-  cmds <- c(cmds, beast2_options$output_state_filename)
+  cmds <- c(
+    cmds,
+    beastier::add_quotes_if_has_spaces(beast2_options$output_state_filename)
+  )
   cmds <- c(cmds, "-resume")
   testit::assert(file.exists(cmds[1]))
   if (beast2_options$overwrite == TRUE) {
     cmds <- c(cmds, "-overwrite")
   }
   testit::assert(file.exists(cmds[1]))
-  cmds <- c(cmds, beast2_options$input_filename)
+  cmds <- c(
+    cmds,
+    beastier::add_quotes_if_has_spaces(beast2_options$input_filename)
+  )
   testit::assert(file.exists(cmds[1]))
   cmds
 }
