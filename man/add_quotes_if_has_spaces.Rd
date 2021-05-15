@@ -19,3 +19,10 @@ Add quotes around the string if it contains spaces.
 Does nothing if the string contains no spaces.
 This is used for filenames
 }
+\examples{
+add_quotes_if_has_spaces("x")
+add_quotes_if_has_spaces("a b")
+}
+\author{
+Richèl J.C. Bilderbeek
+}
