@@ -249,7 +249,9 @@ test_that("Run with spaces in the ouput state filename, for Windows", {
     run_beast2_from_options(
       create_beast2_options(
         input_filename = get_beastier_path("2_4.xml"),
-        output_state_filename = tempfile("file with spaces ", fileext = ".state.xml")
+        output_state_filename = tempfile(
+          "file with spaces ", fileext = ".state.xml"
+        )
       )
     )
   )
