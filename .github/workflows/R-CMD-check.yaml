@@ -4,7 +4,8 @@ on:
   push:
   pull_request:
   schedule:
-  - cron: "0 0 * * 3"
+  - cron: "0 0 0 ? 1/1 SAT#1 *"
+
 
 name: R-CMD-check
 
