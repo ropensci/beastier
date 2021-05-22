@@ -28,7 +28,21 @@ Related R packages:
  * [`beastier_on_windows`](https://github.com/richelbilderbeek/beastier_on_windows): Verify that `beastier` works on the Windows operating system
  * [`lumier`](https://github.com/ropensci/lumier): Shiny app to help create the function call needed
 
+## Install BEAST2
+
+Due to CRAN policy, beastier cannot install BEAST2.
+As a workaround, the non-CRAN `beastierinstall` can be used.
+
+To install BEAST2:
+
+```
+remotes::install_github("richelbilderbeek/beastierinstall")
+beastierinstall::install_beast2()
+```
+
 ## Example for `v2.1`
+
+Run BEAST2:
 
 ```
 output_state_filename <- "out.state"
@@ -37,9 +51,9 @@ run_beast2(
   input_filename = get_beastier_path("2_4.xml"),
   output_state_filename = output_state_filename
 )
-
-testit::assert(file.exists(output_state_filename))
 ```
+
+This will create the files as specified in the `2_4.xml` BEAST2 input file.
 
 ## Example for `v2.0.25`
 
@@ -54,15 +68,11 @@ run_beast2(
   output_trees_filenames = output_trees_filename,
   output_state_filename = output_state_filename
 )
-
-testit::assert(file.exists(output_log_filename))
-testit::assert(file.exists(output_trees_filename))
-testit::assert(file.exists(output_state_filename))
 ```
 
 Note that in this version, the filenames for the `.log`
-and `.trees` files could be specified. This is unneeded: a BEAST2
-XML file specifies where these files will be stored:
+and `.trees` files could be specified. This is unneeded: 
+the `2_4.xml` BEAST2 input file specifies where these files will be stored:
 
 ```
 <?xml [...]?><beast [...]>

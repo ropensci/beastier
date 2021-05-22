@@ -45,7 +45,23 @@ Thanks to Paul van Els.
 ### 2.1 How to install BEAST2?
 
 ```
-beastier::install_beast2()
+Due to CRAN policy, beastier cannot install BEAST2.
+As a workaround, the non-CRAN `beastierinstall` can be used.
+
+To install BEAST2:
+
+```
+remotes::install_github("richelbilderbeek/beastierinstall")
+beastierinstall::install_beast2()
+```
+
+This will download and extract BEAST2 to:
+
+OS     |Full path
+-------|----------------------------------
+Linux  |`~/.local/share/beast`
+macOS  |`~/.local/share/beast`
+Windows|`C:/Users/<username>/Local/beast`
 ```
 
 ### 2.2 Which version of BEAUti do you use as a guideline?
@@ -88,7 +104,6 @@ or an email.
 
 ### 4.2 Installing Java under A
 
-
 ```
 sudo apt-get install r-cran-rjava
 R CMD javareconf
@@ -125,27 +140,6 @@ Sure, there are also tests by the AppVeyor continuous integration service.
 AppVeyor uses Windows. Would one observe that code coverage report, 
 one would observe all missing code coverage is due to Linux-only functions.
 
-### 4.4 tar: Failed to set default locale
-
-On Mac, El Capitain, when doing
-
-```
-beastier::install_beast2()
-```
-
-one can get:
-
-```
-tar: Failed to set default locale
-``` 
-
-The solution, from [RStudio Support](https://support.rstudio.com/hc/en-us/community/posts/212446787-tar-Failed-to-set-default-locale) 
-is, to type the following in a terminal:
-
-```
-defaults write org.R-project.R force.LANG en_US.UTF-8
-```
-
 ## [misc](#misc)
 
 `beastier` miscellaneous topics.
@@ -166,3 +160,4 @@ be used for free, by attribution.
 convert hippo.png -fuzz 15% -fill white -opaque white hippo_mono_background.png
 convert hippo_mono_background.png -background white -alpha remove hippo_mono_background_2.png
 ```
+
