@@ -48,7 +48,7 @@ jobs:
       - name: Install beastierinstall package
         env:
           INSTALL_BEAST2: ${{ matrix.install_beast2 }}
-        run: if [[ "$INSTALL_BEAST2" == false ]]; then Rscript -e 'remotes::install_github("richelbilderbeek/beastierinstall")'; fi
+        run: if [[ "$INSTALL_BEAST2" == true ]]; then Rscript -e 'remotes::install_github("richelbilderbeek/beastierinstall")'; fi
 
       - name: Install BEAST2
         env:
