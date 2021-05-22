@@ -1,4 +1,5 @@
 test_that("use", {
+  if (!is_beast2_installed()) return()
   nexus_filename <- get_beast2_example_filename("Primates.nex")
   fasta_filename <- tempfile()
   save_nexus_as_fasta(
