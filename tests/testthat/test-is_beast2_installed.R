@@ -1,7 +1,10 @@
-context("is_beast2_installed")
+test_that("minimal use", {
+  expect_silent(is_beast2_installed())
+})
 
 test_that("use", {
 
+  skip("Moved to beastierinstall")
   # If the user has no access to Internet,
   # BEAST2 will be uninstalled without a way to
   # reinstall. Therefore, only do this on a CI service

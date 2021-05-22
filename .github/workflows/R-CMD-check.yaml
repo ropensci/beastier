@@ -45,33 +45,15 @@ jobs:
           remotes::install_github("MangoTheCat/goodpractice")
         shell: Rscript {0}
 
-      - name: Show BEAST2
+      - name: Install beastierinstall package
         env:
           INSTALL_BEAST2: ${{ matrix.install_beast2 }}
-        run: echo "$INSTALL_BEAST2"
-
-      - name: If statement on BEAST2 is true
-        env:
-          INSTALL_BEAST2: ${{ matrix.install_beast2 }}
-        run: if [[ "$INSTALL_BEAST2" == true ]]; then echo "Yay!"; fi
-
-      - name: Show location
-        run: pwd
-
-      - name: If statement on BEAST2 is false
-        env:
-          INSTALL_BEAST2: ${{ matrix.install_beast2 }}
-        run: if [[ "$INSTALL_BEAST2" == false ]]; then echo "Nay!"; fi
-
-      - name: Show BEAST2 install script
-        env:
-          INSTALL_BEAST2: ${{ matrix.install_beast2 }}
-        run: if [[ "$INSTALL_BEAST2" == true ]]; then cat scripts/install_beast2.sh; fi
+        run: if [[ "$INSTALL_BEAST2" == false ]]; then Rscript -e 'remotes::install_github("richelbilderbeek/beastierinstall")'; fi
 
       - name: Install BEAST2
         env:
           INSTALL_BEAST2: ${{ matrix.install_beast2 }}
-        run: if [[ "$INSTALL_BEAST2" == true ]]; then ./scripts/install_beast2.sh; fi
+        run: if [[ "$INSTALL_BEAST2" == true ]]; then Rscript -e 'beastierinstall::install_beast2()'; fi
 
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")

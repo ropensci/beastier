@@ -1,6 +1,4 @@
-#' Upgrade BEAST2.
-#'
-#' Will \link{stop} if BEAST2 is not installed
+#' Deprecated function to upgrade BEAST2.
 #' @inheritParams default_params_doc
 #' @param folder_name name of the folder where the BEAST2 files will
 #'   be put.
@@ -13,13 +11,13 @@ upgrade_beast2 <- function(
   folder_name = rappdirs::user_data_dir(),
   os = rappdirs::app_dir()$os
 ) {
-  if (!beastier::is_beast2_installed(folder_name = folder_name, os = os)) {
-    stop(
-      "BEAST2 is not installed, so cannot upgrade.\n",
-      "\n",
-      "Tip: use 'beastier::install_beast2()'"
-    )
-  }
-  beastier::uninstall_beast2()
-  beastier::install_beast2()
+  stop(
+    "'beastier::upgrade_beast2' is deprecated, \n",
+    "as it violated CRAN policy. \n",
+    " \n",
+    "To upgrade BEAST2 from R, do: \n",
+    " \n",
+    "remotes::install_github(\"richelbilderbeek/beastierinstall\") \n",
+    "beastierinstall::upgrade_beast2() \n"
+  )
 }

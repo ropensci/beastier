@@ -2,7 +2,7 @@
 
 Newest versions at top.
 
-## beastier 2.3.2 (unreleased)
+## beastier 2.4 (unreleased)
 
 ### NEW FEATURES
 
@@ -18,7 +18,11 @@ Newest versions at top.
 
 ### DEPRECATED AND DEFUNCT
 
-  * None
+  * `install_beast2`, `upgrade_beast2`, `uninstall_beast2` are deprecated,
+    as these violated CRAN policy. Thanks to Brian Ripley for sharing!
+    The deprecation message will point users to the non-official
+    `beastierinstall` package at `https://github.com/richelbilderbeek/beastierinstall`
+  * Removed deprecated function `update_beastier`
 
 ## beastier 2.3.1 (2021-05-15)
 

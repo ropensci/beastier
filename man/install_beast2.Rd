@@ -2,10 +2,7 @@
 % Please edit documentation in R/install_beast2.R
 \name{install_beast2}
 \alias{install_beast2}
-\title{Install BEAST2
-Installs BEAST2 of the default
-version (see \link{get_default_beast2_version}), but another version
-can also be specified}
+\title{Deprecated function to install BEAST2}
 \usage{
 install_beast2(
   folder_name = rappdirs::user_data_dir(),
@@ -36,10 +33,7 @@ must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 Nothing. Will install BEAST2
 }
 \description{
-Install BEAST2
-Installs BEAST2 of the default
-version (see \link{get_default_beast2_version}), but another version
-can also be specified
+This function is deprecated as it violated CRAN policy.
 }
 \examples{
 \dontrun{

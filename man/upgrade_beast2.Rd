@@ -2,7 +2,7 @@
 % Please edit documentation in R/upgrade_beast2.R
 \name{upgrade_beast2}
 \alias{upgrade_beast2}
-\title{Upgrade BEAST2.}
+\title{Deprecated function to upgrade BEAST2.}
 \usage{
 upgrade_beast2(
   folder_name = rappdirs::user_data_dir(),
@@ -21,7 +21,7 @@ The name of the BEAST2 jar file will be at
 must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 }
 \description{
-Will \link{stop} if BEAST2 is not installed
+Deprecated function to upgrade BEAST2.
 }
 \author{
 Richèl J.C. Bilderbeek

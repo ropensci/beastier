@@ -2,7 +2,7 @@
 % Please edit documentation in R/uninstall_beast2.R
 \name{uninstall_beast2}
 \alias{uninstall_beast2}
-\title{Uninstall BEAST2}
+\title{Deprecated function to uninstall BEAST2}
 \usage{
 uninstall_beast2(
   folder_name = rappdirs::user_data_dir(),
@@ -24,12 +24,7 @@ must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 is potentially useful in debugging}
 }
 \description{
-Uninstall BEAST2
-}
-\examples{
-\dontrun{
-  uninstall_beast2()
-}
+Deprecated function to uninstall BEAST2
 }
 \author{
 Richèl J.C. Bilderbeek
