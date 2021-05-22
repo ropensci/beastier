@@ -25,6 +25,7 @@ Branch   |[GitHub Actions](https://github.com/ropensci/beastier/actions)        
 
 Related R packages:
 
+ * [`beastierinstall`](https://github.com/richelbilderbeek/beastierinstall): Install and uninstall BEAST2
  * [`beastier_on_windows`](https://github.com/richelbilderbeek/beastier_on_windows): Verify that `beastier` works on the Windows operating system
  * [`lumier`](https://github.com/ropensci/lumier): Shiny app to help create the function call needed
 
