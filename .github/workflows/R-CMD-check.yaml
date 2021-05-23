@@ -16,7 +16,6 @@ jobs:
           - install_beast2: "true" 
           - install_beast2: "false"
         os: [ubuntu-latest, macos-latest, windows-latest]
-        # os: [ubuntu-latest, windows-latest]
 
     runs-on: ubuntu-latest
     env:

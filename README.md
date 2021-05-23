@@ -32,7 +32,9 @@ Related R packages:
 ## Install BEAST2
 
 Due to CRAN policy, beastier cannot install BEAST2.
-As a workaround, the non-CRAN `beastierinstall` can be used.
+As a workaround, the non-CRAN 
+[`beastierinstall`](https://github.com/richelbilderbeek/beastierinstall) 
+can be used.
 
 To install BEAST2:
 
@@ -110,7 +112,6 @@ create_mcmc(
 )
 ```
 
-
 ## [Install](doc/install.md)
 
 See [install](doc/install.md).
@@ -123,10 +124,9 @@ See [FAQ](doc/faq.md)
 
 `beastier` cannot do everything `BEAST2` can. 
 
-Here are some missing or (yet) unsupported features:
-
- * Continue a BEAST2 run
- * Setup BEAGLE
+ * Remove: install BEAST2, use [`beastierinstall`](https://github.com/richelbilderbeek/beastierinstall)
+ * Experimental: Continue a BEAST2 run
+ * Untested: Setup BEAGLE
 
 ## There is a feature I miss
 
@@ -147,6 +147,15 @@ Sure, just add an Issue. Or send an email.
 ## External links
 
  * [BEAST2 GitHub](https://github.com/CompEvol/beast2)
+
+## Dependencies
+
+Branch                     |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github.com/ropensci/beautier/actions)              |[![Travis CI logo](man/figures/TravisCI.png)](https://travis-ci.org)                                                  |[![Codecov logo](man/figures/Codecov.png)](https://www.codecov.io)
+---------------------------|-------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`beautier` `master`        |![R-CMD-check](https://github.com/ropensci/beautier/workflows/R-CMD-check/badge.svg?branch=master)                 |[![Build Status](https://travis-ci.org/ropensci/beautier.svg?branch=master)](https://travis-ci.org/ropensci/beautier) |[![codecov.io](https://codecov.io/github/ropensci/beautier/coverage.svg?branch=master)](https://codecov.io/github/ropensci/beautier/branch/master)
+`beautier` `develop`       |![R-CMD-check](https://github.com/ropensci/beautier/workflows/R-CMD-check/badge.svg?branch=develop)                |[![Build Status](https://travis-ci.org/ropensci/beautier.svg?branch=develop)](https://travis-ci.org/ropensci/beautier)|[![codecov.io](https://codecov.io/github/ropensci/beautier/coverage.svg?branch=develop)](https://codecov.io/github/ropensci/beautier/branch/develop)
+`beastierinstall` `master` |![R-CMD-check](https://github.com/richelbilderbeek/beastierinstall/workflows/R-CMD-check/badge.svg?branch=master)  |[![Build Status](https://travis-ci.org/richelbilderbeek/beastierinstall.svg?branch=master)](https://travis-ci.org/richelbilderbeek/beastierinstall) |[![codecov.io](https://codecov.io/github/richelbilderbeek/beastierinstall/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/beastierinstall/branch/master)
+`beastierinstall` `develop`|![R-CMD-check](https://github.com/richelbilderbeek/beastierinstall/workflows/R-CMD-check/badge.svg?branch=develop) |[![Build Status](https://travis-ci.org/richelbilderbeek/beastierinstall.svg?branch=develop)](https://travis-ci.org/richelbilderbeek/beastierinstall)|[![codecov.io](https://codecov.io/github/richelbilderbeek/beastierinstall/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/beastierinstall/branch/develop)
 
 ## References
 
