@@ -13,7 +13,7 @@ test_that("longer trace", {
   if (!is_beast2_installed()) return()
 
   inference_model <- beautier::create_test_inference_model()
-  beast2_input_filename <- tempfile("beast2_", fileext = ".xml")
+  beast2_input_filename <- get_beastier_tempfilename()
   beautier::create_beast2_input_file_from_model(
     input_filename = beautier::get_beautier_path("test_output_0.fas"),
     output_filename = beast2_input_filename,
