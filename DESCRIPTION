@@ -23,10 +23,10 @@ Imports:
     ape,
     assertive,
     beautier (>= 2.5.2),
+    devtools,
     phangorn,
     rappdirs,
     readr,
-    remotes,
     rJava,
     stringr,
     xml2
