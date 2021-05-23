@@ -12,9 +12,18 @@ test_that("minimal use", {
 test_that("longer trace", {
   if (!is_beast2_installed()) return()
 
-  skip("check_can_create_treelog_file problem")
+  # Prevent check_can_create_treelog_file problem
+  do_skip <- TRUE
+  tryCatch({
+    inference_model <- create_test_inference_model()
+    check_can_create_file(inference_model$mcmc$screenlog$filename)
+    stop("x")
+    do_skip <- FALSE
+  }, error = function(e) {} # nolint no worries
+  )
+  if (do_skip) skip("test-continue_beast2.R: longer trace")
 
-  inference_model <- beautier::create_test_inference_model()
+
   beast2_input_filename <- get_beastier_tempfilename()
   beautier::create_beast2_input_file_from_model(
     input_filename = beautier::get_beautier_path("test_output_0.fas"),
