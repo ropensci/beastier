@@ -30,8 +30,8 @@ jobs:
       - name: Install libgit2-dev
         run: sudo apt install -qq libgit2-dev
 
-      - name: Fix rJava error # from https://travis-ci.community/t/cannot-connect-to-java-from-r/9754/8
-        run: sudo $(which R) CMD javareconf
+      #- name: Fix rJava error # from https://travis-ci.community/t/cannot-connect-to-java-from-r/9754/8
+      #  run: sudo $(which R) CMD javareconf
 
       - name: Install dependencies
         run: |
