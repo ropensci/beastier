@@ -30,7 +30,7 @@ Create a random FASTA file
 create_random_fasta(
   n_taxa = 5,
   sequence_length = 20,
-  fasta_filename = tempfile(fileext = ".fas")
+  fasta_filename = get_beastier_tempfilename(fileext = ".fas")
 )
 }
 \author{

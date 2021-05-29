@@ -11,7 +11,7 @@ name: R-CMD-check
 jobs:
   R-CMD-check:
     strategy:
-      fail-fast: false
+      fail-fast: true # for now
       matrix:
         install_beast2: [true, false]
         os: [ubuntu-latest, macos-latest, windows-latest]

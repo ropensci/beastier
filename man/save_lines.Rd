@@ -19,7 +19,7 @@ Save text (a container of strings) to a file
 }
 \examples{
 text <- c("hello", "world")
-filename <- tempfile(fileext = ".txt")
+filename <- get_beastier_tempfilename(fileext = ".txt")
 save_lines(filename = filename, lines = text)
 }
 \author{

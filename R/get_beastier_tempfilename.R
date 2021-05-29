@@ -15,9 +15,12 @@ get_beastier_tempfilename <- function(
   pattern = "file",
   fileext = ""
 ) {
-  tempfile(
-    pattern = pattern,
-    tmpdir = rappdirs::user_cache_dir(appname = "beastier"),
-    fileext = fileext
+  normalizePath(
+    tempfile(
+      pattern = pattern,
+      tmpdir = rappdirs::user_cache_dir(appname = "beastier"),
+      fileext = fileext
+    ),
+    mustWork = FALSE
   )
 }
