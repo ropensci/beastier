@@ -1,7 +1,7 @@
 context("create_random_fasta")
 
 test_that("create_random_fasta: use", {
-  filename <- tempfile()
+  filename <- get_beastier_tempfilename()
   expect_silent(
     sequences_table <- create_random_fasta(
       n_taxa = 5,

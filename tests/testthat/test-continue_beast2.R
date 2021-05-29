@@ -24,7 +24,7 @@ test_that("longer trace", {
   if (do_skip) skip("test-continue_beast2.R: longer trace")
 
 
-  beast2_input_filename <- get_beastier_tempfilename()
+  beast2_input_filename <- get_beastier_get_beastier_tempfilenamename()
   beautier::create_beast2_input_file_from_model(
     input_filename = beautier::get_beautier_path("test_output_0.fas"),
     output_filename = beast2_input_filename,

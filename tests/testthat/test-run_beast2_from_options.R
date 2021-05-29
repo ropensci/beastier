@@ -22,13 +22,13 @@ test_that("local file in temp folder", {
   if (!is_beast2_installed()) return()
 
   cur_wd <- getwd()
-  tmp_wd <- tempfile(pattern = "beast2_tmp_folder")
+  tmp_wd <- get_beastier_tempfilename(pattern = "beast2_tmp_folder")
   dir.create(tmp_wd)
   setwd(tmp_wd)
 
   # All input and output files will be local
-  input_filename <- basename(tempfile(fileext = ".xml"))
-  output_state_filename <- basename(tempfile(fileext = ".xml.state"))
+  input_filename <- basename(get_beastier_tempfilename(fileext = ".xml"))
+  output_state_filename <- basename(get_beastier_tempfilename(fileext = ".xml.state"))
 
   # Create input file locally
   file.copy(from = get_beastier_path("2_4.xml"), to = input_filename)
@@ -54,7 +54,7 @@ test_that("file with full path in temp folder", {
   if (!is_beast2_installed()) return()
 
   cur_wd <- getwd()
-  tmp_wd <- tempfile(pattern = "beast2_tmp_folder")
+  tmp_wd <- get_beastier_tempfilename(pattern = "beast2_tmp_folder")
   dir.create(tmp_wd)
   setwd(tmp_wd)
   input_filename <- get_beastier_path("2_4.xml")
@@ -108,7 +108,7 @@ test_that("show proper error message when using CBS with too few taxa", {
 
   # Prepare XML file for beastier
   fasta_filename <- beastier::get_beastier_path("test_output_2.fas")
-  beast2_input_file <- tempfile(fileext = ".xml")
+  beast2_input_file <- get_beastier_tempfilename(fileext = ".xml")
 
   # The error is already detected when creating a BEAST2 input file
   expect_error(
@@ -139,7 +139,7 @@ test_that("BEAST2 freezes when treelog file already exists", {
 
   if (!is_beast2_installed()) return()
 
-  beast2_xml_filename <- tempfile(
+  beast2_xml_filename <- get_beastier_tempfilename(
     pattern = "beast2_", tmpdir = rappdirs::user_cache_dir(),
     fileext = ".xml"
   )
@@ -227,7 +227,7 @@ test_that("Run with spaces in the input filename, for Windows", {
 
   if (!is_beast2_installed()) return()
 
-  input_filename <- tempfile("file with spaces ", fileext = ".xml")
+  input_filename <- get_beastier_tempfilename("file with spaces ", fileext = ".xml")
   file.copy(
     from = get_beastier_path("2_4.xml"),
     input_filename
@@ -249,7 +249,7 @@ test_that("Run with spaces in the output state filename, for Windows", {
     run_beast2_from_options(
       create_beast2_options(
         input_filename = get_beastier_path("2_4.xml"),
-        output_state_filename = tempfile(
+        output_state_filename = get_beastier_tempfilename(
           "file with spaces ", fileext = ".state.xml"
         )
       )

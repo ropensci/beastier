@@ -6,7 +6,7 @@ test_that("use, no file present", {
 })
 
 test_that("use, file present", {
-  filename <- tempfile()
+  filename <- get_beastier_tempfilename()
   writeLines(text = "some irrelevant text", con = filename)
   testit::assert(file.exists(filename))
   expect_silent(remove_file_if_present(filename))

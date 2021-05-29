@@ -14,7 +14,7 @@
 do_minimal_run <- function() {
   folder <- file.path(rappdirs::user_cache_dir(),
     basename(
-      tempfile(pattern = "beastier_minimal_run_")
+      get_beastier_tempfilename(pattern = "beastier_minimal_run_")
     )
   )
   beastier::run_beast2_from_options(

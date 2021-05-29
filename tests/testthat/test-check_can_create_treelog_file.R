@@ -1,11 +1,11 @@
 test_that("all is fine", {
-  beast2_input_filename <- tempfile()
+  beast2_input_filename <- get_beastier_tempfilename()
   beautier::create_beast2_input_file_from_model(
     input_filename = beautier::get_beautier_path("test_output_0.fas"),
     output_filename = beast2_input_filename,
     inference_model = create_test_inference_model(
       mcmc = create_test_mcmc(
-        treelog = create_treelog(filename = tempfile("OK"))
+        treelog = create_treelog(filename = get_beastier_tempfilename("OK"))
       )
     )
   )
@@ -18,7 +18,7 @@ test_that("all is fine", {
 })
 
 test_that("use", {
-  beast2_input_filename <- tempfile()
+  beast2_input_filename <- get_beastier_tempfilename()
   beautier::create_beast2_input_file_from_model(
     input_filename = beautier::get_beautier_path("test_output_0.fas"),
     output_filename = beast2_input_filename,

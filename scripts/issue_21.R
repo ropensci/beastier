@@ -3,8 +3,8 @@ library(beastier)
 testit::assert(is_beast2_installed())
 
 # All input and output files will be local
-input_filename <- basename(tempfile(fileext = ".xml"))
-output_state_filename <- basename(tempfile(fileext = ".xml.state"))
+input_filename <- basename(get_beastier_tempfilename(fileext = ".xml"))
+output_state_filename <- basename(get_beastier_tempfilename(fileext = ".xml.state"))
 
 # Create input file locally
 file.copy(from = beastier::get_beastier_path("2_4.xml"), to = input_filename)

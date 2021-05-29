@@ -6,7 +6,7 @@ create_temp_state_filename <- function() {
     file.path(
       rappdirs::user_cache_dir(),
       basename(
-        tempfile(pattern = "beast2_", fileext = ".xml.state")
+        get_beastier_tempfilename(pattern = "beast2_", fileext = ".xml.state")
       )
     ),
     mustWork = FALSE

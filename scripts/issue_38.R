@@ -7,18 +7,18 @@
 get_pff_tempdir <- function() {
   dirname <- file.path(
     rappdirs::user_cache_dir(),
-    basename(tempfile())
+    basename(get_beastier_tempfilename())
   )
   dirname
 }
 
 # Copied from peregrine
-get_pff_tempfile <- function(
+get_pff_get_beastier_tempfilename <- function(
   pattern = "pff_",
   pff_tmpdir = get_pff_tempdir(),
   fileext = ""
 ) {
-  filename <- tempfile(
+  filename <- get_beastier_tempfilename(
     pattern = pattern,
     tmpdir = pff_tmpdir,
     fileext = fileext
@@ -34,7 +34,7 @@ inference_model <- beautier::create_inference_model(
   mcmc = beautier::create_mcmc(chain_length = 3e3)
 )
 
-beast2_input_filename <- get_pff_tempfile(pattern = "in_", fileext = ".xml")
+beast2_input_filename <- get_pff_get_beastier_tempfilename(pattern = "in_", fileext = ".xml")
 
 beautier::create_beast2_input_file_from_model(
   input_filename = beautier::get_fasta_filename(),
@@ -44,7 +44,7 @@ beautier::create_beast2_input_file_from_model(
 
 beast2_options <- beastier::create_beast2_options(
   input_filename = beast2_input_filename,
-  output_state_filename = get_pff_tempfile(pattern = "out_", fileext = ".state.xml"),
+  output_state_filename = get_pff_get_beastier_tempfilename(pattern = "out_", fileext = ".state.xml"),
   beast2_path = beastier::get_default_beast2_bin_path(),
   verbose = TRUE
 )

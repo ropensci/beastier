@@ -24,7 +24,7 @@ are_beast2_input_lines <- function(
     stop("'method' must be \"deep\" or \"fast\", value was '", method, "'")
   }
   if (method == "deep") {
-    filename <- tempfile()
+    filename <- get_beastier_tempfilename()
     beastier::save_lines(filename = filename, lines = lines)
     return(
       are_beast2_input_lines_deep(
@@ -65,7 +65,7 @@ are_beast2_input_lines_deep <- function(
   filename <- file.path(
     rappdirs::user_cache_dir(),
     basename(
-      tempfile(pattern = "beast2_", fileext = ".xml")
+      get_beastier_tempfilename(pattern = "beast2_", fileext = ".xml")
     )
   )
   dir.create(dirname(filename), recursive = TRUE, showWarnings = FALSE)

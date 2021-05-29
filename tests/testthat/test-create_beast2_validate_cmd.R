@@ -46,7 +46,7 @@ test_that("use, bin, spaces in BEAST2 bin path", {
   if (!is_beast2_installed()) return()
 
   testit::assert(is_beast2_installed())
-  beast2_path <- file.path(tempfile(), "path with spaces", "beast")
+  beast2_path <- file.path(get_beastier_tempfilename(), "path with spaces", "beast")
   expect_true(is_bin_path(beast2_path))
   dir.create(dirname(beast2_path), showWarnings = FALSE, recursive = TRUE)
   file.copy(
@@ -68,7 +68,7 @@ test_that("use, bin, spaces in BEAST2 jar path", {
   if (!is_beast2_installed()) return()
 
   testit::assert(is_beast2_installed())
-  beast2_path <- file.path(tempfile(), "path with spaces", "launcher.jar")
+  beast2_path <- file.path(get_beastier_tempfilename(), "path with spaces", "launcher.jar")
   expect_true(is_jar_path(beast2_path))
   dir.create(dirname(beast2_path), showWarnings = FALSE, recursive = TRUE)
   file.copy(

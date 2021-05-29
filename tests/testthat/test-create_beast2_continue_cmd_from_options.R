@@ -40,7 +40,7 @@ test_that("Run with spaces in the launcher.jar path, for Windows", {
   if (!is_beast2_installed()) return()
 
   beast2_path <- file.path(
-    tempfile(),
+    get_beastier_tempfilename(),
     "path with spaces",
     "launcher.jar"
   )
@@ -68,7 +68,7 @@ test_that("Run with spaces in the beast bin path, for Windows", {
   if (!is_beast2_installed()) return()
 
   beast2_path <- file.path(
-    tempfile(),
+    get_beastier_tempfilename(),
     "path with spaces",
     "beast"
   )

@@ -2,7 +2,7 @@ test_that("single alignment creates all files", {
 
   if (!is_beast2_installed()) return()
 
-  output_state_filename <- tempfile(fileext = ".xml.state")
+  output_state_filename <- get_beastier_tempfilename(fileext = ".xml.state")
 
   expect_silent(
     run_beast2(
@@ -23,8 +23,8 @@ test_that("single alignment, equal RNG seed equal results", {
   }
 
 
-  output_state_filename_1 <- tempfile(fileext = "_1.xml.state")
-  output_state_filename_2 <- tempfile(fileext = "_2.xml.state")
+  output_state_filename_1 <- get_beastier_tempfilename(fileext = "_1.xml.state")
+  output_state_filename_2 <- get_beastier_tempfilename(fileext = "_2.xml.state")
   output_files <- c(
     output_state_filename_1,
     output_state_filename_2
@@ -113,7 +113,7 @@ test_that("BEAST2 does not overwrite the .xml.state file specified by user", {
 
   if (!is_beast2_installed()) return()
 
-  output_state_filename <- tempfile(fileext = ".xml.state")
+  output_state_filename <- get_beastier_tempfilename(fileext = ".xml.state")
 
   # Create files to be detectably overwritten
   write(x = "state", file = output_state_filename)
@@ -138,7 +138,7 @@ test_that("BEAST2 overwrites state file", {
   if (!is_beast2_installed()) return()
 
   input_filename <- get_beastier_path("2_4.xml")
-  output_state_filename <- tempfile(fileext = ".state")
+  output_state_filename <- get_beastier_tempfilename(fileext = ".state")
 
   # Create files to be detectably overwritten
   write(x = "state", file = output_state_filename)
@@ -187,7 +187,7 @@ test_that("run BEAST2 from binary path", {
   }
   # Binary fails under Windows, but works under Unix (see 'use' section above)
   if (rappdirs::app_dir()$os == "win") {
-    fake_windows_exe_filename <- file.path(tempfile(), "BEAST2.exe")
+    fake_windows_exe_filename <- file.path(get_beastier_tempfilename(), "BEAST2.exe")
     testit::assert(is_bin_path(fake_windows_exe_filename))
     dir.create(
       dirname(fake_windows_exe_filename),
