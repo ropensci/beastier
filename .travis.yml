@@ -30,8 +30,9 @@ before_script:
   # Java
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then R CMD javareconf; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then R --quiet -e 'install.packages("rJava", type="source", repos="http://cran.us.r-project.org")'; fi
-  # Install BEAST2. Note: beastier must work without BEAST2 installed as well
-  - if [[ "$INSTALL_BEAST2" == true ]]; then ./scripts/install_beast2.sh; fi
+  # Install BEAST2
+  - if [[ "$INSTALL_BEAST2" == true ]]; then Rscript -e 'remotes::install_github("richelbilderbeek/beastierinstall")'; fi
+  - if [[ "$INSTALL_BEAST2" == true ]]; then Rscript -e 'beastierinstall::install_beast2()'; fi
   # proselint
   - if [[ "$TRAVIS_OS_NAME" != "osx" ]]; then sudo pip install proselint; fi
 
