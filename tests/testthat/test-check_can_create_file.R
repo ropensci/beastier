@@ -6,15 +6,20 @@ test_that("use", {
     "Cannot create a file at location"
   )
 
-  get_beastier_tempfilename <- get_beastier_tempfilename()
-  writeLines(text = "irreleveant", con = get_beastier_tempfilename)
+  beastier_tempfilename <- get_beastier_tempfilename()
+  dir.create(
+    dirname(beastier_tempfilename),
+    showWarnings = FALSE,
+    recursive = TRUE
+  )
+  writeLines(text = "irrelevant", con = beastier_tempfilename)
 
   expect_error(
-    check_can_create_file(get_beastier_tempfilename, overwrite = FALSE),
+    check_can_create_file(beastier_tempfilename, overwrite = FALSE),
     "Cannot check if a file can be created if the desired file already exists"
   )
 
   expect_silent(
-    check_can_create_file(get_beastier_tempfilename, overwrite = TRUE)
+    check_can_create_file(beastier_tempfilename, overwrite = TRUE)
   )
 })
