@@ -4,11 +4,13 @@
 #' @return Nothing, creates a FASTA file
 #' @author Richèl J.C. Bilderbeek
 #' @examples
+#' fasta_filename <- get_beastier_tempfilename()
 #' create_random_fasta(
 #'   n_taxa = 5,
 #'   sequence_length = 20,
-#'   fasta_filename = get_beastier_tempfilename(fileext = ".fas")
+#'   fasta_filename = fasta_filename
 #' )
+#' file.remove(fasta_filename)
 #' @export
 create_random_fasta <- function(
   n_taxa,
@@ -35,6 +37,11 @@ create_random_fasta <- function(
     n_taxa,
     sequence_length,
     taxa_name_ext = taxa_name_ext
+  )
+  dir.create(
+    path = dirname(fasta_filename),
+    showWarnings = FALSE,
+    recursive = TRUE
   )
   phangorn::write.phyDat(alignments, file = fasta_filename, format = "fasta")
   NULL

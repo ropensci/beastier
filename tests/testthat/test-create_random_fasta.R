@@ -1,19 +1,30 @@
-context("create_random_fasta")
-
-test_that("create_random_fasta: use", {
+test_that("use", {
   filename <- get_beastier_tempfilename()
   expect_silent(
-    sequences_table <- create_random_fasta(
+    create_random_fasta(
       n_taxa = 5,
       sequence_length = 20,
       fasta_filename = filename
     )
   )
   expect_true(file.exists(filename))
+  file.remove(filename)
 })
 
-test_that("create_random_fasta: abuse", {
+test_that("sub-sub folder", {
+  filename <- file.path(get_beastier_tempfilename(), "sub", "sub", "sub")
+  expect_silent(
+    create_random_fasta(
+      n_taxa = 5,
+      sequence_length = 20,
+      fasta_filename = filename
+    )
+  )
+  expect_true(file.exists(filename))
+  file.remove(filename)
+})
 
+test_that("abuse", {
   expect_error(
     create_random_fasta(
       n_taxa = 0, #Error
@@ -59,5 +70,4 @@ test_that("create_random_fasta: abuse", {
     ),
     "'taxa_name_ext' must be a character string"
   )
-
 })

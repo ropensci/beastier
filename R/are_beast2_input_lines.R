@@ -25,14 +25,15 @@ are_beast2_input_lines <- function(
   }
   if (method == "deep") {
     filename <- get_beastier_tempfilename()
+    dir.create(dirname(filename), showWarnings = FALSE, recursive = TRUE)
     beastier::save_lines(filename = filename, lines = lines)
-    return(
-      are_beast2_input_lines_deep(
-        lines = lines,
-        verbose = verbose,
-        beast2_path = beast2_path
-      )
+    is_valid <- beastier::are_beast2_input_lines_deep(
+      lines = lines,
+      verbose = verbose,
+      beast2_path = beast2_path
     )
+    file.remove(filename)
+    return(is_valid)
   } else {
     testit::assert(method == "fast")
     return(

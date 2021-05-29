@@ -20,7 +20,6 @@ test_that("use, fast", {
 })
 
 test_that("use, deep", {
-
   if (!is_beast2_installed()) return()
 
   expect_true(

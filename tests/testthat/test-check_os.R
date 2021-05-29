@@ -1,5 +1,3 @@
-context("check_os")
-
 test_that("use", {
   expect_silent(check_os("mac"))
   expect_silent(check_os("unix"))
