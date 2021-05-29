@@ -1,5 +1,3 @@
-context("are_beast2_input_lines")
-
 test_that("use, fast", {
 
   if (!is_beast2_installed()) return()

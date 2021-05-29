@@ -1,5 +1,3 @@
-context("test-check_rng_seed")
-
 test_that("use", {
   expect_silent(check_rng_seed(1))
   expect_silent(check_rng_seed(NA))

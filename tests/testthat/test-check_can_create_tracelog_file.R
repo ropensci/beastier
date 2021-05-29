@@ -15,6 +15,7 @@ test_that("all is fine", {
   expect_silent(
     check_can_create_tracelog_file(beast2_options)
   )
+  file.remove(beast2_input_filename)
 })
 
 test_that("use", {
@@ -35,4 +36,5 @@ test_that("use", {
     check_can_create_tracelog_file(beast2_options),
     "Cannot create tracelog file"
   )
+  file.remove(beast2_input_filename)
 })

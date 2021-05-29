@@ -24,7 +24,7 @@ are_beast2_input_lines <- function(
     stop("'method' must be \"deep\" or \"fast\", value was '", method, "'")
   }
   if (method == "deep") {
-    filename <- get_beastier_tempfilename()
+    filename <- beastier::get_beastier_tempfilename()
     dir.create(dirname(filename), showWarnings = FALSE, recursive = TRUE)
     beastier::save_lines(filename = filename, lines = lines)
     is_valid <- beastier::are_beast2_input_lines_deep(
@@ -37,7 +37,7 @@ are_beast2_input_lines <- function(
   } else {
     testit::assert(method == "fast")
     return(
-      are_beast2_input_lines_fast(lines) # nolint internal function
+      beastier::are_beast2_input_lines_fast(lines) # nolint internal function
     )
   }
 }
@@ -55,7 +55,7 @@ are_beast2_input_lines <- function(
 #' if (is_beast2_installed() && is_on_ci()) {
 #'   beast2_filename <- get_beastier_path("anthus_2_4.xml")
 #'   text <- readLines(beast2_filename)
-#'   testit::assert(are_beast2_input_lines_deep(text))
+#'   are_beast2_input_lines_deep(text)
 #' }
 #' @export
 are_beast2_input_lines_deep <- function(
@@ -63,19 +63,16 @@ are_beast2_input_lines_deep <- function(
   verbose = FALSE,
   beast2_path = get_default_beast2_path()
 ) {
-  filename <- file.path(
-    rappdirs::user_cache_dir(),
-    basename(
-      get_beastier_tempfilename(pattern = "beast2_", fileext = ".xml")
-    )
-  )
+  filename <- beastier::create_temp_input_filename()
   dir.create(dirname(filename), recursive = TRUE, showWarnings = FALSE)
   beastier::save_lines(filename = filename, lines = lines)
-  beastier::is_beast2_input_file(
+  is_valid <- beastier::is_beast2_input_file(
     filename = filename,
     verbose = verbose,
     beast2_path = beast2_path
   )
+  file.remove(filename)
+  is_valid
 }
 
 #' Would these lines of text, when written to a file,

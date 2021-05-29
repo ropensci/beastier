@@ -1,5 +1,3 @@
-context("are_identical_alignments")
-
 test_that("are_identical_alignments: use", {
 
   p <- create_random_alignment(

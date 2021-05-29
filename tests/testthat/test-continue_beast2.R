@@ -7,6 +7,7 @@ test_that("minimal use", {
   expect_true(file.exists(beast2_options$output_state_filename))
   output_2 <- continue_beast2(beast2_options)
   expect_true(file.exists(beast2_options$output_state_filename))
+  file.remove(beast2_options$output_state_filename)
 })
 
 test_that("longer trace", {
@@ -24,7 +25,7 @@ test_that("longer trace", {
   if (do_skip) skip("test-continue_beast2.R: longer trace")
 
 
-  beast2_input_filename <- get_beastier_get_beastier_tempfilenamename()
+  beast2_input_filename <- get_beastier_tempfilename()
   beautier::create_beast2_input_file_from_model(
     input_filename = beautier::get_beautier_path("test_output_0.fas"),
     output_filename = beast2_input_filename,
@@ -46,4 +47,7 @@ test_that("longer trace", {
     state_filename = beast2_options$output_state_filename
   )
   expect_true(nrow(results$estimates) < nrow(results_after$estimates))
+  file.remove(beast2_options$input_filename)
+  file.remove(beast2_options$output_state_filename)
+
 })

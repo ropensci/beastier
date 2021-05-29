@@ -1,6 +1,3 @@
-context("test-check_beast2_optionses")
-
-
 test_that("use", {
   expect_silent(check_beast2_optionses(list(create_beast2_options())))
 

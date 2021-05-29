@@ -1,11 +1,12 @@
 test_that("all is fine", {
   beast2_input_filename <- get_beastier_tempfilename()
+  screenlog_filename <- get_beastier_tempfilename("screenlog")
   beautier::create_beast2_input_file_from_model(
     input_filename = beautier::get_beautier_path("test_output_0.fas"),
     output_filename = beast2_input_filename,
     inference_model = create_test_inference_model(
       mcmc = create_test_mcmc(
-        screenlog = create_screenlog(filename = get_beastier_tempfilename("OK"))
+        screenlog = create_screenlog(filename = screenlog_filename)
       )
     )
   )
@@ -15,6 +16,7 @@ test_that("all is fine", {
   expect_silent(
     check_can_create_screenlog_file(beast2_options)
   )
+  file.remove(beast2_input_filename)
 })
 
 test_that("use", {
@@ -35,4 +37,5 @@ test_that("use", {
     check_can_create_screenlog_file(beast2_options),
     "Cannot create screenlog file"
   )
+  file.remove(beast2_input_filename)
 })

@@ -1,5 +1,3 @@
-context("test-check_n_threads")
-
 test_that("use", {
   expect_silent(check_n_threads(1))
   expect_silent(check_n_threads(NA))
