@@ -75,6 +75,7 @@ If `beastier` has run BEAST2, the MCMC's final state will be saved to a file:
 ```{r}
 if (is_beast2_installed()) {
   expect_true(file.exists(beast2_options$output_state_filename))
+  file.remove(beast2_options$output_state_filename)
 }
 ```
 
