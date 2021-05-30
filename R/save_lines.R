@@ -10,6 +10,7 @@
 #' file.remove(filename)
 #' @export
 save_lines <- function(filename, lines) {
+  dir.create(dirname(filename), showWarnings = FALSE, recursive = TRUE)
   my_file <- file(filename)
   writeLines(lines, my_file)
   close(my_file)

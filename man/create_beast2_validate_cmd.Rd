@@ -35,10 +35,9 @@ Creates the terminal command to validate a BEAST2 input file
 }
 \examples{
   if (is_beast2_installed() && is_on_ci()) {
-    cmds <- create_beast2_validate_cmd(
+    create_beast2_validate_cmd(
       input_filename = "input.xml"
     )
-    testit::assert(cmds[2] == "-cp")
   }
 }
 \author{

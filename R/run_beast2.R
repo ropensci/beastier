@@ -7,9 +7,14 @@
 #'
 #' if (is_beast2_installed() && is_on_ci()) {
 #'
+#'   output_state_filename <- create_temp_state_filename()
+#'
 #'   run_beast2(
-#'     input_filename = get_beastier_path("2_4.xml")
+#'     input_filename = get_beastier_path("2_4.xml"),
+#'     output_state_filename = output_state_filename
+#'
 #'   )
+#'   file.remove(output_state_filename)
 #' }
 #' @author Richèl J.C. Bilderbeek
 run_beast2 <- function(

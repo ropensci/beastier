@@ -21,6 +21,7 @@ if (is_beast2_installed() && is_on_ci()) {
   )
   run_beast2_from_options(beast2_options)
   continue_beast2(beast2_options)
+  file.remove(beast2_options$output_state_filename)
 }
 }
 \author{

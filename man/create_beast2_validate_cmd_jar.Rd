@@ -33,11 +33,9 @@ using a call to the \code{launcher.jar} file
 }
 \examples{
   if (is_beast2_installed() && is_on_ci()) {
-    cmds <- create_beast2_validate_cmd_jar(
+    create_beast2_validate_cmd_jar(
       input_filename = "input.xml"
     )
-    testit::assert(length(cmds) == 6)
-    testit::assert(cmds[2] == "-cp")
   }
 }
 \author{

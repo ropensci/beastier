@@ -6,6 +6,7 @@
 #'     input_filename = get_beastier_path("2_4.xml")
 #'   )
 #'   run_beast2_from_options(beast2_options)
+#'   file.remove(beast2_options$output_state_filename)
 #' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
