@@ -18,10 +18,14 @@ test_that("single alignment, equal RNG seed equal results", {
   if (rappdirs::app_dir()$os == "mac") {
     skip("On MacOS these results do differ, no idea why")
   }
-
-
   output_state_filename_1 <- get_beastier_tempfilename(fileext = "_1.xml.state")
   output_state_filename_2 <- get_beastier_tempfilename(fileext = "_2.xml.state")
+  dir.create(
+    dirname(output_state_filename_1), showWarnings = FALSE, recursive = TRUE
+  )
+  dir.create(
+    dirname(output_state_filename_2), showWarnings = FALSE, recursive = TRUE
+  )
   output_files <- c(
     output_state_filename_1,
     output_state_filename_2
