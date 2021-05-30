@@ -1,17 +1,14 @@
 test_that("single alignment creates all files", {
-
   if (!is_beast2_installed()) return()
-
   output_state_filename <- get_beastier_tempfilename(fileext = ".xml.state")
-
   expect_silent(
     run_beast2(
       input_filename = get_beastier_path("2_4.xml"),
       output_state_filename = output_state_filename
     )
   )
-
   expect_true(file.exists(output_state_filename))
+  file.remove(output_state_filename)
 })
 
 test_that("single alignment, equal RNG seed equal results", {
@@ -67,6 +64,8 @@ test_that("single alignment, equal RNG seed equal results", {
   lines_1 <- readLines(output_state_filename_1)
   lines_2 <- readLines(output_state_filename_2)
   expect_identical(lines_1, lines_2)
+  file.remove(output_state_filename_1)
+  file.remove(output_state_filename_2)
 })
 
 test_that("abuse", {
@@ -131,6 +130,7 @@ test_that("BEAST2 does not overwrite the .xml.state file specified by user", {
     ),
     "Will not overwrite 'output_state_filename'"
   )
+  file.remove(output_state_filename)
 })
 
 test_that("BEAST2 overwrites state file", {
@@ -154,6 +154,7 @@ test_that("BEAST2 overwrites state file", {
 
   # Overwrites all
   expect_true(all(readLines(output_state_filename) != "state"))
+  file.remove(output_state_filename)
 })
 
 test_that("run BEAST2 from jar path", {
@@ -187,7 +188,10 @@ test_that("run BEAST2 from binary path", {
   }
   # Binary fails under Windows, but works under Unix (see 'use' section above)
   if (rappdirs::app_dir()$os == "win") {
-    fake_windows_exe_filename <- file.path(get_beastier_tempfilename(), "BEAST2.exe")
+    fake_windows_exe_filename <- file.path(
+      get_beastier_tempfilename(),
+      "BEAST2.exe"
+    )
     testit::assert(is_bin_path(fake_windows_exe_filename))
     dir.create(
       dirname(fake_windows_exe_filename),
@@ -201,6 +205,7 @@ test_that("run BEAST2 from binary path", {
       ),
       "'CreateProcess' failed to run"
     )
+    unlink(dirname(fake_windows_exe_filename), recursive = TRUE)
   }
 })
 

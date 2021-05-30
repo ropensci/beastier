@@ -19,8 +19,9 @@ Save text (a container of strings) to a file
 }
 \examples{
 text <- c("hello", "world")
-filename <- get_beastier_tempfilename(fileext = ".txt")
+filename <- get_beastier_tempfilename()
 save_lines(filename = filename, lines = text)
+file.remove(filename)
 }
 \author{
 Richèl J.C. Bilderbeek

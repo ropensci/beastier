@@ -46,7 +46,11 @@ test_that("use, bin, spaces in BEAST2 bin path", {
   if (!is_beast2_installed()) return()
 
   testit::assert(is_beast2_installed())
-  beast2_path <- file.path(get_beastier_tempfilename(), "path with spaces", "beast")
+  beast2_path <- file.path(
+    get_beastier_tempfilename(),
+    "path with spaces",
+    "beast"
+  )
   expect_true(is_bin_path(beast2_path))
   dir.create(dirname(beast2_path), showWarnings = FALSE, recursive = TRUE)
   file.copy(
@@ -61,6 +65,7 @@ test_that("use, bin, spaces in BEAST2 bin path", {
   # The first cmd is the file to be run. It must be findable
   expect_true(file.exists(cmd[1]))
   expect_equal(cmd[1], beast2_path)
+  unlink(dirname(dirname(beast2_path)), recursive = TRUE)
 })
 
 test_that("use, bin, spaces in BEAST2 jar path", {
@@ -68,7 +73,11 @@ test_that("use, bin, spaces in BEAST2 jar path", {
   if (!is_beast2_installed()) return()
 
   testit::assert(is_beast2_installed())
-  beast2_path <- file.path(get_beastier_tempfilename(), "path with spaces", "launcher.jar")
+  beast2_path <- file.path(
+    get_beastier_tempfilename(),
+    "path with spaces",
+    "launcher.jar"
+  )
   expect_true(is_jar_path(beast2_path))
   dir.create(dirname(beast2_path), showWarnings = FALSE, recursive = TRUE)
   file.copy(
@@ -82,6 +91,7 @@ test_that("use, bin, spaces in BEAST2 jar path", {
   )
   expect_false(beast2_path %in% cmd)
   expect_true(shQuote(beast2_path) %in% cmd)
+  unlink(dirname(dirname(beast2_path)), recursive = TRUE)
 })
 
 test_that("use, bin, spaces in BEAST2 input filename", {

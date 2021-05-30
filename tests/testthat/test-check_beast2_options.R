@@ -151,7 +151,9 @@ test_that("in-depth use", {
   # instead, only when running BEAST2 should this be checked
   expect_silent(
     check_beast2_options(
-      create_beast2_options(beast2_path = get_beastier_tempfilename(pattern = "absent"))
+      create_beast2_options(
+        beast2_path = get_beastier_tempfilename(pattern = "absent")
+      )
     )
   )
 

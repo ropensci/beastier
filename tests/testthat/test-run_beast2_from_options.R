@@ -23,12 +23,16 @@ test_that("local file in temp folder", {
 
   cur_wd <- getwd()
   tmp_wd <- get_beastier_tempfilename(pattern = "beast2_tmp_folder")
-  dir.create(tmp_wd)
+  dir.create(tmp_wd, showWarnings = FALSE, recursive = TRUE)
   setwd(tmp_wd)
 
   # All input and output files will be local
-  input_filename <- basename(get_beastier_tempfilename(fileext = ".xml"))
-  output_state_filename <- basename(get_beastier_tempfilename(fileext = ".xml.state"))
+  input_filename <- basename(
+    get_beastier_tempfilename(fileext = ".xml")
+  )
+  output_state_filename <- basename(
+    get_beastier_tempfilename(fileext = ".xml.state")
+  )
 
   # Create input file locally
   file.copy(from = get_beastier_path("2_4.xml"), to = input_filename)
@@ -43,7 +47,11 @@ test_that("local file in temp folder", {
   )
 
 
+  expect_true(file.exists(input_filename))
   expect_true(file.exists(output_state_filename))
+  file.remove(input_filename)
+  file.remove(output_state_filename)
+  unlink(dirname(tmp_wd), recursive = TRUE)
 
 
   setwd(cur_wd) # Really do this last
@@ -54,19 +62,25 @@ test_that("file with full path in temp folder", {
   if (!is_beast2_installed()) return()
 
   cur_wd <- getwd()
+
   tmp_wd <- get_beastier_tempfilename(pattern = "beast2_tmp_folder")
-  dir.create(tmp_wd)
+  dir.create(tmp_wd, showWarnings = FALSE, recursive = TRUE)
   setwd(tmp_wd)
   input_filename <- get_beastier_path("2_4.xml")
-  beast2_options <- create_beast2_options(input_filename = input_filename)
+  beast2_options <- create_beast2_options(
+    input_filename = input_filename,
+  )
 
   expect_silent(
     run_beast2_from_options(beast2_options = beast2_options)
   )
 
   expect_true(file.exists(beast2_options$output_state_filename))
+  file.remove(beast2_options$output_state_filename)
+  unlink(dirname(tmp_wd), recursive = TRUE)
 
   setwd(cur_wd) # Really do this last
+
 })
 
 test_that("use sub-sub-sub-folders", {
@@ -130,6 +144,7 @@ test_that("show proper error message when using CBS with too few taxa", {
     ),
     "'group_sizes_dimension' .* must be less than the number of taxa"
   )
+  expect_false(file.exists(beast2_input_file))
 })
 
 
@@ -139,10 +154,7 @@ test_that("BEAST2 freezes when treelog file already exists", {
 
   if (!is_beast2_installed()) return()
 
-  beast2_xml_filename <- get_beastier_tempfilename(
-    pattern = "beast2_", tmpdir = rappdirs::user_cache_dir(),
-    fileext = ".xml"
-  )
+  beast2_xml_filename <- get_beastier_tempfilename()
 
   beautier::create_beast2_input_file_from_model(
     input_filename = beautier::get_fasta_filename(),
@@ -227,32 +239,44 @@ test_that("Run with spaces in the input filename, for Windows", {
 
   if (!is_beast2_installed()) return()
 
-  input_filename <- get_beastier_tempfilename("file with spaces ", fileext = ".xml")
+  input_filename <- get_beastier_tempfilename(
+    "file with spaces ", fileext = ".xml"
+  )
+  dir.create(dirname(input_filename), showWarnings = FALSE, recursive = TRUE)
   file.copy(
     from = get_beastier_path("2_4.xml"),
     input_filename
   )
+  output_state_filename <- get_beastier_tempfilename()
   expect_silent(
     run_beast2_from_options(
       create_beast2_options(
-        input_filename = input_filename
+        input_filename = input_filename,
+        output_state_filename = output_state_filename
       )
     )
   )
+  expect_true(file.exists(input_filename))
+  expect_true(file.exists(output_state_filename))
+  file.remove(input_filename)
+  file.remove(output_state_filename)
 })
 
 test_that("Run with spaces in the output state filename, for Windows", {
 
   if (!is_beast2_installed()) return()
+  output_state_filename <- get_beastier_tempfilename(
+    "file with spaces ", fileext = ".state.xml"
+  )
 
   expect_silent(
     run_beast2_from_options(
       create_beast2_options(
         input_filename = get_beastier_path("2_4.xml"),
-        output_state_filename = get_beastier_tempfilename(
-          "file with spaces ", fileext = ".state.xml"
-        )
+        output_state_filename = output_state_filename
       )
     )
   )
+  expect_true(file.exists(output_state_filename))
+  file.remove(output_state_filename)
 })

@@ -27,11 +27,13 @@ Nothing, creates a FASTA file
 Create a random FASTA file
 }
 \examples{
+fasta_filename <- get_beastier_tempfilename()
 create_random_fasta(
   n_taxa = 5,
   sequence_length = 20,
-  fasta_filename = get_beastier_tempfilename(fileext = ".fas")
+  fasta_filename = fasta_filename
 )
+file.remove(fasta_filename)
 }
 \author{
 Richèl J.C. Bilderbeek

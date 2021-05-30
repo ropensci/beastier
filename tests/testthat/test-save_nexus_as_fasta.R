@@ -8,4 +8,5 @@ test_that("use", {
   )
   expect_true(file.exists(fasta_filename))
   expect_silent(ape::read.FASTA(fasta_filename))
+  file.remove(fasta_filename)
 })

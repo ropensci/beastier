@@ -3,8 +3,8 @@ test_that("minimal use", {
 
   expect_silent(
     create_beast2_run_cmd(
-      input_filename = get_beastier_tempfilename(),
-      output_state_filename = get_beastier_tempfilename()
+      input_filename = "irrelevant",
+      output_state_filename = "irrelevant_too"
     )
   )
 })
@@ -12,8 +12,8 @@ test_that("minimal use", {
 test_that("same results as create_beast2_run_cmd_from_options", {
   if (!is_beast2_installed()) return()
 
-  input_filename <- get_beastier_tempfilename()
-  output_state_filename <- get_beastier_tempfilename()
+  input_filename <- "irrelevant"
+  output_state_filename <- "irrelevant_too"
   overwrite <- TRUE
 
   cmd_from_args <- create_beast2_run_cmd(

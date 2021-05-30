@@ -168,7 +168,9 @@ test_that("Run with spaces in the input filename, for Windows", {
 
   if (!is_beast2_installed()) return()
 
-  filename <- file.path(get_beastier_tempfilename(), "path with spaces", "anthus_2_4.xml")
+  filename <- file.path(
+    get_beastier_tempfilename(), "path with spaces", "anthus_2_4.xml"
+  )
   dir.create(dirname(filename), showWarnings = FALSE, recursive = TRUE)
   expect_true(is_beast2_input_file(get_beastier_path("anthus_2_4.xml")))
   file.copy(
@@ -176,4 +178,5 @@ test_that("Run with spaces in the input filename, for Windows", {
     to = filename
   )
   expect_true(is_beast2_input_file(filename))
+  unlink(dirname(dirname(filename)), recursive = TRUE)
 })

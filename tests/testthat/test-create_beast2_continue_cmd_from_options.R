@@ -61,6 +61,7 @@ test_that("Run with spaces in the launcher.jar path, for Windows", {
   )
   expect_false(beast2_path %in% cmd)
   expect_true(shQuote(beast2_path) %in% cmd)
+  unlink(dirname(beast2_path), recursive = TRUE)
 })
 
 test_that("Run with spaces in the beast bin path, for Windows", {
@@ -89,4 +90,5 @@ test_that("Run with spaces in the beast bin path, for Windows", {
   )
   expect_false(beast2_path %in% cmd)
   expect_true(shQuote(beast2_path) %in% cmd)
+  unlink(dirname(beast2_path), recursive = TRUE)
 })

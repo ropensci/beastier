@@ -1,6 +1,4 @@
-context("save_lines")
-
-test_that("save_lines: use", {
+test_that("use", {
   filename <- get_beastier_tempfilename()
   lines <- c("Hello", "world")
   save_lines(
