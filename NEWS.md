@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.4.1 (2021-05-30)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Cleans up all created temporary files
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.4 (2021-05-22)
 
 ### NEW FEATURES
