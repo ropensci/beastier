@@ -54,6 +54,10 @@ jobs:
           INSTALL_BEAST2: ${{ matrix.install_beast2 }}
         run: if [[ "$INSTALL_BEAST2" == true ]]; then Rscript -e 'beastierinstall::install_beast2()'; fi
 
+      - name: Report before check
+        run:   beastier::beastier_report()
+        shell: Rscript {0}
+
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
