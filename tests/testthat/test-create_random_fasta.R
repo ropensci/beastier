@@ -22,6 +22,7 @@ test_that("sub-sub folder", {
   )
   expect_true(file.exists(filename))
   file.remove(filename)
+  unlink(dirname(dirname(dirname(filename))), recursive = TRUE)
 })
 
 test_that("abuse", {

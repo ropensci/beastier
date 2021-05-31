@@ -20,12 +20,10 @@ test_that("default locations", {
 })
 
 test_that("must exist", {
-
-  if (is_beast2_installed()) {
-    expect_true(
-      file.exists(get_default_beast2_bin_path())
-    )
-  }
+  if (!is_beast2_installed()) return()
+  expect_true(
+    file.exists(get_default_beast2_bin_path())
+  )
 })
 
 test_that("custom location", {

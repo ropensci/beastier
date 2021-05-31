@@ -1,12 +1,6 @@
-context("create_beast2_version_cmd")
-
 test_that("use, bin", {
 
-  if (!is_beast2_installed()) {
-    return()
-  }
-
-  testit::assert(is_beast2_installed())
+  if (!is_beast2_installed()) return()
 
   beast2_bin_path <- get_default_beast2_bin_path()
   input_filename <- "input.xml"
@@ -23,11 +17,7 @@ test_that("use, bin", {
 
 test_that("use, jar", {
 
-  if (!is_beast2_installed()) {
-    return()
-  }
-
-  testit::assert(is_beast2_installed())
+  if (!is_beast2_installed()) return()
 
   beast2_jar_path <- get_default_beast2_jar_path()
 

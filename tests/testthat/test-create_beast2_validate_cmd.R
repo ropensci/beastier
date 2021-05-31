@@ -2,8 +2,6 @@ test_that("use, bin", {
 
   if (!is_beast2_installed()) return()
 
-  testit::assert(is_beast2_installed())
-
   beast2_bin_path <- get_default_beast2_bin_path()
   input_filename <- "input.xml"
 
@@ -45,7 +43,6 @@ test_that("use, bin, spaces in BEAST2 bin path", {
 
   if (!is_beast2_installed()) return()
 
-  testit::assert(is_beast2_installed())
   beast2_path <- file.path(
     get_beastier_tempfilename(),
     "path with spaces",
@@ -72,7 +69,6 @@ test_that("use, bin, spaces in BEAST2 jar path", {
 
   if (!is_beast2_installed()) return()
 
-  testit::assert(is_beast2_installed())
   beast2_path <- file.path(
     get_beastier_tempfilename(),
     "path with spaces",
@@ -98,7 +94,6 @@ test_that("use, bin, spaces in BEAST2 input filename", {
 
   if (!is_beast2_installed()) return()
 
-  testit::assert(is_beast2_installed())
   input_filename <- "path with spaces/input.xml"
 
   cmd <- create_beast2_validate_cmd(
@@ -112,8 +107,6 @@ test_that("use, bin, spaces in BEAST2 input filename", {
 test_that("use, jar, spaces in BEAST2 input filename", {
 
   if (!is_beast2_installed()) return()
-
-  testit::assert(is_beast2_installed())
   input_filename <- "path with spaces/input.xml"
 
   cmd <- create_beast2_validate_cmd(

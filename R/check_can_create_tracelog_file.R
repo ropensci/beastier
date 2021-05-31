@@ -21,7 +21,10 @@ check_can_create_tracelog_file <- function(
   testthat::expect_equal(ncol(matches), 2)
   tracelog_filename <- matches[1, 2]
 
-  if (file.exists(tracelog_filename)) return()
+  if (file.exists(tracelog_filename)) {
+     file.remove(tracelog_filename)
+     return()
+  }
 
   tryCatch(
     beastier::check_can_create_file(

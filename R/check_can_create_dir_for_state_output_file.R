@@ -24,4 +24,5 @@ check_can_create_dir_for_state_output_file <- function( # nolint indeed a long f
       beast2_options$output_state_filename, "'"
     )
   }
+  unlink(folder, recursive = TRUE)
 }

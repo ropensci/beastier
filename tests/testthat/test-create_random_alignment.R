@@ -1,5 +1,3 @@
-context("create_random_alignment")
-
 test_that("use", {
 
   expect_silent(

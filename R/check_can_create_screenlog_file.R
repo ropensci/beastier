@@ -21,7 +21,10 @@ check_can_create_screenlog_file <- function( # nolint indeed a long function nam
   screenlog_filename <- matches[1, 2]
 
   if (is.na(screenlog_filename)) return()
-  if (file.exists(screenlog_filename)) return()
+  if (file.exists(screenlog_filename)) {
+     file.remove(screenlog_filename)
+     return()
+  }
 
   tryCatch(
     beastier::check_can_create_file(

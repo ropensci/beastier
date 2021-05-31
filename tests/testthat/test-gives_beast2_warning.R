@@ -2,9 +2,7 @@ context("gives_beast2_warning")
 
 test_that("use, bin", {
 
-  if (!is_beast2_installed()) {
-    return()
-  }
+  if (!is_beast2_installed()) return()
 
   testit::assert(is_beast2_installed())
 
@@ -21,11 +19,7 @@ test_that("use, bin", {
 
 test_that("use, jar", {
 
-  if (!is_beast2_installed()) {
-    return()
-  }
-
-  testit::assert(is_beast2_installed())
+  if (!is_beast2_installed()) return()
 
   if (rappdirs::app_dir()$os == "unix") {
     # No idea why this only work under UNIX

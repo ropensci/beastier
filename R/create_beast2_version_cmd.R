@@ -33,11 +33,9 @@ create_beast2_version_cmd <- function(
 #'   and the others are arguments (\code{-jar}, in this case, followed
 #'   by more arguments.
 #' @examples
-#'   if (is_beast2_installed()) {
-#'     cmds <- create_beast2_version_cmd_jar()
-#'     testit::assert(length(cmds) == 5)
-#'     testit::assert(cmds[2] == "-cp")
-#'   }
+#' if (is_beast2_installed()) {
+#'   create_beast2_version_cmd_jar()
+#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_beast2_version_cmd_jar <- function(

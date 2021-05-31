@@ -19,12 +19,10 @@ test_that("must have a correct location", {
 })
 
 test_that("must exist", {
-
-  if (is_beast2_installed()) {
-    expect_true(
-      file.exists(get_default_beast2_jar_path())
-    )
-  }
+  if (!is_beast2_installed()) return()
+  expect_true(
+    file.exists(get_default_beast2_jar_path())
+  )
 })
 
 test_that("custom location", {

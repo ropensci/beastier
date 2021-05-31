@@ -24,11 +24,9 @@ Creates the terminal command to version a BEAST2 input file
 using a call to the \code{launcher.jar} file
 }
 \examples{
-  if (is_beast2_installed()) {
-    cmds <- create_beast2_version_cmd_jar()
-    testit::assert(length(cmds) == 5)
-    testit::assert(cmds[2] == "-cp")
-  }
+if (is_beast2_installed()) {
+  create_beast2_version_cmd_jar()
+}
 }
 \author{
 Richèl J.C. Bilderbeek

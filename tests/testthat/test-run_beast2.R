@@ -102,9 +102,7 @@ test_that("abuse", {
 
 test_that("detect errors when BEAST2 is installed", {
 
-  if (!is_beast2_installed()) {
-    return()
-  }
+  if (!is_beast2_installed()) return()
 
   expect_error(
     run_beast2(get_beastier_path("anthus_aco.fas")),
@@ -163,9 +161,7 @@ test_that("BEAST2 overwrites state file", {
 
 test_that("run BEAST2 from jar path", {
 
-  if (!is_beast2_installed()) {
-    return()
-  }
+  if (!is_beast2_installed()) return()
 
   expect_silent(
     run_beast2(
@@ -177,9 +173,7 @@ test_that("run BEAST2 from jar path", {
 
 test_that("run BEAST2 from binary path", {
 
-  if (!is_beast2_installed()) {
-    return()
-  }
+  if (!is_beast2_installed()) return()
 
   # Binary fails under Windows, but works under Unix (see 'use' section above)
   if (rappdirs::app_dir()$os == "unix") {
@@ -215,9 +209,7 @@ test_that("run BEAST2 from binary path", {
 
 test_that("run_beast2 produces output", {
 
-  if (!is_beast2_installed()) {
-    return()
-  }
+  if (!is_beast2_installed()) return()
   # From https://stackoverflow.com/a/2501913
   if (rappdirs::app_dir()$os == "win") {
     sink("NUL")
