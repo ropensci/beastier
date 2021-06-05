@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.4.3 (unreleased)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.4.2 (2021-06-04)
 
 ### NEW FEATURES

@@ -111,7 +111,7 @@ test_that("use relative and sub-sub-sub-folders", {
   beast2_options <- create_beast2_options(
     input_filename = input_filename,
     output_state_filename = file.path(
-      get_beastier_tempfilename() , "h", "i", "..", "j", "k.xml.state"
+      get_beastier_tempfilename(), "h", "i", "..", "j", "k.xml.state"
     )
   )
   expect_silent(
