@@ -157,6 +157,11 @@ Branch                     |[![GitHub Actions logo](man/figures/GitHubActions.pn
 `beastierinstall` `master` |![R-CMD-check](https://github.com/richelbilderbeek/beastierinstall/workflows/R-CMD-check/badge.svg?branch=master)  |[![codecov.io](https://codecov.io/github/richelbilderbeek/beastierinstall/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/beastierinstall/branch/master)
 `beastierinstall` `develop`|![R-CMD-check](https://github.com/richelbilderbeek/beastierinstall/workflows/R-CMD-check/badge.svg?branch=develop) |[![codecov.io](https://codecov.io/github/richelbilderbeek/beastierinstall/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/beastierinstall/branch/develop)
 
+Branch                         |[![AppVeyor logo](man/figures/AppVeyor.png)](https://ci.appveyor.com/project/richelbilderbeek/beastier_on_windows/)
+-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`beastier_on_windows` `master` |[![Build status](https://ci.appveyor.com/api/projects/status/ralex9sdnnxlwbgx/branch/master?svg=true)](https://ci.appveyor.com/project/richelbilderbeek/beastier-on-windows/branch/master)
+`beastier_on_windows` `develop`|[![Build status](https://ci.appveyor.com/api/projects/status/ralex9sdnnxlwbgx/branch/develop?svg=true)](https://ci.appveyor.com/project/richelbilderbeek/beastier-on-windows/branch/develop)
+
 ## References
 
 Article about `babette`:
