@@ -54,10 +54,6 @@ jobs:
           INSTALL_BEAST2: ${{ matrix.install_beast2 }}
         run: if [[ "$INSTALL_BEAST2" == true ]]; then Rscript -e 'beastierinstall::install_beast2()'; fi
 
-      - name: Report before check
-        run:   beastier::beastier_report()
-        shell: Rscript {0}
-
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
@@ -81,10 +77,12 @@ jobs:
         run: if [[ "$INSTALL_BEAST2" == false ]]; then Rscript -e 'lintr::lint_package()'; fi
 
       - name: Install beastier
-        run: remotes::install_github("richelbilderbeek/beastier")
+        run: remotes::install_github("richelbilderbeek/beastier", ref = "develop")
         shell: Rscript {0}
+        if: ${{ always() }}
 
       - name: Report
         run: beastier::beastier_report()
         shell: Rscript {0}
+        if: ${{ always() }}
 
