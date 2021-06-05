@@ -12,7 +12,7 @@
 #' }
 #' @author Richèl J.C. Bilderbeek
 do_minimal_run <- function() {
-  output_state_filename <- get_beastier_tempfilename()
+  output_state_filename <- beastier::get_beastier_tempfilename()
   beastier::run_beast2_from_options(
     beastier::create_beast2_options(
       input_filename = beastier::get_beastier_path("2_4.xml"),
