@@ -86,17 +86,21 @@ test_that("file with full path in temp folder", {
 test_that("use sub-sub-sub-folders", {
 
   if (!is_beast2_installed()) return()
-
   input_filename <- get_beastier_path("2_4.xml")
-  beast2_options <- create_beast2_options(input_filename = input_filename)
-  beast2_options$output_state_filename <-
-    file.path(tempdir(), "h", "i", "j", "k.xml.state")
-
+  beast2_options <- create_beast2_options(
+    input_filename = input_filename,
+    output_state_filename = file.path(
+      get_beastier_tempfilename(), "h", "i", "j", "k.xml.state"
+    )
+  )
   expect_silent(
     run_beast2_from_options(beast2_options = beast2_options)
   )
-
   expect_true(file.exists(beast2_options$output_state_filename))
+  unlink(
+    dirname(dirname(dirname(dirname(beast2_options$output_state_filename)))),
+    recursive = TRUE
+  )
 })
 
 test_that("use relative and sub-sub-sub-folders", {
@@ -104,15 +108,23 @@ test_that("use relative and sub-sub-sub-folders", {
   if (!is_beast2_installed()) return()
 
   input_filename <- get_beastier_path("2_4.xml")
-  beast2_options <- create_beast2_options(input_filename = input_filename)
-  beast2_options$output_state_filename <-
-    file.path(tempdir(), "h", "i", "..", "j", "k.xml.state")
-
+  beast2_options <- create_beast2_options(
+    input_filename = input_filename,
+    output_state_filename = file.path(
+      get_beastier_tempfilename() , "h", "i", "..", "j", "k.xml.state"
+    )
+  )
   expect_silent(
     run_beast2_from_options(beast2_options = beast2_options)
   )
 
   expect_true(file.exists(beast2_options$output_state_filename))
+  unlink(
+    dirname(
+      dirname(dirname(dirname(dirname(beast2_options$output_state_filename))))
+    ),
+    recursive = TRUE
+  )
 })
 
 
@@ -190,8 +202,8 @@ test_that("BEAST2 freezes when treelog file already exists", {
 test_that("use", {
 
   if (!is_beast2_installed()) return()
-
-  fake_win_filename <- file.path(tempdir(), "BEAST2.exe")
+  fake_win_filename <- file.path(get_beastier_tempfilename(), "BEAST2.exe")
+  dir.create(dirname(fake_win_filename))
   file.create(fake_win_filename)
   expect_error(
     run_beast2_from_options(
@@ -202,6 +214,7 @@ test_that("use", {
     ),
     "Cannot use the Windows executable BEAST2.exe in scripts"
   )
+  unlink(dirname(fake_win_filename), recursive = TRUE)
 })
 
 test_that("use tildes instead of full path", {
