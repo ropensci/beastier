@@ -40,6 +40,8 @@
 #' Within this folder, BEAST2 is allowed to create all of its output files,
 #' without the risk of overwriting existing ones, allowing
 #' BEAST2 to run in multiple parallel processes.
+#' @param beastier_folder the path to
+#' the \link{beastier} temporary files folder
 #' @param clock_model a \code{beautier} clock model
 #' @param clock_models a list of one or more \code{beautier} clock models
 #' @param crown_age the crown age of the phylogeny
@@ -131,6 +133,7 @@ default_params_doc <- function(
   beast2_path,
   beast2_version,
   beast2_working_dir,
+  beastier_folder,
   clock_model, clock_models,
   crown_age, crown_ages,
   fasta_filename, fasta_filenames,

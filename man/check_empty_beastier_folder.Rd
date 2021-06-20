@@ -6,6 +6,10 @@
 \usage{
 check_empty_beastier_folder(beastier_folder = get_beastier_folder())
 }
+\arguments{
+\item{beastier_folder}{the path to
+the \link{beastier} temporary files folder}
+}
 \value{
 Nothing.
 }

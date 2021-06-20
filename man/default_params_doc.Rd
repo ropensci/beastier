@@ -14,6 +14,7 @@ default_params_doc(
   beast2_path,
   beast2_version,
   beast2_working_dir,
+  beastier_folder,
   clock_model,
   clock_models,
   crown_age,
@@ -93,6 +94,9 @@ For each BEAST2 run, a new subfolder is created in that folder.
 Within this folder, BEAST2 is allowed to create all of its output files,
 without the risk of overwriting existing ones, allowing
 BEAST2 to run in multiple parallel processes.}
+
+\item{beastier_folder}{the path to
+the \link{beastier} temporary files folder}
 
 \item{clock_model}{a \code{beautier} clock model}
 

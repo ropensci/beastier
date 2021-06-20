@@ -26,5 +26,4 @@ test_that("deprecated variables", {
     ),
     "'beast2_working_dir' is deprecated"
   )
-
 })

@@ -21,7 +21,11 @@ test_that("files are detected", {
 
   dir.create(get_beastier_folder(), showWarnings = FALSE, recursive = TRUE)
   beastier_filename <- file.path(get_beastier_tempfilename())
-  expect_silent(check_empty_beastier_folder(beastier_folder = get_beastier_folder()))
+  expect_silent(
+    check_empty_beastier_folder(
+      beastier_folder = get_beastier_folder()
+    )
+  )
   readr::write_lines(x = "irrelevant", file = beastier_filename)
   file.create(normalizePath(beastier_filename, mustWork = FALSE))
   expect_error(check_empty_beastier_folder(beastier_folder))

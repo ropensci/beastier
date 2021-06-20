@@ -61,7 +61,9 @@ test_that("Run with spaces in the launcher.jar path, for Windows", {
   )
   expect_false(beast2_path %in% cmd)
   expect_true(shQuote(beast2_path) %in% cmd)
-  unlink(dirname(beast2_path), recursive = TRUE)
+  unlink(dirname(dirname(beast2_path)), recursive = TRUE)
+  beautier::check_empty_beautier_folder()
+  check_empty_beastier_folder()
 })
 
 test_that("Run with spaces in the beast bin path, for Windows", {
@@ -90,5 +92,7 @@ test_that("Run with spaces in the beast bin path, for Windows", {
   )
   expect_false(beast2_path %in% cmd)
   expect_true(shQuote(beast2_path) %in% cmd)
-  unlink(dirname(beast2_path), recursive = TRUE)
+  unlink(dirname(dirname(beast2_path)), recursive = TRUE)
+  beautier::check_empty_beautier_folder()
+  check_empty_beastier_folder()
 })
