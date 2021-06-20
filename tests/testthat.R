@@ -1,21 +1,13 @@
 library(testthat)
 library(beastier)
 
-file.remove(
-  list.files(rappdirs::user_cache_dir(appname = "beautier"), full.names = TRUE)
-)
-file.remove(
-  list.files(rappdirs::user_cache_dir(appname = "beastier"), full.names = TRUE)
-)
+# Make sure no temp files are left undeleted
+beautier::clear_beautier_cache()
+beautier::check_empty_beautier_folder()
+clear_beastier_cache()
+check_empty_beastier_folder()
 
 test_check("beastier")
 
-testthat::expect_equal(
-  0,
-  length(list.files(rappdirs::user_cache_dir(appname = "beautier")))
-)
-
-testthat::expect_equal(
-  0,
-  length(list.files(rappdirs::user_cache_dir(appname = "beastier")))
-)
+beautier::check_empty_beautier_folder()
+check_empty_beastier_folder()

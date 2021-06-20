@@ -293,3 +293,10 @@ test_that("Run with spaces in the output state filename, for Windows", {
   expect_true(file.exists(output_state_filename))
   file.remove(output_state_filename)
 })
+
+test_that("no files are left undeleted", {
+  beautier::check_empty_beautier_folder()
+  check_empty_beastier_folder()
+  beautier::clear_beautier_cache()
+  clear_beastier_cache()
+})
