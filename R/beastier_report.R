@@ -1,4 +1,5 @@
 #' Create a \link{beastier} report, to be used when reporting bugs
+#' @author Richèl J.C. Bilderbeek
 #' @export
 beastier_report <- function() {
   kat <- function(x) message(x, sep = "\n")

@@ -9,3 +9,6 @@ beastier_report()
 \description{
 Create a \link{beastier} report, to be used when reporting bugs
 }
+\author{
+Richèl J.C. Bilderbeek
+}
