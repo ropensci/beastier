@@ -30,6 +30,7 @@ check_can_create_file <- function(
       )
     }
   }
+  dir.create(dirname(filename), showWarnings = FALSE, recursive = TRUE)
   tryCatch(
     suppressWarnings(
       writeLines(text = "check_can_create_file testing text", con = filename)
@@ -42,6 +43,15 @@ check_can_create_file <- function(
     )
   }
   file.remove(filename)
+
+  # Go up and remove all empty sub-sub-sub-folders
+  folder_name <- dirname(filename)
+  while (length(list.files(path = folder_name)) == 0) {
+    unlink(x = folder_name, recursive = TRUE)
+    folder_name <- dirname(folder_name)
+  }
+
+
   testthat::expect_true(
     !file.exists(filename),
     info = paste0(

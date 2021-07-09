@@ -10,7 +10,7 @@ Newest versions at top.
 
 ### MINOR IMPROVEMENTS
 
-  * None
+  * `check_can_create_file` creates folder if needed
 
 ### BUG FIXES
 
