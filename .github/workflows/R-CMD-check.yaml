@@ -27,8 +27,8 @@ jobs:
       - name: Install libcurl4-openssl-dev
         run: sudo apt install -qq libcurl4-openssl-dev
 
-      - name: Install libgit2-dev
-        run: sudo apt install -qq libgit2-dev
+#      - name: Install libgit2-dev
+#        run: sudo apt install -qq libgit2-dev
 
       - name: Fix rJava error # from https://travis-ci.community/t/cannot-connect-to-java-from-r/9754/8
         run: sudo $(which R) CMD javareconf
@@ -72,9 +72,13 @@ jobs:
         shell: Rscript {0}
 
       - name: Test coverage
+        env:
+          INSTALL_BEAST2: ${{ matrix.install_beast2 }}
         run: if [[ "$INSTALL_BEAST2" == true ]]; then Rscript -e 'covr::codecov()'; fi
 
       - name: Lint
+        env:
+          INSTALL_BEAST2: ${{ matrix.install_beast2 }}
         run: if [[ "$INSTALL_BEAST2" == false ]]; then Rscript -e 'lintr::lint_package()'; fi
 
       - name: Install beastier
