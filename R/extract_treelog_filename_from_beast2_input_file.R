@@ -4,7 +4,7 @@
 #' @inheritParams default_params_doc
 #' @author Richèl J.C. Bilderbeek
 #' @export
-extract_treelog_filename_from_beast2_input_file <- function(
+extract_treelog_filename_from_beast2_input_file <- function( # nolint indeed a long function name
   input_filename
 ) {
   testthat::expect_true(file.exists(input_filename))
