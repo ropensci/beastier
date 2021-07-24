@@ -22,3 +22,4 @@ sed -i'.orginal' "s/beastier:://g" install_beast2.R
 sed -i'.orginal' "s/beastierinstall:://g" install_beast2.R
 cat install_beast2.R
 Rscript install_beast2.R
+rm -rf temp
