@@ -10,7 +10,8 @@ From: r-base
     apt-get clean
     Rscript -e 'install.packages(c("remotes", "devtools"))'
     Rscript -e 'remotes::install_github("ropensci/beastier")'
-    Rscript -e 'beastier::install_beast2(folder_name = "/opt/beastier")'
+    Rscript -e 'remotes::install_github("richelbilderbeek/beastierinstall")'
+    Rscript -e 'beastierinstall::install_beast2(folder_name = "/opt/beastier")'
 
 %apprun R
 exec R "$@"
