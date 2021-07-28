@@ -12,8 +12,14 @@ From: r-base
     Rscript -e 'remotes::install_github("ropensci/beastier")'
     Rscript -e 'beastier::install_beast2(folder_name = "/opt/beastier")'
 
+%apprun R
+exec R "$@"
+
+%apprun Rscript
+exec Rscript "$@"
+
 %runscript
-    Rscript -e 'beastier::beastier_report(folder_name = "/opt/beastier")'
+exec R "$@"
 
 %test
     Rscript -e 'beastier::beastier_report(folder_name = "/opt/beastier")'
