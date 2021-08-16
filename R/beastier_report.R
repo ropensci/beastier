@@ -1,4 +1,5 @@
 #' Create a \link{beastier} report, to be used when reporting bugs
+#' @inheritParams default_params_doc
 #' @author Richèl J.C. Bilderbeek
 #' @export
 beastier_report <- function(
