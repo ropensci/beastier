@@ -4,7 +4,11 @@
 \alias{beastier_report}
 \title{Create a \link{beastier} report, to be used when reporting bugs}
 \usage{
-beastier_report()
+beastier_report(
+  folder_name = get_default_beast2_folder(),
+  os = rappdirs::app_dir()$os,
+  beast2_folder = get_default_beast2_folder()
+)
 }
 \description{
 Create a \link{beastier} report, to be used when reporting bugs
