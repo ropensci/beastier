@@ -2,8 +2,9 @@
 #
 # Installs BEAST2 using the R code in the 'beastierinstall' and 'beastier' package
 #
-# Because the R code in the package uses 'beastierinstall::' in calling
-# its functions, this scipt 
+# Because the R code in the packages use namespaces 
+# 'beastier::' and 'beastierinstall::' in calling
+# its functions, this scipt removes these namespaces
 #
 # Usage:
 #
