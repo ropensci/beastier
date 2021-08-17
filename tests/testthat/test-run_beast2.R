@@ -1,14 +1,17 @@
 test_that("single alignment creates all files", {
   if (!is_beast2_installed()) return()
   output_state_filename <- get_beastier_tempfilename(fileext = ".xml.state")
-  expect_silent(
-    run_beast2(
-      input_filename = get_beastier_path("2_4.xml"),
-      output_state_filename = output_state_filename
-    )
+
+  # Cannot use 'expect_silent' as an empty line is produced in the output
+  run_beast2(
+    input_filename = get_beastier_path("2_4.xml"),
+    output_state_filename = output_state_filename
   )
+
   expect_true(file.exists(output_state_filename))
   file.remove(output_state_filename)
+
+  expect_silent(check_empty_beastier_folder())
 })
 
 test_that("single alignment, equal RNG seed equal results", {
@@ -147,28 +150,36 @@ test_that("BEAST2 overwrites state file", {
 
   testit::assert(all(readLines(output_state_filename) == "state"))
 
-  expect_silent(
-    run_beast2(
-      input_filename = input_filename,
-      output_state_filename = output_state_filename
-    )
+  # Cannot use 'expect_silent' as an empty line is produced in the output
+  run_beast2(
+    input_filename = input_filename,
+    output_state_filename = output_state_filename
   )
 
   # Overwrites all
   expect_true(all(readLines(output_state_filename) != "state"))
   file.remove(output_state_filename)
+
+  expect_silent(check_empty_beastier_folder())
+  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
 })
 
 test_that("run BEAST2 from jar path", {
 
   if (!is_beast2_installed()) return()
 
-  expect_silent(
-    run_beast2(
-      input_filename = get_beastier_path("2_4.xml"),
-      beast2_path = get_default_beast2_jar_path()
-    )
+  output_state_filename <- get_beastier_tempfilename()
+
+  # Cannot use 'expect_silent' as an empty line is produced in the output
+  run_beast2(
+    input_filename = get_beastier_path("2_4.xml"),
+    beast2_path = get_default_beast2_jar_path(),
+    output_state_filename = output_state_filename
   )
+  file.remove(output_state_filename)
+
+  expect_silent(check_empty_beastier_folder())
+  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
 })
 
 test_that("run BEAST2 from binary path", {
@@ -205,6 +216,8 @@ test_that("run BEAST2 from binary path", {
     )
     unlink(dirname(fake_windows_exe_filename), recursive = TRUE)
   }
+
+  expect_silent(check_empty_beastier_folder())
 })
 
 test_that("run_beast2 produces output", {
@@ -219,4 +232,6 @@ test_that("run_beast2 produces output", {
   output <- run_beast2(get_beastier_path("2_4.xml"), verbose = TRUE)
   sink()
   expect_true(length(output) > 50)
+
+  expect_silent(check_empty_beastier_folder())
 })
