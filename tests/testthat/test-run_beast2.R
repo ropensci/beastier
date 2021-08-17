@@ -188,12 +188,16 @@ test_that("run BEAST2 from binary path", {
 
   # Binary fails under Windows, but works under Unix (see 'use' section above)
   if (rappdirs::app_dir()$os == "unix") {
-    expect_silent(
-      run_beast2(
-        input_filename = get_beastier_path("2_4.xml"),
-        beast2_path = get_default_beast2_bin_path()
-      )
+    output_state_filename <- get_beastier_tempfilename()
+    # Cannot use 'expect_silent' as an empty line is produced in the output
+    run_beast2(
+      input_filename = get_beastier_path("2_4.xml"),
+      beast2_path = get_default_beast2_bin_path(),
+      output_state_filename = output_state_filename
     )
+    file.remove(output_state_filename)
+    expect_silent(check_empty_beastier_folder())
+    # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
   }
   # Binary fails under Windows, but works under Unix (see 'use' section above)
   if (rappdirs::app_dir()$os == "win") {
@@ -215,23 +219,36 @@ test_that("run BEAST2 from binary path", {
       "'CreateProcess' failed to run"
     )
     unlink(dirname(fake_windows_exe_filename), recursive = TRUE)
+    expect_silent(check_empty_beastier_folder())
+    # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
   }
 
   expect_silent(check_empty_beastier_folder())
+  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
 })
 
 test_that("run_beast2 produces output", {
 
   if (!is_beast2_installed()) return()
+
+  output_state_filename <- get_beastier_tempfilename()
+
   # From https://stackoverflow.com/a/2501913
   if (rappdirs::app_dir()$os == "win") {
     sink("NUL")
   } else {
     sink("/dev/null")
   }
-  output <- run_beast2(get_beastier_path("2_4.xml"), verbose = TRUE)
+  output <- run_beast2(
+    get_beastier_path("2_4.xml"),
+    output_state_filename = output_state_filename,
+    verbose = TRUE
+  )
   sink()
   expect_true(length(output) > 50)
 
+  file.remove(output_state_filename)
+
   expect_silent(check_empty_beastier_folder())
+  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
 })
