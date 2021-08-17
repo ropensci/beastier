@@ -45,7 +45,7 @@ test_that("local file in temp folder", {
   # Create input file locally
   file.copy(from = get_beastier_path("2_4.xml"), to = input_filename)
 
-  # Cannot do expect silent as an empty line is produced in the output
+  # Cannot use 'expect_silent' as an empty line is produced in the output
   expect_warning(
     run_beast2_from_options(
       beast2_options = create_beast2_options(
@@ -69,6 +69,8 @@ test_that("local file in temp folder", {
 })
 
 test_that("file with full path in temp folder", {
+
+  skip("This test takes unexpectedly long")
   if (!is_beast2_installed()) return()
 
   cur_wd <- getwd()
@@ -81,6 +83,7 @@ test_that("file with full path in temp folder", {
     input_filename = input_filename
   )
 
+  # Cannot use 'expect_silent' as an empty line is produced in the output
   expect_warning(
     run_beast2_from_options(beast2_options = beast2_options),
     NA
@@ -105,8 +108,10 @@ test_that("use sub-sub-sub-folders", {
       get_beastier_tempfilename(), "h", "i", "j", "k.xml.state"
     )
   )
-  expect_silent(
-    run_beast2_from_options(beast2_options = beast2_options)
+  # Cannot use 'expect_silent' as an empty line is produced in the output
+  expect_warning(
+    run_beast2_from_options(beast2_options = beast2_options),
+    NA
   )
   expect_true(file.exists(beast2_options$output_state_filename))
   unlink(
@@ -127,8 +132,10 @@ test_that("use relative and sub-sub-sub-folders", {
       get_beastier_tempfilename(), "h", "i", "..", "j", "k.xml.state"
     )
   )
-  expect_silent(
-    run_beast2_from_options(beast2_options = beast2_options)
+  # Cannot use 'expect_silent' as an empty line is produced in the output
+  expect_warning(
+    run_beast2_from_options(beast2_options = beast2_options),
+    NA
   )
 
   expect_true(file.exists(beast2_options$output_state_filename))
