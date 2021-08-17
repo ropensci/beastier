@@ -15,6 +15,7 @@
 ^appveyor\.yml$
 ^\.github$
 ^LICENSE$
+^Singularity$
 ^test_output_0\.log$
 ^test_output_0\.trees$
 
