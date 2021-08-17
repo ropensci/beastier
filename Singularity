@@ -13,14 +13,8 @@ From: r-base
     Rscript -e 'remotes::install_github("richelbilderbeek/beastierinstall")'
     Rscript -e 'beastierinstall::install_beast2(folder_name = "/opt/beastier")'
 
-%apprun R
-exec R "$@"
-
-%apprun Rscript
-exec Rscript "$@"
-
 %runscript
-exec R "$@"
+exec R --vanilla --silent --no-echo "$@"
 
 %test
     Rscript -e 'beastier::beastier_report(beast2_folder = "/opt/beastier")'

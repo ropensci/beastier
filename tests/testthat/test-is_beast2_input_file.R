@@ -17,8 +17,6 @@ test_that("beast2_example_output.log is not a valid BEAST2 input file", {
 
 test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
 
-  # Gives a status error
-  if (!is_on_ci()) return()
   if (!is_beast2_installed()) return()
 
   filename <- get_beastier_path("beast2_example_output.trees")
@@ -28,13 +26,9 @@ test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
     is_ok <- beastier::is_beast2_input_file(filename, verbose = TRUE)
   )
   expect_false(is_ok)
-
 })
 
 test_that("anthus_2_4.xml is valid, from bin", {
-
-  if (!is_on_ci()) return()
-
   # The .exe will always show a pop-up
   if (rappdirs::app_dir()$os == "win") return()
 
@@ -52,7 +46,6 @@ test_that("anthus_2_4.xml is valid, from bin", {
 
 test_that("anthus_2_4.xml is valid, from jar", {
 
-  if (!is_on_ci()) return()
   if (!is_beast2_installed()) return()
 
   filename <- get_beastier_path("anthus_2_4.xml")
@@ -144,7 +137,6 @@ test_that("detect errors", {
 
 test_that("Check use of tilde in filenames", {
 
-  if (!is_on_ci()) return()
   if (!is_beast2_installed()) return()
 
   # Copy a file to the home folder, must be deleted in the end
@@ -162,6 +154,8 @@ test_that("Check use of tilde in filenames", {
   expect_true(is_beast2_input_file(relative_path))
 
   file.remove(relative_path)
+
+  beastier::check_empty_beastier_folder()
 })
 
 test_that("Run with spaces in the input filename, for Windows", {

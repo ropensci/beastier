@@ -1,20 +1,28 @@
 test_that("use", {
 
   if (!is_beast2_installed()) return()
-
-  expect_silent(
-    run_beast2_from_options(
-      create_beast2_options(
-        input_filename = get_beastier_path("2_4.xml")
-      )
-    )
+  beast2_options <- create_beast2_options(
+    input_filename = get_beastier_path("2_4.xml")
   )
+
+  # An empty line is outputted :-/
+  expect_warning(
+    run_beast2_from_options(
+      beast2_options = beast2_options
+    ),
+    NA
+  )
+  file.remove(beast2_options$output_state_filename)
+
+  expect_silent(check_empty_beastier_folder())
+  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
 })
 
 test_that("abuse", {
   expect_error(
     run_beast2_from_options(beast2_options = "abs.ent")
   )
+  expect_silent(check_empty_beastier_folder())
 })
 
 test_that("local file in temp folder", {
@@ -37,13 +45,15 @@ test_that("local file in temp folder", {
   # Create input file locally
   file.copy(from = get_beastier_path("2_4.xml"), to = input_filename)
 
-  expect_silent(
+  # Cannot do expect silent as an empty line is produced in the output
+  expect_warning(
     run_beast2_from_options(
-      create_beast2_options(
+      beast2_options = create_beast2_options(
         input_filename = input_filename,
         output_state_filename = output_state_filename
       )
-    )
+    ),
+    NA
   )
 
 
@@ -54,11 +64,11 @@ test_that("local file in temp folder", {
   unlink(dirname(tmp_wd), recursive = TRUE)
 
 
+  expect_silent(check_empty_beastier_folder())
   setwd(cur_wd) # Really do this last
 })
 
 test_that("file with full path in temp folder", {
-
   if (!is_beast2_installed()) return()
 
   cur_wd <- getwd()
@@ -68,19 +78,21 @@ test_that("file with full path in temp folder", {
   setwd(tmp_wd)
   input_filename <- get_beastier_path("2_4.xml")
   beast2_options <- create_beast2_options(
-    input_filename = input_filename,
+    input_filename = input_filename
   )
 
-  expect_silent(
-    run_beast2_from_options(beast2_options = beast2_options)
+  expect_warning(
+    run_beast2_from_options(beast2_options = beast2_options),
+    NA
   )
 
   expect_true(file.exists(beast2_options$output_state_filename))
   file.remove(beast2_options$output_state_filename)
   unlink(dirname(tmp_wd), recursive = TRUE)
 
+  expect_silent(check_empty_beastier_folder())
   setwd(cur_wd) # Really do this last
-
+  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
 })
 
 test_that("use sub-sub-sub-folders", {
@@ -101,6 +113,7 @@ test_that("use sub-sub-sub-folders", {
     dirname(dirname(dirname(dirname(beast2_options$output_state_filename)))),
     recursive = TRUE
   )
+  expect_silent(check_empty_beastier_folder())
 })
 
 test_that("use relative and sub-sub-sub-folders", {
@@ -125,6 +138,7 @@ test_that("use relative and sub-sub-sub-folders", {
     ),
     recursive = TRUE
   )
+  expect_silent(check_empty_beastier_folder())
 })
 
 
