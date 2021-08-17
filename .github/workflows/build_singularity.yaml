@@ -25,32 +25,15 @@ jobs:
       - name: Show singularity version
         run: singularity version
 
-#      - name: Show present working directory
-#        run: echo $PWD
-
       - name: Build Container
-        env:
-          SINGULARITY_RECIPE: Singularity
-          OUTPUT_CONTAINER: plinkr.sif
-        run: |
-         ls 
-         if [ -f "${SINGULARITY_RECIPE}" ]; then
-              sudo -E singularity build ${OUTPUT_CONTAINER} ${SINGULARITY_RECIPE}
-         else
-             echo "${SINGULARITY_RECIPE} is not found."
-             echo "Present working directory: $PWD"
-             ls
-         fi
+        run: ./scripts/build_singularity_container.sh
 
-#            sudo -E SINGULARITY_TMPDIR=$RUNNER_TEMP singularity build ${OUTPUT_CONTAINER} ${SINGULARITY_RECIPE}
-#            sudo -E SINGULARITY_TMPDIR=tmp SINGULARITY_CACHEDIR=cache singularity build ${OUTPUT_CONTAINER} ${SINGULARITY_RECIPE}
-
-      - name: Test container, must detect PLINKs
-        run: singularity test plinkr.sif
+      - name: Test container, must detect BEAST2
+        run: singularity test beastier.sif
 
       - name: Show help of container
-        run: singularity run-help plinkr.sif
+        run: singularity run-help beastier.sif
 
       - name: Run container
-        run: cat scripts/demo_container.R | ./plinkr.sif
+        run: cat scripts/demo_container.R | ./beastier.sif
 

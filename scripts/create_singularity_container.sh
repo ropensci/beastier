@@ -1,9 +1,9 @@
 #!/bin/bash
 #
-# Create the Singularity container 'plinkr.sif'
+# Create the Singularity container 'beastier.sif'
 #
 # Usage:
 #
 #  ./scripts/create_singularity_container.sh
 #
-singularity build --fakeroot plinkr.sif Singularity
+singularity build --fakeroot beastier.sif Singularity
