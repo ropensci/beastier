@@ -11,4 +11,5 @@ test_that("use, file present", {
   testit::assert(file.exists(filename))
   expect_silent(remove_file_if_present(filename))
   testit::assert(!file.exists(filename))
+  expect_silent(check_empty_beastier_folder())
 })

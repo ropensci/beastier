@@ -74,4 +74,5 @@ test_that("use", {
       rename_fun = "nonsense"
     )
   )
+  expect_silent(check_empty_beastier_folder())
 })

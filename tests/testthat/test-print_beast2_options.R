@@ -11,4 +11,5 @@ test_that("use", {
   }
   print_beast2_options(beast2_options)
   sink()
+  expect_silent(check_empty_beastier_folder())
 })

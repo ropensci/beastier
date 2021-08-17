@@ -173,4 +173,7 @@ test_that("Run with spaces in the input filename, for Windows", {
   )
   expect_true(is_beast2_input_file(filename))
   unlink(dirname(dirname(filename)), recursive = TRUE)
+
+  expect_silent(check_empty_beastier_folder())
+  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
 })
