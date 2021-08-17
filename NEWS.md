@@ -2,7 +2,7 @@
 
 Newest versions at top.
 
-## beastier 2.4.4 (unreleased)
+## beastier 2.4.4 (2021-08-17)
 
 ### NEW FEATURES
 
@@ -10,7 +10,7 @@ Newest versions at top.
 
 ### MINOR IMPROVEMENTS
 
-  * None
+  * Produces no undeleted temporary files
 
 ### BUG FIXES
 
