@@ -1,4 +1,5 @@
 #' Get the default BEAST2 path
+#' @inheritParams default_params_doc
 #' @return the default BEAST2 path
 #' @seealso
 #'   Use \link{get_default_beast2_bin_path}
