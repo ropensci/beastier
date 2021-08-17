@@ -1,5 +1,6 @@
 test_that("use", {
   expect_message(beastier_report())
+  expect_message(beastier_report(beast2_folder = "absent"))
 })
 
 test_that("no files are left undeleted", {

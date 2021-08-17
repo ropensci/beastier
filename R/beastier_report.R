@@ -3,19 +3,17 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 beastier_report <- function(
-  folder_name = get_default_beast2_folder(),
-  os = rappdirs::app_dir()$os,
-  beast2_folder = get_default_beast2_folder()
+  beast2_folder = get_default_beast2_folder(),
+  os = rappdirs::app_dir()$os
 ) {
   kat <- function(x) message(x, sep = "\n")
   kat("***********")
   kat("* beastier *")
   kat("***********")
   kat(paste0("OS: ", os))
-  kat(paste0("folder_name: ", folder_name))
-  beast2_path <- beastier::get_default_beast2_path(folder_name = folder_name)
-  kat(paste0("beast2_path: ", beast2_path))
   kat(paste0("beast2_folder: ", beast2_folder))
+  beast2_path <- beastier::get_default_beast2_path(beast2_folder = beast2_folder)
+  kat(paste0("beast2_path: ", beast2_path))
   kat("****************")
   kat("* Dependencies *")
   kat("****************")
@@ -28,10 +26,10 @@ beastier_report <- function(
   kat(
     paste0(
       "Is BEAST2 installed: ",
-      beastier::is_beast2_installed(folder_name = folder_name)
+      beastier::is_beast2_installed(folder_name = beast2_folder)
     )
   )
-  if (beastier::is_beast2_installed(folder_name = folder_name)) {
+  if (beastier::is_beast2_installed(folder_name = beast2_folder)) {
     kat(
       paste0(
         "BEAST2 version: ",
@@ -40,7 +38,7 @@ beastier_report <- function(
     )
     kat(
       paste0(
-        "BEAST2 default path (aka 'beast2_folder'): ",
+        "BEAST2 default path: ",
         beastier::get_default_beast2_bin_path(beast2_folder = beast2_folder)
       )
     )
