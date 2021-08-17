@@ -52,5 +52,5 @@ jobs:
         run: singularity run-help plinkr.sif
 
       - name: Run container
-        run: singularity exec plinkr.sif Rscript scripts/demo_container.R
+        run: cat scripts/demo_container.R | ./plinkr.sif
 
