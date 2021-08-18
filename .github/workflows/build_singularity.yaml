@@ -26,7 +26,7 @@ jobs:
       - name: Show singularity version
         run: singularity version
 
-      - name: Build Container
+      - name: Build container
         run: ./scripts/build_singularity_container.sh
 
       - name: Test container, must detect BEAST2

@@ -85,7 +85,7 @@ continue_beast2 <- function(
   testthat::expect_true(
     file.exists(beast2_options$output_state_filename),
     info = paste0(
-      "BEAST2 state file not created. \n",
+      "BEAST2 state file not created after a continued run. \n",
       "Command '", paste0(cmd, collapse = " "), "' failed. ",
       "'beast2_options$output_state_filename': '",
         beast2_options$output_state_filename, "'\n",

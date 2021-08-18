@@ -24,3 +24,6 @@ sed -i'.orginal' "s/beastierinstall:://g" install_beast2.R
 cat install_beast2.R
 Rscript install_beast2.R
 rm -rf temp
+
+rm -f install_beast2.R.orginal
+rm -f install_beast2.R

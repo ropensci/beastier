@@ -46,6 +46,20 @@ run_beast2_from_options <- function(
     message(paste("cmd:", paste0(cmd, collapse = " ")))
   }
 
+  # Create the folder for the treelog and tracelog
+  beautier_tempfolder <- dirname(beautier::get_beautier_tempfilename())
+  if (beast2_options$verbose) {
+    message(
+      "Creating the beautier temprary folder '", beautier_tempfolder, "'",
+      "for BEAST2 tracelog, treelog and screenlog files"
+    )
+  }
+  dir.create(
+    beautier_tempfolder,
+    showWarnings = FALSE,
+    recursive = TRUE
+  )
+
   # Create the folder to hold the file, without warning if it's already present
   output_folder <- dirname(beast2_options$output_state_filename)
   if (beast2_options$verbose) {
@@ -67,34 +81,54 @@ run_beast2_from_options <- function(
   ##############################################################################
   # Run BEAST2
   ##############################################################################
-  output <- system2(
+  stdout_filename <- beastier::get_beastier_tempfilename(
+    pattern = "stdout_", fileext = ".log"
+  )
+  stderr_filename <- beastier::get_beastier_tempfilename(
+    pattern = "stderr_", fileext = ".log"
+  )
+  error_code <- system2(
     command = cmd[1],
     args = cmd[-1],
-    stdout = TRUE,
-    stderr = TRUE
+    stdout = stdout_filename,
+    stderr = stderr_filename
   )
-  # If the output is only 1 line, this will probably be an error message
-  testthat::expect_true(
-    length(output) != 1,
-    info = paste0(
-      "Command '", paste0(cmd, collapse = " "), "' failed ",
-      "with error '", output, "'"
+  stdout_lines <- readr::read_lines(stdout_filename)
+  stderr_lines <- readr::read_lines(stderr_filename)
+  file.remove(stdout_filename)
+  file.remove(stderr_filename)
+  if (error_code != 0) {
+    stop(
+      "BEAST2 run failed. \n",
+      "error_code: ", error_code, " \n",
+      "cmd: '", paste0(cmd, collapse = " "), "' \n",
+      "stderr_lines: \n", paste0(stderr_lines, collapse = " \n"),
+      "stdout_lines: \n", paste0(stdout_lines, collapse = " \n")
     )
-  )
+  }
+
+  if (beast2_options$verbose) {
+    message("error_code: ", error_code)
+    message("stdout: \n", paste0(stdout_lines, collapse = "\n"))
+    message("stderr: \n", paste0(stderr_lines, collapse = "\n"))
+  }
+
+  output <- c(stdout_lines, stderr_lines)
 
   ##############################################################################
   # The files as created by BEAST2
   ##############################################################################
   # This is only true if there has been one sampling event in the MCMC
-  testthat::expect_true(
-    file.exists(beast2_options$output_state_filename),
-    info = paste0(
-      "BEAST2 state file not created. \n",
+  if (!file.exists(beast2_options$output_state_filename)) {
+    stop(
+      "BEAST2 state file not created in a fresh run. \n",
       "Command '", paste0(cmd, collapse = " "), "' failed. ",
       "'beast2_options$output_state_filename': '",
         beast2_options$output_state_filename, "'\n",
-      "Maybe no permission to write at that location?"
+      "Maybe no permission to write at that location? \n",
+      " \n",
+      "Output: \n", paste0(output, collapse = " \n")
     )
-  )
+  }
   output
 }

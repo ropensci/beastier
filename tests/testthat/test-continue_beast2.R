@@ -8,6 +8,9 @@ test_that("minimal use", {
   output_2 <- continue_beast2(beast2_options)
   expect_true(file.exists(beast2_options$output_state_filename))
   file.remove(beast2_options$output_state_filename)
+
+  expect_silent(check_empty_beastier_folder())
+  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
 })
 
 test_that("longer trace", {
