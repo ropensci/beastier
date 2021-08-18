@@ -11,6 +11,7 @@ Newest versions at top.
 ### MINOR IMPROVEMENTS
 
   * Improved error handling
+  * Less whitespace in `beastier_report`
 
 ### BUG FIXES
 
