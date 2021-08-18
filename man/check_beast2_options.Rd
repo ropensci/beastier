@@ -13,6 +13,7 @@ as can be created by \link{create_beast2_options}}
 }
 \value{
 nothing
+Will \code{stop} if the BEAST2 option object is invalid
 }
 \description{
 Calls \code{stop} if the BEAST2 option object is invalid

@@ -14,7 +14,8 @@ Use of reduplicated plural to achieve difference with
 \code{beast2_options}}
 }
 \value{
-nothing
+Nothing. 
+Will \code{stop} if the BEAST2 option object is invalid
 }
 \description{
 Calls \code{stop} if the BEAST2 option object is invalid

@@ -15,7 +15,7 @@ test_that("deprecation", {
       beast2_options = create_beast2_options(
         input_filename = get_beast2_example_filename("testJukesCantor.xml")
       ),
-      input_filename = "deprecated"
+      input_filename = "should_not_use"
     ),
     "input_filename..is deprecated"
   )
@@ -24,7 +24,7 @@ test_that("deprecation", {
       beast2_options = create_beast2_options(
         input_filename = get_beast2_example_filename("testJukesCantor.xml")
       ),
-      beast2_path = "deprecated"
+      beast2_path = "should_not_use"
     ),
     "beast2_path..is deprecated"
   )
@@ -33,7 +33,7 @@ test_that("deprecation", {
       beast2_options = create_beast2_options(
         input_filename = get_beast2_example_filename("testJukesCantor.xml")
       ),
-      verbose = "deprecated"
+      verbose = "should_not_use"
     ),
     "verbose..is deprecated"
   )

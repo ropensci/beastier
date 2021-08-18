@@ -2,6 +2,8 @@
 #'
 #' Will \link{stop} if not.
 #' @inheritParams default_params_doc
+#' @return Nothing.
+#' Will \link{stop} if the RNG seed is invalid
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #' # Numbers from 1 and higher are valid RNG seeds

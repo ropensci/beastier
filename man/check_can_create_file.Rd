@@ -2,7 +2,7 @@
 % Please edit documentation in R/check_can_create_file.R
 \name{check_can_create_file}
 \alias{check_can_create_file}
-\title{Check that a file can be created at a certain path.}
+\title{Internal function}
 \usage{
 check_can_create_file(filename, overwrite = TRUE)
 }
@@ -12,10 +12,20 @@ check_can_create_file(filename, overwrite = TRUE)
 \item{overwrite}{if TRUE, if \code{filename} already exists, it
 will be deleted by this function}
 }
+\value{
+Nothing.
+Will \link{stop} if a file cannot be created at a certain path.
+}
 \description{
+Check that a file can be created at a certain path.
+}
+\details{
 Will \link{stop} if not. Will \link{stop} if the file already exists.
 Does so by creating an empty file at the path,
 and then deleting it.
+}
+\examples{
+check_can_create_file("my_local_file.txt")
 }
 \author{
 Richèl J.C. Bilderbeek

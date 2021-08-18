@@ -6,6 +6,8 @@
 #' it is assumed that a new file can be created,
 #' by overwriting the existing one.
 #' @inheritParams default_params_doc
+#' @return Nothing.
+#' Will \link{stop} if the MCMC's tracelog file is absent and cannot be created.
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_can_create_tracelog_file <- function(

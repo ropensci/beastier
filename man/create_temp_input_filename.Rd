@@ -6,6 +6,16 @@
 \usage{
 create_temp_input_filename()
 }
+\value{
+a temporary filename, that starts with `beast2_`
+and has extension `.xml`
+}
 \description{
 Create a temporary filename for the BEAST2 XML filename
+}
+\examples{
+create_temp_input_filename()
+}
+\author{
+Richèl J.C. Bilderbeek
 }

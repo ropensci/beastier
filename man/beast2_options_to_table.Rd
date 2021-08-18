@@ -11,6 +11,18 @@ beast2_options_to_table(beast2_options)
 that are the R equivalent of the BEAST2 command-line options,
 as can be created by \link{create_beast2_options}}
 }
+\value{
+a \link[tibble]{tibble} with two columns, called `parameter`
+and `value`. Each `parameter` is the name of the element of the
+`beast2_options` structure, where the `value` on the same row holds
+the value of that parameter
+}
 \description{
 Convert a \code{beast2_options} to a table
+}
+\examples{
+beast2_options_to_table(create_beast2_options())
+}
+\author{
+Richèl J.C. Bilderbeek
 }

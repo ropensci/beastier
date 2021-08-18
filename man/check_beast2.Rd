@@ -18,9 +18,10 @@ the default BEAST jar file's path}
 }
 \value{
 nothing
+Will \link{stop} if BEAST2 is improperly installed
 }
 \description{
-Calls \code{stop} if BEAST2 is improperly installed
+Calls \link{stop} if BEAST2 is improperly installed
 }
 \examples{
 if (is_beast2_installed()) {

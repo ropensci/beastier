@@ -9,20 +9,20 @@ test_that("deprecated variables", {
 
   expect_error(
     create_beast2_options(
-      output_log_filename = "deprecated"
+      output_log_filename = "should_not_use"
     ),
     "'output_log_filename' is deprecated, it is stored in the BEAST2 XML"
   )
 
   expect_error(
     create_beast2_options(
-      output_trees_filenames = "deprecated"
+      output_trees_filenames = "should_not_use"
     ),
     "'output_trees_filenames' is deprecated, it is stored in the BEAST2 XML"
   )
   expect_error(
     create_beast2_options(
-      beast2_working_dir = "deprecated"
+      beast2_working_dir = "should_not_use"
     ),
     "'beast2_working_dir' is deprecated"
   )

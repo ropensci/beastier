@@ -1,9 +1,9 @@
-#' Extract the filenames from a \code{beast2_options}
+#' Extract the filenames from a `beast2_options`
 #' @inheritParams default_params_doc
+#' @return the filenames from a `beast2_options`
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#'
-#' beast2_options <- beastier::create_beast2_options()
+#' beast2_options <- create_beast2_options()
 #' get_beast2_options_filenames(beast2_options)
 #' @export
 get_beast2_options_filenames <- function(beast2_options) {

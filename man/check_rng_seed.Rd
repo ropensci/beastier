@@ -11,6 +11,10 @@ check_rng_seed(rng_seed)
 Must be a non-zero positive integer value or \link{NA}.
 If \code{rng_seed} is \link{NA}, BEAST2 will pick a random seed}
 }
+\value{
+Nothing.
+Will \link{stop} if the RNG seed is invalid
+}
 \description{
 Will \link{stop} if not.
 }

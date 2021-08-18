@@ -6,9 +6,7 @@
 #' @export
 #' @examples
 #' if (is_beast2_installed() && is_on_ci()) {
-#'
 #'   do_minimal_run()
-#'
 #' }
 #' @author Richèl J.C. Bilderbeek
 do_minimal_run <- function() {

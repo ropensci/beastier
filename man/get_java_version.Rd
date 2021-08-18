@@ -6,6 +6,9 @@
 \usage{
 get_java_version()
 }
+\value{
+the Java version
+}
 \description{
 Get the Java version
 }

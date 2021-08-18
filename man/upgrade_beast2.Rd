@@ -20,6 +20,10 @@ The name of the BEAST2 jar file will be at
 \item{os}{name of the operating system,
 must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 }
+\value{
+Nothing.
+A deprecation message using \link{stop} will be triggered
+}
 \description{
 Deprecated function to upgrade BEAST2.
 }

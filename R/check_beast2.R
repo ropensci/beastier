@@ -1,8 +1,9 @@
 #' Check if \code{BEAST2} is installed properly.
 #'
-#' Calls \code{stop} if BEAST2 is improperly installed
+#' Calls \link{stop} if BEAST2 is improperly installed
 #' @inheritParams default_params_doc
 #' @return nothing
+#' Will \link{stop} if BEAST2 is improperly installed
 #' @examples
 #' if (is_beast2_installed()) {
 #'   check_beast2()

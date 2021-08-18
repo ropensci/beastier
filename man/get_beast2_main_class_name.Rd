@@ -6,8 +6,17 @@
 \usage{
 get_beast2_main_class_name()
 }
+\value{
+the BEAST2 main class name
+}
 \description{
 One way to fix the error
 \code{no main manifest attribute}
 is to specify the main class name.
+}
+\examples{
+get_beast2_main_class_name()
+}
+\author{
+Richèl J.C. Bilderbeek
 }

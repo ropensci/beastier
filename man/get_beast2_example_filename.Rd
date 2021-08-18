@@ -21,11 +21,14 @@ folder.
 Use \link{get_default_beast2_bin_path} to get the full path to
 the default BEAST2 executable.}
 }
+\value{
+the full path of a BEAST2 example file,
+will \link{stop} if the filename is not a BEAST2 example file
+}
 \description{
 Will \link{stop} if the filename is not a BEAST2 example file
 }
 \examples{
-
 if (is_beast2_installed()) {
   get_beast2_example_filename("testJukesCantor.xml")
 }

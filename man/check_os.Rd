@@ -11,7 +11,7 @@ check_os(os)
 must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 }
 \value{
-nothing. Will stop if the OS is unsupported
+Nothing. Will \link{stop} if the OS is unsupported
 }
 \description{
 Checks if the operating system is supported

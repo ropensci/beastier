@@ -1,5 +1,11 @@
-#' Create a \link{beastier} report, to be used when reporting bugs
+#' Creates a \link{beastier} report
+#'
+#' Creates a \link{beastier} report, to be used when reporting bugs.
+#' Uses \link{message}
 #' @inheritParams default_params_doc
+#' @return No return value, the information will be shown using \link{message}
+#' @examples
+#' beastier_report()
 #' @author Richèl J.C. Bilderbeek
 #' @export
 beastier_report <- function(
@@ -11,7 +17,9 @@ beastier_report <- function(
   message("***********")
   message("OS: ", os)
   message("beast2_folder: ", beast2_folder)
-  beast2_path <- beastier::get_default_beast2_path(beast2_folder = beast2_folder)
+  beast2_path <- beastier::get_default_beast2_path(
+    beast2_folder = beast2_folder
+  )
   message("beast2_path: ", beast2_path)
   message("****************")
   message("* Dependencies *")

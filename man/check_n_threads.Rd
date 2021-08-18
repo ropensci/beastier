@@ -10,6 +10,10 @@ check_n_threads(n_threads)
 \item{n_threads}{the number of computational threads to use.
 Use \link{NA} to use the BEAST2 default of 1.}
 }
+\value{
+Nothing.
+Will \link{stop} if the number of threads in invalid
+}
 \description{
 Will \link{stop} if not.
 }

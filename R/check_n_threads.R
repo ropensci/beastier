@@ -2,6 +2,8 @@
 #'
 #' Will \link{stop} if not.
 #' @inheritParams default_params_doc
+#' @return Nothing.
+#' Will \link{stop} if the number of threads in invalid
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #' # Can have 1 or more threads

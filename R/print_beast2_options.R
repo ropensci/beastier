@@ -1,5 +1,9 @@
-#' Pretty-print a \code{beast2_options}
+#' Pretty-print a `beast2_options`
 #' @inheritParams default_params_doc
+#' @return Nothing. Will display the `beast2_options` using \link{cat}.
+#' @examples
+#' print_beast2_options(create_beast2_options())
+#' @author Richèl J.C. Bilderbeek
 #' @export
 print_beast2_options <- function(beast2_options) {
   beastier::check_beast2_options(beast2_options)

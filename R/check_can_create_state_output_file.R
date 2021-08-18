@@ -1,6 +1,11 @@
+#' Internal function
+#'
 #' Check if the state output file
 #' can be created. Will \link{stop} otherwise
 #' @inheritParams default_params_doc
+#' @return Nothing.
+#' Will \link{stop} if the state output file cannot be created.
+#' @author Richèl J.C. Bilderbeek
 #' @export
 check_can_create_state_output_file <- function( # nolint indeed a long function name
   beast2_options

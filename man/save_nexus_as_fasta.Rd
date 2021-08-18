@@ -11,6 +11,9 @@ save_nexus_as_fasta(nexus_filename, fasta_filename)
 
 \item{fasta_filename}{name of the FASTA file to be created}
 }
+\value{
+nothing. The NEXUS file will be saved as a FASTA file
+}
 \description{
 Save a NEXUS file as a FASTA file
 }

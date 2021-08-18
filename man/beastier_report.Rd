@@ -2,7 +2,7 @@
 % Please edit documentation in R/beastier_report.R
 \name{beastier_report}
 \alias{beastier_report}
-\title{Create a \link{beastier} report, to be used when reporting bugs}
+\title{Creates a \link{beastier} report}
 \usage{
 beastier_report(
   beast2_folder = get_default_beast2_folder(),
@@ -21,8 +21,15 @@ the default BEAST2 executable.}
 \item{os}{name of the operating system,
 must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 }
+\value{
+No return value, the information will be shown using \link{message}
+}
 \description{
-Create a \link{beastier} report, to be used when reporting bugs
+Creates a \link{beastier} report, to be used when reporting bugs.
+Uses \link{message}
+}
+\examples{
+beastier_report()
 }
 \author{
 Richèl J.C. Bilderbeek

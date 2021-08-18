@@ -2,7 +2,7 @@
 % Please edit documentation in R/print_beast2_options.R
 \name{print_beast2_options}
 \alias{print_beast2_options}
-\title{Pretty-print a \code{beast2_options}}
+\title{Pretty-print a `beast2_options`}
 \usage{
 print_beast2_options(beast2_options)
 }
@@ -11,6 +11,15 @@ print_beast2_options(beast2_options)
 that are the R equivalent of the BEAST2 command-line options,
 as can be created by \link{create_beast2_options}}
 }
+\value{
+Nothing. Will display the `beast2_options` using \link{cat}.
+}
 \description{
-Pretty-print a \code{beast2_options}
+Pretty-print a `beast2_options`
+}
+\examples{
+print_beast2_options(create_beast2_options())
+}
+\author{
+Richèl J.C. Bilderbeek
 }

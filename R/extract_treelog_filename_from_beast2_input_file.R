@@ -2,6 +2,17 @@
 #'
 #' Extract the treelog filename from a BEAST2 input file
 #' @inheritParams default_params_doc
+#' @return the treelog filename for a BEAST2 input file
+#' @examples
+#' beast2_input_filename <- get_beastier_tempfilename()
+#' beautier::create_beast2_input_file_from_model(
+#'   input_filename = beautier::get_beautier_path("test_output_0.fas"),
+#'   output_filename = beast2_input_filename
+#' )
+#' extract_treelog_filename_from_beast2_input_file(
+#'   input_filename = beast2_input_filename
+#' )
+#' file.remove(beast2_input_filename)
 #' @author Richèl J.C. Bilderbeek
 #' @export
 extract_treelog_filename_from_beast2_input_file <- function( # nolint indeed a long function name

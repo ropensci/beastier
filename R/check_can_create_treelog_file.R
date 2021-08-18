@@ -1,6 +1,11 @@
+#' Internal function
+#'
 #' Check if the MCMC's treelog file can be created.
 #' Will \link{stop} if not
 #' @inheritParams default_params_doc
+#' @return Nothing.
+#' Will \link{stop} if the MCMC's treelog file is absent and cannot be created.
+#' @author Richèl J.C. Bilderbeek
 #' @export
 check_can_create_treelog_file <- function(
   beast2_options

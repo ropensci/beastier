@@ -11,6 +11,10 @@ check_can_create_tracelog_file(beast2_options)
 that are the R equivalent of the BEAST2 command-line options,
 as can be created by \link{create_beast2_options}}
 }
+\value{
+Nothing.
+Will \link{stop} if the MCMC's tracelog file is absent and cannot be created.
+}
 \description{
 Check if the MCMC's tracelog file can be created.
 Will \link{stop} if not.

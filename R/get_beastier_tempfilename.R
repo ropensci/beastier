@@ -10,6 +10,11 @@
 #' @param fileext	a non-empty character vector
 #'   giving the file extension
 #' @return name for a temporary file
+#' @examples
+#' get_beastier_tempfilename()
+#' get_beastier_tempfilename(pattern = "my_pattern_")
+#' get_beastier_tempfilename(fileext = ".ext")
+#' @author Richèl J.C. Bilderbeek
 #' @export
 get_beastier_tempfilename <- function(
   pattern = "file",

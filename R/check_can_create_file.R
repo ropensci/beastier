@@ -1,3 +1,5 @@
+#' Internal function
+#'
 #' Check that a file can be created at a certain path.
 #'
 #' Will \link{stop} if not. Will \link{stop} if the file already exists.
@@ -6,6 +8,10 @@
 #' @param filename file that may or may not be created
 #' @param overwrite if TRUE, if \code{filename} already exists, it
 #' will be deleted by this function
+#' @return Nothing.
+#' Will \link{stop} if a file cannot be created at a certain path.
+#' @examples
+#' check_can_create_file("my_local_file.txt")
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_can_create_file <- function(

@@ -1,5 +1,18 @@
 #' Rename the filenames in the BEAST2 options
 #' @inheritParams default_params_doc
+#' @return a `beast2_options` with the filenames it contains renamed
+#' @examples
+#' # beast2_options with local filenames
+#' beast2_options <- create_beast2_options(
+#'   input_filename = "my.fas",
+#'   output_state_filename = "my_state.xml.state"
+#' )
+#' # Rename filenames to be in /my/new/folder
+#' rename_beast2_options_filenames(
+#'   beast2_options = beast2_options,
+#'   rename_fun = beautier::get_replace_dir_fun("/my/new/folder")
+#' )
+#' @author Richèl J.C. Bilderbeek
 #' @export
 rename_beast2_options_filenames <- function( # nolint sure, this is a long function name
   beast2_options,

@@ -8,11 +8,7 @@
 #'   \code{[folder_name]/beast/bin/beast}
 #'   The name of the BEAST2 jar file will be at
 #'   \code{[folder_name]/beast/lib/launcher.jar}
-#' @return Nothing. Will install BEAST2
-#' @examples
-#' \dontrun{
-#'   install_beast2()
-#' }
+#' @return Nothing. Gives a deprecation message using \link{stop}.
 #' @author Richèl J.C. Bilderbeek
 #' @export
 install_beast2 <- function(

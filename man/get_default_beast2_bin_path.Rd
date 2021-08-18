@@ -28,14 +28,9 @@ the default BEAST2 binary file's path
 Get the default BEAST2 binary file (\code{beast}, that is) path
 }
 \examples{
-  if (is_beast2_installed() && rappdirs::app_dir()$os == "unix") {
-    testit::assert(
-      grepl(
-        "beast/bin/beast",
-        get_default_beast2_bin_path()
-      )
-    )
-  }
+if (is_beast2_installed()) {
+  get_default_beast2_bin_path()
+}
 }
 \seealso{
 Use \link{get_default_beast2_folder} to get the default

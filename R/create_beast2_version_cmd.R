@@ -5,9 +5,9 @@
 #'   and the others are arguments (\code{-jar}, in this case, followed
 #'   by more arguments.
 #' @examples
-#'   if (is_beast2_installed() && is_on_ci()) {
-#'     create_beast2_version_cmd()
-#'   }
+#' if (is_beast2_installed()) {
+#'   create_beast2_version_cmd()
+#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_beast2_version_cmd <- function(

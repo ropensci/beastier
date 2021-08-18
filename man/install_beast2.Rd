@@ -30,15 +30,10 @@ is potentially useful in debugging}
 must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 }
 \value{
-Nothing. Will install BEAST2
+Nothing. Gives a deprecation message using \link{stop}.
 }
 \description{
 This function is deprecated as it violated CRAN policy.
-}
-\examples{
-\dontrun{
-  install_beast2()
-}
 }
 \author{
 Richèl J.C. Bilderbeek

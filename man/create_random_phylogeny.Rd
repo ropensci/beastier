@@ -12,7 +12,7 @@ create_random_phylogeny(n_taxa, taxa_name_ext = "")
 \item{taxa_name_ext}{the extension of the taxa names}
 }
 \value{
-a phylogeny of class \code{phylo}
+a phylogeny of class `phylo` (which is part of the `ape` package)
 }
 \description{
 Create a random phylogeny

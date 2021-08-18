@@ -16,6 +16,9 @@ the default BEAST binary file's path
 Use \link{get_default_beast2_jar_path} to get
 the default BEAST jar file's path}
 }
+\value{
+the BEAST2 version
+}
 \description{
 Get the BEAST2 version
 }

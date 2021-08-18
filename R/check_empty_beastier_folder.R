@@ -5,6 +5,7 @@
 #' Will \link{stop} if there are files in the \link{beastier} folder
 #' @inheritParams default_params_doc
 #' @return Nothing.
+#' Will \link{stop} if there are files in the \link{beastier} folder
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_empty_beastier_folder <- function(

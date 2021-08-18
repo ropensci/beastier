@@ -23,6 +23,10 @@ must be \code{unix} (Linux, Mac) or \code{win} (Windows)}
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
 }
+\value{
+Nothing.
+A deprecation message using \link{stop} will be triggered
+}
 \description{
 Deprecated function to uninstall BEAST2
 }

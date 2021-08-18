@@ -5,6 +5,8 @@
 #'   \code{[folder_name]/beast/bin/beast}
 #'   The name of the BEAST2 jar file will be at
 #'   \code{[folder_name]/beast/lib/launcher.jar}
+#' @return Nothing.
+#' A deprecation message using \link{stop} will be triggered
 #' @author Richèl J.C. Bilderbeek
 #' @export
 uninstall_beast2 <- function(

@@ -1,4 +1,5 @@
 #' Get the Java version
+#' @return the Java version
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #'

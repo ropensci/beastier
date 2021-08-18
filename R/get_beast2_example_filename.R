@@ -5,8 +5,9 @@
 #' @param filename name of the BEAST2 example file. This should exclude
 #' the full path; this function exists to add that full path
 #' @inheritParams default_params_doc
+#' @return the full path of a BEAST2 example file,
+#' will \link{stop} if the filename is not a BEAST2 example file
 #' @examples
-#'
 #' if (is_beast2_installed()) {
 #'   get_beast2_example_filename("testJukesCantor.xml")
 #' }

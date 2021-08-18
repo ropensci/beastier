@@ -13,8 +13,30 @@ This file usually has an \code{.xml} extension.
 Use \link{create_temp_input_filename} to create a temporary
 filename with that extension.}
 }
+\value{
+the name of the tracelog file
+}
 \description{
 Extract the tracelog filename for a BEAST2 input file
+}
+\examples{
+beast2_input_filename <- get_beastier_tempfilename()
+tracelog_filename <- get_beastier_tempfilename()
+beautier::create_beast2_input_file_from_model(
+  input_filename = beautier::get_beautier_path("test_output_0.fas"),
+  output_filename = beast2_input_filename,
+  inference_model = beautier::create_inference_model(
+    mcmc = beautier::create_mcmc(
+      tracelog = beautier::create_tracelog(
+        filename = tracelog_filename
+      )
+    )
+  )
+)
+extract_tracelog_filename_from_beast2_input_file(
+  input_filename = beast2_input_filename
+)
+file.remove(beast2_input_filename)
 }
 \author{
 Richèl J.C. Bilderbeek

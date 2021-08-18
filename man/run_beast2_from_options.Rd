@@ -11,6 +11,10 @@ run_beast2_from_options(beast2_options = create_beast2_options())
 that are the R equivalent of the BEAST2 command-line options,
 as can be created by \link{create_beast2_options}}
 }
+\value{
+The text sent to \code{STDOUT} and \code{STDERR}.
+  It will create the file with name \code{output_state_filenames}
+}
 \description{
 Run BEAST2
 }

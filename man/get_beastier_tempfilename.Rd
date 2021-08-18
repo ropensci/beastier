@@ -25,3 +25,11 @@ named \link{beastier}.
 this function is added to make sure no temporary
 cache files are left undeleted
 }
+\examples{
+get_beastier_tempfilename()
+get_beastier_tempfilename(pattern = "my_pattern_")
+get_beastier_tempfilename(fileext = ".ext")
+}
+\author{
+Richèl J.C. Bilderbeek
+}

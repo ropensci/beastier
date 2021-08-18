@@ -1,10 +1,15 @@
-#' Create a \code{beast2_options} structure for \code{mcbette}
+#' Create a `beast2_options` structure for the `mcbette` R package
 #'
-#' Create a \code{beast2_options} structure to be used for
-#' \code{mcbette} (a package that allows one to do model comparison).
-#' The generated filenames indicating \code{mcbette} usage,
-#' as well as the correct BEAST2 binary type
+#' Create a `beast2_options` structure to be used for the
+#' `mcbette` R package, which is a package that allows one to do 
+#' model comparison.
+#' The generated filenames indicating `mcbette` usage,
+#' as well as the correct BEAST2 binary/executable type
 #' @inheritParams default_params_doc
+#' @return a `beast2_options` structure suitable to be used 
+#' by the `mcbette` R package,
+#' which is a \link{list} of all function arguments,
+#' of which all elements are checked (by \link{check_beast2_options})
 #' @seealso to create a regular (that is, not intended
 #' for model comparison) BEAST2 options structure,
 #' use  \link{create_beast2_options}

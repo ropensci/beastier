@@ -2,11 +2,13 @@
 #'
 #' These BEAST2 options are the R equivalent of the command-line options.
 #' @inheritParams default_params_doc
-#' @return a BEAST2 options structure
-#' @author Richèl J.C. Bilderbeek
+#' @return a BEAST2 options structure, 
+#' which is a \link{list} of all function arguments,
+#' of which all elements are checked (by \link{check_beast2_options})
 #' @examples
 #' beast2_options <- create_beast2_options()
 #' check_beast2_options(beast2_options)
+#' @author Richèl J.C. Bilderbeek
 #' @export
 create_beast2_options <- function(
   input_filename = create_temp_input_filename(),
@@ -22,18 +24,17 @@ create_beast2_options <- function(
   beast2_working_dir = "deprecated"
 ) {
   # Check for deprecated argument names
-  calls <- names(sapply(match.call(), deparse))[-1]
-  if (any("output_log_filename" %in% calls)) {
+  if (output_log_filename != "deprecated") {
     stop(
       "'output_log_filename' is deprecated, it is stored in the BEAST2 XML"
     )
   }
-  if (any("output_trees_filenames" %in% calls)) {
+  if (output_trees_filenames != "deprecated") {
     stop(
       "'output_trees_filenames' is deprecated, it is stored in the BEAST2 XML"
     )
   }
-  if (any("beast2_working_dir" %in% calls)) {
+  if (beast2_working_dir != "deprecated") {
     stop(
       "'beast2_working_dir' is deprecated"
     )

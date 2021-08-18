@@ -3,8 +3,7 @@
 %   R/check_beast2_options_do_not_overwrite_existing_files.R
 \name{check_beast2_options_do_not_overwrite_existing_files}
 \alias{check_beast2_options_do_not_overwrite_existing_files}
-\title{Check if the \code{beast2_options} will not overwrite
-existing files, when the 'overwrite' options is set to \code{FALSE}}
+\title{Internal function}
 \usage{
 check_beast2_options_do_not_overwrite_existing_files(beast2_options)
 }
@@ -13,8 +12,20 @@ check_beast2_options_do_not_overwrite_existing_files(beast2_options)
 that are the R equivalent of the BEAST2 command-line options,
 as can be created by \link{create_beast2_options}}
 }
+\value{
+Nothing. Will \link{stop} if a file is threatened to be overwritten
+}
 \description{
+Check if the \code{beast2_options} will not overwrite
+existing files, when the 'overwrite' options is set to \code{FALSE}.
+}
+\details{
 Will \link{stop} if a file is threatened to be overwritten
+}
+\examples{
+check_beast2_options_do_not_overwrite_existing_files(
+  beast2_options = create_beast2_options()
+)
 }
 \author{
 Richèl J.C. Bilderbeek

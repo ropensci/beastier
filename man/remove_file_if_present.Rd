@@ -2,13 +2,28 @@
 % Please edit documentation in R/remove_file_if_present.R
 \name{remove_file_if_present}
 \alias{remove_file_if_present}
-\title{Remove a file if it is present}
+\title{Remove a file if it is present,
+will do nothing if it is not.}
 \usage{
 remove_file_if_present(filename)
 }
 \arguments{
 \item{filename}{name of a file}
 }
+\value{
+Nothing. Will remove the file if it is presented,
+will do nothing if it is not.
+}
 \description{
-Remove a file if it is present
+Remove a file if it is present,
+will do nothing if it is not.
+}
+\examples{
+filename <- tempfile()
+file.create(filename)
+remove_file_if_present(filename)
+remove_file_if_present(filename)
+}
+\author{
+Richèl J.C. Bilderbeek
 }

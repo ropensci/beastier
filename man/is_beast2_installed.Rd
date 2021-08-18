@@ -26,9 +26,7 @@ TRUE if BEAST2 is installed
 Checks if BEAST2 is installed
 }
 \examples{
-  if (is_beast2_installed()) {
-    message("BEAST2 is installed")
-  }
+is_beast2_installed()
 }
 \author{
 Richèl J.C. Bilderbeek

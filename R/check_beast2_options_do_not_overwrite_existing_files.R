@@ -1,8 +1,15 @@
+#' Internal function
+#'
 #' Check if the \code{beast2_options} will not overwrite
-#' existing files, when the 'overwrite' options is set to \code{FALSE}
+#' existing files, when the 'overwrite' options is set to \code{FALSE}.
 #'
 #' Will \link{stop} if a file is threatened to be overwritten
 #' @inheritParams default_params_doc
+#' @return Nothing. Will \link{stop} if a file is threatened to be overwritten
+#' @examples
+#' check_beast2_options_do_not_overwrite_existing_files(
+#'   beast2_options = create_beast2_options()
+#' )
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_beast2_options_do_not_overwrite_existing_files <- function( # nolint indeed a long function name, which is fine for internal functions

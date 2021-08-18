@@ -6,14 +6,9 @@
 #'   Use \link{install_beast2} with default arguments
 #'   to install BEAST2 to this location.
 #' @examples
-#'   if (is_beast2_installed() && rappdirs::app_dir()$os == "unix") {
-#'     testit::assert(
-#'       grepl(
-#'         "beast/bin/beast",
-#'         get_default_beast2_bin_path()
-#'       )
-#'     )
-#'   }
+#' if (is_beast2_installed()) {
+#'   get_default_beast2_bin_path()
+#' }
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_default_beast2_bin_path <- function(

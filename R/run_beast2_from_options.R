@@ -1,5 +1,7 @@
 #' Run BEAST2
 #' @inheritParams default_params_doc
+#' @return The text sent to \code{STDOUT} and \code{STDERR}.
+#'   It will create the file with name \code{output_state_filenames}
 #' @examples
 #' if (is_beast2_installed() && is_on_ci()) {
 #'   beast2_options <- create_beast2_options(

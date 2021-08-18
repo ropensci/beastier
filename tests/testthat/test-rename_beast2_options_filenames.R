@@ -1,13 +1,13 @@
 test_that("replace dir from local to folder", {
 
-  beast2_options <- create_beast2_options()
-
-  beast2_options$input_filename <- "my.fas"
-  beast2_options$output_state_filename <- "my_state.xml.state"
+  beast2_options <- create_beast2_options(
+    input_filename = "my.fas",
+    output_state_filename = "my_state.xml.state"
+  )
 
   beast2_options <- rename_beast2_options_filenames(
     beast2_options = beast2_options,
-    rename_fun = get_replace_dir_fun("/home/john")
+    rename_fun = beautier::get_replace_dir_fun("/home/john")
   )
 
   expect_equal(beast2_options$input_filename, "/home/john/my.fas")

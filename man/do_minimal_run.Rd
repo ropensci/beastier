@@ -15,9 +15,7 @@ To achieve this, \link{run_beast2_from_options} is called.
 }
 \examples{
 if (is_beast2_installed() && is_on_ci()) {
-
   do_minimal_run()
-
 }
 }
 \author{

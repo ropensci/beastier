@@ -29,6 +29,24 @@ Example rename functions are:
     For example, \code{tracelog_82c1a522040.log} becomes \code{tracelog.log}
 }}
 }
+\value{
+a `beast2_options` with the filenames it contains renamed
+}
 \description{
 Rename the filenames in the BEAST2 options
+}
+\examples{
+# beast2_options with local filenames
+beast2_options <- create_beast2_options(
+  input_filename = "my.fas",
+  output_state_filename = "my_state.xml.state"
+)
+# Rename filenames to be in /my/new/folder
+rename_beast2_options_filenames(
+  beast2_options = beast2_options,
+  rename_fun = beautier::get_replace_dir_fun("/my/new/folder")
+)
+}
+\author{
+Richèl J.C. Bilderbeek
 }

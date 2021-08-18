@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_beast2_options_filenames.R
 \name{get_beast2_options_filenames}
 \alias{get_beast2_options_filenames}
-\title{Extract the filenames from a \code{beast2_options}}
+\title{Extract the filenames from a `beast2_options`}
 \usage{
 get_beast2_options_filenames(beast2_options)
 }
@@ -11,12 +11,14 @@ get_beast2_options_filenames(beast2_options)
 that are the R equivalent of the BEAST2 command-line options,
 as can be created by \link{create_beast2_options}}
 }
+\value{
+the filenames from a `beast2_options`
+}
 \description{
-Extract the filenames from a \code{beast2_options}
+Extract the filenames from a `beast2_options`
 }
 \examples{
-
-beast2_options <- beastier::create_beast2_options()
+beast2_options <- create_beast2_options()
 get_beast2_options_filenames(beast2_options)
 }
 \author{

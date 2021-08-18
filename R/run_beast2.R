@@ -31,18 +31,17 @@ run_beast2 <- function(
   verbose = FALSE
 ) {
   # Check for deprecated argument names
-  calls <- names(sapply(match.call(), deparse))[-1]
-  if (any("output_log_filename" %in% calls)) {
+  if (output_log_filename != "output_log_filename_is_deprecated") {
     stop(
       "'output_log_filename' is deprecated, it is stored in the BEAST2 XML"
     )
   }
-  if (any("output_trees_filenames" %in% calls)) {
+  if (output_trees_filenames != "output_trees_filenames_is_deprecated") {
     stop(
       "'output_trees_filenames' is deprecated, it is stored in the BEAST2 XML"
     )
   }
-  if (any("beast2_working_dir" %in% calls)) {
+  if (beast2_working_dir != "beast2_working_dir_is_deprecated") {
     stop(
       "'beast2_working_dir' is deprecated"
     )

@@ -7,7 +7,17 @@ stores its state.}
 \usage{
 create_temp_state_filename()
 }
+\value{
+a temporary filename, that starts with `beast2_`
+and has extension `.xml.state`
+}
 \description{
 Create a temporary file for the BEAST2 XML output file that
 stores its state.
+}
+\examples{
+create_temp_state_filename()
+}
+\author{
+Richèl J.C. Bilderbeek
 }

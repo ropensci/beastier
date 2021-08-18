@@ -12,6 +12,7 @@ the \link{beastier} temporary files folder}
 }
 \value{
 Nothing.
+Will \link{stop} if there are files in the \link{beastier} folder
 }
 \description{
 Check there are no files in the default \link{beastier} folder.

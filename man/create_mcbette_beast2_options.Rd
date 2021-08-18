@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_mcbette_beast2_options.R
 \name{create_mcbette_beast2_options}
 \alias{create_mcbette_beast2_options}
-\title{Create a \code{beast2_options} structure for \code{mcbette}}
+\title{Create a `beast2_options` structure for the `mcbette` R package}
 \usage{
 create_mcbette_beast2_options(
   input_filename = beastier::create_temp_input_filename(),
@@ -52,11 +52,18 @@ the default BEAST binary file's path}
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
 }
+\value{
+a `beast2_options` structure suitable to be used 
+by the `mcbette` R package,
+which is a \link{list} of all function arguments,
+of which all elements are checked (by \link{check_beast2_options})
+}
 \description{
-Create a \code{beast2_options} structure to be used for
-\code{mcbette} (a package that allows one to do model comparison).
-The generated filenames indicating \code{mcbette} usage,
-as well as the correct BEAST2 binary type
+Create a `beast2_options` structure to be used for the
+`mcbette` R package, which is a package that allows one to do 
+model comparison.
+The generated filenames indicating `mcbette` usage,
+as well as the correct BEAST2 binary/executable type
 }
 \examples{
 create_mcbette_beast2_options()

@@ -2,8 +2,7 @@
 % Please edit documentation in R/check_can_create_screenlog_file.R
 \name{check_can_create_screenlog_file}
 \alias{check_can_create_screenlog_file}
-\title{Check if the MCMC's screenlog file can be created.
-Will \link{stop} if not}
+\title{Internal function}
 \usage{
 check_can_create_screenlog_file(beast2_options)
 }
@@ -12,7 +11,14 @@ check_can_create_screenlog_file(beast2_options)
 that are the R equivalent of the BEAST2 command-line options,
 as can be created by \link{create_beast2_options}}
 }
+\value{
+Nothing.
+Will \link{stop} if the MCMC's screenlog file cannot be created.
+}
 \description{
 Check if the MCMC's screenlog file can be created.
 Will \link{stop} if not
+}
+\author{
+Richèl J.C. Bilderbeek
 }

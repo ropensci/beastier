@@ -1,5 +1,6 @@
 #' Get the BEAST2 version
 #' @inheritParams default_params_doc
+#' @return the BEAST2 version
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #' if (is_beast2_installed() && is_on_ci()) {

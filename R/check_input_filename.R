@@ -1,7 +1,8 @@
 #' Checks the input filename.
 #' Will stop if there is a problem with the input filename.
 #' @inheritParams default_params_doc
-#' @return nothing. Will call \code{\link{stop}} if the input file is invalid
+#' @return Nothing. 
+#' Will \link{stop} if the input file is invalid
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #' check_input_filename(
@@ -32,21 +33,19 @@ check_input_filename_validity <- function(
   beast2_path = "deprecated",
   verbose = "deprecated"
 ) {
-  # Check for deprecated argument names
-  calls <- names(sapply(match.call(), deparse))[-1]
-  if (any("input_filename" %in% calls)) {
+  if (input_filename != "deprecated") {
     stop(
       "'input_filename' is deprecated, ",
       "use 'create_beast2_options(input_filename = input_filename)' instead"
     )
   }
-  if (any("beast2_path" %in% calls)) {
+  if (beast2_path != "deprecated") {
     stop(
       "'beast2_path' is deprecated, ",
       "use 'create_beast2_options(beast2_path = beast2_path)' instead"
     )
   }
-  if (any("verbose" %in% calls)) {
+  if (verbose != "deprecated") {
     stop(
       "'verbose' is deprecated, ",
       "use 'create_beast2_options(verbose = verbose)' instead"

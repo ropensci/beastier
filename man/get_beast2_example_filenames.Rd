@@ -24,3 +24,11 @@ a list with the full paths of all
 Get a list with the full paths of all
 BEAST2 example filenames
 }
+\examples{
+if (is_beast2_installed()) {
+  get_beast2_example_filenames()
+}
+}
+\author{
+Richèl J.C. Bilderbeek
+}

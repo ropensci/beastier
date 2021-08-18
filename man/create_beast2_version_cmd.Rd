@@ -26,9 +26,9 @@ a character vector, of which the first element
 Creates the terminal command to version a BEAST2 input file
 }
 \examples{
-  if (is_beast2_installed() && is_on_ci()) {
-    create_beast2_version_cmd()
-  }
+if (is_beast2_installed()) {
+  create_beast2_version_cmd()
+}
 }
 \author{
 Richèl J.C. Bilderbeek

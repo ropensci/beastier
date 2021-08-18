@@ -1,6 +1,6 @@
 #' Checks if the operating system is supported
 #' @inheritParams default_params_doc
-#' @return nothing. Will stop if the OS is unsupported
+#' @return Nothing. Will \link{stop} if the OS is unsupported
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #' check_os("mac")

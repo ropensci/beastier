@@ -1,5 +1,7 @@
 #' Deprecated function to upgrade BEAST2.
 #' @inheritParams default_params_doc
+#' @return Nothing.
+#' A deprecation message using \link{stop} will be triggered
 #' @param folder_name name of the folder where the BEAST2 files will
 #'   be put.
 #'   The name of the BEAST2 binary file will be at
