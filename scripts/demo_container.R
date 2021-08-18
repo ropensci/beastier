@@ -3,6 +3,9 @@ library(beastier)
 # Folder that contains BEAST2
 beast2_folder <- "/opt/beastier"
 
+# Report
+beastier_report(beast2_folder = beast2_folder)
+
 # Path to the BEAST2 binary/jar file
 beast2_path <- get_default_beast2_path(
   beast2_folder = beast2_folder
@@ -15,4 +18,4 @@ beast2_options <- create_beast2_options(
 )
 
 # Run BEAST2
-run_beast2_from_options(beast2_options)
+# run_beast2_from_options(beast2_options)
