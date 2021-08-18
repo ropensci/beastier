@@ -29,6 +29,7 @@ Imports:
     readr,
     rJava,
     stringr,
+    tibble,
     xml2
 Suggests:
     hunspell,
