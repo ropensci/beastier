@@ -13,6 +13,27 @@ test_that("minimal use", {
   # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
 })
 
+test_that("minimal use with verbose", {
+  if (!is_beast2_installed()) return()
+  sink_tempfile <- beautier::get_beautier_tempfilename()
+  dir.create(dirname(sink_tempfile), showWarnings = FALSE, recursive = TRUE)
+  beast2_options <- create_beast2_options(
+    input_filename = get_beastier_path("2_4.xml"),
+    verbose = TRUE
+  )
+  sink(sink_tempfile)
+  suppressMessages({
+    output_1 <- run_beast2_from_options(beast2_options)
+    output_2 <- continue_beast2(beast2_options)
+  })
+  sink()
+  file.remove(sink_tempfile)
+  file.remove(beast2_options$output_state_filename)
+
+  expect_silent(check_empty_beastier_folder())
+  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
+})
+
 test_that("longer trace", {
   if (!is_beast2_installed()) return()
 
