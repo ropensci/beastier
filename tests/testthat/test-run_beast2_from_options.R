@@ -29,7 +29,7 @@ test_that("local file in temp folder", {
   cur_wd <- getwd()
   tmp_wd <- get_beastier_tempfilename(pattern = "beast2_tmp_folder")
   dir.create(tmp_wd, showWarnings = FALSE, recursive = TRUE)
-  setwd(tmp_wd)
+  setwd(tmp_wd) # nolint really need this
 
   # All input and output files will be local
   input_filename <- basename(
@@ -58,7 +58,7 @@ test_that("local file in temp folder", {
 
 
   expect_silent(check_empty_beastier_folder())
-  setwd(cur_wd) # Really do this last
+  setwd(cur_wd) # Really do this last # nolint really need this
 })
 
 test_that("file with full path in temp folder", {
@@ -70,7 +70,7 @@ test_that("file with full path in temp folder", {
 
   tmp_wd <- get_beastier_tempfilename(pattern = "beast2_tmp_folder")
   dir.create(tmp_wd, showWarnings = FALSE, recursive = TRUE)
-  setwd(tmp_wd)
+  setwd(tmp_wd) # nolint really need this
   input_filename <- get_beastier_path("2_4.xml")
   beast2_options <- create_beast2_options(
     input_filename = input_filename
@@ -84,7 +84,7 @@ test_that("file with full path in temp folder", {
   unlink(dirname(tmp_wd), recursive = TRUE)
 
   expect_silent(check_empty_beastier_folder())
-  setwd(cur_wd) # Really do this last
+  setwd(cur_wd) # Really do this last # nolint really need this
   # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
 })
 
