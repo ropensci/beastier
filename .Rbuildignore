@@ -18,4 +18,4 @@
 ^Singularity$
 ^test_output_0\.log$
 ^test_output_0\.trees$
-
+^beastier\.sif$
