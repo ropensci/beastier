@@ -28,7 +28,7 @@ extract_tracelog_filename_from_beast2_input_file <- function( # nolint indeed a 
 ) {
   # Extract the tracelog file
   testthat::expect_true(file.exists(input_filename))
-  text <- readr::read_lines(input_filename)
+  text <- readr::read_lines(input_filename, progress = FALSE)
   tracelog_line <- stringr::str_subset(
     string = text,
     pattern = "<logger id=\"tracelog\""

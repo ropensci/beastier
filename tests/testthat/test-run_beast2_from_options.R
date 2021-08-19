@@ -88,7 +88,7 @@ test_that("file with full path in temp folder", {
   # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
 })
 
-test_that("use sub-sub-sub-folders", {
+test_that("use sub-sub-sub-folder for output_state_filename", {
 
   if (!is_beast2_installed()) return()
   input_filename <- get_beastier_path("2_4.xml")
@@ -107,6 +107,62 @@ test_that("use sub-sub-sub-folders", {
     recursive = TRUE
   )
   expect_silent(check_empty_beastier_folder())
+})
+
+test_that("use sub-sub-sub-folder for tracelog, screenlog and treelog", {
+  skip("Expose bug")
+  if (!is_beast2_installed()) return()
+
+  mcmc <- beautier::create_test_mcmc(
+    tracelog = beautier::create_test_tracelog(
+      filename = file.path(
+        get_beastier_tempfilename(), "a", "b", "c", "tracelog.csv"
+      )
+    ),
+    screenlog = beautier::create_test_screenlog(
+      filename = file.path(
+        get_beastier_tempfilename(), "d", "e", "f", "screenlog.txt"
+      )
+    ),
+    treelog = beautier::create_test_treelog(
+      filename = file.path(
+        get_beastier_tempfilename(), "g", "h", "i", "treelog.trees"
+      )
+    )
+  )
+  beast2_options <- beastier::create_beast2_options(
+    output_state_filename = file.path(
+      get_beastier_tempfilename(), "j", "k", "l", "final.xml.state"
+    ),
+    verbose = TRUE
+  )
+  fasta_filename <- beautier::get_beautier_path("anthus_aco.fas")
+
+  inference_model <- create_inference_model(mcmc = mcmc)
+  beast2_input_filename <- beastier::create_temp_input_filename()
+  beautier::create_beast2_input_file_from_model(
+    input_filename = fasta_filename,
+    output_filename = beast2_input_filename,
+    inference_model = inference_model
+  )
+  beast2_options <- create_beast2_options(
+    input_filename = beast2_input_filename,
+    verbose = TRUE
+  )
+  # Cannot use 'expect_silent' as an empty line is produced in the output
+  run_beast2_from_options(beast2_options = beast2_options)
+
+  file.remove(beast2_input_filename)
+  expect_true(file.exists(beast2_options$output_state_filename))
+  unlink(
+    dirname(dirname(dirname(dirname(beast2_options$output_state_filename)))),
+    recursive = TRUE
+  )
+  expect_silent(check_empty_beastier_folder())
+
+  beautier::check_empty_beautier_folder()
+  beastier::check_empty_beastier_folder()
+  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
 })
 
 test_that("use relative and sub-sub-sub-folders", {

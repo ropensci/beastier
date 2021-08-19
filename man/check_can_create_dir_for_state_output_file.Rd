@@ -12,7 +12,7 @@ that are the R equivalent of the BEAST2 command-line options,
 as can be created by \link{create_beast2_options}}
 }
 \value{
-Nothing. 
+Nothing.
 Will \link{stop} if the folder for the state output file
 cannot be created
 }

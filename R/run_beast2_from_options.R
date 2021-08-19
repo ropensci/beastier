@@ -36,7 +36,20 @@ run_beast2_from_options <- function(
   beastier::check_can_create_treelog_file(beast2_options)
   beastier::check_can_create_screenlog_file(beast2_options)
   beastier::check_can_create_tracelog_file(beast2_options)
+  ##############################################################################
+  # Create the folders needed
+  ##############################################################################
 
+  beastier::create_beautier_tempfolder()
+  beastier::create_beastier_tempfolder()
+  beastier::create_beast2_input_file_folder(beast2_options)
+  beastier::create_beast2_state_output_file_folder(beast2_options)
+  if (1 == 2) {
+    # TODO
+    beastier::create_beast2_treelog_folder(beast2_options)
+    beastier::create_beast2_screenlog_folder(beast2_options)
+    beastier::create_beast2_tracelog_folder(beast2_options)
+  }
   ##############################################################################
   # Create the BEAST2 command
   ##############################################################################
@@ -89,14 +102,15 @@ run_beast2_from_options <- function(
   stderr_filename <- beastier::get_beastier_tempfilename(
     pattern = "stderr_", fileext = ".log"
   )
+  dir.create(dirname(stdout_filename), showWarnings = FALSE, recursive = TRUE)
   error_code <- system2(
     command = cmd[1],
     args = cmd[-1],
     stdout = stdout_filename,
     stderr = stderr_filename
   )
-  stdout_lines <- readr::read_lines(stdout_filename)
-  stderr_lines <- readr::read_lines(stderr_filename)
+  stdout_lines <- readr::read_lines(stdout_filename, progress = FALSE)
+  stderr_lines <- readr::read_lines(stderr_filename, progress = FALSE)
   file.remove(stdout_filename)
   file.remove(stderr_filename)
   if (error_code != 0) {

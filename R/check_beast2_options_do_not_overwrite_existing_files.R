@@ -16,11 +16,14 @@ check_beast2_options_do_not_overwrite_existing_files <- function( # nolint indee
   beast2_options
 ) {
   beastier::check_beast2_options(beast2_options)
-  if (beast2_options$overwrite) return()
+  if (beast2_options$overwrite) {
+    return(invisible(beast2_options))
+  }
 
   if (file.exists(beast2_options$output_state_filename)) {
     stop("Will not overwrite 'output_state_filename' ('",
       beast2_options$output_state_filename, "') with 'overwrite' is FALSE"
     )
   }
+  invisible(beast2_options)
 }

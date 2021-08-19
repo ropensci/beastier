@@ -12,7 +12,7 @@ check_can_create_screenlog_file <- function( # nolint indeed a long function nam
 ) {
   # Extract the screenlog file
   testthat::expect_true(file.exists(beast2_options$input_filename))
-  text <- readr::read_lines(beast2_options$input_filename)
+  text <- readr::read_lines(beast2_options$input_filename, progress = FALSE)
   screenlog_line <- stringr::str_subset(
     string = text,
     pattern = "<logger id=\"screenlog\""
@@ -39,4 +39,5 @@ check_can_create_screenlog_file <- function( # nolint indeed a long function nam
       stop("Cannot create screenlog file '", screenlog_filename, "'")
     }
   )
+  invisible(beast2_options)
 }

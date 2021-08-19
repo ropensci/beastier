@@ -64,4 +64,5 @@ check_can_create_file <- function(
       "Cannot delete the temporary file created at location ", filename
     )
   )
+  invisible(filename)
 }

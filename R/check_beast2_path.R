@@ -12,4 +12,5 @@
 #' @export
 check_beast2_path <- function(beast2_path) {
   beautier::check_file_exists(beast2_path, "beast2_path")
+  invisible(beast2_options)
 }

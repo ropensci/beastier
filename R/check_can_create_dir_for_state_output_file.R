@@ -3,7 +3,7 @@
 #' Check if the folder for the state output file
 #' can be created. Will \link{stop} otherwise
 #' @inheritParams default_params_doc
-#' @return Nothing. 
+#' @return Nothing.
 #' Will \link{stop} if the folder for the state output file
 #' cannot be created
 #' @examples
@@ -19,7 +19,9 @@ check_can_create_dir_for_state_output_file <- function( # nolint indeed a long f
   folder <- dirname(beast2_options$output_state_filename)
 
   # If it exists, that folder can be created
-  if (dir.exists(folder)) return()
+  if (dir.exists(folder)) {
+    return(invisible(beast2_options))
+  }
 
   # Create and delete the folder
   dir.create(
@@ -35,4 +37,5 @@ check_can_create_dir_for_state_output_file <- function( # nolint indeed a long f
     )
   }
   unlink(folder, recursive = TRUE)
+  invisible(beast2_options)
 }

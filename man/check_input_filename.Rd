@@ -14,7 +14,7 @@ Use \link{create_temp_input_filename} to create a temporary
 filename with that extension.}
 }
 \value{
-Nothing. 
+Nothing.
 Will \link{stop} if the input file is invalid
 }
 \description{

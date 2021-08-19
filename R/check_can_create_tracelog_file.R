@@ -35,4 +35,5 @@ check_can_create_tracelog_file <- function(
       )
     }
   )
+  invisible(beast2_options)
 }

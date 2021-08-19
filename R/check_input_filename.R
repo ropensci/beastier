@@ -1,7 +1,7 @@
 #' Checks the input filename.
 #' Will stop if there is a problem with the input filename.
 #' @inheritParams default_params_doc
-#' @return Nothing. 
+#' @return Nothing.
 #' Will \link{stop} if the input file is invalid
 #' @author Richèl J.C. Bilderbeek
 #' @examples
@@ -11,6 +11,7 @@
 #' @export
 check_input_filename <- function(input_filename) {
   beautier::check_file_exists(input_filename, "input_filename")
+  invisible(input_filename)
 }
 
 #' Checks the input filename.
@@ -74,4 +75,5 @@ check_input_filename_validity <- function(
       )
     )
   }
+  invisible(beast2_options)
 }
