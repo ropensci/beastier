@@ -1,4 +1,5 @@
 test_that("minimal use", {
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
   expect_silent(
@@ -9,7 +10,7 @@ test_that("minimal use", {
 })
 
 test_that("Run with spaces in the input filename, for Windows", {
-
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
   cmd <- create_beast2_continue_cmd_from_options(
@@ -22,7 +23,7 @@ test_that("Run with spaces in the input filename, for Windows", {
 })
 
 test_that("Run with spaces in the output state filename, for Windows", {
-
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
   cmd <- create_beast2_continue_cmd_from_options(
@@ -36,7 +37,7 @@ test_that("Run with spaces in the output state filename, for Windows", {
 })
 
 test_that("Run with spaces in the launcher.jar path, for Windows", {
-
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
   beast2_path <- file.path(
@@ -67,7 +68,7 @@ test_that("Run with spaces in the launcher.jar path, for Windows", {
 })
 
 test_that("Run with spaces in the beast bin path, for Windows", {
-
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
   beast2_path <- file.path(

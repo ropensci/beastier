@@ -19,6 +19,7 @@ test_that("must have a correct location", {
 })
 
 test_that("must exist", {
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
   expect_true(
     file.exists(get_default_beast2_jar_path())

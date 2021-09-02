@@ -75,4 +75,5 @@ test_that("use", {
     )
   )
   expect_silent(check_empty_beastier_folder())
+  # beastierinstall::clear_beautier_cache(); beastierinstall::clear_beastier_cache() # nolint
 })

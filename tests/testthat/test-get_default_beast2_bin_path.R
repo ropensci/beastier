@@ -20,10 +20,12 @@ test_that("default locations", {
 })
 
 test_that("must exist", {
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
   expect_true(
     file.exists(get_default_beast2_bin_path())
   )
+  # beastierinstall::clear_beautier_cache(); beastierinstall::clear_beastier_cache() # nolint
 })
 
 test_that("custom location", {

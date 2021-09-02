@@ -12,18 +12,24 @@ check_can_create_treelog_file <- function(
 ) {
   # Extract the treelog file
   testthat::expect_true(file.exists(beast2_options$input_filename))
-  text <- readr::read_lines(beast2_options$input_filename, progress = FALSE)
-  treelog_line <- stringr::str_subset(
-    string = text,
-    pattern = "<logger id=\"treelog.t:"
-  )
-  testthat::expect_equal(length(treelog_line), 1)
-  matches <- stringr::str_match(
-    string = treelog_line,
-    pattern = "fileName=\\\"([:graph:]+)\\\" "
-  )
-  testthat::expect_equal(ncol(matches), 2)
-  treelog_filename <- matches[1, 2]
+  if (1 + 1 == 2) {
+    treelog_filename <- beastier::extract_treelog_filename_from_beast2_input_file(
+      input_filename = beast2_options$input_filename
+    )
+  } else {
+    text <- readr::read_lines(beast2_options$input_filename, progress = FALSE)
+    treelog_line <- stringr::str_subset(
+      string = text,
+      pattern = "<logger id=\"treelog.t:"
+    )
+    testthat::expect_equal(length(treelog_line), 1)
+    matches <- stringr::str_match(
+      string = treelog_line,
+      pattern = "fileName=\\\"([:graph:]+)\\\" "
+    )
+    testthat::expect_equal(ncol(matches), 2)
+    treelog_filename <- matches[1, 2]
+  }
 
   if (file.exists(treelog_filename)) {
      file.remove(treelog_filename)

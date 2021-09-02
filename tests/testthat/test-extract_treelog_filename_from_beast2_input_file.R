@@ -13,4 +13,5 @@ test_that("all is fine", {
   )
   file.remove(beast2_input_filename)
   check_empty_beastier_folder()
+  # beastierinstall::clear_beautier_cache(); beastierinstall::clear_beastier_cache() # nolint
 })

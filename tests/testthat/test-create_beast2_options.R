@@ -3,6 +3,7 @@ test_that("use", {
 })
 
 test_that("increase stack space", {
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   skip("Issue 60")
   # Result in same behavior
   expect_silent(

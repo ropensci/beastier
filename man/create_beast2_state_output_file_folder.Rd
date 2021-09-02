@@ -19,7 +19,7 @@ Create the folder where the BEAST2 state output file will be created
 }
 \examples{
 beast2_options <- create_beast2_options()
-create_beast2_state_output_file_folder()
+create_beast2_state_output_file_folder(beast2_options)
 }
 \author{
 Richèl J.C. Bilderbeek

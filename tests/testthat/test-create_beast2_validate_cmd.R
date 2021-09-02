@@ -1,5 +1,5 @@
 test_that("use, bin", {
-
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
   beast2_bin_path <- get_default_beast2_bin_path()
@@ -18,7 +18,7 @@ test_that("use, bin", {
 })
 
 test_that("use, jar", {
-
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
   beast2_jar_path <- get_default_beast2_jar_path()
@@ -40,7 +40,7 @@ test_that("use, jar", {
 })
 
 test_that("use, bin, spaces in BEAST2 bin path", {
-
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
   beast2_path <- file.path(
@@ -66,7 +66,7 @@ test_that("use, bin, spaces in BEAST2 bin path", {
 })
 
 test_that("use, bin, spaces in BEAST2 jar path", {
-
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
   beast2_path <- file.path(
@@ -91,7 +91,7 @@ test_that("use, bin, spaces in BEAST2 jar path", {
 })
 
 test_that("use, bin, spaces in BEAST2 input filename", {
-
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
   input_filename <- "path with spaces/input.xml"
@@ -105,8 +105,9 @@ test_that("use, bin, spaces in BEAST2 input filename", {
 })
 
 test_that("use, jar, spaces in BEAST2 input filename", {
-
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
   input_filename <- "path with spaces/input.xml"
 
   cmd <- create_beast2_validate_cmd(

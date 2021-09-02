@@ -1,5 +1,5 @@
 test_that("use, bin", {
-
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
   beast2_bin_path <- get_default_beast2_bin_path()
@@ -16,7 +16,7 @@ test_that("use, bin", {
 })
 
 test_that("use, jar", {
-
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
   beast2_jar_path <- get_default_beast2_jar_path()

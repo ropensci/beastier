@@ -1,5 +1,7 @@
 test_that("use", {
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
   filenames <- get_beast2_example_filenames()
   expect_true(is.character(filenames))
   expect_true(length(filenames) > 10)

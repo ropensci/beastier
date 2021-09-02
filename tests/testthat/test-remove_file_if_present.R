@@ -12,4 +12,5 @@ test_that("use, file present", {
   expect_silent(remove_file_if_present(filename))
   testit::assert(!file.exists(filename))
   expect_silent(check_empty_beastier_folder())
+  # beastierinstall::clear_beautier_cache(); beastierinstall::clear_beastier_cache() # nolint
 })
