@@ -44,12 +44,9 @@ run_beast2_from_options <- function(
   beastier::create_beastier_tempfolder()
   beastier::create_beast2_input_file_folder(beast2_options)
   beastier::create_beast2_state_output_file_folder(beast2_options)
-  if (1 == 2) {
-    # TODO
-    beastier::create_beast2_treelog_folder(beast2_options)
-    beastier::create_beast2_screenlog_folder(beast2_options)
-    beastier::create_beast2_tracelog_folder(beast2_options)
-  }
+  beastier::create_beast2_treelog_folder(beast2_options)
+  beastier::create_beast2_screenlog_folder(beast2_options)
+  beastier::create_beast2_tracelog_folder(beast2_options)
   ##############################################################################
   # Create the BEAST2 command
   ##############################################################################

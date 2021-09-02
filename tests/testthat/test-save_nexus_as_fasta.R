@@ -1,5 +1,7 @@
 test_that("use", {
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
   nexus_filename <- get_beast2_example_filename("Primates.nex")
   fasta_filename <- get_beastier_tempfilename()
   save_nexus_as_fasta(
