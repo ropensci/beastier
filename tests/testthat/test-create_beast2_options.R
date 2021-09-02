@@ -4,7 +4,7 @@ test_that("use", {
 
 test_that("increase stack space", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
-  skip("Issue 60")
+  skip("Issue 60, Issue #60")
   # Result in same behavior
   expect_silent(
     create_beast2_options(
@@ -18,6 +18,7 @@ test_that("increase stack space", {
     )
   )
   # Must be positive
+  # Note that the exact error message is tested in 'test-check_stack_size_kb'
   expect_error(
     create_beast2_options(
       stack_size_kb = -1234567

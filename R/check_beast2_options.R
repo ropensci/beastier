@@ -83,6 +83,9 @@ check_beast2_options_data_types <- function( # nolint long function name indeed,
   if (!beautier::is_one_bool(beast2_options$verbose)) {
     stop("'verbose' must be one boolean")
   }
+  # Isse 60, Issue #60
+  # Hi Jeff, I suggest to add 'check_stack_size_kb' here.
+  # I have written the tests for you at 'test-check_stack_size_kb' :-)
 }
 
 #' Check if the filenames in \code{beast2_options} differ

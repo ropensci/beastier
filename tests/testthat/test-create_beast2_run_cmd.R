@@ -10,23 +10,24 @@ test_that("minimal use", {
   )
 })
 
-test_that("minimal use", {
-  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
-  skip("Issue 60")
+test_that("use of 'stack_size_kb'", {
+
+  # This is existing behavior
   cmd <- create_beast2_run_cmd(
-    input_filename = "something",
+    input_filename = get_beastier_path("2_4.xml"), # actual file is irrelevant
     output_state_filename = "something"
   )
-  expect_equal(0, stringr::str_count(string = cmd, pattern = "-Xss"))
+  expect_equal(0, length(stringr::str_subset(string = cmd, pattern = "-Xss")))
 
+  skip("Issue 60")
 
  cmd <- create_beast2_run_cmd(
-    input_filename = "something",
-    output_state_filename = "something",
+   input_filename = get_beastier_path("2_4.xml"), # actual file is irrelevant
+   output_state_filename = "something",
     stack_size_kb = 2000
   )
-  expect_equal(1, stringr::str_count(string = cmd, pattern = "-Xss"))
-  expect_true("-Xss2000k" %in% cmd)
+ expect_equal(1, length(stringr::str_subset(string = cmd, pattern = "-Xss")))
+ expect_true("-Xss2000k" %in% cmd)
 
 
  cmd <- create_beast2_run_cmd(
@@ -34,8 +35,8 @@ test_that("minimal use", {
     output_state_filename = "something",
     stack_size_kb = 1234
   )
-  expect_equal(1, stringr::str_count(string = cmd, pattern = "-Xss"))
-  expect_true("-Xss1234k" %in% cmd)
+ expect_equal(1, length(stringr::str_subset(string = cmd, pattern = "-Xss")))
+ expect_true("-Xss1234k" %in% cmd)
 
 })
 
