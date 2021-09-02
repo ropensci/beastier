@@ -10,6 +10,10 @@ create_beast2_screenlog_folder <- function(beast2_options) {
   screenlog_filename <- beastier::extract_screenlog_filename_from_beast2_input_file(
     input_filename = beast2_options$input_filename
   )
+  # The user specified no screenlog file
+  if (is.na(screenlog_filename)) {
+    return(invisible(beast2_options))
+  }
   dir.create(
     dirname(screenlog_filename),
     showWarnings = FALSE,
