@@ -149,8 +149,7 @@ test_that("use sub-sub-sub-folder for tracelog, screenlog and treelog", {
     inference_model = inference_model
   )
   beast2_options <- create_beast2_options(
-    input_filename = beast2_input_filename,
-    verbose = TRUE
+    input_filename = beast2_input_filename
   )
   # Cannot use 'expect_silent' as an empty line is produced in the output
   run_beast2_from_options(beast2_options = beast2_options)
