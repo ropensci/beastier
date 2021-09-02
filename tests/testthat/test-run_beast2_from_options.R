@@ -114,8 +114,6 @@ test_that("use sub-sub-sub-folder for output_state_filename", {
 
 test_that("use sub-sub-sub-folder for tracelog, screenlog and treelog", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
-  skip("Expose bug")
-
   if (!is_beast2_installed()) return()
 
   mcmc <- beautier::create_test_mcmc(
@@ -160,7 +158,7 @@ test_that("use sub-sub-sub-folder for tracelog, screenlog and treelog", {
   file.remove(beast2_input_filename)
   expect_true(file.exists(beast2_options$output_state_filename))
   unlink(
-    dirname(dirname(dirname(dirname(beast2_options$output_state_filename)))),
+    dirname(beast2_options$output_state_filename),
     recursive = TRUE
   )
   expect_silent(check_empty_beastier_folder())
