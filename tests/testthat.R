@@ -10,3 +10,8 @@ test_check("beastier")
 
 beautier::check_empty_beautier_folder()
 beastier::check_empty_beastier_folder()
+
+unlink(
+  dirname(beastier::get_beastier_tempfilename()),
+  recursive = TRUE
+)
