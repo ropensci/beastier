@@ -2,7 +2,26 @@
 
 Newest versions at top.
 
-## beastier 2.4.6 (2021-09-06)
+## beastier 2.4.7 (2021-09-06)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Allow to use treelog, screenlog and tracelog filenames in absent
+    sub-sub-subfolders, fixes babette bug
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
+## beastier 2.4.6 (only released on CRAN)
 
 ### NEW FEATURES
 
@@ -11,8 +30,6 @@ Newest versions at top.
 ### MINOR IMPROVEMENTS
 
   * Improved documentation, thanks Julia Haider
-  * Allow to use treelog, screenlog and tracelog filenames in absent
-    sub-sub-subfolders
 
 ### BUG FIXES
 
