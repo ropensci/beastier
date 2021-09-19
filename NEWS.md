@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.4.8 (2021-09-19)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * `check_empty_beastier_folder` works under Windows
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.4.7 (2021-09-06)
 
 ### NEW FEATURES
