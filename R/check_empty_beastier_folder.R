@@ -11,7 +11,7 @@
 check_empty_beastier_folder <- function(
   beastier_folder = get_beastier_folder()
 ) {
-  dirs <- list.dirs(beastier_folder)
+  dirs <- normalizePath(list.dirs(beastier_folder))
   dirs <- dirs[dirs != normalizePath(beastier_folder, mustWork = FALSE)]
 
   if (length(dirs) != 0) {
