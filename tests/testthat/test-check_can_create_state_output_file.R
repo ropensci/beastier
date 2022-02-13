@@ -7,6 +7,9 @@ test_that("minimal use", {
 })
 
 test_that("use impossible folder", {
+  # On Windows, this test will pass
+  if (rappdirs::app_dir()$os == "win") return()
+
   expect_error(
     check_can_create_state_output_file(
       beast2_options = create_beast2_options(

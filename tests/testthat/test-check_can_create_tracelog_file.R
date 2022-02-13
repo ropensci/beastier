@@ -19,6 +19,9 @@ test_that("all is fine", {
 })
 
 test_that("use", {
+  # On Windows, this test will pass
+  if (rappdirs::app_dir()$os == "win") return()
+
   beast2_input_filename <- get_beastier_tempfilename()
   beautier::create_beast2_input_file_from_model(
     input_filename = beautier::get_beautier_path("test_output_0.fas"),
