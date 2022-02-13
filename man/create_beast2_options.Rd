@@ -75,7 +75,7 @@ without the risk of overwriting existing ones, allowing
 BEAST2 to run in multiple parallel processes.}
 }
 \value{
-a BEAST2 options structure, 
+a BEAST2 options structure,
 which is a \link{list} of all function arguments,
 of which all elements are checked (by \link{check_beast2_options})
 }

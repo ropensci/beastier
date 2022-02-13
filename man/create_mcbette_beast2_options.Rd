@@ -53,14 +53,14 @@ the default BEAST binary file's path}
 is potentially useful in debugging}
 }
 \value{
-a `beast2_options` structure suitable to be used 
+a `beast2_options` structure suitable to be used
 by the `mcbette` R package,
 which is a \link{list} of all function arguments,
 of which all elements are checked (by \link{check_beast2_options})
 }
 \description{
 Create a `beast2_options` structure to be used for the
-`mcbette` R package, which is a package that allows one to do 
+`mcbette` R package, which is a package that allows one to do
 model comparison.
 The generated filenames indicating `mcbette` usage,
 as well as the correct BEAST2 binary/executable type

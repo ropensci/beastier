@@ -2,7 +2,7 @@
 #'
 #' Calls \code{stop} if the BEAST2 option object is invalid
 #' @inheritParams default_params_doc
-#' @return Nothing. 
+#' @return Nothing.
 #' Will \code{stop} if the BEAST2 option object is invalid
 #' @seealso Use \link{create_beast2_options} to create a valid
 #'   BEAST2 options object

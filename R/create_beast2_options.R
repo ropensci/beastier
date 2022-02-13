@@ -2,7 +2,7 @@
 #'
 #' These BEAST2 options are the R equivalent of the command-line options.
 #' @inheritParams default_params_doc
-#' @return a BEAST2 options structure, 
+#' @return a BEAST2 options structure,
 #' which is a \link{list} of all function arguments,
 #' of which all elements are checked (by \link{check_beast2_options})
 #' @examples
