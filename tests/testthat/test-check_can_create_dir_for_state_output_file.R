@@ -7,6 +7,10 @@ test_that("minimal use", {
 })
 
 test_that("use impossible folder", {
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
+  # Not an impossible folder on Windows
+  if (rappdirs::app_dir()$os == "win") return()
+
   expect_error(
     check_can_create_dir_for_state_output_file(
       beast2_options = create_beast2_options(
