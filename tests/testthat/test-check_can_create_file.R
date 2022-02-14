@@ -5,7 +5,7 @@ test_that("create local filename", {
 test_that("can create file in root", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   # On Windows, this test will pass
-  if (rappdirs::app_dir()$os == "win") return()
+  skip_on_os(os = "windows")
 
   expect_error(
     check_can_create_file("/root_usually_fails"),

@@ -20,7 +20,7 @@ test_that("files are detected", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   # No idea why this fails on Windows, will not test without
   # a bug report and a volunteer user
-  if (rappdirs::app_dir()$os == "win") return()
+  skip_on_os(os = "windows")
 
   dir.create(get_beastier_folder(), showWarnings = FALSE, recursive = TRUE)
   beastier_filename <- file.path(get_beastier_tempfilename())

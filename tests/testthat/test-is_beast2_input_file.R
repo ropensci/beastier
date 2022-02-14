@@ -31,7 +31,8 @@ test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
 test_that("anthus_2_4.xml is valid, from bin", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   # The .exe will always show a pop-up
-  if (rappdirs::app_dir()$os == "win") return()
+  skip_on_os(os = "windows")
+
   if (!is_beast2_installed()) return()
 
   filename <- get_beastier_path("anthus_2_4.xml")

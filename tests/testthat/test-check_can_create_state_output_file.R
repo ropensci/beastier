@@ -9,7 +9,7 @@ test_that("minimal use", {
 test_that("use impossible folder", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   # On Windows, this test will pass
-  if (rappdirs::app_dir()$os == "win") return()
+  skip_on_os(os = "windows")
 
   expect_error(
     check_can_create_state_output_file(
