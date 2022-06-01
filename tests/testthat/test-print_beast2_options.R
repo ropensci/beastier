@@ -1,4 +1,6 @@
 test_that("use", {
+  check_empty_beaustier_folders()
+
   beast2_options <- create_beast2_options(
     input_filename = get_beastier_path("2_4.xml")
   )
@@ -11,5 +13,6 @@ test_that("use", {
   }
   print_beast2_options(beast2_options)
   sink()
-  expect_silent(check_empty_beastier_folder())
+
+  check_empty_beaustier_folders()
 })

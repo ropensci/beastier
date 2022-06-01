@@ -1,4 +1,6 @@
 test_that("all is fine", {
+  check_empty_beaustier_folders()
+
   beast2_input_filename <- get_beastier_tempfilename()
   tracelog_filename <- get_beastier_tempfilename(
     pattern = "trace_", fileext = ".log"
@@ -22,5 +24,7 @@ test_that("all is fine", {
     )
   )
   file.remove(beast2_input_filename)
-  check_empty_beastier_folder()
+
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })

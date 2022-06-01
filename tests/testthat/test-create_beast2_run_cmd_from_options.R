@@ -2,16 +2,22 @@ test_that("minimal use", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
+  check_empty_beaustier_folders()
+
   expect_silent(
     create_beast2_run_cmd_from_options(
       beast2_options = create_beast2_options()
     )
   )
+
+  check_empty_beaustier_folders()
 })
 
 test_that("use, bin", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   beast2_options <- create_beast2_options(
     overwrite = TRUE,
@@ -28,11 +34,15 @@ test_that("use, bin", {
     beast2_options$input_filename
   )
   expect_equal(created_from_options, expected)
+
+  check_empty_beaustier_folders()
 })
 
 test_that("use, jar", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   beast2_options <- create_beast2_options(
     overwrite = TRUE,
@@ -52,11 +62,16 @@ test_that("use, jar", {
     beast2_options$input_filename
   )
   expect_equal(created_from_options, expected)
+
+  check_empty_beaustier_folders()
+
 })
 
 test_that("different overwrite option results in different command", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   cmd_true <- beastier::create_beast2_run_cmd_from_options(
     create_beast2_options(overwrite = TRUE)
@@ -65,11 +80,16 @@ test_that("different overwrite option results in different command", {
     create_beast2_options(overwrite = FALSE)
   )
   expect_true(length(cmd_false) != length(cmd_true))
+
+  check_empty_beaustier_folders()
+
 })
 
 test_that("different use_beagle option results in different command", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   cmd_true <- beastier::create_beast2_run_cmd_from_options(
     create_beast2_options(use_beagle = TRUE)
@@ -78,11 +98,14 @@ test_that("different use_beagle option results in different command", {
     create_beast2_options(use_beagle = FALSE)
   )
   expect_true(length(cmd_false) != length(cmd_true))
+  check_empty_beaustier_folders()
 })
 
 test_that("different n_threads option results in different command", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   cmd_true <- beastier::create_beast2_run_cmd_from_options(
     create_beast2_options(n_threads = 2)
@@ -91,5 +114,5 @@ test_that("different n_threads option results in different command", {
     create_beast2_options(n_threads = 3)
   )
   expect_false(all(cmd_false == cmd_true))
-  # beastierinstall::clear_beautier_cache(); beastierinstall::clear_beastier_cache() # nolint
+  check_empty_beaustier_folders()
 })

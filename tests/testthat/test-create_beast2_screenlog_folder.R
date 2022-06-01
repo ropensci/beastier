@@ -1,4 +1,6 @@
 test_that("use", {
+  check_empty_beaustier_folders()
+
   beast2_input_filename <- beastier::create_temp_input_filename()
   screenlog_filename <- file.path(
     beastier::get_beastier_tempfilename(),
@@ -24,4 +26,7 @@ test_that("use", {
   expect_true(dir.exists(dirname(screenlog_filename)))
   file.remove(beast2_input_filename)
   unlink(dirname(screenlog_filename), recursive = TRUE)
+
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })

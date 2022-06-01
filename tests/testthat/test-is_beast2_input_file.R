@@ -2,6 +2,8 @@ test_that("beast2_example_output.log is not a valid BEAST2 input file", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
+  check_empty_beaustier_folders()
+
   filename <- get_beastier_path("beast2_example_output.log")
   is_ok <- NULL
 
@@ -13,11 +15,14 @@ test_that("beast2_example_output.log is not a valid BEAST2 input file", {
   )
 
   expect_false(is_ok)
+  check_empty_beaustier_folders()
 })
 
 test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   filename <- get_beastier_path("beast2_example_output.trees")
 
@@ -26,6 +31,8 @@ test_that("beast2_example_output.trees is not a valid BEAST2 input file", {
     is_ok <- beastier::is_beast2_input_file(filename, verbose = TRUE)
   )
   expect_false(is_ok)
+
+  check_empty_beaustier_folders()
 })
 
 test_that("anthus_2_4.xml is valid, from bin", {
@@ -35,6 +42,8 @@ test_that("anthus_2_4.xml is valid, from bin", {
 
   if (!is_beast2_installed()) return()
 
+  check_empty_beaustier_folders()
+
   filename <- get_beastier_path("anthus_2_4.xml")
   testit::assert(file.exists(filename))
   expect_true(
@@ -43,11 +52,14 @@ test_that("anthus_2_4.xml is valid, from bin", {
       beast2_path = get_default_beast2_bin_path()
     )
   )
+  check_empty_beaustier_folders()
 })
 
 test_that("anthus_2_4.xml is valid, from jar", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   filename <- get_beastier_path("anthus_2_4.xml")
   expect_true(file.exists(filename))
@@ -57,9 +69,12 @@ test_that("anthus_2_4.xml is valid, from jar", {
       beast2_path = get_default_beast2_jar_path()
     )
   )
+
+  check_empty_beaustier_folders()
 })
 
 test_that("abuse", {
+  check_empty_beaustier_folders()
 
   expect_error(
     is_beast2_input_file("abs.ent"),
@@ -84,12 +99,14 @@ test_that("abuse", {
     ),
     "Cannot use the Windows executable BEAST2.exe in scripts"
   )
-
+  check_empty_beaustier_folders()
 })
 
 test_that("detect warnings", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   expect_warning(
     is_beast2_input_file(
@@ -111,11 +128,14 @@ test_that("detect warnings", {
       )
     )
   }
+  check_empty_beaustier_folders()
 })
 
 test_that("detect errors", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   if (1 == 2) {
     # I guess that BEAST v2.4 gave a warning for this XML file,
@@ -134,11 +154,15 @@ test_that("detect errors", {
       show_warnings = FALSE
     )
   )
+
+  check_empty_beaustier_folders()
 })
 
 test_that("Check use of tilde in filenames", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   # Copy a file to the home folder, must be deleted in the end
   full_path <- get_beastier_path("2_4.xml")
@@ -156,12 +180,15 @@ test_that("Check use of tilde in filenames", {
 
   file.remove(relative_path)
 
-  beastier::check_empty_beastier_folder()
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })
 
 test_that("Run with spaces in the input filename, for Windows", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   filename <- file.path(
     get_beastier_tempfilename(), "path with spaces", "anthus_2_4.xml"
@@ -175,6 +202,6 @@ test_that("Run with spaces in the input filename, for Windows", {
   expect_true(is_beast2_input_file(filename))
   unlink(dirname(dirname(filename)), recursive = TRUE)
 
-  expect_silent(check_empty_beastier_folder())
-  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })

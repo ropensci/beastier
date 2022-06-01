@@ -1,16 +1,24 @@
 test_that("use, no file present", {
+  check_empty_beaustier_folders()
+
   filename <- "abs.ent"
   testit::assert(!file.exists(filename))
   expect_silent(remove_file_if_present(filename))
   testit::assert(!file.exists(filename))
+
+  check_empty_beaustier_folders()
 })
 
 test_that("use, file present", {
+  check_empty_beaustier_folders()
+
   filename <- get_beastier_tempfilename()
+  dir.create(dirname(filename), recursive = TRUE, showWarnings = FALSE)
   writeLines(text = "some irrelevant text", con = filename)
   testit::assert(file.exists(filename))
   expect_silent(remove_file_if_present(filename))
   testit::assert(!file.exists(filename))
-  expect_silent(check_empty_beastier_folder())
-  # beastierinstall::clear_beautier_cache(); beastierinstall::clear_beastier_cache() # nolint
+
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })

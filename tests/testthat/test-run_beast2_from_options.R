@@ -12,11 +12,13 @@ test_that("use", {
   )
   file.remove(beast2_options$output_state_filename)
 
-  expect_silent(check_empty_beastier_folder())
-  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
+  remove_beaustier_folders()
+  check_empty_beastier_folder()
 })
 
 test_that("abuse", {
+  expect_silent(check_empty_beastier_folder())
+
   expect_error(
     run_beast2_from_options(beast2_options = "abs.ent")
   )

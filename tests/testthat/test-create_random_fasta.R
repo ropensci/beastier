@@ -1,4 +1,6 @@
 test_that("use", {
+  check_empty_beaustier_folders()
+
   filename <- get_beastier_tempfilename()
   expect_silent(
     create_random_fasta(
@@ -9,9 +11,14 @@ test_that("use", {
   )
   expect_true(file.exists(filename))
   file.remove(filename)
+
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })
 
 test_that("sub-sub folder", {
+  check_empty_beaustier_folders()
+
   filename <- file.path(get_beastier_tempfilename(), "sub", "sub", "sub")
   expect_silent(
     create_random_fasta(
@@ -22,10 +29,14 @@ test_that("sub-sub folder", {
   )
   expect_true(file.exists(filename))
   file.remove(filename)
-  unlink(dirname(dirname(dirname(filename))), recursive = TRUE)
+
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })
 
 test_that("abuse", {
+  check_empty_beaustier_folders()
+
   expect_error(
     create_random_fasta(
       n_taxa = 0, #Error
@@ -71,4 +82,6 @@ test_that("abuse", {
     ),
     "'taxa_name_ext' must be a character string"
   )
+  check_empty_beaustier_folders()
+
 })

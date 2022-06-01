@@ -1,10 +1,17 @@
 test_that("use", {
+  check_empty_beaustier_folders()
+
   expect_silent(create_beast2_options())
+
+  check_empty_beaustier_folders()
 })
 
 test_that("increase stack space", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   skip("Issue 60, Issue #60")
+
+  check_empty_beaustier_folders()
+
   # Result in same behavior
   expect_silent(
     create_beast2_options(
@@ -34,12 +41,16 @@ test_that("increase stack space", {
       stack_size_kb = Inf
     )
   )
+
+  check_empty_beaustier_folders()
 })
 
 # BEAST2 working dir and folder for filenames must differ
 # is tested by test-check_beast2_options_filenames_not_in_working_dir.R
 
 test_that("deprecated variables", {
+
+  check_empty_beaustier_folders()
 
   expect_error(
     create_beast2_options(
@@ -60,4 +71,6 @@ test_that("deprecated variables", {
     ),
     "'beast2_working_dir' is deprecated"
   )
+
+  check_empty_beaustier_folders()
 })

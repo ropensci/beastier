@@ -1,4 +1,5 @@
 test_that("replace dir from local to folder", {
+  check_empty_beastier_folder()
 
   beast2_options <- create_beast2_options(
     input_filename = "my.fas",
@@ -15,6 +16,8 @@ test_that("replace dir from local to folder", {
     beast2_options$output_state_filename,
     "/home/john/my_state.xml.state"
   )
+
+  check_empty_beastier_folder()
 })
 
 test_that("rename dir from folder to folder", {

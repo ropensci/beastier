@@ -2,6 +2,8 @@ test_that("use, bin", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
+  check_empty_beaustier_folders()
+
   beast2_bin_path <- get_default_beast2_bin_path()
   input_filename <- "input.xml"
 
@@ -13,12 +15,14 @@ test_that("use, bin", {
     "-version"
   )
   expect_equal(created, expected)
+  check_empty_beaustier_folders()
 })
 
 test_that("use, jar", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
+  check_empty_beaustier_folders()
   beast2_jar_path <- get_default_beast2_jar_path()
 
   created <- create_beast2_version_cmd(
@@ -32,4 +36,5 @@ test_that("use, jar", {
     "-version"
   )
   expect_equal(created, expected)
+  check_empty_beaustier_folders()
 })

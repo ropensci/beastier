@@ -1,4 +1,5 @@
 test_that("are_identical_alignments: use", {
+  check_empty_beaustier_folders()
 
   p <- create_random_alignment(
     n_taxa = 5,
@@ -27,4 +28,5 @@ test_that("are_identical_alignments: abuse", {
     are_identical_alignments(p, "Not a phylogeny"),
     "q must be an alignment"
   )
+  check_empty_beaustier_folders()
 })

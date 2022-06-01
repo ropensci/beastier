@@ -1,4 +1,6 @@
 test_that("use", {
+  check_empty_beaustier_folders()
+
   expect_true(is_jar_path(get_default_beast2_jar_path()))
   expect_true(is_jar_path("launcher.jar"))
   expect_true(is_jar_path("path with spaces/launcher.jar"))
@@ -10,5 +12,5 @@ test_that("use", {
   expect_false(is_jar_path(NULL))
   expect_false(is_jar_path(Inf))
 
-  expect_silent(check_empty_beastier_folder())
+  check_empty_beaustier_folders()
 })

@@ -1,6 +1,10 @@
 test_that("use, fast", {
+  check_empty_beaustier_folders()
+
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   expect_true(
     are_beast2_input_lines(
@@ -14,12 +18,15 @@ test_that("use, fast", {
       method = "fast"
     )
   )
+  check_empty_beaustier_folders()
 
 })
 
 test_that("use, deep", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   expect_true(
     are_beast2_input_lines(
@@ -28,9 +35,11 @@ test_that("use, deep", {
       beast2_path = get_default_beast2_path()
     )
   )
+  check_empty_beaustier_folders()
 })
 
 test_that("abuse", {
+  check_empty_beaustier_folders()
 
   expect_error(
     are_beast2_input_lines(
@@ -39,6 +48,7 @@ test_that("abuse", {
     ),
     "'method' must be \"deep\" or \"fast\""
   )
+  check_empty_beaustier_folders()
 })
 
 test_that("clockRate.c ID and ClockPrior.c ID added twice", {
@@ -46,6 +56,7 @@ test_that("clockRate.c ID and ClockPrior.c ID added twice", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
+  check_empty_beaustier_folders()
 
   # From https://github.com/ropensci/beautier/issues/127
   # From https://github.com/ropensci/beautier/issues/128
@@ -83,4 +94,6 @@ test_that("clockRate.c ID and ClockPrior.c ID added twice", {
     inference_model = inference_model
   )
   expect_true(are_beast2_input_lines(text))
+
+  check_empty_beaustier_folders()
 })
