@@ -23,6 +23,7 @@ check_empty_beaustier_folders()
 beast2_options <- create_beast2_options()
 create_beast2_state_output_file_folder(beast2_options)
 
+remove_beaustier_folders()
 check_empty_beaustier_folders()
 }
 \author{

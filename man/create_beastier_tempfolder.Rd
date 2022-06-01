@@ -13,7 +13,12 @@ nothing
 Create the temporary folder as used by \link{beastier}
 }
 \examples{
+check_empty_beaustier_folders()
+
 create_beastier_tempfolder()
+
+remove_beaustier_folders()
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

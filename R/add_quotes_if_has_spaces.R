@@ -9,6 +9,7 @@
 #' the filename is surrounded by quotes
 #' @author Richèl J.C. Bilderbeek
 #' @examples
+#' remove_beaustier_folders()
 #' check_empty_beaustier_folders()
 #'
 #' add_quotes_if_has_spaces("x")
