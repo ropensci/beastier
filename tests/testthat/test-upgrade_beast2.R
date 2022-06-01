@@ -3,4 +3,5 @@ test_that("deprecation message", {
     upgrade_beast2(),
     "'beastier::upgrade_beast2' is deprecated"
   )
+  remove_beaustier_folders()
 })

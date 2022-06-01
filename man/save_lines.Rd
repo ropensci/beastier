@@ -22,6 +22,8 @@ text <- c("hello", "world")
 filename <- get_beastier_tempfilename()
 save_lines(filename = filename, lines = text)
 file.remove(filename)
+
+remove_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

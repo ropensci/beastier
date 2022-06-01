@@ -8,6 +8,8 @@
 #' filename <- get_beastier_tempfilename()
 #' save_lines(filename = filename, lines = text)
 #' file.remove(filename)
+#'
+#' remove_beaustier_folders()
 #' @export
 save_lines <- function(filename, lines) {
   dir.create(dirname(filename), showWarnings = FALSE, recursive = TRUE)
