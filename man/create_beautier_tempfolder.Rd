@@ -13,11 +13,12 @@ nothing
 Create the default `beautier` temporary folder
 }
 \examples{
+check_empty_beaustier_folders()
+
 create_beautier_tempfolder()
 
-remove_beautier_folder()
-
-check_empty_beautier_folder()
+remove_beaustier_folders()
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek
