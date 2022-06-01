@@ -2,6 +2,8 @@ test_that("minimal use", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
+  check_empty_beaustier_folders()
+
   beast2_options <- create_beast2_options(
     input_filename = get_beastier_path("2_4.xml")
   )
@@ -11,13 +13,15 @@ test_that("minimal use", {
   expect_true(file.exists(beast2_options$output_state_filename))
   file.remove(beast2_options$output_state_filename)
 
-  expect_silent(check_empty_beastier_folder())
-  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })
 
 test_that("minimal use with verbose", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   sink_tempfile <- beautier::get_beautier_tempfilename()
   dir.create(dirname(sink_tempfile), showWarnings = FALSE, recursive = TRUE)
@@ -34,13 +38,15 @@ test_that("minimal use with verbose", {
   file.remove(sink_tempfile)
   file.remove(beast2_options$output_state_filename)
 
-  expect_silent(check_empty_beastier_folder())
-  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })
 
 test_that("longer trace", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   # Prevent check_can_create_treelog_file problem
   do_skip <- TRUE
@@ -79,4 +85,6 @@ test_that("longer trace", {
   file.remove(beast2_options$input_filename)
   file.remove(beast2_options$output_state_filename)
 
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })

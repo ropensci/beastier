@@ -2,6 +2,8 @@ test_that("use, bin", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
+  check_empty_beaustier_folders()
+
   beast2_bin_path <- get_default_beast2_bin_path()
   input_filename <- "input.xml"
 
@@ -15,11 +17,15 @@ test_that("use, bin", {
     input_filename
   )
   expect_equal(created, expected)
+
+  check_empty_beaustier_folders()
 })
 
 test_that("use, jar", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   beast2_jar_path <- get_default_beast2_jar_path()
   input_filename <- "input.xml"
@@ -37,11 +43,14 @@ test_that("use, jar", {
     input_filename
   )
   expect_equal(created, expected)
+  check_empty_beaustier_folders()
 })
 
 test_that("use, bin, spaces in BEAST2 bin path", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   beast2_path <- file.path(
     get_beastier_tempfilename(),
@@ -62,12 +71,16 @@ test_that("use, bin, spaces in BEAST2 bin path", {
   # The first cmd is the file to be run. It must be findable
   expect_true(file.exists(cmd[1]))
   expect_equal(cmd[1], beast2_path)
-  unlink(dirname(dirname(beast2_path)), recursive = TRUE)
+
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })
 
 test_that("use, bin, spaces in BEAST2 jar path", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   beast2_path <- file.path(
     get_beastier_tempfilename(),
@@ -87,12 +100,16 @@ test_that("use, bin, spaces in BEAST2 jar path", {
   )
   expect_false(beast2_path %in% cmd)
   expect_true(shQuote(beast2_path) %in% cmd)
-  unlink(dirname(dirname(beast2_path)), recursive = TRUE)
+
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })
 
 test_that("use, bin, spaces in BEAST2 input filename", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   input_filename <- "path with spaces/input.xml"
 
@@ -102,11 +119,15 @@ test_that("use, bin, spaces in BEAST2 input filename", {
   )
   expect_false("path with spaces/input.xml" %in% cmd)
   expect_true(shQuote("path with spaces/input.xml") %in% cmd)
+
+  check_empty_beaustier_folders()
 })
 
 test_that("use, jar, spaces in BEAST2 input filename", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   input_filename <- "path with spaces/input.xml"
 
@@ -116,4 +137,6 @@ test_that("use, jar, spaces in BEAST2 input filename", {
   )
   expect_false("path with spaces/input.xml" %in% cmd)
   expect_true(shQuote("path with spaces/input.xml") %in% cmd)
+
+  check_empty_beaustier_folders()
 })

@@ -19,7 +19,6 @@ test_that("use, fast", {
     )
   )
   check_empty_beaustier_folders()
-
 })
 
 test_that("use, deep", {
@@ -35,6 +34,8 @@ test_that("use, deep", {
       beast2_path = get_default_beast2_path()
     )
   )
+
+  remove_beaustier_folders()
   check_empty_beaustier_folders()
 })
 

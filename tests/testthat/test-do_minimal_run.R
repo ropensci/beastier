@@ -6,5 +6,6 @@ test_that("use", {
 
   expect_silent(do_minimal_run())
 
+  remove_beaustier_folders()
   check_empty_beaustier_folders()
 })

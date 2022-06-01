@@ -29,6 +29,8 @@ test_that("local file in temp folder", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
+  check_empty_beaustier_folders()
+
   cur_wd <- getwd()
   tmp_wd <- get_beastier_tempfilename(pattern = "beast2_tmp_folder")
   dir.create(tmp_wd, showWarnings = FALSE, recursive = TRUE)
@@ -57,10 +59,10 @@ test_that("local file in temp folder", {
   expect_true(file.exists(output_state_filename))
   file.remove(input_filename)
   file.remove(output_state_filename)
-  unlink(dirname(tmp_wd), recursive = TRUE)
 
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 
-  expect_silent(check_empty_beastier_folder())
   setwd(cur_wd) # Really do this last # nolint really need this
 })
 
@@ -69,6 +71,8 @@ test_that("file with full path in temp folder", {
   skip("This test takes unexpectedly long")
 
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   cur_wd <- getwd()
 
@@ -85,16 +89,18 @@ test_that("file with full path in temp folder", {
 
   expect_true(file.exists(beast2_options$output_state_filename))
   file.remove(beast2_options$output_state_filename)
-  unlink(dirname(tmp_wd), recursive = TRUE)
 
-  expect_silent(check_empty_beastier_folder())
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
+
   setwd(cur_wd) # Really do this last # nolint really need this
-  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
 })
 
 test_that("use sub-sub-sub-folder for output_state_filename", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   input_filename <- get_beastier_path("2_4.xml")
   beast2_options <- create_beast2_options(
@@ -107,18 +113,16 @@ test_that("use sub-sub-sub-folder for output_state_filename", {
   run_beast2_from_options(beast2_options = beast2_options)
 
   expect_true(file.exists(beast2_options$output_state_filename))
-  unlink(
-    dirname(dirname(dirname(dirname(beast2_options$output_state_filename)))),
-    recursive = TRUE
-  )
-  expect_silent(check_empty_beastier_folder())
+
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })
 
 test_that("use sub-sub-sub-folder for tracelog, screenlog and treelog", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
-  expect_silent(check_empty_beaustier_folders())
+  check_empty_beaustier_folders()
 
   mcmc <- beautier::create_test_mcmc(
     tracelog = beautier::create_test_tracelog(
@@ -160,18 +164,16 @@ test_that("use sub-sub-sub-folder for tracelog, screenlog and treelog", {
 
   file.remove(beast2_input_filename)
   expect_true(file.exists(beast2_options$output_state_filename))
-  unlink(
-    dirname(beast2_options$output_state_filename),
-    recursive = TRUE
-  )
-  expect_silent(check_empty_beastier_folder())
 
-  expect_silent(check_empty_beaustier_folders())
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })
 
 test_that("use relative and sub-sub-sub-folders", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   input_filename <- get_beastier_path("2_4.xml")
   beast2_options <- create_beast2_options(
@@ -184,19 +186,17 @@ test_that("use relative and sub-sub-sub-folders", {
   run_beast2_from_options(beast2_options = beast2_options)
 
   expect_true(file.exists(beast2_options$output_state_filename))
-  unlink(
-    dirname(
-      dirname(dirname(dirname(dirname(beast2_options$output_state_filename))))
-    ),
-    recursive = TRUE
-  )
-  expect_silent(check_empty_beastier_folder())
+
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })
 
 
 test_that("show proper error message when using CBS with too few taxa", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   # Prepare XML file for beastier
   fasta_filename <- beastier::get_beastier_path("test_output_2.fas")
@@ -223,6 +223,8 @@ test_that("show proper error message when using CBS with too few taxa", {
     "'group_sizes_dimension' .* must be less than the number of taxa"
   )
   expect_false(file.exists(beast2_input_file))
+
+  check_empty_beaustier_folders()
 })
 
 
@@ -231,6 +233,8 @@ test_that("BEAST2 freezes when treelog file already exists", {
   skip("Issue 50, Issue #50")
 
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   beast2_xml_filename <- get_beastier_tempfilename()
 
@@ -263,14 +267,18 @@ test_that("BEAST2 freezes when treelog file already exists", {
     )
   )
 
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })
 
 test_that("use", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
+  check_empty_beaustier_folders()
+
   fake_win_filename <- file.path(get_beastier_tempfilename(), "BEAST2.exe")
-  dir.create(dirname(fake_win_filename))
+  dir.create(dirname(fake_win_filename), recursive = TRUE, showWarnings = FALSE)
   file.create(fake_win_filename)
   expect_error(
     run_beast2_from_options(
@@ -281,12 +289,16 @@ test_that("use", {
     ),
     "Cannot use the Windows executable BEAST2.exe in scripts"
   )
-  unlink(dirname(fake_win_filename), recursive = TRUE)
+
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })
 
 test_that("use tildes instead of full path", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   # Copy a file to the home folder, must be deleted in the end
   full_path <- get_beastier_path("2_4.xml")
@@ -313,11 +325,15 @@ test_that("use tildes instead of full path", {
 
   file.remove(relative_in_path)
   file.remove(relative_out_path)
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })
 
 test_that("Run with spaces in the input filename, for Windows", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
+
+  check_empty_beaustier_folders()
 
   input_filename <- get_beastier_tempfilename(
     "file with spaces ", fileext = ".xml"
@@ -340,13 +356,16 @@ test_that("Run with spaces in the input filename, for Windows", {
   expect_true(file.exists(output_state_filename))
   file.remove(input_filename)
   file.remove(output_state_filename)
+
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })
 
 test_that("Run with spaces in the output state filename, for Windows", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
-  expect_silent(check_empty_beaustier_folders())
+  check_empty_beaustier_folders()
 
   output_state_filename <- get_beastier_tempfilename(
     "file with spaces ", fileext = ".state.xml"
@@ -363,5 +382,6 @@ test_that("Run with spaces in the output state filename, for Windows", {
   expect_true(file.exists(output_state_filename))
   file.remove(output_state_filename)
 
-  expect_silent(check_empty_beaustier_folders())
+  remove_beaustier_folders()
+  check_empty_beaustier_folders()
 })
