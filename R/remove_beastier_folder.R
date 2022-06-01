@@ -4,7 +4,7 @@
 #' The goal is to make sure no temporary files are left undeleted.
 #' Will \link{stop} if there are files in the \link{beautier} folder.
 #'
-#' @seealso use \link{remove_beautier_folder} to remove the default
+#' @seealso use \link[beautier]{remove_beautier_folder} to remove the default
 #' `beautier` folder
 #' @return Nothing.
 #' @examples

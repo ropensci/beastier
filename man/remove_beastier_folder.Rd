@@ -22,7 +22,7 @@ remove_beastier_folder()
 check_empty_beastier_folder()
 }
 \seealso{
-use \link{remove_beautier_folder} to remove the default
+use \link[beautier]{remove_beautier_folder} to remove the default
 `beautier` folder
 }
 \author{
