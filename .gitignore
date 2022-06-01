@@ -33,3 +33,5 @@ install_beast2.R
 ^test_output_0\.trees$
 
 *.sif
+/doc/
+/Meta/
