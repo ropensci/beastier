@@ -1,17 +1,10 @@
 library(testthat)
 library(beastier)
 
-# Make sure no temp files are left undeleted
-# beastierinstall::clear_beautier_cache(); beastierinstall::clear_beastier_cache() # nolint
-beautier::check_empty_beautier_folder()
-beastier::check_empty_beastier_folder()
+beastier::remove_beaustier_folders()
+beastier::check_empty_beaustier_folders()
 
 test_check("beastier")
 
-beautier::check_empty_beautier_folder()
-beastier::check_empty_beastier_folder()
-
-unlink(
-  dirname(beastier::get_beastier_tempfilename()),
-  recursive = TRUE
-)
+beastier::remove_beaustier_folders()
+beastier::check_empty_beaustier_folders()

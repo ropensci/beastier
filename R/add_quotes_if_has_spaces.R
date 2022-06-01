@@ -9,8 +9,12 @@
 #' the filename is surrounded by quotes
 #' @author Richèl J.C. Bilderbeek
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' add_quotes_if_has_spaces("x")
 #' add_quotes_if_has_spaces("a b")
+#'
+#' check_empty_beaustier_folders()
 #' @export
 add_quotes_if_has_spaces <- function(filename) {
   if (!is.character(filename)) {

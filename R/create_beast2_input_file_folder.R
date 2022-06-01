@@ -2,8 +2,13 @@
 #' @inheritParams default_params_doc
 #' @return nothing
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' beast2_options <- create_beast2_options()
 #' create_beast2_input_file_folder(beast2_options)
+#'
+#' remove_beaustier_folders()
+#' check_empty_beaustier_folders()
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_beast2_input_file_folder <- function( # nolint indeed a long function name

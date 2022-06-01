@@ -16,10 +16,14 @@ one or more alignment IDs
 Get the alignment ID from a file with one alignment
 }
 \examples{
+check_empty_beaustier_folders()
+
 # test_output_0
 get_alignment_ids_from_xml_filename(get_beastier_path("2_4.xml"))
 # c("anthus_aco","anthus_nd2")
 get_alignment_ids_from_xml_filename(get_beastier_path("anthus_15_15.xml"))
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

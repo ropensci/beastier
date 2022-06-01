@@ -6,9 +6,13 @@
 #'   Use \link{install_beast2} with default arguments
 #'   to install BEAST2 to this location.
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' if (is_beast2_installed()) {
 #'   get_default_beast2_bin_path()
 #' }
+#'
+#' check_empty_beaustier_folders()
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_default_beast2_bin_path <- function(

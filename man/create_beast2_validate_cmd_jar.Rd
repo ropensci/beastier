@@ -32,11 +32,15 @@ Creates the terminal command to validate a BEAST2 input file
 using a call to the \code{launcher.jar} file
 }
 \examples{
-  if (is_beast2_installed() && is_on_ci()) {
-    create_beast2_validate_cmd_jar(
-      input_filename = "input.xml"
-    )
-  }
+check_empty_beaustier_folders()
+
+if (is_beast2_installed() && is_on_ci()) {
+  create_beast2_validate_cmd_jar(
+    input_filename = "input.xml"
+  )
+}
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

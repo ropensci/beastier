@@ -20,7 +20,10 @@ the treelog filename for a BEAST2 input file
 Extract the treelog filename from a BEAST2 input file
 }
 \examples{
+check_empty_beaustier_folders()
+
 beast2_input_filename <- get_beastier_tempfilename()
+
 beautier::create_beast2_input_file_from_model(
   input_filename = beautier::get_beautier_path("test_output_0.fas"),
   output_filename = beast2_input_filename
@@ -29,6 +32,9 @@ extract_treelog_filename_from_beast2_input_file(
   input_filename = beast2_input_filename
 )
 file.remove(beast2_input_filename)
+
+remove_beaustier_folders()
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

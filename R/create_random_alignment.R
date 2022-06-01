@@ -6,11 +6,15 @@
 #' @return an alignment of class \link[ape]{DNAbin}
 #' @author Richèl J.C. Bilderbeek
 #' @examples
-#'  alignment <- create_random_alignment(
-#'    n_taxa = 5,
-#'    sequence_length = 10
-#'  )
-#'  image(alignment)
+#' check_empty_beaustier_folders()
+#'
+#' alignment <- create_random_alignment(
+#'   n_taxa = 5,
+#'   sequence_length = 10
+#' )
+#' image(alignment)
+#'
+#' check_empty_beaustier_folders()
 #' @export
 create_random_alignment <- function(
   n_taxa,

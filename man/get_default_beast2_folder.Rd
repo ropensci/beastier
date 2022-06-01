@@ -16,7 +16,11 @@ Get the path to the folder where this package installs
 BEAST2 by default
 }
 \examples{
-  message(get_default_beast2_folder())
+check_empty_beaustier_folders()
+
+get_default_beast2_folder()
+
+check_empty_beaustier_folders()
 }
 \seealso{
 Use \link{get_default_beast2_jar_path} to get the path

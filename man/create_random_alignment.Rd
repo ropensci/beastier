@@ -22,11 +22,15 @@ an alignment of class \link[ape]{DNAbin}
 Create a random alignment
 }
 \examples{
- alignment <- create_random_alignment(
-   n_taxa = 5,
-   sequence_length = 10
- )
- image(alignment)
+check_empty_beaustier_folders()
+
+alignment <- create_random_alignment(
+  n_taxa = 5,
+  sequence_length = 10
+)
+image(alignment)
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

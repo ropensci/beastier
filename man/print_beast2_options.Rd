@@ -18,7 +18,11 @@ Nothing. Will display the `beast2_options` using \link{cat}.
 Pretty-print a `beast2_options`
 }
 \examples{
+check_empty_beaustier_folders()
+
 print_beast2_options(create_beast2_options())
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

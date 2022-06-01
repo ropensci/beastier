@@ -36,6 +36,8 @@ a `beast2_options` with the filenames it contains renamed
 Rename the filenames in the BEAST2 options
 }
 \examples{
+check_empty_beaustier_folders()
+
 # beast2_options with local filenames
 beast2_options <- create_beast2_options(
   input_filename = "my.fas",
@@ -46,6 +48,8 @@ rename_beast2_options_filenames(
   beast2_options = beast2_options,
   rename_fun = beautier::get_replace_dir_fun("/my/new/folder")
 )
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

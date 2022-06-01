@@ -18,11 +18,15 @@ Will \link{stop} if the number of threads in invalid
 Will \link{stop} if not.
 }
 \examples{
+check_empty_beaustier_folders()
+
 # Can have 1 or more threads
 check_n_threads(1)
 check_n_threads(2)
 # Can have NA threads
 check_n_threads(NA)
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

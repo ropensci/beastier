@@ -6,11 +6,15 @@
 #' Will \link{stop} if the RNG seed is invalid
 #' @author Richèl J.C. Bilderbeek
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' # Numbers from 1 and higher are valid RNG seeds
 #' check_rng_seed(1)
 #' check_rng_seed(2)
 #' # Also NA is a valid RNG seed
 #' check_rng_seed(NA)
+#'
+#' check_empty_beaustier_folders()
 #' @export
 check_rng_seed <- function(rng_seed) {
   if (length(rng_seed) != 1) {

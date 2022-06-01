@@ -5,10 +5,14 @@
 #'   Will call \code{\link{stop}} if the BEAST2 \code{.jar} path has a problem
 #' @author Richèl J.C. Bilderbeek
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' if (is_beast2_installed()) {
 #'   beast2_path <- get_default_beast2_jar_path()
 #'   check_beast2_path(beast2_path)
 #' }
+#'
+#' check_empty_beaustier_folders()
 #' @export
 check_beast2_path <- function(beast2_path) {
   beautier::check_file_exists(beast2_path, "beast2_path")

@@ -2,6 +2,8 @@
 #' @inheritParams default_params_doc
 #' @return a `beast2_options` with the filenames it contains renamed
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' # beast2_options with local filenames
 #' beast2_options <- create_beast2_options(
 #'   input_filename = "my.fas",
@@ -12,6 +14,8 @@
 #'   beast2_options = beast2_options,
 #'   rename_fun = beautier::get_replace_dir_fun("/my/new/folder")
 #' )
+#'
+#' check_empty_beaustier_folders()
 #' @author Richèl J.C. Bilderbeek
 #' @export
 rename_beast2_options_filenames <- function( # nolint sure, this is a long function name

@@ -2,10 +2,14 @@
 #' @param xml_filename name of a BEAST2 XML input filename
 #' @return one or more alignment IDs
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' # test_output_0
 #' get_alignment_ids_from_xml_filename(get_beastier_path("2_4.xml"))
 #' # c("anthus_aco","anthus_nd2")
 #' get_alignment_ids_from_xml_filename(get_beastier_path("anthus_15_15.xml"))
+#'
+#' check_empty_beaustier_folders()
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_alignment_ids_from_xml_filename <- function( # nolint indeed a long function name, but I preferred to keep it: a normal user should use 'get_alignment_ids'

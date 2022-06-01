@@ -6,11 +6,15 @@
 #' Will \link{stop} if the number of threads in invalid
 #' @author Richèl J.C. Bilderbeek
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' # Can have 1 or more threads
 #' check_n_threads(1)
 #' check_n_threads(2)
 #' # Can have NA threads
 #' check_n_threads(NA)
+#'
+#' check_empty_beaustier_folders()
 #' @export
 check_n_threads <- function(n_threads) {
   if (length(n_threads) != 1) {

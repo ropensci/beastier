@@ -11,6 +11,8 @@ an R interface. 'beastier' closely follows the interface
 of BEAST2, including its default settings.
 }
 \examples{
+check_empty_beaustier_folders()
+
 beast2_options <- create_beast2_options(
   input_filename = get_beastier_path("2_4.xml")
 )
@@ -18,7 +20,10 @@ beast2_options <- create_beast2_options(
 if (is_beast2_installed() && is_on_ci()) {
   run_beast2_from_options(beast2_options)
   file.remove(beast2_options$output_state_filename)
+  remove_beaustier_folders()
 }
+
+check_empty_beaustier_folders()
 }
 \seealso{
 These are packages associated with \code{beastier}:

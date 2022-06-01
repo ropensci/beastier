@@ -19,7 +19,11 @@ Will \code{stop} if the BEAST2 option object is invalid
 Calls \code{stop} if the BEAST2 option object is invalid
 }
 \examples{
+check_empty_beaustier_folders()
+
 check_beast2_options(create_beast2_options())
+
+check_empty_beaustier_folders()
 }
 \seealso{
 Use \link{create_beast2_options} to create a valid

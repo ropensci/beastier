@@ -13,7 +13,11 @@ the BEAST2 version
 Get the default BEAST2 version that is used by beastier
 }
 \examples{
+check_empty_beaustier_folders()
+
 get_default_beast2_version()
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

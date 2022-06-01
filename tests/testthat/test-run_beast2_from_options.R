@@ -116,6 +116,8 @@ test_that("use sub-sub-sub-folder for tracelog, screenlog and treelog", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
+  expect_silent(check_empty_beaustier_folders())
+
   mcmc <- beautier::create_test_mcmc(
     tracelog = beautier::create_test_tracelog(
       filename = file.path(
@@ -162,9 +164,7 @@ test_that("use sub-sub-sub-folder for tracelog, screenlog and treelog", {
   )
   expect_silent(check_empty_beastier_folder())
 
-  beautier::check_empty_beautier_folder()
-  beastier::check_empty_beastier_folder()
-  # beastierinstall::clear_beautier_cache() ; beastierinstall::clear_beastier_cache() # nolint
+  expect_silent(check_empty_beaustier_folders())
 })
 
 test_that("use relative and sub-sub-sub-folders", {
@@ -344,6 +344,8 @@ test_that("Run with spaces in the output state filename, for Windows", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
+  expect_silent(check_empty_beaustier_folders())
+
   output_state_filename <- get_beastier_tempfilename(
     "file with spaces ", fileext = ".state.xml"
   )
@@ -359,6 +361,5 @@ test_that("Run with spaces in the output state filename, for Windows", {
   expect_true(file.exists(output_state_filename))
   file.remove(output_state_filename)
 
-  beautier::check_empty_beautier_folder()
-  beastier::check_empty_beastier_folder()
+  expect_silent(check_empty_beaustier_folders())
 })

@@ -40,6 +40,7 @@ this function only works on standard BEAST2 input files:
     this function will label it as an invalid file
 }
 \examples{
+check_empty_beaustier_folders()
 
 if (is_beast2_installed() && is_on_ci()) {
 
@@ -52,6 +53,8 @@ if (is_beast2_installed() && is_on_ci()) {
   # it is a BEAST2 output log file insteaf
   is_beast2_input_file(filename)
 }
+
+check_empty_beaustier_folders()
 }
 \seealso{
 Use \code{\link{are_beast2_input_lines}} to check the lines

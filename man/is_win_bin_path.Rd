@@ -18,11 +18,15 @@ Is the path a path to the BEAST2 binary file?
 Does not check if the file at that path is present
 }
 \examples{
+check_empty_beaustier_folders()
+
 # TRUE
 is_win_bin_path("BEAST.exe")
 # FALSE
 is_win_bin_path("beast")
 is_win_bin_path("launcher.jar")
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

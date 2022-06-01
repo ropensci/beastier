@@ -16,7 +16,11 @@ Create a temporary file for the BEAST2 XML output file that
 stores its state.
 }
 \examples{
+check_empty_beaustier_folders()
+
 create_temp_state_filename()
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

@@ -29,7 +29,11 @@ Creates a \link{beastier} report, to be used when reporting bugs.
 Uses \link{message}
 }
 \examples{
+check_empty_beaustier_folders()
+
 beastier_report()
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

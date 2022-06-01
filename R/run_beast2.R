@@ -4,6 +4,7 @@
 #'   It will create the file with name \code{output_state_filenames}
 #' @export
 #' @examples
+#' check_empty_beaustier_folders()
 #'
 #' if (is_beast2_installed() && is_on_ci()) {
 #'
@@ -15,7 +16,10 @@
 #'
 #'   )
 #'   file.remove(output_state_filename)
+#'   remove_beaustier_folders()
 #' }
+#'
+#' check_empty_beaustier_folders()
 #' @author Richèl J.C. Bilderbeek
 run_beast2 <- function(
   input_filename,

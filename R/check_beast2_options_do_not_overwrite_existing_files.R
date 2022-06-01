@@ -7,9 +7,13 @@
 #' @inheritParams default_params_doc
 #' @return Nothing. Will \link{stop} if a file is threatened to be overwritten
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' check_beast2_options_do_not_overwrite_existing_files(
 #'   beast2_options = create_beast2_options()
 #' )
+#'
+#' check_empty_beaustier_folders()
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_beast2_options_do_not_overwrite_existing_files <- function( # nolint indeed a long function name, which is fine for internal functions

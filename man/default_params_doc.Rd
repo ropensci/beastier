@@ -15,6 +15,7 @@ default_params_doc(
   beast2_version,
   beast2_working_dir,
   beastier_folder,
+  beautier_folder,
   clock_model,
   clock_models,
   crown_age,
@@ -97,6 +98,8 @@ BEAST2 to run in multiple parallel processes.}
 
 \item{beastier_folder}{the path to
 the \link{beastier} temporary files folder}
+
+\item{beautier_folder}{temporary folder used by \link[beautier]{beautier}}
 
 \item{clock_model}{a \code{beautier} clock model}
 

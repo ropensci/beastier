@@ -64,13 +64,17 @@ a character vector with the command and
 Creates the terminal command to run BEAST2
 }
 \examples{
-  if (is_beast2_installed()) {
-    create_beast2_run_cmd(
-      input_filename = "input.xml",
-      output_state_filename = "output.xml.state",
-      beast2_path = get_default_beast2_jar_path()
-    )
-  }
+check_empty_beaustier_folders()
+
+if (is_beast2_installed()) {
+  create_beast2_run_cmd(
+    input_filename = "input.xml",
+    output_state_filename = "output.xml.state",
+    beast2_path = get_default_beast2_jar_path()
+  )
+}
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

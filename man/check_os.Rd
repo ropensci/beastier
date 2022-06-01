@@ -17,9 +17,13 @@ Nothing. Will \link{stop} if the OS is unsupported
 Checks if the operating system is supported
 }
 \examples{
+check_empty_beaustier_folders()
+
 check_os("mac")
 check_os("unix")
 check_os("win")
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

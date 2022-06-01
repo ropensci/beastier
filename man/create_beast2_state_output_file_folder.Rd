@@ -18,8 +18,12 @@ nothing
 Create the folder where the BEAST2 state output file will be created
 }
 \examples{
+check_empty_beaustier_folders()
+
 beast2_options <- create_beast2_options()
 create_beast2_state_output_file_folder(beast2_options)
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

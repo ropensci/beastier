@@ -14,7 +14,11 @@ and has extension `.xml`
 Create a temporary filename for the BEAST2 XML filename
 }
 \examples{
+check_empty_beaustier_folders()
+
 create_temp_input_filename()
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

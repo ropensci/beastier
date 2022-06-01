@@ -26,7 +26,11 @@ TRUE if BEAST2 is installed
 Checks if BEAST2 is installed
 }
 \examples{
+check_empty_beaustier_folders()
+
 is_beast2_installed()
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

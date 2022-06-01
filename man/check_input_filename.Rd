@@ -22,9 +22,13 @@ Checks the input filename.
 Will stop if there is a problem with the input filename.
 }
 \examples{
+check_empty_beaustier_folders()
+
 check_input_filename(
   get_beastier_path("beast2_example_output.log")
 )
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

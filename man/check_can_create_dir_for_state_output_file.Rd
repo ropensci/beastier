@@ -21,9 +21,13 @@ Check if the folder for the state output file
 can be created. Will \link{stop} otherwise
 }
 \examples{
+check_empty_beaustier_folders()
+
 check_can_create_dir_for_state_output_file(
   beast2_options = create_beast2_options()
 )
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

@@ -23,9 +23,13 @@ the BEAST2 version
 Get the BEAST2 version
 }
 \examples{
+check_empty_beaustier_folders()
+
 if (is_beast2_installed() && is_on_ci()) {
   get_beast2_version()
 }
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

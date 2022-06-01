@@ -18,6 +18,8 @@ Is the path a path to the BEAST2 binary file?
 Does not check if the file at that path is present
 }
 \examples{
+check_empty_beaustier_folders()
+
 if (is_beast2_installed()) {
   # TRUE
   is_bin_path("beast")
@@ -27,6 +29,8 @@ if (is_beast2_installed()) {
   is_bin_path("launcher.jar")
   is_bin_path(get_default_beast2_jar_path())
 }
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

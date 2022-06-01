@@ -20,6 +20,8 @@ the name of the tracelog file
 Extract the tracelog filename for a BEAST2 input file
 }
 \examples{
+check_empty_beaustier_folders()
+
 beast2_input_filename <- get_beastier_tempfilename()
 tracelog_filename <- get_beastier_tempfilename()
 beautier::create_beast2_input_file_from_model(
@@ -37,6 +39,9 @@ extract_tracelog_filename_from_beast2_input_file(
   input_filename = beast2_input_filename
 )
 file.remove(beast2_input_filename)
+
+remove_beaustier_folders()
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

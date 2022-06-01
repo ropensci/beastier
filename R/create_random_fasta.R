@@ -4,6 +4,8 @@
 #' @return Nothing, creates a FASTA file
 #' @author Richèl J.C. Bilderbeek
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' fasta_filename <- get_beastier_tempfilename()
 #' create_random_fasta(
 #'   n_taxa = 5,
@@ -11,6 +13,9 @@
 #'   fasta_filename = fasta_filename
 #' )
 #' file.remove(fasta_filename)
+#'
+#' remove_beaustier_folders()
+#' check_empty_beaustier_folders()
 #' @export
 create_random_fasta <- function(
   n_taxa,

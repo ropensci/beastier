@@ -3,9 +3,13 @@
 #' @return the BEAST2 version
 #' @author Richèl J.C. Bilderbeek
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' if (is_beast2_installed() && is_on_ci()) {
 #'   get_beast2_version()
 #' }
+#'
+#' check_empty_beaustier_folders()
 #' @export
 get_beast2_version <- function(
   beast2_path = get_default_beast2_path()

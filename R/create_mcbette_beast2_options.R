@@ -14,7 +14,11 @@
 #' for model comparison) BEAST2 options structure,
 #' use  \link{create_beast2_options}
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' create_mcbette_beast2_options()
+#'
+#' check_empty_beaustier_folders()
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_mcbette_beast2_options <- function(

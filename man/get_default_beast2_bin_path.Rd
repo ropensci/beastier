@@ -28,9 +28,13 @@ the default BEAST2 binary file's path
 Get the default BEAST2 binary file (\code{beast}, that is) path
 }
 \examples{
+check_empty_beaustier_folders()
+
 if (is_beast2_installed()) {
   get_default_beast2_bin_path()
 }
+
+check_empty_beaustier_folders()
 }
 \seealso{
 Use \link{get_default_beast2_folder} to get the default

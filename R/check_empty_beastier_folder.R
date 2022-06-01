@@ -11,6 +11,7 @@
 check_empty_beastier_folder <- function(
   beastier_folder = get_beastier_folder()
 ) {
+  if (!dir.exists(beastier_folder)) return(invisible(beastier_folder))
   dirs <- normalizePath(list.dirs(beastier_folder))
   dirs <- dirs[dirs != normalizePath(beastier_folder, mustWork = FALSE)]
 
@@ -33,4 +34,8 @@ check_empty_beastier_folder <- function(
         paste(utils::head(filenames), collapse = ",")
     )
   }
+  if (dir.exists(beastier_folder)) {
+    stop("'beastier' folder found at ", beastier_folder)
+  }
+  invisible(beastier_folder)
 }

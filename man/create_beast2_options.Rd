@@ -83,8 +83,12 @@ of which all elements are checked (by \link{check_beast2_options})
 These BEAST2 options are the R equivalent of the command-line options.
 }
 \examples{
+check_empty_beaustier_folders()
+
 beast2_options <- create_beast2_options()
 check_beast2_options(beast2_options)
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

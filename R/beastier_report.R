@@ -5,7 +5,11 @@
 #' @inheritParams default_params_doc
 #' @return No return value, the information will be shown using \link{message}
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' beastier_report()
+#'
+#' check_empty_beaustier_folders()
 #' @author Richèl J.C. Bilderbeek
 #' @export
 beastier_report <- function(

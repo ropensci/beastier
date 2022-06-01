@@ -2,7 +2,11 @@
 #' @inheritParams default_params_doc
 #' @return Nothing. Will display the `beast2_options` using \link{cat}.
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' print_beast2_options(create_beast2_options())
+#'
+#' check_empty_beaustier_folders()
 #' @author Richèl J.C. Bilderbeek
 #' @export
 print_beast2_options <- function(beast2_options) {

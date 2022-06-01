@@ -1,4 +1,6 @@
 test_that("tests should have cleaned up all their temp files", {
+  check_empty_beaustier_folders()
+
   expect_silent(check_empty_beastier_folder())
 })
 

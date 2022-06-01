@@ -20,8 +20,12 @@ character vector with the names of the .trees files that BEAST2
 Get the .trees filenames that BEAST2 will produce
 }
 \examples{
+check_empty_beaustier_folders()
+
 get_trees_filenames(get_beastier_path("2_4.xml"))
 get_trees_filenames(get_beastier_path("anthus_2_4.xml"))
+
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

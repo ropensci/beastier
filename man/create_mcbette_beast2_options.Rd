@@ -66,7 +66,11 @@ The generated filenames indicating `mcbette` usage,
 as well as the correct BEAST2 binary/executable type
 }
 \examples{
+check_empty_beaustier_folders()
+
 create_mcbette_beast2_options()
+
+check_empty_beaustier_folders()
 }
 \seealso{
 to create a regular (that is, not intended

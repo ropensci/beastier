@@ -5,9 +5,13 @@
 #' Will \link{stop} if the input file is invalid
 #' @author Richèl J.C. Bilderbeek
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' check_input_filename(
 #'   get_beastier_path("beast2_example_output.log")
 #' )
+#'
+#' check_empty_beaustier_folders()
 #' @export
 check_input_filename <- function(input_filename) {
   beautier::check_file_exists(input_filename, "input_filename")
@@ -20,13 +24,16 @@ check_input_filename <- function(input_filename) {
 #' @return nothing. Will call \code{\link{stop}} if the input file is invalid
 #' @author Richèl J.C. Bilderbeek
 #' @examples
+#' check_empty_beaustier_folders()
+#'
 #' if (is_beast2_installed()) {
 #'   check_input_filename_validity(
-#'    create_beast2_options(
-#'      input_filename = get_beastier_path("2_4.xml")
-#'    )
-#'  )
+#'     create_beast2_options(
+#'       input_filename = get_beastier_path("2_4.xml")
+#'     )
+#'   )
 #' }
+#' check_empty_beaustier_folders()
 #' @export
 check_input_filename_validity <- function(
   beast2_options,

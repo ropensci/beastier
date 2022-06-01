@@ -42,13 +42,16 @@ Checks the input filename.
 Will stop if there is a problem with the input filename.
 }
 \examples{
+check_empty_beaustier_folders()
+
 if (is_beast2_installed()) {
   check_input_filename_validity(
-   create_beast2_options(
-     input_filename = get_beastier_path("2_4.xml")
-   )
- )
+    create_beast2_options(
+      input_filename = get_beastier_path("2_4.xml")
+    )
+  )
 }
+check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

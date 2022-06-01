@@ -28,7 +28,11 @@ the default BEAST2 jar file's path
 Get the default BEAST2 jar file's path
 }
 \examples{
+check_empty_beaustier_folders()
+
 get_default_beast2_jar_path()
+
+check_empty_beaustier_folders()
 }
 \seealso{
 Use \link{get_default_beast2_folder} to get the default
