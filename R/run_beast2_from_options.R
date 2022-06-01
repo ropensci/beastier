@@ -44,7 +44,7 @@ run_beast2_from_options <- function(
   # Create the folders needed
   ##############################################################################
 
-  beautier::create_beautier_tempfolder()
+  beastier::create_beautier_tempfolder()
   beastier::create_beastier_tempfolder()
   beastier::create_beast2_input_file_folder(beast2_options)
   beastier::create_beast2_state_output_file_folder(beast2_options)
