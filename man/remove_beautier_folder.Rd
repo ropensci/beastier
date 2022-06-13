@@ -2,7 +2,7 @@
 % Please edit documentation in R/remove_beautier_folder.R
 \name{remove_beautier_folder}
 \alias{remove_beautier_folder}
-\title{Check there are no files in the default `beautier` folder}
+\title{Deprecated function, use \link[beautier]{remove_beautier_folder}.}
 \usage{
 remove_beautier_folder()
 }
@@ -10,12 +10,12 @@ remove_beautier_folder()
 Nothing.
 }
 \description{
+Deprecated function, use \link[beautier]{remove_beautier_folder}.
+}
+\details{
 Check there are no files in the default `beautier` folder.
 The goal is to make sure no temporary files are left undeleted.
 Will \link{stop} if there are files in the `beautier` folder.
-}
-\examples{
-remove_beautier_folder()
 }
 \author{
 Richèl J.C. Bilderbeek

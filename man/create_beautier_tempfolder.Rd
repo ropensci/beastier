@@ -2,7 +2,7 @@
 % Please edit documentation in R/create_beautier_tempfolder.R
 \name{create_beautier_tempfolder}
 \alias{create_beautier_tempfolder}
-\title{Create the default `beautier` temporary folder}
+\title{Deprecated function, use \link[beautier]{create_beautier_tempfolder}.}
 \usage{
 create_beautier_tempfolder()
 }
@@ -11,14 +11,6 @@ nothing
 }
 \description{
 Create the default `beautier` temporary folder
-}
-\examples{
-check_empty_beaustier_folders()
-
-create_beautier_tempfolder()
-
-remove_beaustier_folders()
-check_empty_beaustier_folders()
 }
 \author{
 Richèl J.C. Bilderbeek

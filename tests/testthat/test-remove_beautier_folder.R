@@ -1,6 +1,6 @@
 test_that("deprecated", {
   expect_error(
-    beastier::create_beautier_tempfolder(),
+    beastier::remove_beautier_folder(),
     "deprecated"
   )
 })
