@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.4.9 (2022-06-03)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Also deletes the temporary 'beastier' folder
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.4.8 (2021-09-19)
 
 ### NEW FEATURES
