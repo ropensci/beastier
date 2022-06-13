@@ -61,4 +61,4 @@ run_beast2_from_options(beast2_options)
 
     URL https://github.com/ropensci/beastier
 
-    VERSION 2.4.9
+    VERSION 2.4.10
