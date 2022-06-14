@@ -14,7 +14,8 @@ From: r-base
     Rscript -e 'beastierinstall::install_beast2(folder_name = "/opt/beastier")'
 
 %runscript
-exec R --vanilla --silent --no-echo "$@"
+echo "'beastier.sif' running with arguments '$@'"
+exec "$@"
 
 %test
     Rscript -e 'beastier::beastier_report(beast2_folder = "/opt/beastier")'

@@ -36,5 +36,5 @@ jobs:
         run: singularity run-help beastier.sif
 
       - name: Run container
-        run: cat scripts/demo_container.R | ./beastier.sif
+        run: ./scripts/run_container.sh
 
