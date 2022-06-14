@@ -6,7 +6,7 @@ From: r-base
 %post
     sed -i 's/$/ universe/' /etc/apt/sources.list
     apt-get update
-    apt-get -y install libssl-dev libcurl4-openssl-dev libxml2-dev r-cran-stringi libicu-dev r-cran-rjava
+    apt-get -y install libssl-dev libcurl4-openssl-dev libxml2-dev r-cran-rjava
     apt-get clean
     Rscript -e 'install.packages(c("remotes", "devtools"))'
     Rscript -e 'remotes::install_github("ropensci/beastier")'
