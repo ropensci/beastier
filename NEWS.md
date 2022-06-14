@@ -10,7 +10,8 @@ Newest versions at top.
 
 ### MINOR IMPROVEMENTS
 
-  * Also deletes the temporary 'beastier' folder
+  * Add 'remove_beaustier_folders' to delete both the 'beautier' and 'beastier' temporary folders
+  * Add 'check_empty_beaustier_folders' to check that both the 'beautier' and 'beastier' temporary folders are empty
 
 ### BUG FIXES
 
