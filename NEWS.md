@@ -2,7 +2,25 @@
 
 Newest versions at top.
 
-## beastier 2.4.10 (unreleased)
+## beastier 2.4.11 (unreleased)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * None
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
+## beastier 2.4.10 (2022-06-16)
 
 ### NEW FEATURES
 
