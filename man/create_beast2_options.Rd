@@ -12,10 +12,7 @@ create_beast2_options(
   use_beagle = FALSE,
   overwrite = TRUE,
   beast2_path = get_default_beast2_path(),
-  verbose = FALSE,
-  output_log_filename = "deprecated",
-  output_trees_filenames = "deprecated",
-  beast2_working_dir = "deprecated"
+  verbose = FALSE
 )
 }
 \arguments{
@@ -58,21 +55,6 @@ the default BEAST jar file's path}
 
 \item{verbose}{if TRUE, additional information is displayed, that
 is potentially useful in debugging}
-
-\item{output_log_filename}{name of the .log file to create}
-
-\item{output_trees_filenames}{one or more names for .trees file to create.
-There will be one .trees file created per alignment in the input
-file. The number of alignments must equal the number of .trees
-filenames, else an error is thrown. Alignments are sorted alphabetically
-by their IDs}
-
-\item{beast2_working_dir}{a folder where BEAST2 can work in
-isolation.
-For each BEAST2 run, a new subfolder is created in that folder.
-Within this folder, BEAST2 is allowed to create all of its output files,
-without the risk of overwriting existing ones, allowing
-BEAST2 to run in multiple parallel processes.}
 }
 \value{
 a BEAST2 options structure,

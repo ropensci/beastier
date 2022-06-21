@@ -44,33 +44,3 @@ test_that("increase stack space", {
 
   check_empty_beaustier_folders()
 })
-
-# BEAST2 working dir and folder for filenames must differ
-# is tested by test-check_beast2_options_filenames_not_in_working_dir.R
-
-test_that("deprecated variables", {
-
-  check_empty_beaustier_folders()
-
-  expect_error(
-    create_beast2_options(
-      output_log_filename = "should_not_use"
-    ),
-    "'output_log_filename' is deprecated, it is stored in the BEAST2 XML"
-  )
-
-  expect_error(
-    create_beast2_options(
-      output_trees_filenames = "should_not_use"
-    ),
-    "'output_trees_filenames' is deprecated, it is stored in the BEAST2 XML"
-  )
-  expect_error(
-    create_beast2_options(
-      beast2_working_dir = "should_not_use"
-    ),
-    "'beast2_working_dir' is deprecated"
-  )
-
-  check_empty_beaustier_folders()
-})

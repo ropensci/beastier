@@ -6,14 +6,11 @@
 \usage{
 run_beast2(
   input_filename,
-  output_log_filename = "output_log_filename_is_deprecated",
-  output_trees_filenames = "output_trees_filenames_is_deprecated",
   output_state_filename = create_temp_state_filename(),
   rng_seed = NA,
   n_threads = NA,
   use_beagle = FALSE,
   overwrite = TRUE,
-  beast2_working_dir = "beast2_working_dir_is_deprecated",
   beast2_path = get_default_beast2_path(),
   verbose = FALSE
 )
@@ -23,14 +20,6 @@ run_beast2(
 This file usually has an \code{.xml} extension.
 Use \link{create_temp_input_filename} to create a temporary
 filename with that extension.}
-
-\item{output_log_filename}{name of the .log file to create}
-
-\item{output_trees_filenames}{one or more names for .trees file to create.
-There will be one .trees file created per alignment in the input
-file. The number of alignments must equal the number of .trees
-filenames, else an error is thrown. Alignments are sorted alphabetically
-by their IDs}
 
 \item{output_state_filename}{name of the \code{.xml.state} file to create.
 Use \link{create_temp_state_filename} to create a temporary
@@ -54,13 +43,6 @@ If FALSE, BEAST2 will not be started if
   \item{the \code{.log} file created by BEAST2 exists}
   \item{the \code{.trees} files created by BEAST2 exist}
 }}
-
-\item{beast2_working_dir}{a folder where BEAST2 can work in
-isolation.
-For each BEAST2 run, a new subfolder is created in that folder.
-Within this folder, BEAST2 is allowed to create all of its output files,
-without the risk of overwriting existing ones, allowing
-BEAST2 to run in multiple parallel processes.}
 
 \item{beast2_path}{name of either a BEAST2 binary file
 (usually simply \code{beast})

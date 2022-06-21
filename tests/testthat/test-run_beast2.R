@@ -85,36 +85,6 @@ test_that("single alignment, equal RNG seed equal results", {
   check_empty_beaustier_folders()
 })
 
-test_that("abuse", {
-
-  check_empty_beaustier_folders()
-  # Values are checked by 'create_beast2_options'
-  # Only need to check for deprecated arguments
-
-  expect_error(
-    run_beast2(
-      input_filename = get_beastier_path("2_4.xml"),
-      output_log_filename = "irrevant"
-    ),
-    "output_log_filename.*deprecated"
-  )
-  expect_error(
-    run_beast2(
-      input_filename = get_beastier_path("2_4.xml"),
-      output_trees_filenames = "irrevant"
-    ),
-    "output_trees_filenames.*deprecated"
-  )
-  expect_error(
-    run_beast2(
-      input_filename = get_beastier_path("2_4.xml"),
-      beast2_working_dir = "irrevant"
-    ),
-    "beast2_working_dir.*deprecated"
-  )
-  check_empty_beaustier_folders()
-})
-
 test_that("detect errors when BEAST2 is installed", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()

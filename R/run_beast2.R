@@ -23,34 +23,14 @@
 #' @author Richèl J.C. Bilderbeek
 run_beast2 <- function(
   input_filename,
-  output_log_filename = "output_log_filename_is_deprecated",
-  output_trees_filenames = "output_trees_filenames_is_deprecated",
   output_state_filename = create_temp_state_filename(),
   rng_seed = NA,
   n_threads = NA,
   use_beagle = FALSE,
   overwrite = TRUE,
-  beast2_working_dir = "beast2_working_dir_is_deprecated",
   beast2_path = get_default_beast2_path(),
   verbose = FALSE
 ) {
-  # Check for deprecated argument names
-  if (output_log_filename != "output_log_filename_is_deprecated") {
-    stop(
-      "'output_log_filename' is deprecated, it is stored in the BEAST2 XML"
-    )
-  }
-  if (output_trees_filenames != "output_trees_filenames_is_deprecated") {
-    stop(
-      "'output_trees_filenames' is deprecated, it is stored in the BEAST2 XML"
-    )
-  }
-  if (beast2_working_dir != "beast2_working_dir_is_deprecated") {
-    stop(
-      "'beast2_working_dir' is deprecated"
-    )
-  }
-
   beast2_options <- beastier::create_beast2_options(
     input_filename = input_filename,
     output_state_filename = output_state_filename,
@@ -61,6 +41,5 @@ run_beast2 <- function(
     beast2_path = beast2_path,
     verbose = verbose
   )
-
   beastier::run_beast2_from_options(beast2_options)
 }

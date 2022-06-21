@@ -22,28 +22,8 @@ create_beast2_options <- function(
   use_beagle = FALSE,
   overwrite = TRUE,
   beast2_path = get_default_beast2_path(),
-  verbose = FALSE,
-  output_log_filename = "deprecated",
-  output_trees_filenames = "deprecated",
-  beast2_working_dir = "deprecated"
+  verbose = FALSE
 ) {
-  # Check for deprecated argument names
-  if (output_log_filename != "deprecated") {
-    stop(
-      "'output_log_filename' is deprecated, it is stored in the BEAST2 XML"
-    )
-  }
-  if (output_trees_filenames != "deprecated") {
-    stop(
-      "'output_trees_filenames' is deprecated, it is stored in the BEAST2 XML"
-    )
-  }
-  if (beast2_working_dir != "deprecated") {
-    stop(
-      "'beast2_working_dir' is deprecated"
-    )
-  }
-
   beast2_options <- list(
     input_filename = input_filename,
     output_state_filename = output_state_filename,

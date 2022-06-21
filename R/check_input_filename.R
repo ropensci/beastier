@@ -36,30 +36,8 @@ check_input_filename <- function(input_filename) {
 #' check_empty_beaustier_folders()
 #' @export
 check_input_filename_validity <- function(
-  beast2_options,
-  input_filename = "deprecated",
-  beast2_path = "deprecated",
-  verbose = "deprecated"
+  beast2_options
 ) {
-  if (input_filename != "deprecated") {
-    stop(
-      "'input_filename' is deprecated, ",
-      "use 'create_beast2_options(input_filename = input_filename)' instead"
-    )
-  }
-  if (beast2_path != "deprecated") {
-    stop(
-      "'beast2_path' is deprecated, ",
-      "use 'create_beast2_options(beast2_path = beast2_path)' instead"
-    )
-  }
-  if (verbose != "deprecated") {
-    stop(
-      "'verbose' is deprecated, ",
-      "use 'create_beast2_options(verbose = verbose)' instead"
-    )
-  }
-
   # Do not be smart yet
   input_filename <- beast2_options$input_filename
   beast2_path <- beast2_options$beast2_path

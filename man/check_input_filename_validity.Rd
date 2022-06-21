@@ -5,34 +5,12 @@
 \title{Checks the input filename.
 Will stop if there is a problem with the input filename.}
 \usage{
-check_input_filename_validity(
-  beast2_options,
-  input_filename = "deprecated",
-  beast2_path = "deprecated",
-  verbose = "deprecated"
-)
+check_input_filename_validity(beast2_options)
 }
 \arguments{
 \item{beast2_options}{a set of BEAST2 options,
 that are the R equivalent of the BEAST2 command-line options,
 as can be created by \link{create_beast2_options}}
-
-\item{input_filename}{the name of a BEAST2 input XML file.
-This file usually has an \code{.xml} extension.
-Use \link{create_temp_input_filename} to create a temporary
-filename with that extension.}
-
-\item{beast2_path}{name of either a BEAST2 binary file
-(usually simply \code{beast})
-or a BEAST2 jar file
-(usually has a \code{.jar} extension).
-Use \link{get_default_beast2_bin_path} to get
-the default BEAST binary file's path
-Use \link{get_default_beast2_jar_path} to get
-the default BEAST jar file's path}
-
-\item{verbose}{if TRUE, additional information is displayed, that
-is potentially useful in debugging}
 }
 \value{
 nothing. Will call \code{\link{stop}} if the input file is invalid
