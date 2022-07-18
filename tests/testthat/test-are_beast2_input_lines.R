@@ -96,6 +96,7 @@ test_that("clockRate.c ID and ClockPrior.c ID added twice", {
     inference_model = inference_model
   )
   expect_true(are_beast2_input_lines(text))
+  remove_beaustier_folders()
 
   check_empty_beaustier_folders()
 })
