@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_on_ci.R
 \name{is_on_travis}
 \alias{is_on_travis}
-\title{Determines if the environment is Travis CI}
+\title{Deprecated function, use \link[beautier]{is_on_travis}}
 \usage{
 is_on_travis()
 }
@@ -10,12 +10,7 @@ is_on_travis()
 TRUE if run on Travis CI, FALSE otherwise
 }
 \description{
-Determines if the environment is Travis CI
-}
-\examples{
-  if (is_on_ci()) {
-    message("Running on Travis CI")
-  }
+Deprecated function, use \link[beautier]{is_on_travis}
 }
 \author{
 Richèl J.C. Bilderbeek

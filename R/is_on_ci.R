@@ -1,35 +1,23 @@
-#' Determines if the environment is AppVeyor
+#' Deprecated function, use \link[beautier]{is_on_appveyor}
 #' @return TRUE if run on AppVeyor, FALSE otherwise
 #' @author Richèl J.C. Bilderbeek
-#' @examples
-#'   if (is_on_appveyor()) {
-#'     message("Running on AppVeyor")
-#'   }
 #' @export
 is_on_appveyor <- function() {
-  Sys.getenv("APPVEYOR") != "" # nolint internal function
+  stop("Deprecated function, use 'beautier::is_on_appveyor'")
 }
 
-#' Determines if the environment is Travis CI
+#' Deprecated function, use \link[beautier]{is_on_travis}
 #' @return TRUE if run on Travis CI, FALSE otherwise
 #' @author Richèl J.C. Bilderbeek
-#' @examples
-#'   if (is_on_ci()) {
-#'     message("Running on Travis CI")
-#'   }
 #' @export
 is_on_travis <- function() {
-  Sys.getenv("TRAVIS") != "" # nolint internal function
+  stop("Deprecated function, use 'beautier::is_on_travis'")
 }
 
-#' Determines if the environment is a continuous integration service
+#' Deprecated function, use \link[beautier]{is_on_ci}
 #' @return TRUE if run on AppVeyor or Travis CI, FALSE otherwise
 #' @author Richèl J.C. Bilderbeek
-#' @examples
-#'   if (is_on_ci()) {
-#'     message("Running on a continuous integration service")
-#'   }
 #' @export
 is_on_ci <- function() {
-  is_on_appveyor() || is_on_travis() # nolint internal function
+  stop("Deprecated function, use 'beautier::is_on_ci'")
 }

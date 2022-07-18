@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_on_ci.R
 \name{is_on_appveyor}
 \alias{is_on_appveyor}
-\title{Determines if the environment is AppVeyor}
+\title{Deprecated function, use \link[beautier]{is_on_appveyor}}
 \usage{
 is_on_appveyor()
 }
@@ -10,12 +10,7 @@ is_on_appveyor()
 TRUE if run on AppVeyor, FALSE otherwise
 }
 \description{
-Determines if the environment is AppVeyor
-}
-\examples{
-  if (is_on_appveyor()) {
-    message("Running on AppVeyor")
-  }
+Deprecated function, use \link[beautier]{is_on_appveyor}
 }
 \author{
 Richèl J.C. Bilderbeek

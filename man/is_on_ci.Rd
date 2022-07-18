@@ -2,7 +2,7 @@
 % Please edit documentation in R/is_on_ci.R
 \name{is_on_ci}
 \alias{is_on_ci}
-\title{Determines if the environment is a continuous integration service}
+\title{Deprecated function, use \link[beautier]{is_on_ci}}
 \usage{
 is_on_ci()
 }
@@ -10,12 +10,7 @@ is_on_ci()
 TRUE if run on AppVeyor or Travis CI, FALSE otherwise
 }
 \description{
-Determines if the environment is a continuous integration service
-}
-\examples{
-  if (is_on_ci()) {
-    message("Running on a continuous integration service")
-  }
+Deprecated function, use \link[beautier]{is_on_ci}
 }
 \author{
 Richèl J.C. Bilderbeek
