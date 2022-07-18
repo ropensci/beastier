@@ -1,5 +1,6 @@
 test_that("use", {
   remove_beaustier_folders()
+  check_empty_beaustier_folders()
 
   expect_equal(add_quotes_if_has_spaces("x"), "x")
   expect_equal(add_quotes_if_has_spaces("a b"), shQuote("a b"))

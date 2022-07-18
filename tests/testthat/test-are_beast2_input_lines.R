@@ -18,6 +18,7 @@ test_that("use, fast", {
       method = "fast"
     )
   )
+  remove_beaustier_folders()
   check_empty_beaustier_folders()
 })
 
