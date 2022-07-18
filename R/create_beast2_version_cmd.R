@@ -62,7 +62,7 @@ create_beast2_version_cmd_jar <- function(
 #'   and the others are arguments (\code{-jar}, in this case, followed
 #'   by more arguments.
 #' @examples
-#'   if (is_beast2_installed() && is_on_ci()) {
+#'   if (is_beast2_installed() && beautier::is_on_ci()) {
 #'     create_beast2_version_cmd_bin()
 #'   }
 #' @author Richèl J.C. Bilderbeek

@@ -14,7 +14,7 @@ The text sent to \code{STDOUT} and \code{STDERR}.
 To achieve this, \link{run_beast2_from_options} is called.
 }
 \examples{
-if (is_beast2_installed() && is_on_ci()) {
+if (is_beast2_installed() && beautier::is_on_ci()) {
   do_minimal_run()
 }
 }

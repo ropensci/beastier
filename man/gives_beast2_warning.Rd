@@ -35,7 +35,7 @@ when using the BEAST2 XML input file
 }
 \examples{
 if (is_beast2_installed() &&
-  is_on_ci() &&
+  beautier::is_on_ci() &&
   rappdirs::app_dir()$os == "unix") {
 
   # This file is OK for BEAST2, no warning, returns FALSE

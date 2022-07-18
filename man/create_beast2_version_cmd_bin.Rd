@@ -24,7 +24,7 @@ Creates the terminal command to version a BEAST2 input file
 using a call to the \code{launcher.jar} file
 }
 \examples{
-  if (is_beast2_installed() && is_on_ci()) {
+  if (is_beast2_installed() && beautier::is_on_ci()) {
     create_beast2_version_cmd_bin()
   }
 }

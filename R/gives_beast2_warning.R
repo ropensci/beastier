@@ -11,7 +11,7 @@
 #'   example, as loaded from a file) to be valid BEAST2 input.
 #' @examples
 #' if (is_beast2_installed() &&
-#'   is_on_ci() &&
+#'   beautier::is_on_ci() &&
 #'   rappdirs::app_dir()$os == "unix") {
 #'
 #'   # This file is OK for BEAST2, no warning, returns FALSE

@@ -5,7 +5,7 @@
 #' @examples
 #' check_empty_beaustier_folders()
 #'
-#' if (is_beast2_installed() && is_on_ci()) {
+#' if (is_beast2_installed() && beautier::is_on_ci()) {
 #'   beast2_options <- create_beast2_options(
 #'     input_filename = get_beastier_path("2_4.xml")
 #'   )

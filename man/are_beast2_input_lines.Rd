@@ -8,7 +8,7 @@
 are_beast2_input_lines(
   lines,
   verbose = FALSE,
-  method = ifelse(is_on_ci(), "deep", "fast"),
+  method = ifelse(beautier::is_on_ci(), "deep", "fast"),
   beast2_path = get_default_beast2_path()
 )
 }
@@ -40,7 +40,7 @@ Would these lines of text, when written to a file,
   result in a valid BEAST2 input file?
 }
 \examples{
-if (is_beast2_installed() && is_on_ci()) {
+if (is_beast2_installed() && beautier::is_on_ci()) {
   are_beast2_input_lines(get_beastier_path("anthus_2_4.xml"))
 }
 }

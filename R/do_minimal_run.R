@@ -5,7 +5,7 @@
 #'   It will create the files with name \code{output_state_filename}
 #' @export
 #' @examples
-#' if (is_beast2_installed() && is_on_ci()) {
+#' if (is_beast2_installed() && beautier::is_on_ci()) {
 #'   do_minimal_run()
 #' }
 #' @author Richèl J.C. Bilderbeek

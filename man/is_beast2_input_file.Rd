@@ -42,7 +42,7 @@ this function only works on standard BEAST2 input files:
 \examples{
 check_empty_beaustier_folders()
 
-if (is_beast2_installed() && is_on_ci()) {
+if (is_beast2_installed() && beautier::is_on_ci()) {
 
   filename <- get_beastier_path("anthus_2_4.xml")
   # TRUE, this is a BEAST2 input file

@@ -6,7 +6,7 @@
 #' @examples
 #' check_empty_beaustier_folders()
 #'
-#' if (is_beast2_installed() && is_on_ci()) {
+#' if (is_beast2_installed() && beautier::is_on_ci()) {
 #'
 #'   output_state_filename <- create_temp_state_filename()
 #'

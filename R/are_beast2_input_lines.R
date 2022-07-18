@@ -10,14 +10,14 @@
 #' @author Richèl J.C. Bilderbeek
 #' @seealso Use \code{\link{is_beast2_input_file}} to check a file
 #' @examples
-#' if (is_beast2_installed() && is_on_ci()) {
+#' if (is_beast2_installed() && beautier::is_on_ci()) {
 #'   are_beast2_input_lines(get_beastier_path("anthus_2_4.xml"))
 #' }
 #' @export
 are_beast2_input_lines <- function(
   lines,
   verbose = FALSE,
-  method = ifelse(is_on_ci(), "deep", "fast"),
+  method = ifelse(beautier::is_on_ci(), "deep", "fast"),
   beast2_path = get_default_beast2_path()
 ) {
   if (!method %in% c("deep", "fast")) {
@@ -52,7 +52,7 @@ are_beast2_input_lines <- function(
 #' @author Richèl J.C. Bilderbeek
 #' @seealso Use \code{\link{is_beast2_input_file}} to check a file
 #' @examples
-#' if (is_beast2_installed() && is_on_ci()) {
+#' if (is_beast2_installed() && beautier::is_on_ci()) {
 #'   beast2_filename <- get_beastier_path("anthus_2_4.xml")
 #'   text <- readLines(beast2_filename)
 #'   are_beast2_input_lines_deep(text)

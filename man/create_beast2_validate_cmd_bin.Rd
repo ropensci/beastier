@@ -34,7 +34,7 @@ using a call to the \code{launcher.jar} file
 \examples{
 check_empty_beaustier_folders()
 
-if (is_beast2_installed() && is_on_ci()) {
+if (is_beast2_installed() && beautier::is_on_ci()) {
   create_beast2_validate_cmd_bin(
     input_filename = "input.xml"
   )

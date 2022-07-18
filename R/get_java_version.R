@@ -3,7 +3,7 @@
 #' @author Richèl J.C. Bilderbeek
 #' @examples
 #'
-#' if (is_beast2_installed() && is_on_ci()) {
+#' if (is_beast2_installed() && beautier::is_on_ci()) {
 #'   get_java_version()
 #' }
 #' @export
