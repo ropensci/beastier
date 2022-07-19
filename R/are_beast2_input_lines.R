@@ -12,7 +12,10 @@
 #' @examples
 #' if (is_beast2_installed() && beautier::is_on_ci()) {
 #'   are_beast2_input_lines(get_beastier_path("anthus_2_4.xml"))
+#'
+#'   remove_beaustier_folders()
 #' }
+#' check_empty_beaustier_folders()
 #' @export
 are_beast2_input_lines <- function(
   lines,
@@ -42,8 +45,6 @@ are_beast2_input_lines <- function(
   }
 }
 
-
-
 #' Would these lines of text, when written to a file,
 #'   result in a valid BEAST2 input file?
 #' @inheritParams default_params_doc
@@ -56,7 +57,10 @@ are_beast2_input_lines <- function(
 #'   beast2_filename <- get_beastier_path("anthus_2_4.xml")
 #'   text <- readLines(beast2_filename)
 #'   are_beast2_input_lines_deep(text)
+#'
+#'   remove_beaustier_folders()
 #' }
+#' check_empty_beaustier_folders()
 #' @export
 are_beast2_input_lines_deep <- function(
   lines,
@@ -88,6 +92,7 @@ are_beast2_input_lines_deep <- function(
 #'
 #' # TRUE
 #' are_beast2_input_lines_fast(text)
+#' check_empty_beaustier_folders()
 #' @export
 are_beast2_input_lines_fast <- function(
   lines

@@ -14,8 +14,8 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_empty_beaustier_folders <- function(
-    beautier_folder = beautier::get_beautier_folder(),
-    beastier_folder = get_beastier_folder()
+  beautier_folder = beautier::get_beautier_folder(),
+  beastier_folder = get_beastier_folder()
 ) {
   check_empty_beastier_folder(beastier_folder = beastier_folder)
   beautier::check_empty_beautier_folder(beautier_folder = beautier_folder)

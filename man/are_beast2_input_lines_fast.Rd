@@ -24,6 +24,7 @@ text <- readLines(beast2_filename)
 
 # TRUE
 are_beast2_input_lines_fast(text)
+check_empty_beaustier_folders()
 }
 \seealso{
 Use \code{\link{is_beast2_input_file}} to check a file
