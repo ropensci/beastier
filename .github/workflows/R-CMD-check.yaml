@@ -41,6 +41,7 @@ jobs:
       - name: Install dependencies
         run: |
           install.packages(c("remotes", "rcmdcheck"))
+          remotes::install_cran("shiny")
           remotes::install_cran("devtools")
           remotes::install_github("ropensci/beautier")
           remotes::install_deps(dependencies = TRUE)
