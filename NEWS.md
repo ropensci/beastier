@@ -2,7 +2,7 @@
 
 Newest versions at top.
 
-## beastier 2.4.11 (unreleased)
+## beastier 2.4.11 (2022-08-11)
 
 ### NEW FEATURES
 
@@ -18,7 +18,7 @@ Newest versions at top.
 
 ### DEPRECATED AND DEFUNCT
 
-  * None
+  * 'is_on_ci' is now 'beautier::is_on_ci'
 
 ## beastier 2.4.10 (2022-06-16)
 
