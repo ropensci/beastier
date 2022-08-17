@@ -38,7 +38,7 @@ can be used.
 
 To install BEAST2:
 
-```
+```r
 remotes::install_github("richelbilderbeek/beastierinstall")
 beastierinstall::install_beast2()
 ```
