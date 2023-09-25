@@ -78,11 +78,11 @@ Submit an Issue.
 
 ### 3.2 How can I submit code?
 
-See [CONTRIBUTING](CONTRIBUTING.md), at 'Submitting code'
+See [../CONTRIBUTING](CONTRIBUTING.md), at 'Submitting code'
 
 ### 3.3 How can I submit a bug?
 
-See [CONTRIBUTING](CONTRIBUTING.md), at 'Submitting bugs' 
+See [../CONTRIBUTING](CONTRIBUTING.md), at 'Submitting bugs' 
 
 ### 3.4 How can I indicate something else?
 
