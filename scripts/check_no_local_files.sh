@@ -3,9 +3,9 @@
 # For testing
 # files=$(ls)
 
-files=$(egrep -R "\"~" --include={*.R,*.Rmd} | egrep -v "doc/xtableGallery.R")
+files=$(grep -ER "\"~" --include={*.R,*.Rmd} | egrep -v "doc/xtableGallery.R")
 
-if [[ ! -z $files ]]; then 
+if [[ -n $files ]]; then 
   echo "Local file created:" 
   echo "$files"
   exit 1
