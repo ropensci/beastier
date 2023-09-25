@@ -39,7 +39,7 @@ Suggests:
     spelling,
     testit,
     testthat (>= 2.1.0),
-    tracerer
+    tracerer (>=2.2.3)
 URL: https://docs.ropensci.org/beastier/ (website)
     https://github.com/ropensci/beastier/
 BugReports: https://github.com/ropensci/beastier
