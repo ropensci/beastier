@@ -3,7 +3,7 @@
 # For testing
 # files=$(ls)
 
-files=$(grep -ER "\"~" --include={*.R,*.Rmd} | egrep -v "doc/xtableGallery.R")
+files=$(grep -ER "\"~" --include={*.R,*.Rmd} | grep -Ev "doc/xtableGallery.R")
 
 if [[ -n $files ]]; then 
   echo "Local file created:" 
