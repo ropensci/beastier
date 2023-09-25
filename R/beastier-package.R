@@ -35,8 +35,6 @@
 #'     into a single workflow
 #'   }
 #' }
-#' @docType package
-#' @name beastier
 #'
 #' @importFrom beautier check_rename_fun
 #' @importFrom beautier create_alpha_param
@@ -156,4 +154,10 @@
 #' @importFrom beautier get_remove_dir_fun
 #' @importFrom beautier get_remove_hex_fun
 #' @importFrom beautier get_replace_dir_fun
+#' @author Richèl J.C. Bilderbeek
+#' @keywords internal
+"_PACKAGE"
+
+## usethis namespace: start
+## usethis namespace: end
 NULL
