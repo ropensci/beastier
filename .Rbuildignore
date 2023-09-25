@@ -20,3 +20,4 @@
 ^test_output_0\.trees$
 ^beastier\.sif$
 ^Meta$
+^mlc_config\.json$
