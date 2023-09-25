@@ -18,11 +18,11 @@ Description: 'BEAST2' (<https://www.beast2.org>) is a widely used
     from an 'R' function call.
 License: GPL-3
 Encoding: UTF-8
-RoxygenNote: 7.2.1
+RoxygenNote: 7.2.3
 Imports:
     ape,
     assertive,
-    beautier (>= 2.6.6),
+    beautier (>= 2.6.9),
     devtools,
     phangorn,
     rappdirs,
@@ -39,7 +39,7 @@ Suggests:
     spelling,
     testit,
     testthat (>= 2.1.0),
-    tracerer
+    tracerer (>= 2.2.3)
 URL: https://docs.ropensci.org/beastier/ (website)
     https://github.com/ropensci/beastier/
 BugReports: https://github.com/ropensci/beastier

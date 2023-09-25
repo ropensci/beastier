@@ -2,7 +2,7 @@
 
 Newest versions at top.
 
-## beastier 2.4.12 (unreleased)
+## beastier 2.4.12 (2023-09-25)
 
 ### NEW FEATURES
 
@@ -10,7 +10,8 @@ Newest versions at top.
 
 ### MINOR IMPROVEMENTS
 
-  * None
+ * Use new CITATION style
+ * Did `usethis::use_package_doc()`
 
 ### BUG FIXES
 
