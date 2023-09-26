@@ -1,6 +1,10 @@
 #' Deprecated function to install BEAST2
 #'
 #' This function is deprecated as it violated CRAN policy.
+#'
+#' To install BEAST2 from R, go to 
+#' \url{https://github.com/richelbilderbeek/beastierinstall}.
+#'
 #' @inheritParams default_params_doc
 #' @param folder_name name of the folder where the BEAST2 files will
 #'   be put.
