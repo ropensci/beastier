@@ -14,6 +14,7 @@
 #' )
 #' image(alignment)
 #'
+#' remove_beaustier_folders()
 #' check_empty_beaustier_folders()
 #' @export
 create_random_alignment <- function(

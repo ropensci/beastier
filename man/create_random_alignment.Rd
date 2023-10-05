@@ -30,6 +30,7 @@ alignment <- create_random_alignment(
 )
 image(alignment)
 
+remove_beaustier_folders()
 check_empty_beaustier_folders()
 }
 \author{
