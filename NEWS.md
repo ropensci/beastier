@@ -2,6 +2,24 @@
 
 Newest versions at top.
 
+## beastier 2.5 (unreleased)
+
+### NEW FEATURES
+
+  * None
+
+### MINOR IMPROVEMENTS
+
+  * Remove dependency on 'assertive'
+
+### BUG FIXES
+
+  * None
+
+### DEPRECATED AND DEFUNCT
+
+  * None
+
 ## beastier 2.4.12 (2023-09-25)
 
 ### NEW FEATURES

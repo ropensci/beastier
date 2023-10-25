@@ -29,15 +29,12 @@ create_random_fasta <- function(
   if (sequence_length < 1) {
     stop("'sequence_length' must be one or more")
   }
-  if (!assertive::is_a_string(fasta_filename)) {
-    stop("'fasta_filename' must be a character string")
-  }
+  testthat::expect_true(beautier::is_one_string(fasta_filename))
+
   if (fasta_filename == "") {
     stop("'fasta_filename' must have at least one character")
   }
-  if (!assertive::is_a_string(taxa_name_ext)) {
-    stop("'taxa_name_ext' must be a character string")
-  }
+  testthat::expect_true(beautier::is_one_string(taxa_name_ext))
   alignments <- beastier::create_random_alignment(
     n_taxa,
     sequence_length,

@@ -11,7 +11,7 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 remove_file_if_present <- function(filename) {
-  assertive::assert_is_a_string(filename)
+  testthat::expect_true(beautier::is_one_string(filename))
   testit::assert(length(filename) == 1)
   if (file.exists(filename)) {
     file.remove(filename)
