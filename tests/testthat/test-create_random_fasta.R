@@ -61,7 +61,7 @@ test_that("abuse", {
       sequence_length = 20,
       fasta_filename = ape::rcoal(4)
     ),
-    "'fasta_filename' must be a character string"
+    "is_one_string"
   )
 
   expect_error(
@@ -80,7 +80,7 @@ test_that("abuse", {
       fasta_filename = "test.fasta",
       taxa_name_ext = ape::rcoal(3) # Error
     ),
-    "'taxa_name_ext' must be a character string"
+    "is_one_string"
   )
   check_empty_beaustier_folders()
 

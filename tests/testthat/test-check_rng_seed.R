@@ -13,7 +13,7 @@ test_that("use", {
   )
   expect_error(
     check_rng_seed(3.14),
-    "'rng_seed' must be a whole number"
+    "is_one_int"
   )
   expect_error(check_rng_seed("nonsense"))
   expect_error(check_rng_seed(NULL))
