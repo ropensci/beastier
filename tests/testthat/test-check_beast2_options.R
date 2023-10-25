@@ -94,7 +94,7 @@ test_that("in-depth use", {
     check_beast2_options(
       create_beast2_options(input_filename = 314)
     ),
-    "'input_filename' must be one character string"
+    "is_one_string"
   )
 
   # output_state_filename
