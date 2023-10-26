@@ -17,12 +17,12 @@
 check_beast2_options <- function(
   beast2_options
 ) {
-  beastier::check_beast2_options_names(beast2_options)
-  beastier::check_beast2_options_data_types(beast2_options)
+  check_beast2_options_names(beast2_options)
+  check_beast2_options_data_types(beast2_options)
   # Do not check if the BEAST2 path already/still exist.
   # It shouldn't be checked by here, only when actually running BEAST2.
   # By doing so, data with beast2_options can be analysed on different computers
-  beastier::check_beast2_options_filenames_differ(beast2_options)
+  check_beast2_options_filenames_differ(beast2_options)
 }
 
 #' Check if the \code{beast2_options}, which is a list,
@@ -69,8 +69,8 @@ check_beast2_options_data_types <- function( # nolint long function name indeed,
 ) {
   testthat::expect_true(beautier::is_one_string(beast2_options$input_filename))
   testthat::expect_true(beautier::is_one_string(beast2_options$output_state_filename))
-  beastier::check_rng_seed(beast2_options$rng_seed)
-  beastier::check_n_threads(beast2_options$n_threads)
+  check_rng_seed(beast2_options$rng_seed)
+  check_n_threads(beast2_options$n_threads)
   if (!beautier::is_one_bool(beast2_options$use_beagle)) {
     stop("'use_beagle' must be one boolean")
   }

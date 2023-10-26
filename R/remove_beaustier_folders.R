@@ -11,6 +11,6 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 remove_beaustier_folders <- function() {
-  beastier::remove_beastier_folder()
+  remove_beastier_folder()
   beautier::remove_beautier_folder()
 }

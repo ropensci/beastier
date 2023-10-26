@@ -34,6 +34,6 @@ create_beast2_options <- function(
     beast2_path = beast2_path,
     verbose = verbose
   )
-  beastier::check_beast2_options(beast2_options)
+  check_beast2_options(beast2_options)
   beast2_options
 }

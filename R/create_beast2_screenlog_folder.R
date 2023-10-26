@@ -7,7 +7,7 @@
 create_beast2_screenlog_folder <- function(beast2_options) {
   # Extract the screenlog file
   testthat::expect_true(file.exists(beast2_options$input_filename))
-  screenlog_filename <- beastier::extract_screenlog_filename_from_beast2_input_file( # nolint indeed a long line
+  screenlog_filename <- extract_screenlog_filename_from_beast2_input_file( # nolint indeed a long line
     input_filename = beast2_options$input_filename
   )
   # The user specified no screenlog file

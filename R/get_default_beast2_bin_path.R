@@ -19,7 +19,7 @@ get_default_beast2_bin_path <- function(
   beast2_folder = get_default_beast2_folder(),
   os = rappdirs::app_dir()$os
 ) {
-  beastier::check_os(os)
+  check_os(os)
   # Windows has uppercase folder name
   beast_foldername <- "BEAST"
   if (os != "win") {

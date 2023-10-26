@@ -9,7 +9,7 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 beast2_options_to_table <- function(beast2_options) {
-  beastier::check_beast2_options(beast2_options)
+  check_beast2_options(beast2_options)
   tibble::tibble(
     parameter = names(beast2_options),
     value = unlist(beast2_options)

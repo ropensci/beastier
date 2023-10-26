@@ -27,10 +27,10 @@ are_beast2_input_lines <- function(
     stop("'method' must be \"deep\" or \"fast\", value was '", method, "'")
   }
   if (method == "deep") {
-    filename <- beastier::get_beastier_tempfilename()
+    filename <- get_beastier_tempfilename()
     dir.create(dirname(filename), showWarnings = FALSE, recursive = TRUE)
-    beastier::save_lines(filename = filename, lines = lines)
-    is_valid <- beastier::are_beast2_input_lines_deep(
+    save_lines(filename = filename, lines = lines)
+    is_valid <- are_beast2_input_lines_deep(
       lines = lines,
       verbose = verbose,
       beast2_path = beast2_path
@@ -40,7 +40,7 @@ are_beast2_input_lines <- function(
   } else {
     testit::assert(method == "fast")
     return(
-      beastier::are_beast2_input_lines_fast(lines) # nolint internal function
+      are_beast2_input_lines_fast(lines) # nolint internal function
     )
   }
 }
@@ -67,10 +67,10 @@ are_beast2_input_lines_deep <- function(
   verbose = FALSE,
   beast2_path = get_default_beast2_path()
 ) {
-  filename <- beastier::create_temp_input_filename()
+  filename <- create_temp_input_filename()
   dir.create(dirname(filename), recursive = TRUE, showWarnings = FALSE)
-  beastier::save_lines(filename = filename, lines = lines)
-  is_valid <- beastier::is_beast2_input_file(
+  save_lines(filename = filename, lines = lines)
+  is_valid <- is_beast2_input_file(
     filename = filename,
     verbose = verbose,
     beast2_path = beast2_path
@@ -97,5 +97,5 @@ are_beast2_input_lines_deep <- function(
 are_beast2_input_lines_fast <- function(
   lines
 ) {
-  beastier::has_unique_ids(lines)
+  has_unique_ids(lines)
 }
