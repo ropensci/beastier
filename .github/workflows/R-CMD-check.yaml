@@ -41,7 +41,7 @@ jobs:
           install.packages(c("remotes", "rcmdcheck"))
           remotes::install_cran("shiny")
           remotes::install_cran("devtools")
-          remotes::install_github("ropensci/beautier")
+          remotes::install_github("ropensci/beautier", ref = "develop")
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("rcmdcheck")
           remotes::install_cran("covr")
