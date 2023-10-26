@@ -51,5 +51,5 @@ beastier_report <- function(
   message("****************")
   message("* session info *")
   message("****************")
-  message(paste0(devtools::session_info(), collapse = "\n"))
+  message(paste0(sessioninfo::session_info(), collapse = "\n"))
 }

@@ -22,11 +22,11 @@ RoxygenNote: 7.2.3
 Imports:
     ape,
     beautier (>= 2.6.9),
-    devtools,
     phangorn,
     rappdirs,
     readr,
     rJava,
+    sessioninfo,
     stringr,
     tibble,
     xml2
