@@ -26,17 +26,15 @@ Imports:
     rappdirs,
     readr,
     rJava,
+    rlang (>= 1.1.0),
     sessioninfo,
     stringr,
     tibble,
     xml2
 Suggests:
-    hunspell,
     knitr,
-    markdown,
     rmarkdown,
     spelling,
-    testit,
     testthat (>= 2.1.0),
     tracerer (>= 2.2.3)
 URL: https://docs.ropensci.org/beastier/ (website)

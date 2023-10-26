@@ -29,7 +29,7 @@ test_that("cannot ", {
   if (!is_beast2_installed()) return()
 
   win_bin_path <- "BEAST.exe"
-  testit::assert(is_win_bin_path(win_bin_path))
+  expect_true(is_win_bin_path(win_bin_path))
   expect_error(
     get_beast2_version(
       beast2_path = win_bin_path

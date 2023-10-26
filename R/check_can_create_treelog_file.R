@@ -11,7 +11,7 @@ check_can_create_treelog_file <- function(
   beast2_options
 ) {
   # Extract the treelog file
-  testthat::expect_true(file.exists(beast2_options$input_filename))
+  check_true(file.exists(beast2_options$input_filename))
   treelog_filename <- extract_treelog_filename_from_beast2_input_file(
     input_filename = beast2_options$input_filename
   )

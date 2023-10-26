@@ -19,9 +19,9 @@ get_beast2_example_filenames <- function(
     )
   }
   beast2_subfolder <- file.path(beast2_folder, "beast")
-  testit::assert(dir.exists(beast2_subfolder))
+  check_true(dir.exists(beast2_subfolder))
   examples_folder <- file.path(beast2_subfolder, "examples")
-  testit::assert(dir.exists(examples_folder))
+  check_true(dir.exists(examples_folder))
   list.files(
     path = examples_folder,
     full.names = TRUE,

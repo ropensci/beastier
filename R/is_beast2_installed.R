@@ -33,6 +33,6 @@ is_beast2_installed <- function(
 
   bin_exists <- file.exists(bin_file_path)
   jar_exists <- file.exists(jar_file_path)
-  testit::assert(bin_exists == jar_exists)
+  check_true(bin_exists == jar_exists)
   jar_exists
 }

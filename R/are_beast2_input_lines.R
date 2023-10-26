@@ -38,7 +38,7 @@ are_beast2_input_lines <- function(
     file.remove(filename)
     return(is_valid)
   } else {
-    testit::assert(method == "fast")
+    check_true(method == "fast")
     return(
       are_beast2_input_lines_fast(lines) # nolint internal function
     )

@@ -6,7 +6,7 @@
 #' @export
 create_beast2_treelog_folder <- function(beast2_options) {
   # Extract the treelog file
-  testthat::expect_true(file.exists(beast2_options$input_filename))
+  check_true(file.exists(beast2_options$input_filename))
   treelog_filename <- extract_treelog_filename_from_beast2_input_file(
     input_filename = beast2_options$input_filename
   )
@@ -15,7 +15,7 @@ create_beast2_treelog_folder <- function(beast2_options) {
     showWarnings = FALSE,
     recursive = TRUE
   )
-  testthat::expect_true(
+  check_true(
     dir.exists(dirname(treelog_filename))
   )
   invisible(beast2_options)

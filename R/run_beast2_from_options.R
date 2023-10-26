@@ -91,7 +91,7 @@ run_beast2_from_options <- function(
   )
   # This assumpion should have been proven to be valid
   # by check_can_create_dir_for_state_output_file
-  testthat::expect_true(dir.exists(output_folder))
+  check_true(dir.exists(output_folder))
 
 
   ##############################################################################

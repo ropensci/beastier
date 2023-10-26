@@ -41,7 +41,7 @@ test_that("single alignment, equal RNG seed equal results", {
     output_state_filename_1,
     output_state_filename_2
   )
-  testit::assert(!all(file.exists(output_files)))
+  expect_true(!all(file.exists(output_files)))
 
   rng_seed <- 42
   stdout_1 <- run_beast2(
@@ -112,7 +112,7 @@ test_that("BEAST2 does not overwrite the .xml.state file specified by user", {
     dirname(output_state_filename), recursive = TRUE, showWarnings = FALSE
   )
   write(x = "state", file = output_state_filename)
-  testit::assert(all(readLines(output_state_filename, warn = FALSE) == "state"))
+  expect_true(all(readLines(output_state_filename, warn = FALSE) == "state"))
 
   # Delete the log file iff it is present,
   # only needed when running these tests locally for multiple times
@@ -146,7 +146,7 @@ test_that("BEAST2 overwrites state file", {
   )
   write(x = "state", file = output_state_filename)
 
-  testit::assert(all(readLines(output_state_filename) == "state"))
+  expect_true(all(readLines(output_state_filename) == "state"))
 
   # Cannot use 'expect_silent' as an empty line is produced in the output
   run_beast2(
@@ -207,7 +207,7 @@ test_that("run BEAST2 from binary path", {
       get_beastier_tempfilename(),
       "BEAST2.exe"
     )
-    testit::assert(is_bin_path(fake_windows_exe_filename))
+    expect_true(is_bin_path(fake_windows_exe_filename))
     dir.create(
       dirname(fake_windows_exe_filename),
       recursive = TRUE, showWarnings = FALSE

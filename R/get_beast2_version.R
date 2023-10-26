@@ -26,7 +26,7 @@ get_beast2_version <- function(
   }
 
   # Create the command
-  testit::assert(length(beast2_path) == 1)
+  check_true(length(beast2_path) == 1)
   cmds <- create_beast2_version_cmd(beast2_path)
   beautier::check_file_exists(cmds[1], "cmds[1]")
   output <- NA

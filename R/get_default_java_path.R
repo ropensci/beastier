@@ -11,11 +11,11 @@ get_default_java_path <- function(
   java_folder <- rJava::.jcall(
     "java/lang/System", "S", "getProperty", "java.home"
   )
-  testit::assert(dir.exists(java_folder))
+  check_true(dir.exists(java_folder))
   java_path <- file.path(java_folder, "bin", "java.exe")
   if (os != "win") {
     java_path <- file.path(java_folder, "bin", "java")
   }
-  testit::assert(file.exists(java_path))
+  check_true(file.exists(java_path))
   normalizePath(java_path, mustWork = TRUE)
 }
