@@ -14,7 +14,7 @@ upgrade_beast2 <- function(
   os = rappdirs::app_dir()$os
 ) {
   stop(
-    "'upgrade_beast2' is deprecated, \n",
+    "'beastier::upgrade_beast2' is deprecated, \n",
     "as it violated CRAN policy. \n",
     " \n",
     "To upgrade BEAST2 from R, do: \n",

@@ -15,7 +15,7 @@ uninstall_beast2 <- function(
   verbose = FALSE
 ) {
   stop(
-    "'uninstall_beast2' is deprecated, \n",
+    "'beastier::uninstall_beast2' is deprecated, \n",
     "as it violated CRAN policy. \n",
     " \n",
     "To uninstall BEAST2 from R, do: \n",
