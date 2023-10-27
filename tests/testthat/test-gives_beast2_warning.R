@@ -2,7 +2,7 @@ test_that("use, bin", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()
 
-  testit::assert(is_beast2_installed())
+  expect_true(is_beast2_installed())
 
   # Binary works under Unix, fails under Windows (see 'abuse' section below)
   if (rappdirs::app_dir()$os == "unix") {

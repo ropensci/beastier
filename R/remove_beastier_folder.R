@@ -16,7 +16,7 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 remove_beastier_folder <- function() {
-  folder_name <- beastier::get_beastier_folder()
+  folder_name <- get_beastier_folder()
   if (dir.exists(folder_name)) {
     unlink(folder_name, recursive = TRUE)
   }

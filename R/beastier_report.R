@@ -21,7 +21,7 @@ beastier_report <- function(
   message("***********")
   message("OS: ", os)
   message("beast2_folder: ", beast2_folder)
-  beast2_path <- beastier::get_default_beast2_path(
+  beast2_path <- get_default_beast2_path(
     beast2_folder = beast2_folder
   )
   message("beast2_path: ", beast2_path)
@@ -33,23 +33,23 @@ beastier_report <- function(
   message("**********")
   message("* BEAST2 *")
   message("**********")
-  message("Java version: ", beastier::get_java_version())
+  message("Java version: ", get_java_version())
   message(
     "Is BEAST2 installed: ",
-    beastier::is_beast2_installed(folder_name = beast2_folder)
+    is_beast2_installed(folder_name = beast2_folder)
   )
-  if (beastier::is_beast2_installed(folder_name = beast2_folder)) {
+  if (is_beast2_installed(folder_name = beast2_folder)) {
     message(
       "BEAST2 version: ",
-      beastier::get_beast2_version(beast2_path = beast2_path)
+      get_beast2_version(beast2_path = beast2_path)
     )
     message(
       "BEAST2 default path: ",
-      beastier::get_default_beast2_bin_path(beast2_folder = beast2_folder)
+      get_default_beast2_bin_path(beast2_folder = beast2_folder)
     )
   }
   message("****************")
   message("* session info *")
   message("****************")
-  message(paste0(devtools::session_info(), collapse = "\n"))
+  message(paste0(sessioninfo::session_info(), collapse = "\n"))
 }

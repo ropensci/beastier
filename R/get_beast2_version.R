@@ -14,7 +14,7 @@
 get_beast2_version <- function(
   beast2_path = get_default_beast2_path()
 ) {
-  if (beastier::is_win_bin_path(beast2_path)) {
+  if (is_win_bin_path(beast2_path)) {
    stop("Cannot use the Windows executable BEAST2.exe in scripts")
   }
   if (!file.exists(beast2_path)) {
@@ -26,8 +26,8 @@ get_beast2_version <- function(
   }
 
   # Create the command
-  testit::assert(length(beast2_path) == 1)
-  cmds <- beastier::create_beast2_version_cmd(beast2_path)
+  check_true(length(beast2_path) == 1)
+  cmds <- create_beast2_version_cmd(beast2_path)
   beautier::check_file_exists(cmds[1], "cmds[1]")
   output <- NA
 

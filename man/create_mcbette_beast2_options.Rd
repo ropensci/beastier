@@ -5,13 +5,13 @@
 \title{Create a `beast2_options` structure for the `mcbette` R package}
 \usage{
 create_mcbette_beast2_options(
-  input_filename = beastier::create_temp_input_filename(),
-  output_state_filename = beastier::create_temp_state_filename(),
+  input_filename = create_temp_input_filename(),
+  output_state_filename = create_temp_state_filename(),
   rng_seed = NA,
   n_threads = NA,
   use_beagle = FALSE,
   overwrite = TRUE,
-  beast2_bin_path = beastier::get_default_beast2_bin_path(),
+  beast2_bin_path = get_default_beast2_bin_path(),
   verbose = FALSE
 )
 }

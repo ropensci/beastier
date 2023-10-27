@@ -30,7 +30,7 @@ create_beast2_run_cmd <- function(
   beast2_path = get_default_beast2_path(),
   verbose = FALSE
 ) {
-  beast2_options <- beastier::create_beast2_options(
+  beast2_options <- create_beast2_options(
     input_filename = input_filename,
     output_state_filename = output_state_filename,
     rng_seed = rng_seed,
@@ -40,5 +40,5 @@ create_beast2_run_cmd <- function(
     beast2_path = beast2_path,
     verbose = verbose
   )
-  beastier::create_beast2_run_cmd_from_options(beast2_options)
+  create_beast2_run_cmd_from_options(beast2_options)
 }

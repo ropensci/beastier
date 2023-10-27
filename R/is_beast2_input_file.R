@@ -32,7 +32,7 @@ is_beast2_input_file <- function(
   beast2_path = get_default_beast2_path()
 ) {
   beautier::check_file_exists(filename, "filename")
-  if (beastier::is_win_bin_path(beast2_path)) {
+  if (is_win_bin_path(beast2_path)) {
    stop("Cannot use the Windows executable BEAST2.exe in scripts")
   }
   if (!file.exists(beast2_path)) {
@@ -44,15 +44,15 @@ is_beast2_input_file <- function(
   }
 
   # Create the command to let BEAST2 validate the created XML file
-  testit::assert(length(filename) == 1)
-  testit::assert(length(beast2_path) == 1)
+  check_true(length(filename) == 1)
+  check_true(length(beast2_path) == 1)
   beautier::check_file_exists(filename, "filename")
-  cmds <- beastier::create_beast2_validate_cmd(
+  cmds <- create_beast2_validate_cmd(
     input_filename = filename,
     beast2_path = beast2_path
   )
   # The executable must be runnable. This means that it should not have quotes
-  testthat::expect_true(file.exists(cmds[1]))
+  check_true(file.exists(cmds[1]))
   output <- NA
   if (show_warnings == TRUE) {
     output <- system2(

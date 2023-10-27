@@ -30,7 +30,7 @@ check_rng_seed <- function(rng_seed) {
       "Actual value: ", rng_seed
     )
   }
-  testthat::expect_true(beautier::is_one_int(rng_seed))
+  check_true(beautier::is_one_int(rng_seed))
   if (rng_seed <= 0) {
     stop(
       "'rng_seed' should be one NA or one non-zero positive value.\n",

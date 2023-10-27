@@ -4,7 +4,7 @@
 \alias{check_beast2}
 \title{Check if \code{BEAST2} is installed properly.}
 \usage{
-check_beast2(beast2_path = beastier::get_default_beast2_path())
+check_beast2(beast2_path = get_default_beast2_path())
 }
 \arguments{
 \item{beast2_path}{name of either a BEAST2 binary file

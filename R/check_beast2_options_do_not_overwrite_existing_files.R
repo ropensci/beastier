@@ -19,7 +19,7 @@
 check_beast2_options_do_not_overwrite_existing_files <- function( # nolint indeed a long function name, which is fine for internal functions
   beast2_options
 ) {
-  beastier::check_beast2_options(beast2_options)
+  check_beast2_options(beast2_options)
   if (beast2_options$overwrite) {
     return(invisible(beast2_options))
   }

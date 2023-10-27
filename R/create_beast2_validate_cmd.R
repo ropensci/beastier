@@ -20,13 +20,13 @@ create_beast2_validate_cmd <- function(
   input_filename,
   beast2_path = get_default_beast2_path()
 ) {
-  if (beastier::is_jar_path(beast2_path)) {
+  if (is_jar_path(beast2_path)) {
     create_beast2_validate_cmd_jar(
       input_filename = input_filename,
       beast2_jar_path = beast2_path
     )
   } else {
-    testit::assert(beastier::is_bin_path(beast2_path))
+    check_true(is_bin_path(beast2_path))
     create_beast2_validate_cmd_bin(
       input_filename = input_filename,
       beast2_bin_path = beast2_path
@@ -58,17 +58,17 @@ create_beast2_validate_cmd_jar <- function(
   beast2_jar_path = get_default_beast2_jar_path()
 ) {
   beautier::check_file_exists(beast2_jar_path, "beast2_jar_path")
-  testit::assert(beastier::is_jar_path(beast2_jar_path))
+  check_true(is_jar_path(beast2_jar_path))
   cmds <- c(
-    beastier::get_default_java_path(),
+    get_default_java_path(),
     "-cp",
-    beastier::add_quotes_if_has_spaces(beast2_jar_path),
-    beastier::get_beast2_main_class_name(),
+    add_quotes_if_has_spaces(beast2_jar_path),
+    get_beast2_main_class_name(),
     "-validate",
-    beastier::add_quotes_if_has_spaces(input_filename)
+    add_quotes_if_has_spaces(input_filename)
   )
   # The executable must be runnable. This means that it should not have quotes
-  testthat::expect_true(file.exists(cmds[1]))
+  check_true(file.exists(cmds[1]))
   cmds
 }
 
@@ -96,13 +96,13 @@ create_beast2_validate_cmd_bin <- function(
   beast2_bin_path = get_default_beast2_bin_path()
 ) {
   beautier::check_file_exists(beast2_bin_path, "beast2_bin_path")
-  testit::assert(beastier::is_bin_path(beast2_bin_path))
+  check_true(is_bin_path(beast2_bin_path))
   cmds <- c(
     beast2_bin_path,
     "-validate",
-    beastier::add_quotes_if_has_spaces(input_filename)
+    add_quotes_if_has_spaces(input_filename)
   )
   # The executable must be runnable. This means that it should not have quotes
-  testthat::expect_true(file.exists(cmds[1]))
+  check_true(file.exists(cmds[1]))
   cmds
 }

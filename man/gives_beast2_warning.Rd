@@ -8,7 +8,7 @@ when using the BEAST2 XML input file}
 gives_beast2_warning(
   filename,
   verbose = FALSE,
-  beast2_path = beastier::get_default_beast2_path()
+  beast2_path = get_default_beast2_path()
 )
 }
 \arguments{
