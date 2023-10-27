@@ -14,7 +14,9 @@ From: rocker/tidyverse
     ## sudo apt install -qq default-jre
     ## sudo apt-get install -qq r-cran-rjava
     ## sudo apt-get install -qq openjdk-13-*
-    #sudo $(which R) CMD javareconf
+    
+    # Fix rJava error
+    sudo $(which R) CMD javareconf
 
     sudo apt install -qq libfontconfig1-dev
 
