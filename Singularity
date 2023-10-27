@@ -23,7 +23,8 @@ From: rocker/tidyverse
     Rscript -e 'install.packages(c("remotes", "rcmdcheck"))'
     Rscript -e 'remotes::install_cran("shiny")'
     Rscript -e 'install.packages("devtools")'
-    Rscript -e 'remotes::install_github("ropensci/beastier")'
+    Rscript -e 'remotes::install_github("ropensci/beautier", ref = "develop")'
+    Rscript -e 'remotes::install_github("ropensci/beastier", ref = "develop")'
     Rscript -e 'remotes::install_github("richelbilderbeek/beastierinstall")'
     Rscript -e 'beastierinstall::install_beast2(folder_name = "/opt/beastier")'
 
