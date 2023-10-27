@@ -26,10 +26,10 @@
 gives_beast2_warning <- function(
   filename,
   verbose = FALSE,
-  beast2_path = beastier::get_default_beast2_path()
+  beast2_path = get_default_beast2_path()
 ) {
   tryCatch({
-      beastier::is_beast2_input_file(
+      is_beast2_input_file(
         filename = filename,
         show_warnings = TRUE,
         verbose = verbose,

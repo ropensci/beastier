@@ -247,7 +247,7 @@ test_that("BEAST2 freezes when treelog file already exists", {
       )
     )
   )
-  testit::assert(file.exists(beast2_xml_filename))
+  expect_true(file.exists(beast2_xml_filename))
 
   # First run works fine, takes approx 1 sec on my computer
   beastier::run_beast2_from_options(

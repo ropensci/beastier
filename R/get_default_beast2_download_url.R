@@ -7,15 +7,15 @@
 #' get_default_beast2_download_url()
 #' @export
 get_default_beast2_download_url <- function(# nolint internal functions may be long
-  beast2_version = beastier::get_default_beast2_version(),
+  beast2_version = get_default_beast2_version(),
   os = rappdirs::app_dir()$os
 ) {
-  beastier::check_os(os)
-  url <- beastier::get_default_beast2_download_url_win(
+  check_os(os)
+  url <- get_default_beast2_download_url_win(
     beast2_version = beast2_version
   )
   if (os != "win") {
-    url <- beastier::get_default_beast2_download_url_linux(
+    url <- get_default_beast2_download_url_linux(
       beast2_version = beast2_version
     )
   }
@@ -28,7 +28,7 @@ get_default_beast2_download_url <- function(# nolint internal functions may be l
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_default_beast2_download_url_linux <- function(# nolint internal functions may be long
-  beast2_version = beastier::get_default_beast2_version()
+  beast2_version = get_default_beast2_version()
 ) {
   paste0(
     "https://github.com/CompEvol/beast2/releases/download/v",
@@ -45,7 +45,7 @@ get_default_beast2_download_url_linux <- function(# nolint internal functions ma
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_default_beast2_download_url_win <- function(# nolint internal functions may be long
-  beast2_version = beastier::get_default_beast2_version()
+  beast2_version = get_default_beast2_version()
 ) {
   paste0(
     "https://github.com/CompEvol/beast2/releases/download/v",

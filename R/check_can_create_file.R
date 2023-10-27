@@ -28,7 +28,7 @@ check_can_create_file <- function(
     } else {
       # Delete the file
       file.remove(filename)
-      testthat::expect_true(
+      check_true(
         !file.exists(filename),
         info = paste0(
           "Cannot delete the file already present at location ", filename
@@ -58,7 +58,7 @@ check_can_create_file <- function(
   }
 
 
-  testthat::expect_true(
+  check_true(
     !file.exists(filename),
     info = paste0(
       "Cannot delete the temporary file created at location ", filename

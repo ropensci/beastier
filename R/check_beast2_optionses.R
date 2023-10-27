@@ -22,6 +22,6 @@ check_beast2_optionses <- function(
   }
   for (i in seq_along(beast2_optionses)) {
     # Stub with too simple error message
-    beastier::check_beast2_options(beast2_optionses[[i]])
+    check_beast2_options(beast2_optionses[[i]])
   }
 }

@@ -22,7 +22,7 @@ rename_beast2_options_filenames <- function( # nolint sure, this is a long funct
   beast2_options,
   rename_fun
 ) {
-  beastier::check_beast2_options(beast2_options)
+  check_beast2_options(beast2_options)
   beautier::check_rename_fun(rename_fun)
   beast2_options$input_filename <- rename_fun(beast2_options$input_filename)
   beast2_options$output_state_filename <- rename_fun(

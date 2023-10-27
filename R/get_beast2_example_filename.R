@@ -16,14 +16,14 @@ get_beast2_example_filename <- function(
   filename,
   beast2_folder = get_default_beast2_folder()
 ) {
-  filenames <- beastier::get_beast2_example_filenames(
+  filenames <- get_beast2_example_filenames(
     beast2_folder = beast2_folder
   )
   index <- which(filename == basename(filenames))
   if (length(index) == 0) {
     stop(
       "Cannot find BEAST2 example file with name '", filename, "'. \n",
-      "Tip: use 'beastier::get_beast2_example_filenames()' ",
+      "Tip: use 'get_beast2_example_filenames()' ",
         "to see all BEAST2 example files"
     )
   }

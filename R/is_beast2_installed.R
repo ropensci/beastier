@@ -18,7 +18,7 @@ is_beast2_installed <- function(
   folder_name = get_default_beast2_folder(),
   os = rappdirs::app_dir()$os
 ) {
-  beastier::check_os(os)
+  check_os(os)
 
   # Windows    : BEAST/lib/beast.jar                                            # nolint
   # Non-Windows: beast/lib/launcher.jar                                         # nolint
@@ -33,6 +33,6 @@ is_beast2_installed <- function(
 
   bin_exists <- file.exists(bin_file_path)
   jar_exists <- file.exists(jar_file_path)
-  testit::assert(bin_exists == jar_exists)
+  check_true(bin_exists == jar_exists)
   jar_exists
 }
