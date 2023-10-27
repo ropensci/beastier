@@ -12,7 +12,7 @@ From: rocker/tidyverse
     #apt-cache search openjdk-
     #sudo apt install -qq openjdk-11-jre-headless
     ## sudo apt install -qq default-jre
-    ## sudo apt-get install -qq r-cran-rjava
+    sudo apt-get install -qq r-cran-rjava
     ## sudo apt-get install -qq openjdk-13-*
     
     # Fix rJava error
