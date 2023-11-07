@@ -2,7 +2,7 @@
 
 Newest versions at top.
 
-## beastier 2.5 (unreleased)
+## beastier 2.5 (2023-11-07)
 
 ### NEW FEATURES
 
