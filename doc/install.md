@@ -45,5 +45,4 @@ remotes::install_github("ropensci/beautier")
 remotes::install_github("ropensci/tracerer")
 ```
 
-`beastier` assumes that BEAST2 is installed. 
-
+`beastier` assumes that BEAST2 is installed.

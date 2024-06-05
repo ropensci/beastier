@@ -4,8 +4,8 @@ Awesome that you are reading this.
 
 This GitHub follows the [Contributor Covenant Code of Conduct](code_of_conduct.md).
 
- * For questions, you can create an Issue
- * Code changes go via Pull Requests
+* For questions, you can create an Issue
+* Code changes go via Pull Requests
 
 ## Which package to contribute to?
 
@@ -13,7 +13,7 @@ This GitHub follows the [Contributor Covenant Code of Conduct](code_of_conduct.m
 which consists out of five packages.
 Here is how to determine which package is best suited for your contribution:
 
-If you want to contribute to the creation of BEAST2 XML input files, 
+If you want to contribute to the creation of BEAST2 XML input files,
 go to [beautier](https://github.com/ropensci/beautier/blob/master/CONTRIBUTING.md).
 
 If you want to contribute to how BEAST2 output is parsed,
@@ -26,18 +26,18 @@ If you want to contribute with an overarching idea,
 go to [babette](https://github.com/ropensci/babette/blob/master/CONTRIBUTING.md).
 
 If you want to contribute to how BEAST2 is run,
-you are at the right spot :-) 
+you are at the right spot :-)
 
 ## Submitting code
 
 Submitted code should follow these quality guidelines:
 
- * All tests pass cleanly/silently
- * Code coverage must be 100%
- * Coding style should follow the default style by `lintr`
+* All tests pass cleanly/silently
+* Code coverage must be 100%
+* Coding style should follow the default style by `lintr`
 
 These are all checked by Travis CI when submitting
-a Pull Request. 
+a Pull Request.
 
 Emails with code will not be accepted.
 
@@ -45,16 +45,16 @@ Emails with code will not be accepted.
 
 Awesome. These are your options:
 
- * Add an Issue, with the test that fails
- * Submit a Pull Request, where the test is added to the `tests/testthat` folder
- * Send @richelbilderbeek an email (@richelbilderbeek will make an Issue of it)
+* Add an Issue, with the test that fails
+* Submit a Pull Request, where the test is added to the `tests/testthat` folder
+* Send @richelbilderbeek an email (@richelbilderbeek will make an Issue of it)
 
 Pull Requests should follow the same guidelines as 'Submitting code'.
 
 ## Branching policy
 
- * The `master` branch should always build successfully
- * The `development` branch is for developers
+* The `master` branch should always build successfully
+* The `development` branch is for developers
 
 ## git usage
 
@@ -64,8 +64,8 @@ To get started working on `beastier` do:
 git clone https://github.com/ropensci/beastier
 ```
 
-Development is done on the `develop` branch. 
-To download and checkout the `develop` branch, 
+Development is done on the `develop` branch.
+To download and checkout the `develop` branch,
 first go into the `beastier` folder (`cd beastier`), then do:
 
 ```

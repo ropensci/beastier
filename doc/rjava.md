@@ -2,8 +2,8 @@
 
 How to install `rJava` under different operating systems
 
- * Installation
- * Troubleshooting
+* Installation
+* Troubleshooting
 
 ## Installation
 
@@ -61,7 +61,6 @@ sudo R CMD javareconf
 #sudo apt-get install oracle-java8-set-default
 ```
 
-
 ## Troubleshooting
 
 ### Error: `libjvm.so: cannot open shared object file: No such file or directory`
@@ -111,7 +110,6 @@ sudo apt-get install r-cran-rjava
 
 ![BEAST2 cannot find Java](beast_cannot_find_java.png)
 
-
 Download the Oracle Java SDK:
 
 ![](download_oracle_java_sdk.png)
@@ -125,7 +123,6 @@ Install the Oracle Java SDK with the package installer:
 ![](install_oracle_java_sdk.png)
 
 Pick the right `java`:
-
 
 ```
 sudo update-alternatives --config java

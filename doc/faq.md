@@ -1,8 +1,8 @@
 # FAQ
 
- 1. `beastier` in [academia](#academia) 
- 2. `beastier` and [BEAST2](#BEAST2)
- 3. `beastier` [development](#development) 
+ 1. `beastier` in [academia](#academia)
+ 2. `beastier` and [BEAST2](#beast2)
+ 3. `beastier` [development](#development)
  4. `beastier` [technical](#technical)
  5. `beastier` [misc](#misc)
 
@@ -33,14 +33,14 @@ or
 ### 1.2 What are the FASTA files?
 
 FASTA files `anthus_aco.fas` and `anthus_nd2.fas` from:
- 
- * Van Els, Paul, and Heraldo V. Norambuena. "A revision of species limits in Neotropical pipits Anthus based on multilocus genetic and vocal data." Ibis.
+
+* Van Els, Paul, and Heraldo V. Norambuena. "A revision of species limits in Neotropical pipits Anthus based on multilocus genetic and vocal data." Ibis.
 
 Thanks to Paul van Els.
 
-## [BEAST2](#BEAST2)
+## [BEAST2](#beast2)
 
-`beastier` and [BEAST2](#BEAST2).
+`beastier` and [BEAST2](#beast2).
 
 ### 2.1 How to install BEAST2?
 
@@ -51,8 +51,10 @@ As a workaround, the non-CRAN `beastierinstall` can be used.
 To install BEAST2:
 
 ```
+
 remotes::install_github("richelbilderbeek/beastierinstall")
 beastierinstall::install_beast2()
+
 ```
 
 This will download and extract BEAST2 to:
@@ -68,7 +70,7 @@ Windows|`C:/Users/<username>/Local/beast`
 
 Version 2.6.0, as can be found in the [install_beast2](https://github.com/ropensci/beastier/blob/master/R/install_beast2.R) function.
 
-## [development](#development) 
+## [development](#development)
 
 `beastier` [development](#development).
 
@@ -82,7 +84,7 @@ See [CONTRIBUTING](../CONTRIBUTING.md), at 'Submitting code'
 
 ### 3.3 How can I submit a bug?
 
-See [CONTRIBUTING](../CONTRIBUTING.md), at 'Submitting bugs' 
+See [CONTRIBUTING](../CONTRIBUTING.md), at 'Submitting bugs'
 
 ### 3.4 How can I indicate something else?
 
@@ -96,7 +98,7 @@ Submit an Issue. Or send an email to Richèl Bilderbeek.
 
 The goal of `beastier` is to call BEAST2 from R scripts.
 The Windows `BEAST2.exe` executable starts a graphical user interface.
-An R script should be silent, without pop-ups. 
+An R script should be silent, without pop-ups.
 Therefore, calling the Windows `BEAST2.exe` executable is disallowed.
 
 If this changes, you are encouraged to inform me, by either an Issue
@@ -133,11 +135,11 @@ Because `beastier` cannot be fully tested for both
 Linux and Windows on the same operating system.
 
 Code coverage is measured by [codecov](https://codecov.io/gh/ropensci/beastier/tree/master/R) by the Travis CI continuous integration service.
-Travis uses Linux. 
+Travis uses Linux.
 One can observe all missing code coverage is due to Windows-only functions.
 
 Sure, there are also tests by the AppVeyor continuous integration service.
-AppVeyor uses Windows. Would one observe that code coverage report, 
+AppVeyor uses Windows. Would one observe that code coverage report,
 one would observe all missing code coverage is due to Linux-only functions.
 
 ## [misc](#misc)
@@ -150,7 +152,7 @@ Initially, the logo was a low-tech remake of Beast, from Marvel.
 To prevent problems with Marvel, a different logo was picked.
 
 The current logo shows a hippo, 'quite a formidable beast', also shown
-intimidatingly big for the R logo. 
+intimidatingly big for the R logo.
 The hippo is drawn by Jose Scholte, who kindly allowed her work to
 be used for free, by attribution.
 
@@ -160,4 +162,3 @@ be used for free, by attribution.
 convert hippo.png -fuzz 15% -fill white -opaque white hippo_mono_background.png
 convert hippo_mono_background.png -background white -alpha remove hippo_mono_background_2.png
 ```
-

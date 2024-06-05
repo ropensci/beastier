@@ -1,9 +1,9 @@
 ﻿# beastier
 
 [![Peer Review Status](https://badges.ropensci.org/209_status.svg)](https://github.com/ropensci/onboarding/issues/209)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/beastier)](https://cran.r-project.org/package=beastier)
-[![](http://cranlogs.r-pkg.org/badges/grand-total/beastier)]( https://CRAN.R-project.org/package=beastier)
-[![](http://cranlogs.r-pkg.org/badges/beastier)](https://CRAN.R-project.org/package=beastier)
+[![CRAN version](http://www.r-pkg.org/badges/version/beastier)](https://cran.r-project.org/package=beastier)
+[![CRAN total downloads](http://cranlogs.r-pkg.org/badges/grand-total/beastier)]( https://CRAN.R-project.org/package=beastier)
+[![CRAN downloads per month](http://cranlogs.r-pkg.org/badges/beastier)](https://CRAN.R-project.org/package=beastier)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![DOI](https://zenodo.org/badge/115617629.svg)](https://zenodo.org/badge/latestdoi/115617629)
 
@@ -18,22 +18,22 @@ Branch   |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github
 
 `beastier` is part of the [`babette`](https://github.com/ropensci/babette) package suite:
 
- * [`beautier`](https://github.com/ropensci/beautier) creates BEAST2 input (`.xml`) files.
- * [`beastier`](https://github.com/ropensci/beastier) runs BEAST2
- * [`mauricer`](https://github.com/ropensci/mauricer): install BEAST2 packages
- * [`tracerer`](https://github.com/ropensci/tracerer) pastes BEAST2 output (`.log`, `.trees`, etc) files.
+* [`beautier`](https://github.com/ropensci/beautier) creates BEAST2 input (`.xml`) files.
+* [`beastier`](https://github.com/ropensci/beastier) runs BEAST2
+* [`mauricer`](https://github.com/ropensci/mauricer): install BEAST2 packages
+* [`tracerer`](https://github.com/ropensci/tracerer) pastes BEAST2 output (`.log`, `.trees`, etc) files.
 
 Related R packages:
 
- * [`beastierinstall`](https://github.com/richelbilderbeek/beastierinstall): Install and uninstall BEAST2
- * [`beastier_on_windows`](https://github.com/richelbilderbeek/beastier_on_windows): Verify that `beastier` works on the Windows operating system
- * [`lumier`](https://github.com/ropensci/lumier): Shiny app to help create the function call needed
+* [`beastierinstall`](https://github.com/richelbilderbeek/beastierinstall): Install and uninstall BEAST2
+* [`beastier_on_windows`](https://github.com/richelbilderbeek/beastier_on_windows): Verify that `beastier` works on the Windows operating system
+* [`lumier`](https://github.com/ropensci/lumier): Shiny app to help create the function call needed
 
 ## Install BEAST2
 
 Due to CRAN policy, beastier cannot install BEAST2.
-As a workaround, the non-CRAN 
-[`beastierinstall`](https://github.com/richelbilderbeek/beastierinstall) 
+As a workaround, the non-CRAN
+[`beastierinstall`](https://github.com/richelbilderbeek/beastierinstall)
 can be used.
 
 To install BEAST2:
@@ -47,7 +47,7 @@ beastierinstall::install_beast2()
 
 Run BEAST2:
 
-```
+```r
 output_state_filename <- "out.state"
 
 run_beast2(
@@ -60,7 +60,7 @@ This will create the files as specified in the `2_4.xml` BEAST2 input file.
 
 ## Example for `v2.0.25`
 
-```
+```r
 output_log_filename <- "out.log"
 output_trees_filename <- "out.trees"
 output_state_filename <- "out.state"
@@ -74,10 +74,10 @@ run_beast2(
 ```
 
 Note that in this version, the filenames for the `.log`
-and `.trees` files could be specified. This is unneeded: 
+and `.trees` files could be specified. This is unneeded:
 the `2_4.xml` BEAST2 input file specifies where these files will be stored:
 
-```
+```text
 <?xml [...]?><beast [...]>
 
 [...]
@@ -101,7 +101,7 @@ the `2_4.xml` BEAST2 input file specifies where these files will be stored:
 
 When using `beautier`, this can be specified in `create_mcmc`:
 
-```
+```r
 create_mcmc(
   tracelog = create_tracelog(
     filename = "my_trace.log"
@@ -122,11 +122,11 @@ See [FAQ](doc/faq.md)
 
 ## Missing features/unsupported
 
-`beastier` cannot do everything `BEAST2` can. 
+`beastier` cannot do everything `BEAST2` can.
 
- * Remove: install BEAST2, use [`beastierinstall`](https://github.com/richelbilderbeek/beastierinstall)
- * Experimental: Continue a BEAST2 run
- * Untested: Setup BEAGLE
+* Remove: install BEAST2, use [`beastierinstall`](https://github.com/richelbilderbeek/beastierinstall)
+* Experimental: Continue a BEAST2 run
+* Untested: Setup BEAGLE
 
 ## There is a feature I miss
 
@@ -138,7 +138,7 @@ See [CONTRIBUTING](CONTRIBUTING.md), at 'Submitting code'
 
 ## I think I have found a bug
 
-See [CONTRIBUTING](CONTRIBUTING.md), at 'Submitting bugs' 
+See [CONTRIBUTING](CONTRIBUTING.md), at 'Submitting bugs'
 
 ## There's something else I want to say
 
@@ -146,7 +146,7 @@ Sure, just add an Issue. Or send an email.
 
 ## External links
 
- * [BEAST2 GitHub](https://github.com/CompEvol/beast2)
+* [BEAST2 GitHub](https://github.com/CompEvol/beast2)
 
 ## Dependencies
 
@@ -176,11 +176,10 @@ Filename                              |Descriptions
 
 Article about `babette`:
 
- * Bilderbeek, Richèl JC, and Rampal S. Etienne. "`babette`: BEAUti 2, BEAST 2 and Tracer for R." Methods in Ecology and Evolution (2018). https://doi.org/10.1111/2041-210X.13032
+* Bilderbeek, Richèl JC, and Rampal S. Etienne. "`babette`: BEAUti 2, BEAST 2 and Tracer for R." Methods in Ecology and Evolution (2018). <https://doi.org/10.1111/2041-210X.13032>
 
 FASTA files `anthus_aco.fas` and `anthus_nd2.fas` from:
- 
- * Van Els, Paul, and Heraldo V. Norambuena. "A revision of species limits in Neotropical pipits Anthus based on multilocus genetic and vocal data." Ibis.
+
+* Van Els, Paul, and Heraldo V. Norambuena. "A revision of species limits in Neotropical pipits Anthus based on multilocus genetic and vocal data." Ibis.
 
 [![ropensci_footer](https://ropensci.org/public_images/ropensci_footer.png)](https://ropensci.org)
-

@@ -37,6 +37,5 @@ See http://www.beast2.org/2018/07/04/fatal-errors.html for other possible soluti
 [...]
 ```
 
-The word `WARNING` is used to detect a warning. Regardless of the 
+The word `WARNING` is used to detect a warning. Regardless of the
 fatal exceptions, BEAST2 exits without an error code (i.e. exit code zero).
-
