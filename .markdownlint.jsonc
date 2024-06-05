@@ -1,0 +1,67 @@
+// Example markdownlint configuration with all properties set to their default value
+{
+
+  // Default state for all rules
+  "default": true,
+
+  // MkDocs assumes 4 spaces for indentation.
+  // Markdown assumes 4 spaces for indentation.
+  // That markdownlint has a different default is the error of markdownlint
+  "MD007": { "indent": 4 },
+
+  // Standard markdown does not allow for two correct consecutive blank lines 
+  // i an admonitions (a.o. the 'question' admonition):
+  //
+  // ???- question "A question"
+  //
+  //     ```
+  //     echo "indented code here :-)
+  //     ````
+  //     [blank line 1 here]
+  // [blank line 2 here]
+  //
+  // Hence we allow 2 consecutive blank lines
+  //
+  "MD012": {
+    // Consecutive blank lines, CHANGED FROM 1
+    "maximum": 2
+  },
+
+  "MD013": {
+    // Number of characters, CHANGED FROM 80
+    "line_length": 800,
+    // Number of characters for headings, CHANGED FROM 80
+    "heading_line_length": 800,
+    // Number of characters for code blocks, CHANGED FROM 80
+    "code_block_line_length": 800,
+    // Include code blocks
+    "code_blocks": true,
+    // Include tables
+    "tables": true,
+    // Include headings
+    "headings": true,
+    // Strict length checking
+    "strict": false,
+    // Stern length checking
+    "stern": false
+  },
+
+  // It is common that content creators start their consoles with a dollar,
+  // likely because they think it is clearer
+  //MD014/commands-show-output: Show dollar before command : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md014.md
+  "MD014": false,
+
+  // Standard markdown does not allow for valid indent code like this:
+  //
+  // ???- question "A question"
+  //
+  //     ```
+  //     echo "indented code here :-)
+  //     ````
+  //     
+  // Hence we allow valid indented code.
+  //
+  // MD046/code-block-style : Code block style : https://github.com/DavidAnson/markdownlint/blob/v0.34.0/doc/md046.md
+  "MD046": false
+
+}
