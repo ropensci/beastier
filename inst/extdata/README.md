@@ -1,6 +1,6 @@
 # extdata
 
-# `beast beast2_error.xml`
+## `beast beast2_error.xml`
 
 File to create a BEAST2 error.
 
@@ -8,7 +8,7 @@ File to create a BEAST2 error.
 
 Upon running this file in BEAST2, the output will end with:
 
-```
+```text
 Error 1017 parsing the xml input file
 
 Class could not be found. Did you mean beast.core.util.ESS?
@@ -28,7 +28,9 @@ File to create a BEAST2 warning.
 
 Upon running this file in BEAST2, the output will end with:
 
-```
+<!-- markdownlint-disable MD013 -->
+
+```text
 WARNING: StateNode (freqParameter.s:anthus_aco) found that has no effect on posterior!
 
 [...]
@@ -36,6 +38,8 @@ Fatal exception: Could not find a proper state to initialise. Perhaps try anothe
 See http://www.beast2.org/2018/07/04/fatal-errors.html for other possible solutions.
 [...]
 ```
+
+<!-- markdownlint-enable MD013 -->
 
 The word `WARNING` is used to detect a warning. Regardless of the
 fatal exceptions, BEAST2 exits without an error code (i.e. exit code zero).

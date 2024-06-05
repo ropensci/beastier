@@ -3,7 +3,4 @@
 
   // Default state for all rules
   "default": true
-
-  // NEWS.md will have multiple identical headers
-  "MD024": false
 }

@@ -11,14 +11,14 @@ How to install `rJava` under different operating systems
 
 The `.travis.yml` file shows a Trusty install:
 
-```
+```text
  - sudo apt-get install -qq oracle-java8-installer # Java 8
  - sudo apt-get install oracle-java8-set-default
 ```
 
 So I assume the same can be achieved with:
 
-```
+```bash
 sudo add-apt-repository -y ppa:webupd8team/java 
 sudo apt-get update -qq
 sudo apt-get install oracle-java8-installer
@@ -27,7 +27,7 @@ sudo apt-get install oracle-java8-set-default
 
 ### Ubuntu 17.10 (Artful Aardvark)
 
-```
+```bash
 sudo apt-get install r-cran-rjava openjdk-8-jdk
 R CMD javareconf
 ```
@@ -38,14 +38,14 @@ Do not use `openjdk-9-jdk`.
 
 The `.travis.yml` file shows a Trusty install:
 
-```
+```text
 # - sudo apt install -qq oracle-java8-installer # Java 8
 # - sudo apt install oracle-java8-set-default
 ```
 
 On Bionic, I achieved the same with approx:
 
-```
+```bash
 sudo add-apt-repository ppa:marutter/c2d4u3.5
 sudo apt update
 sudo apt grade
@@ -71,13 +71,13 @@ Sometimes works:
 
 For me, [this Stack Overflow post](https://stackoverflow.com/a/25932828) helped me out:
 
-```
+```bash
 sudo mousepad /etc/ld.so.conf.d/java.conf
 ```
 
 In that file put:
 
-```
+```text
 /usr/lib/jvm/java-8-oracle/jre/lib/amd64
 /usr/lib/jvm/java-8-oracle/jre/lib/amd64/server
 ```
@@ -92,15 +92,15 @@ Else [this Stack Overflow post may be helpful](https://stackoverflow.com/a/43466
 
 Ruthlessly install all JDK stuff:
 
-```
+```bash
 sudo apt-get install jdk-*
 ```
 
-```
+```bash
 sudo R CMD javareconf
 ```
 
-```
+```bash
 sudo R CMD javareconf -e
 export LD_LIBRARY_PATH=$JAVA_LD_LIBRARY_PATH
 sudo apt-get install r-cran-rjava
@@ -124,13 +124,15 @@ Install the Oracle Java SDK with the package installer:
 
 Pick the right `java`:
 
-```
+```bash
 sudo update-alternatives --config java
 ```
 
 I picked:
 
-```
+<!-- markdownlint-disable MD013 -->
+
+```text
 There are 5 choices for the alternative java (providing /usr/bin/java).
 
   Selection    Path                                            Priority   Status
@@ -145,8 +147,10 @@ There are 5 choices for the alternative java (providing /usr/bin/java).
 Press <enter> to keep the current choice[*], or type selection number: 
 ```
 
+<!-- markdownlint-enable MD013 -->
+
 Reconfig:
 
-```
+```bash
 sudo R CMD javareconf
 ```

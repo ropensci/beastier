@@ -1,5 +1,7 @@
 ﻿# beastier
 
+<!-- markdownlint-disable MD013 -->
+
 [![Peer Review Status](https://badges.ropensci.org/209_status.svg)](https://github.com/ropensci/onboarding/issues/209)
 [![CRAN version](http://www.r-pkg.org/badges/version/beastier)](https://cran.r-project.org/package=beastier)
 [![CRAN total downloads](http://cranlogs.r-pkg.org/badges/grand-total/beastier)]( https://CRAN.R-project.org/package=beastier)
@@ -12,22 +14,30 @@ Branch   |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github
 `master` |![R-CMD-check](https://github.com/ropensci/beastier/workflows/R-CMD-check/badge.svg?branch=master)   |[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=master)](https://codecov.io/github/ropensci/beastier/branch/master)
 `develop`|![R-CMD-check](https://github.com/ropensci/beastier/workflows/R-CMD-check/badge.svg?branch=develop)  |[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=develop)](https://codecov.io/github/ropensci/beastier/branch/develop)
 
+<!-- markdownlint-enable MD013 -->
+
 `beastier` is an R package to run BEAST2.
 
 ![beastier logo](man/figures/beastier_logo.png)
 
-`beastier` is part of the [`babette`](https://github.com/ropensci/babette) package suite:
+`beastier` is part of the [`babette`](https://github.com/ropensci/babette)
+package suite:
 
-* [`beautier`](https://github.com/ropensci/beautier) creates BEAST2 input (`.xml`) files.
+* [`beautier`](https://github.com/ropensci/beautier)
+  creates BEAST2 input (`.xml`) files.
 * [`beastier`](https://github.com/ropensci/beastier) runs BEAST2
 * [`mauricer`](https://github.com/ropensci/mauricer): install BEAST2 packages
-* [`tracerer`](https://github.com/ropensci/tracerer) pastes BEAST2 output (`.log`, `.trees`, etc) files.
+* [`tracerer`](https://github.com/ropensci/tracerer)
+  pastes BEAST2 output (`.log`, `.trees`, etc) files.
 
 Related R packages:
 
-* [`beastierinstall`](https://github.com/richelbilderbeek/beastierinstall): Install and uninstall BEAST2
-* [`beastier_on_windows`](https://github.com/richelbilderbeek/beastier_on_windows): Verify that `beastier` works on the Windows operating system
-* [`lumier`](https://github.com/ropensci/lumier): Shiny app to help create the function call needed
+* [`beastierinstall`](https://github.com/richelbilderbeek/beastierinstall):
+  Install and uninstall BEAST2
+* [`beastier_on_windows`](https://github.com/richelbilderbeek/beastier_on_windows):
+  Verify that `beastier` works on the Windows operating system
+* [`lumier`](https://github.com/ropensci/lumier):
+  Shiny app to help create the function call needed
 
 ## Install BEAST2
 
@@ -150,12 +160,16 @@ Sure, just add an Issue. Or send an email.
 
 ## Dependencies
 
+<!-- markdownlint-disable MD013 -->
+
 Branch                     |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github.com/ropensci/beautier/actions)              |[![Codecov logo](man/figures/Codecov.png)](https://www.codecov.io)
 ---------------------------|-------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 `beautier` `master`        |![R-CMD-check](https://github.com/ropensci/beautier/workflows/R-CMD-check/badge.svg?branch=master)                 |[![codecov.io](https://codecov.io/github/ropensci/beautier/coverage.svg?branch=master)](https://codecov.io/github/ropensci/beautier/branch/master)
 `beautier` `develop`       |![R-CMD-check](https://github.com/ropensci/beautier/workflows/R-CMD-check/badge.svg?branch=develop)                |[![codecov.io](https://codecov.io/github/ropensci/beautier/coverage.svg?branch=develop)](https://codecov.io/github/ropensci/beautier/branch/develop)
 `beastierinstall` `master` |![R-CMD-check](https://github.com/richelbilderbeek/beastierinstall/workflows/R-CMD-check/badge.svg?branch=master)  |[![codecov.io](https://codecov.io/github/richelbilderbeek/beastierinstall/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/beastierinstall/branch/master)
 `beastierinstall` `develop`|![R-CMD-check](https://github.com/richelbilderbeek/beastierinstall/workflows/R-CMD-check/badge.svg?branch=develop) |[![codecov.io](https://codecov.io/github/richelbilderbeek/beastierinstall/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/beastierinstall/branch/develop)
+
+<!-- markdownlint-enable MD013 -->
 
 Branch                         |[![AppVeyor logo](man/figures/AppVeyor.png)](https://ci.appveyor.com/project/richelbilderbeek/beastier_on_windows/)
 -------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -176,10 +190,14 @@ Filename                              |Descriptions
 
 Article about `babette`:
 
-* Bilderbeek, Richèl JC, and Rampal S. Etienne. "`babette`: BEAUti 2, BEAST 2 and Tracer for R." Methods in Ecology and Evolution (2018). <https://doi.org/10.1111/2041-210X.13032>
+* Bilderbeek, Richèl JC, and Rampal S. Etienne. "`babette`:
+  BEAUti 2, BEAST 2 and Tracer for R." Methods in Ecology and
+  Evolution (2018). <https://doi.org/10.1111/2041-210X.13032>
 
 FASTA files `anthus_aco.fas` and `anthus_nd2.fas` from:
 
-* Van Els, Paul, and Heraldo V. Norambuena. "A revision of species limits in Neotropical pipits Anthus based on multilocus genetic and vocal data." Ibis.
+* Van Els, Paul, and Heraldo V. Norambuena.
+  "A revision of species limits in Neotropical pipits Anthus
+  based on multilocus genetic and vocal data." Ibis.
 
 [![ropensci_footer](https://ropensci.org/public_images/ropensci_footer.png)](https://ropensci.org)

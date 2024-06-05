@@ -2,6 +2,8 @@
 
 Newest versions at top.
 
+<!-- markdownlint-disable MD024 -->
+
 ## beastier 2.5.2 (unreleased)
 
 ### NEW FEATURES
@@ -101,8 +103,10 @@ Newest versions at top.
 
 ### MINOR IMPROVEMENTS
 
-* Add 'remove_beaustier_folders' to delete both the 'beautier' and 'beastier' temporary folders
-* Add 'check_empty_beaustier_folders' to check that both the 'beautier' and 'beastier' temporary folders are empty
+* Add 'remove_beaustier_folders' to delete both the 'beautier'
+  and 'beastier' temporary folders
+* Add 'check_empty_beaustier_folders' to check that
+  both the 'beautier' and 'beastier' temporary folders are empty
 
 ### BUG FIXES
 
@@ -986,3 +990,5 @@ This version never had a formal release.
 ### DEPRECATED AND DEFUNCT
 
 * None
+
+<!-- markdownlint-enable MD024 -->
