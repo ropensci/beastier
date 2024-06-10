@@ -11,7 +11,8 @@ From: rocker/tidyverse
 
     apt search openjdk
     apt-cache search openjdk-
-    sudo apt-get install -qq openjdk-11-jre-headless/now
+    sudo apt-get install -qq openjdk-21-jre-headless/now
+    # sudo apt-get install -qq openjdk-11-jre-headless/now # Does not work anymore
     ## sudo apt install -qq default-jre
     ### sudo apt-get install -qq r-cran-rjava # Unknown package
     ## sudo apt-get install -qq openjdk-13-*
