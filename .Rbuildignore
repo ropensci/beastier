@@ -2,7 +2,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.travis.yml$
-^.lintr$
+^\.lintr$
 ^install_beast2$
 ^install_beast2\.md$
 ^doc$
@@ -21,3 +21,8 @@
 ^beastier\.sif$
 ^Meta$
 ^mlc_config\.json$
+^\.markdownlint\.jsonc$
+^\.markdownlintignore$
+^\.spellcheck\.yml$
+^\.wordlist\.txt$
+

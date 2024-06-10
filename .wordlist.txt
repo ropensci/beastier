@@ -1,2 +1,3 @@
 Richel
 Richèl
+linter
