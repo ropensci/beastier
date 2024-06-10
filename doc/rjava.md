@@ -54,7 +54,7 @@ sudo apt-get install openjdk-11-jdk
 sudo R CMD javareconf
 ```
 
-```
+```bash
 #sudo add-apt-repository -y ppa:webupd8team/java 
 #sudo apt-get update -qq
 #sudo apt-get install oracle-java8-installer
@@ -69,7 +69,8 @@ sudo R CMD javareconf
 
 Sometimes works:
 
-For me, [this Stack Overflow post](https://stackoverflow.com/a/25932828) helped me out:
+For me, [this Stack Overflow post](https://stackoverflow.com/a/25932828)
+helped me out:
 
 ```bash
 sudo mousepad /etc/ld.so.conf.d/java.conf
@@ -112,15 +113,15 @@ sudo apt-get install r-cran-rjava
 
 Download the Oracle Java SDK:
 
-![](download_oracle_java_sdk.png)
+![Download the Oracle Java SDK](download_oracle_java_sdk.png)
 
 Open the Oracle Java SDK with the package installer:
 
-![](open_oracle_java_sdk.png)
+![Open the Oracle Java SDK with the package installer](open_oracle_java_sdk.png)
 
 Install the Oracle Java SDK with the package installer:
 
-![](install_oracle_java_sdk.png)
+![Install the Oracle Java SDK with the package installer](install_oracle_java_sdk.png)
 
 Pick the right `java`:
 

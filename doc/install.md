@@ -4,7 +4,9 @@ This page described how to install `beastier`.
 
 ## Install `rJava`
 
-If you have problems installing rJava, [Duck](http://www.duckduckgo.com) or [view my rJava notes](rjava.md).
+If you have problems installing rJava,
+[Duck](http://www.duckduckgo.com) or
+[view my rJava notes](rjava.md).
 
 ## Install BEAST2
 
@@ -13,7 +15,7 @@ As a workaround, the non-CRAN `beastierinstall` can be used.
 
 To install BEAST2:
 
-```
+```r
 remotes::install_github("richelbilderbeek/beastierinstall")
 beastierinstall::install_beast2()
 ```
@@ -32,17 +34,8 @@ Windows|`C:/Users/<username>/Local/beast`
 
 ### Stable development
 
-`beastier` is not on CRAN yet. The simplest way now is to install `beastier` with the `devtools` R package:
+`beastier` is on CRAN:
 
+```r
+install.packages("beastier")
 ```
-remotes::install_github("ropensci/beastier")
-```
-
-`beastier` assumes that `beautier` and `tracerer` are also installed. Do so:
-
-```
-remotes::install_github("ropensci/beautier")
-remotes::install_github("ropensci/tracerer")
-```
-
-`beastier` assumes that BEAST2 is installed.

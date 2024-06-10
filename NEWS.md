@@ -3,6 +3,7 @@
 Newest versions at top.
 
 <!-- markdownlint-disable MD024 -->
+<!-- markdownlint-disable MD025 -->
 
 # beastier 2.5.2 (unreleased)
 
@@ -41,7 +42,6 @@ Newest versions at top.
 * None
 
 # beastier 2.5 (2023-11-07)
-
 
 ## NEW FEATURES
 
@@ -993,3 +993,4 @@ This version never had a formal release.
 * None
 
 <!-- markdownlint-enable MD024 -->
+<!-- markdownlint-enable MD025 -->
