@@ -14,13 +14,13 @@
 
 Cite:
 
-```
+```text
 Bilderbeek, Richèl JC, and Rampal S. Etienne. "babette: BEAUti 2, BEAST 2 and Tracer for R." Methods in Ecology and Evolution (2018).
 ```
 
 or
 
-```
+```text
 @article{bilderbeek2018babette,
   title={babette: BEAUti 2, BEAST 2 and Tracer for R},
   author={Bilderbeek, Richèl JC and Etienne, Rampal S},
@@ -44,17 +44,14 @@ Thanks to Paul van Els.
 
 ### 2.1 How to install BEAST2?
 
-```
 Due to CRAN policy, beastier cannot install BEAST2.
 As a workaround, the non-CRAN `beastierinstall` can be used.
 
 To install BEAST2:
 
-```
-
+```r
 remotes::install_github("richelbilderbeek/beastierinstall")
 beastierinstall::install_beast2()
-
 ```
 
 This will download and extract BEAST2 to:
@@ -64,7 +61,6 @@ OS     |Full path
 Linux  |`~/.local/share/beast`
 macOS  |`~/.local/share/beast`
 Windows|`C:/Users/<username>/Local/beast`
-```
 
 ### 2.2 Which version of BEAUti do you use as a guideline?
 
@@ -106,7 +102,7 @@ or an email.
 
 ### 4.2 Installing Java under A
 
-```
+```bash
 sudo apt-get install r-cran-rjava
 R CMD javareconf
 ```
@@ -115,14 +111,14 @@ R CMD javareconf
 
 The `.travis.yml` file shows a Trusty install:
 
-```
+```text
  - sudo apt-get install -qq oracle-java8-installer # Java 8
  - sudo apt-get install oracle-java8-set-default
 ```
 
 On Bionic, I assume the same can be achieved with:
 
-```
+```bash
 sudo add-apt-repository -y ppa:webupd8team/java 
 sudo apt-get update -qq
 sudo apt-get install oracle-java8-installer
@@ -158,7 +154,7 @@ be used for free, by attribution.
 
 ### 5.2 How did you convert the fuzzy white background to one single color?
 
-```
+```bash
 convert hippo.png -fuzz 15% -fill white -opaque white hippo_mono_background.png
 convert hippo_mono_background.png -background white -alpha remove hippo_mono_background_2.png
 ```
