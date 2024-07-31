@@ -1,6 +1,6 @@
 test_that("use", {
   expect_silent(
-    check_beast2_path(get_beastier_path("some path that exists TODO"))
+    check_beast2_path(get_beastier_path("beast2_error.xml"))
   )
 })
 
