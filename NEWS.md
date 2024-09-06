@@ -13,7 +13,7 @@ Newest versions at top.
 
 ## MINOR IMPROVEMENTS
 
-* None
+* Corrected format in names in `DESCRIPTION`, thanks Kurt Hornik
 
 ## BUG FIXES
 
