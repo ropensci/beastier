@@ -2,7 +2,7 @@
 % Please edit documentation in R/remove_beastier_folder.R
 \name{remove_beastier_folder}
 \alias{remove_beastier_folder}
-\title{Check there are no files in the default \link{beautier} folder}
+\title{Check there are no files in the default \link[beautier]{beautier} folder}
 \usage{
 remove_beastier_folder()
 }
@@ -10,9 +10,9 @@ remove_beastier_folder()
 Nothing.
 }
 \description{
-Check there are no files in the default \link{beautier} folder.
+Check there are no files in the default \link[beautier]{beautier} folder.
 The goal is to make sure no temporary files are left undeleted.
-Will \link{stop} if there are files in the \link{beautier} folder.
+Will \link{stop} if there are files in the \link[beautier]{beautier} folder.
 }
 \examples{
 check_empty_beastier_folder()
@@ -22,7 +22,7 @@ remove_beastier_folder()
 check_empty_beastier_folder()
 }
 \seealso{
-use \link{remove_beautier_folder} to remove the default
+use \link[beautier]{remove_beautier_folder} to remove the default
 `beautier` folder
 }
 \author{

@@ -1,10 +1,10 @@
-#' Check there are no files in the default \link{beautier} folder
+#' Check there are no files in the default \link[beautier]{beautier} folder
 #'
-#' Check there are no files in the default \link{beautier} folder.
+#' Check there are no files in the default \link[beautier]{beautier} folder.
 #' The goal is to make sure no temporary files are left undeleted.
-#' Will \link{stop} if there are files in the \link{beautier} folder.
+#' Will \link{stop} if there are files in the \link[beautier]{beautier} folder.
 #'
-#' @seealso use \link{remove_beautier_folder} to remove the default
+#' @seealso use \link[beautier]{remove_beautier_folder} to remove the default
 #' `beautier` folder
 #' @return Nothing.
 #' @examples

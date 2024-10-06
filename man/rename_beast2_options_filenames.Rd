@@ -12,7 +12,7 @@ that are the R equivalent of the BEAST2 command-line options,
 as can be created by \link{create_beast2_options}}
 
 \item{rename_fun}{a function to rename a filename,
-as can be checked by \link{check_rename_fun}. This function should
+as can be checked by \link[beautier]{check_rename_fun}. This function should
 have one argument, which will be a filename or \link{NA}. The
 function should \link{return} one filename (when passed one filename) or
 one \link{NA} (when passed one \link{NA}).
