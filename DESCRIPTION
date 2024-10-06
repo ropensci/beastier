@@ -40,7 +40,7 @@ Suggests:
     tracerer (>= 2.2.3)
 URL: https://docs.ropensci.org/beastier/ (website)
     https://github.com/ropensci/beastier/
-BugReports: https://github.com/ropensci/beastier
+BugReports: https://github.com/ropensci/beastier/issues
 Language: en-US
 VignetteBuilder: knitr
 SystemRequirements: BEAST2 (https://www.beast2.org/)
