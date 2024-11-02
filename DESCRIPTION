@@ -35,7 +35,6 @@ Imports:
 Suggests:
     knitr,
     rmarkdown,
-    spelling,
     testthat (>= 2.1.0),
     tracerer (>= 2.2.3)
 URL: https://docs.ropensci.org/beastier/ (website)
