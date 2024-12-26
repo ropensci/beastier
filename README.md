@@ -1,6 +1,6 @@
 ﻿# beastier
 
-<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD013 --><!-- Badges cannot be split up over lines, hence will break 80 characters per line -->
 
 [![Peer Review Status](https://badges.ropensci.org/209_status.svg)](https://github.com/ropensci/onboarding/issues/209)
 [![CRAN version](http://www.r-pkg.org/badges/version/beastier)](https://cran.r-project.org/package=beastier)
@@ -160,7 +160,7 @@ Sure, just add an Issue. Or send an email.
 
 ## Dependencies
 
-<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD013 --><!-- Tables cannot be split up over lines, hence will break 80 characters per line -->
 
 Branch                     |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github.com/ropensci/beautier/actions)                                                                                                                     |[![Codecov logo](man/figures/Codecov.png)](https://www.codecov.io)
 ---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -178,6 +178,8 @@ Branch                         |[![AppVeyor logo](man/figures/AppVeyor.png)](htt
 
 ## Files used by continuous integration scripts
 
+<!-- markdownlint-disable MD013 --><!-- Tables cannot be split up over lines, hence will break 80 characters per line -->
+
 Filename                              |Descriptions
 --------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
 [mlc_config.json](mlc_config.json)    |Configuration of the link checker, use `markdown-link-check --config mlc_config.json --quiet docs/**/*.md` to do link checking locally
@@ -185,6 +187,8 @@ Filename                              |Descriptions
 [.wordlist.txt](.wordlist.txt)        |Whitelisted words for the spell checker, use `pyspelling -c .spellcheck.yml` to do spellcheck locally
 [.markdownlint.jsonc](.markdownlint.jsonc)|Configuration of the markdown linter, use `markdownlint "**/*.md"` to do markdown linting locally. The name of this file is a default name.
 [.markdownlintignore](.markdownlintignore)|Files ignored by the markdown linter, use `markdownlint "**/*.md"` to do markdown linting locally. The name of this file is a default name.
+
+<!-- markdownlint-enable MD013 -->
 
 ## References
 
