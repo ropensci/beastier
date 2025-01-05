@@ -1,0 +1,94 @@
+#
+#model:
+#
+#<?xml version="1.0" encoding="UTF-8" standalone="no"?><input id="posterior" spec="beast.core.util.CompoundDistribution">
+#    <distribution id="prior" spec="beast.core.util.CompoundDistribution">
+#        <distribution id="BayesianSkyline.t:babette_issue_108" spec="beast.evolution.tree.coalescent.BayesianSkyline">
+#            <parameter dimension="5" id="bPopSizes.t:babette_issue_108" lower="0.0" name="popSizes" spec="beast.core.parameter.RealParameter" upper="380000.0">380.0</parameter>
+#            <groupSizes dimension="5" id="bGroupSizes.t:babette_issue_108" spec="beast.core.parameter.IntegerParameter">1</groupSizes>
+#            <treeIntervals id="BSPTreeIntervals.t:babette_issue_108" spec="beast.evolution.tree.coalescent.TreeIntervals">
+#                <tree id="Tree.t:babette_issue_108" spec="beast.evolution.tree.Tree">
+#                    <trait id="dateTrait.t:babette_issue_108" spec="beast.evolution.tree.TraitSet" traitname="date" value="">
+#                        <taxa id="TaxonSet.babette_issue_108" spec="beast.evolution.alignment.TaxonSet">
+#                        </taxa>
+#                    </trait>
+#                    <taxonset idref="TaxonSet.babette_issue_108"/>
+#                </tree>
+#            </treeIntervals>
+#        </distribution>
+#        <distribution id="MarkovChainedPopSizes.t:babette_issue_108" jeffreys="true" parameter="@bPopSizes.t:babette_issue_108" spec="beast.math.distributions.MarkovChainDistribution"/>
+#        <prior id="FrequenciesPrior.s:babette_issue_108" name="distribution">
+#            <parameter dimension="4" id="freqParameter.s:babette_issue_108" lower="0.0" name="x" spec="beast.core.parameter.RealParameter" upper="1.0">0.25</parameter>
+#            <Uniform id="Uniform.1000" name="distr"/>
+#        </prior>
+#        <prior id="RateACPrior.s:babette_issue_108" name="distribution">
+#            <parameter id="rateAC.s:babette_issue_108" lower="0.0" name="x" spec="beast.core.parameter.RealParameter">1.0</parameter>
+#            <Gamma id="Gamma.0" name="distr">
+#                <parameter estimate="false" id="RealParameter.0" name="alpha" spec="beast.core.parameter.RealParameter">0.05</parameter>
+#                <parameter estimate="false" id="RealParameter.1" name="beta" spec="beast.core.parameter.RealParameter">10.0</parameter>
+#            </Gamma>
+#        </prior>
+#        <prior id="RateAGPrior.s:babette_issue_108" name="distribution">
+#            <parameter id="rateAG.s:babette_issue_108" lower="0.0" name="x" spec="beast.core.parameter.RealParameter">1.0</parameter>
+#            <Gamma id="Gamma.1" name="distr">
+#                <parameter estimate="false" id="RealParameter.2" name="alpha" spec="beast.core.parameter.RealParameter">0.05</parameter>
+#                <parameter estimate="false" id="RealParameter.3" name="beta" spec="beast.core.parameter.RealParameter">20.0</parameter>
+#            </Gamma>
+#        </prior>
+#        <prior id="RateATPrior.s:babette_issue_108" name="distribution">
+#            <parameter id="rateAT.s:babette_issue_108" lower="0.0" name="x" spec="beast.core.parameter.RealParameter">1.0</parameter>
+#            <Gamma id="Gamma.2" name="distr">
+#                <parameter estimate="false" id="RealParameter.4" name="alpha" spec="beast.core.parameter.RealParameter">0.05</parameter>
+#                <parameter estimate="false" id="RealParameter.5" name="beta" spec="beast.core.parameter.RealParameter">10.0</parameter>
+#            </Gamma>
+#        </prior>
+#        <prior id="RateCGPrior.s:babette_issue_108" name="distribution">
+#            <parameter id="rateCG.s:babette_issue_108" lower="0.0" name="x" spec="beast.core.parameter.RealParameter">1.0</parameter>
+#            <Gamma id="Gamma.3" name="distr">
+#                <parameter estimate="false" id="RealParameter.6" name="alpha" spec="beast.core.parameter.RealParameter">0.05</parameter>
+#                <parameter estimate="false" id="RealParameter.7" name="beta" spec="beast.core.parameter.RealParameter">10.0</parameter>
+#            </Gamma>
+#        </prior>
+#        <prior id="RateGTPrior.s:babette_issue_108" name="distribution">
+#            <parameter id="rateGT.s:babette_issue_108" lower="0.0" name="x" spec="beast.core.parameter.RealParameter">1.0</parameter>
+#            <Gamma id="Gamma.4" name="distr">
+#                <parameter estimate="false" id="RealParameter.8" name="alpha" spec="beast.core.parameter.RealParameter">0.05</parameter>
+#                <parameter estimate="false" id="RealParameter.9" name="beta" spec="beast.core.parameter.RealParameter">10.0</parameter>
+#            </Gamma>
+#        </prior>
+#        <prior id="MeanRatePrior.c:babette_issue_108" name="distribution">
+#            <parameter id="ucldMean.c:babette_issue_108" name="x" spec="beast.core.parameter.RealParameter">1.0</parameter>
+#            <Uniform id="Uniform.6" name="distr" upper="Infinity"/>
+#        </prior>
+#        <prior id="ucldStdevPrior.c:babette_issue_108" name="distribution">
+#            <parameter id="ucldStdev.c:babette_issue_108" lower="0.0" name="x" spec="beast.core.parameter.RealParameter">0.1</parameter>
+#            <Gamma id="Gamma.5" name="distr">
+#                <parameter estimate="false" id="RealParameter.10" name="alpha" spec="beast.core.parameter.RealParameter">0.5396</parameter>
+#                <parameter estimate="false" id="RealParameter.11" name="beta" spec="beast.core.parameter.RealParameter">0.3819</parameter>
+#            </Gamma>
+#        </prior>
+#    </distribution>
+#    <distribution id="likelihood" spec="beast.core.util.CompoundDistribution" useThreads="true">
+#        <distribution data="@babette_issue_108" id="treeLikelihood.babette_issue_108" spec="beast.evolution.likelihood.ThreadedTreeLikelihood" tree="@Tree.t:babette_issue_108">
+#            <siteModel id="SiteModel.s:babette_issue_108" spec="beast.evolution.sitemodel.SiteModel">
+#                <parameter estimate="false" id="mutationRate.s:babette_issue_108" name="mutationRate" spec="beast.core.parameter.RealParameter">1.0</parameter>
+#                <parameter estimate="false" id="gammaShape.s:babette_issue_108" name="shape" spec="beast.core.parameter.RealParameter">1.0</parameter>
+#                <parameter estimate="false" id="proportionInvariant.s:babette_issue_108" lower="0.0" name="proportionInvariant" spec="beast.core.parameter.RealParameter" upper="1.0">0.0</parameter>
+#                <substModel id="gtr.s:babette_issue_108" rateAC="@rateAC.s:babette_issue_108" rateAG="@rateAG.s:babette_issue_108" rateAT="@rateAT.s:babette_issue_108" rateCG="@rateCG.s:babette_issue_108" rateGT="@rateGT.s:babette_issue_108" spec="beast.evolution.substitutionmodel.GTR">
+#                    <parameter estimate="false" id="rateCT.s:babette_issue_108" lower="0.0" name="rateCT" spec="beast.core.parameter.RealParameter">1.0</parameter>
+#                    <frequencies frequencies="@freqParameter.s:babette_issue_108" id="estimatedFreqs.s:babette_issue_108" spec="beast.evolution.substitutionmodel.Frequencies"/>
+#                </substModel>
+#            </siteModel>
+#            <branchRateModel clock.rate="@ucldMean.c:babette_issue_108" id="RelaxedClock.c:babette_issue_108" spec="beast.evolution.branchratemodel.UCRelaxedClockModel" tree="@Tree.t:babette_issue_108">
+#                <LogNormal S="@ucldStdev.c:babette_issue_108" id="LogNormalDistributionModel.c:babette_issue_108" meanInRealSpace="true" name="distr">
+#                    <parameter estimate="false" id="RealParameter.12" lower="0.0" name="M" spec="beast.core.parameter.RealParameter" upper="1.0">1.0</parameter>
+#                </LogNormal>
+#                <rateCategories dimension="20" id="rateCategories.c:babette_issue_108" spec="beast.core.parameter.IntegerParameter">1</rateCategories>
+#            </branchRateModel>
+#        </distribution>
+#    </distribution>
+#</input>
+#
+Sample	posterior	likelihood	prior	treeLikelihood	TreeHeight	rateAC	rateAG	rateAT	rateCG	rateGT	freqParameter.1	freqParameter.2	freqParameter.3	freqParameter.4	ucldMean	ucldStdev	rate.mean	rate.variance	rate.coefficientOfVariation	BayesianSkyline	bPopSizes.1	bPopSizes.2	bPopSizes.3	bPopSizes.4	bPopSizes.5	bGroupSizes.1	bGroupSizes.2	bGroupSizes.3	bGroupSizes.4	bGroupSizes.5
+0	-8440.012996927451	-8331.806467063836	-108.20652986361469	-8331.806467063836	0.906963150810689	1.0	1.0	1.0	1.0	1.0	0.25	0.25	0.25	0.25	1.0	0.1	1.054038810937441	0.011137854553404379	0.10433428898827442	-59.42033810759818	380.0	380.0	380.0	380.0	380.0	2	2	2	2	2
+1000	-3132.8757625341927	-3021.432718429093	-111.44304410509977	-3021.432718429093	0.20198367817536556	1.0	1.0	0.9181190403071304	1.0	1.0	0.25	0.25	0.25	0.25	0.149761629642013	0.9750035378907831	0.07276143828425694	0.011072692834962506	0.8968879282619207	-59.406556802006286	379.99999350485535	379.9999860467514	379.9999932736567	379.9999968831465	380.00001589945305	1	1	1	6	1

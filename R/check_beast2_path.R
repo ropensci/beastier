@@ -15,6 +15,17 @@
 #' check_empty_beaustier_folders()
 #' @export
 check_beast2_path <- function(beast2_path) {
-  beautier::check_file_exists(beast2_path, "beast2_path")
+  tryCatch(
+    beautier::check_file_exists(beast2_path, "beast2_path"),
+    error = function(exception) {
+      msg <- paste0(
+        "BEAST2 is not found at path '", beast2_path, " \n",
+        " \n",
+        "Tip: run 'beastierinstall::install_beast2()' \n",
+        " \n", exception
+      )
+      stop(msg)
+    }
+  )
   invisible(beast2_path)
 }
