@@ -25,4 +25,5 @@ test_that("use", {
     output_state_filename = create_temp_state_filename(),
     use_beagle = TRUE
   )
-  remove_beautier_folder()})
+  remove_beaustier_folders()
+})
