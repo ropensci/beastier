@@ -3,7 +3,7 @@ test_that("use", {
   expect_true(file.exists(beautier::get_beautier_path("babette_issue_108.fasta")))
   fasta_filename <- beautier::get_beautier_path("babette_issue_108.fasta")
   output_filename <- beautier::get_beautier_tempfilename()
-  tipdates_filename <- beautier::get_beautier_tempfilename(pattern = "absent_")
+  tipdates_filename <- beautier::get_beautier_path("babette_issue_108_tipdates.txt")
   create_beast2_input_file(
     fasta_filename,
     output_filename,
@@ -15,7 +15,7 @@ test_that("use", {
     beauti_options = beautier::create_beauti_options_v2_6()
   )
   expect_true(file.exists(output_filename))
-  expect_false(file.exists(tipdates_filename))
+  expect_true(file.exists(tipdates_filename))
 
 
   readr::read_lines(output_filename)
