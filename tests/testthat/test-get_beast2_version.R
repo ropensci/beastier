@@ -12,6 +12,22 @@ test_that("use", {
   )
 })
 
+test_that("use, BEAST2 v2.5.0", {
+  expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
+  if (!beautier::is_on_ci()) return()
+
+  beastierinstall::install_beast2(beast2_version = "2.5.0")
+
+  # Versions mismatch: the binary from
+  # https://github.com/CompEvol/beast2/releases/download/v2.6.0/BEAST.v2.6.0.Linux.tgz # nolint indeed long URL
+  # (notice the v2.6.0) really returns 'v2.6.1'
+  # upon a ./beast/bin/beast -version
+  expect_match(
+    get_beast2_version(beast2_path = get_default_beast2_jar_path()),
+    "2\\.5"
+  )
+})
+
 test_that("abuse", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!is_beast2_installed()) return()

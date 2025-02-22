@@ -31,6 +31,24 @@ get_beast2_version <- function(
   beautier::check_file_exists(cmds[1], "cmds[1]")
   output <- NA
 
+  if (1 == 2) {
+    # Old, as of 2025-02-21
+    output <- system2(
+      cmds[1],
+      args = cmds[-1],
+      stdout = TRUE,
+      stderr = TRUE
+    )
+  }
+
+  # Running
+  #
+  #   /usr/lib/jvm/java-21-openjdk-amd64/bin/java -cp /home/richel/.local/share/beast/lib/launcher.jar beast.app.beastapp.BeastLauncher -version
+  #
+  # Gives output:
+  #
+  # [java, -Djava.library.path=/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib, -cp, ::/home/richel/.beast/2.5/BEAST/lib/beast.jar:/home/richel/.beast/2.5/BEAST/lib/beast.src.jar, beast.app.beastapp.BeastMain, -version]
+
   output <- system2(
     cmds[1],
     args = cmds[-1],
