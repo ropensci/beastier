@@ -69,7 +69,7 @@ Windows|`C:/Users/<username>/Local/beast`
 ### 2.2 Which version of BEAUti do you use as a guideline?
 
 Version 2.6.0, as can be found in the
-[install_beast2](https://github.com/ropensci/beastier/blob/master/R/install_beast2.R)
+[install_beast2](https://github.com/ropensci/beastier/blob/main/R/install_beast2.R)
 function.
 
 ## [development](#development)
@@ -137,7 +137,7 @@ Because `beastier` cannot be fully tested for both
 Linux and Windows on the same operating system.
 
 Code coverage is measured by
-[codecov](https://codecov.io/gh/ropensci/beastier/tree/master/R)
+[codecov](https://codecov.io/gh/ropensci/beastier/tree/main/R)
 by the Travis CI continuous integration service.
 Travis uses Linux.
 One can observe all missing code coverage is due to Windows-only functions.
