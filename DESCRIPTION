@@ -22,7 +22,7 @@ Encoding: UTF-8
 RoxygenNote: 7.3.2
 Imports:
     ape,
-    beautier (>= 2.6.11),
+    beautier (>= 2.6.15),
     phangorn,
     rappdirs,
     readr,
