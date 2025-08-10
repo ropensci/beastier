@@ -1,10 +1,24 @@
+name: R-CMD-check
+
+# Check spelling on the 2nd day of the month.
+# 2nd as the first letter of this repo is the 2nd letter in the alphabet.
 on:
   push:
+    paths:
+      - .github/workflows/R-CMD-check.yaml
+      - "**.R"
+      - "**.Rmd"
+      - DESCRIPTION
+      - .Rbuildignore
   pull_request:
+    paths:
+      - .github/workflows/R-CMD-check.yaml
+      - "**.R"
+      - "**.Rmd"
+      - DESCRIPTION
+      - .Rbuildignore
   schedule:
-  - cron: "0 0 2 * *"
-
-name: R-CMD-check
+    - cron: "0 0 2 * *"
 
 jobs:
   R-CMD-check:
@@ -70,20 +84,24 @@ jobs:
         run: testthat::expect_equal(0, length(list.files(rappdirs::user_cache_dir(appname = "beastier"))))
         shell: Rscript {0}
 
+      # Codecov, only if BEAST2 is installed
       - name: Test coverage
         env:
           INSTALL_BEAST2: ${{ matrix.install_beast2 }}
         run: if [[ "$INSTALL_BEAST2" == true ]]; then Rscript -e 'covr::codecov()'; fi
 
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: ropensci/beautier
+        run: if [[ "$INSTALL_BEAST2" == true ]]; then Rscript -e 'covr::codecov()'; fi
+
+      # Lint, only if BEAST2 is **not** installed
       - name: Lint
         env:
           INSTALL_BEAST2: ${{ matrix.install_beast2 }}
-        run: if [[ "$INSTALL_BEAST2" == false ]]; then Rscript -e 'lintr::lint_package()'; fi
-
-      - name: Install beastier
-        run: remotes::install_github("richelbilderbeek/beastier", ref = "develop")
-        shell: Rscript {0}
-        if: ${{ always() }}
+        run: if [[ "$INSTALL_BEAST2" == false ]]; then Rscript -e 'Sys.setenv("LINTR_ERROR_ON_LINT" = TRUE); lintr::lint_package()'; fi
 
       - name: Report
         run: beastier::beastier_report()
