@@ -5,7 +5,7 @@ Newest versions at top.
 <!-- markdownlint-disable MD024 -->
 <!-- markdownlint-disable MD025 -->
 
-# beastier 2.5.2 (unreleased)
+# beastier 2.5.2 (2025-08-10)
 
 ## NEW FEATURES
 
@@ -14,6 +14,7 @@ Newest versions at top.
 ## MINOR IMPROVEMENTS
 
 - Corrected format in names in `DESCRIPTION`, thanks Kurt Hornik
+- Clean lint
 
 ## BUG FIXES
 
