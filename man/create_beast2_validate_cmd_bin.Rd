@@ -7,7 +7,7 @@ using a call to the \code{launcher.jar} file}
 \usage{
 create_beast2_validate_cmd_bin(
   input_filename,
-  beast2_bin_path = get_default_beast2_bin_path()
+  beast2_bin_path = beastier::get_default_beast2_bin_path()
 )
 }
 \arguments{

@@ -19,5 +19,5 @@
 has_unique_ids <- function(
   text
 ) {
-  length(get_duplicate_param_ids(text)) == 0
+  length(beastier::get_duplicate_param_ids(text)) == 0
 }

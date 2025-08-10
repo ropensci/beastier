@@ -4,7 +4,7 @@
 \alias{continue_beast2}
 \title{Continue a BEAST2 run}
 \usage{
-continue_beast2(beast2_options = create_beast2_options())
+continue_beast2(beast2_options = beastier::create_beast2_options())
 }
 \arguments{
 \item{beast2_options}{a set of BEAST2 options,

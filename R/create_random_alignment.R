@@ -33,7 +33,7 @@ create_random_alignment <- function(
     stop("rate needs to be [0.0, 1.0]")
   }
 
-  phylogeny <- create_random_phylogeny(
+  phylogeny <- beastier::create_random_phylogeny(
     n_taxa = n_taxa,
     taxa_name_ext = taxa_name_ext
   )

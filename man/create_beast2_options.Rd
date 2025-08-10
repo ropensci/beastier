@@ -5,7 +5,7 @@
 \title{Function to create a set of BEAST2 options.}
 \usage{
 create_beast2_options(
-  input_filename = create_temp_input_filename(),
+  input_filename = beastier::create_temp_input_filename(),
   output_state_filename = beastier::create_temp_state_filename(),
   rng_seed = NA,
   n_threads = NA,

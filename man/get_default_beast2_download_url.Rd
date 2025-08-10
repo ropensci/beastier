@@ -6,7 +6,7 @@
 which depends on the operating system}
 \usage{
 get_default_beast2_download_url(
-  beast2_version = get_default_beast2_version(),
+  beast2_version = beastier::get_default_beast2_version(),
   os = rappdirs::app_dir()$os
 )
 }

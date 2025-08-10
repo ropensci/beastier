@@ -35,7 +35,7 @@ create_random_fasta <- function(
     stop("'fasta_filename' must have at least one character")
   }
   beautier::check_true(beautier::is_one_string(taxa_name_ext))
-  alignments <- create_random_alignment(
+  alignments <- beastier::create_random_alignment(
     n_taxa,
     sequence_length,
     taxa_name_ext = taxa_name_ext

@@ -19,7 +19,7 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 continue_beast2 <- function(
-  beast2_options = create_beast2_options()
+  beast2_options = beastier::create_beast2_options()
 ) {
   beastier::check_beast2_options(beast2_options)
 

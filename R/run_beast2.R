@@ -23,7 +23,7 @@
 #' @author Richèl J.C. Bilderbeek
 run_beast2 <- function(
   input_filename,
-  output_state_filename = create_temp_state_filename(),
+  output_state_filename = beastier::create_temp_state_filename(),
   rng_seed = NA,
   n_threads = NA,
   use_beagle = FALSE,

@@ -5,7 +5,9 @@
 \title{Creates the terminal command to version a BEAST2 input file
 using a call to the \code{launcher.jar} file}
 \usage{
-create_beast2_version_cmd_bin(beast2_bin_path = get_default_beast2_bin_path())
+create_beast2_version_cmd_bin(
+  beast2_bin_path = beastier::get_default_beast2_bin_path()
+)
 }
 \arguments{
 \item{beast2_bin_path}{name of the BEAST2 binary file

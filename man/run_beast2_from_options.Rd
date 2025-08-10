@@ -4,7 +4,7 @@
 \alias{run_beast2_from_options}
 \title{Run BEAST2}
 \usage{
-run_beast2_from_options(beast2_options = create_beast2_options())
+run_beast2_from_options(beast2_options = beastier::create_beast2_options())
 }
 \arguments{
 \item{beast2_options}{a set of BEAST2 options,

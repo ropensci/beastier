@@ -47,7 +47,7 @@ test_that("Run with spaces in the launcher.jar path, for Windows", {
     "path with spaces",
     "launcher.jar"
   )
-  expect_true(is_jar_path(beast2_path))
+  expect_true(beastier::is_jar_path(beast2_path))
   dir.create(dirname(beast2_path), showWarnings = FALSE, recursive = TRUE)
   file.copy(
     from = get_default_beast2_path(),

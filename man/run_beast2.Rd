@@ -6,7 +6,7 @@
 \usage{
 run_beast2(
   input_filename,
-  output_state_filename = create_temp_state_filename(),
+  output_state_filename = beastier::create_temp_state_filename(),
   rng_seed = NA,
   n_threads = NA,
   use_beagle = FALSE,

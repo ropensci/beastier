@@ -67,7 +67,7 @@ are_beast2_input_lines_deep <- function(
   verbose = FALSE,
   beast2_path = beastier::get_default_beast2_path()
 ) {
-  filename <- create_temp_input_filename()
+  filename <- beastier::create_temp_input_filename()
   dir.create(dirname(filename), recursive = TRUE, showWarnings = FALSE)
   beastier::save_lines(filename = filename, lines = lines)
   is_valid <- beastier::is_beast2_input_file(

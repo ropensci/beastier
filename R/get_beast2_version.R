@@ -14,7 +14,7 @@
 get_beast2_version <- function(
   beast2_path = beastier::get_default_beast2_path()
 ) {
-  if (is_win_bin_path(beast2_path)) {
+  if (beastier::is_win_bin_path(beast2_path)) {
     stop("Cannot use the Windows executable BEAST2.exe in scripts")
   }
   if (!file.exists(beast2_path)) {
