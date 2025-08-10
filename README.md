@@ -10,9 +10,9 @@
 [![DOI](https://zenodo.org/badge/115617629.svg)](https://zenodo.org/badge/latestdoi/115617629)
 
 Branch   |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github.com/ropensci/beautier/actions)|[![Codecov logo](man/figures/Codecov.png)](https://www.codecov.io)
----------|-----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------
-`master` |![R-CMD-check](https://github.com/ropensci/beastier/workflows/R-CMD-check/badge.svg?branch=master)   |[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=master)](https://codecov.io/github/ropensci/beastier/branch/master)
-`develop`|![R-CMD-check](https://github.com/ropensci/beastier/workflows/R-CMD-check/badge.svg?branch=develop)  |[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=develop)](https://codecov.io/github/ropensci/beastier/branch/develop)
+---------|---------|---------
+`main`   |[![R-CMD-check](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml/badge.svg?branch=main)](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml)   |[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=main)](https://app.codecov.io/github/ropensci/beastier/branch/main)
+`develop`|[![R-CMD-check](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml/badge.svg?branch=develop)](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml)|[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=develop)](https://app.codecov.io/github/ropensci/beastier/branch/develop)
 
 <!-- markdownlint-enable MD013 -->
 
@@ -23,20 +23,20 @@ Branch   |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github
 `beastier` is part of the [`babette`](https://github.com/ropensci/babette)
 package suite:
 
-* [`beautier`](https://github.com/ropensci/beautier)
+- [`beautier`](https://github.com/ropensci/beautier)
   creates BEAST2 input (`.xml`) files.
-* [`beastier`](https://github.com/ropensci/beastier) runs BEAST2
-* [`mauricer`](https://github.com/ropensci/mauricer): install BEAST2 packages
-* [`tracerer`](https://github.com/ropensci/tracerer)
+- [`beastier`](https://github.com/ropensci/beastier) runs BEAST2
+- [`mauricer`](https://github.com/ropensci/mauricer): install BEAST2 packages
+- [`tracerer`](https://github.com/ropensci/tracerer)
   pastes BEAST2 output (`.log`, `.trees`, etc) files.
 
 Related R packages:
 
-* [`beastierinstall`](https://github.com/richelbilderbeek/beastierinstall):
+- [`beastierinstall`](https://github.com/richelbilderbeek/beastierinstall):
   Install and uninstall BEAST2
-* [`beastier_on_windows`](https://github.com/richelbilderbeek/beastier_on_windows):
+- [`beastier_on_windows`](https://github.com/richelbilderbeek/beastier_on_windows):
   Verify that `beastier` works on the Windows operating system
-* [`lumier`](https://github.com/ropensci/lumier):
+- [`lumier`](https://github.com/ropensci/lumier):
   Shiny app to help create the function call needed
 
 ## Install BEAST2
@@ -134,9 +134,14 @@ See [FAQ](doc/faq.md)
 
 `beastier` cannot do everything `BEAST2` can.
 
-* Remove: install BEAST2, use [`beastierinstall`](https://github.com/richelbilderbeek/beastierinstall)
-* Experimental: Continue a BEAST2 run
-* Untested: Setup BEAGLE
+- Install BEAST2:
+  this is removed from this package to follow CRAN rules.
+  Use the non-CRAN package [`beastierinstall`](https://github.com/richelbilderbeek/beastierinstall)
+  to do so.
+- Continue a BEAST2 run:
+  this is an experimental feature.
+- Setup BEAGLE:
+  this is an untested feature
 
 ## There is a feature I miss
 
@@ -156,7 +161,7 @@ Sure, just add an Issue. Or send an email.
 
 ## External links
 
-* [BEAST2 GitHub](https://github.com/CompEvol/beast2)
+- [BEAST2 GitHub](https://github.com/CompEvol/beast2)
 
 ## Dependencies
 
@@ -164,17 +169,14 @@ Sure, just add an Issue. Or send an email.
 
 Branch                     |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github.com/ropensci/beautier/actions)                                                                                                                     |[![Codecov logo](man/figures/Codecov.png)](https://www.codecov.io)
 ---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-`beautier` `master`        |![R-CMD-check](https://github.com/ropensci/beautier/workflows/R-CMD-check/badge.svg?branch=master)                                                                                                                        |[![codecov.io](https://codecov.io/github/ropensci/beautier/coverage.svg?branch=master)](https://codecov.io/github/ropensci/beautier/branch/master)
-`beautier` `develop`       |![R-CMD-check](https://github.com/ropensci/beautier/workflows/R-CMD-check/badge.svg?branch=develop)                                                                                                                       |[![codecov.io](https://codecov.io/github/ropensci/beautier/coverage.svg?branch=develop)](https://codecov.io/github/ropensci/beautier/branch/develop)
-`beastierinstall` `master` |[![R-CMD-check](https://github.com/richelbilderbeek/beastierinstall/actions/workflows/R-CMD-check.yaml/badge.svg?branch=master)](https://github.com/richelbilderbeek/beastierinstall/actions/workflows/R-CMD-check.yaml)  |[![codecov.io](https://codecov.io/github/richelbilderbeek/beastierinstall/coverage.svg?branch=master)](https://codecov.io/github/richelbilderbeek/beastierinstall/branch/master)
-`beastierinstall` `develop`|[![R-CMD-check](https://github.com/richelbilderbeek/beastierinstall/actions/workflows/R-CMD-check.yaml/badge.svg?branch=develop)](https://github.com/richelbilderbeek/beastierinstall/actions/workflows/R-CMD-check.yaml) |[![codecov.io](https://codecov.io/github/richelbilderbeek/beastierinstall/coverage.svg?branch=develop)](https://codecov.io/github/richelbilderbeek/beastierinstall/branch/develop)
+`beautier` `main`          |![R-CMD-check](https://github.com/ropensci/beautier/workflows/R-CMD-check/badge.svg?branch=main)                                                                                                                        |[![codecov.io](https://codecov.io/github/ropensci/beautier/coverage.svg?branch=main)](https://codecov.io/github/ropensci/beautier/branch/main)
+`beastierinstall` `main`   |[![R-CMD-check](https://github.com/richelbilderbeek/beastierinstall/actions/workflows/R-CMD-check.yaml/badge.svg?branch=main)](https://github.com/richelbilderbeek/beastierinstall/actions/workflows/R-CMD-check.yaml)  |[![codecov.io](https://codecov.io/github/richelbilderbeek/beastierinstall/coverage.svg?branch=main)](https://codecov.io/github/richelbilderbeek/beastierinstall/branch/main)
 
 <!-- markdownlint-enable MD013 -->
 
 Branch                         |[![AppVeyor logo](man/figures/AppVeyor.png)](https://ci.appveyor.com/project/richelbilderbeek/beastier_on_windows/)
 -------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-`beastier_on_windows` `master` |[![Build status](https://ci.appveyor.com/api/projects/status/ralex9sdnnxlwbgx/branch/master?svg=true)](https://ci.appveyor.com/project/richelbilderbeek/beastier-on-windows/branch/master)
-`beastier_on_windows` `develop`|[![Build status](https://ci.appveyor.com/api/projects/status/ralex9sdnnxlwbgx/branch/develop?svg=true)](https://ci.appveyor.com/project/richelbilderbeek/beastier-on-windows/branch/develop)
+`beastier_on_windows` `main`   |[![Build status](https://ci.appveyor.com/api/projects/status/ralex9sdnnxlwbgx/branch/main?svg=true)](https://ci.appveyor.com/project/richelbilderbeek/beastier-on-windows/branch/main)
 
 ## Files used by continuous integration scripts
 
@@ -194,13 +196,13 @@ Filename                              |Descriptions
 
 Article about `babette`:
 
-* Bilderbeek, Richèl JC, and Rampal S. Etienne. "`babette`:
+- Bilderbeek, Richèl JC, and Rampal S. Etienne. "`babette`:
   BEAUti 2, BEAST 2 and Tracer for R." Methods in Ecology and
   Evolution (2018). <https://doi.org/10.1111/2041-210X.13032>
 
 FASTA files `anthus_aco.fas` and `anthus_nd2.fas` from:
 
-* Van Els, Paul, and Heraldo V. Norambuena.
+- Van Els, Paul, and Heraldo V. Norambuena.
   "A revision of species limits in Neotropical pipits Anthus
   based on multilocus genetic and vocal data." Ibis.
 
