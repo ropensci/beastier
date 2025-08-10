@@ -78,6 +78,10 @@ jobs:
         run: Sys.setenv("LINTR_ERROR_ON_LINT" = TRUE); lintr::lint_package()
         shell: Rscript {0}
 
+      - name: Install beastier for a report
+        run: remotes::install_github("richelbilderbeek/beastier", ref = "develop")
+        shell: Rscript {0}
+
       - name: Report
         run: beastier::beastier_report()
         shell: Rscript {0}

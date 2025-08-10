@@ -87,7 +87,10 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           slug: ropensci/beautier
  
+      - name: Install beastier for a report
+        run: remotes::install_github("richelbilderbeek/beastier", ref = "develop")
+        shell: Rscript {0}
+
       - name: Report
         run: beastier::beastier_report()
         shell: Rscript {0}
- 
