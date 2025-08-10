@@ -828,11 +828,11 @@ This version never had a formal release.
 ## MINOR IMPROVEMENTS
 
 - Implemented feedback from CRAN, thanks Martina Schmirl:
-  * In DESCRIPTION, use `'R'` for programs
-  * In DESCRIPTION, use four spaces
-  * In DESCRIPTION, remove the redundant '... from R' in title
-  * In DESCRIPTION, use only `GPL-3` instead of also adding the file `LICENSE`
-  * Add examples to all functions
+  - In DESCRIPTION, use `'R'` for programs
+  - In DESCRIPTION, use four spaces
+  - In DESCRIPTION, remove the redundant '... from R' in title
+  - In DESCRIPTION, use only `GPL-3` instead of also adding the file `LICENSE`
+  - Add examples to all functions
 
 ## BUG FIXES
 
