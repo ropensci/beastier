@@ -40,5 +40,5 @@ create_beast2_run_cmd <- function(
     beast2_path = beast2_path,
     verbose = verbose
   )
-  create_beast2_run_cmd_from_options(beast2_options)
+  beastier::create_beast2_run_cmd_from_options(beast2_options)
 }

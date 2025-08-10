@@ -9,7 +9,7 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 check_empty_beastier_folder <- function(
-  beastier_folder = get_beastier_folder()
+  beastier_folder = beastier::get_beastier_folder()
 ) {
   if (!dir.exists(beastier_folder)) return(invisible(beastier_folder))
   dirs <- normalizePath(list.dirs(beastier_folder))

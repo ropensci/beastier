@@ -44,7 +44,7 @@ check_input_filename_validity <- function(
   verbose <- beast2_options$verbose
 
   if (
-    !is_beast2_input_file(
+    !beastier::is_beast2_input_file(
       filename = input_filename,
       verbose = verbose,
       beast2_path = beast2_path
@@ -53,7 +53,7 @@ check_input_filename_validity <- function(
     stop(
       "'input_filename' must be a valid BEAST2 XML file. ",
       "File '", input_filename, "' is not a valid BEAST2 file. ",
-      is_beast2_input_file(
+      beastier::is_beast2_input_file(
         input_filename,
         verbose = verbose,
         beast2_path = beast2_path

@@ -16,7 +16,7 @@
 #' @export
 create_beast2_options <- function(
   input_filename = create_temp_input_filename(),
-  output_state_filename = create_temp_state_filename(),
+  output_state_filename = beastier::create_temp_state_filename(),
   rng_seed = NA,
   n_threads = NA,
   use_beagle = FALSE,
@@ -34,6 +34,6 @@ create_beast2_options <- function(
     beast2_path = beast2_path,
     verbose = verbose
   )
-  check_beast2_options(beast2_options)
+  beastier::check_beast2_options(beast2_options)
   beast2_options
 }

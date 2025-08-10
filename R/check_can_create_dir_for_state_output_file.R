@@ -19,7 +19,7 @@
 check_can_create_dir_for_state_output_file <- function( # nolint indeed a long function name
   beast2_options
 ) {
-  check_beast2_options(beast2_options)
+  beastier::check_beast2_options(beast2_options)
   folder <- dirname(beast2_options$output_state_filename)
 
   # If it exists, that folder can be created

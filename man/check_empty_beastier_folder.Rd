@@ -4,7 +4,7 @@
 \alias{check_empty_beastier_folder}
 \title{Check there are no files in the default \link{beastier} folder}
 \usage{
-check_empty_beastier_folder(beastier_folder = get_beastier_folder())
+check_empty_beastier_folder(beastier_folder = beastier::get_beastier_folder())
 }
 \arguments{
 \item{beastier_folder}{the path to

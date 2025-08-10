@@ -11,9 +11,9 @@
 #' @author Richèl J.C. Bilderbeek
 do_minimal_run <- function() {
   output_state_filename <- beastier::get_beastier_tempfilename()
-  run_beast2_from_options(
-    create_beast2_options(
-      input_filename = get_beastier_path("2_4.xml"),
+  beastier::run_beast2_from_options(
+    beastier::create_beast2_options(
+      input_filename = beastier::get_beastier_path("2_4.xml"),
       output_state_filename = output_state_filename,
       rng_seed = 314,
       beast2_path = beastier::get_default_beast2_path()

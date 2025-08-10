@@ -14,8 +14,8 @@ check_beast2 <- function(
   beast2_path = beastier::get_default_beast2_path()
 ) {
   tryCatch({
-    is_beast2_input_file(
-      filename = get_beastier_path("anthus_2_4.xml"),
+    beastier::is_beast2_input_file(
+      filename = beastier::get_beastier_path("anthus_2_4.xml"),
       beast2_path = beast2_path
     )
   }, error = function(e) {

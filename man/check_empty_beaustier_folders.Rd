@@ -7,7 +7,7 @@
 \usage{
 check_empty_beaustier_folders(
   beautier_folder = beautier::get_beautier_folder(),
-  beastier_folder = get_beastier_folder()
+  beastier_folder = beastier::get_beastier_folder()
 )
 }
 \arguments{

@@ -17,7 +17,7 @@
 get_beastier_paths <- function(filenames) {
 
   for (i in seq_along(filenames)) {
-    filenames[i] <- get_beastier_path(filenames[i])
+    filenames[i] <- beastier::get_beastier_path(filenames[i])
   }
 
   filenames

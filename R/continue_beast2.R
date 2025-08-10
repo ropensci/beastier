@@ -21,13 +21,13 @@
 continue_beast2 <- function(
   beast2_options = create_beast2_options()
 ) {
-  check_beast2_options(beast2_options)
+  beastier::check_beast2_options(beast2_options)
 
   if (beast2_options$verbose) {
-    print_beast2_options(beast2_options)
+    beastier::print_beast2_options(beast2_options)
   }
 
-  if (is_win_bin_path(beast2_options$beast2_path)) {
+  if (beastier::is_win_bin_path(beast2_options$beast2_path)) {
     stop("Cannot use the Windows executable BEAST2.exe in scripts")
   }
   ##############################################################################

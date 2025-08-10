@@ -33,7 +33,7 @@ beastier_report <- function(
   message("**********")
   message("* BEAST2 *")
   message("**********")
-  message("Java version: ", get_java_version())
+  message("Java version: ", beastier::get_java_version())
   message(
     "Is BEAST2 installed: ",
     beastier::is_beast2_installed(folder_name = beast2_folder)

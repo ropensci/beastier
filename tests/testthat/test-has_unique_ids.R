@@ -1,5 +1,3 @@
-context("has_unique_ids")
-
 test_that("use for unique IDs", {
 
   line_1 <- "<parameter id=\"RealParameter.1\" ...</parameter>"

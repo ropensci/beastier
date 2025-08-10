@@ -10,8 +10,8 @@
 check_can_create_state_output_file <- function( # nolint indeed a long function name
   beast2_options
 ) {
-  check_beast2_options(beast2_options)
-  check_can_create_dir_for_state_output_file(beast2_options)
+  beastier::check_beast2_options(beast2_options)
+  beastier::check_can_create_dir_for_state_output_file(beast2_options)
   if (file.exists(beast2_options$output_state_filename)) {
     return(invisible(beast2_options))
   }

@@ -23,7 +23,7 @@ get_beastier_tempfilename <- function(
   normalizePath(
     tempfile(
       pattern = pattern,
-      tmpdir = get_beastier_folder(),
+      tmpdir = beastier::get_beastier_folder(),
       fileext = fileext
     ),
     mustWork = FALSE

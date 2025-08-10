@@ -29,7 +29,7 @@ are_beast2_input_lines <- function(
   if (method == "deep") {
     filename <- beastier::get_beastier_tempfilename()
     dir.create(dirname(filename), showWarnings = FALSE, recursive = TRUE)
-    save_lines(filename = filename, lines = lines)
+    beastier::save_lines(filename = filename, lines = lines)
     is_valid <- are_beast2_input_lines_deep(
       lines = lines,
       verbose = verbose,
@@ -69,8 +69,8 @@ are_beast2_input_lines_deep <- function(
 ) {
   filename <- create_temp_input_filename()
   dir.create(dirname(filename), recursive = TRUE, showWarnings = FALSE)
-  save_lines(filename = filename, lines = lines)
-  is_valid <- is_beast2_input_file(
+  beastier::save_lines(filename = filename, lines = lines)
+  is_valid <- beastier::is_beast2_input_file(
     filename = filename,
     verbose = verbose,
     beast2_path = beast2_path
@@ -97,5 +97,5 @@ are_beast2_input_lines_deep <- function(
 are_beast2_input_lines_fast <- function(
   lines
 ) {
-  has_unique_ids(lines)
+  beastier::has_unique_ids(lines)
 }

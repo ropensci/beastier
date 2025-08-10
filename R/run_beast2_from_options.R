@@ -19,42 +19,42 @@
 run_beast2_from_options <- function(
   beast2_options = create_beast2_options()
 ) {
-  check_beast2_options(beast2_options)
+  beastier::check_beast2_options(beast2_options)
 
   if (beast2_options$verbose) {
-    print_beast2_options(beast2_options)
+    beastier::print_beast2_options(beast2_options)
   }
 
-  if (is_win_bin_path(beast2_options$beast2_path)) {
+  if (beastier::is_win_bin_path(beast2_options$beast2_path)) {
     stop("Cannot use the Windows executable BEAST2.exe in scripts")
   }
   ##############################################################################
   # Check files
   ##############################################################################
-  check_input_filename(beast2_options$input_filename)
-  check_beast2_path(beast2_options$beast2_path)
-  check_beast2_options_do_not_overwrite_existing_files(beast2_options)
-  check_input_filename_validity(beast2_options)
-  check_can_create_dir_for_state_output_file(beast2_options)
-  check_can_create_state_output_file(beast2_options)
-  check_can_create_treelog_file(beast2_options)
-  check_can_create_screenlog_file(beast2_options)
-  check_can_create_tracelog_file(beast2_options)
+  beastier::check_input_filename(beast2_options$input_filename)
+  beastier::check_beast2_path(beast2_options$beast2_path)
+  beastier::check_beast2_options_do_not_overwrite_existing_files(beast2_options)
+  beastier::check_input_filename_validity(beast2_options)
+  beastier::check_can_create_dir_for_state_output_file(beast2_options)
+  beastier::check_can_create_state_output_file(beast2_options)
+  beastier::check_can_create_treelog_file(beast2_options)
+  beastier::check_can_create_screenlog_file(beast2_options)
+  beastier::check_can_create_tracelog_file(beast2_options)
   ##############################################################################
   # Create the folders needed
   ##############################################################################
 
   beautier::create_beautier_tempfolder()
-  create_beastier_tempfolder()
-  create_beast2_input_file_folder(beast2_options)
-  create_beast2_state_output_file_folder(beast2_options)
-  create_beast2_treelog_folder(beast2_options)
-  create_beast2_screenlog_folder(beast2_options)
-  create_beast2_tracelog_folder(beast2_options)
+  beastier::create_beastier_tempfolder()
+  beastier::create_beast2_input_file_folder(beast2_options)
+  beastier::create_beast2_state_output_file_folder(beast2_options)
+  beastier::create_beast2_treelog_folder(beast2_options)
+  beastier::create_beast2_screenlog_folder(beast2_options)
+  beastier::create_beast2_tracelog_folder(beast2_options)
   ##############################################################################
   # Create the BEAST2 command
   ##############################################################################
-  cmd <- create_beast2_run_cmd_from_options(
+  cmd <- beastier::create_beast2_run_cmd_from_options(
     beast2_options = beast2_options
   )
 
