@@ -1,18 +1,18 @@
-name: R-CMD-check
+name: R-CMD-check with BEAST2 installed
 
 # Check spelling on the 2nd day of the month.
 # 2nd as the first letter of this repo is the 2nd letter in the alphabet.
 on:
   push:
     paths:
-      - .github/workflows/R-CMD-check.yaml
+      - .github/workflows/R-CMD-check_with_beast2.yaml
       - "**.R"
       - "**.Rmd"
       - DESCRIPTION
       - .Rbuildignore
   pull_request:
     paths:
-      - .github/workflows/R-CMD-check.yaml
+      - .github/workflows/R-CMD-check_with_beast2.yaml
       - "**.R"
       - "**.Rmd"
       - DESCRIPTION
@@ -21,7 +21,7 @@ on:
     - cron: "0 0 2 * *"
 
 jobs:
-  R-CMD-check:
+  R-CMD-check_with_beast2:
 
     runs-on: ubuntu-latest
     env:
@@ -58,6 +58,9 @@ jobs:
           remotes::install_github("MangoTheCat/goodpractice")
         shell: Rscript {0}
 
+      - name: Install BEAST2
+        run: ./scripts/install_beast2.sh
+
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
@@ -74,10 +77,17 @@ jobs:
         run: testthat::expect_equal(0, length(list.files(rappdirs::user_cache_dir(appname = "beastier"))))
         shell: Rscript {0}
 
-      - name: Lint
-        run: Sys.setenv("LINTR_ERROR_ON_LINT" = TRUE); lintr::lint_package()
+      - name: Test coverage
+        run: covr::codecov()
         shell: Rscript {0}
 
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: ropensci/beautier
+ 
       - name: Report
         run: beastier::beastier_report()
         shell: Rscript {0}
+ 
