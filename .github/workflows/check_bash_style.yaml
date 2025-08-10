@@ -1,11 +1,18 @@
 name: Check bash style
 
+# Check spelling on the 2nd day of the month.
+# 2nd as the first letter of this repo is the 2nd letter in the alphabet.
 on:
   push:
+    paths:
+      - .github/workflows/check_bash_style.yaml
+      - "**.sh"
   pull_request:
+    paths:
+      - .github/workflows/check_bash_style.yaml
+      - "**.sh"
   schedule:
-  - cron: "0 0 16 * *"
-
+    - cron: "0 0 2 * *"
 
 jobs:
   check_bash_style:
@@ -20,3 +27,5 @@ jobs:
 
       - name: Check bash scripts for style
         run: shellcheck scripts/*.sh
+
+

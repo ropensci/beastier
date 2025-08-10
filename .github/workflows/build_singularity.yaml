@@ -1,8 +1,12 @@
+name: Build Singularity container
+
 on:
   push:
+    branches:
+      - main
   pull_request:
-
-name: build_singularity
+    branches:
+      - main
 
 jobs:
   build_singularity:
@@ -37,4 +41,5 @@ jobs:
 
       - name: Run container
         run: ./scripts/run_container.sh
+
 
