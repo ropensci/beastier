@@ -15,6 +15,6 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_beast2_run_cmd_from_options <- function(beast2_options) { # nolint indeed a long function name
-  cmds <- create_beast2_continue_cmd_from_options(beast2_options)
+  cmds <- beastier::create_beast2_continue_cmd_from_options(beast2_options)
   cmds[cmds != "-resume"]
 }

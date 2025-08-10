@@ -33,17 +33,17 @@ continue_beast2 <- function(
   ##############################################################################
   # Check files
   ##############################################################################
-  check_input_filename(beast2_options$input_filename)
-  check_beast2_path(beast2_options$beast2_path)
-  check_beast2_options_do_not_overwrite_existing_files(beast2_options)
-  check_input_filename_validity(beast2_options)
-  check_can_create_dir_for_state_output_file(beast2_options)
-  check_can_create_state_output_file(beast2_options)
+  beastier::check_input_filename(beast2_options$input_filename)
+  beastier::check_beast2_path(beast2_options$beast2_path)
+  beastier::check_beast2_options_do_not_overwrite_existing_files(beast2_options)
+  beastier::check_input_filename_validity(beast2_options)
+  beastier::check_can_create_dir_for_state_output_file(beast2_options)
+  beastier::check_can_create_state_output_file(beast2_options)
 
   ##############################################################################
   # Create the BEAST2 command
   ##############################################################################
-  cmd <- create_beast2_continue_cmd_from_options(
+  cmd <- beastier::create_beast2_continue_cmd_from_options(
     beast2_options = beast2_options
   )
   if (beast2_options$verbose) {

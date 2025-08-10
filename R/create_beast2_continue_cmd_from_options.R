@@ -50,7 +50,7 @@ create_beast2_continue_cmd_from_options <- function(beast2_options) { # nolint i
   cmds <- c(cmds, "-statefile")
   cmds <- c(
     cmds,
-    add_quotes_if_has_spaces(beast2_options$output_state_filename)
+    beastier::add_quotes_if_has_spaces(beast2_options$output_state_filename)
   )
   cmds <- c(cmds, "-resume")
   if (beast2_options$overwrite == TRUE) {
@@ -58,7 +58,7 @@ create_beast2_continue_cmd_from_options <- function(beast2_options) { # nolint i
   }
   cmds <- c(
     cmds,
-    add_quotes_if_has_spaces(beast2_options$input_filename)
+    beastier::add_quotes_if_has_spaces(beast2_options$input_filename)
   )
   cmds
 }

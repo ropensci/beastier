@@ -18,7 +18,7 @@ create_beast2_version_cmd <- function(
       beast2_jar_path = beast2_path
     )
   } else {
-    beautier::check_true(is_bin_path(beast2_path))
+    beautier::check_true(beastier::is_bin_path(beast2_path))
     beastier::create_beast2_version_cmd_bin(
       beast2_bin_path = beast2_path
     )
@@ -39,7 +39,7 @@ create_beast2_version_cmd <- function(
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_beast2_version_cmd_jar <- function(
-  beast2_jar_path = get_default_beast2_jar_path()
+  beast2_jar_path = beastier::get_default_beast2_jar_path()
 ) {
   beautier::check_file_exists(beast2_jar_path, "beast2_jar_path")
   beautier::check_true(beastier::is_jar_path(beast2_jar_path))

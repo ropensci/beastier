@@ -55,17 +55,17 @@ create_beast2_validate_cmd <- function(
 #' @export
 create_beast2_validate_cmd_jar <- function(
   input_filename,
-  beast2_jar_path = get_default_beast2_jar_path()
+  beast2_jar_path = beastier::get_default_beast2_jar_path()
 ) {
   beautier::check_file_exists(beast2_jar_path, "beast2_jar_path")
   beautier::check_true(beastier::is_jar_path(beast2_jar_path))
   cmds <- c(
     beastier::get_default_java_path(),
     "-cp",
-    add_quotes_if_has_spaces(beast2_jar_path),
+    beastier::add_quotes_if_has_spaces(beast2_jar_path),
     beastier::get_beast2_main_class_name(),
     "-validate",
-    add_quotes_if_has_spaces(input_filename)
+    beastier::add_quotes_if_has_spaces(input_filename)
   )
   # The executable must be runnable. This means that it should not have quotes
   beautier::check_true(file.exists(cmds[1]))
