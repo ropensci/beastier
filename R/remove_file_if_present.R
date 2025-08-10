@@ -11,8 +11,8 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 remove_file_if_present <- function(filename) {
-  check_true(beautier::is_one_string(filename))
-  check_true(length(filename) == 1)
+  beautier::check_true(beautier::is_one_string(filename))
+  beautier::check_true(length(filename) == 1)
   if (file.exists(filename)) {
     file.remove(filename)
   }

@@ -13,14 +13,14 @@
 check_can_create_tracelog_file <- function(
   beast2_options
 ) {
-  check_true(file.exists(beast2_options$input_filename))
-  tracelog_filename <- extract_tracelog_filename_from_beast2_input_file( # nolint indeed a long internal function name
+  beautier::check_true(file.exists(beast2_options$input_filename))
+  tracelog_filename <- beastier::extract_tracelog_filename_from_beast2_input_file( # nolint indeed a long internal function name
     input_filename = beast2_options$input_filename
   )
 
   if (file.exists(tracelog_filename)) {
-     file.remove(tracelog_filename)
-     return()
+    file.remove(tracelog_filename)
+    return()
   }
 
   tryCatch(

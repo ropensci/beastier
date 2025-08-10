@@ -28,7 +28,7 @@ continue_beast2 <- function(
   }
 
   if (is_win_bin_path(beast2_options$beast2_path)) {
-   stop("Cannot use the Windows executable BEAST2.exe in scripts")
+    stop("Cannot use the Windows executable BEAST2.exe in scripts")
   }
   ##############################################################################
   # Check files
@@ -65,7 +65,7 @@ continue_beast2 <- function(
   )
   # This assumpion should have been proven to be valid
   # by check_can_create_dir_for_state_output_file
-  check_true(dir.exists(output_folder))
+  beautier::check_true(dir.exists(output_folder))
 
   ##############################################################################
   # Run BEAST2
@@ -77,7 +77,7 @@ continue_beast2 <- function(
     stderr = TRUE
   )
   # If the output is only 1 line, this will probably be an error message
-  check_true(
+  beautier::check_true(
     length(output) != 1,
     info = paste0(
       "Command '", paste0(cmd, collapse = " "), "' failed ",
@@ -89,13 +89,13 @@ continue_beast2 <- function(
   # The files as created by BEAST2
   ##############################################################################
   # This is only true if there has been one sampling event in the MCMC
-  check_true(
+  beautier::check_true(
     file.exists(beast2_options$output_state_filename),
     info = paste0(
       "BEAST2 state file not created after a continued run. \n",
       "Command '", paste0(cmd, collapse = " "), "' failed. ",
       "'beast2_options$output_state_filename': '",
-        beast2_options$output_state_filename, "'\n",
+      beast2_options$output_state_filename, "'\n",
       "Maybe no permission to write at that location?"
     )
   )

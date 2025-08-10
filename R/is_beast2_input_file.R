@@ -44,15 +44,15 @@ is_beast2_input_file <- function(
   }
 
   # Create the command to let BEAST2 validate the created XML file
-  check_true(length(filename) == 1)
-  check_true(length(beast2_path) == 1)
+  beautier::check_true(length(filename) == 1)
+  beautier::check_true(length(beast2_path) == 1)
   beautier::check_file_exists(filename, "filename")
   cmds <- create_beast2_validate_cmd(
     input_filename = filename,
     beast2_path = beast2_path
   )
   # The executable must be runnable. This means that it should not have quotes
-  check_true(file.exists(cmds[1]))
+  beautier::check_true(file.exists(cmds[1]))
   output <- NA
   if (show_warnings == TRUE) {
     output <- system2(

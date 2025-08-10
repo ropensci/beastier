@@ -29,16 +29,16 @@ gives_beast2_warning <- function(
   beast2_path = get_default_beast2_path()
 ) {
   tryCatch({
-      is_beast2_input_file(
-        filename = filename,
-        show_warnings = TRUE,
-        verbose = verbose,
-        beast2_path = beast2_path
-      )
-      FALSE
-    },
-    warning = function(msg) {
-      return(TRUE)
-    }
+    is_beast2_input_file(
+      filename = filename,
+      show_warnings = TRUE,
+      verbose = verbose,
+      beast2_path = beast2_path
+    )
+    FALSE
+  },
+  warning = function(msg) {
+    TRUE
+  }
   )
 }

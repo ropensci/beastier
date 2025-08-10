@@ -31,7 +31,7 @@ create_mcbette_beast2_options <- function(
   beast2_bin_path = get_default_beast2_bin_path(),
   verbose = FALSE
 ) {
-  check_true(is_bin_path(beast2_bin_path))
+  beautier::check_true(is_bin_path(beast2_bin_path))
   create_beast2_options(
     input_filename = input_filename,
     output_state_filename = output_state_filename,

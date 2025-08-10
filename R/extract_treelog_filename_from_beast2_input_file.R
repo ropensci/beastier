@@ -24,13 +24,13 @@
 extract_treelog_filename_from_beast2_input_file <- function( # nolint indeed a long function name
   input_filename
 ) {
-  check_true(file.exists(input_filename))
+  beautier::check_true(file.exists(input_filename))
   text <- readr::read_lines(input_filename, progress = FALSE)
   treelog_line <- stringr::str_subset(
     string = text,
     pattern = "<logger id=\"treelog.t:"
   )
-  check_true(length(treelog_line) == 1)
+  beautier::check_true(length(treelog_line) == 1)
   treelog_filename <- stringr::str_match(
     string = treelog_line,
     pattern = "fileName=\\\"([:graph:]+)\\\" "

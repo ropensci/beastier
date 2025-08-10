@@ -11,11 +11,11 @@ get_default_java_path <- function(
   java_folder <- rJava::.jcall(
     "java/lang/System", "S", "getProperty", "java.home"
   )
-  check_true(dir.exists(java_folder))
+  beautier::check_true(dir.exists(java_folder))
   java_path <- file.path(java_folder, "bin", "java.exe")
   if (os != "win") {
     java_path <- file.path(java_folder, "bin", "java")
   }
-  check_true(file.exists(java_path))
+  beautier::check_true(file.exists(java_path))
   normalizePath(java_path, mustWork = TRUE)
 }

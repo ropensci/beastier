@@ -11,24 +11,24 @@ check_can_create_screenlog_file <- function( # nolint indeed a long function nam
   beast2_options
 ) {
   # Extract the screenlog file
-  check_true(file.exists(beast2_options$input_filename))
+  beautier::check_true(file.exists(beast2_options$input_filename))
   text <- readr::read_lines(beast2_options$input_filename, progress = FALSE)
   screenlog_line <- stringr::str_subset(
     string = text,
     pattern = "<logger id=\"screenlog\""
   )
-  check_true(length(screenlog_line) == 1)
+  beautier::check_true(length(screenlog_line) == 1)
   matches <- stringr::str_match(
     string = screenlog_line,
     pattern = "fileName=\\\"([:graph:]+)\\\" "
   )
-  check_true(ncol(matches) == 2)
+  beautier::check_true(ncol(matches) == 2)
   screenlog_filename <- matches[1, 2]
 
   if (is.na(screenlog_filename)) return()
   if (file.exists(screenlog_filename)) {
-     file.remove(screenlog_filename)
-     return()
+    file.remove(screenlog_filename)
+    return()
   }
 
   tryCatch(

@@ -21,7 +21,7 @@ check_empty_beastier_folder <- function(
       "beastier_folder: ", beastier_folder, " \n",
       "length(list.dirs(beastier_folder)): ", length(dirs), " \n",
       "head(list.dirs(beastier_folder)): ",
-        paste(utils::head(dirs), collapse = ",")
+      paste(utils::head(dirs), collapse = ",")
     )
   }
   filenames <- list.files(beastier_folder, full.names = TRUE, recursive = TRUE)
@@ -31,7 +31,7 @@ check_empty_beastier_folder <- function(
       "beastier_folder: ", beastier_folder, " \n",
       "length(list.files(beastier_folder))): ", length(filenames), " \n",
       "head(list.files(beastier_folder)): ",
-        paste(utils::head(filenames), collapse = ",")
+      paste(utils::head(filenames), collapse = ",")
     )
   }
   if (dir.exists(beastier_folder)) {

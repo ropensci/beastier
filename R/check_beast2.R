@@ -19,7 +19,7 @@ check_beast2 <- function(
       beast2_path = beast2_path
     )
   }, error = function(e) {
-      stop(e)
+  stop(e)
     }
   )
 }

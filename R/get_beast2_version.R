@@ -15,7 +15,7 @@ get_beast2_version <- function(
   beast2_path = get_default_beast2_path()
 ) {
   if (is_win_bin_path(beast2_path)) {
-   stop("Cannot use the Windows executable BEAST2.exe in scripts")
+    stop("Cannot use the Windows executable BEAST2.exe in scripts")
   }
   if (!file.exists(beast2_path)) {
     stop(
@@ -26,7 +26,7 @@ get_beast2_version <- function(
   }
 
   # Create the command
-  check_true(length(beast2_path) == 1)
+  beautier::check_true(length(beast2_path) == 1)
   cmds <- create_beast2_version_cmd(beast2_path)
   beautier::check_file_exists(cmds[1], "cmds[1]")
   output <- NA
@@ -43,11 +43,11 @@ get_beast2_version <- function(
 
   # Running
   #
-  #   /usr/lib/jvm/java-21-openjdk-amd64/bin/java -cp /home/richel/.local/share/beast/lib/launcher.jar beast.app.beastapp.BeastLauncher -version
+  #   /usr/lib/jvm/java-21-openjdk-amd64/bin/java -cp /home/richel/.local/share/beast/lib/launcher.jar beast.app.beastapp.BeastLauncher -version # nolint
   #
   # Gives output:
   #
-  # [java, -Djava.library.path=/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib, -cp, ::/home/richel/.beast/2.5/BEAST/lib/beast.jar:/home/richel/.beast/2.5/BEAST/lib/beast.src.jar, beast.app.beastapp.BeastMain, -version]
+  # [java, -Djava.library.path=/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib, -cp, ::/home/richel/.beast/2.5/BEAST/lib/beast.jar:/home/richel/.beast/2.5/BEAST/lib/beast.src.jar, beast.app.beastapp.BeastMain, -version] # nolint
 
   output <- system2(
     cmds[1],

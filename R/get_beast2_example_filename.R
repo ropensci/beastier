@@ -24,7 +24,7 @@ get_beast2_example_filename <- function(
     stop(
       "Cannot find BEAST2 example file with name '", filename, "'. \n",
       "Tip: use 'get_beast2_example_filenames()' ",
-        "to see all BEAST2 example files"
+      "to see all BEAST2 example files"
     )
   }
   filenames[index]

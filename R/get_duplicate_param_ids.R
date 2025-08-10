@@ -29,7 +29,8 @@ get_duplicate_param_ids <- function(
   for (i in seq_along(matches)) {
     matches[i] <- stringr::str_extract(
       str = text[i],
-      pattern = "RealParameter\\.[[:digit:]]+")
+      pattern = "RealParameter\\.[[:digit:]]+"
+    )
   }
   matches <- matches[!is.na(matches)]
   matches[duplicated(matches)]

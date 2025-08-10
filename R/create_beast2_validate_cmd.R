@@ -26,7 +26,7 @@ create_beast2_validate_cmd <- function(
       beast2_jar_path = beast2_path
     )
   } else {
-    check_true(is_bin_path(beast2_path))
+    beautier::check_true(is_bin_path(beast2_path))
     create_beast2_validate_cmd_bin(
       input_filename = input_filename,
       beast2_bin_path = beast2_path
@@ -58,7 +58,7 @@ create_beast2_validate_cmd_jar <- function(
   beast2_jar_path = get_default_beast2_jar_path()
 ) {
   beautier::check_file_exists(beast2_jar_path, "beast2_jar_path")
-  check_true(is_jar_path(beast2_jar_path))
+  beautier::check_true(is_jar_path(beast2_jar_path))
   cmds <- c(
     get_default_java_path(),
     "-cp",
@@ -68,7 +68,7 @@ create_beast2_validate_cmd_jar <- function(
     add_quotes_if_has_spaces(input_filename)
   )
   # The executable must be runnable. This means that it should not have quotes
-  check_true(file.exists(cmds[1]))
+  beautier::check_true(file.exists(cmds[1]))
   cmds
 }
 
@@ -96,13 +96,13 @@ create_beast2_validate_cmd_bin <- function(
   beast2_bin_path = get_default_beast2_bin_path()
 ) {
   beautier::check_file_exists(beast2_bin_path, "beast2_bin_path")
-  check_true(is_bin_path(beast2_bin_path))
+  beautier::check_true(is_bin_path(beast2_bin_path))
   cmds <- c(
     beast2_bin_path,
     "-validate",
     add_quotes_if_has_spaces(input_filename)
   )
   # The executable must be runnable. This means that it should not have quotes
-  check_true(file.exists(cmds[1]))
+  beautier::check_true(file.exists(cmds[1]))
   cmds
 }

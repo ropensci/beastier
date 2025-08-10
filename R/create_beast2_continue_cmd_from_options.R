@@ -16,9 +16,9 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_beast2_continue_cmd_from_options <- function(beast2_options) { # nolint indeed a long function name
-  check_beast2_options(beast2_options)
-  check_true(file.exists(beast2_options$beast2_path))
-  check_true(file.exists(get_default_java_path()))
+  beastier::check_beast2_options(beast2_options)
+  beautier::check_true(file.exists(beast2_options$beast2_path))
+  beautier::check_true(file.exists(get_default_java_path()))
   cmds <- NULL
   if (is_jar_path(beast2_options$beast2_path)) {
     cmds <- c(
@@ -27,13 +27,13 @@ create_beast2_continue_cmd_from_options <- function(beast2_options) { # nolint i
       add_quotes_if_has_spaces(beast2_options$beast2_path),
       get_beast2_main_class_name()
     )
-    check_true(file.exists(cmds[1]))
+    beautier::check_true(file.exists(cmds[1]))
     # Cannot do: check_true(file.exists(cmds[3]))
     # because that path is quotes
     # and file.exists does not know what to do with that
   } else {
-    check_true(is_bin_path(beast2_options$beast2_path))
-    check_true(file.exists(beast2_options$beast2_path))
+    beautier::check_true(is_bin_path(beast2_options$beast2_path))
+    beautier::check_true(file.exists(beast2_options$beast2_path))
     cmds <- add_quotes_if_has_spaces(beast2_options$beast2_path)
   }
   if (!beautier::is_one_na(beast2_options$rng_seed)) {

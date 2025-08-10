@@ -67,17 +67,17 @@ check_beast2_options_names <- function( # nolint long function name indeed, whic
 check_beast2_options_data_types <- function( # nolint long function name indeed, which is fine for an internal function
   beast2_options
 ) {
-  check_true(beautier::is_one_string(beast2_options$input_filename))
-  check_true(beautier::is_one_string(beast2_options$output_state_filename))
-  check_rng_seed(beast2_options$rng_seed)
-  check_n_threads(beast2_options$n_threads)
+  beautier::check_true(beautier::is_one_string(beast2_options$input_filename))
+  beautier::check_true(beautier::is_one_string(beast2_options$output_state_filename))
+  beastier::check_rng_seed(beast2_options$rng_seed)
+  beastier::check_n_threads(beast2_options$n_threads)
   if (!beautier::is_one_bool(beast2_options$use_beagle)) {
     stop("'use_beagle' must be one boolean")
   }
   if (!beautier::is_one_bool(beast2_options$overwrite)) {
     stop("'overwrite' must be one boolean")
   }
-  check_true(beautier::is_one_string(beast2_options$beast2_path))
+  beautier::check_true(beautier::is_one_string(beast2_options$beast2_path))
   if (!beautier::is_one_bool(beast2_options$verbose)) {
     stop("'verbose' must be one boolean")
   }

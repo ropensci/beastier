@@ -11,5 +11,5 @@ are_identical_alignments <- function(p, q) {
   if (!is_alignment(q)) {
     stop("q must be an alignment")
   }
-  return(identical(p, q))
+  identical(p, q)
 }
