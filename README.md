@@ -11,8 +11,8 @@
 
 Branch   |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github.com/ropensci/beautier/actions)|[![Codecov logo](man/figures/Codecov.png)](https://www.codecov.io)
 ---------|---------|---------
-`main`   |[![R-CMD-check](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml/badge.svg?branch=main)](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml)   |[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=main)](https://app.codecov.io/github/ropensci/beastier/branch/main)
-`develop`|[![R-CMD-check](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml/badge.svg?branch=develop)](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml)|[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=develop)](https://app.codecov.io/github/ropensci/beastier/branch/develop)
+`main`   |[![R-CMD-check](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml/badge.svg?branch=main)](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml)    [![R-CMD-check with BEAST2 installed](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check_with_beast2.yaml/badge.svg?branch=main)](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check_with_beast2.yaml)    |[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=main)](https://app.codecov.io/github/ropensci/beastier/branch/main)
+`develop`|[![R-CMD-check](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml/badge.svg?branch=develop)](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml) [![R-CMD-check with BEAST2 installed](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check_with_beast2.yaml/badge.svg?branch=develop)](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check_with_beast2.yaml) |[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=develop)](https://app.codecov.io/github/ropensci/beastier/branch/develop)
 
 <!-- markdownlint-enable MD013 -->
 
