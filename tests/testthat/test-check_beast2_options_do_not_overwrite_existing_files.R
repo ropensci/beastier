@@ -28,7 +28,13 @@ test_that("may not overwrite on file that exists", {
   beast2_options <- create_beast2_options()
   beast2_options$overwrite <- FALSE
   expect_equal(file.exists(beast2_options$output_state_filename), FALSE)
-  dir.create(dirname(beast2_options$output_state_filename), showWarnings = FALSE, recursive = TRUE)
+  dir.create(
+    dirname(
+      beast2_options$output_state_filename
+    ),
+    showWarnings = FALSE,
+    recursive = TRUE
+  )
   file.create(beast2_options$output_state_filename)
   expect_equal(file.exists(beast2_options$output_state_filename), TRUE)
   expect_equal(beast2_options$overwrite, FALSE)

@@ -5,7 +5,7 @@
 \title{Get the default BEAST2 path}
 \usage{
 get_default_beast2_path(
-  beast2_folder = get_default_beast2_folder(),
+  beast2_folder = beastier::get_default_beast2_folder(),
   os = rappdirs::app_dir()$os
 )
 }

@@ -6,7 +6,7 @@
 \usage{
 get_beast2_example_filename(
   filename,
-  beast2_folder = get_default_beast2_folder()
+  beast2_folder = beastier::get_default_beast2_folder()
 )
 }
 \arguments{

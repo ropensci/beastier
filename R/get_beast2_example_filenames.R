@@ -10,7 +10,7 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 get_beast2_example_filenames <- function(
-  beast2_folder = get_default_beast2_folder()
+  beast2_folder = beastier::get_default_beast2_folder()
 ) {
   if (!dir.exists(beast2_folder)) {
     stop(

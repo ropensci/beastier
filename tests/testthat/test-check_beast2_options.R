@@ -9,19 +9,19 @@ test_that("use", {
       )
     )
   )
-    expect_silent(
-      check_beast2_options(
-        create_beast2_options(
-          rng_seed = 1
+  expect_silent(
+    check_beast2_options(
+      create_beast2_options(
+        rng_seed = 1
       )
     )
   )
 
   # 'n_threads' can be both NA and a value
-    expect_silent(
-      check_beast2_options(
-        create_beast2_options(
-          n_threads = NA
+  expect_silent(
+    check_beast2_options(
+      create_beast2_options(
+        n_threads = NA
       )
     )
   )

@@ -11,7 +11,7 @@
 #' @export
 create_beastier_tempfolder <- function() {
   dir.create(
-    dirname(get_beastier_tempfilename()),
+    dirname(beastier::get_beastier_tempfilename()),
     showWarnings = FALSE,
     recursive = TRUE
   )

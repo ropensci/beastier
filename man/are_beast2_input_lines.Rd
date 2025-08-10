@@ -9,7 +9,7 @@ are_beast2_input_lines(
   lines,
   verbose = FALSE,
   method = ifelse(beautier::is_on_ci(), "deep", "fast"),
-  beast2_path = get_default_beast2_path()
+  beast2_path = beastier::get_default_beast2_path()
 )
 }
 \arguments{

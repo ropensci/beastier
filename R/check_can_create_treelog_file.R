@@ -22,7 +22,7 @@ check_can_create_treelog_file <- function(
   }
 
   tryCatch(
-    check_can_create_file(
+    beastier::check_can_create_file(
       filename = treelog_filename, overwrite = FALSE
     ),
     error = function(e) {

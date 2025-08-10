@@ -35,8 +35,8 @@ test_that("use of 'stack_size_kb'", {
     output_state_filename = "something",
     stack_size_kb = 2000
   )
- expect_equal(1, length(stringr::str_subset(string = cmd, pattern = "-Xss")))
- expect_true("-Xss2000k" %in% cmd)
+  expect_equal(1, length(stringr::str_subset(string = cmd, pattern = "-Xss")))
+  expect_true("-Xss2000k" %in% cmd)
 
 
   cmd <- create_beast2_run_cmd(

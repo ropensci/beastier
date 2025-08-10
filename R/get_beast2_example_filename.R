@@ -14,7 +14,7 @@
 #' @export
 get_beast2_example_filename <- function(
   filename,
-  beast2_folder = get_default_beast2_folder()
+  beast2_folder = beastier::get_default_beast2_folder()
 ) {
   filenames <- get_beast2_example_filenames(
     beast2_folder = beast2_folder

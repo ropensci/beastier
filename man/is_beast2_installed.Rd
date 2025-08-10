@@ -5,7 +5,7 @@
 \title{Checks if BEAST2 is installed}
 \usage{
 is_beast2_installed(
-  folder_name = get_default_beast2_folder(),
+  folder_name = beastier::get_default_beast2_folder(),
   os = rappdirs::app_dir()$os
 )
 }

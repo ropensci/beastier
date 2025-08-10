@@ -29,11 +29,11 @@ is_beast2_input_file <- function(
   filename,
   show_warnings = FALSE,
   verbose = FALSE,
-  beast2_path = get_default_beast2_path()
+  beast2_path = beastier::get_default_beast2_path()
 ) {
   beautier::check_file_exists(filename, "filename")
   if (is_win_bin_path(beast2_path)) {
-   stop("Cannot use the Windows executable BEAST2.exe in scripts")
+    stop("Cannot use the Windows executable BEAST2.exe in scripts")
   }
   if (!file.exists(beast2_path)) {
     stop(
@@ -63,12 +63,14 @@ is_beast2_input_file <- function(
     )
 
   } else {
-    suppressWarnings({
-      output <- system2(
-        cmds[1],
-        args = cmds[-1],
-        stdout = TRUE,
-        stderr = TRUE)
+    suppressWarnings(
+      {
+        output <- system2(
+          cmds[1],
+          args = cmds[-1],
+          stdout = TRUE,
+          stderr = TRUE
+        )
       }
     )
   }
@@ -78,7 +80,8 @@ is_beast2_input_file <- function(
   }
 
   if (show_warnings == TRUE &&
-      sum(grepl(x = output, pattern = "WARNING: "))) {
+      sum(grepl(x = output, pattern = "WARNING: "))
+  ) {
     warning(output[grepl(x = output, pattern = "WARNING: ")])
   }
 

@@ -15,7 +15,9 @@
 is_jar_path <- function(path) {
   # Windows    : BEAST/lib/beast.jar                                            # nolint
   # Non-Windows: beast/lib/launcher.jar                                         # nolint
-  !beautier::is_one_na(stringr::str_match(
-    path, "(.*/)?(launcher|beast)\\.jar$")[1][1]
+  !beautier::is_one_na(
+    stringr::str_match(
+      path, "(.*/)?(launcher|beast)\\.jar$"
+    )[1][1]
   )
 }

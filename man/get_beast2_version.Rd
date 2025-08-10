@@ -4,7 +4,7 @@
 \alias{get_beast2_version}
 \title{Get the BEAST2 version}
 \usage{
-get_beast2_version(beast2_path = get_default_beast2_path())
+get_beast2_version(beast2_path = beastier::get_default_beast2_path())
 }
 \arguments{
 \item{beast2_path}{name of either a BEAST2 binary file

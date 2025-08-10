@@ -68,7 +68,9 @@ check_beast2_options_data_types <- function( # nolint long function name indeed,
   beast2_options
 ) {
   beautier::check_true(beautier::is_one_string(beast2_options$input_filename))
-  beautier::check_true(beautier::is_one_string(beast2_options$output_state_filename))
+  beautier::check_true(
+    beautier::is_one_string(beast2_options$output_state_filename)
+  )
   beastier::check_rng_seed(beast2_options$rng_seed)
   beastier::check_n_threads(beast2_options$n_threads)
   if (!beautier::is_one_bool(beast2_options$use_beagle)) {

@@ -26,7 +26,7 @@ run_beast2_from_options <- function(
   }
 
   if (is_win_bin_path(beast2_options$beast2_path)) {
-   stop("Cannot use the Windows executable BEAST2.exe in scripts")
+    stop("Cannot use the Windows executable BEAST2.exe in scripts")
   }
   ##############################################################################
   # Check files
@@ -97,10 +97,10 @@ run_beast2_from_options <- function(
   ##############################################################################
   # Run BEAST2
   ##############################################################################
-  stdout_filename <- get_beastier_tempfilename(
+  stdout_filename <- beastier::get_beastier_tempfilename(
     pattern = "stdout_", fileext = ".log"
   )
-  stderr_filename <- get_beastier_tempfilename(
+  stderr_filename <- beastier::get_beastier_tempfilename(
     pattern = "stderr_", fileext = ".log"
   )
   dir.create(dirname(stdout_filename), showWarnings = FALSE, recursive = TRUE)
@@ -141,7 +141,7 @@ run_beast2_from_options <- function(
       "BEAST2 state file not created in a fresh run. \n",
       "Command '", paste0(cmd, collapse = " "), "' failed. ",
       "'beast2_options$output_state_filename': '",
-        beast2_options$output_state_filename, "'\n",
+      beast2_options$output_state_filename, "'\n",
       "Maybe no permission to write at that location? \n",
       " \n",
       "Output: \n", paste0(output, collapse = " \n")

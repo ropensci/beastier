@@ -62,9 +62,9 @@ test_that("checks input", {
   )
 
   result <- create_random_alignment(
-      n_taxa = 5,
-      sequence_length = 20,
-      rate = 0.1
-    )
+    n_taxa = 5,
+    sequence_length = 20,
+    rate = 0.1
+  )
   expect_equal(class(result), "DNAbin")
 })

@@ -11,7 +11,7 @@ create_beast2_run_cmd(
   n_threads = NA,
   use_beagle = FALSE,
   overwrite = FALSE,
-  beast2_path = get_default_beast2_path(),
+  beast2_path = beastier::get_default_beast2_path(),
   verbose = FALSE
 )
 }

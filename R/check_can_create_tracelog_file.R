@@ -24,7 +24,7 @@ check_can_create_tracelog_file <- function(
   }
 
   tryCatch(
-    check_can_create_file(
+    beastier::check_can_create_file(
       filename = tracelog_filename, overwrite = FALSE
     ),
     error = function(e) {

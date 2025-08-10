@@ -1,9 +1,9 @@
 test_that("use", {
-  expect_true(file.exists(beautier::get_beautier_path("babette_issue_108_tipdates.txt")))
-  expect_true(file.exists(beautier::get_beautier_path("babette_issue_108.fasta")))
   fasta_filename <- beautier::get_beautier_path("babette_issue_108.fasta")
   output_filename <- beautier::get_beautier_tempfilename()
-  tipdates_filename <- beautier::get_beautier_path("babette_issue_108_tipdates.txt")
+  tipdates_filename <- beautier::get_beautier_path(
+    "babette_issue_108_tipdates.txt"
+  )
   create_beast2_input_file(
     fasta_filename,
     output_filename,

@@ -1,5 +1,3 @@
-context("get_beastier_paths")
-
 test_that("use", {
 
   expect_equal(
@@ -12,8 +10,7 @@ test_that("use", {
           "beast2_example_output.xml.state"
         )
       )
-     ),
-     4
-   )
-
+    ),
+    4
+  )
 })

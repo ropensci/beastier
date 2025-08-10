@@ -11,7 +11,7 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_beast2_version_cmd <- function(
-  beast2_path = get_default_beast2_path()
+  beast2_path = beastier::get_default_beast2_path()
 ) {
   if (is_jar_path(beast2_path)) {
     create_beast2_version_cmd_jar(

@@ -15,7 +15,7 @@ test_that("use", {
 test_that("use, BEAST2 v2.5.0", {
   expect_equal(1 + 1, 2) # nolint to prevent 'Reason: empty test'
   if (!beautier::is_on_ci()) return()
-  if (!"beastierinstall" %in% installed.packages()[,1]) return()
+  if (!"beastierinstall" %in% installed.packages()[, 1]) return()
 
   beastierinstall::install_beast2(beast2_version = "2.5.0")
 

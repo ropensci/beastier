@@ -24,7 +24,7 @@ check_can_create_state_output_file <- function( # nolint indeed a long function 
 
   # Use a more precise error message
   tryCatch(
-    check_can_create_file(
+    beastier::check_can_create_file(
       filename = beast2_options$output_state_filename,
       overwrite = FALSE
     ),

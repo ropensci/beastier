@@ -15,7 +15,7 @@
 #' check_empty_beaustier_folders()
 #' @export
 is_beast2_installed <- function(
-  folder_name = get_default_beast2_folder(),
+  folder_name = beastier::get_default_beast2_folder(),
   os = rappdirs::app_dir()$os
 ) {
   check_os(os)

@@ -19,8 +19,11 @@
 #' check_empty_beaustier_folders()
 #' @export
 is_bin_path <- function(path) {
-  !beautier::is_one_na(stringr::str_match(
-    path, "(.*/)?(beast|BEAST(2)?\\.exe)$")[1][1]
+  !beautier::is_one_na(
+    stringr::str_match(
+      path,
+      "(.*/)?(beast|BEAST(2)?\\.exe)$"
+    )[1][1]
   )
 }
 
@@ -41,7 +44,10 @@ is_bin_path <- function(path) {
 #' check_empty_beaustier_folders()
 #' @export
 is_win_bin_path <- function(path) {
-  !beautier::is_one_na(stringr::str_match(
-    path, "(.*/)?BEAST2?\\.exe$")[1][1]
+  !beautier::is_one_na(
+    stringr::str_match(
+      path,
+      "(.*/)?BEAST2?\\.exe$"
+    )[1][1]
   )
 }

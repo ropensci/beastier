@@ -6,7 +6,7 @@
 \usage{
 create_beast2_validate_cmd(
   input_filename,
-  beast2_path = get_default_beast2_path()
+  beast2_path = beastier::get_default_beast2_path()
 )
 }
 \arguments{

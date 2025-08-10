@@ -5,7 +5,7 @@
 \title{Creates a \link{beastier} report}
 \usage{
 beastier_report(
-  beast2_folder = get_default_beast2_folder(),
+  beast2_folder = beastier::get_default_beast2_folder(),
   os = rappdirs::app_dir()$os
 )
 }

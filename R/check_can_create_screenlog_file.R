@@ -32,7 +32,7 @@ check_can_create_screenlog_file <- function( # nolint indeed a long function nam
   }
 
   tryCatch(
-    check_can_create_file(
+    beastier::check_can_create_file(
       filename = screenlog_filename, overwrite = FALSE
     ),
     error = function(e) {

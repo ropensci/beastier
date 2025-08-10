@@ -10,7 +10,7 @@
 #' @author Richèl J.C. Bilderbeek
 #' @export
 create_temp_input_filename <- function() {
-  get_beastier_tempfilename(
+  beastier::get_beastier_tempfilename(
     pattern = "beast2_", fileext = ".xml"
   )
 }

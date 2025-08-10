@@ -27,10 +27,10 @@ create_beast2_run_cmd <- function(
   n_threads = NA,
   use_beagle = FALSE,
   overwrite = FALSE,
-  beast2_path = get_default_beast2_path(),
+  beast2_path = beastier::get_default_beast2_path(),
   verbose = FALSE
 ) {
-  beast2_options <- create_beast2_options(
+  beast2_options <- beastier::create_beast2_options(
     input_filename = input_filename,
     output_state_filename = output_state_filename,
     rng_seed = rng_seed,

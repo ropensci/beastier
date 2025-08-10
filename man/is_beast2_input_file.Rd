@@ -8,7 +8,7 @@ is_beast2_input_file(
   filename,
   show_warnings = FALSE,
   verbose = FALSE,
-  beast2_path = get_default_beast2_path()
+  beast2_path = beastier::get_default_beast2_path()
 )
 }
 \arguments{

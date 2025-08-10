@@ -36,7 +36,7 @@ Nothing. Gives a deprecation message using \link{stop}.
 This function is deprecated as it violated CRAN policy.
 }
 \details{
-To install BEAST2 from R, go to 
+To install BEAST2 from R, go to
 \url{https://github.com/richelbilderbeek/beastierinstall}.
 }
 \author{
