@@ -982,7 +982,7 @@ This version never had a formal release.
 
 ## MINOR IMPROVEMENTS
 
-- Follow all [rOpenSci packaging guidelines](https://github.com/ropensci/onboarding/blob/master/packaging_guide.md)
+- Follow all [rOpenSci packaging guidelines](https://devguide.ropensci.org/pkg_building.html)
 
 ## BUG FIXES
 
