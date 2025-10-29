@@ -26,3 +26,4 @@
 ^\.spellcheck\.yml$
 ^\.wordlist\.txt$
 
+^CITATION\.cff$
