@@ -36,12 +36,10 @@ are_beast2_input_lines <- function(
       beast2_path = beast2_path
     )
     file.remove(filename)
-    return(is_valid)
+    is_valid
   } else {
     beautier::check_true(method == "fast")
-    return(
-      are_beast2_input_lines_fast(lines) # nolint internal function
-    )
+    are_beast2_input_lines_fast(lines) # nolint internal function
   }
 }
 
