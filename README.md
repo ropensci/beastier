@@ -9,8 +9,8 @@
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![DOI](https://zenodo.org/badge/115617629.svg)](https://zenodo.org/badge/latestdoi/115617629)
 
-Branch   |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github.com/ropensci/beautier/actions)|[![Codecov logo](man/figures/Codecov.png)](https://www.codecov.io)
----------|---------|---------
+Branch   |[![GitHub Actions logo](man/figures/GitHubActions.png)](https://github.com/ropensci/beautier/actions)                                                                                                                                                                                                                                                                                                                                 |[![Codecov logo](man/figures/Codecov.png)](https://www.codecov.io)
+---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------
 `main`   |[![R-CMD-check](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml/badge.svg?branch=main)](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml)    [![R-CMD-check with BEAST2 installed](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check_with_beast2.yaml/badge.svg?branch=main)](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check_with_beast2.yaml)    |[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=main)](https://app.codecov.io/github/ropensci/beastier/branch/main)
 `develop`|[![R-CMD-check](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml/badge.svg?branch=develop)](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check.yaml) [![R-CMD-check with BEAST2 installed](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check_with_beast2.yaml/badge.svg?branch=develop)](https://github.com/ropensci/beastier/actions/workflows/R-CMD-check_with_beast2.yaml) |[![codecov.io](https://codecov.io/github/ropensci/beastier/coverage.svg?branch=develop)](https://app.codecov.io/github/ropensci/beastier/branch/develop)
 
@@ -182,11 +182,11 @@ Branch                         |[![AppVeyor logo](man/figures/AppVeyor.png)](htt
 
 <!-- markdownlint-disable MD013 --><!-- Tables cannot be split up over lines, hence will break 80 characters per line -->
 
-Filename                              |Descriptions
---------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
-[`mlc_config.json`](mlc_config.json)    |Configuration of the link checker, use `markdown-link-check --config mlc_config.json --quiet docs/**/*.md` to do link checking locally
-[`.spellcheck.yml`](.spellcheck.yml)    |Configuration of the spell checker, use `pyspelling -c .spellcheck.yml` to do spellcheck locally
-[`.wordlist.txt`](.wordlist.txt)        |Whitelisted words for the spell checker, use `pyspelling -c .spellcheck.yml` to do spellcheck locally
+Filename                                    |Descriptions
+--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------
+[`mlc_config.json`](mlc_config.json)        |Configuration of the link checker, use `markdown-link-check --config mlc_config.json --quiet docs/**/*.md` to do link checking locally
+[`.spellcheck.yml`](.spellcheck.yml)        |Configuration of the spell checker, use `pyspelling -c .spellcheck.yml` to do spellcheck locally
+[`.wordlist.txt`](.wordlist.txt)            |Whitelisted words for the spell checker, use `pyspelling -c .spellcheck.yml` to do spellcheck locally
 [`.markdownlint.jsonc`](.markdownlint.jsonc)|Configuration of the Markdown linter, use `markdownlint "**/*.md"` to do markdown linting locally. The name of this file is a default name.
 [`.markdownlintignore`](.markdownlintignore)|Files ignored by the Markdown linter, use `markdownlint "**/*.md"` to do markdown linting locally. The name of this file is a default name.
 
